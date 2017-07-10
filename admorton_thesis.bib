@@ -1,0 +1,406 @@
+--- COMMENTS may be placed outside the @ENTRYTYPE{ ... } stuctures
+--- CMS guidelines
+---- Every journal article citation should include the DOI, assuming one exists.
+---- All URLs for CMS notes, ANs, etc, should refer to the CDS server, not the CMS server. Use our standard format for them, as shown below.
+----  CMS Notes not available on CDS are regarded as private and may not be cited.
+----  CMS physics papers (i.e., those intended for publication in journals) may reference only POG PASs, not PAG PASs.
+---- For papers by collaborations, list the collaboration in the COLLABOROATION field and put the first author and "and others" in the AUTHOR field.
+----  If only the collaboration is listed as the author, put "{XXX Collaboration}" under AUTHOR.
+----  Note that we automatically replace the AUTHOR field with the collaboration name for ATLAS, CMS, LHCb, and ATLAS at submission time. Please don't remove the
+----  "First Author and others" in the AUTHOR field.
+---- Other items:
+----   PAGES: Please only list the first page, not the range.
+----   ISSUE: Please do not include in most cases.
+----   URL: Do not include this field if a DOI is available.
+---- Number of authors to list:
+----   PRL requests that we include all authors up to fifteen except for large collaborations, and we take this as our internal guide as well. If there
+----   are more than fifteen, just list the first author + "and others", as above.
+----   The individual journal bib style file (theirs, ours, PLB, etc.) will truncate at the appropriate point. We have ours set to _1_ for more than four.
+---- Use only the URL field instead of embedding an href.
+---- A reference only published on the arXiv should be listed as UNPUBLISHED (with a note "Submitted to XXX" for large collaboration papers).
+----   Experimental papers only on the arXiv and not submitted for publication may not be cited.
+---- Some journals will lowercase the title: use {} to protect words which must be capitalized, e.g., {LHC}, {TeV}, {CERN}, {CMS}.
+----  Do not escape the entire title as it will then clash with the journal style.
+---- Journal names: the journals generally include the series in the journal name, "Physical Review D", vol 5, rather than PR D5
+---- >>> Please use the --preview option with the tdr script to perform a simple-minded reference check before uploading.
+%
+%
+%    Many commonly cited papers are available under svn+ssh://svn.cern.ch/reps/tdr/utils/branches/dev/general/gen.bib and utils/trunk/higgs.bin.
+ 
+%
+% Notes hosted only on CDS are listed as TECHREPORTs.
+%
+ 
+%
+% standard article
+%
+@Article{LHCMachine,
+     author    = "L. Evans and P. Bryant",
+     collaboration = "THE {CERN} LARGE HADRON COLLIDER: ACCELERATOR AND EXPERIMENTS",
+     title     = "{LHC} Machine",
+     journal   = "JINST",
+     volume    = "3",
+     year      = "2008",
+     pages     = "S08001",
+     doi       = "10.1088/1748-0221/3/08/S08001",
+     SLACcitation  = "%%CITATION = JINST,3,S08001;%%",
+}
+ 
+@Article{oldcms,
+     author    = "Chatrchyan, S. and others",
+     collaboration = "{CMS}",
+     title     = "The {CMS} experiment at the {CERN} {LHC}",
+     journal   = "JINST",
+     volume    = "3",
+     year      = "2008",
+     pages     = "S08004",
+     doi       = "10.1088/1748-0221/3/08/S08004",
+     SLACcitation  = "%%CITATION = JINST,3,S08004;%%",
+}
+ 
+@Article{AMC13,
+    author    = "E. Hazen and A. Heister and C. Hill and J. Rohlf and S.X. Wu and D.Zou",
+    title     = "The AMC13XG: a new generation clock/timing/DAQ module for {CMS} MicroTCA",
+    journal   = "Journal of Instrumentation",
+    volume    = "8",
+    year      = "2013",
+    pages     = "C12036",
+    doi       = "10.1088/1748-0221/8/12/C12036",
+}
+ 
+@Article{mp7ref,
+    author    = "K Compton and S Dasu and A Farmahini-Farahani and S Fayer and R Fobes and R Frazier and T Gorski and G Hall and G Iles and J Jones and P Klabbers and D Newbold and A Perugupalli and S Rader and A Rose and D Seemuth and W Smith and J Tikalsky",
+   
+    title     = "The MP7 and CTP-6: multi-hundred Gbps processing boards for calorimeter trigger upgrades at {CMS}",
+    journal   = "Journal of Instrumentation",
+    volume    = "7",
+    year      = "2012",
+    pages     = "C12024",
+    doi       = "10.1088/1748-0221/7/12/C12024",
+}
+ 
+@Article{ipbus,
+    author    = "C. Ghabrous Larrea and K. Harder and D. Newbold and D. Sankey and A. Rose and A. Thea and T. Williams",
+    title     = "IPbus: a flexible Ethernet-based control system for xTCA hardware",
+    journal   = "Journal of Instrumentation",
+    volume    = "10",
+    year      = "2015",
+    pages     = "C02019",
+    doi       = "10.1088/1748-0221/10/02/C02019",
+}
+       
+@Article{mpessimperf,
+    author    = "M Pesaresi and G Hall",
+    title     = "Simulating the performance of a p T tracking trigger for {CMS}",
+    journal   = "Journal of Instrumentation",
+    volume    = "5",
+    year      = "2010",
+    pages     = "C08003",
+    doi       = "10.1088/1748-0221/5/08/C08003",
+}
+       
+@Article{2dptmoduleconcept,
+    author    = "G Hall and M Raymond and A Rose",
+    title     = "2-D PT module concept for the {SLHC} {CMS} tracker",
+    journal   = "Journal of Instrumentation",
+    volume    = "5",
+    year      = "2010",
+    pages     = "C07012",
+    doi       = "10.1088/1748-0221/5/07/C07012",
+}
+       
+@Article{Raymond2011,
+    author    = "M Raymond and D Braga and W Ferguson and J Fulcher and G Hall and J Jacob and L Jones and M Pesaresi and M Prydderch",
+    title     = "The {CMS} binary chip for microstrip tracker readout at the {SLHC}",
+    journal   = "Journal of Instrumentation",
+    volume    = "7",
+    year      = "2012",
+    pages     = "C01033",
+    doi       = "10.1088/1748-0221/7/01/C01033",
+}
+ 
+@Article{Hall2014,
+    author    = "D Braga and G Hall and L Jones and P Murray and M Pesaresi and M Prydderch and M Raymond",
+    title     = "CBC2: a microstrip readout ASIC with coincidence logic for trigger primitives at HL-LHC",
+    journal   = "Journal of Instrumentation",
+    volume    = "7",  
+    year      = "2012",
+    pages     = "C10003",
+    doi       = "10.1088/1748-0221/7/10/C10003",
+}
+ 
+@article{Fruhwirth:1987fm,
+      author         = "Fr{\"u}hwirth, R.",
+      title          = "{Application of Kalman filtering to track and vertex
+                       fitting}",
+      journal        = "Nucl. Instrum. Meth.",
+      volume         = "A262",
+      year           = "1987",
+      pages          = "444-450",
+      doi            = "10.1016/0168-9002(87)90887-4",
+      reportNumber   = "HEPHY-PUB-87-503",
+      SLACcitation   = "%%CITATION = NUIMA,A262,444;%%"
+}
+ 
+@article{tmttelba,
+title = "A time-multiplexed track-trigger for the \{CMS\} HL-LHC upgrade ",
+journal = "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment ",
+volume = "824",
+number = "",
+pages = "292 - 295",
+year = "2016",
+note = "Frontier Detectors for Frontier Physics: Proceedings of the 13th Pisa Meeting on Advanced Detectors ",
+issn = "0168-9002",
+doi = "10.1016/j.nima.2015.09.075",
+url = "http://www.sciencedirect.com/science/article/pii/S0168900215011304",
+author = "G. Hall",
+}
+ 
+@Article{Cacciari:2008gp,
+    AUTHOR    = "Cacciari, Matteo and Salam, Gavin P. and Soyez, Gregory",
+    TITLE     = "The anti-$k_t$ jet clustering algorithm",
+    JOURNAL   = "JHEP",
+    VOLUME    = "04",
+    YEAR      = "2008",
+    PAGES     = "063",
+    doi       = "10.1088/1126-6708/2008/04/063",
+    eprint         = "0802.1189",
+    archivePrefix  = "arXiv",
+    primaryClass   = "hep-ex",
+}
+ 
+%
+% An example of a document which only appears on arXiv. This one could alternatively be cited as a TECHREPORT using any of the various laboratory report numbers when hosted on a lab server:
+% reportNumber   = "CERN-PH-EP-2010-095, FERMILAB-TM-2480-PPD, LEPEWWG-2010-01, TEVEWWG-2010-01, ALEPH-2010-001-PHYSICS-2010-001, CDF-NOTE-10338, D0-NOTE-6130, DELPHI-DELPHI-2010-001-PHYS-952, L3-NOTE-2837, OPAL-PR432, SLAC-PUB-14301",
+%
+%
+% A document hosted on a laboratory server
+%
+ 
+@BOOK{hl-lhc-prelim-design-report,
+     author        = "Apollinari, G and B{\'e}jar Alonso, I and Br{\"u}ning, O and
+                      Lamont, M and Rossi, L",
+     collaboration = "THE CERN LARGE HADRON COLLIDER: ACCELERATOR AND EXPERIMENTS",
+     title         = "High-Luminosity Large Hadron Collider (HL-LHC): Preliminary Design Report",
+     publisher     = "CERN",
+     address       = "Geneva",
+     year          = "2015",
+     url           = "http://cds.cern.ch/record/2116337",
+     doi           = "10.5170/CERN-2015-005",
+}
+ 
+@TECHREPORT{CMS_Upgrade_TP,
+     author        = "Contardo, D and Klute, M and Mans, J and Silvestris, L and Butler, J",
+     collaboration = "CMS",
+     title         = "Technical Proposal for the Phase-II Upgrade of the CMS Detector",
+     address       = "Geneva",
+     number        = "CERN-LHCC-2015-010. LHCC-P-008. CMS-TDR-15-02",
+     month         = "Jun",
+     year          = "2015",
+     reportNumber  = "CERN-LHCC-2015-010",
+     url           = "https://cds.cern.ch/record/2020886",
+     note          = "Upgrade Project Leader Deputies: Lucia Silvestris
+                      (INFN-Bari), Jeremy Mans (University of Minnesota)
+                      Additional contacts: Lucia.Silvestris@cern.ch,
+                      Jeremy.Mans@cern.ch",
+}
+ 
+@TECHREPORT{P2TrackerTDR,
+     author        = "",
+     collaboration = "CMS",
+     title         = "CMS Technical Design Report for the Phase-2 Tracker Upgrade",
+     address       = "Geneva",
+     number        = "CERN-LHCC-2017-xxx. CMS-TDR-xxx",
+     month         = "month",
+     year          = "2017",
+     reportNumber  = "CERN-LHCC-2017-xxx",
+}
+ 
+@TECHREPORT{hallelba,
+     author        = "Hall, Geoffrey",
+     title         = "A Time-Multiplexed Track-Trigger for the CMS {HL-LHC} upgrade",
+     institution   = "CERN",
+     address       = "Geneva",
+     number        = "CMS-CR-2015-109",
+     month         = "Jun",
+     year          = "2015",
+     reportNumber  = "CMS-CR-2015-109",
+     url           = "https://cds.cern.ch/record/2027712",
+}
+ 
+@article{GBT,
+     author        = "Rodrigues Simoes Moreira, Paulo",
+     title         = "The LpGBT Project, Status and Overview. ACES 2016 -
+                      Fifth Common ATLAS CMS Electronics Workshop for LHC
+                      Upgrades",
+     month         = "Mar",
+     year          = "2016",
+     url           = "https://cds.cern.ch/record/2137809",
+}
+ 
+@techreport{phase1L1TDR,
+     author        = "Tapper, A and Acosta, Darin",
+     editor        = "Tapper, A",
+     title         = "CMS Technical Design Report for the Level-1 Trigger
+                      Upgrade",
+     collaboration = "CMS collaboration",
+     number        = "CERN-LHCC-2013-011. CMS-TDR-12",
+     month         = "Jun",
+     year          = "2013",
+     reportNumber  = "CERN-LHCC-2013-011",
+     url           = "https://cds.cern.ch/record/1556311",
+     note          = "Additional contacts: Jeffrey Spalding, Fermilab,
+                      Jeffrey.Spalding@cern.ch Didier Contardo, Universite Claude
+                      Bernard-Lyon I, didier.claude.contardo@cern.ch",
+}
+ 
+@book{physicsTDR,
+     author        = "Bayatian, G L and others",
+     title         = "CMS Physics: Technical Design Report Volume 1: Detector
+                      Performance and Software",
+     publisher     = "CERN",
+     collaboration = "CMS Collaboration",
+     address       = "Geneva",
+     series        = "Technical Design Report CMS",
+     year          = "2006",
+     url           = "http://cds.cern.ch/record/922757",
+     note          = "There is an error on cover due to a technical problem for
+                      some items",
+}
+ 
+@article{tiltedGeometry,
+        author = "Abbaneo, Duccio",
+        title = "Performance Requirements for the Phase-2 Tracker Upgrades for ATLAS and CMS",
+        DOI= "10.1051/epjconf/201612700002",
+        url= "http://dx.doi.org/10.1051/epjconf/201612700002",
+        journal = "EPJ Web Conf.",
+        year = 2016,
+        volume = 127,
+        pages = "00002",
+}
+
+@TECHREPORT{TmttNote,
+     author        = "C. Amstutz and F. A. Ball and M. N. Balzer and J. Brooke and L. Calligaris and D. Cieri and E. J. Clement and G. Hall and T. R. Harbaum and K. Harder and P. R. Hobson and G. M. Iles and T. James and K. Manolopoulos and T. Matsushita and A. D. Morton and D. Newbold and S. Paramesvaran and M. Pesaresi and I. D. Reid and A. W. Rose and O. Sander and T. Schuh and C. Shepherd-Themistocleous and A. Shtipliyski and S. P. Summers and A. Tapper and I. Tomalin and K. Uchida and P. Vichoudis and M. Weber",
+     title         = "An FPGA Based Track Finder for the L1 Trigger of the CMS Experiment at the High Luminosity LHC",
+     number        = "CMS-almorton-001",
+     month         = "month",
+     year          = 2017,
+}
+
+ %
+ % A document included in Proceedings. PRL may want the ADDRESS field as well.
+ %
+ 
+@INPROCEEDINGS{jjonespixel,
+ author       = "J. Jones and G. Hall and C. Foudas and A. Rose",
+ title        = "A Pixel Detector for Level-1 Triggering at SLHC",
+ booktitle    = "11$^\text{th}$ Workshop on Electronics for LHC Experiments, Heidelberg, September 2005, CERN Report CERN-2005-011",
+     year          = "2005",
+     publisher     = "CERN",
+     note          = "CERN-2005-011(2005)",
+     pages         = "130-134",
+     organization  = "CERN",
+     address       = "Geneva",
+     url           = "https://cds.cern.ch/record/873448",
+}
+ 
+@INPROCEEDINGS{fravera,
+     author        = "F. Ravera",
+     title         = "{CMS} Tracker upgrade for HL-LHC: R\&D plans, present status and perspectives",
+     journal       = "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
+     year          = "2016",
+     publisher     = "CERN",
+     volume        = "824",
+     note          = "Frontier Detectors for Frontier Physics: Proceedings of the 13th Pisa Meeting on Advanced Detectors",
+     pages         = "455-458",
+     organization  = "CERN",
+     address       = "Geneva",
+     url           = "https://www.sciencedirect.com/science/article/pii/S0168900215010840",
+     doi           = "10.1016/j.nima.2015.09.029",
+     issn = "0168-9002",
+}
+ 
+@INPROCEEDINGS{IEEE,
+     author        = "C. Amstutz and F. A. Ball and M. N. Balzer and J. Brooke and L. Calligaris and D. Cieri and E. J. Clement and G. Hall and T. R. Harbaum and K. Harder and P. R. Hobson and G. M. Iles and T. James and K. Manolopoulos and T. Matsushita and A. D. Morton and D. Newbold and S. Paramesvaran and M. Pesaresi and I. D. Reid and A. W. Rose and O. Sander and T. Schuh and C. Shepherd-Themistocleous and A. Shtipliyski and S. P. Summers and A. Tapper and I. Tomalin and K. Uchida and P. Vichoudis and M. Weber",
+     booktitle     = "2016 IEEE-NPSS Real Time Conference (RT)",
+     title         = "An FPGA-Based Track Finder for the L1 Trigger of the CMS Experiment at the High Luminosity LHC",
+     year          = "2016",
+     pages         = "1-9",
+     doi           = "10.1109/RTC.2016.7543102",
+     month         = "June",
+}
+@INPROCEEDINGS{luigi,
+     author        = "C. Amstutz and F. A. Ball and M. N. Balzer and J. Brooke and L. Calligaris and D. Cieri and E. J. Clement and G. Hall and T. R. Harbaum and K. Harder and P. R. Hobson and G. M. Iles and T. James and K. Manolopoulos and T. Matsushita and A. D. Morton and D. Newbold and S. Paramesvaran and M. Pesaresi and I. D. Reid and A. W. Rose and O. Sander and T. Schuh and C. Shepherd-Themistocleous and A. Shtipliyski and S. P. Summers and A. Tapper and I. Tomalin and K. Uchida and P. Vichoudis and M. Weber",
+     booktitle     = "2016 IEEE-NPSS Real Time Conference (RT)",
+     title         = "Emulation of a prototype FPGA track finder for the CMS Phase-2 upgrade with the CIDAF emulation framework",
+     year          = "2016",
+     pages         = "1-7",
+     doi           = "10.1109/RTC.2016.7543110",
+     month         = "June",
+}
+ 
+@INPROCEEDINGS{SSummers,
+     author        = "C. Amstutz and F. A. Ball and M. N. Balzer and J. Brooke and L. Calligaris and D. Cieri and E. J. Clement and G. Hall and T. R. Harbaum and K. Harder and P. R. Hobson and G. M. Iles and T. James and K. Manolopoulos and T. Matsushita and A. D. Morton and D. Newbold and S. Paramesvaran and M. Pesaresi and I. D. Reid and A. W. Rose and O. Sander and T. Schuh and C. Shepherd-Themistocleous and A. Shtipliyski and S. P. Summers and A. Tapper and I. Tomalin and K. Uchida and P. Vichoudis and M. Weber",
+     booktitle     = "2016 IEEE-NPSS Real Time Conference (RT)",
+     title         = "Online track reconstruction using Kalman Filters on FPGAs",
+     year          = "2017",
+     month         = "March",
+}
+@conference{pesposter,
+     author        = "M. Pesaresi",
+     title         = "Readout Electronics and Prototyping of Outer Tracker Modules with Triggering Capabilities for {CMS} at {HL-LHC}",
+     note          = "In proceedings, CMS upgrade week (DESY)",
+     month         = "June",
+     year          = "2013",
+}
+ 
+%
+% CMS/ATLAS papers submitted but not yet accepted; The SLACcitation is not required. This is only for illustration, these are now published.
+% Upon acceptance the note is modified and the DOI included (if available).
+%
+ 
+% Misc
+ 
+@misc{HT,
+    author    = "P.~V.~C. Hough",
+    title     = "Method and means for recognizing complex patterns",
+    month     = "December",
+    year      = "1962",
+    note      = "US Patent 3,069,654.",
+}
+ 
+@phdthesis{markthesis,
+    author    = "M. Pesaresi",
+    title     = "Development of a new Silicon Tracker for {CMS} at Super-{LHC}",
+    school    = "Imperial College London",
+    year      = "2010",
+    url       = "https://goo.gl/jcKpuk"
+}
+ 
+@misc{virtexref,
+    author    = "Xilinx",
+    title     = "7 Series FPGAs Overview, Product Specification",
+    month     = "May",
+    year      = "2015",
+    note      = "DS180 (v1.17)",
+    urll      = "http://www.xilinx.com/support/documentation/data\_sheets/
+ds180\_7Series\_Overview.pdf"
+}
+ 
+@misc{ultrascaleRef,
+    author    = "Xilinx",
+    title     = "UltraScale Architecture and Product Data Sheet: Overview",
+    month     = "February",
+    year      = "2017",
+    note      = "DS890 (v2.11)",
+    urll      = "https://www.xilinx.com/support/documentation/data_sheets/ds890-ultrascale-overview.pdf"
+}
+ 
+@misc{uTCA,
+    author    = "PICMG",
+    title     = "Micro Telecommunications Computing Architecture Short Form Specification",
+    year      = "2006",
+    month     = "September",
+day = "21",
+url = "https://www.picmg.org/wp-content/uploads/MicroTCA_Short_Form_Sept_2006.pdf"
+}

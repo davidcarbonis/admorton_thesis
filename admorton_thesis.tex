@@ -1,0 +1,164 @@
+%\documentclass[11pt,a4paper]{article}
+%\pdfoutput=1 % only if pdf/png/jpg images are used
+
+%%%\documentclass[option comma separated list]{webofc}
+%%%Three important options:
+%%% "epj" for EPJ Web of Conferences Journal
+%%% "bio" for BIO Web of Conferences Journal
+%%% "mat" for MATEC Web of Conferences Journal
+%%% "itm" for ITM Web of Conferences Journal
+%%% "e3s" for E3S Web of Conferences Journal
+%%% "shs" for SHS Web of Conferences Journal
+%%% "twocolumn" for typesetting an article in two columns format (default one column)
+\documentclass[epj]{webofc}
+\usepackage[varg]{txfonts}   % Web of Conferences font
+
+% Put here some packages required or/and some personnal commands
+\usepackage{lineno}
+\usepackage{subfig}
+
+% units
+\newcommand{\unit}[1]{\ensuremath{\text{\,#1}}\xspace}
+
+\newcommand{\mum}{\ensuremath{\,\mu\text{m}}\xspace}
+\newcommand{\cm}{\ensuremath{\,\text{cm}}\xspace}
+\newcommand{\mm}{\ensuremath{\,\text{mm}}\xspace}
+\newcommand{\mus}{\ensuremath{\,\mu\text{s}}\xspace}
+\newcommand{\GeV}{\ensuremath{\,\text{Ge\hspace{-.08em}V}}\xspace}
+\newcommand{\GeVc}{\ensuremath{\,\text{Ge\hspace{-.08em}V}}\xspace}
+
+\newcommand{\pbinv} {\mbox{\ensuremath{\,\text{pb}^\text{$-$1}}}\xspace}
+\newcommand{\fbinv} {\mbox{\ensuremath{\,\text{fb}^\text{$-$1}}}\xspace}
+\newcommand{\nbinv} {\mbox{\ensuremath{\,\text{nb}^\text{$-$1}}}\xspace}
+\newcommand{\percms}{\ensuremath{\,\text{cm}^\text{$-$2}\,\text{s}^\text{$-$1}}\xspace}
+\newcommand{\lumi}{\ensuremath{\mathcal{L}}\xspace}
+\newcommand{\Lumi}{\ensuremath{\mathcal{L}}\xspace}%both upper and lower
+\newcommand{\ET}{\ensuremath{E_{\mathrm{T}}}\xspace}
+
+\newcommand{\T}{\unit{T}}
+\newcommand{\Gbps}{\unit{Gb\hspace{-0.16em}/\hspace{-0.08em}s}}
+\newcommand{\Tbps}{\unit{Tb\hspace{-0.16em}/\hspace{-0.08em}s}}
+\newcommand{\kHz}{\unit{kHz}}
+\newcommand{\MHz}{\unit{MHz}}
+\newcommand{\GHz}{\unit{GHz}}
+
+% Command definitions.
+\newcommand{\ttbar}{\ensuremath{{t\overline{t}}}\xspace}
+\providecommand{\ttbar}{\ensuremath{\mathrm{t}\overline{\mathrm{t}}}\xspace}
+\newcommand{\PT}{\ensuremath{p_{\mathrm{T}}}\xspace}
+\newcommand{\pt}{\ensuremath{p_{\mathrm{T}}}\xspace}
+\newcommand{\pT}{\ensuremath{p_{\mathrm{T}}}\xspace}
+
+\newcommand{\sector}{sector\xspace}
+\newcommand{\segment}{\sector}
+\newcommand{\qpt}{\ensuremath{q\hspace{-0.08em}/\hspace{-0.08em}\pt}\xspace}
+\newcommand{\rphi}{$r$-$\varphi$\xspace}
+\newcommand{\rz}{$r$-$z$\xspace}
+%\newcommand{\PU}{pile-up\xspace}
+\newcommand{\PU}{PU\xspace} % PU is now defined in Section 1
+\newcommand{\OT}{outer tracker\xspace}
+\newcommand{\HT}{Hough Transform\xspace} % redefinition of CMS command for total transverse energy ...
+\newcommand{\KF}{Kalman Filter\xspace}
+\newcommand{\DR}{Duplicate Removal\xspace}
+\newcommand{\mat}[1]{\mathbf{#1}}
+
+% Important: please activate and fill the "wocname" command with the exact title of the series for conferences not included in any of the series listed on the top
+%
+%\wocname{?????????}
+%
+% Very important: please fill the "woctitle" command with the exact title of the conference
+%
+\woctitle{Connecting The Dots / Intelligent Trackers 2017}
+%
+
+
+%%%%%%%%%%%%%%%  Title page %%%%%%%%%%%%%%%%%%%%%%%% 
+
+% >> Title: please make sure that the non-TeX equivalent is in PDFTitle below
+\begin{document}
+\title{An FPGA Based Track Finder for the L1 Trigger of the CMS Experiment at the High Luminosity LHC}
+
+% >> Authors
+%Author is always "The CMS Collaboration" for PAS and papers, so author, etc, below will be ignored in those cases
+%For multiple affiliations, create an address entry for the combination
+%To mark authors as primary, use the \author form
+
+\author{\firstname{R} \lastname{Aggleton}\inst{2} \and 
+\firstname{L} \lastname{Ardila-Perez}\inst{6} \and 
+\firstname{F.A.} \lastname{Ball}\inst{2} \and 
+\firstname{M.N.} \lastname{Balzer}\inst{6} \and 
+\firstname{J} \lastname{Brooke}\inst{2} \and 
+\firstname{M} \lastname{Caselle}\inst{6} \and 
+\firstname{L} \lastname{Calligaris}\inst{7} \and 
+\firstname{D} \lastname{Cieri}\inst{7} \and 
+\firstname{E.J.} \lastname{Clement}\inst{2} \and 
+\firstname{G} \lastname{Hall}\inst{5} \and 
+\firstname{K} \lastname{Harder}\inst{7} \and 
+\firstname{P.R.} \lastname{Hobson}\inst{3} \and 
+\firstname{G.M.} \lastname{Iles}\inst{5} \and 
+\firstname{T} \lastname{James}\inst{5} \and 
+\firstname{K} \lastname{Manolopoulos}\inst{7} \and 
+\firstname{T} \lastname{Matsushita}\inst{1} \and 
+\firstname{A.D.} \lastname{Morton}\inst{3} \and 
+\firstname{D} \lastname{Newbold}\inst{2} \and 
+\firstname{S} \lastname{Paramesvaran}\inst{2} \and 
+\firstname{M} \lastname{Pesaresi}\inst{5} \and 
+\firstname{I.D.} \lastname{Reid}\inst{3} \and 
+\firstname{A.W.} \lastname{Rose}\inst{5} \and 
+\firstname{O} \lastname{Sander}\inst{6} \and 
+\firstname{T} \lastname{Schuh}\inst{6} \and 
+\firstname{C} \lastname{Shepherd-Themistocleous}\inst{7} \and 
+\firstname{A} \lastname{Shtipliyski}\inst{5} \and 
+\firstname{S.P.} \lastname{Summers}\inst{5} \and 
+\firstname{A} \lastname{Tapper}\inst{5} \and 
+\firstname{I} \lastname{Tomalin}\inst{7} \and 
+\firstname{K} \lastname{Uchida}\inst{5} \and 
+\firstname{P} \lastname{Vichoudis}\inst{4} \and 
+\firstname{M} \lastname{Weber}\inst{6} 
+}
+
+\institute{Austrian Academy of Sciences 
+\and
+           University of Bristol 
+\and
+           Brunel University London
+\and
+		   CERN
+\and
+           Imperial College London
+\and
+           Karlsruhe Institute of Technology
+\and         
+           STFC - Rutherford Appleton Laboratory
+          }
+
+\abstract{
+A new tracking detector is under development for use by the CMS experiment at the High-Luminosity LHC (HL-LHC). A crucial component of this upgrade will be the ability to reconstruct within a few microseconds all charged particle tracks with transverse momentum above 3\GeV, so they can be used in the Level-1 trigger decision.
+A concept for an FPGA-based track finder using a fully time-multiplexed architecture is presented, where track candidates are reconstructed using a projective binning algorithm based on the Hough Transform. A hardware demonstrator using MP7 processing boards has been assembled to prove the entire system, from the output of the tracker readout boards to the reconstruction of tracks with fitted helix parameters. It successfully operates on one eighth of the tracker solid angle at a time, processing events taken at 40\MHz, each with up to 200 superimposed proton-proton interactions, whilst satisfying latency constraints. The demonstrated track-reconstruction system, the chosen architecture, the achievements to date and future options for such a system will be discussed.
+}
+ 
+\maketitle
+
+\input{tex/hl-lhc.tex}
+
+\input{tex/tk-upgrade.tex}
+
+\input{tex/tf-processor.tex}
+
+\input{tex/tf-arch.tex}
+
+\input{tex/tf-results.tex}
+
+\input{tex/conclusion.tex}
+
+\section{Acknowledgements}
+\label{sec:acknowledgments}
+
+This work was supported in part by the the UK Science and Technology Facilities Council. We gratefully acknowledge their support. The research leading to these results has received funding from the People Programme (Marie Curie Actions) of the European Union’s Seventh Framework Programme FP7/2007-2013/ under REA grant agreement nr. 317446 INFIERI ’INtelligent Fast Interconnected and Efficient Devices for Frontier Exploitation in Research  and Industry’.
+
+We are grateful to the CMS collaboration for use of their detector simulation software and for the CMS members involved with the generation of simulation data for the demonstrator system.
+
+\bibliography{admorton_thesis}
+ 
+\end{document}
+
