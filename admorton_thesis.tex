@@ -10,12 +10,14 @@
 %%% "e3s" for E3S Web of Conferences Journal
 %%% "shs" for SHS Web of Conferences Journal
 %%% "twocolumn" for typesetting an article in two columns format (default one column)
-\documentclass[epj]{webofc}
+\documentclass[thesis]{webofc}
 \usepackage[varg]{txfonts}   % Web of Conferences font
 
 % Put here some packages required or/and some personnal commands
 \usepackage{lineno}
 \usepackage{subfig}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
 % units
 \newcommand{\unit}[1]{\ensuremath{\text{\,#1}}\xspace}
