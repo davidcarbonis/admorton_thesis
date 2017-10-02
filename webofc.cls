@@ -41,26 +41,11 @@
 \@onlinefalse
 \DeclareOption{online}{\@onlinetrue}
 %
-\DeclareOption{bio}{%
-  \def\woc@name{BIO Web of Conferences}%
-}
-\DeclareOption{mat}{%
-  \def\woc@name{MATEC Web of Conferences}%
-}
-\DeclareOption{itm}{%
-  \def\woc@name{ITM Web of Conferences}%
-}
-\DeclareOption{e3s}{%
-  \def\woc@name{E3S Web of Conferences}%
-}
-\DeclareOption{shs}{%
-  \def\woc@name{SHS Web of Conferences}%
-}
-\DeclareOption{epj}{%
-  \def\woc@name{EPJ Web of Conferences}%
+\DeclareOption{thesis}{%
+  \def\woc@name{  }%
 }
 \def\wocname#1{\gdef\woc@name{#1}}
-\newcommand*\woc@name{The Journal's name}
+\newcommand*\woc@name{Thesis}
 %
 \newif\ifwoc@twocolumn
 \DeclareOption{onecolumn}{%
@@ -363,9 +348,6 @@
   \fancyhead[L]{%
     \minipage[t][\baselineskip]{\linewidth}
       \@HeadFont
-      \woc@idline\\
-      \woc@doi\\
-      \CopyrightTitlename
     \endminipage
   }%
 }
