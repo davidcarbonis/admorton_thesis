@@ -1,5 +1,13 @@
 \section{The CMS Tracker Upgrade}\label{sec:tk-upgrade}
  
+\subsection{The High-Luminosity Large Hadron Collider} 
+The LHC is planned to operate at a luminosity up to one order of magnitude higher than obtained with the nominal design in order to fully exploit its scientific potential.
+After the High-Luminosity LHC (HL-LHC) upgrade \cite{hl-lhc-prelim-design-report} is completed, currently expected to be in the year 2026, the instantaneous peak luminosity will increase to $5-7.5 \times {10}^{34}$\percms, corresponding to an average number of proton-proton interactions per 40\MHz bunch crossing of 140 to 200.
+Targeting a total integrated luminosity of $3000$\fbinv, the HL-LHC will enable precision Higgs measurements, searches for rare processes that may deviate from the standard model, and increases in the discovery reach for new particles with low cross-sections and/or multi-TeV masses.
+
+
+\subsection{The Phase-II Tracker Upgrade}
+
 The CMS silicon tracker, the innermost sub-detector, will need to be replaced in its entirety during the shut-down preceding HL-LHC operations, due to both approximately 15 years of radiation damage during operation and to maintain a high track reconstruction efficiency and a low misidentification rate under increased pileup conditions, requiring an increase in sensor granularity \cite{P2TrackerTDR}. The radiation hardness of the tracker must also be improved in order to withstand the increased fluence.
 
 In order to keep the L1 acceptance rate below the 750\kHz maximum in the high pileup HL-LHC environment without raising the transverse energy (\ET) or transverse momentum (\pT) thresholds (losing potentially interesting physics events), the L1 trigger will also make use of charged particle tracks from the outer tracking detector.
@@ -22,3 +30,7 @@ Using stubs as an input, the L1 trigger requires input data formatting, track re
 \subsection{An FPGA Based Track Finding Architecture}
 
 A scalable, configurable and redundant system architecture based on a fully time-multiplexed design, using current FPGA technology, has been proposed.
+
+\subsubsection{Linear $\chi^{2}$ Track Fitter}
+
+\subsubsection{Robustness Studies}
