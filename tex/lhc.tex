@@ -5,8 +5,6 @@ The Large Hadron Collider (LHC) at the European Organisation for Nuclear Researc
 It is designed to operate at a centre of mass (CoM) energy of 14\TeV, through two 7\TeV proton beams travelling in 2808 bunches of up to $1.15 \times 10^{11}$ protons at a collision rate of 25\nsm which corresponds to a design luminosity of $10^{34}\percms$. 
 The LHC can also operate in a heavy-ion mode, where lead ions are collided at 2.76\TeV per nucleon usually for one month a year~\cite{Bayatian:2006zz}.
 
-Unlike matter-antimatter colliders, such as the Large Electron-Positron and Tevatron colliders, where the entirety of the centre of mass energy is available,  ... Advantage 
-
 The beams collide at four interaction points around the LHC, with one of the four major experiments being based at each of them. 
 The experiments are: A Toroidal LHC Apparatus (ATLAS) and the Compact Muon Solenoid (CMS) detectors, which are the two multi-purpose experiments; the Large Hadron Collider beauty (LHCb) is an experiment which specialises in b-physics and; A Large Ion Collider Experiment (ALICE), as the name suggests, specialises in heavy ion physics~\cite{Bruning:782076}.
 
@@ -17,10 +15,15 @@ Monopole and Exotics Detector At the LHC (MoEDAL) shares the LHCb experiment's c
 \subsubsection{Motivation}
 The core motivations behind the LHC are to shed light on the nature of the electroweak symmetry breaking, which the Higgs was presumed and found to be responsible, and to probe the consistency of the SM above the \TeV level through precision measurements of SM parameters and the Higgs mechanism.
 Alternative theories to the SM, such as SUSY theories, additional dimensions or new fundamental forces and particles are expected to emerge at and above the TeV level, giving the potential to ascertain whether these theories have any basis beyond mere conjecture.
-%%% How this impacted experimental design choices
-Measurements of the Higgs boson, precision measurements of SM parameters, and BSM physics (???) require a high interaction rate, which is ascertained through a high beam luminosity, due to their low production production probabilities in contrast to 
 
-%Naturally the performance goals of the LHC machine were driven by the physics
+In order to explore and permit the discovery of physics at the \TeV level, the total centre of mass energy has to be greater than the energy region being explored as, due to the composite nature of the proton, only a fraction of the collision centre of mass energy is available.
+Access to physics beyond the \TeV level is not excluded	as some signals would be ``unmissable'', but the majority of physics would be limited by statistics.
+Compared to the total inelastic cross section, the production cross section of the Higgs boson and hypothesised SUSY particles, if they have \TeV masses (and exist), are predicted to be many orders of magnitude smaller.
+Measurements of such processes, as well as precision measurements of SM parameters, require a high interaction rate, and consequently the LHC has a high beam luminosity so that there sufficient statistics available.
+Protons are delivered in 2808 bunches per beam, as opposed to a continuous beam, which at design luminosity will separated by 25ns, resulting in an event rate of 40\MHz and an average of 25 inelastic proton-proton interactions, named pile-up (\PU) for each bunch crossing. 
+%% CITE LHC TDE page 31 for 2808 bunches
+%% CITE CMS VOL2, page 33 for pileup
+This high event rate presents the experiments with the data acquisition and readout challenges, whilst retaining excellent signal to background resolution and sufficient radiation hardness in order to withstand the expected fluence.
 
 The primary motivation behind operating the LHC in a heavy-ion mode is to search for evidence of the plasma of quarks and gluons, which is made possible through the resultant production of QCD matter under extreme temperature, density and low momentum fractions of partons~\cite{Baur:687318}.
 
@@ -49,9 +52,8 @@ A more detailed description of the LHC accelerator chain at CERN can be found in
 \subsection{The Compact Muon Solenoid}\label{subsec:cms}
 
 \subsubsection{Overview}
-The Compact Muon Solenoid (CMS) is a large, general purpose, hermetic particle detector designed to investigate a wide range of physics phenomena and the smaller of the two multi-purpose experiments operating at the LHC at CERN. 
-
-The design of the detector was motivated by the planned goals of the LHC's physics program. 
+The Compact Muon Solenoid (CMS) is a large, general purpose, hermetic particle detector and the smaller of the two multi-purpose experiments operating at the LHC at CERN. 
+In order to investigate the wide range of physics phenomena in the LHC's physics program, the detector was designed
 
 
 resulting in the distinguishing features of a high-field strength superconducting solenoid which fully encompasses the 
@@ -59,7 +61,6 @@ resulting in the distinguishing features of a high-field strength superconductin
 
 
 The CMS detector covers the rapidity range $\eta < 3$ at full resolution and covers an extended range $\eta < 5$ with the bending power being provided by a 13m long, 6m inner diameter, 4T superconducting solenoid.
-
 
 The need for such a magnet comes from the requirement to precisely measure the momentum of high-energy charged particles, for high momentum charged particles spend less time passing through magnetic fields, resulting in a less curved trajectory.
 The more powerful the magnet, the more precisely high-energy charged particles can be measured due to their greater displacement\cite{oldcms}.
@@ -82,6 +83,8 @@ There is also a pair of very-forward calorimeters (HF) in the extended rapidity 
 \label{fig:trigger}
 \end{center}
 \end{figure}
+
+%%%
 
 \subsubsection{Tracker}
 The tracker, surrounding the interaction point, is designed to provide efficient precision trajectory measurements of charged particles emerging from collisions and precise reconstruction of secondary vertices over $\eta < 2.5$, whilst operating in a harsh radiation environment .
