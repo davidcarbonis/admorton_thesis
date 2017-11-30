@@ -52,21 +52,22 @@ A more detailed description of the LHC accelerator chain at CERN can be found in
 \subsection{The Compact Muon Solenoid}\label{subsec:cms}
 
 \subsubsection{Overview}
-The Compact Muon Solenoid (CMS) is a large, general purpose, hermetic particle detector and the smaller of the two multi-purpose experiments operating at the LHC at CERN. 
-In order to investigate the wide range of physics phenomena in the LHC's physics program, the detector was designed
-
-
-resulting in the distinguishing features of a high-field strength superconducting solenoid which fully encompasses the 
-...
-
-
-The CMS detector covers the rapidity range $\eta < 3$ at full resolution and covers an extended range $\eta < 5$ with the bending power being provided by a 13m long, 6m inner diameter, 4T superconducting solenoid.
-
-The need for such a magnet comes from the requirement to precisely measure the momentum of high-energy charged particles, for high momentum charged particles spend less time passing through magnetic fields, resulting in a less curved trajectory.
-The more powerful the magnet, the more precisely high-energy charged particles can be measured due to their greater displacement\cite{oldcms}.
-
-Moving away from the centre of the detector and the particle beam, CMS consists of the inner tracking system (a pixel tracker and a silicon microstrip tracker), an electromagnetic calorimeter (ECAL), a hadronic calorimeter (HCAL), a 4T superconducting solenoid, an outer calorimeter (HO), and the muon chambers.
+The Compact Muon Solenoid (CMS) is a large, general purpose, hermetic particle detector and the smaller of the two multi-purpose experiments operating at the LHC at CERN.
+A 4T superconducting solenoid encompasses, moving from the centre of the detector outwards, an all silicon tracking detector, a homogeneous lead tungstate electromagnetic calorimeter (ECAL)and hadronic calorimeter (HCAL) comprised of plastic scintillating tiles interspaced with brass absorbers.
+Beyond the solenoid there is an outer hadronic calorimeter (HO) [ note it's limited size and function ] and interspaced between the iron return yoke are three different types of Muon Detectors.
 There is also a pair of very-forward calorimeters (HF) in the extended rapidity region\cite{oldcms}.
+
+Naturally, these detectors were designed in order to investigate the wide range of physics phenomena in the LHC's physics program, resulting in the 
+
+The barrel 
+
+Talk about hermeticity - how it links into good MET
+
+The CMS detector covers the psuedo-rapidity range $\eta < 3$ at full resolution and covers an extended range $\eta < 5$ with the bending power being provided by a 13m long, 6m inner diameter, 4T superconducting solenoid.
+
+
+
+%The need for such a magnet comes from the requirement to precisely measure the momentum of high-energy charged particles, for high momentum charged particles spend less time passing through magnetic fields, resulting in a less curved trajectory. The more powerful the magnet, the more precisely high-energy charged particles can be measured due to their greater displacement\cite{oldcms}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -76,13 +77,6 @@ There is also a pair of very-forward calorimeters (HF) in the extended rapidity 
 \end{center}
 \end{figure}
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.97\textwidth]{figs/cms/trigger.png}
-\caption{L-1 Trigger Architecture. Both muon and calorimeter triggers search for candidates locally before creating coarser datasets by passing on the most promising candidates to a higher level, and so on until the Global Trigger makes a final decision. However, unlike the Calorimeter Trigger, which looks at all the calorimeter systems concurrently, the Muon Trigger locally triggers on each of its detector technologies separately before submitting them to the Global Muon Trigger (with input from the Regional Calorimeter Trigger) before passing on fitted candidates to the Global Trigger.}
-\label{fig:trigger}
-\end{center}
-\end{figure}
 
 %%%
 
@@ -116,6 +110,14 @@ At design luminosity, the LHC bunch crossing (BX) rate of 40\MHz leads to an eve
 Given the impossibility of storing such a volume of data, let alone process it, the trigger system has to drastically reduce the data rate by selecting ``interesting'' events for storage for later analysis.
 
 %% Data acquistion?
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.97\textwidth]{figs/cms/trigger.png}
+\caption{L-1 Trigger Architecture. Both muon and calorimeter triggers search for candidates locally before creating coarser datasets by passing on the most promising candidates to a higher level, and so on until the Global Trigger makes a final decision. However, unlike the Calorimeter Trigger, which looks at all the calorimeter systems concurrently, the Muon Trigger locally triggers on each of its detector technologies separately before submitting them to the Global Muon Trigger (with input from the Regional Calorimeter Trigger) before passing on fitted candidates to the Global Trigger.}
+\label{fig:trigger}
+\end{center}
+\end{figure}
 
 \subsubsection{Level-1 Trigger}
 The first step is the Level-1 (L1) Trigger, consisting of custom-designed programmable hardware (FPGA technology where possible). 
