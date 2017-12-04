@@ -33,12 +33,11 @@ Protons from a hydrogen gas source are accelerated to 50\MeV and are injected in
 In the PS, the protons are accelerated to 26\GeV and are injected into the Super Proton Synchrotron (SPS) where they are accelerated to 450\GeV before finally entering the LHC~\ref{fig:cern-accelerator-complex}. 
 When operating with lead ions, Linear accelerator 3 (Linac3) is used to initially accelerate the ions before injecting them into the Proton Synchrotron Booster, before the ions use the same accelerators as the protons do to prepare them for use in the LHC\~cite{Bruning:782076}. 
 
-The LHC beam requires 1232 dipole magnets to bend the beam along its circular path and 392 quadrupole magnets to focus the beams, with each magnet producing a 8.3T field whilst operating at 1.9K.
-Sixteen Radio Frequency (RF) cavities (eight per beam) are used to accelerate the beams up to their designed operational energies of 7\TeV over the course of circa twenty minutes. 
-Each cavity operates at frequency of 400\MHz, at a temperature of 4.5K, delivering a maximum of 2 MV. 
-The charged particles which pass through the cavities are accelerated by the energy imparted by the resonant electromagnetic field. 
-If a charged particle arrives out of synchronisation with the operational frequency, such particles are either accelerated or decelerated so that they stay close to the energy of the ideal particle. 
-This results in the charged particles being grouped into bunches before magnets near each of the four interaction points bend the beams so that they collide in the heart of the four main detectors.
+Sixteen Radio Frequency (RF) cavities (eight per beam), each operating at frequency of 400\MHz, at a temperature of 4.5K, and delivering a maximum of 2 MV, are used to accelerate the two beams up to their designed operational energies of 7\TeV over the course of circa twenty minutes.
+Each of the two beams are accelerated in separate beam pipes, circulating in opposite directions,and requires 1232 dipole magnets to bend them along their circular path and 392 quadrupole magnets to focus them, with each magnet producing a 8.3T field whilst operating at 1.9K.
+%The charged particles which pass through the cavities are accelerated by the energy imparted by the resonant electromagnetic field. 
+%If a charged particle arrives out of synchronisation with the operational frequency, such particles are either accelerated or decelerated so that they stay close to the energy of the ideal particle. 
+%This results in the charged particles being grouped into bunches before magnets near each of the four interaction points bend the beams so that they collide in the heart of the four main detectors.
 A more detailed description of the LHC accelerator chain at CERN can be found in~\cite{Schindl:397574}. 
 
 \begin{figure}[htbp]
@@ -53,21 +52,16 @@ A more detailed description of the LHC accelerator chain at CERN can be found in
 
 \subsubsection{Overview}
 The Compact Muon Solenoid (CMS) is a large, general purpose, hermetic particle detector and the smaller of the two multi-purpose experiments operating at the LHC at CERN.
-A 4T superconducting solenoid encompasses, moving from the centre of the detector outwards, an all silicon tracking detector, a homogeneous lead tungstate electromagnetic calorimeter (ECAL)and hadronic calorimeter (HCAL) comprised of plastic scintillating tiles interspaced with brass absorbers.
-Beyond the solenoid there is an outer hadronic calorimeter (HO) [ note it's limited size and function ] and interspaced between the iron return yoke are three different types of Muon Detectors.
+A superconducting solenoid encompasses, moving from the interaction point at the centre of the detector outwards, an all silicon tracking detector, a homogeneous lead tungstate electromagnetic calorimeter (ECAL)and hadronic calorimeter (HCAL) comprised of plastic scintillating tiles interspaced with brass absorbers.
+Beyond the solenoid there is an outer hadronic calorimeter (HO) \footnote{Given the outer hadronic calorimeter's limited size and function, it will not be discussed further here. A thorough description of the HO can be found in~\cite{HO}} and interspaced between the iron return yoke are three different types of Muon Detectors.
 There is also a pair of very-forward calorimeters (HF) in the extended rapidity region\cite{oldcms}.
 
-Naturally, these detectors were designed in order to investigate the wide range of physics phenomena in the LHC's physics program, resulting in the 
+These detectors were designed in order to investigate the wide range of physics phenomena in the LHC's physics program, resulting in the accurate and precise identification and measurement of electrons, photons, jets and muons over both a large energy and momenta range.
+Full detector resolution is achieved across $|\eta| < 3.0$, with the hadronic calorimetry having an extended coverage up to $|\eta| < 5.0$ in order to ensure good dijet mass and \MET resolutions.
 
-The barrel 
+Both the expected high fluence of the LHC environment and 
 
-Talk about hermeticity - how it links into good MET
-
-The CMS detector covers the psuedo-rapidity range $\eta < 3$ at full resolution and covers an extended range $\eta < 5$ with the bending power being provided by a 13m long, 6m inner diameter, 4T superconducting solenoid.
-
-
-
-%The need for such a magnet comes from the requirement to precisely measure the momentum of high-energy charged particles, for high momentum charged particles spend less time passing through magnetic fields, resulting in a less curved trajectory. The more powerful the magnet, the more precisely high-energy charged particles can be measured due to their greater displacement\cite{oldcms}.
+%%% Cordinate system?
 
 \begin{figure}[htbp]
 \begin{center}
@@ -76,7 +70,6 @@ The CMS detector covers the psuedo-rapidity range $\eta < 3$ at full resolution 
 \label{fig:cern-accelerator-complex}
 \end{center}
 \end{figure}
-
 
 %%%
 
@@ -98,6 +91,7 @@ There are also hadron calorimeters in the central rapidity region outside the so
 
 \subsubsection{The Superconducting Magnet}
 Encompassing the tracker and calorimetry, is one of the defining features of the CMS detector, its superconducting solenoid.
+Being 13m long, 5.9m in inner diameter 
 \subsubsection{Muon detectors}
 Detecting muons is incredibly important for CMS (as implied by the experiment’s name), given many of the signatures of interesting events involve them, including those from SUSY models and the so called “gold-plated” SM Higgs decay into a pair of Z0 bosons, which in turn decay into four muons . 
 The gaseous muon detectors used are Drift Tubes (DTs), Cathode Strip Chambers (CSCs) and Resistive Plate Chambers (RPCs). 
