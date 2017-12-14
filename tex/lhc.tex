@@ -35,9 +35,6 @@ When operating with lead ions, Linear accelerator 3 (Linac3) is used to initiall
 
 Sixteen Radio Frequency (RF) cavities (eight per beam), each operating at frequency of 400\MHz, at a temperature of 4.5K, and delivering a maximum of 2 MV, are used to accelerate the two beams up to their designed operational energies of 7\TeV over the course of circa twenty minutes.
 Each of the two beams are accelerated in separate beam pipes, circulating in opposite directions,and requires 1232 dipole magnets to bend them along their circular path and 392 quadrupole magnets to focus them, with each magnet producing a 8.3T field whilst operating at 1.9K.
-%The charged particles which pass through the cavities are accelerated by the energy imparted by the resonant electromagnetic field. 
-%If a charged particle arrives out of synchronisation with the operational frequency, such particles are either accelerated or decelerated so that they stay close to the energy of the ideal particle. 
-%This results in the charged particles being grouped into bunches before magnets near each of the four interaction points bend the beams so that they collide in the heart of the four main detectors.
 A more detailed description of the LHC accelerator chain at CERN can be found in~\cite{Schindl:397574}. 
 
 \begin{figure}[htbp]
@@ -60,7 +57,12 @@ These detectors were designed in order to investigate the wide range of physics 
 Full detector resolution is achieved across $|\eta| < 3.0$, with the hadronic calorimetry having an extended coverage up to $|\eta| < 5.0$ in order to ensure good dijet mass and \MET resolutions.
 Sufficient radiation hardness for the expected high fluence and data acquisition and trigger systems required to handle to event rate of the LHC environment had to be considered in the design of the various detectors.
 
-%%% Cordinate system?
+The coordinate system adopted by the CMS experiment has the origin at the nominal interaction point at the centre of the detector. 
+The z-axis is parallel to the anti-clockwise proton beam (i.e. towards the Jura mountains from the detector), the x-axis points towards the centre of the LHC, and the y-axis points vertically upwards.
+The azimuthal angle, \phi, is the angle measured from the x-axis in the x-y plane and the polar angle, \theta, is the angle measured from the z-axis.
+Pseudorapidity, defined as $\eta \equiv -ln\tan(\theta/2)$, is usually used in lieu of \theta as when the mass considered is negligible \eta converges towards rapidity, defined as $y \equiv	1/2 ln(E+p_{z}/E-p_{Z})$, which is Lorentz invariant along the z-axis.
+As such, variables transverse to the z-axis (i.e. the beam line), such as the transverse energy (\ET), momentum (\pT), and missing energy (\MET), depend only on their x and y components.
+
 
 \begin{figure}[htbp]
 \begin{center}
@@ -73,7 +75,8 @@ Sufficient radiation hardness for the expected high fluence and data acquisition
 %%%
 
 \subsubsection{Tracker}
-The tracker, surrounding the interaction point, is designed to provide efficient precision trajectory measurements of charged particles emerging from collisions and precise reconstruction of secondary vertices over $\eta < 2.5$, whilst operating in a harsh radiation environment .
+The tracker, surrounding the interaction point, is designed to provide efficient precision trajectory measurements of charged particles emerging from collisions and precise reconstruction of secondary vertices over $\eta < 2.5$, whilst operating in a harsh radiation environment.
+
 The tracker is composed of silicon, in order to limit charged particles interacting with the tracker (i.e. scattering, producing Bremsstrahlung), whilst providing the desired accuracy in track reconstruction\cite{oldcms}.
 
 Measuring 5.8m 
@@ -81,22 +84,32 @@ Measuring 5.8m
 %%Phase 1
 During the 2016/2017 End of Year Technical Stop, 
 \subsubsection{Electromagnetic Calorimeter}
-The ECAL measures the energies of electrons and fermions through the scintillations they cause, which are proportional to their energy, as they pass through it.
+The ECAL 
+measures the energies of electrons and fermions through the scintillations they cause, which are proportional to their energy, as they pass through it.
 The very dense lead tungstate crystals only emit a small amount of light (which has to be amplified), the light they do emit is well defined, short, and fast, resulting in precise data with very little latency\cite{oldcms}. 
 
 \subsubsection{Hadronic Calorimeter}
-The HCAL, comprised of brass/steel absorber plates interspersed with plastic scintillators, measures hadrons energies over the barrel and endcap regions. 
+The HCAL, comprised of brass/steel absorber plates interspersed with plastic scintillators, measures hadrons' energies over the barrel and endcap regions.
+
+
+
 There are also hadron calorimeters in the central rapidity region outside the solenoid coils (HO) and covering the extended $3.0 < \eta < 5.0$ rapidity region (HF)\cite{Bayatian:2006zz}. 
 
-\subsubsection{The Superconducting Magnet}
-Encompassing the tracker and calorimetry, is one of the defining features of the CMS detector, its superconducting solenoid.
-Being 13m long, 5.9m in inner diameter 
+\subsubsection{The Superconducting Solenoid}
+One of the defining features of the CMS detector is the superconducting solenoid which encompasses the silicon tracker and calorimetry.
+The 220T cylindrical coil measures 13m long, has a 5.9m inner diameter, is situated inside a vacuum tank where it is cooled to its operation temperature by liquid helium to 4.5K, and operates at magnetic field of 3.8 Tesla\footnote{Whilst the solenoid was designed to operate at 4T, the CMS collaboration chose to operate it at 3.8T in order maximise the lifetime of the apparatus}.
+The large bending power within the solenoid not only provides excellent momentum resolution for charged particles within the tracking detector, but it also prevents low transverse momentum charged particles from reaching the calorimetry and negatively impacting on energy resolution and isolation efficiency.
+An iron return yoke guides and contains the return magnet field, which is sufficiently strong (~1.7T in the barrel and outermost endcap disk) enough to enable accurate momentum resolution for tracking and charge identification of high momentum (~1\TeVc) muons.
+
 \subsubsection{Muon detectors}
-Detecting muons is incredibly important for CMS (as implied by the experiment’s name), given many of the signatures of interesting events involve them, including those from SUSY models and the so called “gold-plated” SM Higgs decay into a pair of Z0 bosons, which in turn decay into four muons . 
+Detecting muons is incredibly important for CMS (as implied by the experiment’s name), given many of the signatures of interesting events involve them, including those from SUSY models and the so called “gold-plated” SM Higgs decay into a pair of $Z^{0}$ bosons, which in turn decay into four muons . 
+As muons as Minimum Ionising Particles (MIPs), 
 The gaseous muon detectors used are Drift Tubes (DTs), Cathode Strip Chambers (CSCs) and Resistive Plate Chambers (RPCs). 
+
 The DTs and CSCs provide precise measurement coverage over the $\eta < 1.2$ (barrel) and $0.9 < \eta < 2.4$ (endcap) regions respectively. 
+
 RPCs provide complimentary coverage over $\eta < 1.6$, and while having coarser position resolution than the DTs and CPCs, they have fast response times and excellent time resolution. 
-Combining trigger candidates from the three systems gives an improved momentum resolution and efficiency than the stand-alone information from each of the individual systems\cite{oldcms}. 
+Combining trigger candidates from the three systems gives an improved momentum resolution and efficiency than the stand-alone information from each of the individual systems\cite{oldcms}.
 
 \subsubsection{Trigger and Data Acquisition Systems}
 At design luminosity, the LHC bunch crossing (BX) rate of 40\MHz leads to an event rate of $\approx~10^{9}$ inelastic events per second.
