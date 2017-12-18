@@ -49,8 +49,9 @@ A more detailed description of the LHC accelerator chain at CERN can be found in
 
 \subsubsection{Overview}
 The Compact Muon Solenoid (CMS) is a large, general purpose, hermetic particle detector and the smaller of the two multi-purpose experiments operating at the LHC at CERN.
-A superconducting solenoid encompasses, moving from the interaction point at the centre of the detector outwards, an all silicon tracking detector, a homogeneous lead tungstate electromagnetic calorimeter (ECAL)and hadronic calorimeter (HCAL) comprised of plastic scintillating tiles interspaced with brass absorbers.
-Beyond the solenoid there is an outer hadronic calorimeter (HO) \footnote{Given the outer hadronic calorimeter's limited size and function, it will not be discussed further here. A thorough description of the HO can be found in~\cite{HO}} and interspaced between the iron return yoke are three different types of Muon Detectors.
+The experiment is divided into a central cylindrical barrel section and two endcap disk sections at each end of the barrel.
+A superconducting solenoid encompasses, moving from the interaction point at the centre of the detector outwards, an all silicon tracking detector, a homogeneous lead tungstate ($PbWO_{4}$) electromagnetic calorimeter (ECAL)and hadronic calorimeter (HCAL) comprised of plastic scintillating tiles interspaced with brass absorbers.
+Beyond the solenoid there is an outer hadronic calorimeter (HO) and interspaced between the iron return yoke are three different types of Muon Detectors.
 There is also a pair of very-forward calorimeters (HF) in the extended rapidity region\cite{oldcms}.
 
 These detectors were designed in order to investigate the wide range of physics phenomena in the LHC's physics program, resulting in the accurate and precise identification and measurement of electrons, photons, jets and muons over both a large energy and momenta range.
@@ -75,25 +76,46 @@ As such, variables transverse to the z-axis (i.e. the beam line), such as the tr
 %%%
 
 \subsubsection{Tracker}
-The tracker, surrounding the interaction point, is designed to provide efficient precision trajectory measurements of charged particles emerging from collisions and precise reconstruction of secondary vertices over $\eta < 2.5$, whilst operating in a harsh radiation environment.
+The tracker, surrounding the interaction point, is designed to provide efficient precision trajectory measurements of charged particles emerging from collisions and precise reconstruction of vertices over $\eta < 2.5$, whilst operating in a harsh radiation environment (max flux $\approx 10^{7}/s$) and minimising the number charged particles interacting with the tracker (i.e. scattering, producing Bremsstrahlung).
+Silicon fulfills these requirements, but as well as the material budget, a financial budget had to be also considered.
+As the fluence is sufficiently 
 
 The tracker is composed of silicon, in order to limit charged particles interacting with the tracker (i.e. scattering, producing Bremsstrahlung), whilst providing the desired accuracy in track reconstruction\cite{oldcms}.
 
 Measuring 5.8m 
 
 %%Phase 1
-During the 2016/2017 End of Year Technical Stop, 
+During the End of Year Technical Stop that took place between data taking in 2015 and 2016, the silicon tracker was completely replaced. 
+
 \subsubsection{Electromagnetic Calorimeter}
-The ECAL 
-measures the energies of electrons and fermions through the scintillations they cause, which are proportional to their energy, as they pass through it.
-The very dense lead tungstate crystals only emit a small amount of light (which has to be amplified), the light they do emit is well defined, short, and fast, resulting in precise data with very little latency\cite{oldcms}. 
+Beyond the tracker, the ECAL, a homogeneous calorimeter, measures the energies of electrons and photons using lead tungstate scintillating crystals. 
+The choice of using lead tungstate crystals was based on the needs of both having a compact detector which could fit with the HCAL inside the solenoid and containing the showers' energy within this calorimeter, which were met with its short radiation length (0.89\cm) and small Molier\'{e} radius (2.2\cm).
+
+61,200 crystals are mounted in the barrel, with 7,324 crystals for each endcap.
+As the crystals only emit a small amount of scintillation light, the photodetectors used to amplify the light must be able to operate within the solenoid's field and and withstand the high radiation environment.
+Avalanche photosdiodes and the more radiation hard vacuum photodiodes are used in the barrel and endcap regions respectively.
+The emitted light emitted by these crystals is short, well defined and fast, with 80\% collected within one 25\ns bunch crossing, with the signals being digitised on-detector and buffered until a Level-1 Trigger decision has been made.
+Information to the Level-1 Calorimeter Trigger
+
+The barrel and endcap cystal systems are supplemented by a Preshower (ES) device, located in front of the ECAL endcaps, for discrimination between neutral pions and photons within the fidicial region $1.653 < |\eta| < 2.6$.
+For each detector, two lead radiators initiate the electromagnetic showers and two silicon strip sensors, orthogonal to one another to provide fine resolution, are placed after the radiators measure the energy deposited.
+The thickness of the radiators was chosen to ensure ~95\% of incident photons shower before reaching the second silicon strip sensor, namely two and one radiation lengths for the first and second lead radiators respectively.
+
+%Following the excellent performance during Run I of the LHC, with an energy resolution of 0.3\% exceeding the design value of 0.5\%, the ECAL has continued to perform admirably, with .... \cite{TeixeiradeLima:2017tmj} %%ECAL performance Run II
 
 \subsubsection{Hadronic Calorimeter}
-The HCAL, comprised of brass/steel absorber plates interspersed with plastic scintillators, measures hadrons' energies over the barrel and endcap regions.
+Hadronic particles penetrate through the ECAL into the HCAL, where hadronic jets have their energies measured and are contained for determination of the missing transverse energy and protection of the muon detectors~\cite{HCAL:tdr}.
+As such, the HCAL was designed to have as much absorber material within the solenoid coil as practical. 
+The barrel (HB) and and endcap (HE) both use plastic scintillator tiles interspersed between brass and steel absorber plates, with the latter being used for the external plates for structural strengthening.
+Wavelength shifting fibres embedding in the tiles converts the scintillated light and channels it to hybrid photodiodes.
+The HB covers the rapidity range $|\eta| < 1.4$, with the HE overlapping it and providing coverage over the range $1.3 < |\eta| < 3.0$.
 
+Due to space constraints within the solenoid, the HB cannot fully contain hadronic showers and as such is supplemented by an additional calorimeter in the barrel region outside the coil (HO) \footnote{Given the outer hadronic calorimeter's limited size and function, it will not be discussed further here. A thorough description of the HO can be found in~\cite{HO}}.
 
-
-There are also hadron calorimeters in the central rapidity region outside the solenoid coils (HO) and covering the extended $3.0 < \eta < 5.0$ rapidity region (HF)\cite{Bayatian:2006zz}. 
+The forward calorimeters (HF) overlap with the HE and cover the $2.9 < \eta < 5.0$ rapidity region \cite{HF}.
+As the forward region experiences the most severe radiation environment, the technology used must be able to withstand such large radiation doses($~10^{9}$ rad). 
+Interspaced between steel absorbers, quartz fibres are used produce Cherenkov light due to their radiation hardness, fast response time, production of Cherenkov radiation above a certain energy threshold (thus ignoring low energy particles), and ability to give directional information due to the light being strongly correlated with the showers' trajectories.
+The Cherenkov light produced is transmitted down the fibres to individually shielded photomultiplier tubes contained in readout boxes.
 
 \subsubsection{The Superconducting Solenoid}
 One of the defining features of the CMS detector is the superconducting solenoid which encompasses the silicon tracker and calorimetry.
@@ -103,27 +125,30 @@ An iron return yoke guides and contains the return magnet field, which is suffic
 
 \subsubsection{Muon detectors}
 Detecting muons is incredibly important for CMS (as implied by the experiment’s name), given many of the signatures of interesting events involve them, including those from SUSY models and the so called “gold-plated” SM Higgs decay into a pair of $Z^{0}$ bosons, which in turn decay into four muons . 
-As muons as Minimum Ionising Particles (MIPs), 
-The gaseous muon detectors used are Drift Tubes (DTs), Cathode Strip Chambers (CSCs) and Resistive Plate Chambers (RPCs). 
+Being Minimum Ionising Particles (MIPs), muons pass through the detector and past the magnet with minimal interaction.
+Consequently, the muon systems are placed outside the solenoid and provide a strong clean signals which can be triggered upon.
 
-The DTs and CSCs provide precise measurement coverage over the $\eta < 1.2$ (barrel) and $0.9 < \eta < 2.4$ (endcap) regions respectively. 
+Given that the magnetic field outside the solenoid is non-uniform and the radiation environment varies, differing detector technologies are used in order to provide a high performance system which delivers the fast identification and momentum resolution required. 
+Interspaced between the iron return yoke rings and disks are three gaseous detector technologies: Drift Tubes (DTs), Cathode Strip Chambers (CSCs) and Resistive Plate Chambers (RPCs).
 
-RPCs provide complimentary coverage over $\eta < 1.6$, and while having coarser position resolution than the DTs and CPCs, they have fast response times and excellent time resolution. 
+The DTs are gaoperate in the barrel region across $|\eta| < 1.2$.
+These
+
+Interspaced between the iron return yoke rings and disks used are Drift Tubes (DTs) in the barrel covering , Cathode Strip Chambers (CSCs) in the endcaps covering $0.9 < \eta < 2.4$ and Resistive Plate Chambers (RPCs) in both barrel and endcaps across $|\eta| < 1.6$.
+
+
+The barrel region experiences 
+
+RPCs provide complimentary coverage to the DTs and CSCs, and while having coarser position resolution than the DTs and CPCs, they have fast response times and excellent time resolution.
+
 Combining trigger candidates from the three systems gives an improved momentum resolution and efficiency than the stand-alone information from each of the individual systems\cite{oldcms}.
 
 \subsubsection{Trigger and Data Acquisition Systems}
 At design luminosity, the LHC bunch crossing (BX) rate of 40\MHz leads to an event rate of $\approx~10^{9}$ inelastic events per second.
-Given the impossibility of storing such a volume of data, let alone process it, the trigger system has to drastically reduce the data rate by selecting ``interesting'' events for storage for later analysis.
 
-%% Data acquistion?
+Given the impossibility of storing such a volume of data, let alone reading all of it off the detector, the trigger system has to drastically reduce the data rate by selecting ``interesting'' events for storage for later analysis.
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.97\textwidth]{figs/cms/trigger.png}
-\caption{L-1 Trigger Architecture. Both muon and calorimeter triggers search for candidates locally before creating coarser datasets by passing on the most promising candidates to a higher level, and so on until the Global Trigger makes a final decision. However, unlike the Calorimeter Trigger, which looks at all the calorimeter systems concurrently, the Muon Trigger locally triggers on each of its detector technologies separately before submitting them to the Global Muon Trigger (with input from the Regional Calorimeter Trigger) before passing on fitted candidates to the Global Trigger.}
-\label{fig:trigger}
-\end{center}
-\end{figure}
+
 
 \subsubsection{Level-1 Trigger}
 The first step is the Level-1 (L1) Trigger, consisting of custom-designed programmable hardware (FPGA technology where possible). 
@@ -140,4 +165,13 @@ In light of this, the current approach of having large amounts of data over smal
 While this approach creates candidates within these constraints, by definition only the candidates from this coarser data set can be considered. 
 Any candidates in the discarded data are lost\cite{oldcms}.
 
-\subsubsection{High Level Trigger}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.97\textwidth]{figs/cms/trigger.png}
+\caption{L-1 Trigger Architecture. Both muon and calorimeter triggers search for candidates locally before creating coarser datasets by passing on the most promising candidates to a higher level, and so on until the Global Trigger makes a final decision. However, unlike the Calorimeter Trigger, which looks at all the calorimeter systems concurrently, the Muon Trigger locally triggers on each of its detector technologies separately before submitting them to the Global Muon Trigger (with input from the Regional Calorimeter Trigger) before passing on fitted candidates to the Global Trigger.}
+\label{fig:trigger}
+\end{center}
+\end{figure}
+
+%ECAL and trigger primitives generated and , with the former being buffered until the Level-1 Calorimeter makes a decision based off the latter.
+
