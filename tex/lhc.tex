@@ -76,16 +76,32 @@ As such, variables transverse to the z-axis (i.e. the beam line), such as the tr
 %%%
 
 \subsubsection{Tracker}
-The tracker, surrounding the interaction point, is designed to provide efficient precision trajectory measurements of charged particles emerging from collisions and precise reconstruction of vertices over $\eta < 2.5$, whilst operating in a harsh radiation environment (max flux $\approx 10^{7}/s$) and minimising the number charged particles interacting with the tracker (i.e. scattering, producing Bremsstrahlung).
-Silicon fulfills these requirements, but as well as the material budget, a financial budget had to be also considered.
-As the fluence is sufficiently 
+The tracker, surrounding the interaction point, is designed to provide efficient precision trajectory measurements of charged particles emerging from collisions and precise reconstruction of vertices, whilst operating in a harsh radiation environment (max flux $\approx 10^{7}/s$) and minimising the number charged particles interacting with the tracker (i.e. scattering, producing Bremsstrahlung).
+Silicon fulfils these requirements and is used in the inner pixel detector, surrounding the interaction point, and microstrip detector, which encloses the pixel detector.
+The high fluence expected closest to the interaction point requires the high granularity pixels provide in order to ensure a low channel occupancy, but the particle flux from $20cm > r$ is sufficiently low enough that microstrips can be used without compromising reconstruction efficiency.
 
-The tracker is composed of silicon, in order to limit charged particles interacting with the tracker (i.e. scattering, producing Bremsstrahlung), whilst providing the desired accuracy in track reconstruction\cite{oldcms}.
+Overall, the tracker measures 5.8m, with a 2.5m radius and provides coverage over $\eta < 2.5$.
+The silicon microstrip detector is comprised of four parts: the Tracker Inner Barrel (TIB) and Tracker Inner Disks (TID) from $20 < r < 55\cm$, and the Tracker Outer Barrel (TOB) and Tracker EndCaps (TEC) from $55 < r < 116\cm$.
+The sensors are single sided silicon wafers...
+%%%
 
-Measuring 5.8m 
+The original silicon pixel detector was comprised of three 53.3\cm long barrel layers at mean radii of 4.4, 7.3 and 10.2\cm and two endcap disks either side of the barrel at $|z| = 34.5 and 46.5\cm$ that extend from $r = 6.0 to 15\cm$.
+Each of the 66 million pixels measures $100x150\mum^{2}$ and cover, a total surface area of 1.06$m^{2}$.
+The sensors consist of n+-type implants on n-type silicon which are by indium bump-bonds to highly integrated readout chips (ROC).
+The high resolution provided by the pixels allows for the precise calculation of the track 
 
 %%Phase 1
-During the End of Year Technical Stop that took place between data taking in 2015 and 2016, the silicon tracker was completely replaced. 
+A replacement pixel detector though is necessary before the LHC begins Phase-1 operations following Long Shutdown 2\cite{CMS:2012sda} as the ``Phase 0'' pixel detector was designed to operate a nominal instantaneous luminosity of $1x10^{34}\percms$.
+With the increase in \PU from running at a higher instantaneous luminosity with the same 25\ns bunch spacing, the original pixel detector will be unable to cope with the increased rate without suffering track reconstruction efficiency degradation.
+
+Therefore during the End of Year Technical Stop that took place between data taking in 2015 and 2016, the pixel detector was completely replaced.
+Like the original pixel detector, the Phase 1 detector's 124 million pixels also measure $100x150\mum^{2}$ (covering a total surface area of 1.95 $m^{2}$) and the sensors are also n+-type implants on n-type silicon
+
+The Phase 1 Pixel detector is comprised of four 54.9\cm long barrel layers at mean radii of 3.0, 6.8, 10.9 and 16.0\cm and three endcap disks at each end of the barrel at $|z| = 29.1, 39.6 and 51.6\cm$ that extend from $r = 4.5 to 16.1\cm$.
+
+Collectively, the barrel layers and endcap disks, have been optimise
+
+%First results for phase-1 \cite{Sonneveld:2297549}
 
 \subsubsection{Electromagnetic Calorimeter}
 Beyond the tracker, the ECAL, a homogeneous calorimeter, measures the energies of electrons and photons using lead tungstate scintillating crystals. 
@@ -131,7 +147,7 @@ Consequently, the muon systems are placed outside the solenoid and provide a str
 Given that the magnetic field outside the solenoid is non-uniform and the radiation environment varies, differing detector technologies are used in order to provide a high performance system which delivers the fast identification and momentum resolution required. 
 Interspaced between the iron return yoke rings and disks are three gaseous detector technologies: Drift Tubes (DTs), Cathode Strip Chambers (CSCs) and Resistive Plate Chambers (RPCs).
 
-The DTs are gaoperate in the barrel region across $|\eta| < 1.2$.
+The DTs operate in the barrel region across $|\eta| < 1.2$.
 These
 
 Interspaced between the iron return yoke rings and disks used are Drift Tubes (DTs) in the barrel covering , Cathode Strip Chambers (CSCs) in the endcaps covering $0.9 < \eta < 2.4$ and Resistive Plate Chambers (RPCs) in both barrel and endcaps across $|\eta| < 1.6$.
@@ -145,7 +161,7 @@ Combining trigger candidates from the three systems gives an improved momentum r
 
 \subsubsection{Trigger and Data Acquisition Systems}
 At design luminosity, the LHC bunch crossing (BX) rate of 40\MHz leads to an event rate of $\approx~10^{9}$ inelastic events per second.
-
+This equates to 
 Given the impossibility of storing such a volume of data, let alone reading all of it off the detector, the trigger system has to drastically reduce the data rate by selecting ``interesting'' events for storage for later analysis.
 
 
