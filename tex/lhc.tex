@@ -147,18 +147,17 @@ Consequently, the muon systems are placed outside the solenoid and provide a str
 Given that the magnetic field outside the solenoid is non-uniform and the radiation environment varies, differing detector technologies are used in order to provide a high performance system which delivers the fast identification and momentum resolution required. 
 Interspaced between the iron return yoke rings and disks are three gaseous detector technologies: Drift Tubes (DTs), Cathode Strip Chambers (CSCs) and Resistive Plate Chambers (RPCs).
 
-The DTs operate in the barrel region across $|\eta| < 1.2$, where the magnetic field strength is low as most of the return field is contained in the iron yoke,	and are organised into four stations cylindrical of layers.
-For each of the four stations, the DT chambers are subdivided into three ``superlayers'' (/SLs), comprised of four layers of DTs, where the outer SLs measure coordinates in the r-\phi plane and the inner SL measures in the r-z plane (which the outermost station lacks), which provides point resolutions of $\approx 200\mum$ and a \phi directional precision of $\approx 1 mrad$.
+The DTs operate in the barrel region across $|\eta| < 1.2$, where the magnetic field strength is low as most of the return field is contained in the iron yoke,	and each tube is $4.2\cm x 1.3\cm$ cell filled with an Ar/$CO_{2}$ mixture of 85\%/15\%.
+The DT chambers are organised into four stations cylindrical of layers and for each stations, the chambers are subdivided into three ``superlayers'' (/SLs).
+Each SL is comprised of four layers of DTs, where the outer SLs measure coordinates in the r-\phi plane and the inner SL measures in the r-z plane (which the outermost station lacks), which provides point resolutions of $\approx 200\mum$ and a \phi directional precision of $\approx 1 mrad$.
 
 CSCs are employed in the endcaps across $0.9 < \eta < 2.4$ , where the mangetic field is non-uniform and there is a higher rate of muons than in the barrel, and are organised into four stations of concentric disks.
-%%? 
-Each CSC is composed of six gas gaps, with six anode wires running almost perpendicularly between cathode panels, where one panel is continous and the other
+Each CSC is composed of six gas gaps, with six planes anode wires running almost perpendicularly to six planes of cathode strips, and thus provides six position measurements per chamber with a precision in the r-\phi plane of 75\mum for the first station and 150\mum for the other stations\cite{CMS:1997iti}.
 
-
-RPCs provide coverage over $|\eta| < 1.8$\footnote{Originally coverage only extended to $|\eta| < 1.6$, instead of the planned $|\eta| < 2.1$, for financial reasons. During Long Shutdown 1 (), a fourth endcap disk with RPCs was installed which extended coverage up to $|\eta| < 1.8$\cite{Battilana:2017mrm}}, which whilst having coarser position resolution than the DTs and CPCs, have fast response times and excellent time resolution.
+RPCs provide coverage over $|\eta| < 1.8$\footnote{Originally coverage only extended to $|\eta| < 1.6$, instead of the planned $|\eta| < 2.1$, for financial reasons. During Long Shutdown 1 (2013-2015), a fourth endcap disk with RPCs was installed which extended coverage up to $|\eta| < 1.8$\cite{Battilana:2017mrm}}, which whilst having a coarser position resolution (\approx 1\cm) than the DTs and CPCs, have fast response times and excellent time resolution (\approx 2\ns).
 As such, RPCs provide addition but complimentary input to trigger decisions.
-%% What are they made of
-
+A RPC is formed of two parallel resistive plates, separated by a few millimetres, with a large electric field applied across the gas filled gap.
+The barrel contains six layers of RPCs, two layers in the first two stations and one in each of the outer stations, and the endcaps have 4 RPC disks each, one for each CSC station.
 
 \subsubsection{Trigger and Data Acquisition Systems}
 At design luminosity, the LHC bunch crossing (BX) rate of 40\MHz leads to an event rate of $\approx~10^{9}$ inelastic events per second.
