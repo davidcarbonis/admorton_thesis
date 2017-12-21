@@ -95,7 +95,7 @@ A replacement pixel detector though is necessary before the LHC begins Phase-1 o
 With the increase in \PU from running at a higher instantaneous luminosity with the same 25\ns bunch spacing, the original pixel detector will be unable to cope with the increased rate without suffering track reconstruction efficiency degradation.
 
 Therefore during the End of Year Technical Stop that took place between data taking in 2015 and 2016, the pixel detector was completely replaced.
-Like the original pixel detector, the Phase 1 detector's 124 million pixels also measure $100x150\mum^{2}$ (covering a total surface area of 1.95 $m^{2}$) and the sensors are also n+-type implants on n-type silicon
+Like the original pixel detector, the Phase 1 detector's 124 million pixels also measure $100x150\mum^{2}$ (covering a total surface area of 1.95 $m^{2}$) and the sensors are also n+-type implants on n-type silicon.
 
 The Phase 1 Pixel detector is comprised of four 54.9\cm long barrel layers at mean radii of 3.0, 6.8, 10.9 and 16.0\cm and three endcap disks at each end of the barrel at $|z| = 29.1, 39.6 and 51.6\cm$ that extend from $r = 4.5 to 16.1\cm$.
 
@@ -147,24 +147,23 @@ Consequently, the muon systems are placed outside the solenoid and provide a str
 Given that the magnetic field outside the solenoid is non-uniform and the radiation environment varies, differing detector technologies are used in order to provide a high performance system which delivers the fast identification and momentum resolution required. 
 Interspaced between the iron return yoke rings and disks are three gaseous detector technologies: Drift Tubes (DTs), Cathode Strip Chambers (CSCs) and Resistive Plate Chambers (RPCs).
 
-The DTs operate in the barrel region across $|\eta| < 1.2$.
-These
+The DTs operate in the barrel region across $|\eta| < 1.2$, where the magnetic field strength is low as most of the return field is contained in the iron yoke,	and are organised into four stations cylindrical of layers.
+For each of the four stations, the DT chambers are subdivided into three ``superlayers'' (/SLs), comprised of four layers of DTs, where the outer SLs measure coordinates in the r-\phi plane and the inner SL measures in the r-z plane (which the outermost station lacks), which provides point resolutions of $\approx 200\mum$ and a \phi directional precision of $\approx 1 mrad$.
 
-Interspaced between the iron return yoke rings and disks used are Drift Tubes (DTs) in the barrel covering , Cathode Strip Chambers (CSCs) in the endcaps covering $0.9 < \eta < 2.4$ and Resistive Plate Chambers (RPCs) in both barrel and endcaps across $|\eta| < 1.6$.
+CSCs are employed in the endcaps across $0.9 < \eta < 2.4$ , where the mangetic field is non-uniform and there is a higher rate of muons than in the barrel, and are organised into four stations of concentric disks.
+%%? 
+Each CSC is composed of six gas gaps, with six anode wires running almost perpendicularly between cathode panels, where one panel is continous and the other
 
 
-The barrel region experiences 
+RPCs provide coverage over $|\eta| < 1.8$\footnote{Originally coverage only extended to $|\eta| < 1.6$, instead of the planned $|\eta| < 2.1$, for financial reasons. During Long Shutdown 1 (), a fourth endcap disk with RPCs was installed which extended coverage up to $|\eta| < 1.8$\cite{Battilana:2017mrm}}, which whilst having coarser position resolution than the DTs and CPCs, have fast response times and excellent time resolution.
+As such, RPCs provide addition but complimentary input to trigger decisions.
+%% What are they made of
 
-RPCs provide complimentary coverage to the DTs and CSCs, and while having coarser position resolution than the DTs and CPCs, they have fast response times and excellent time resolution.
-
-Combining trigger candidates from the three systems gives an improved momentum resolution and efficiency than the stand-alone information from each of the individual systems\cite{oldcms}.
 
 \subsubsection{Trigger and Data Acquisition Systems}
 At design luminosity, the LHC bunch crossing (BX) rate of 40\MHz leads to an event rate of $\approx~10^{9}$ inelastic events per second.
 This equates to 
 Given the impossibility of storing such a volume of data, let alone reading all of it off the detector, the trigger system has to drastically reduce the data rate by selecting ``interesting'' events for storage for later analysis.
-
-
 
 \subsubsection{Level-1 Trigger}
 The first step is the Level-1 (L1) Trigger, consisting of custom-designed programmable hardware (FPGA technology where possible). 
