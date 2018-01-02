@@ -118,6 +118,8 @@ A more detailed description of the Phase-1 Pixel detector can be found in~\cite{
 %%Like the original pixel detector, the Phase 1 detector's 124 million pixels also measure $100x150\mum^{2}$ (covering a total surface area of 1.95 $m^{2}$) and the sensors are also n+-type implants on n-type silicon.
 %%The Phase 1 Pixel detector is comprised of four 54.9\cm long barrel layers at mean radii of 3.0, 6.8, 10.9 and 16.0\cm and three endcap disks at each end of the barrel at $|z| = 29.1, 39.6 and 51.6\cm$ that extend from $r = 4.5 to 16.1\cm$.
 
+WRITE BIT ABOUT TRACK RECO EFF AND MAYBE RESOLUTIONS FOR 2016 TOO?
+
 \subsubsection{Electromagnetic Calorimeter}\label{subsubsec:ECAL}
 Beyond the tracker, the ECAL~\cite{CMS:1997ysd,CMS:2002xia}, a homogeneous calorimeter, measures the energies of electrons and photons using lead tungstate scintillating crystals. 
 The choice of using lead tungstate crystals was based on the needs of both having a compact detector which could fit with the HCAL inside the solenoid and containing the showers' energy within this calorimeter, which were met with its short radiation length (0.89\cm) and small Molier\'{e} radius (2.2\cm).
@@ -139,6 +141,9 @@ The thickness of the radiators was chosen to ensure ~95\% of incident photons sh
 \end{center}
 \end{figure}
 
+
+WRITE BIT ABOUT ENERGY RESOLUTION FOR 2016
+
 %Following the excellent performance during Run I of the LHC, with an energy resolution of 0.3\% exceeding the design value of 0.5\%, the ECAL has continued to perform admirably, with .... \cite{TeixeiradeLima:2017tmj} %%ECAL performance Run II
 
 \subsubsection{Hadronic Calorimeter}\label{subsubsec:HCAL}
@@ -154,6 +159,8 @@ The forward calorimeters (HF)~\cite{HF} overlap with the HE and cover the $2.9 <
 As the forward region experiences the most severe radiation environment, the technology used must be able to withstand such large radiation doses($~10^{9}$ rad). 
 Interspaced between steel absorbers, quartz fibres are used produce Cherenkov light due to their radiation hardness, fast response time, production of Cherenkov radiation above a certain energy threshold (thus ignoring low energy particles), and ability to give directional information due to the light being strongly correlated with the showers' trajectories.
 The Cherenkov light produced is transmitted down the fibres to individually shielded photomultiplier tubes contained in readout boxes.
+
+WRITE BIT ABOUT ENERGY RESOLUTION FOR 2016
 
 \subsubsection{The Superconducting Solenoid}\label{subsubsec:magnet}
 One of the defining features of the CMS detector is the superconducting solenoid which encompasses the silicon tracker and calorimetry~\cite{Acquistapace:1997fm,Herve:2000}.
@@ -187,18 +194,18 @@ Each CSC is composed of six gas gaps, with six planes anode wires running almost
 
 RPCs provide coverage over $|\eta| < 1.8$, which originally only extended to $|\eta| < 1.6$, instead of the planned $|\eta| < 2.1$, for financial reasons. 
 During LS1, a fourth endcap disk with RPCs was installed which extended coverage to the current coverage of $|\eta| < 1.8$\cite{Battilana:2017mrm}.
-Although the RPCs have a coarser position resolution (\approx 1\cm) than the DTs and CPCs, have fast response times and excellent time resolution (\approx 2\ns).
+Although the RPCs have a coarser position resolution (\approx 1\cm) than the DTs and CPCs, have fast response times and excellent time resolution (\approx $2\ns$).
 As such, RPCs provide addition but complimentary input to trigger decisions.
 A RPC is formed of two parallel resistive plates, separated by a few millimetres, with a large electric field applied across the gas filled gap.
 The barrel contains six layers of RPCs, two layers in the first two stations and one in each of the outer stations, and the endcaps have 4 RPC disks each, one for each CSC station.
 
 \subsubsection{Trigger and Data Acquisition Systems}\label{subsubsec:trigger}
-At design luminosity, the LHC has a bunch crossing (BX) rate of 40\MHz, i.e. $\approx~10^{9}$ inelastic events per second, with each proton-proton collision event having a size of $\approx 1.5MB$.
-Since not every event can be stored, for even if it were possible to store such a volume of data it would be impossible to have sufficient bandwidth to read all event off the detector, the data rate has to be drastically reduced to manageable levels.
-The vast majority of events are uninteresting from a physics perspective, with the cross sections of interesting processes being at least $\approx 10^{7}$ smaller than the total proton-proton cross section of $110.6 \pm3.4\mb$~\cite{Antchev:2017dia}.
-Therefore the CMS trigger system is designed to, within the constraint of the design readout and storage capacity being limited to $\approx 100\Hz$, reject these background events and to keep acceptance thresholds sufficiently as low as reasonably possible to allow all possible new physics signatures to be detected.
+At design luminosity, the LHC has a bunch crossing (BX) rate of $40\MHz$, i.e. $\approx~10^{9}$ inelastic events per second, with each proton-proton collision event having a size of $\approx 1.5MB$~\cite{Bayatian:2006nff}.
+Since is is not possible to store every event or to have sufficient bandwidth to read all event off the detector, the CMS trigger system~\cite{Dasu:2000ge,Sphicas:2002gg} has to drastically reduce the data rate to the manageable level of $\approx 1\kHz$\footnote{Since initial operations, the original event storage rate of 100\Hz has been increased to 0.5 to 1\kHz}~\cite{Dasu:2000ge,phase1L1TDR}.
 
-The CMS trigger is comprised of two stages: The Level-1 (L1) Trigger and the High Level Trigger (HLT).
+The vast majority of events are uninteresting from a physics perspective, with the cross sections of interesting processes being at least $\approx 10^{7}$ smaller than the total proton-proton cross section of $110.6 \pm3.4\mb$~\cite{Antchev:2017dia}.
+Therefore the CMS trigger system is designed to, within the constraint of the design readout and storage capacity, reject these background events and selecting events in a manner that allows all possible new physics signatures to be detected whilst keeping acceptance thresholds sufficiently as low as reasonably possible.
+The CMS trigger system is comprised of two stages: The Level-1 (L1) Trigger and the High Level Trigger (HLT).
 
 \paragraph{L-1 Trigger}\label{paragraph:L1}
 The Level-1 Trigger consists of FPGAs (Field Programmable Gate Arrays) and ASICs (Application Specific Integrated Circuits) which .
