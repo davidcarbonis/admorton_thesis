@@ -222,19 +222,17 @@ As the selection cannot be done before the subsequent BX, given the above constr
 The L1 acceptance decision is based on whether ``trigger primitives'' formed from promptly available data from the ECAL, HCAL or muon detectors above the pre-determined \pT or \ET thresholds.
 Tracking information is not used in the L1 Trigger as its inclusion was determined to be unnecessary for nominal LHC conditions, and consequently, it has not been designed to be read out for every event.
 
-Given that following LS1 it was planned that both the instantaneous luminosity and centre-of-mass energy of the LHC were to increase, the Phase-1 Trigger Upgrade was undertaken in order to prevent the physics program being compromised from a substantial increase in the trigger thresholds that would be required to maintain the 100\kHz L1 trigger limit.	
-
-The L1 Trigger upgrade 
-
+Given that following LS1 it was planned that both the instantaneous luminosity and centre-of-mass energy of the LHC were to increase, the Phase-1 Trigger Upgrade~\cite{Tapper:2013yva} was undertaken in order to prevent the physics program being compromised from a substantial increase in the trigger thresholds that would be required to maintain the 100\kHz L1 trigger limit.	
+This requirement has been met by a flexible design based on a large FPGAs on a small number of general-purpose boards which are able to perform more sophisticated identification and reconstruction algorithms over the entire detector without regional boundaries.
 The upgraded electronics of the Phase-1 Trigger were installed during LS1 and ran using the legacy trigger system during 2015 with the new trigger system running in parallel for validation prior to commissioning and usage during 2016~\cite{Zabi:2017lya}.
-%%%
-
+%%% Old text
 %Initially both the calorimeter and muon triggers search over a small local area for the signature of an interesting event, forwarding these onto the regional triggers which sorts the candidates in order of importance, before the global calorimeter and muon triggers determine the highest ranked objects across the entire experiment. 
 %These are sent to the Global Trigger, which either rejects an event or accepts it for further evaluation by the second step, the High-Level-Trigger (HLT), a software system (see Fig.~\ref{fig:trigger} for a more detailed breakdown). 
 %Events accepted by the HLT are then transferred to mass storage for offline storage and analysis\cite{oldcms}. 
 %In light of this, the current approach of having large amounts of data over small regions being brought to fewer boards so that objects of interest can be considered, has to discard data at each stage a larger region is considered . 
 %While this approach creates candidates within these constraints, by definition only the candidates from this coarser data set can be considered. 
 %Any candidates in the discarded data are lost\cite{oldcms}.
+%%%
 
 \begin{figure}[htbp]
 \begin{center}
