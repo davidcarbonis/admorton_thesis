@@ -18,42 +18,27 @@
 \usepackage{lineno}
 \usepackage{subfig}
 \usepackage{mathtools}
-\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
+% Local definitions.
+\newcommand{\editComment}[1]{{\color{Red} #1}} % Indicates who is organising each section.
+
+\newcommand{\ttbar}{\ensuremath{t\overline{t}}\xspace} % t-tbar
+ 
 % units
-\newcommand{\unit}[1]{\ensuremath{\text{\,#1}}\xspace}
-
-\newcommand{\mum}{\ensuremath{\,\mu\text{m}}\xspace}
-\newcommand{\cm}{\ensuremath{\,\text{cm}}\xspace}
-\newcommand{\mm}{\ensuremath{\,\text{mm}}\xspace}
-\newcommand{\mus}{\ensuremath{\,\mu\text{s}}\xspace}
-\newcommand{\GeV}{\ensuremath{\,\text{Ge\hspace{-.08em}V}}\xspace}
-\newcommand{\GeVc}{\ensuremath{\,\text{Ge\hspace{-.08em}V}}\xspace}
-
-\newcommand{\pbinv} {\mbox{\ensuremath{\,\text{pb}^\text{$-$1}}}\xspace}
-\newcommand{\fbinv} {\mbox{\ensuremath{\,\text{fb}^\text{$-$1}}}\xspace}
-\newcommand{\nbinv} {\mbox{\ensuremath{\,\text{nb}^\text{$-$1}}}\xspace}
-\newcommand{\percms}{\ensuremath{\,\text{cm}^\text{$-$2}\,\text{s}^\text{$-$1}}\xspace}
-\newcommand{\lumi}{\ensuremath{\mathcal{L}}\xspace}
-\newcommand{\Lumi}{\ensuremath{\mathcal{L}}\xspace}%both upper and lower
-\newcommand{\ET}{\ensuremath{E_{\mathrm{T}}}\xspace}
-
 \newcommand{\T}{\unit{T}}
+\newcommand{\ns}{\unit{ns}}
+\newcommand{\mrad}{\unit{mrad}}
 \newcommand{\Gbps}{\unit{Gb\hspace{-0.16em}/\hspace{-0.08em}s}}
 \newcommand{\Tbps}{\unit{Tb\hspace{-0.16em}/\hspace{-0.08em}s}}
 \newcommand{\kHz}{\unit{kHz}}
 \newcommand{\MHz}{\unit{MHz}}
 \newcommand{\GHz}{\unit{GHz}}
-
+ 
+% Don't use ``c'' in GeV units, to be consistent with TDR.
+\renewcommand{\GeVc}{\GeV}
+\renewcommand{\GeVcc}{\GeV}
+ 
 % Command definitions.
-\newcommand{\editComment}[1]{{\color{Red} #1}} % Indicates who is organising each section.
-
-\newcommand{\ttbar}{\ensuremath{{t\overline{t}}}\xspace}
-\providecommand{\ttbar}{\ensuremath{\mathrm{t}\overline{\mathrm{t}}}\xspace}
-\newcommand{\PT}{\ensuremath{p_{\mathrm{T}}}\xspace}
-\newcommand{\pt}{\ensuremath{p_{\mathrm{T}}}\xspace}
-\newcommand{\pT}{\ensuremath{p_{\mathrm{T}}}\xspace}
-
 \newcommand{\sector}{sector\xspace}
 \newcommand{\segment}{\sector}
 \newcommand{\qpt}{\ensuremath{q\hspace{-0.08em}/\hspace{-0.08em}\pt}\xspace}
@@ -62,9 +47,9 @@
 %\newcommand{\PU}{pile-up\xspace}
 \newcommand{\PU}{PU\xspace} % PU is now defined in Section 1
 \newcommand{\OT}{outer tracker\xspace}
-\newcommand{\HT}{Hough Transform\xspace} % redefinition of CMS command for total transverse energy ...
+\renewcommand{\HT}{Hough Transform\xspace} % redefinition of CMS command for total transverse energy ...
 \newcommand{\KF}{Kalman Filter\xspace}
-\newcommand{\DR}{Duplicate Removal\xspace}
+\renewcommand{\DR}{Duplicate Removal\xspace}
 \newcommand{\mat}[1]{\mathbf{#1}}
 
 % Important: please activate and fill the "wocname" command with the exact title of the series for conferences not included in any of the series listed on the top
