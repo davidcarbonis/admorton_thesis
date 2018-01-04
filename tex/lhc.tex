@@ -213,10 +213,10 @@ Since is is not possible to store every event or to have sufficient bandwidth to
 
 The vast majority of events are uninteresting from a physics perspective, with the cross sections of interesting processes being at least $\approx 10^{7}$ smaller than the total proton-proton cross section of $110.6 \pm3.4\mb$~\cite{Antchev:2017dia}.
 Therefore the CMS trigger system is designed to, within the constraint of the design readout and storage capacity, reject these background events and selecting events in a manner that allows all possible new physics signatures to be detected whilst keeping acceptance thresholds sufficiently as low as reasonably possible.
-The CMS trigger system is comprised of two stages, The Level-1 (L1) Trigger and the High Level Trigger (HLT), as it not feasible to reduce the data rate in a single processing stage without compromising on physics performance, with the former reducing the $40\MHz$ rate to $100\kHz$ and the latter reducing it further to $\approx 1\kHz$.
+The CMS trigger system is comprised of two stages, The Level-1 (L1) Trigger and the High Level Trigger (HLT), as it not feasible to reduce the data rate in a single processing stage without compromising on physics performance.
 
 \paragraph{L-1 Trigger}\label{paragraph:L1}
-The Level-1 Trigger consists of FPGAs (Field Programmable Gate Arrays) and ASICs (Application Specific Integrated Circuits), which have to identify hard scattering physics signals at a high efficiency with acceptance thresholds as low as possible, within constraint of the system having to analyse every bunch crossing (BX).
+The Level-1 Trigger reduces the raw $40\MHz$ rate to $\approx100\kHz$ and consists of FPGAs (Field Programmable Gate Arrays) and ASICs (Application Specific Integrated Circuits), which have to identify hard scattering physics signals at a high efficiency with acceptance thresholds as low as possible, within constraint of the system having to analyse every bunch crossing (BX).
 The strict time limitations on how long it takes for the data can be collected and read out, precludes both the reading out of events in full and of the use of iterative reconstruction algorithms.
 As the selection cannot be done before the subsequent BX, given the above constraints, the L1 Trigger uses a pipelined approach which provides a total system latency of $\approx$ 3.8\mus, during which the detector data is buffered (the Tracker and ES buffers being the limiting factor of the system latency) prior to either being read out or discarded.
 The L1 acceptance decision is based on whether ``trigger primitives'' formed from promptly available data from the ECAL, HCAL or muon detectors above the pre-determined \pT or \ET thresholds.
@@ -224,7 +224,7 @@ Tracking information is not used in the L1 Trigger as its inclusion was determin
 
 Given that following LS1 it was planned that both the instantaneous luminosity and centre-of-mass energy of the LHC were to increase, the Phase-1 Trigger Upgrade~\cite{Tapper:2013yva} was undertaken in order to prevent the physics program being compromised from a substantial increase in the trigger thresholds that would be required to maintain the 100\kHz L1 trigger limit.	
 This requirement has been met by a flexible design based on a large FPGAs on a small number of general-purpose boards which are able to perform more sophisticated identification and reconstruction algorithms over the entire detector without regional boundaries.
-The upgraded electronics of the Phase-1 Trigger were installed during LS1 and ran using the legacy trigger system during 2015 with the new trigger system running in parallel for validation prior to commissioning and usage during 2016~\cite{Zabi:2017lya}.
+The upgraded electronics of the Phase-1 Trigger were installed during LS1 and ran using the legacy trigger system during 2015 with the new trigger system (Fig.~\ref{fig:trigger})running in parallel for validation prior to commissioning and usage during 2016~\cite{Zabi:2017lya}.
 %%% Old text
 %Initially both the calorimeter and muon triggers search over a small local area for the signature of an interesting event, forwarding these onto the regional triggers which sorts the candidates in order of importance, before the global calorimeter and muon triggers determine the highest ranked objects across the entire experiment. 
 %These are sent to the Global Trigger, which either rejects an event or accepts it for further evaluation by the second step, the High-Level-Trigger (HLT), a software system (see Fig.~\ref{fig:trigger} for a more detailed breakdown). 
@@ -236,13 +236,25 @@ The upgraded electronics of the Phase-1 Trigger were installed during LS1 and ra
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=0.97\textwidth]{figs/cms/trigger.png}
-\caption{L-1 Trigger Architecture. Both muon and calorimeter triggers search for candidates locally before creating coarser datasets by passing on the most promising candidates to a higher level, and so on until the Global Trigger makes a final decision. However, unlike the Calorimeter Trigger, which looks at all the calorimeter systems concurrently, the Muon Trigger locally triggers on each of its detector technologies separately before submitting them to the Global Muon Trigger (with input from the Regional Calorimeter Trigger) before passing on fitted candidates to the Global Trigger.}
+\includegraphics[width=0.97\textwidth]{figs/cms/TrigUpgradeBlockDiagram.pdf}
+\caption{Current (Phase-1) Level-1 Trigger Architecture~\cite{Tapper:2013yva}.}
 \label{fig:trigger}
 \end{center}
 \end{figure}
 
 \paragraph{High Level Trigger and Data Acquisiation}\label{paragraph:HLT}
-Following the receipt of a L-1 trigger, the buffered data from all the subdetectors is readout and processed by the front-end readout buffers ...
+Upon receipt of a L-1 trigger, the Data Acquisition (DAQ) system (Fig.~\ref{fig:DAQ}) reads out the buffered data from the detector Front-End Drivers, buffers it in the Readout Systems until the Builder Network (controlled by the Event Manager) can transfers data to the Filter Systems where the event fragments are collated into a complete event and processed through the HLT algorithms~\cite{Sphicas:2002gg}. 
 
-In contrast to the L1 trigger, the HLT has 
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.97\textwidth]{figs/cms/CMS_DAQ.jpg}
+\caption{Overview of the CMS Data Acquisition system architecture~\cite{Sphicas:2002gg}.}
+\label{fig:DAQ}
+\end{center}
+\end{figure}
+
+The HLT reduces the L1 rate of $\approx 100\kHz$ to the output rate of $\approx 1\kHz$.
+In contrast to the L1 trigger, the HLT algorithms are performed by commercially available processors by the CMS Software (\CMSSW), which allows for great flexibility of alogirthms and the use of the full detector readout (including the Tracker and ES) to reconstruct the event and select events.
+Given that the the time limitations on the HLT are not as strict as the L1 Trigger, with events requiring an average of $\approx 40\ms$, more sophisticated reconstruction and selection algorithms are used.
+This however, does not mean that the full event is reconstructed, as such a task is too CPU intensive to be done online within the latency constraints.
+The output from the Filter System is collected by the Computing Services and forwarded to the offline Tier-0 computing centre for offline processing and reconstruction and to the detector's online monitoring systems.
