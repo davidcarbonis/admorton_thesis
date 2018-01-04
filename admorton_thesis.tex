@@ -1,17 +1,9 @@
-%\documentclass[11pt,a4paper]{article}
-%\pdfoutput=1 % only if pdf/png/jpg images are used
+\documentclass[11pt,a4paper]{article}
+\pdfoutput=1
+\usepackage{jheppub}
 
-%%%\documentclass[option comma separated list]{webofc}
-%%%Three important options:
-%%% "epj" for EPJ Web of Conferences Journal
-%%% "bio" for BIO Web of Conferences Journal
-%%% "mat" for MATEC Web of Conferences Journal
-%%% "itm" for ITM Web of Conferences Journal
-%%% "e3s" for E3S Web of Conferences Journal
-%%% "shs" for SHS Web of Conferences Journal
-%%% "twocolumn" for typesetting an article in two columns format (default one column)
-\documentclass[thesis]{webofc}
-\usepackage[varg]{txfonts}   % Web of Conferences font
+%\documentclass[thesis]{webofc}
+%\usepackage[varg]{txfonts}   % Web of Conferences font
 \usepackage{ptdr-definitions}
 
 % Put here some packages required or/and some personnal commands
@@ -19,7 +11,6 @@
 \usepackage{subfig}
 \usepackage{mathtools}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-
 % Local definitions.
 \newcommand{\editComment}[1]{{\color{Red} #1}} % Indicates who is organising each section.
 
@@ -56,6 +47,8 @@
 \renewcommand{\DR}{Duplicate Removal\xspace}
 \newcommand{\mat}[1]{\mathbf{#1}}
 
+\linenumbers
+
 % Important: please activate and fill the "wocname" command with the exact title of the series for conferences not included in any of the series listed on the top
 %
 %\wocname{?????????}
@@ -83,9 +76,9 @@
 \institute{Brunel University London
           }
 
-\abstract{
-ABSTRACT
-}
+%\abstract{
+%ABSTRACT
+%}
  
 \maketitle
 
@@ -100,22 +93,23 @@ ABSTRACT
 
 %\section{Introduction}\label{intro}
 
-\input{tex/sm.tex}
+%\input{tex/sm.tex}
 
 \input{tex/lhc.tex}
 
-\input{tex/tk-upgrade.tex}
+%\input{tex/tk-upgrade.tex}
 
-\input{tex/data-mc.tex}
+%\input{tex/data-mc.tex}
 
-\input{tex/tzq-search.tex}
+%\input{tex/tzq-search.tex}
 
-\input{tex/tzq-systematics.tex}
+%\input{tex/tzq-systematics.tex}
 
 \input{tex/results.tex}
 
-\input{tex/conclusion.tex}
+%\input{tex/conclusion.tex}
 
+\bibliographystyle{JHEP}
 \bibliography{admorton_thesis}
  
 \end{document}
