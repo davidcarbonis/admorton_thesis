@@ -201,7 +201,7 @@ Each CSC is composed of six gas gaps, with six planes anode wires running almost
 
 RPCs provide coverage over $|\eta| < 1.8$, which originally only extended to $|\eta| < 1.6$, instead of the planned $|\eta| < 2.1$, for financial reasons. 
 During LS1, a fourth endcap disk with RPCs was installed which extended coverage to the current coverage of $|\eta| < 1.8$\cite{Battilana:2017mrm}.
-Although the RPCs have a coarser position resolution (\approx 1\cm) than the DTs and CPCs, have fast response times and excellent time resolution (\approx $2\ns$).
+Although the RPCs have a coarser position resolution ($\approx 1\cm$) than the DTs and CPCs, have fast response times and excellent time resolution ($\approx 2\ns$).
 As such, RPCs provide addition but complimentary input to trigger decisions.
 A RPC is formed of two parallel resistive plates, separated by a few millimetres, with a large electric field applied across the gas filled gap.
 The barrel contains six layers of RPCs, two layers in the first two stations and one in each of the outer stations, and the endcaps have 4 RPC disks each, one for each CSC station.
@@ -210,7 +210,7 @@ The barrel contains six layers of RPCs, two layers in the first two stations and
 At design luminosity, the LHC has a bunch crossing (BX) rate of $40\MHz$, i.e. $\approx~10^{9}$ inelastic events per second, with each proton-proton collision event having a size of $\approx 1.5MB$~\cite{Bayatian:2006nff}.
 Since is is not possible to store every event or to have sufficient bandwidth to read all event off the detector, the CMS trigger system~\cite{Dasu:2000ge,Sphicas:2002gg} has to drastically reduce the data rate to the manageable level of $\approx 1\kHz$\footnote{Since initial operations, the original event storage rate of 100\Hz has been increased to 0.5 to 1\kHz}~\cite{Dasu:2000ge,phase1L1TDR}.
 
-The vast majority of events are uninteresting from a physics perspective, with the cross sections of interesting processes being at least $\approx 10^{7}$ smaller than the total proton-proton cross section of $110.6 \pm3.4\mb$~\cite{Antchev:2017dia}.
+The vast majority of events are uninteresting from a physics perspective, with the cross sections of interesting processes being at least $\approx 10^{7}$ smaller than the total proton-proton cross section of $110.6 \pm 3.4\mb$~\cite{Antchev:2017dia}.
 Therefore the CMS trigger system is designed to, within the constraint of the design readout and storage capacity, reject these background events and selecting events in a manner that allows all possible new physics signatures to be detected whilst keeping acceptance thresholds sufficiently as low as reasonably possible.
 The CMS trigger system is comprised of two stages, The Level-1 (L1) Trigger and the High Level Trigger (HLT), as it not feasible to reduce the data rate in a single processing stage without compromising on physics performance.
 
@@ -254,6 +254,6 @@ Upon receipt of a L-1 trigger, the Data Acquisition (DAQ) system (Fig.~\ref{fig:
 
 The HLT reduces the L1 rate of $\approx 100\kHz$ to the output rate of $\approx 1\kHz$.
 In contrast to the L1 trigger, the HLT algorithms are performed by commercially available processors by the CMS Software (\CMSSW), which allows for great flexibility of alogirthms and the use of the full detector readout (including the Tracker and ES) to reconstruct the event and select events.
-Given that the the time limitations on the HLT are not as strict as the L1 Trigger, with events requiring an average of $\approx 40\ms$, more sophisticated reconstruction and selection algorithms are used.
+Given that the the time limitations on the HLT are not as strict as the L1 Trigger, with events requiring an average of $\approx 40ms$, more sophisticated reconstruction and selection algorithms are used.
 This however, does not mean that the full event is reconstructed, as such a task is too CPU intensive to be done online within the latency constraints.
 The output from the Filter System is collected by the Computing Services and forwarded to the offline Tier-0 computing centre for offline processing and reconstruction and to the detector's online monitoring systems.
