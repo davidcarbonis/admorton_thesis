@@ -1,25 +1,25 @@
-%\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 %\usepackage{jheppub}
-
-\documentclass[thesis]{webofc}
-\usepackage[varg]{txfonts}   % Web of Conferences font
 
 \pdfoutput=1
 
-\usepackage{ptdr-definitions}
 
 % Put here some packages required or/and some personnal commands
+\usepackage{ptdr-definitions}
+
 \usepackage{calc}
 \usepackage{textcomp}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{enumerate}
-
+\usepackage{xspace}
+\usepackage{topcapt}
 \usepackage{lineno}
 \usepackage{subfig}
 \usepackage{mathtools}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
 % Local definitions.
 \newcommand{\editComment}[1]{{\color{Red} #1}} % Indicates who is organising each section.
 
@@ -64,7 +64,7 @@
 %
 % Very important: please fill the "woctitle" command with the exact title of the conference
 %
-\woctitle{Thesis}
+%\woctitle{Thesis}
 %
 
 
@@ -79,10 +79,9 @@
 %For multiple affiliations, create an address entry for the combination
 %To mark authors as primary, use the \author form
 
-\author{\firstname{A.D.} \lastname{Morton}\inst{1}
-}
+\author{A.D. Morton}
 
-\institute{Brunel University London
+%\address{Brunel University London
           }
 
 %\abstract{
