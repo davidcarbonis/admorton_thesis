@@ -1,0 +1,40 @@
+\setlength{\parskip}{\medskipamount}  % a little space before a \par
+\setlength{\parindent}{0pt}	      % don't indent first lines of paragraphs
+
+\makeatletter
+
+\renewcommand*{\maketitle}{
+\begin{titlepage}
+ \par
+ \clearpage
+ \null\vfill
+ \begin{center}
+  {\huge \@title\par}
+  \vskip 3em
+  {\Large \lineskip 0.75em
+  \begin{tabular}[t]{c}
+   \@author
+  \end{tabular}\par}
+  \vskip 1.5em
+%  {\Large \@date \par}
+  \vskip \z@ \@plus3fill
+  \vskip 3em
+ \end{center}\par
+ \noindent\begin{minipage}[b]{\textwidth}
+  \centering
+  Submitted in part fulfilment of the requirements for the degree of Doctor of Philosophy 
+  of Brunel University London
+ \end{minipage}
+%%% Declaration of authorship
+% \ifx\@declaration\@empty\else{
+% \cleardoublepage
+% \chapter*{Declaration}
+% \thispagestyle{plain}
+% \@declaration
+% \par\vspace{3cm}
+% \hfill\@author
+% \cleardoublepage
+% }\fi
+\end{titlepage}
+}
+
