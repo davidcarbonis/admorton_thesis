@@ -1,5 +1,5 @@
-\chapter{The LHC accelerator and the CMS experiment}\label{sec:lhc-cms}
-\section{The Large Hadron Collider}\label{subsec:lhc}
+\chapter{The LHC accelerator and the CMS experiment}\label{chapter:lhc-cms}
+\section{The Large Hadron Collider}\label{sec:lhc}
 
 The Large Hadron Collider (LHC) at the European Organisation for Nuclear Research (CERN)~\cite{Bruning:782076}, in Geneva, Switzerland is the highest-energy particle accelerator constructed to date. 
 It is designed to operate at a centre of mass (CoM) energy of 14\TeV, through two 7\TeV proton beams travelling in 2808 bunches of up to $1.15 \times 10^{11}$ protons at a collision rate of 25\ns which corresponds to a design luminosity of $10^{34}\percms$~\cite{Bayatian:2006zz}. 
@@ -50,7 +50,7 @@ Protons are delivered in 2808 bunches per beam, as opposed to a continuous beam,
 This high event rate presents the experiments with the data acquisition and readout challenges, whilst retaining excellent signal to background resolution and sufficient radiation hardness in order to withstand the expected fluence.
 The primary motivation behind operating the LHC in a heavy-ion mode is to search for evidence of the plasma of quarks and gluons, which is made possible through the resultant production of QCD matter under extreme temperature, density and low momentum fractions of partons~\cite{Baur:687318}.
 
-\section{The Compact Muon Solenoid}\label{subsec:cms}
+\section{The Compact Muon Solenoid}\label{sec:cms}
 \subsection{Overview}
 The Compact Muon Solenoid (CMS)~\cite{oldcms} is a large, general purpose, hermetic particle detector and the smaller of the two multi-purpose experiments operating at the LHC at CERN.
 The experiment is divided into a central cylindrical barrel section and two endcap disk sections at each end of the barrel.
@@ -76,7 +76,7 @@ The azimuthal angle, $\phi$, is the angle measured from the x-axis in the x-y pl
 Pseudorapidity, defined as $\eta \equiv -ln\tan(\theta/2)$, is usually used in lieu of $\theta$ as when the mass considered is negligible $\eta$ converges towards rapidity, defined as $y \equiv	1/2 ln(E+p_{z}/E-p_{Z})$, which is Lorentz invariant along the z-axis.
 As such, variables transverse to the z-axis (i.e. the beam line), such as the transverse energy (\ET), momentum (\pT), and missing energy (\MET), depend only on their x and y components.
 
-\subsection{Tracker}\label{subsubsec:tracker}
+\subsection{Tracker}\label{subsec:tracker}
 The tracker, measuring 5.8m with a 2.5m radius over $|\eta| < 2.5$, surrounds the interaction point, and is designed to provide efficient precision trajectory measurements of charged particles emerging from collisions and precise reconstruction of vertices, whilst operating in a harsh radiation environment (max flux $\approx 10^{7}/s$) and minimising the number charged particles interacting with the tracker (i.e. scattering, producing Bremsstrahlung).
 Silicon fulfils these requirements and is used in the inner pixel detector, surrounding the interaction point, and microstrip detector, which encloses the pixel detector.
 The high fluence expected closest to the interaction point requires the high granularity pixels provide in order to ensure a low channel occupancy, but the particle flux from $r < 20\cm$ is sufficiently low enough that microstrips can be used without compromising reconstruction efficiency.
@@ -120,7 +120,7 @@ A more detailed description of the Phase-1 Pixel detector can be found in~\cite{
 
 \editComment{WRITE BIT ABOUT TRACK RECO EFF AND MAYBE RESOLUTIONS FOR 2016 TOO?}
 
-\subsection{Electromagnetic Calorimeter}\label{subsubsec:ECAL}
+\subsection{Electromagnetic Calorimeter}\label{subsec:ECAL}
 Beyond the tracker, the ECAL~\cite{CMS:1997ysd,CMS:2002xia}, a homogeneous calorimeter, measures the energies of electrons and photons using lead tungstate scintillating crystals. 
 The choice of using lead tungstate crystals was based on the needs of both having a compact detector which could fit with the HCAL inside the solenoid and containing the showers' energy within this calorimeter, which were met with its short radiation length (0.89\cm) and small Molier\'{e} radius (2.2\cm).
 
@@ -145,7 +145,7 @@ The thickness of the radiators was chosen to ensure ~95\% of incident photons sh
 
 %Following the excellent performance during Run I of the LHC, with an energy resolution of 0.3\% exceeding the design value of 0.5\%, the ECAL has continued to perform admirably, with .... \cite{TeixeiradeLima:2017tmj} %%ECAL performance Run II
 
-\subsection{Hadronic Calorimeter}\label{subsubsec:HCAL}
+\subsection{Hadronic Calorimeter}\label{subsec:HCAL}
 Hadronic particles penetrate through the ECAL into the HCAL~\cite{CMS:1997xji}, where hadronic jets have their energies measured and are contained for determination of the missing transverse energy and protection of the muon detectors~\cite{HCAL:tdr}.
 As such, the HCAL was designed to have as much absorber material within the solenoid coil as practical. 
 The barrel (HB) and and endcap (HE) both use plastic scintillator tiles interspersed between brass and steel absorber plates, with the latter being used for the external plates for structural strengthening.
@@ -161,7 +161,7 @@ The Cherenkov light produced is transmitted down the fibres to individually shie
 
 \editComment{WRITE BIT ABOUT ENERGY RESOLUTION FOR 2016}
 
-\subsection{The Superconducting Solenoid}\label{subsubsec:magnet}
+\subsection{The Superconducting Solenoid}\label{subsec:magnet}
 One of the defining features of the CMS detector is the superconducting solenoid which encompasses the silicon tracker and calorimetry~\cite{Acquistapace:1997fm,Herve:2000}.
 The 220T cylindrical coil measures 13m long, has a 5.9m inner diameter, is situated inside a vacuum tank where it is cooled to its operation temperature by liquid helium to 4.5K, and operates at magnetic field of 3.8 Tesla\footnote{Whilst the solenoid was designed to operate at 4T, the CMS collaboration chose to operate it at 3.8T in order maximise the lifetime of the apparatus}.
 The large bending power within the solenoid not only provides excellent momentum resolution for charged particles within the tracking detector, but it also prevents low transverse momentum charged particles from reaching the calorimetry and negatively impacting on energy resolution and isolation efficiency.
@@ -175,7 +175,7 @@ An iron return yoke guides and contains the return magnet field, which is suffic
 \end{center}
 \end{figure}
 
-\subsection{Muon Detectors}\label{subsubsec:muon chambers}
+\subsection{Muon Detectors}\label{subsec:muon chambers}
 Detecting muons is incredibly important for CMS (as implied by the experiment’s name), given many of the signatures of interesting events involve them, including those from SUSY models and the so called “gold-plated” SM Higgs decay into a pair of $Z^{0}$ bosons, which in turn decay into four muons. 
 Being Minimum Ionising Particles (MIPs), muons pass through the detector and past the magnet with minimal interaction.
 Consequently, the muon chambers~\cite{CMS:1997iti} are placed outside the solenoid and provide a strong clean signals which can be triggered upon.
@@ -206,7 +206,7 @@ As such, RPCs provide addition but complimentary input to trigger decisions.
 A RPC is formed of two parallel resistive plates, separated by a few millimetres, with a large electric field applied across the gas filled gap.
 The barrel contains six layers of RPCs, two layers in the first two stations and one in each of the outer stations, and the endcaps have 4 RPC disks each, one for each CSC station.
 
-\subsection{Trigger and Data Acquisition Systems}\label{subsubsec:trigger}
+\subsection{Trigger and Data Acquisition Systems}\label{subsec:trigger}
 At design luminosity, the LHC has a bunch crossing (BX) rate of $40\MHz$, i.e. $\approx~10^{9}$ inelastic events per second, with each proton-proton collision event having a size of $\approx 1.5MB$~\cite{Bayatian:2006nff}.
 Since is is not possible to store every event or to have sufficient bandwidth to read all event off the detector, the CMS trigger system~\cite{Dasu:2000ge,Sphicas:2002gg} has to drastically reduce the data rate to the manageable level of $\approx 1\kHz$\footnote{Since initial operations, the original event storage rate of 100\Hz has been increased to 0.5 to 1\kHz}~\cite{Dasu:2000ge,phase1L1TDR}.
 
