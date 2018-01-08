@@ -1,5 +1,5 @@
-\documentclass[11pt,a4paper]{article}
-%\usepackage{jheppub}
+\documentclass[11pt,a4paper]{report}
+\usepackage{thesis}
 
 \pdfoutput=1
 
@@ -59,15 +59,6 @@
 \linespread{1.25} %% 1.5 line spacing as nominal is 1.2, ergo 1.2*1.25=1.5
 \linenumbers
 
-% Important: please activate and fill the "wocname" command with the exact title of the series for conferences not included in any of the series listed on the top
-%
-%\wocname{?????????}
-%
-% Very important: please fill the "woctitle" command with the exact title of the conference
-%
-%\woctitle{Thesis}
-%
-
 
 %%%%%%%%%%%%%%%  Title page %%%%%%%%%%%%%%%%%%%%%%%% 
 
@@ -75,21 +66,13 @@
 \begin{document}
 \title{THESIS TITLE}
 
-% >> Authors
-%Author is always "The CMS Collaboration" for PAS and papers, so author, etc, below will be ignored in those cases
-%For multiple affiliations, create an address entry for the combination
-%To mark authors as primary, use the \author form
+\author{Alexander D. J. Morton}
 
-\author{A.D. Morton}
-
-%\address{Brunel University London
-          }
-
-%\abstract{
-%ABSTRACT
-%}
- 
 \maketitle
+
+\abstract{
+ABSTRACT
+}
 
 %\section{Acknowledgements} \label{sec:acknowledgments}
 
@@ -99,6 +82,9 @@
 %\textit{Peter Hobson}
 %\textit{Corin Hoad}
 
+\tableofcontents
+\listoftables
+\listoffigures
 
 %\section{Introduction}\label{intro}
 

@@ -1,5 +1,5 @@
-\section{The LHC accelerator and the CMS experiment}\label{sec:lhc-cms}
-\subsection{The Large Hadron Collider}\label{subsec:lhc}
+\chapter{The LHC accelerator and the CMS experiment}\label{sec:lhc-cms}
+\section{The Large Hadron Collider}\label{subsec:lhc}
 
 The Large Hadron Collider (LHC) at the European Organisation for Nuclear Research (CERN)~\cite{Bruning:782076}, in Geneva, Switzerland is the highest-energy particle accelerator constructed to date. 
 It is designed to operate at a centre of mass (CoM) energy of 14\TeV, through two 7\TeV proton beams travelling in 2808 bunches of up to $1.15 \times 10^{11}$ protons at a collision rate of 25\ns which corresponds to a design luminosity of $10^{34}\percms$~\cite{Bayatian:2006zz}. 
@@ -11,7 +11,7 @@ Three smaller experiments are situated close to one of the four main experiments
 Both the TOTal Elastic and diffractive cross section Measurement (TOTEM)~\cite{Anelli:2008zza} and LHC-forward (LHCf)~\cite{Adriani:2008zz} experiments study diffractive physics in the very-forward regions of collisions at the CMS and ATLAS experiments' collision points respectively.
 Monopole and Exotics Detector At the LHC (MoEDAL)~\cite{Pinfold:2009oia} shares the LHCb experiment's cavern and performs direct searches for magnetic monopoles and highly ionising stable and pseudo-stable massive particles.
 
-\subsubsection{Accelerator Complex}
+\subsection{Accelerator Complex}
 When operating in proton-proton mode, the preparation of the LHC beams starts at Linear accelerator 2 (Linac2). 
 Protons from a hydrogen gas source are accelerated to 50\MeV and are injected into the Proton Synchrotron Booster which accelerates the protons to 1.4\GeV before injection into the Proton Synchrotron (PS). 
 In the PS, the protons are accelerated to 26\GeV and are injected into the Super Proton Synchrotron (SPS) where they are accelerated to 450\GeV before finally entering the LHC~\ref{fig:cern-accelerator-complex}. 
@@ -29,7 +29,7 @@ A more detailed description of the LHC accelerator chain at CERN can be found in
 \end{center}
 \end{figure}
 
-\subsubsection{Motivation}
+\subsection{Motivation}
 The core motivations behind the LHC are to shed light on the nature of the electroweak symmetry breaking, which the Higgs was presumed and found to be responsible, and to probe the consistency of the SM above the \TeV level through precision measurements of SM parameters and the Higgs mechanism.
 Alternative theories to the SM, such as SUSY theories, additional dimensions or new fundamental forces and particles are expected to emerge at and above the TeV level, giving the potential to ascertain whether these theories have any basis beyond mere conjecture~\cite{Bayatian:2006zz}.
 
@@ -50,8 +50,8 @@ Protons are delivered in 2808 bunches per beam, as opposed to a continuous beam,
 This high event rate presents the experiments with the data acquisition and readout challenges, whilst retaining excellent signal to background resolution and sufficient radiation hardness in order to withstand the expected fluence.
 The primary motivation behind operating the LHC in a heavy-ion mode is to search for evidence of the plasma of quarks and gluons, which is made possible through the resultant production of QCD matter under extreme temperature, density and low momentum fractions of partons~\cite{Baur:687318}.
 
-\subsection{The Compact Muon Solenoid}\label{subsec:cms}
-\subsubsection{Overview}
+\section{The Compact Muon Solenoid}\label{subsec:cms}
+\subsection{Overview}
 The Compact Muon Solenoid (CMS)~\cite{oldcms} is a large, general purpose, hermetic particle detector and the smaller of the two multi-purpose experiments operating at the LHC at CERN.
 The experiment is divided into a central cylindrical barrel section and two endcap disk sections at each end of the barrel.
 A superconducting solenoid encompasses, moving from the interaction point at the centre of the detector outwards, an all silicon tracking detector, a homogeneous lead tungstate ($PbWO_{4}$) electromagnetic calorimeter (ECAL)and hadronic calorimeter (HCAL) comprised of plastic scintillating tiles interspaced with brass absorbers.
@@ -76,7 +76,7 @@ The azimuthal angle, $\phi$, is the angle measured from the x-axis in the x-y pl
 Pseudorapidity, defined as $\eta \equiv -ln\tan(\theta/2)$, is usually used in lieu of $\theta$ as when the mass considered is negligible $\eta$ converges towards rapidity, defined as $y \equiv	1/2 ln(E+p_{z}/E-p_{Z})$, which is Lorentz invariant along the z-axis.
 As such, variables transverse to the z-axis (i.e. the beam line), such as the transverse energy (\ET), momentum (\pT), and missing energy (\MET), depend only on their x and y components.
 
-\subsubsection{Tracker}\label{subsubsec:tracker}
+\subsection{Tracker}\label{subsubsec:tracker}
 The tracker, measuring 5.8m with a 2.5m radius over $|\eta| < 2.5$, surrounds the interaction point, and is designed to provide efficient precision trajectory measurements of charged particles emerging from collisions and precise reconstruction of vertices, whilst operating in a harsh radiation environment (max flux $\approx 10^{7}/s$) and minimising the number charged particles interacting with the tracker (i.e. scattering, producing Bremsstrahlung).
 Silicon fulfils these requirements and is used in the inner pixel detector, surrounding the interaction point, and microstrip detector, which encloses the pixel detector.
 The high fluence expected closest to the interaction point requires the high granularity pixels provide in order to ensure a low channel occupancy, but the particle flux from $r < 20\cm$ is sufficiently low enough that microstrips can be used without compromising reconstruction efficiency.
@@ -89,7 +89,7 @@ The high fluence expected closest to the interaction point requires the high gra
 \end{center}
 \end{figure}
 
-\paragraph{Silicon Microstrip Tracker}
+\subsubsection{Silicon Microstrip Tracker}
 The silicon microstrip detector is comprised of four parts: the Tracker Inner Barrel (TIB) and Tracker Inner Disks (TID) from $20 < r < 55\cm$, and the Tracker Outer Barrel (TOB) and Tracker EndCaps (TEC) from $55 < r < 116\cm$.
 The sensors are rectangular in the barrel region and trapezoid in the endcaps and all consist of singled sided strips of p+-type implants on n-type silicon which are connected to readout chips (ROCs) by aluminium strips.
 A total of 9.3 million sensors are used across all four parts, covering an area of 198 $\unit{m}^{2}$.
@@ -107,7 +107,7 @@ These sensors are aligned at an angle of 100 mrad to each other, allowing measur
 
 \editComment{WRITE BIT ABOUT TRACK RECO EFF AND RESOLUTIONS FOR 2016}
 
-\paragraph{Silicon Pixel Tracker}
+\subsubsection{Silicon Pixel Tracker}
 The original ``Phase-0'' silicon pixel detector was comprised of three 53.3\cm long barrel layers at mean radii of 4.4, 7.3 and 10.2\cm and two endcap disks either side of the barrel at $|z| = 34.5$ and 46.5\cm that extend from $r = 6.0$ to 15\cm.
 The pixel sensors consist of n+-type implants on n-type silicon which are connected by indium bump-bonds to highly integrated ROCs.
 Each of the 66 million pixels measures $100x150\mum^{2}$, covering a total surface area of 1.06 m$^{2}$, with point resolutions of 10\mum in $r-\phi$ and 20\mum in z, which provides the granularity required to have a high track reconstruction efficiency and to be able to precisely calculate the track impact parameters and vertex position.
@@ -120,7 +120,7 @@ A more detailed description of the Phase-1 Pixel detector can be found in~\cite{
 
 \editComment{WRITE BIT ABOUT TRACK RECO EFF AND MAYBE RESOLUTIONS FOR 2016 TOO?}
 
-\subsubsection{Electromagnetic Calorimeter}\label{subsubsec:ECAL}
+\subsection{Electromagnetic Calorimeter}\label{subsubsec:ECAL}
 Beyond the tracker, the ECAL~\cite{CMS:1997ysd,CMS:2002xia}, a homogeneous calorimeter, measures the energies of electrons and photons using lead tungstate scintillating crystals. 
 The choice of using lead tungstate crystals was based on the needs of both having a compact detector which could fit with the HCAL inside the solenoid and containing the showers' energy within this calorimeter, which were met with its short radiation length (0.89\cm) and small Molier\'{e} radius (2.2\cm).
 
@@ -145,7 +145,7 @@ The thickness of the radiators was chosen to ensure ~95\% of incident photons sh
 
 %Following the excellent performance during Run I of the LHC, with an energy resolution of 0.3\% exceeding the design value of 0.5\%, the ECAL has continued to perform admirably, with .... \cite{TeixeiradeLima:2017tmj} %%ECAL performance Run II
 
-\subsubsection{Hadronic Calorimeter}\label{subsubsec:HCAL}
+\subsection{Hadronic Calorimeter}\label{subsubsec:HCAL}
 Hadronic particles penetrate through the ECAL into the HCAL~\cite{CMS:1997xji}, where hadronic jets have their energies measured and are contained for determination of the missing transverse energy and protection of the muon detectors~\cite{HCAL:tdr}.
 As such, the HCAL was designed to have as much absorber material within the solenoid coil as practical. 
 The barrel (HB) and and endcap (HE) both use plastic scintillator tiles interspersed between brass and steel absorber plates, with the latter being used for the external plates for structural strengthening.
@@ -161,7 +161,7 @@ The Cherenkov light produced is transmitted down the fibres to individually shie
 
 \editComment{WRITE BIT ABOUT ENERGY RESOLUTION FOR 2016}
 
-\subsubsection{The Superconducting Solenoid}\label{subsubsec:magnet}
+\subsection{The Superconducting Solenoid}\label{subsubsec:magnet}
 One of the defining features of the CMS detector is the superconducting solenoid which encompasses the silicon tracker and calorimetry~\cite{Acquistapace:1997fm,Herve:2000}.
 The 220T cylindrical coil measures 13m long, has a 5.9m inner diameter, is situated inside a vacuum tank where it is cooled to its operation temperature by liquid helium to 4.5K, and operates at magnetic field of 3.8 Tesla\footnote{Whilst the solenoid was designed to operate at 4T, the CMS collaboration chose to operate it at 3.8T in order maximise the lifetime of the apparatus}.
 The large bending power within the solenoid not only provides excellent momentum resolution for charged particles within the tracking detector, but it also prevents low transverse momentum charged particles from reaching the calorimetry and negatively impacting on energy resolution and isolation efficiency.
@@ -175,7 +175,7 @@ An iron return yoke guides and contains the return magnet field, which is suffic
 \end{center}
 \end{figure}
 
-\subsubsection{Muon Detectors}\label{subsubsec:muon chambers}
+\subsection{Muon Detectors}\label{subsubsec:muon chambers}
 Detecting muons is incredibly important for CMS (as implied by the experiment’s name), given many of the signatures of interesting events involve them, including those from SUSY models and the so called “gold-plated” SM Higgs decay into a pair of $Z^{0}$ bosons, which in turn decay into four muons. 
 Being Minimum Ionising Particles (MIPs), muons pass through the detector and past the magnet with minimal interaction.
 Consequently, the muon chambers~\cite{CMS:1997iti} are placed outside the solenoid and provide a strong clean signals which can be triggered upon.
@@ -206,7 +206,7 @@ As such, RPCs provide addition but complimentary input to trigger decisions.
 A RPC is formed of two parallel resistive plates, separated by a few millimetres, with a large electric field applied across the gas filled gap.
 The barrel contains six layers of RPCs, two layers in the first two stations and one in each of the outer stations, and the endcaps have 4 RPC disks each, one for each CSC station.
 
-\subsubsection{Trigger and Data Acquisition Systems}\label{subsubsec:trigger}
+\subsection{Trigger and Data Acquisition Systems}\label{subsubsec:trigger}
 At design luminosity, the LHC has a bunch crossing (BX) rate of $40\MHz$, i.e. $\approx~10^{9}$ inelastic events per second, with each proton-proton collision event having a size of $\approx 1.5MB$~\cite{Bayatian:2006nff}.
 Since is is not possible to store every event or to have sufficient bandwidth to read all event off the detector, the CMS trigger system~\cite{Dasu:2000ge,Sphicas:2002gg} has to drastically reduce the data rate to the manageable level of $\approx 1\kHz$\footnote{Since initial operations, the original event storage rate of 100\Hz has been increased to 0.5 to 1\kHz}~\cite{Dasu:2000ge,phase1L1TDR}.
 
@@ -214,7 +214,7 @@ The vast majority of events are uninteresting from a physics perspective, with t
 Therefore the CMS trigger system is designed to, within the constraint of the design readout and storage capacity, reject these background events and selecting events in a manner that allows all possible new physics signatures to be detected whilst keeping acceptance thresholds sufficiently as low as reasonably possible.
 The CMS trigger system is comprised of two stages, The Level-1 (L1) Trigger and the High Level Trigger (HLT), as it not feasible to reduce the data rate in a single processing stage without compromising on physics performance.
 
-\paragraph{L-1 Trigger}\label{paragraph:L1}
+\subsubsection{L-1 Trigger}\label{paragraph:L1}
 The Level-1 Trigger reduces the raw $40\MHz$ rate to $\approx100\kHz$ and consists of FPGAs (Field Programmable Gate Arrays) and ASICs (Application Specific Integrated Circuits), which have to identify hard scattering physics signals at a high efficiency with acceptance thresholds as low as possible, within constraint of the system having to analyse every bunch crossing (BX).
 The strict time limitations on how long it takes for the data can be collected and read out, precludes both the reading out of events in full and of the use of iterative reconstruction algorithms.
 As the selection cannot be done before the subsequent BX, given the above constraints, the L1 Trigger uses a pipelined approach which provides a total system latency of $\approx$ 3.8\mus, during which the detector data is buffered (the Tracker and ES buffers being the limiting factor of the system latency) prior to either being read out or discarded.
@@ -241,7 +241,7 @@ The upgraded electronics of the Phase-1 Trigger were installed during LS1 and ra
 \end{center}
 \end{figure}
 
-\paragraph{High Level Trigger and Data Acquisiation}\label{paragraph:HLT}
+\subsubsection{High Level Trigger and Data Acquisiation}\label{paragraph:HLT}
 Upon receipt of a L-1 trigger, the Data Acquisition (DAQ) system (Fig.~\ref{fig:DAQ}) reads out the buffered data from the detector Front-End Drivers, buffers it in the Readout Systems until the Builder Network (controlled by the Event Manager) can transfers data to the Filter Systems where the event fragments are collated into a complete event and processed through the HLT algorithms~\cite{Sphicas:2002gg}. 
 
 \begin{figure}[htbp]
