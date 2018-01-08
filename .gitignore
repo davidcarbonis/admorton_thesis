@@ -1,9 +1,9 @@
 *.aux
-
 *.log
-
 *.bbl
-
 *.blg
 
+admorton_thesis.lof
+admorton_thesis.lot
+admorton_thesis.toc
 admorton_thesis.pdf
