@@ -1,20 +1,38 @@
 \chapter{Systematic Uncertainties for Single Top Physics Searches}\label{chapter:tzq-systematics}
 
 These uncertainties have been treated as nuisance parameters in the 
-\section{Shape Uncertainties}
+\section{Experimental Uncertainties}
 \subsection{Jet Energy Corrections}
+https://arxiv.org/pdf/1607.03663.pdf
 \subsection{Pileup Reweighting}
+The \PU interactions included in the simulated samples used do not describe the number of primary interactions observed in data well, 
+As such, they are reweighted to 
 
 \subsection{b-tagging Uncertainties}
-The b-tag and vertexing Physics Object Group measures the b-tagging efficiency and misidentification rates in data and MC simulation of the algorithms which they support.
+The B-Tag and Vertexing (BTV) Physics Object Group measures the b-tagging efficiency and misidentification rates for b and light flavoured jets in data and MC simulation (multijet and \ttbar) of the algorithms which they support.
+From these measurements b-tagging efficiency scale factors are produced and provided for analysts to apply to simulated events to correct differences observed between data and simulation.
+
+These scale factors, as functions of the jet flavour, \pT and $\eta$, to alter the weight of the selected MC events.
+This methodology was chosen as it involves only changing the weight of the selected MC events which, unlike other methods, avoids events migrating into different b-tag multiplicity bins and the potential issue of events with undefined variables (such as \editComment{INSERT EXAMPLE HERE WHEN LESS SLEEPY}).
+The uncertainties of the scale factors applied are obtained by varying their value by $\pm 1\sigma$, as calculated by the BTV POG. 
+\editComment{Impact?}
+
 \subsection{Parton Distribution Functions}
 %%% ME_PS
 \subsection{Non-prompt Lepton Contributions}
 
-\section{Flat Rate Uncertainties}
 \subsection{Luminosity Uncertainties}
+CMS uses five detectors, the pixel detector, DTs, HF, the Fast Beam Conditions Monitor and Pixel Luminosity Telescope to monitor and measure the instantaneous and integrated luminosity, with absolute calibrations of the detectors made through conducting Van der Meer (VdM) scans during dedicated LHC runs.
+Pixel Cluster Counting (PCC) 
 
-\cite{CMS:2017_lumi} %2016 lumi
-\section{Modelling Uncertainties}
-Although 
+The overall uncertainty \cite{CMS:2017_lumi} %2016 lumi
+\subsection{Lepton Efficiencies}
+In order to account for the difference in performance for lepton identification, isolation and reconstruction, 
+
+The trigger efficiencies 
+\section{Theoretical Uncertainties}
+\subsection{Parton Density Functions}
+
+\subsection{Factorisation and renormalisation scales}
+\subsection{Parton Shower Uncertainties}
 \section{Impact of the Uncertainties}
