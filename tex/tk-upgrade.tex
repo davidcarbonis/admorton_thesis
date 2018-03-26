@@ -3,6 +3,8 @@
 \section{The High-Luminosity Large Hadron Collider} \label{sec:hl-lhc}
 During Long Shutdown 3 (2023-2025), the High-Luminosity Large Hadron Collider (HL-HLC) upgrade is expected to be installed, with the instantaneous luminosity of the LHC increasing up to $5-7.5 \times {10}^{34}$\percms, corresponding to an average number of proton-proton interactions per 40\MHz bunch crossing of 140 to 200, and a total integrated luminosity of 3000\fbinv to the ATLAS and CMS experiments.
 
+\editComment{LHC upgrade timeline image?} 
+
 Increasing the LHC's instantaneous luminosity is motivated by the need to replace the inner triplet quadrupole magnets which focus the beams at the ATLAS and CMS collision regions, that are expected to be near life expired due to radiation exposure by 2023~\cite{hl-lhc-prelim-design-report,CMSCollaboration:2015zni}, and the ability to enable greater precision SM and Higgs measurements, searches for rare processes and their potential deviations from the SM, and the discovery reach for multi-\TeV massive particles.
 
 The instantaneous luminosity of the machine and the beam parameters are related by: the number of bunches $n_{b}$, the number of protons per bunch $N^{2}_{p}$, the beam beta value (focal length) at the collision point $\beta^{*}$, and a crossing angle dependent luminosity geometrical reduction factor $R$,
@@ -13,22 +15,28 @@ L \propto \frac{n_{b}N^{2}_{p}}{\beta^{*}} R \\
 \end{equation}
 
 As it is not practical to increase the number of proton bunches due to the resultant heat loads induced by electron clouds, the increase in the machine's luminosity will be achieved by increasing the number of protons per bunch and by  reducing $\beta^{*}$.
-Replacing Linac2 with the new Linear accelerator 4 (Linac4) during the Long Shutdown 2 (2019-2020) will allow for the number of protons per bunch to be increased by a factor of two compared to the nominal LHC design (and to increase the injection energy by a factor of three).
-The new more radiation tolerant quadrupole magnets to be installed during () will provide the larger magnetic field strength and aperture required to provide the lower $\beta^{*}$ required for increasing the instantaneous luminosity. 
+Replacing Linac2 with the new Linear accelerator 4 (Linac4) during the Long Shutdown 2 (2019-2020) will allow for the number of protons per bunch to be increased by a factor of two compared to the nominal LHC design (and to increase the injection energy by a factor of three)~\cite{linac4}.
+The new more radiation tolerant quadrupole magnets to be installed during LS3 will provide the larger magnetic field strength and aperture required to provide the lower $\beta^{*}$ required for increasing the instantaneous luminosity. 
 
-The increase in instantaneous luminosity poses significant challenges to the ATLAS and CMS detectors, which will have to manage the increased \PU, detector occupancy, radiation and data and trigger rates whilst maintaining detector performance in order to preserve their physics program.
+%The increase in instantaneous luminosity poses significant challenges to the ATLAS and CMS detectors, which will have to manage the increased \PU, detector occupancy, radiation and data and trigger rates whilst maintaining detector performance to avoid compromising physics potential. 
 
-\section{The Phase-II Tracker Upgrade}\label{sec:tk-upgrade}
-\editComment{Rephrase the following}
+\section{The Phase-II Outer Tracker Upgrade}\label{sec:tk-upgrade}
 
-During the LS3, the CMS silicon tracker, will need to be completely replaced due to both approximately 15 years of radiation damage during operation.
-The replacement tracker will need 
+To meet the significant challenges of, and exploit, the increased instantaneous luminosity environment of the HL-LHC, the CMS detector's ``Phase-II Upgrade'' during the LS3 will deliver the required improved radiation hardness for the increase in radiation and to manage the increase in \PU with greater detector granularity to reduce occupancy, and enhanced bandwidth and triggering capabilities to avoid compromising physics potential~\cite{CMSCollaboration:2015zni}.
 
- and the need to maintain a high track reconstruction efficiency and a low misidentification rate under increased pileup conditions, requiring an increase in sensor granularity~\cite{P2TrackerTDR}.
-The radiation hardness of the tracker must also be improved in order to withstand the increased fluence of the HL-LHC.
+The front-end electronics of the	
 
+The ECAL barrel  
+The ECAL and HCAL endcaps
+
+The entire silicon tracker will need to be completely replaced due approximately 15 years of radiation damage during operation, the higher granularity 
+
+The replacement tracker will need improved radiation hardness in order to withstand the increased fluence of the HL-LHC and an increase in sensor granularity so that a high track reconstruction efficiency and a low misidentification rate under the increased \PU conditions can be maintained~\cite{P2TrackerTDR}.
 In order to keep the L1 acceptance rate below the 750\kHz maximum in the high \PU HL-LHC environment without raising the transverse energy (\ET) or transverse momentum (\pT) thresholds, and thus losing potentially interesting physics events, the L1 trigger will also make use of charged particle tracks from the outer tracking detector.
  
+The inner tracker  
+ 
+The Phase-II 
 \editComment{Mention the Dec review?} 
 
 A novel design of two closely spaced silicon sensors, capable of rejecting hits generated by low \pT particles, has been proposed~\cite{jjonespixel,markthesis}. Correlated pairs of clusters between the two sensors which are compatible with a high \pT track (greater than 2-3 GeV), called \textit{stubs} (see Fig.~\ref{stubs}), are transferred to the L-1 trigger and are expected to provide an effective rate reduction of approximately 10~\cite{mpessimperf,2dptmoduleconcept}. Further details on the two types of \pT modules intended to be used for the outer tracker and their placement can be found in~\cite{CMS_Upgrade_TP,P2TrackerTDR}.
