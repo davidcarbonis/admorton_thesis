@@ -97,20 +97,34 @@ Unless stated otherwise, the results discussed below use the old \emph{flat barr
 
 \section{An FPGA Based Track Finding Architecture}
 
-Within the total L1 latency of 
+There is some flexibility in how the track finding architecture is defined, including how the track finding method is parallelised across processors.
+Any proposed architecture will be constrained by
+ how the front-end electronics are cabled to the Data Trigger and Control (DTC) system, which generates, packages and transmits stubs from the front-end electronics to the readout systems, and on the number of high speed optical links on the DTC and track finding boards.
 
-A more comprehensive description of the data-flow from the front-end electronics 
+Out of the total L1 latency of 12.5\mus, the L1 trigger requires input data formatting, track reconstruction and track fitting to be undertaken within an overall latency of 4\mus.
 
-Using stubs as an input, the L1 trigger requires input data formatting, track reconstruction and track fitting to be undertaken within an overall latency of 4\mus.  
+The FPGA-based \HT approach uses a scalable, configurable and redundant system architecture based on a fully time-multiplexed design, using current FPGA technology, has been proposed.
 
-A scalable, configurable and redundant system architecture based on a fully time-multiplexed design, using current FPGA technology, has been proposed.
+
 
 A more thorough description of the demonstrator system, including the  described is given here~\cite{TMTT_JINST}.
 
 \subsection{Linear $\chi^{2}$ Track Fitter}
+Whilst the Kalman Filter was used as a track fitter for the December 2016 hardware demonstrator, a number of alternative track fitting algorithms were explored.
+\cite{TMTT_FLP}
 A linearised $\chi^{2}$	fit was explored
 
 \subsection{2 GeV Tracking}
-The flexibility and robustness
+The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may be desirable if the trigger requirements demand it and the impact of this potential requirement on the proposed track-finder system was studied for the December 2016 demonstrator review.
+This required modifying the GP and HT configuration parameters to ensure adequate duplication in $\varphi$ and increasing the number of the \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision, respectively.
+The increased \qpt range consequently increases the FPGA resources required by 50\% and increases the output data rate from the \HT by a factor of 2.2.
+
+%%% Discuss poorer tracking efficiency
+%%% Causes - multiple scattering
+%%% How to fix:
+%%% - merging of low pT HT cells
+%%% - KF internal chi-squared cuts
+%%% - additive constant of order (1 mrad)^{2}
+%%% - additive constant / radius
 
 Since the December 2016 demonstrator review, further work on the 
