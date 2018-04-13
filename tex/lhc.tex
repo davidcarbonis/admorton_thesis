@@ -1,4 +1,4 @@
-\chapter{The LHC accelerator and the CMS experiment}\label{chapter:lhc-cms}
+\textit{•}\chapter{The LHC accelerator and the CMS experiment}\label{chapter:lhc-cms}
 \section{The Large Hadron Collider}\label{sec:lhc}
 
 The Large Hadron Collider (LHC) at the European Organisation for Nuclear Research (CERN)~\cite{Bruning:782076}, in Geneva, Switzerland is the highest-energy particle accelerator constructed to date. 
@@ -234,7 +234,22 @@ The L1 acceptance decision is based on whether ``trigger primitives'' formed fro
 Tracking information is not used in the L1 Trigger as its inclusion was determined to be unnecessary for nominal LHC conditions, and consequently, it has not been designed to be read out for every event.
 
 Given that following LS1 it was planned that both the instantaneous luminosity and centre-of-mass energy of the LHC were to increase, the Phase-I Trigger Upgrade~\cite{Tapper:2013yva} was undertaken in order to prevent the physics program being compromised from a substantial increase in the trigger thresholds that would be required to maintain the 100\kHz L1 trigger limit.	
-This requirement has been met by a flexible design based on a large FPGAs on a small number of general-purpose boards which are able to perform more sophisticated identification and reconstruction algorithms over the entire detector without regional boundaries.
+
+\editComment{START: New TMUX text - required for TMTT chapter}
+For the calorimeter trigger, this requirement has been met by a flexible design based on a large FPGAs on a small number of general-purpose boards which are able to perform more sophisticated identification and reconstruction algorithms over the entire detector without regional boundaries.
+This \emph{time-multiplexed} trigger design differs from the previous traditional regional reconstruction data reduction architecture, which forwards the best candidates at each regional level to the next stage covering a larger region of the detector, by buffering and transmitting all the data for every ``n''th event to one of ``n'' identical processors.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.97\textwidth]{figs/cms/TMT.}
+\caption{~\cite{tmttelba}.}
+\label{fig:TMT}
+\end{center}
+\end{figure}
+
+The success of this approach has motivated a similar time-multiplexed approach for a potential track finding system for the Phase-II Outer Tracker, as discussed in~\ref{sec:An FPGA Based Track Finding Architecture and Processor}.
+\editComment{END: New TMUX text - required for TMTT chapter}
+
 The upgraded electronics of the Phase-I Trigger were installed during LS1 and ran using the legacy trigger system during 2015 with the new trigger system (Fig.~\ref{fig:trigger}) running in parallel for validation prior to commissioning and usage during 2016~\cite{Zabi:2017lya}.
 %%% Old text
 %Initially both the calorimeter and muon triggers search over a small local area for the signature of an interesting event, forwarding these onto the regional triggers which sorts the candidates in order of importance, before the global calorimeter and muon triggers determine the highest ranked objects across the entire experiment. 

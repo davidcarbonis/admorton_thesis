@@ -85,8 +85,21 @@ This layout was adopted as it not only improves stub-finding efficiency for trac
 \label{fig:trackerlayout}
 \end{figure}
 
-Three different L1 track finders, which take the stubs as input and outputs fully reconstructed tracks for the L1, have been explored by the CMS Collaboration.
-One uses Associative Memory (\emph{AM}) ASICs for track finding and FPGAs for track fitting, and the other two all-FPGA approaches, one using a Hough Transform (referred to as the Time Multiplexed Track Trigger, \emph{TMTT}) and the other a road search (\emph{tracklet}) algorithm to reconstruct tracks respectively.
+Out of the total L1 latency of 12.5\mus, $\approx 1\mus$ is required for generation, packaging and transmission of stubs from the tracker front-end electronics to the Data, Trigger and Control (DTC) system and $\approx 4\mus$ is available for the reconstruction of tracks from data arriving at the DTC, as shown in Fig.~\ref{fig:dataFlow}.
+The rest of the available latency is allocated for the correlation of tracks with trigger primitives from the calorimeters and muon systems ($\approx 3.5\mus$), the propagation of the L1 decision to the front-end buffers ($1\mus$) and a safety margin ($3\mus$)~\cite{CMS_Upgrade_TP}.
+Any Track Finder, which will take the stubs as input and output fully reconstructed tracks for the L1, proposed will be constrained by both being able to reconstruct tracks within the $4\mus$ latency constraint and how the detector is cabled to the DTC system.
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\textwidth]{figs/tk-upgrade/dataflow.pdf}
+% where an .eps filename suffix will be assumed under latex,
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+\caption{Illustration of data-flow and latency requirements from \pt-modules through to the off-detector electronics dedicated to forming the L1 trigger decision.}
+\label{fig:dataFlow}
+
+Three different L1 track finders have been explored by the CMS Collaboration.
+One uses Associative Memory (\emph{AM}) ASICs for track finding and FPGAs for track fitting, and the other two all-FPGA approaches, one using a Hough Transform (\emph{HT}) and the other a road search (\emph{tracklet}) algorithm to reconstruct tracks respectively.
 
 Hardware demonstrators for each of the three proposed L1 track finder projects were constructed to prove the feasibility of each approach, which were reviewed in December 2016.
 As all of the work discussed in this chapter was on the FPGA-based \HT approach, more detailed descriptions and results of both the AM and tracklet projects' approaches are not discussed here, but are given in~\cite{AM,P2TrackerTDR} and~\cite{tracklet,P2TrackerTDR} respectively.
@@ -94,40 +107,25 @@ As all of the work discussed in this chapter was on the FPGA-based \HT approach,
 At the time of the review, the then proposed \emph{flat barrel} geometry~\cite{CMS_Upgrade_TP} was used for all the studies undertaken, as depicted in the lower diagram in Fig.~\ref{fig:trackerlayout}.
 Unless stated otherwise, the results discussed below use the old \emph{flat barrel} geometry instead of the currently proposed layout.
 
-\section{An FPGA Based Track Finding Architecture and Processor}
+\section{sec:An FPGA Based Track Finding Architecture and Processor}
 \subsection{The Track Finding Architecture}
-Any proposed architecture will be constrained by how the detector is cabled to the Data, Trigger and Control (DTC) system, which generates, packages and transmits the stubs from the front-end electronics to the first layer, and on the number of high speed optical links available for both the DTC and Track Finder boards.
-It is 
 
-The proposed architecture is based
-FPGA-based \HT approach uses a scalable, configurable and redundant system architecture based on a fully time-multiplexed design using current FPGA technology.
+The proposed FPGA-based Hough Transform Track Finder is a fully time-multiplexed architecture, where parallel nodes each process a single event from multiple sources.
+This allows for a scalable, flexible and redundant design as it allows the track finder to:
+\begin{itemize}
+\item be composed of identical processors which are fully pipelined (no sideways connections), thus allowing demonstration of the final system which a single Track Finding Processor (TFP).
+\item make use of spare TFPs for online recovery in case of failure (which would be for a lost bunch crossing in N rather than a lost physical region) or parasitic testing of new algorithms during LHC runtime.
+\end{itemize} 
 
-%% constrained by l1 latency and cabling
-There is some flexibility in how the track finding architecture is defined, including how the track finding method is parallelised across processors.
-
-Out of the total L1 latency of 12.5\mus, the L1 trigger requires input data formatting, track reconstruction and track fitting to be undertaken within an overall latency of 4\mus.
-
-
-%Out of the total $12.5\mus$ L1 latency, $\approx 3.5\mus$ is allocated for the correlation of tracks with trigger primitives from the calorimeters and muon systems, $1\mus$ for the propagation of the L1 decision to the front-end buffers and $3\mus$ for a safety margin~\cite{CMS_Upgrade_TP}.
-%From the remaining $\approx 5\mus$, $\approx 1\mus$ is required for generation, packaging and transmission of stubs from the tracker front-end electronics to the Data, Trigger and Control (DTC) system, leaving $\approx 4\mus$ available for the reconstruction of tracks from data arriving at the DTC, as shown in Fig.~\ref{fig:dataFlow}.
-
-%\begin{figure}[tb]
-%\centering
-%\includegraphics[width=\textwidth]{figs/tk-upgrade/dataflow.pdf}
-%% where an .eps filename suffix will be assumed under latex,
-%% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-%% via \DeclareGraphicsExtensions.
-%\caption{Illustration of data-flow and latency requirements from \pt-modules through to the off-detector electronics dedicated to forming the L1 trigger decision.}
-%\label{fig:dataFlow}
+At the time of the December 2016 review, it was assumed that the DTC system would be arranged such that it forms octants (\ie 45\,degree $\varphi$-sector) of the Outer Tracker, referred to here as \emph{detector octants}, which are non-uniform as the tracker geometry does not have an exact eight-fold symmetry.
+By treating the DTC system as the first layer 
 
 \subsection{The Track Finding Processor}
-%%%% Old conference draft
-%%tf-processor
 %The Track Finding Processor (TFP) described is based on a time-multiplexed approach. The outer tracking detector is split into eight $\phi$ octants, referred to as \textit{detector octants}, where $\phi$ is the azimuthal angle of the track. Each \textit{processing octant}, offset from the detector octant by 22.5 degrees in $\phi$ in order to handle data duplication across hardware boundaries, receives data from the Data, Trigger and Control (DTC) system. The DTC reads out each detector octant, unpacks and converts the stubs to a global coordinate system, and transmission to one or two processing octants, or if consistent with both, duplicates the stub into both octants. 
 %
 %Data consistent with each processing octant is sent out on separate links and processed by \textit{N} identical TFPs, negating the need for any data sharing downstream within or after the track finding process. This has the advantages of demonstrating a final system with one TFP which is easily scalable, allows for spare TFPs for online recovery in case of failure or online testing of new algorithms and allows each TFP to operate independently, thus reducing the requirements on system wide synchronisation.
 %
-%As the system is based on a time-multiplexed approach, where parallel nodes each process a single event from multiple sources, each TFP processes only one event in \textit{N}. For our demonstrator system N was chosen to be thirty six, based on the currently available electronics and input/output links. 
+%As the system is based on a time-multiplexed approach, each TFP processes only one event in \textit{N}. For our demonstrator system N was chosen to be thirty six, based on the currently available electronics and input/output links. 
 
 %%tf-arch
 The TFP (Fig.~\ref{fig:TFP}) consists of four self-contained components:
@@ -308,4 +306,9 @@ Further improvements to the \HT, such as \pt dependent threshold criteria and op
 
 \subsubsection{Alternative cabling schemes}
 %% Motivation
+Since the December 2016 review, an alternative tracker cabling scenario has been proposed where a nonant segmentation in $\varphi$ is used instead instead an octant segmentation.
+Without any modifications to the system, the implication of an additional TFP per time slice required for the additional segment is the need for another 
+
 %% Implications
+%% Increase phi octants from 8 to 9, number of phi sectors from 16 to 18, num of Phi HT bins is 64->56
+%% Each HT cell is thus larger in phi by a factor (8/9)*(64/56). 
