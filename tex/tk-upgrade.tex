@@ -110,12 +110,7 @@ Unless stated otherwise, the results discussed below use the old \emph{flat barr
 \section{An FPGA Based Track Finding Architecture and Processor}
 \subsection{The Track Finding Architecture}
 
-The proposed FPGA-based Hough Transform Track Finder is a fully time-multiplexed architecture, where parallel nodes each process a single event from multiple sources.
-This allows for a scalable, flexible and redundant design as it allows the track finder to:
-\begin{itemize}
-\item be composed of identical processors which are fully pipelined (no sideways connections), thus allowing demonstration of the final system which a single Track Finding Processor (TFP).
-\item make use of spare TFPs for online recovery in case of failure (which would be for a lost bunch crossing in N rather than a lost physical region) or parasitic testing of new algorithms during LHC runtime.
-\end{itemize} 
+The proposed FPGA-based Hough Transform Track Finder is a fully time-multiplexed architecture, as previously demonstrated by the Phase-I Calorimeter Trigger Upgrade~\ref{paragraph:L1}, which allows for a scalable, flexible and redundant design for the track finder that can be demonstrate full system capabilities with a single Track Finding Processor (TFP).
 
 At the time of the December 2016 review, it was assumed that the DTC system would be arranged such that it forms octants (\ie 45\,degree $\varphi$-sector) of the Outer Tracker, referred to here as \emph{detector octants}, which are non-uniform as the tracker geometry does not have an exact eight-fold symmetry.
 By treating the DTC system as the first layer 
