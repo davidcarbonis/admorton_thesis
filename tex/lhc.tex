@@ -1,4 +1,4 @@
-\textit{•}\chapter{The LHC accelerator and the CMS experiment}\label{chapter:lhc-cms}
+\chapter{The LHC accelerator and the CMS experiment}\label{chapter:lhc-cms}
 \section{The Large Hadron Collider}\label{sec:lhc}
 
 The Large Hadron Collider (LHC) at the European Organisation for Nuclear Research (CERN)~\cite{Bruning:782076}, in Geneva, Switzerland is the highest-energy particle accelerator constructed to date. 
@@ -230,35 +230,31 @@ The CMS trigger system is comprised of two stages, The Level-1 (L1) Trigger and 
 The Level-1 Trigger reduces the raw $40\MHz$ rate to $\approx100\kHz$ and consists of FPGAs (Field Programmable Gate Arrays) and ASICs (Application Specific Integrated Circuits), which have to identify hard scattering physics signals at a high efficiency with acceptance thresholds as low as possible, within constraint of the system having to analyse every bunch crossing (BX).
 The strict time limitations on how long it takes for the data can be collected and read out, precludes both the reading out of events in full and of the use of iterative reconstruction algorithms.
 As the selection cannot be done before the subsequent BX, given the above constraints, the L1 Trigger uses a pipelined approach which provides a total system latency of $\approx$ 3.8\mus, during which the detector data is buffered (the Tracker and ES buffers being the limiting factor of the system latency) prior to either being read out or discarded.
-The L1 acceptance decision is based on whether ``trigger primitives'' formed from promptly available data from the ECAL, HCAL or muon detectors above the pre-determined \pT or \ET thresholds.
+The L1 acceptance decision is based on whether \emph{trigger primitives} formed from promptly available data from the ECAL, HCAL or muon detectors above the pre-determined \pT or \ET thresholds, with the highest ranked candidates being forwarded from the global calorimeter and global muon triggers to the Global Trigger, which either rejects an event or accepts it for further evaluation by the second stage, the HLT.
 Tracking information is not used in the L1 Trigger as its inclusion was determined to be unnecessary for nominal LHC conditions, and consequently, it has not been designed to be read out for every event.
 
 Given that following LS1 it was planned that both the instantaneous luminosity and centre-of-mass energy of the LHC were to increase, the Phase-I Trigger Upgrade~\cite{Tapper:2013yva} was undertaken in order to prevent the physics program being compromised from a substantial increase in the trigger thresholds that would be required to maintain the 100\kHz L1 trigger limit.	
 
-\editComment{START: New TMUX text - required for TMTT chapter}
-For the calorimeter trigger, this requirement has been met by a flexible design based on a large FPGAs on a small number of general-purpose boards which are able to perform more sophisticated identification and reconstruction algorithms over the entire detector without regional boundaries.
-This \emph{time-multiplexed} trigger design differs from the previous traditional regional reconstruction data reduction architecture, which forwards the best candidates at each regional level to the next stage covering a larger region of the detector, by buffering and transmitting all the data for every ``n''th event to one of ``n'' identical processors.
+The Phase-I Calorimeter Trigger Upgrade is based on a \emph{time-multiplexed} architecture which uses large FPGAs on a small number of general-purpose board with fast optical links that allow for full granularity data to be used.
+This \emph{time-multiplexed} trigger concept differs from the previous traditional regional reconstruction data reduction architecture, which forwards the best candidates at each regional level to the next stage which covers a larger region of the detector, by buffering and transmitting all the data for every \emph{n}th bunch crossing to one of \emph{n} identical processors (Fig.~\ref{fig:TMT}).
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=0.97\textwidth]{figs/cms/TMT.}
-\caption{~\cite{tmttelba}.}
+\includegraphics[width=0.97\textwidth]{figs/cms/TMT.pdf}
+\caption{In a time-multiplexed trigger, all data from the Trigger Primitive Generators (TPG) covering the entire detector are transmitted to one of ``n'' identical processors after passing through the multiplexing fabric (MUX), a serial interconnection linking each TPG to each TMT processor, before being passed to the Global Trigger (GT)~\cite{tmttelba}.}
 \label{fig:TMT}
 \end{center}
 \end{figure}
 
-The success of this approach has motivated a similar time-multiplexed approach for a potential track finding system for the Phase-II Outer Tracker, as discussed in~\ref{sec:An FPGA Based Track Finding Architecture and Processor}.
-\editComment{END: New TMUX text - required for TMTT chapter}
+Having all the data from a single bunch crossing being able to be processed by a single processor allows for:
+\begin{itemize}
+\item minimised boundary issues and data sharing between processors, saving time and resources and allows for data from the entire calorimeter for a bunch crossing, and thus candidates that would have been discarded by regional triggers, to be considered.
+\item synchronisation being only required within each processor instead of the entire system.
+\item system validation only requiring one processor.
+\item the loss of a processor resulting in the loss of a bunch crossing instead of a region of the detector.
+\item the use additional processors to test new algorithms online in parallel with the nominal trigger and as backup processors in case of the failure of another.
 
 The upgraded electronics of the Phase-I Trigger were installed during LS1 and ran using the legacy trigger system during 2015 with the new trigger system (Fig.~\ref{fig:trigger}) running in parallel for validation prior to commissioning and usage during 2016~\cite{Zabi:2017lya}.
-%%% Old text
-%Initially both the calorimeter and muon triggers search over a small local area for the signature of an interesting event, forwarding these onto the regional triggers which sorts the candidates in order of importance, before the global calorimeter and muon triggers determine the highest ranked objects across the entire experiment. 
-%These are sent to the Global Trigger, which either rejects an event or accepts it for further evaluation by the second step, the High-Level-Trigger (HLT), a software system (see Fig.~\ref{fig:trigger} for a more detailed breakdown). 
-%Events accepted by the HLT are then transferred to mass storage for offline storage and analysis\cite{oldcms}. 
-%In light of this, the current approach of having large amounts of data over small regions being brought to fewer boards so that objects of interest can be considered, has to discard data at each stage a larger region is considered . 
-%While this approach creates candidates within these constraints, by definition only the candidates from this coarser data set can be considered. 
-%Any candidates in the discarded data are lost\cite{oldcms}.
-%%%
 
 \begin{figure}[htbp]
 \begin{center}
@@ -267,6 +263,8 @@ The upgraded electronics of the Phase-I Trigger were installed during LS1 and ra
 \label{fig:trigger}
 \end{center}
 \end{figure}
+
+The success of this architecture has motivated a similar time-multiplexed approach for a potential track finding system for the Phase-II Outer Tracker, as discussed in~\ref{sec:An FPGA Based Track Finding Architecture and Processor}.
 
 \subsubsection{High Level Trigger and Data Acquisiation}\label{paragraph:HLT}
 Upon receipt of a L-1 trigger, the Data Acquisition (DAQ) system (Fig.~\ref{fig:DAQ}) reads out the buffered data from the detector Front-End Drivers, buffers it in the Readout Systems until the Builder Network (controlled by the Event Manager) can transfers data to the Filter Systems where the event fragments are collated into a complete event and processed through the HLT algorithms~\cite{Sphicas:2002gg}. 
