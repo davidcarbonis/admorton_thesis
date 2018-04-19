@@ -242,7 +242,7 @@ Such a system requires at least two layers, linked by a switching network which 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=0.97\textwidth]{figs/cms/TMT.pdf}
-\caption{In a time-multiplexed trigger, all data from the Trigger Primitive Generators (TPG) covering the entire detector are transmitted to one of ``n'' identical processors after passing through the multiplexing fabric (MUX), a serial interconnection linking each TPG to each TMT processor, before being passed to the Global Trigger (GT)~\cite{tmttelba}.}
+\caption{In a time-multiplexed trigger, all data from the Trigger Primitive Generators (TPG) covering the entire detector are transmitted to one of ``n'' identical processors after passing through the multiplexing fabric (MUX), a serial interconnection linking each TPG to each TMT processor, before being passed to the Global Trigger (GT) where the decision of whether or not to issue a L1 receipt to the HLT is determined~\cite{tmttelba}.}
 \label{fig:TMT}
 \end{center}
 \end{figure}
@@ -254,7 +254,7 @@ Advantages of a time-multiplexed architecture include:
 \item system demonstration with a single processor as each processor is identical and fully pipelined (no sideways connections).
 \item validation only requiring one processor as each is identical and has no sideways communication.
 \item the loss of a processor resulting in the loss of a bunch crossing instead of a region of the detector.
-\item the use of spare processors to test new algorithms online in parallel with the nominal trigger and as backup processors in case of the failure of another.
+\item the use of spare processors to test new algorithms online in parallel with the nominal trigger without affecting the current system and as backup processors in case of the failure of another.
 \end{itemize} 
 
 The electronics of the Phase-I Trigger were installed during LS1 and ran using the legacy trigger system during 2015 with the new trigger system (Fig.~\ref{fig:trigger}) running in parallel for validation prior to commissioning and usage during 2016~\cite{Zabi:2017lya}.

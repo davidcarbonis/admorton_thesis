@@ -99,7 +99,7 @@ Any Track Finder, which will take the stubs as input and output fully reconstruc
 \label{fig:dataFlow}
 
 Three different L1 track finders have been explored by the CMS Collaboration.
-One uses Associative Memory (\emph{AM}) ASICs for track finding and FPGAs for track fitting, and the other two all-FPGA approaches, one using a Hough Transform (\emph{HT}) and the other a road search (\emph{tracklet}) algorithm to reconstruct tracks respectively.
+One uses Associative Memory (\emph{AM}) ASICs for track finding and FPGAs for track fitting, and the other two all-FPGA approaches, one using a fully Time-Multiplexed approaching using the Hough Transform (\emph{TMTT}) and the other a road search (\emph{tracklet}) algorithm to reconstruct tracks respectively.
 
 Hardware demonstrators for each of the three proposed L1 track finder projects were constructed to prove the feasibility of each approach, which were reviewed in December 2016.
 As all of the work discussed in this chapter was on the FPGA-based \HT approach, more detailed descriptions and results of both the AM and tracklet projects' approaches are not discussed here, but are given in~\cite{AM,P2TrackerTDR} and~\cite{tracklet,P2TrackerTDR} respectively.
@@ -110,20 +110,27 @@ Unless stated otherwise, the results discussed below use the old \emph{flat barr
 \section{An FPGA Based Track Finding Architecture and Processor}
 \subsection{The Track Finding Architecture}
 
-The proposed FPGA-based Hough Transform Track Finder is a fully time-multiplexed architecture, as previously demonstrated by the Phase-I Calorimeter Trigger Upgrade~\ref{paragraph:L1}, which allows for a scalable, flexible and redundant design for the track finder that can be demonstrate full system capabilities with a single Track Finding Processor (TFP).
+The proposed FPGA-based Hough Transform Track Finder is a scalable, flexible and redundant design based on a fully time-multiplexed architecture, as previously demonstrated by the Phase-I Calorimeter Trigger Upgrade~\ref{paragraph:L1}, for implementation on commercially available FPGAs.
+A time-multiplexed design has a number of advantages, as discussed in~\ref{paragraph:L1}, including that only a single processor is required to demonstrate the full system as each processor is identical in every respect except for LHC bunch crossing they process.
+
+By treating the DTC system as the first layer, and the 
 
 At the time of the December 2016 review, it was assumed that the DTC system would be arranged such that it forms octants (\ie 45\,degree $\varphi$-sector) of the Outer Tracker, referred to here as \emph{detector octants}, which are non-uniform as the tracker geometry does not have an exact eight-fold symmetry.
 By treating the DTC system as the first layer 
 
-\subsection{The Track Finding Processor}
+The Xilinx Virtex-7 FPGAs on MP7 boards developed for the Phase-I Calorimeter Trigger Upgrade, 
+
+FIG
+
 %The Track Finding Processor (TFP) described is based on a time-multiplexed approach. The outer tracking detector is split into eight $\phi$ octants, referred to as \textit{detector octants}, where $\phi$ is the azimuthal angle of the track. Each \textit{processing octant}, offset from the detector octant by 22.5 degrees in $\phi$ in order to handle data duplication across hardware boundaries, receives data from the Data, Trigger and Control (DTC) system. The DTC reads out each detector octant, unpacks and converts the stubs to a global coordinate system, and transmission to one or two processing octants, or if consistent with both, duplicates the stub into both octants. 
 %
 %Data consistent with each processing octant is sent out on separate links and processed by \textit{N} identical TFPs, negating the need for any data sharing downstream within or after the track finding process. This has the advantages of demonstrating a final system with one TFP which is easily scalable, allows for spare TFPs for online recovery in case of failure or online testing of new algorithms and allows each TFP to operate independently, thus reducing the requirements on system wide synchronisation.
 %
 %As the system is based on a time-multiplexed approach, each TFP processes only one event in \textit{N}. For our demonstrator system N was chosen to be thirty six, based on the currently available electronics and input/output links. 
 
-%%tf-arch
-The TFP (Fig.~\ref{fig:TFP}) consists of four self-contained components:
+\subsection{The Track Finding Processor}
+
+The Track Finding Processor (Fig.~\ref{fig:TFP}) consists of four self-contained components:
 \begin{itemize}
 \item {\bf Geometric Processor (GP)} - responsible for pre-processing the stubs from the DTC.
 \item {\bf Hough Transform (HT)} - a highly panellised initial coarse track finding.
@@ -141,8 +148,8 @@ The TFP (Fig.~\ref{fig:TFP}) consists of four self-contained components:
 \label{fig:TFP}
 \end{figure}
 
-A more complete description of the demonstrator system and all of the results achieved with up to the December 2016 review are described are given here~\cite{TMTT_JINST}.
-\editComment{Relocate this sentence}
+A hardware demonstrator, capable of processing one phi-octant of the tracker with a time-multiplexing factor of 36 and composed of Xilinx Virtex-7 FPGAs on MP7 boards (developed for the Phase-I Calorimeter Trigger Upgrade), was used to validate the feasibility of the proposed system and all its components for the December 2016 review.
+All of its results achieved, and a more complete description of the system, are given in~\cite{TMTT_JINST}.
 
 \subsubsection{Geometric Processor}
 Each GP performs two tasks, firstly the conversion of the 48-bit DTC stubs into a 64-bit format extended format that is used to reduce the HT processing load and the assignment of stubs to thirty six sub-sectors, two sub-sectors in $\phi$ and eighteen in $\eta$ (where $\eta$ is the pseudo-rapidity). 
@@ -177,37 +184,13 @@ For large \pT (> 3\GeV) and thus large $R$, the small angle approximation can be
 \end{equation}
 
 The point of intersection of these lines in Hough-space would therefore correspond to a circle in the \rphi plane which is consistent with the primary interaction point and all stubs involved.
-
 As the line gradients in Hough-space is given by the radius of the stubs, they will always be positive, the stub radius is transformed to $r_{58} = r - 58cm$ in order to utilise a larger phase space, which leads to fewer \textit{fake} (in that the found track does not match to a simulated particle) and duplicated tracks.
 
 Given that $R$ for the lowest \pT track (3\GeV) to be considered is greater than the outer radius of the tracking detector ($r$ = 1.2m), all relevant particles are expected to traverse through at least six barrel layers or endcap disks. 
 The threshold for the identification of a track candidate however, is set at a minimum of five detector layers or disk in order to allow for detector or readout inefficiencies. 
 This threshold can be further reduced to four layers to account for the reduced geometric coverage between $0.89 < \eta < 1.16$ or for dead detector layers or disks.
 
-\paragraph{Implementation}
-A two stage fully pipelined design has been implemented in FPGA firmware, firstly the HT array is filled before the reading out of the HT track candidates. 
-
-The \textit{Book Keeper} (Fig.~\ref{fig:implementationHT}) unpacks stub data from the input links and propagates stubs from one \textit{Bin} to the next each clock cycle, before the track candidate stubs are returned to the Book Keeper and transmitted downstream. 
-Each Bin (Fig.~\ref{fig:implementationHT}) represents a $q/\pT$ column in the HT array. 
-Using the left and right boundary results of the \HT calculation, it is determined if the stub crosses two $\phi$ rows and if so, it is duplicated and processed at the next available gap in the data stream. 
-The stubs are sorted into the sixty four $\phi$ rows in the Track Builder's memory and if there are $\phi$ cells which meet the threshold requirement on the minimum number of hit layers/disks, the row is marked for readout. 
-The \textit{Hand Shake} component is responsible for shifting the track candidate stubs from bin to bin until there are no further stubs, before enabling the reading out of the Track Builder.
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=0.57\textwidth]{figs/tk-arch/ht/bookKeeper.pdf}
-\includegraphics[width=0.37\textwidth]{figs/tk-arch/ht/bin.pdf}
-% where an .eps filename suffix will be assumed under latex,
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-\caption{Overview of a \textit{Book Keeper} (left) and a \textit{Bin}. Internal components are shown as boxes and data paths as lines, where arrows indicate the direction of data flow}
-\label{fig:implementationHT}
-\end{figure}
-
-As the Book Keeper receives only one stub per clock cycle, thirty six arrays per octant are required to process the large number of stubs associated with each event at high pileup.
-Each array (or Hough Segement) corresponds to one sub-sector from the GP, covering thirty two columns in \qpt and a sixty four row sub-range in $\varphi$.
-
-A more detailed description of the firmware implementation of the \HT for the demonstrator system is discussed in \cite{IEEE} and \cite{TmttNote}.
+A more detailed description of the firmware implementation of the \HT for the demonstrator system is discussed in~\cite{IEEE} and~\cite{TMTT_JINST}.
 
 \subsubsection{Kalman Filter}
 Coarse \rphi helix parameters out of the \HT are used as the initial variables for track finding, with the segment assignment also providing a good seed value.
@@ -247,13 +230,7 @@ By performing a second pass through the rejected tracks and rescuing those which
 \label{fig:DR}
 \end{figure}
 
-\paragraph{Implementation}
-A minimum resource usage strategy has resulted in firmware that can be integrated in the same board as the KF.
-Tracks which are consistent in both HT and KF space are marked in a matrix, which allows only one track per cell, are forwarded to the output.
-Tracks which are not consistent and not yet in the matrix are kept in a FIFO until a certain time threshold is reached, then, if the tracks point to a still unmarked cell, they are marked in the matrix and forwarded to the output. 
-
-Two matrices are used in an interleaving fashion as a complete reset is required before processing tracks from the following event.
-Additionally, two FIFOs (one per matrix) are required to store the addresses that were marked and thus require to be cleared in the event, therefore resulting in there being always one active and one resetting matrix.
+A more detailed description of the firmware implementation of the \DR for the demonstrator system is discussed in~\cite{TMTT_JINST}.
 
 \section{Simulation Studies}
 During the development of the TMTT demonstrator system both before and following the December 2016 review, the author was involved in a number of simulation studies, the more substantive of which are discussed below.
