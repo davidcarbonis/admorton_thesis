@@ -249,7 +249,7 @@ This required modifying the GP and HT configuration parameters to ensure adequat
 Without any further modifications, there is a considerable degradation in the track reconstruction efficiency in the range $2 < \pt < 2.7$\GeVc, predominantly due to multiple scattering which results in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
 %%% Causes - mainly multiple scattering, what else?
 
-To mitigate against this issue, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two and the internal \KF State Accumulator $\chi^2$ cuts for the range $2 < \pt < 2.7$ were optimised to reduce the number of duplicate and fake tracks as far as possible without impacting on the track reconstruction efficiency.
+To mitigate against this issue, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two and the internal \KF state $\chi^2$ cuts for the range $2 < \pt < 2.7$ were optimised to reduce the number of duplicate and fake tracks as far as possible without impacting on the track reconstruction efficiency.
 This variable precision \HT, which has been separately implemented in firmware, has been shown in simulation to recover some of this loss, as shown in Fig~\ref{fig:2GeVFlat}
 
 \begin{figure}[tbp]
