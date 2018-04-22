@@ -99,7 +99,7 @@ Any Track Finder, which will take the stubs as input and output fully reconstruc
 \label{fig:dataFlow}
 
 Three different L1 track finders have been explored by the CMS Collaboration.
-One uses Associative Memory (\emph{AM}) ASICs for track finding and FPGAs for track fitting, and the other two all-FPGA approaches, one using a fully Time-Multiplexed approaching using the Hough Transform (\emph{TMTT}) and the other a road search (\emph{tracklet}) algorithm to reconstruct tracks respectively.
+One uses Associative Memory (\emph{AM}) ASICs for track finding and FPGAs for track fitting, and the other two all-FPGA approaches, one using a fully Time-Multiplexed approaching using the Hough Transform (\emph{TMTT}) and the other a ``road search'' (\emph{tracklet}) algorithm to reconstruct tracks respectively.
 
 Hardware demonstrators for each of the three proposed L1 track finder projects were constructed to prove the feasibility of each approach, which were reviewed in December 2016.
 As all of the work discussed in this chapter was on the FPGA-based \HT approach, more detailed descriptions and results of both the AM and tracklet projects' approaches are not discussed here, but are given in~\cite{AM,P2TrackerTDR} and~\cite{tracklet,P2TrackerTDR} respectively.
@@ -170,7 +170,7 @@ R = \frac{\pt}{0.003\,qB} \;.
 Assuming, to first order, that $R$ is constant, by neglecting energy losses such as through multiple scattering, and that only primary tracks from or near the primary interaction point are considered (other such tracks are not typically relevant to the L1 trigger), a stub with coordinates ($r$,$\varphi$) is related to $R$ by:
 
 \begin{equation}
-\frac r{2\,R} = \sin\left(\varphi-\phi\right)
+\frac r{2\,R} = \sin\left(\varphi-\phi\right) \;.
 \label{eq:stub_R}
 \end{equation}
 
@@ -233,17 +233,53 @@ A more detailed description of the firmware implementation of the \DR for the de
 \section{Simulation Studies}
 During the development of the TMTT demonstrator system both before and following the December 2016 review, the author was involved in a number of simulation studies, the more substantive of which are discussed below.
 
-\subsection{Linear $\chi^{2}$ Track Fitter}
-Whilst the Kalman Filter was used as a track fitter for the December 2016 hardware demonstrator, two alternative track fitting algorithms, were explored.
-Both of these track fitting algorithms were preceded by a \emph{Seed Filter} (SF) which removes stubs in a HT cell which are inconsistent with a straight line in the \emph{r-z} plane, filtering out both fake tracks and stubs incorrectly assigned to tracks.
-\editComment{elaborate further?}
-The Linear Regression (LR) fitter performs two independent fits in the \emph{r-$\varphi$/r-z} planes with a linear regression technique are made, and is further discussed in~\cite{TMTT_FLP}.
-The Linear $\chi^{2}$ fitter 
- .
+\subsection{Linearised $\chi^{2}$ Track Fitter}
+Whilst the Kalman Filter was used as a track fitter for the December 2016 hardware demonstrator, two alternative track fitting algorithms were explored.
+Both require a proceeding \emph{Seed Filter} (SF) stage to remove stubs in a HT cell which are inconsistent with a straight line in the \emph{r-z} plane to filter out both fake tracks and stubs incorrectly assigned to tracks.
+These track fitting algorithms are based on linear fits in the \emph{r-$\varphi$/r-z} planes, one being a Linear Regression (LR) fit, which is further discussed in~\cite{TMTT_FLP}, and the other a $\chi^{2}$ fit.
+
+The linearised $\chi^{2}$ fit makes use of residuals between the stubs and the seeded track that minimise $\chi^{2}$ of the fit in order to obtain improved parameters for the track candidate.
+The parameters of each stub $s_{i}$, based on the track’s helix parameters $h$, are initially linearly expanded around the estimate of the helix parameters $h_{0}$:
+
+\begin{equation}
+s_{i}(h) = s_{i}(\overline{h_{0}} + \delta h) = s_{i}(\overline{h_{0}}) + \delta h \frac{\delta s_{i}}{\delta h} + \mathcal{0}(\delta h^{2}) \;.
+\label{eq:chi1}
+\end{equation}
+
+With $\chi^{2}$ being defined as:
+
+\begin{equation}
+\chi^{2} = \frac{\sum_{i}(s_{i}(h) - s_{track}(\overline{h_{0}}))^{2}}{\sigma^{2}_{s}} = \frac{\sum_{i}(s_{i}(\overline{h_{0}} - s_{track}(\overline{h_{0}) + \delta h \frac{\delta s_{i}}{\delta h}))^{2}}{\sigma^{2}_{s}}
+\label{eq:chi2}
+\end{equation}
+
+Which, in order to obtain $\delta h$, is minimised:
+
+\begin{equation}
+0 = \frac{\partial \chi^{2}}{\partial \delta h} = 2 \sum_{i}\frac{\partial s_{i}}{\delta h}(s_{i}(\overline{h_{0}}) - s_{track}(\overline{h_{0}}) + \delta h \frac{\partial s_{i}}{\partial h}) + 2 \sum_{i}\frac{\partial s_{i}}{\delta h}(\delta s_{i}^{t} + \delta h \frac{\partial s_{i}}{\partial h})
+\label{eq:chi3}
+\end{equation}
+
+Where $\delta s_{i}^{t} = s_{i}(\overline{h_{0}}) - s_{track}(\overline{h_{0}})$ are the residuals between the hits and the seeded track.
+
+By defining the matrices $D_{ij} = \frac{1}{\sigma_{i}} \frac{\delta s_{i}}{\delta h_{j}}$ and $M = D^{T} D$, Eqn.~\ref{eq:chi3} can be rewritten and solved for $\delta h$ as:
+
+\begin{equation}
+0 = D^{T} \delta s^{t} + M \delta h \Rightarrow \delta h = - M^{-1} D^{T} \delta s^{t}
+\label{eq:chi4}
+\end{equation}
+
+Eqn.~\ref{eq:chi4} gives a linear form which can be solved for $\delta h$ through Newtonian Iteration through updating the residuals with respect to the seeded track candidate.
+
+\editComment{Worth showing track derivatives in full here, or in an appendix?}
+
+Whilst the computation of these matrices in full would be non-trivial for FPGAs, 
+
+several aspects making it suitable for FPGA implementation compared to global track fitting methods, namely the matrices:
 
 %%internal cuts, multiple iterations
 
-
+Despite the performance in simulation of the linear $\chi^{2}$ track fitter being comparable to both the \KF and \LR track fitters, consideration as to whether it can be implemented in hardware had to be given.
 
 %% limits of maths/LUTs/resources required
 
@@ -273,7 +309,7 @@ This variable precision \HT, which has been separately implemented in firmware, 
 
 Following the December 2016 demonstrator review and the proposition of the \emph{tilted} barrel geometry, \editComment{what impact did the new geometry have?}, the modification of the uncertainties associated with a \KF state to take into account the impact of multiple scattering for low \pT tracks was explored.
 
-Initially an additive constant 
+The starting point was the adding an additive constant of the order of a milliradian, the estimated amount of scattering, to inflate the r-$\varphi$ error in the \KF.
 
 Given that the hit position resolution in the \emph{r-z} plane is , only the uncertainity 
 
@@ -282,13 +318,23 @@ Given that the hit position resolution in the \emph{r-z} plane is , only the unc
 %%% - separate cutting of chi2 in each plane?
 %%% - additive constant / radius
 
+
+
 Additional improvements to the \HT, such as \pt dependent threshold criteria and optimisation of the \KF to such changes, should be able to further improve tracking performance between 2\GeV and 3\GeV.
 
 \subsubsection{Alternative cabling schemes}
 %% Motivation
 Since the December 2016 review, an alternative tracker cabling scenario has been proposed where a nonant segmentation in $phi$ is used instead instead an octant segmentation.
 Without any modifications to the system this implies that an additional processor sector is required, increasing the number of TFPs from 144 to 162 if the time-multiplexed period of 18 reminds unchanged, and that if the $phi$ dimension of the \HT arrays remain unchanged, the $phi$ granularity of each \HT array will increase by a factor of \frac{9}{8}.
-As FPGA firmware for the \HT constrains the \HT line gradient to be less than or equal to one and the \HT array dimensions in \qPt and $phi$ were already optimised for the octant cabling scheme, if the maximum \HT line gradient is to remain unchanged the nonant cabling scheme requires a decrease in the number of $phi$ bins by a factor of \frac{8}{9} (\ie a decrease from 64 to 56 bins in $phi$).
+As the FPGA firmware for the \HT constrains the \HT line gradient to be less than or equal to one and the \HT array dimensions in \qPt and $phi$ were already optimised for the octant cabling scheme, if the maximum \HT line gradient is to remain unchanged the nonant cabling scheme requires a decrease in the number of $phi$ bins by a factor of \frac{8}{9} (\ie a decrease from 64 to 56 bins in $phi$).
 
+Given that an increased number of TFPs not desirable for economic reasons, the options for reducing the number of FPGA boards required are reducing the time-multiplex period from 18 and/or the resources required by each TFP so that it can be composed of fewer FPGAs.
+
+Load balancing, 
+
+
+The increased resources and link bandwidths of next generation FPGAs are anticipated 
+ for the Outer the time-multiplex period 
+options for reducing number of TFPs: reduce TMUX, reduce resources (\ie spare processing time for truncation)
 %and that the number of $\phi$ sectors will increase from 16 to 18, as each processing sector is sub-divided into two $\phi$ sub-sectors~\ref{subsubsec:GP}.
 
