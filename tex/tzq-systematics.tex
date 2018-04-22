@@ -1,13 +1,15 @@
 \chapter{Systematic Uncertainties for Single Top Physics Searches}\label{chapter:tzq-systematics}
 
-These uncertainties have been treated as nuisance parameters in the 
+
+These uncertainties have been treated as nuisance parameters in the statistical fit model, as discussed in~\ref{chapter:results}.
+
 \section{Experimental Uncertainties}
 \subsection{Jet Energy Corrections}
 As measurements have shown that the jet energy resolution is worse in data than is in simulation, 
 https://arxiv.org/pdf/1607.03663.pdf
 JINST 12 (2017) P02014
 \subsection{Pileup Reweighting}
-The \PU interactions included in the simulated samples used do not describe the number of primary interactions observed in data well, 
+The \PU interactions included in the simulated samples used do not describe the number of primary interactions observed in data well, these interactions are estimated 
 As such, they are reweighted to 
 
 \subsection{b-tagging Uncertainties}
@@ -22,7 +24,58 @@ The uncertainties of the scale factors applied are obtained by varying their val
 \subsection{Parton Distribution Functions}
 %%% ME_PS
 \subsection{Non-prompt Lepton Contributions}
+Backgrounds which involve decays into lepton + jets and where at least one jet is incorrectly reconstructed as a lepton (predominately electrons) or a lepton from the decay of heavy quarks (predominately muons), which pass the lepton selection and isolation criteria, are estimated with data.
 
+The estimation of this background uses the same methodology as when performing top quark pair production~\cite{CMS:2016syx} and same-sign SUSY searches~\cite{CMS:2015vqc}.
+The vast majority of the same-sign event yields found are the result of non-lepton and charge misidentified leptons, with some contribution from prompt leptons.
+As these backgrounds are independent of the charge of the lepton pairs, it is expected that the nominal (opposite-sign) sample would have a similar contribution \cite{CMS:2015vqc}.
+
+To estimate this contribution of opposite-sign non-prompt leptons in data, the same-sign event yields with the expected prompt-lepton contribution subtracted, is multiplied by a ratio of opposite-sign over same-sign non-prompt lepton events taken from MC.
+
+The method requires that the same-sign control region established uses the same selection criteria as the nominal signal region, albeit with same-sign lepton pairs instead of opposite-signed ones.
+This control region is dominated by non-lepton lepton events, but also contains contributions from prompt lepton events, charge misidentification and real same-sign pairs.
+
+This data driven estimate is derived using the following equation:
+
+\begin{equation}
+\begin{align}
+ N_{data}^{OS non-prompt} = (N_{data}^{SS} - N^{SS}_{real + mis-ID}).\frac{N_{MC}^{OS non-prompt}}{N_{MC}^{SS non-prompt}}
+\end{align}
+\end{equation}
+
+where $N_{data}^{SS}$ is the total number of same sign events observed in data, $N^{SS}_{real + mis-ID}$ is the expected number of real same-sign events and events with charge misidentification and $N_{MC}^{OS non-prompt}$ and $N_{MC}^{SS non-prompt}$ the number of opposite-sign and same-sign non-prompt leptons observed in MC used to appropriately scale the estimate.
+
+This ratio of MC opposite-sign over same-sign events is referred to as R, and is calculated using generator level information from reconstructed objects which have matched to a generator level particle. R is calculated from the W + jets, \ttZ and \ttW leptonic decaying, and single top MC samples with sufficient statistics given that these processes are expected to be the predominant source of non-prompt leptons for this analysis. 
+
+Given that this estimation of the instrumental backgrounds should be no dependence as a result of lepton flavour or selection cuts, the variation of the ratio R from both of the above should be well accounted for by a 30\% systematic uncertainty.
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{| l |  c |  c |  c |  c |  c |}
+\hline
+Source &  $ee$ & $\mu\mu$ & Combined \\ 
+\hline
+\ttbar (SS): & a$\pm$b &  c $\pm$d & e$\pm$f    \\
+Z + jets (SS): & a$\pm$b &  c$\pm$d & e$\pm$r    \\
+Single Top (SS): & a$\pm$b & c$\pm$d & e$\pm$r    \\
+VV (SS): & a$\pm$b & c$\pm$d & e$\pm$f    \\
+ttV (SS): & a$\pm$b &  c$\pm$d & e$\pm$f    \\ 
+\hline
+Total background (SS): & a$\pm$b & c$\pm$d & e$\pm$f   \\ 
+Data: & a$\pm$b & c$\pm$d & e$\pm$f    \\ 
+\hline
+SS data (bkg): & a$\pm$b & c$\pm$d & e$\pm$f \\
+\hline
+Non-prompt (SS): & a$\pm$b & c$\pm$d & e$\pm$f \\
+Non-prompt (OS): & a$\pm$b & c$\pm$d & e$\pm$f \\
+R (OS/SS): & a$\pm$b & c$\pm$d & e$\pm$f \\
+\hline
+Non-prompt estimation: & a$\pm$b & c$\pm$d & e$\pm$f \\
+\hline
+\end{tabular}
+\caption{Non-prompt lepton estimation following all selection cuts}
+\label{tab:fakeLeptonYields}
+\end{table}
 \subsection{Luminosity Uncertainties}
 CMS uses five detectors, the pixel detector, DTs, HF, the Fast Beam Conditions Monitor and Pixel Luminosity Telescope to monitor and measure the instantaneous and integrated luminosity, with absolute calibrations of the detectors made through conducting Van der Meer (VdM) scans during dedicated LHC runs.
 Pixel Cluster Counting (PCC) 

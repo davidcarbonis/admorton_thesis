@@ -150,7 +150,7 @@ The Track Finding Processor (Fig.~\ref{fig:TFP}) consists of four self-contained
 \label{fig:TFP}
 \end{figure}
 
-\subsubsection{Geometric Processor}
+\subsubsection{Geometric Processor}\label{subsubsec:GP}
 Each GP performs two tasks, firstly the conversion of the 48-bit DTC stubs into a 64-bit format extended format that is used to reduce the HT processing load and the assignment of stubs to thirty six sub-sectors, two sub-sectors in $\phi$ and eighteen in $\eta$ (where $\eta$ is the pseudo-rapidity). 
 This division of the processing octants simplifies the task of the downstream logic required, allowing the track finding to be carried out independently and in parallel within each sub-sector. 
 The relatively fine $\eta$ binning ensures that any track found by the \rphi HT is consistent in the \rz plane. Stubs compatible with more than one sub-sector, usually due to track curvature in $\phi$ are duplicated. 
@@ -234,11 +234,16 @@ A more detailed description of the firmware implementation of the \DR for the de
 During the development of the TMTT demonstrator system both before and following the December 2016 review, the author was involved in a number of simulation studies, the more substantive of which are discussed below.
 
 \subsection{Linear $\chi^{2}$ Track Fitter}
-Whilst the Kalman Filter was used as a track fitter for the December 2016 hardware demonstrator, two alternative track fitting algorithms, a Seed Filter (SF) and Linear Regression (LR) fitter and Linear $\chi^{2}$ fitter were explored.
-The SF+LR works by removing stubs in a HT cell which are inconsistent with a straight line the \emph{r-z} plane before  two independent fits in the \emph{r-$\varphi$/r-z} planes with a linear regression technique are made, and is further discussed in~\cite{TMTT_FLP}.
-The linear $\chi^{2}$ fitter  
+Whilst the Kalman Filter was used as a track fitter for the December 2016 hardware demonstrator, two alternative track fitting algorithms, were explored.
+Both of these track fitting algorithms were preceded by a \emph{Seed Filter} (SF) which removes stubs in a HT cell which are inconsistent with a straight line in the \emph{r-z} plane, filtering out both fake tracks and stubs incorrectly assigned to tracks.
+\editComment{elaborate further?}
+The Linear Regression (LR) fitter performs two independent fits in the \emph{r-$\varphi$/r-z} planes with a linear regression technique are made, and is further discussed in~\cite{TMTT_FLP}.
+The Linear $\chi^{2}$ fitter 
+ .
 
 %%internal cuts, multiple iterations
+
+
 
 %% limits of maths/LUTs/resources required
 
@@ -246,17 +251,17 @@ The linear $\chi^{2}$ fitter
 \subsubsection{2 GeV Tracking}
 The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may be desirable if the trigger requirements demand it and the impact of this potential requirement on the proposed track-finder system was studied for the December 2016 demonstrator review.
 This required modifying the GP and HT configuration parameters to ensure adequate duplication in $\varphi$ and increasing the number of the \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision, with the latter resulting in the FPGA resources required increasing by 50\% and the output data rate from the \HT by a factor of 2.2.
-Without any further modifications, there is a considerable degradation in the track reconstruction efficiency in the range $2 < \pt < 2.7$\GeVc, predominantly due to multiple scattering which results in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
+Without any additional modifications, there is a considerable degradation in the track reconstruction efficiency in the range $2 < \pt < 2.7$\GeVc, predominantly due to multiple scattering which results in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
 %%% Causes - mainly multiple scattering, what else?
 
-To mitigate against this issue, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two and the internal \KF state $\chi^2$ cuts for the range $2 < \pt < 2.7$ were optimised to reduce the number of duplicate and fake tracks as far as possible without impacting on the track reconstruction efficiency.
+To mitigate against these losses, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two and the \KF state $\chi^2$ cuts for the range $2 < \pt < 2.7$ were optimised to reflect the decreased precision of the hits in these \HT cells and thus better reduce the number of duplicate and fake tracks as far as possible without impacting on the track reconstruction efficiency.
 This variable precision \HT, which has been separately implemented in firmware, has been shown in simulation to recover some of this loss, as shown in Fig~\ref{fig:2GeVFlat}
 
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=0.8\textwidth,trim={1.1truecm 0truecm 1truecm 12truecm},clip]{CMS-bw-logo.pdf}
 \includegraphics[width=0.8\textwidth,trim={0.7truecm 0truecm 1truecm 0truecm},clip]{CMS-bw-logo.pdf}
-\caption{Images showing tracking efficiency in low pT range with no changes (upper), and with HT cell merging (right)}
+\caption{Images showing tracking efficiency in low pT range with no changes (upper), and with HT cell merging and \KF optimisation(right).}
 \label{fig:2GeVFlat}
 \end{figure}
 
@@ -266,18 +271,24 @@ This variable precision \HT, which has been separately implemented in firmware, 
 %%% Causes - mainly multiple scattering, what else?
 %%% - KF internal chi-squared cuts; would expect if MS was fully accounted for, then on average chi2/NDF = 1  everywhere. Show chi2/NDF vs eta plots?
 
-Following the December 2016 demonstrator review, further progress was made in improving tracking down to 2\GeV.
+Following the December 2016 demonstrator review and the proposition of the \emph{tilted} barrel geometry, \editComment{what impact did the new geometry have?}, the modification of the uncertainties associated with a \KF state to take into account the impact of multiple scattering for low \pT tracks was explored.
 
-%%% - additive constant of order (1 mrad)^{2}
+Initially an additive constant 
+
+Given that the hit position resolution in the \emph{r-z} plane is , only the uncertainity 
+
+%%% - additive constant of order (1 mrad)^{2} to inflate r-phi error
+%%% - hit position resolution in r-z means there's no sensitivity to scattering in r-z
+%%% - separate cutting of chi2 in each plane?
 %%% - additive constant / radius
 
-Further improvements to the \HT, such as \pt dependent threshold criteria and optimisation of the \KF to such changes, should be able to 
+Additional improvements to the \HT, such as \pt dependent threshold criteria and optimisation of the \KF to such changes, should be able to further improve tracking performance between 2\GeV and 3\GeV.
 
 \subsubsection{Alternative cabling schemes}
 %% Motivation
-Since the December 2016 review, an alternative tracker cabling scenario has been proposed where a nonant segmentation in $\varphi$ is used instead instead an octant segmentation.
-Without any modifications to the system, this implies that an additional processor sector is required, increasing the number of TFPs from 144 to 162 if the time-multiplexed period of 18 reminds unchanged, that the number 
+Since the December 2016 review, an alternative tracker cabling scenario has been proposed where a nonant segmentation in $phi$ is used instead instead an octant segmentation.
+Without any modifications to the system this implies that an additional processor sector is required, increasing the number of TFPs from 144 to 162 if the time-multiplexed period of 18 reminds unchanged, and that if the $phi$ dimension of the \HT arrays remain unchanged, the $phi$ granularity of each \HT array will increase by a factor of \frac{9}{8}.
+As FPGA firmware for the \HT constrains the \HT line gradient to be less than or equal to one and the \HT array dimensions in \qPt and $phi$ were already optimised for the octant cabling scheme, if the maximum \HT line gradient is to remain unchanged the nonant cabling scheme requires a decrease in the number of $phi$ bins by a factor of \frac{8}{9} (\ie a decrease from 64 to 56 bins in $phi$).
 
-%% Implications
-%% Increase phi octants from 8 to 9, number of phi sectors from 16 to 18, num of Phi HT bins is 64->56
-%% Each HT cell is thus larger in phi by a factor (8/9)*(64/56). 
+%and that the number of $\phi$ sectors will increase from 16 to 18, as each processing sector is sub-divided into two $\phi$ sub-sectors~\ref{subsubsec:GP}.
+
