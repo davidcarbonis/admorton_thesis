@@ -307,11 +307,9 @@ This variable precision \HT, which has been separately implemented in firmware, 
 %%% Causes - mainly multiple scattering, what else?
 %%% - KF internal chi-squared cuts; would expect if MS was fully accounted for, then on average chi2/NDF = 1  everywhere. Show chi2/NDF vs eta plots?
 
-Following the December 2016 demonstrator review and the proposition of the \emph{tilted} barrel geometry, \editComment{what impact did the new geometry have?}, the modification of the uncertainties associated with a \KF state to take into account the impact of multiple scattering for low \pT tracks was explored.
+Following the December 2016 demonstrator review and the proposition of the \emph{tilted} barrel geometry, \editComment{what impact did the new geometry have?}, the modification of the \KF state uncertainty to take into account the impact of multiple scattering for low \pT tracks was explored.
+This involved adding a contribution of the order of a milliradian, the anticipated amount of scattering, to the r-$\varphi$ error~\footnote{The error for the r-z plane is not modified as the effect of multiple scattering is considerably smaller hit position resolution in r-z }, in quadrature to the \KF.
 
-The starting point was the adding an additive constant of the order of a milliradian, the estimated amount of scattering, to inflate the r-$\varphi$ error in the \KF.
-
-Given that the hit position resolution in the \emph{r-z} plane is , only the uncertainity 
 
 %%% - additive constant of order (1 mrad)^{2} to inflate r-phi error
 %%% - hit position resolution in r-z means there's no sensitivity to scattering in r-z
@@ -329,9 +327,7 @@ Without any modifications to the system this implies that an additional processo
 As the FPGA firmware for the \HT constrains the \HT line gradient to be less than or equal to one and the \HT array dimensions in \qPt and $phi$ were already optimised for the octant cabling scheme, if the maximum \HT line gradient is to remain unchanged the nonant cabling scheme requires a decrease in the number of $phi$ bins by a factor of \frac{8}{9} (\ie a decrease from 64 to 56 bins in $phi$).
 
 Given that an increased number of TFPs not desirable for economic reasons, the options for reducing the number of FPGA boards required are reducing the time-multiplex period from 18 and/or the resources required by each TFP so that it can be composed of fewer FPGAs.
-
-Load balancing, 
-
+The easiest means of reducing the resources required for the system is to decrease the amount of resources allocated to avoid truncation effects from the inability to transmit all stubs from the \GP to \HT and for the \HT to readout stubs within latency constraints. 
 
 The increased resources and link bandwidths of next generation FPGAs are anticipated 
  for the Outer the time-multiplex period 
