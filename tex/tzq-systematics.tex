@@ -1,21 +1,28 @@
 \chapter{Systematic Uncertainties for Single Top Physics Searches}\label{chapter:tzq-systematics}
+%%% Intro
+Understanding and minimising the impact of all the possible sources of systematic uncertainties is essential for any
+meaningful measurement to be made, especially 
+%%% Sources
+There are two 
 
-
-These uncertainties have been treated as nuisance parameters in the statistical fit model, as discussed in~\ref{chapter:results}.
+These uncertainties, as well as the statistical uncertainties arising from the size of the simulated samples available, have been treated as nuisance parameters in the statistical fit model, as discussed in~\ref{chapter:results}.
 
 \section{Experimental Uncertainties}
 \subsection{Jet Energy Corrections}
-As measurements have shown that the jet energy resolution is worse in data than is in simulation, 
+As it has been observed that there are differences between simulated and jet energies , 
+corrections are
 https://arxiv.org/pdf/1607.03663.pdf
 JINST 12 (2017) P02014
+
+Smearing jets in MC simulation 
+
 \subsection{Pileup Reweighting}
 The \PU interactions included in the simulated samples used do not describe the number of primary interactions observed in data well, these interactions are estimated 
 As such, they are reweighted to 
 
 \subsection{b-tagging Uncertainties}
-The B-Tag and Vertexing (BTV) Physics Object Group measures the b-tagging efficiency and misidentification rates for b and light flavoured jets in data and MC simulation (multijet and \ttbar) of the algorithms which they support.
+The B-Tag and Vertexing (BTV) Physics Object Group measures the b-tagging efficiency and misidentification rates for b and light flavoured jets in data and MC simulation (multijet and \ttbar) of the algorithms which they support~\cite{Sirunyan:2017ezt}.
 From these measurements b-tagging efficiency scale factors are produced and provided for analysts to apply to simulated events to correct differences observed between data and simulation.
-
 These scale factors, as functions of the jet flavour, \pT and $\eta$, to alter the weight of the selected MC events.
 This methodology was chosen as it involves only changing the weight of the selected MC events which, unlike other methods, avoids events migrating into different b-tag multiplicity bins and the potential issue of events with undefined variables (such as \editComment{INSERT EXAMPLE HERE WHEN LESS SLEEPY}).
 The uncertainties of the scale factors applied are obtained by varying their value by $\pm 1\sigma$, as calculated by the BTV POG. 
@@ -24,70 +31,104 @@ The uncertainties of the scale factors applied are obtained by varying their val
 \subsection{Parton Distribution Functions}
 %%% ME_PS
 \subsection{Non-prompt Lepton Contributions}
-Backgrounds which involve decays into lepton + jets and where at least one jet is incorrectly reconstructed as a lepton (predominately electrons) or a lepton from the decay of heavy quarks (predominately muons), which pass the lepton selection and isolation criteria, are estimated with data.
+As this data-driven estimate of the instrumental backgrounds should have no dependence on either the lepton flavour or selection cuts, the variation of the ratio of opposite-sign over same-sign events as a function of the lepton flavour and the cut level should be well accounted for by a 30\% systematic uncertainty.
 
-The estimation of this background uses the same methodology as when performing top quark pair production~\cite{CMS:2016syx} and same-sign SUSY searches~\cite{CMS:2015vqc}.
-The vast majority of the same-sign event yields found are the result of non-lepton and charge misidentified leptons, with some contribution from prompt leptons.
-As these backgrounds are independent of the charge of the lepton pairs, it is expected that the nominal (opposite-sign) sample would have a similar contribution \cite{CMS:2015vqc}.
+%Backgrounds which involve decays into lepton + jets and where at least one jet is incorrectly reconstructed as a lepton (predominately electrons) or a lepton from the decay of heavy quarks (predominately muons), which pass the lepton selection and isolation criteria, are estimated with data.
+%
+%The estimation of this background uses the same methodology as when performing top quark pair production~\cite{CMS:2016syx} and same-sign SUSY searches~\cite{CMS:2015vqc}.
+%The vast majority of the same-sign event yields found are the result of non-lepton and charge misidentified leptons, with some contribution from prompt leptons.
+%As these backgrounds are independent of the charge of the lepton pairs, it is expected that the nominal (opposite-sign) sample would have a similar contribution \cite{CMS:2015vqc}.
+%
+%To estimate this contribution of opposite-sign non-prompt leptons in data, the same-sign event yields with the expected prompt-lepton contribution subtracted, is multiplied by a ratio of opposite-sign over same-sign non-prompt lepton events taken from MC.
 
-To estimate this contribution of opposite-sign non-prompt leptons in data, the same-sign event yields with the expected prompt-lepton contribution subtracted, is multiplied by a ratio of opposite-sign over same-sign non-prompt lepton events taken from MC.
+%The method requires that the same-sign control region established uses the same selection criteria as the nominal signal region, albeit with same-sign lepton pairs instead of opposite-sign ones.
+%This control region is dominated by non-lepton lepton events, but also contains contributions from prompt lepton events, charge misidentification and real same-sign pairs.
 
-The method requires that the same-sign control region established uses the same selection criteria as the nominal signal region, albeit with same-sign lepton pairs instead of opposite-signed ones.
-This control region is dominated by non-lepton lepton events, but also contains contributions from prompt lepton events, charge misidentification and real same-sign pairs.
+%This data driven estimate is derived using the following equation:
+%
+%\begin{equation}
+%\begin{align}
+% N_{data}^{OS non-prompt} = (N_{data}^{SS} - N^{SS}_{real + mis-ID}).\frac{N_{MC}^{OS non-prompt}}{N_{MC}^{SS non-prompt}}
+%\end{align}
+%\end{equation}
+%
+%where $N_{data}^{SS}$ is the total number of same sign events observed in data, $N^{SS}_{real + mis-ID}$ is the expected number of real same-sign events and events with charge misidentification and $N_{MC}^{OS non-prompt}$ and $N_{MC}^{SS non-prompt}$ the number of opposite-sign and same-sign non-prompt leptons observed in MC used to appropriately scale the estimate.
+%
+%This ratio of MC opposite-sign over same-sign events is referred to as R, and is calculated using generator level information from reconstructed objects which have matched to a generator level particle. R is calculated from the W + jets, \ttZ and \ttW leptonic decaying, and single top MC samples with sufficient statistics given that these processes are expected to be the predominant source of non-prompt leptons for this analysis. 
 
-This data driven estimate is derived using the following equation:
+%\begin{table}[!htbp]
+%\centering
+%\begin{tabular}{| l |  c |  c |  c |  c |  c |}
+%\hline
+%Source &  $ee$ & $\mu\mu$ & Combined \\ 
+%\hline
+%\ttbar (SS): & a$\pm$b &  c $\pm$d & e$\pm$f    \\
+%Z + jets (SS): & a$\pm$b &  c$\pm$d & e$\pm$r    \\
+%Single Top (SS): & a$\pm$b & c$\pm$d & e$\pm$r    \\
+%VV (SS): & a$\pm$b & c$\pm$d & e$\pm$f    \\
+%ttV (SS): & a$\pm$b &  c$\pm$d & e$\pm$f    \\ 
+%\hline
+%Total background (SS): & a$\pm$b & c$\pm$d & e$\pm$f   \\ 
+%Data: & a$\pm$b & c$\pm$d & e$\pm$f    \\ 
+%\hline
+%SS data (bkg): & a$\pm$b & c$\pm$d & e$\pm$f \\
+%\hline
+%Non-prompt (SS): & a$\pm$b & c$\pm$d & e$\pm$f \\
+%Non-prompt (OS): & a$\pm$b & c$\pm$d & e$\pm$f \\
+%R (OS/SS): & a$\pm$b & c$\pm$d & e$\pm$f \\
+%\hline
+%Non-prompt estimation: & a$\pm$b & c$\pm$d & e$\pm$f \\
+%\hline
+%\end{tabular}
+%\caption{Non-prompt lepton estimation following all selection cuts}
+%\label{tab:fakeLeptonYields}
+%\end{table}
 
-\begin{equation}
-\begin{align}
- N_{data}^{OS non-prompt} = (N_{data}^{SS} - N^{SS}_{real + mis-ID}).\frac{N_{MC}^{OS non-prompt}}{N_{MC}^{SS non-prompt}}
-\end{align}
-\end{equation}
-
-where $N_{data}^{SS}$ is the total number of same sign events observed in data, $N^{SS}_{real + mis-ID}$ is the expected number of real same-sign events and events with charge misidentification and $N_{MC}^{OS non-prompt}$ and $N_{MC}^{SS non-prompt}$ the number of opposite-sign and same-sign non-prompt leptons observed in MC used to appropriately scale the estimate.
-
-This ratio of MC opposite-sign over same-sign events is referred to as R, and is calculated using generator level information from reconstructed objects which have matched to a generator level particle. R is calculated from the W + jets, \ttZ and \ttW leptonic decaying, and single top MC samples with sufficient statistics given that these processes are expected to be the predominant source of non-prompt leptons for this analysis. 
-
-Given that this estimation of the instrumental backgrounds should be no dependence as a result of lepton flavour or selection cuts, the variation of the ratio R from both of the above should be well accounted for by a 30\% systematic uncertainty.
-
-\begin{table}[!htbp]
-\centering
-\begin{tabular}{| l |  c |  c |  c |  c |  c |}
-\hline
-Source &  $ee$ & $\mu\mu$ & Combined \\ 
-\hline
-\ttbar (SS): & a$\pm$b &  c $\pm$d & e$\pm$f    \\
-Z + jets (SS): & a$\pm$b &  c$\pm$d & e$\pm$r    \\
-Single Top (SS): & a$\pm$b & c$\pm$d & e$\pm$r    \\
-VV (SS): & a$\pm$b & c$\pm$d & e$\pm$f    \\
-ttV (SS): & a$\pm$b &  c$\pm$d & e$\pm$f    \\ 
-\hline
-Total background (SS): & a$\pm$b & c$\pm$d & e$\pm$f   \\ 
-Data: & a$\pm$b & c$\pm$d & e$\pm$f    \\ 
-\hline
-SS data (bkg): & a$\pm$b & c$\pm$d & e$\pm$f \\
-\hline
-Non-prompt (SS): & a$\pm$b & c$\pm$d & e$\pm$f \\
-Non-prompt (OS): & a$\pm$b & c$\pm$d & e$\pm$f \\
-R (OS/SS): & a$\pm$b & c$\pm$d & e$\pm$f \\
-\hline
-Non-prompt estimation: & a$\pm$b & c$\pm$d & e$\pm$f \\
-\hline
-\end{tabular}
-\caption{Non-prompt lepton estimation following all selection cuts}
-\label{tab:fakeLeptonYields}
-\end{table}
 \subsection{Luminosity Uncertainties}
 CMS uses five detectors, the pixel detector, DTs, HF, the Fast Beam Conditions Monitor and Pixel Luminosity Telescope to monitor and measure the instantaneous and integrated luminosity, with absolute calibrations of the detectors made through conducting Van der Meer (VdM) scans during dedicated LHC runs.
+The luminosity value and its associated uncertainty used was determined by the CMS Luminosity Group using 
 Pixel Cluster Counting (PCC) 
 
 The overall uncertainty \cite{CMS:2017_lumi} %2016 lumi
 \subsection{Lepton Efficiencies}
-In order to account for the difference in performance for lepton identification, isolation and reconstruction, 
+In order to account for the difference in performance for lepton trigger, identification, isolation and reconstruction efficiencies 
 
-The trigger efficiencies 
+The lepton trigger efficiencies for both channels are measured independently, 
+
 \section{Theoretical Uncertainties}
-\subsection{Parton Density Functions}
 
+\subsection{Parton Density Functions}
+%%Discussion of what PDFs are, is given in an earlier chapter
+In order to calculate the uncertainties on the PDFs used in the generation of the MC samples considered, the 
+
+A number of MC samples however, do not store the PDF weights as part of the event's 
 \subsection{Factorisation and renormalisation scales}
+The factorisation and renormalisation scales at the Matrix Element 
 \subsection{Parton Shower Uncertainties}
 \section{Impact of the Uncertainties}
+The effect of each of the systematics considered on the event rate, in percentage, are shown in Table~\ref{tab:systImpact}.
+These rates, whilst providing a useful insight into which of the systematics are the most important, do not show how the shape of each fitted variable and the MVA discriminant is influenced by each uncertainty.
+\editComment{Make some comment on most important/impactful systematics and how better understanding them would improve the result}
+
+\begin{table}[!htbp]
+\begin{center}
+\linespread{2}
+\resizebox{\textwidth}{!}{\begin{tabular}{|l|c|c|c|c|}
+\hline
+Systematic      &  tZq                  & DY                   & \ttbar{}                  & Other         \\
+($ee$ / $\mu\mu$) & (\%)  & (\%)  & (\%)  & (\%)  \\
+\hline
+Trigger             &  $_{-4.23\%}^{+4.24\%}$ /  $_{-0.21\%}^{+6.07\%}$   & $_{-4.72\%}^{+4.07\%}$ / $_{-0.32\%}^{+6.37\%}$  & $_{-5.08\%}^{+4.41\%}$ / $_{-0.55\%}^{+5.54\%}$ & $_{-4.72\%}^{+4.85\%}$ / $_{-4.47\%}^{+5.97\%}$  \\
+JER             &  $_{-5.27\%}^{+6.02\%}$ /  $_{-6.11\%}^{+5.39\%}$   & $_{-11.81\%}^{+16.54\%}$ / $_{-14.18\%}^{+16.71\%}$  & $_{-7.98\%}^{+7.84\%}$ / $_{-6.13\%}^{+8.24\%}$  & $_{--1.96\%}^{+2.11\%}$ / $_{-1.62\%}^{+1.82\%}$  \\
+JES             &  $_{-0.04\%}^{+0.19\%}$ /  $_{-0.13\%}^{+0.13\%}$   & $_{-0.55\%}^{+0.29\%}$ / $_{-0.17\%}^{+0.13\%}$  & $_{-1.30\%}^{+0.02\%}$ / $_{-0.20\%}^{+0.20\%}$  & $_{-0.0.01\%}^{+0.11\%}$ / $_{-0.14\%}^{+0.18\%}$  \\
+Pileup             &  $_{-0.42\%}^{+0.43\%}$ /  $_{-0.17\%}^{+0.43\%}$   & $_{-2.35\%}^{+2.26\%}$ / $_{-2.57\%}^{+1.75\%}$  & $_{-1.52\%}^{+0.52\%}$ / $_{-0.09\%}^{+1.35\%}$  & $_{-0.86\%}^{+0.38\%}$ / $_{-0.15\%}^{+0.26\%}$  \\
+bTag             &  $_{-2.78\%}^{+3.38\%}$ /  $_{-3.38\%}^{+2.99\%}$   & $_{-5.30\%}^{+5.11\%}$ / $_{-5.02\%}^{+5.12\%}$  & $_{-2.89\%}^{+3.02\%}$ / $_{-3.12\%}^{+3.77\%}$  & $_{-3.43\%}^{+3.25\%}$ / $_{-3.24\%}^{+3.00\%}$  \\    
+PDF             &  $_{-9.98\%}^{+13.22\%}$ /  $_{-9.24\%}^{+11.94\%}$   & $_{-1.56\%}^{+1.73\%}$ / $_{-2.95\%}^{+2.16\%}$  & $_{-2.99\%}^{+1.85\%}$ / $_{-2.95\%}^{+2.16\%}$  & $_{-8.56\%}^{+9.95\%}$ / $_{-8.51\%}^{+9.40\%}$  \\
+$Q^{2}$Scaling             &  $_{-2.82\%}^{+1.36\%}$ /  $_{-3.06\%}^{+1.33\%}$   & $_{-15.00\%}^{+2.92\%}$ / $_{-14.64\%}^{+2.05\%}$  & $_{-11.38\%}^{-1.38\%}$ / $_{-11.40\%}^{+0.0\%}$  & $_{-5.01\%}^{+1.37\%}$ / $_{-5.07\%}^{+1.8\%}$  \\
+\hline
+\end{tabular}
+}
+\caption{Rate impact of systematics on MC templates}\label{tab:systImpact}
+\end{center}
+\end{table}
+\editComment{Table to be updated with revised numbers}

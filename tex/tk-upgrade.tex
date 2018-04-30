@@ -127,12 +127,12 @@ Based off current electronics and high speed links available, the data requires 
 \end{center}
 \end{figure}
 
-A hardware demonstrator of the baseline system, capable of processing one phi-octant of the tracker with a time-multiplexing factor of 36, was used to validate the feasibility of the proposed full system using currently available hardware for the December 2016 review.
+A hardware demonstrator of the baseline system consisting of five Imperial Master Processor Virtex-7 (MP7) cards~\cite{mp7ref}, capable of processing one phi-octant of the tracker with a time-multiplexing factor of 36, was used to validate the feasibility of the proposed full system using currently available hardware for the December 2016 review.
 All of the results achieved, and a complete description of the system, are given in~\cite{TMTT_JINST}.
 
 \subsection{The Track Finding Processor}
 
-The Track Finding Processor (Fig.~\ref{fig:TFP}) consists of four self-contained components:
+The Track Finding Processor is(Fig.~\ref{fig:TFP}) consists of four self-contained components:
 \begin{itemize}
 \item {\bf Geometric Processor (GP)} - responsible for pre-processing the stubs from the DTC.
 \item {\bf Hough Transform (HT)} - a highly panellised initial coarse track finding.
@@ -236,9 +236,10 @@ During the development of the TMTT demonstrator system both before and following
 \subsection{Linearised $\chi^{2}$ Track Fitter}
 Whilst the Kalman Filter was used as a track fitter for the December 2016 hardware demonstrator, two alternative track fitting algorithms were explored.
 Both require a proceeding \emph{Seed Filter} (SF) stage to remove stubs in a HT cell which are inconsistent with a straight line in the \emph{r-z} plane to filter out both fake tracks and stubs incorrectly assigned to tracks.
-These track fitting algorithms are based on linear fits in the \emph{r-$\varphi$/r-z} planes, one being a Linear Regression (LR) fit, which is further discussed in~\cite{TMTT_FLP}, and the other a $\chi^{2}$ fit.
+These track fitting algorithms are based on linear fits, one being a Linear Regression (LR) fit with two independent fits in the \emph{r-$\varphi$/r-z} planes, which is further discussed in~\cite{TMTT_FLP}, and the other a $\chi^{2}$ fit.
 
-The linearised $\chi^{2}$ fit makes use of residuals between the stubs and the seeded track that minimise $\chi^{2}$ of the fit in order to obtain improved parameters for the track candidate.
+\editComment{helix parameters?}
+The linearised $\chi^{2}$ fit makes use of residuals between the stubs and the seeded track that minimise $\chi^{2}$ of the fit in order to obtain improved helix parameters for the track candidate.
 The parameters of each stub $s_{i}$, based on the track’s helix parameters $h$, are initially linearly expanded around the estimate of the helix parameters $h_{0}$:
 
 \begin{equation}
@@ -249,14 +250,14 @@ s_{i}(h) = s_{i}(\overline{h_{0}} + \delta h) = s_{i}(\overline{h_{0}}) + \delta
 With $\chi^{2}$ being defined as:
 
 \begin{equation}
-\chi^{2} = \frac{\sum_{i}(s_{i}(h) - s_{track}(\overline{h_{0}}))^{2}}{\sigma^{2}_{s}} = \frac{\sum_{i}(s_{i}(\overline{h_{0}} - s_{track}(\overline{h_{0}) + \delta h \frac{\delta s_{i}}{\delta h}))^{2}}{\sigma^{2}_{s}}
+\chi^{2} = \frac{\sum_{i}(s_{i}(h) - s_{track}(\overline{h_{0}}))^{2}}{\sigma^{2}_{s}} = \frac{\sum_{i}(s_{i}(\overline{h_{0}} - s_{track}(\overline{h_{0}) + \delta h \frac{\delta s_{i}}{\delta h}))^{2}}{\sigma^{2}_{s}} \;.
 \label{eq:chi2}
 \end{equation}
 
 Which, in order to obtain $\delta h$, is minimised:
 
 \begin{equation}
-0 = \frac{\partial \chi^{2}}{\partial \delta h} = 2 \sum_{i}\frac{\partial s_{i}}{\delta h}(s_{i}(\overline{h_{0}}) - s_{track}(\overline{h_{0}}) + \delta h \frac{\partial s_{i}}{\partial h}) + 2 \sum_{i}\frac{\partial s_{i}}{\delta h}(\delta s_{i}^{t} + \delta h \frac{\partial s_{i}}{\partial h})
+0 = \frac{\partial \chi^{2}}{\partial \delta h} = 2 \sum_{i}\frac{\partial s_{i}}{\delta h}(s_{i}(\overline{h_{0}}) - s_{track}(\overline{h_{0}}) + \delta h \frac{\partial s_{i}}{\partial h}) + 2 \sum_{i}\frac{\partial s_{i}}{\delta h}(\delta s_{i}^{t} + \delta h \frac{\partial s_{i}}{\partial h}) \;.
 \label{eq:chi3}
 \end{equation}
 
@@ -265,32 +266,41 @@ Where $\delta s_{i}^{t} = s_{i}(\overline{h_{0}}) - s_{track}(\overline{h_{0}})$
 By defining the matrices $D_{ij} = \frac{1}{\sigma_{i}} \frac{\delta s_{i}}{\delta h_{j}}$ and $M = D^{T} D$, Eqn.~\ref{eq:chi3} can be rewritten and solved for $\delta h$ as:
 
 \begin{equation}
-0 = D^{T} \delta s^{t} + M \delta h \Rightarrow \delta h = - M^{-1} D^{T} \delta s^{t}
+0 = D^{T} \delta s^{t} + M \delta h \Rightarrow \delta h = - M^{-1} D^{T} \delta s^{t} \;.
 \label{eq:chi4}
 \end{equation}
 
-Eqn.~\ref{eq:chi4} gives a linear form which can be solved for $\delta h$ through Newtonian Iteration through updating the residuals with respect to the seeded track candidate.
+Eqn.~\ref{eq:chi4} gives a linear form which can be solved for $\delta h$ through updating the residuals with respect to the seeded track candidate.
 
 \editComment{Worth showing track derivatives in full here, or in an appendix?}
 
-Whilst the computation of these matrices in full would be non-trivial for FPGAs, 
+By performing repeated iterations of Eqn.~\ref{eq:chi4}, the fitted helix parameters can be repeatedly improved upon, albeit with diminishing returns as more applications are made (Fig~\ref{}).
+With the stubs' residuals available 
 
-several aspects making it suitable for FPGA implementation compared to global track fitting methods, namely the matrices:
+As stubs incorrectly associated with a track have 
 
-%%internal cuts, multiple iterations
+Kill tracks with large residuals ... 
+One potential 
 
-Despite the performance in simulation of the linear $\chi^{2}$ track fitter being comparable to both the \KF and \LR track fitters, consideration as to whether it can be implemented in hardware had to be given.
+%% Matrix sizes
+Despite the performance in simulation of the linear $\chi^{2}$ track fitter being comparable to both the \KF and \LR track fitters, consideration as to whether it can be implemented in hardware had to be given, for whilst FPGAs can easily perform the addition and multiplication operations required to compute matrices, the calculation of the derivatives that form their elements will require the use of lookup tables (LUTs) to ensure latency budgets are not exceeded.
+With the first order approximation of the derivatives for the barrel hits only depend on the radial position of the hit (\ie one of the six possible barrel layer radial positions), only a small number of LUTs (\editComment{6?}) are required for these matrix elements.
+\editComment{Precision required for the elements?}
+The endcap regions however, are more complicated, with the derivatives having additional dependencies on $\tan \lambda$ and the radius of curvature of the track and an additional contribution required to account for the outer modules' strips do not provide a direct measurement of \phi as they do not point towards the interaction point.
+When considering the minimum parameter resolution required which would not considerably impact on the track reconstruction efficiency or helix parameter resolutions, .... \editComment{Find out how many are required}
 
-%% limits of maths/LUTs/resources required
+Given that the size of the LUTs required for the endcap regions considerably exceeds the resources of those present on currently available FPGAs, such as the $433 \times 10^{3}$ LUTs available on the Virtex 7 690 FPGAs used by the MP7s in the demonstrator, whilst a future FPGA could implement this track fitting algorithm, it would not be feasible to implement on a current generation chip.
+As one of the motivating factors behind this TFP design was to be able to demonstrate a complete system with currently available technology, it was determined that further development on the linearised $chi^{2}$ fitter would not be continued for the immediate future.
 
-\subsection{Flexibility and Robustness of the System}
-\subsubsection{2 GeV Tracking}
+%%%Future work
+
+%\subsection{Flexibility and Robustness of the System}
+\subsection{2 GeV Tracking}
 The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may be desirable if the trigger requirements demand it and the impact of this potential requirement on the proposed track-finder system was studied for the December 2016 demonstrator review.
 This required modifying the GP and HT configuration parameters to ensure adequate duplication in $\varphi$ and increasing the number of the \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision, with the latter resulting in the FPGA resources required increasing by 50\% and the output data rate from the \HT by a factor of 2.2.
-Without any additional modifications, there is a considerable degradation in the track reconstruction efficiency in the range $2 < \pt < 2.7$\GeVc, predominantly due to multiple scattering which results in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
-%%% Causes - mainly multiple scattering, what else?
+Without any additional modifications, there is a considerable degradation in the track reconstruction efficiency in the range $2 < \pt < 2.7$\GeVc, due to these low momentum tracks being dominated by multiple scattering, resulting in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
 
-To mitigate against these losses, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two and the \KF state $\chi^2$ cuts for the range $2 < \pt < 2.7$ were optimised to reflect the decreased precision of the hits in these \HT cells and thus better reduce the number of duplicate and fake tracks as far as possible without impacting on the track reconstruction efficiency.
+To mitigate against these track reconstruction efficiency losses, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two and the \KF state $\chi^2$ cuts for the range $2 < \pt < 2.7$ were optimised to reflect the decreased precision of the hits in these \HT cells and thus better reduce the number of duplicate and fake tracks as far as possible without impacting on the track reconstruction efficiency.
 This variable precision \HT, which has been separately implemented in firmware, has been shown in simulation to recover some of this loss, as shown in Fig~\ref{fig:2GeVFlat}
 
 \begin{figure}[tbp]
@@ -302,35 +312,47 @@ This variable precision \HT, which has been separately implemented in firmware, 
 \end{figure}
 
 %%% Discuss poorer tracking efficiency
-%%% How to fix:
-%%% - merging of low pT HT cells
-%%% Causes - mainly multiple scattering, what else?
 %%% - KF internal chi-squared cuts; would expect if MS was fully accounted for, then on average chi2/NDF = 1  everywhere. Show chi2/NDF vs eta plots?
 
-Following the December 2016 demonstrator review and the proposition of the \emph{tilted} barrel geometry, \editComment{what impact did the new geometry have?}, the modification of the \KF state uncertainty to take into account the impact of multiple scattering for low \pT tracks was explored.
-This involved adding a contribution of the order of a milliradian, the anticipated amount of scattering, to the r-$\varphi$ error~\footnote{The error for the r-z plane is not modified as the effect of multiple scattering is considerably smaller hit position resolution in r-z }, in quadrature to the \KF.
+Following the December 2016 demonstrator review and the proposition of the \emph{tilted} barrel geometry, \editComment{what impact did the new geometry have?}, the modification of the \KF hit resolution to account for the effects of multiple scattering, for low momentum tracks was explored.
+This involved adding a contribution of the order of a milliradian, the order of the anticipated typical scattering angle for 2\GeV tracks in quadrature to the r-$\varphi$ plane hit resolution error~\footnote{The error for the r-z plane is not modified as the effect of multiple scattering is considerably smaller hit position resolution in r-z.}.
 
+For small deflection angles, the scattering contribution for relativistic particles, $\theta_{rms}$, for a each layer is given by~\cite{Highland:1975pq,Lynch:1990sq}~:
 
-%%% - additive constant of order (1 mrad)^{2} to inflate r-phi error
-%%% - hit position resolution in r-z means there's no sensitivity to scattering in r-z
-%%% - separate cutting of chi2 in each plane?
-%%% - additive constant / radius
+\begin{equation}
+\theta_{rms} = \frac{13.6\MeV}{\Beta c p} q \sqrt{\frac{x}{X_{0}}} [1 + 0.038 \ln{\frac{x}{X_{0}}] \;.
+\label{eq:scatter1}
+\end{equation}
 
+where, the momentum, velocity, electrical charge of the incident particle and thickness of the scattering medium in radiation lengths are given by $p$, $\Beta c$, $q$ and $\frac{x}/{X_{0}}$ respectively.
+As the particles involved have relativistic velocities (\ie $\Beta c \cong 1$) and any scattering in the r-z plane can be ignored, using the assumption that the material contribution for each layer traversed is roughly equal, an initial conservative approximation for this multiple scattering contribution can be expressed as $\theta_{rms} = \frac{const}{r_{track}}$.
 
+Despite the increase in track finding efficiency and the reduction in the number of fake tracks and duplicate tracks this rudimentary approximation can achieve (Fig.~\ref{fig:MS1}), the are only minor improvements in the track parameters resolution.
+This is not unexpected, given that a constant inflation in the r-$\varphi$ plane hit resolution error is applied for each stub applied, whilst in reality the inflation would vary as a particle traverses material.
+The amount of material traversed previously traversed between measurements will also vary, with same tracks featuring layers which have no stubs, and material contributions from the Inner Tracker, between the Inner and Outer Trackers and services needing consideration.
 
-Additional improvements to the \HT, such as \pt dependent threshold criteria and optimisation of the \KF to such changes, should be able to further improve tracking performance between 2\GeV and 3\GeV.
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.8\textwidth,trim={1.1truecm 0truecm 1truecm 12truecm},clip]{CMS-bw-logo.pdf}
+\includegraphics[width=0.8\textwidth,trim={0.7truecm 0truecm 1truecm 0truecm},clip]{CMS-bw-logo.pdf}
+\caption{Images showing tracking efficiency in low pT range with no changes (upper), and with HT cell merging and \KF optimisation(right).}
+\label{fig:MS1}
+\end{figure}
 
-\subsubsection{Alternative cabling schemes}
-%% Motivation
-Since the December 2016 review, an alternative tracker cabling scenario has been proposed where a nonant segmentation in $phi$ is used instead instead an octant segmentation.
-Without any modifications to the system this implies that an additional processor sector is required, increasing the number of TFPs from 144 to 162 if the time-multiplexed period of 18 reminds unchanged, and that if the $phi$ dimension of the \HT arrays remain unchanged, the $phi$ granularity of each \HT array will increase by a factor of \frac{9}{8}.
-As the FPGA firmware for the \HT constrains the \HT line gradient to be less than or equal to one and the \HT array dimensions in \qPt and $phi$ were already optimised for the octant cabling scheme, if the maximum \HT line gradient is to remain unchanged the nonant cabling scheme requires a decrease in the number of $phi$ bins by a factor of \frac{8}{9} (\ie a decrease from 64 to 56 bins in $phi$).
+Potential improvements to tracking at 2\GeV which merit further investigation include:
+\begin{itemize}
+\item determining suitable coefficients experimentally through simulation to account for the increased hit resolution error of a stub based on the amount of material that has been previously traversed.
+\item separate \KF $\chi^{2}$ cuts for the r-$\varphi$ and r-z planes.
+\item \pt dependent threshold criteria for the \HT.
+\item optimisation of the \KF to such changes.
+\end{itemize}
 
-Given that an increased number of TFPs not desirable for economic reasons, the options for reducing the number of FPGA boards required are reducing the time-multiplex period from 18 and/or the resources required by each TFP so that it can be composed of fewer FPGAs.
-The easiest means of reducing the resources required for the system is to decrease the amount of resources allocated to avoid truncation effects from the inability to transmit all stubs from the \GP to \HT and for the \HT to readout stubs within latency constraints. 
-
-The increased resources and link bandwidths of next generation FPGAs are anticipated 
- for the Outer the time-multiplex period 
-options for reducing number of TFPs: reduce TMUX, reduce resources (\ie spare processing time for truncation)
-%and that the number of $\phi$ sectors will increase from 16 to 18, as each processing sector is sub-divided into two $\phi$ sub-sectors~\ref{subsubsec:GP}.
-
+%\subsubsection{Alternative cabling schemes}
+%\editComment{Unsure whether this study is worthy of inclusion}
+%Since the December 2016 review, an alternative tracker cabling scenario has been proposed where a nonant segmentation in $phi$ is used instead instead an octant segmentation.
+%Without any modifications to the system this implies that an additional processor sector is required, increasing the number of TFPs from 144 to 162 if the time-multiplexed period of 18 reminds unchanged, and that if the $phi$ dimension of the \HT arrays remain unchanged, the $phi$ granularity of each \HT array will increase by a factor of \frac{9}{8}.
+%As the FPGA firmware for the \HT constrains the \HT line gradient to be less than or equal to one and the \HT array dimensions in \qPt and $phi$ were already optimised for the octant cabling scheme, if the maximum \HT line gradient is to remain unchanged the nonant cabling scheme requires a decrease in the number of $phi$ bins by a factor of \frac{8}{9} (\ie a decrease from 64 to 56 bins in $phi$).
+%
+%Given the economic undesirability of increasing the number of TFPs required, the reduction of 
+%the options for reducing the number of FPGA boards required are reducing the time-multiplex period from 18 and/or the resources required by each TFP so that it can be composed of fewer FPGAs.
+%The easiest means of reducing the resources required for the system is to decrease the amount of resources allocated to avoid truncation effects which are the result of the system being unable to transmit all stubs from the \GP to \HT and for the \HT to readout stubs within latency constraints. 
