@@ -19,6 +19,7 @@
 \usepackage{subfig}
 \usepackage{mathtools}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{appendix}
 
 % Local definitions.
 \newcommand{\editComment}[1]{{\color{Red} #1}} % Indicates who is organising each section.
@@ -105,6 +106,10 @@ $The High-Luminosity LHC
 \input{tex/results.tex}
 
 %\input{tex/conclusion.tex}
+
+\begin{appendices}
+\input{tex/appendix_chi2.tex}
+\end{appendices}
 
 \bibliographystyle{JHEP}
 \bibliography{admorton_thesis}
