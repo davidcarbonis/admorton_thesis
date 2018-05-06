@@ -272,7 +272,6 @@ By defining the matrices $D_{ij} = \frac{1}{\sigma_{i}} \frac{\delta s_{i}}{\del
 
 Eqn.~\ref{eq:chi4} gives a linear form which can be solved for $\delta h$ through updating the residuals with respect to the seeded track candidate.
 The calculation of the derivatives that form the matrix elements of M and D are given in~\ref{app:chi2}.
-\editComment{Worth showing track derivatives in full here, or in an appendix?}
 
 The diminishing improvements (Fig.~\ref{fig:} of performing repeated iterations of Eqn.~\ref{eq:chi4} can be improved upon by considering the residuals associated to each stub.
 As stubs which are incorrectly associated with a track are expected have larger residuals than those which are correctly associated, given that the residuals of each stub are known after a fit, the stub with the largest residual is compared against a configurable cut and if it fails, removed from the track and future fitting iterations.

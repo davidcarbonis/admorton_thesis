@@ -31,12 +31,9 @@ aMC@NLO~\cite{Alwall:2014hca} is a package that simulates processes to Next-To-L
 
 \section{Object Reconstruction}\label{sec:reco}
 Using the readouts of all of the CMS sub-detectors, a full reconstruction of the triggered physics event is undertaken.
-This process involves the \emph{Particle Flow} (PF) algorithm~\cite{CMS-PRF-14-001} combining the physics objects constructed by sub-detectors to reconstruct and identify all the stable particles present in the event, such as electrons, muons, photos and neutral and charged hadrons and from these objects, higher-level objects such as jets, b-jets and missing transverse momentum can be constructed.
+This process involves the \emph{Particle Flow} (PF) algorithm~\cite{CMS:2009nxa,CMS:2010eua,CMS-PRF-14-001} combining the physics objects constructed by sub-detectors to reconstruct and identify all the stable particles present in the event, such as electrons, muons, photos and neutral and charged hadrons and from these objects, higher-level objects such as jets, b-jets and missing transverse momentum can be constructed.
 
 \subsection{Particle-Flow}
-
-\subsubsection{Link Algorithm}
-\subsubsection{Particle-Flow Algorithm}
 
 \subsection{Physics Object Reconstruction}
 \subsubsection{Tracks and Primary Vertices}
@@ -46,11 +43,24 @@ Electrons
 \subsubsection{Lepton Isolation}
 The relative isolation of a lepton 
 \subsubsection{Jets}
- 
-\subsubsection{b-Jets}
-Correctly determining whether or not a b quark was the progenitor of a jet is incredibly important for a variety of analyses, including top physics searches.
+Due to colour confinement, quarks and gluons produced from the proton-proton hard interaction rapidly hadronise, producing a collimated shower of hadrons known as a \emph{jet}~\cite{Salam:2009jx}.
+The \emph{anti-\kt} algorithm is used by CMS to ... in an infrared and collinear safe 
+,Cacciari:2008gp
 
-Various \emph{b-tagging} algorithms are supported for use by the CMS B-Tag and Vertexing (BTV) Physics Object Group
+\subsubsection{b-Jets}
+Correctly determining whether or not a jet was the product of a bottom quark hadronising is incredibly important for a variety of analyses, allowing them to separate signal processes from topologically similar background processes, including top physics searches due to the top quark's branching ratio to a W boson and bottom quark being $> 99\%$.
+Such identification, known as \emph{b-taggging}, exploits the fact that due b hadrons having a relatively long lifetime of $\approx 1.5 ps$~\cite{Beringer:1900zz}, they travel a measurable distance away from the primary vertex before decaying. 
+These secondary vertices are exploited by the \emph{Combined Secondary Vertex version 2} (CSVv2) algorithm~\cite{Chatrchyan:2012jua,CMS:206kkf}, which uses information about displaced track and secondary vertices as input into a multilayer perceptron ~\footnote{A class of neural network} to produce a discriminator value.
+The CMS B-Tag and Vertexing (BTV) Physics Object Group defines working points for this (and other) algorithm's discriminator based on the mis-identification rate.
+
+\editComment{insert fig re. discriminator}
+\begin{figure}[h]
+\centering
+\includegraphics{figs/data-mc/ak4_pfjets_CSVIVF_Log.pdf}
+\caption{The distribution of the CSVv2 algorithm's discriminator for multijet events, for $50\GeV < \pT < 250\GeV$, at \sqrt{13\TeV, where the jets have been reconstructed with the anti-\kt algorithm with R = 0.4~\cite{CMS:2016kkf}.}
+\label{fig:bTagDiscriminator}
+\end{figure}
+
 \subsubsection{Missing Transverse Energy}
 Particles which only weakly interact with matter, such as neutrinos and some hypothesised BSM particles, escape the detector without being directly observed, but can be inferred from considering the conservation of the transverse momentum of the event.
 Therefore, the missing energy in the plane transverse to the beam line, \overrightarrow{\MET}, is defined as the negative vector sum of the transverse momentum in the end:
