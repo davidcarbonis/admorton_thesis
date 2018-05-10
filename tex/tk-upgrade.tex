@@ -242,8 +242,9 @@ The linearised $\chi^{2}$ fit makes use of residuals between the stubs and the s
 As the \emph{TMTT} project was formed \editComment {INSERT TIME HERE} after the other two L1 track finder projects, there was a pressing need to be able to perform precision helix parameter fits following the \HT using an algorithm which could could be conceivably implemented in hardware.
 Following discussions with members of the \emph{tracklet} and \emph{AM} projects, it was decided that a linearised $\chi^{2}$ fit based off the one proposed by the \emph{tracklet} project would be investigated.
 
-Th basis for the \emph{TMTT}'s implementation of the algorithm is detailed in~\cite{CMS_DN-14-043}. \editComment{Need to check re. there being a publicly available copy?}
+The mathematics forming the basis for the \emph{TMTT}'s implementation of the algorithm is detailed in~\cite{CMS_DN-14-043}. \editComment{Need to check re. there being a publicly available copy?}
 
+\subsubsection{General Form of a $\chi^{2}$ Fit}
 The parameters of each stub $s_{i}$, based on the track’s helix parameters $h$, are initially linearly expanded around the estimate of the helix parameters $h_{0}$:
 
 \begin{equation}
@@ -277,6 +278,8 @@ By defining the matrices $D_{ij} = \frac{1}{\sigma_{i}} \frac{\delta s_{i}}{\del
 Eqn.~\ref{eq:chi4} gives a linear form which can be solved for $\delta h$ through updating the residuals with respect to the seeded track candidate.
 The calculation of the derivatives that form the matrix elements of M and D are given in~\ref{app:chi2}.
 
+\subsubsection{Software Implementation}
+
 The diminishing improvements (Fig.~\ref{fig:} of performing repeated iterations of Eqn.~\ref{eq:chi4} can be improved upon by considering the residuals associated to each stub.
 As stubs which are incorrectly associated with a track are expected have larger residuals than those which are correctly associated, given that the residuals of each stub are known after a fit, the stub with the largest residual is compared against a configurable cut and if it fails, removed from the track and future fitting iterations.
 Given that this act has the potential to leave a track with fewer stubs than the minimum of four required required, it was found that the optimal residual cuts applied were considerably looser when a track was only comprised of four stubs.
@@ -284,6 +287,7 @@ Given that this act has the potential to leave a track with fewer stubs than the
 \editComment{Comment on purity, resolution, fake rate, and duplicate rate}
 \editComment{Impact on killing genuine stubs assoc. with track?}
 
+\subsubsection{Firmware Feasibility}
 %% Matrix sizes
 Despite the performance in simulation of the linear $\chi^{2}$ track fitter being comparable to both the \KF and \LR track fitters, consideration as to whether it can be implemented in hardware had to be given, for whilst FPGAs can easily perform the addition and multiplication operations required to compute matrices, the calculation of the derivatives that form their elements will require the use of lookup tables (LUTs) to ensure latency budgets are not exceeded.
 With the first order approximation of the derivatives for the barrel hits only depend on the radial position of the hit (\ie one of the six possible barrel layer radial positions), only a small number of LUTs (\editComment{6?}) are required for these matrix elements.
@@ -294,6 +298,7 @@ When considering the minimum parameter resolution which would not considerably i
 Given that the size of the LUTs required for the endcap regions considerably exceeds the resources of those present on currently available FPGAs, such as the $433 \times 10^{3}$ LUTs available on the Virtex 7 690 FPGAs used by the MP7s in the demonstrator, whilst a future FPGA could implement this track fitting algorithm, it would not be feasible to implement on a current generation chip.
 As one of the motivating factors behind this TFP design was to be able to demonstrate a complete system with currently available technology, it was determined that further development on the linearised $chi^{2}$ fitter would not be continued for the immediate future.
 
+\subsubsection{Outlook}
 %%%Future work
 For this track fitting approach to be considered in the future, the following would require further study:
 \begin{itemize}
