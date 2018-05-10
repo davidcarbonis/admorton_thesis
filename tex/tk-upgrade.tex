@@ -231,15 +231,19 @@ By performing a second pass through the rejected tracks and rescuing those which
 A more detailed description of the firmware implementation of the \DR for the demonstrator system is discussed in~\cite{TMTT_JINST}.
 
 \section{Simulation Studies}
-During the development of the TMTT demonstrator system both before and following the December 2016 review, the author was involved in a number of simulation studies, the more substantive of which are discussed below.
+During the development of the \emph{TMTT} demonstrator system both before and following the December 2016 review, the author was involved in a number of simulation studies, the more substantive of which are discussed below.
 
 \subsection{Linearised $\chi^{2}$ Track Fitter}
-Whilst the Kalman Filter was used as a track fitter for the December 2016 hardware demonstrator, two alternative track fitting algorithms were explored.
-Both require a proceeding \emph{Seed Filter} (SF) stage to remove stubs in a HT cell which are inconsistent with a straight line in the \emph{r-z} plane to filter out both fake tracks and stubs incorrectly assigned to tracks.
-These track fitting algorithms are based on linear fits, one being a Linear Regression (LR) fit with two independent fits in the \emph{r-$\varphi$/r-z} planes, which is further discussed in~\cite{TMTT_FLP}, and the other a $\chi^{2}$ fit.
-
+Whilst the Kalman Filter was used as a track fitter for the December 2016 hardware demonstrator, a Linear Regression (LR) and a Linearised $\chi^{2}$ fitting algorithms were explored.
+Both track fitting algorithms require a proceeding \emph{Seed Filter} (SF) stage to remove stubs in a HT cell which are inconsistent with a straight line in the \emph{r-z} plane to filter out both fake tracks and stubs incorrectly assigned to tracks.
+The LR fitter~\cite{TMTT_FLP} was developed as an alternative to the KF and exploits the fact that sufficiently high \pT tracks should form a straight line in the \emph{r-$\varphi$} and \emph{r-z} planes to perform independent fits in each planes.
 The linearised $\chi^{2}$ fit makes use of residuals between the stubs and the seeded track that minimise $\chi^{2}$ of the fit in order to obtain improved helix parameters for the track candidate.
-\editComment{helix parameters?}
+
+As the \emph{TMTT} project was formed \editComment {INSERT TIME HERE} after the other two L1 track finder projects, there was a pressing need to be able to perform precision helix parameter fits following the \HT using an algorithm which could could be conceivably implemented in hardware.
+Following discussions with members of the \emph{tracklet} and \emph{AM} projects, it was decided that a linearised $\chi^{2}$ fit based off the one proposed by the \emph{tracklet} project would be investigated.
+
+Th basis for the \emph{TMTT}'s implementation of the algorithm is detailed in~\cite{CMS_DN-14-043}. \editComment{Need to check re. there being a publicly available copy?}
+
 The parameters of each stub $s_{i}$, based on the track’s helix parameters $h$, are initially linearly expanded around the estimate of the helix parameters $h_{0}$:
 
 \begin{equation}

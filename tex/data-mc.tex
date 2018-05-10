@@ -43,9 +43,36 @@ Electrons
 \subsubsection{Lepton Isolation}
 The relative isolation of a lepton 
 \subsubsection{Jets}
-Due to colour confinement, quarks and gluons produced from the proton-proton hard interaction rapidly hadronise, producing a collimated shower of hadrons known as a \emph{jet}~\cite{Salam:2009jx}.
-The \emph{anti-\kt} algorithm is used by CMS to ... in an infrared and collinear safe 
-,Cacciari:2008gp
+Due to colour confinement, quarks and gluons produced from the proton-proton hard interaction rapidly hadronise, producing a collimated shower of hadrons which are clustered and reconstructed as \emph{jets}~\cite{Salam:2009jx}.
+Any jet reconstruction algorithm is required to be both \emph{infrared safe} and \emph{collinear safe}, \ie so that the emission of soft gluons and the collinear splitting of gluons, respectively, does not change the jets constructed.
+
+The main two types of jet algorithms are iterative cone and sequential recombination algorithms~\cite{Salam:2009jx}, and whilst both varieties are supported by CMS, the latter class are typically used in the majority of analyses.
+The general form of a sequential recombination algorithm is:
+\begin{itemize}
+\item The distance, $d_{ij}$, for every pair of particles and the distance between each particle and the beamline, $d_{iB}$, is calculated.
+\item If the minimum value of $d_{ij}$ is less than $d_{iB}$, the pair of particles are recombined into a single particle, and the process starts over.
+\item If the minimum value of $d_{iB}$ is less than $d_{ij}$, the particle is classified as a jet and removed from the list of particles considered, and process starts over.
+\item The process continues until no particles remain.
+\end{itemize}
+
+These distance variables are defined as:
+
+\begin{equation}
+d_{ij} = min(p^{2k}_{Ti},p^{2k}_{Tj}) \frac{\Delta R^{2}_{ij}}{R^{2}} \;.
+\label{eq:jetAlgo1}
+\end{equation}
+
+\begin{equation}
+d_{iB} = \frac{1}{p^{2k}_{Ti}} \;.
+\label{eq:jetAlgo2}
+\end{equation}
+
+where $\Delta R^{2}_{ij} = (y_{i} - y_{j})^{2} + (\phi_{i} - \phi_{j})^{2}$; k = -1, 0, 1 and R is the jet size parameter which is typically set to 0.4 for CMS analyses to provide consistency with ATLAS and as it contains hadronic showers without being sensitive to \PU.
+The \emph{anti-\kt} algorithm~\cite{Cacciari:2008gp}, where k = -1, which produces cone-shaped jets is commonly used in CMS.
+
+PF jets produced using the \emph{anti-\kt} with R = 0.4 is used 
+
+%%Talk about PF jets
 
 \subsubsection{b-Jets}
 Correctly determining whether or not a jet was the product of a bottom quark hadronising is incredibly important for a variety of analyses, allowing them to separate signal processes from topologically similar background processes, including top physics searches due to the top quark's branching ratio to a W boson and bottom quark being $> 99\%$.
@@ -66,7 +93,7 @@ Particles which only weakly interact with matter, such as neutrinos and some hyp
 Therefore, the missing energy in the plane transverse to the beam line, \overrightarrow{\MET}, is defined as the negative vector sum of the transverse momentum in the end:
 
 \begin{equation}
-\overrightarrow{\MET} = - \sum \overrightarrow{\pT}\;.
+\overrightarrow{\MET} = - \sum \overrightarrow{\pT} \;.
 \label{eq:MET}
 \end{equation}
 
