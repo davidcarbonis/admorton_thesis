@@ -31,17 +31,32 @@ aMC@NLO~\cite{Alwall:2014hca} is a package that simulates processes to Next-To-L
 
 \section{Object Reconstruction}\label{sec:reco}
 Using the readouts of all of the CMS sub-detectors, a full reconstruction of the triggered physics event is undertaken.
-This process involves the \emph{Particle Flow} (PF) algorithm~\cite{CMS:2009nxa,CMS:2010eua,CMS-PRF-14-001} combining the physics objects constructed by sub-detectors to reconstruct and identify all the stable particles present in the event, such as electrons, muons, photos and neutral and charged hadrons and from these objects, higher-level objects such as jets, b-jets and missing transverse momentum can be constructed.
+This process involves the \emph{Particle Flow} (PF) algorithm~\cite{CMS:2009nxa,CMS:2010eua,CMS-PRF-14-001} combining the initial physics objects reconstructed by sub-detectors , 
 
-\subsection{Particle-Flow}
+linking these elements into topological blocks, and the construction higher-level objects such as jets, b-jets and missing transverse momentum.
 
-\subsection{Physics Object Reconstruction}
+to reconstruct and identify all the stable particles present in the event, such as electrons, muons, photos and neutral and charged hadrons
+
+\subsection{Particle Flow Elements}
 \subsubsection{Tracks and Primary Vertices}
-\subsubsection{Electrons}
-Electrons 
+
+
+\subsection{Particle Flow Algorithm}
+The PF algorithm reconstructions combines the complementary information from each of the  CMS sub-detectors, as described in Chapter~\ref{chapter:lhc-cms}, to provide an optimal reconstruction and identification of all of the stable particles present in the event. 
+
+Using the ....
+
+ Sirunyan:2018fpa
+\subsection{High-Level Objects}
+\subsubsection{Electrons and photons}
+Electrons and photons 
 \subsubsection{Muons}
-\subsubsection{Lepton Isolation}
-The relative isolation of a lepton 
+Two algorithms are used for muon reconstruction 
+
+Tracker muons:
+This algorithm initially considers  
+Global muons:
+
 \subsubsection{Jets}
 Due to colour confinement, quarks and gluons produced from the proton-proton hard interaction rapidly hadronise, producing a collimated shower of hadrons which are clustered and reconstructed as \emph{jets}~\cite{Salam:2009jx}.
 Any jet reconstruction algorithm is required to be both \emph{infrared safe} and \emph{collinear safe}, \ie so that the emission of soft gluons and the collinear splitting of gluons, respectively, does not change the jets constructed.
@@ -70,7 +85,7 @@ d_{iB} = \frac{1}{p^{2k}_{Ti}} \;.
 where $\Delta R^{2}_{ij} = (y_{i} - y_{j})^{2} + (\phi_{i} - \phi_{j})^{2}$; k = -1, 0, 1 and R is the jet size parameter which is typically set to 0.4 for CMS analyses to provide consistency with ATLAS and as it contains hadronic showers without being sensitive to \PU.
 The \emph{anti-\kt} algorithm~\cite{Cacciari:2008gp}, where k = -1, which produces cone-shaped jets is commonly used in CMS.
 
-PF jets produced using the \emph{anti-\kt} with R = 0.4 is used 
+PF jets produced using the \emph{anti-\kt} with R = 0.4 are used.
 
 %%Talk about PF jets
 
