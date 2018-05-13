@@ -21,8 +21,6 @@ Currently there are three planned phases of operation for the LHC~\ref{fig:lhc-p
 \end{center}
 \end{figure}
 
-\editComment{Insert LHC timetable schedule image}
-
 \subsection{Accelerator Complex}
 When operating in proton-proton mode, the preparation of the LHC beams starts at Linear accelerator 2 (Linac2). 
 Protons from a hydrogen gas source are accelerated to 50\MeV and are injected into the Proton Synchrotron Booster which accelerates the protons to 1.4\GeV before injection into the Proton Synchrotron (PS). 
@@ -137,12 +135,12 @@ Beyond the tracker, the ECAL~\cite{CMS:1997ysd,CMS:2002xia}, a homogeneous calor
 The choice of using lead tungstate crystals was based on the needs of both having a compact detector which could fit with the HCAL inside the solenoid and containing the showers' energy within this calorimeter, which were met with its short radiation length (0.89\cm) and small Molier\'{e} radius (2.2\cm).
 
 61,200 crystals are mounted in the barrel, with 7,324 crystals for each endcap.
-As the crystals only emit a small amount of scintillation light, the photodetectors used to amplify the light must be able to operate within the solenoid's field and and withstand the high radiation environment.
-Avalanche photosdiodes and the more radiation hard vacuum photodiodes are used in the barrel and endcap regions respectively.
+As the crystals only emit a small amount of scintillation light when the electromagnetic shower de-excites, the photodetectors used to amplify the light must be able to operate within the solenoid's field and and withstand the high radiation environment.
+Avalanche photosdiodes and the more radiation hard vacuum photodiodes are used in the barrel and endcap regions respectively to convert the light into an electrical current that is directly proportional to the energy of the induced electromagnetic showers.
 The emitted light emitted by these crystals is short, well defined and fast, with 80\% collected within one 25\ns bunch crossing, with the signals being digitised on-detector and buffered until a Level-1 Trigger decision has been made.
 
 The barrel and endcap cystal systems are supplemented by a Preshower (ES)~\cite{Loos:539819} device, located in front of the ECAL endcaps, for discrimination between neutral pions and photons within the fidicial region $1.653 < |\eta| < 2.6$.
-For each detector, two lead radiators initiate the electromagnetic showers and two silicon strip sensors, orthogonal to one another to provide fine resolution, are placed after the radiators measure the energy deposited.
+For each ES, two lead radiators initiate the electromagnetic showers and two silicon strip sensors, orthogonal to one another to provide fine resolution, are placed after the radiators measure the energy deposited.
 The thickness of the radiators was chosen to ensure ~95\% of incident photons shower before reaching the second silicon strip sensor, namely two and one radiation lengths for the first and second lead radiators respectively.
 
 \begin{figure}[htbp]
@@ -153,16 +151,22 @@ The thickness of the radiators was chosen to ensure ~95\% of incident photons sh
 \end{center}
 \end{figure}
 
-\editComment{WRITE BIT ABOUT ENERGY RESOLUTION FOR 2016}
+Electron test beam measurements without a magnetic field and without material between the test beam and ECAL have determined the energy resolution, $\sigma_{E}$, to be,
 
-%Following the excellent performance during Run I of the LHC, with an energy resolution of 0.3\% exceeding the design value of 0.5\%, the ECAL has continued to perform admirably, with .... \cite{TeixeiradeLima:2017tmj} %%ECAL performance Run II
+\begin{equation}
+(\frac{\sigma_{E}}{E})^{2} = (\frac{2.8\%}{\sqrt{E}})^{2} + (\frac{12\%}{E})^{2} + (0.3\%)^{2} \;.
+\label{eq:ecalResolution}
+\end{equation}
+
+where E is the energy of the incident particle in \GeV, the first term representing the statistical fluctuations in the amount of photo-electrons produced, the second denoting noise from the electronics ad digitisation, and the third term covering any non-uniform longitudinal response and shower containment losses~\cite{Adzic:2007mi}.
 
 \subsection{Hadronic Calorimeter}\label{subsec:HCAL}
 Hadronic particles penetrate through the ECAL into the HCAL~\cite{CMS:1997xji}, where hadronic jets have their energies measured and are contained for determination of the missing transverse energy and protection of the muon detectors~\cite{HCAL:tdr}.
 As such, the HCAL was designed to have as much absorber material within the solenoid coil as practical. 
 The barrel (HB) and and endcap (HE) both use plastic scintillator tiles interspersed between brass and steel absorber plates, with the latter being used for the external plates for structural strengthening.
 Wavelength shifting fibres embedding in the tiles converts the scintillated light and channels it to hybrid photodiodes.
-The HB covers the rapidity range $|\eta| < 1.4$, with the HE overlapping it and providing coverage over the range $1.3 < |\eta| < 3.0$.
+%%%
+The HB covers the rapidity range $|\eta| < 1.4$, with the HE overlapping it and providing coverage over the range $1.3 < |\eta| < 3.0$, with each being segmented in $\eta - \phi$ by $0.087 \times 0.087$ for $| \eta | < 1.6$ and up to $0.17 \times 0.17$ for $| \eta | >= 1.6$.
 
 Due to space constraints within the solenoid, the HB cannot fully contain hadronic showers and as such is supplemented by an additional calorimeter in the barrel region outside the coil (HO). Given the outer hadronic calorimeter's limited size and function, it will not be discussed further here, but a thorough description of the HO can be found in~\cite{HO}.
 
@@ -171,7 +175,20 @@ As the forward region experiences the most severe radiation environment, the tec
 Interspaced between steel absorbers, quartz fibres are used produce Cherenkov light due to their radiation hardness, fast response time, production of Cherenkov radiation above a certain energy threshold (thus ignoring low energy particles), and ability to give directional information due to the light being strongly correlated with the showers' trajectories.
 The Cherenkov light produced is transmitted down the fibres to individually shielded photomultiplier tubes contained in readout boxes.
 
-\editComment{WRITE BIT ABOUT ENERGY RESOLUTION FOR 2016}
+Using test beams of electrons, muons and pions, the combined energy resolution of the ECAL and HCAL together was determined to be, 
+
+\begin{equation}
+(\frac{\sigma_{E}}{E})^{2} = (\frac{84.4 \pm 1.6\%}{\sqrt{E}})^{2} + (7.4 \pm 0.8\%)^{2} \;.
+\label{eq:hcalResolution}
+\end{equation}
+for the HB and HE ~\cite{Abdullin:2008zzb}, and,
+
+\begin{equation}
+(\frac{\sigma_{E}}{E})^{2} = (\frac{198\%}{\sqrt{E}})^{2} + (9\%)^{2} \;.
+\label{eq:hfResolution}
+\end{equation}
+
+for the HF~\cite{Bayatian:2006jz}.
 
 \subsection{The Superconducting Solenoid}\label{subsec:magnet}
 One of the defining features of the CMS detector is the superconducting solenoid which encompasses the silicon tracker and calorimetry~\cite{Acquistapace:1997fm,Herve:2000}.
@@ -217,6 +234,10 @@ Although the RPCs have a coarser position resolution ($\approx 1\cm$) than the D
 As such, RPCs provide addition but complimentary input to trigger decisions.
 A RPC is formed of two parallel resistive plates, separated by a few millimetres, with a large electric field applied across the gas filled gap.
 The barrel contains six layers of RPCs, two layers in the first two stations and one in each of the outer stations, and the endcaps have 4 RPC disks each, one for each CSC station.
+
+Collectively, these systems provide 
+Improved performance however, can be achieved through making use of tracking information (as described in Chapter~\ref{chapter:data-mc}}).
+This additional information allow for 
 
 \subsection{Trigger and Data Acquisition Systems}\label{subsec:trigger}
 At design luminosity, the LHC has a bunch crossing (BX) rate of $40\MHz$, i.e. $\approx~10^{9}$ inelastic events per second, with each proton-proton collision event having a size of $\approx 1.5MB$~\cite{Bayatian:2006nff}.
