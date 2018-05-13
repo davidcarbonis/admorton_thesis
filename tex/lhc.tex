@@ -83,13 +83,13 @@ Sufficient radiation hardness for the expected high fluence and data acquisition
 The coordinate system adopted by the CMS experiment has the origin at the nominal interaction point at the centre of the detector. 
 The z-axis is parallel to the anti-clockwise proton beam (i.e. towards the Jura mountains from the detector), the x-axis points towards the centre of the LHC, and the y-axis points vertically upwards.
 The azimuthal angle, $\phi$, is the angle measured from the x-axis in the x-y plane and the polar angle, $\theta$, is the angle measured from the z-axis.
-Pseudorapidity, defined as $\eta \equiv -ln\tan(\theta/2)$, is usually used in lieu of $\theta$ as when the mass considered is negligible $\eta$ converges towards rapidity, defined as $y \equiv	1/2 ln(E+p_{z}/E-p_{Z})$, which is Lorentz invariant along the z-axis.
+Pseudorapidity, defined as $\eta \equiv -ln\tan(\theta/2)$, is usually used in lieu of $\theta$ as when the mass considered is negligible $\eta$ converges towards rapidity, defined as $y \equiv 1/2 ln(E+p_{z}/E-p_{Z})$, which is Lorentz invariant along the z-axis.
 As such, variables transverse to the z-axis (i.e. the beam line), such as the transverse energy (\ET), momentum (\pT), and missing energy (\MET), depend only on their x and y components.
 
 \subsection{Tracker}\label{subsec:tracker}
 The tracker, measuring 5.8m with a 2.5m radius over $|\eta| < 2.5$, surrounds the interaction point, and is designed to provide efficient precision trajectory measurements of charged particles emerging from collisions and precise reconstruction of vertices, whilst operating in a harsh radiation environment (max flux $\approx 10^{7}/s$) and minimising the number charged particles interacting with the tracker (i.e. scattering, producing Bremsstrahlung).
-Silicon fulfils these requirements and is used in the inner pixel detector, surrounding the interaction point, and microstrip detector, which encloses the pixel detector.
-The high fluence expected closest to the interaction point requires the high granularity pixels provide in order to ensure a low channel occupancy, but the particle flux from $r < 20\cm$ is sufficiently low enough that microstrips can be used without compromising reconstruction efficiency.
+Silicon fulfils these requirements and is used in the inner pixel detector, surrounding the interaction point, and microstrip detector, which encloses the pixel detector, as shown in Fig.~\ref{fig:tracker}.
+The high fluence expected closest to the interaction point requires the high granularity pixels provide in order to ensure a low channel occupancy (< 1\%), but the particle flux from $r < 20\cm$ is sufficiently low enough that microstrips can be used without compromising reconstruction efficiency.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -98,6 +98,8 @@ The high fluence expected closest to the interaction point requires the high gra
 \label{fig:tracker}
 \end{center}
 \end{figure}
+
+The tracker system is capable of reconstructing tracks for charged particles of $\pT > 1\GeV$ with an efficiency greater than 99\%, and achieving an impact parameter ($d_{0}$) resolution of $\approx 10\mum$ for $\pT \sim 100\GeV$ charged particles and momentum resolutions between \sim 1.5\% and \sim 3.0\% for $1 < \pT < 100\GeV$ charged particles~\cite{Khachatryan:2010pw,Chatrchyan:2014fea}.
 
 \subsubsection{Silicon Microstrip Tracker}
 The silicon microstrip detector is comprised of four parts: the Tracker Inner Barrel (TIB) and Tracker Inner Disks (TID) from $20 < r < 55\cm$, and the Tracker Outer Barrel (TOB) and Tracker EndCaps (TEC) from $55 < r < 116\cm$.
@@ -115,8 +117,6 @@ The thickness of the sensors in the TEC are 320\mum and 500\mum in the three inn
 A number of ``stereo'' modules of two back to back sensors are used in the inner two layers of the TIB and TOB, the inner two rings of the TID and the inner two and the fifth rings of the TEC.
 These sensors are aligned at an angle of 100 mrad to each other, allowing measurements of both the $r-\phi$ and r-z coordinates, to a point resolution of 23-34\mum $r-\phi$ and 23\mum in z and 35–52\mum r-phi and 52\mum in z in the TIB and TOB respectively.
 
-\editComment{WRITE BIT ABOUT TRACK RECO EFF AND RESOLUTIONS FOR 2016}
-
 \subsubsection{Silicon Pixel Tracker}
 The original ``Phase-0'' silicon pixel detector was comprised of three 53.3\cm long barrel layers at mean radii of 4.4, 7.3 and 10.2\cm and two endcap disks either side of the barrel at $|z| = 34.5$ and 46.5\cm that extend from $r = 6.0$ to 15\cm.
 The pixel sensors consist of n+-type implants  on n-type silicon which are connected by indium bump-bonds to highly integrated ROCs.
@@ -127,8 +127,6 @@ Therefore during the End of Year Technical Stop that took place between data tak
 A more detailed description of the Phase-I Pixel detector can be found in~\cite{CMS:2012sda}, given that none of the results discussed in~\ref{sec:results} involve data collected after 2016.
 %%Like the original pixel detector, the Phase-I detector's 124 million pixels also measure $100 \times 150\mum^{2}$ (covering a total surface area of 1.95 $m^{2}$) and the sensors are also n+-type implants on n-type silicon.
 %%The Phase-I Pixel detector is comprised of four 54.9\cm long barrel layers at mean radii of 3.0, 6.8, 10.9 and 16.0\cm and three endcap disks at each end of the barrel at $|z| = 29.1, 39.6 and 51.6\cm$ that extend from $r = 4.5 to 16.1\cm$.
-
-\editComment{WRITE BIT ABOUT TRACK RECO EFF AND MAYBE RESOLUTIONS FOR 2016 TOO?}
 
 \subsection{Electromagnetic Calorimeter}\label{subsec:ECAL}
 Beyond the tracker, the ECAL~\cite{CMS:1997ysd,CMS:2002xia}, a homogeneous calorimeter, measures the energies of electrons and photons using lead tungstate scintillating crystals. 
@@ -235,9 +233,9 @@ As such, RPCs provide addition but complimentary input to trigger decisions.
 A RPC is formed of two parallel resistive plates, separated by a few millimetres, with a large electric field applied across the gas filled gap.
 The barrel contains six layers of RPCs, two layers in the first two stations and one in each of the outer stations, and the endcaps have 4 RPC disks each, one for each CSC station.
 
-Collectively, these systems provide 
-Improved performance however, can be achieved through making use of tracking information (as described in Chapter~\ref{chapter:data-mc}}).
-This additional information allow for 
+Collectively, these systems provide a charge misidentification rate of $< 0.1\%$ for muons with $\pT < 100 \GeV$ and 
+a reconstruction efficiency of , with a momentum resolution of, 
+Making use of tracking information (as described in Chapter~\ref{chapter:data-mc}}), provides 
 
 \subsection{Trigger and Data Acquisition Systems}\label{subsec:trigger}
 At design luminosity, the LHC has a bunch crossing (BX) rate of $40\MHz$, i.e. $\approx~10^{9}$ inelastic events per second, with each proton-proton collision event having a size of $\approx 1.5MB$~\cite{Bayatian:2006nff}.
