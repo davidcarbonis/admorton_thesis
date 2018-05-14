@@ -20,7 +20,6 @@ The DIGI stage uses the SIM output to produce the detector's electronics respons
 The inelastic proton-proton interactions, typically called pileup (\PU), which occur both within and adjacent to the event's bunch crossing, referred to as \emph{in-time} and \emph{out-of-time] \PU  respectively, also require modelling in simulation.
 Simulated \PU however, does not adequately describe observed \PU in data.
 Therefore, the reweighting of the simulated samples is required and is discussed in~\ref{}.
-\editComment{insert ref or discuss in this chapter rather than in the analysis chapter?}.
 
 \subsection{Event Generators}\label{subsec:eventGenerators}
 \paragraph{aMC@NLO}
@@ -31,21 +30,25 @@ aMC@NLO~\cite{Alwall:2014hca} is a package that simulates processes to Next-To-L
 
 \section{Object Reconstruction}\label{sec:reco}
 Using the readouts of all of the CMS sub-detectors, a full reconstruction of the triggered physics event is undertaken.
-This process involves the \emph{Particle Flow} (PF) algorithm which combines the complementary information from each of the  CMS sub-detectors, as described in Chapter~\ref{chapter:lhc-cms}, to provide an optimal reconstruction and identification of all of the stable particles present in the event~\cite{CMS:2009nxa,CMS:2010eua,CMS-PRF-14-001}.
-Using these reconstructed particles, additional objects such as  
+This process involves the \emph{Particle Flow} (PF) algorithm which combines the complementary information from each of the CMS sub-detectors, as described in Chapter~\ref{chapter:lhc-cms}, to provide an optimal reconstruction and identification of all of the stable particles present in the event~\cite{CMS:2009nxa,CMS:2010eua,CMS-PRF-14-001}.
+Using these reconstructed particles, additional objects such as b-jets and missing transverse energy can also be constructed.
 
-\subsection{Particle Flow Elements}
-The initial stage of reconstructing an event involves the creation of
-
-
-\subsubsection{Charge Particle Tracks and Primary Vertices}
+\subsection{Charge Particle Tracks and Primary Vertices}
 %%% Tracks
 As the charged particles produced from the proton-proton collisions traverse the silicon tracker, they interact with it and leave energy deposits known as \emph{hits}.
 These hits are used to reconstruct the particles' trajectories through multiple iterations of the Combinatorial Track Finder (CTF) algorithm, which is based off combinatorial Kalman Filtering~\cite{Chatrchyan:2014fea,Fruhwirth:1987fm}.
 
-Initially this was done with a combinatorial track finder algorithm based on  
+The steps of each iteration	of the CTF algorithm are:
+\begin{itemize}
+\item \textbf{Seed generation:} initial track candidates are formed from two or three hits to provide a first estimate of the tracks' helix parameters.
+\item \textbf{Track Finding:} A combinatorial Kalman Filter then builds a candidate by adding hits from successive layers which are compatible with the extrapolated trajectory, which is updated with the addition of each subsequent hit, taking into account the hit's position, uncertainty and material traversed.
+\item \textbf{Track Fitting:} The initial estimate of a built track's parameters is improved upon with the Kalman Filter performing two passes, the first from the innermost layer outwards and the second from the outermost inwards.
+This approach minimises the bias in determining and discarding which hits are incorrectly associated with the track.
+\item \textbf{Track Selection:} Quality criteria, such as $\chi^{2}$, the number of layers with hits and compatibility, are used to reject \emph{fake} tracks which are not associated with a charged particle.
+\end{itemize}
 
-The high track reconstruction efficiencies are essential 
+Up to six iterations of the CTF are performed, with selected tracks' hits removed from consideration by subsequent iterations.
+Whilst initial four iterations use seeds exclusively from the pixel tracker, the last two iterations uses seeds from the strip tracker to enable a high track reconstruction efficiency for those originating outside the pixel or those which did not leave any hits in the pixel tracker.
 
 %%%Primary vertices
 The reconstructed of the tracks are subsequently used to reconstruct the positions where the proton-proton collisions occurred, known as the \emph{primary vertices}~\cite{Speer:2006mh,Chatrchyan:2014fea}.
@@ -55,20 +58,22 @@ Out of these resultant primary vertex candidates, the one with the greatest scal
 Displaced vertices, such as those from heavy hadrons, are reconstructed during later reconstruction stages.
 
 \subsection{Particle Flow Algorithm}
+Using information from each of the CMS sub-detectors, the Particle Flow algorithm is used to reconstruct all the final state particles involved in the event with a 
 
-Through combining the preliminary \emph{elements} above, the Particle Flow algorithm 
+
+charged particle tracks, calorimeter energy clusters and muon tracks
+must be high efficiency 
  
-\subsection{High-Level Objects}
-\subsubsection{Electrons and photons}
+\subsection{Electrons and photons}
 Electrons and photons 
-\subsubsection{Muons}
+\subsection{Muons}
 Two algorithms are used for muon reconstruction 
 
 Tracker muons:
 This algorithm initially considers  
 Global muons:
 
-\subsubsection{Jets}
+\subsection{Jets}
 Due to colour confinement, quarks and gluons produced from the proton-proton hard interaction rapidly hadronise, producing a collimated shower of hadrons which are clustered and reconstructed as \emph{jets}~\cite{Salam:2009jx}.
 Any jet reconstruction algorithm is required to be both \emph{infrared safe} and \emph{collinear safe}, \ie so that the emission of soft gluons and the collinear splitting of gluons, respectively, does not change the jets constructed.
 
@@ -100,7 +105,7 @@ PF jets produced using the \emph{anti-\kt} with R = 0.4 are used.
 
 %%Talk about PF jets
 
-\subsubsection{b-Jets}
+\subsection{b-Jets}
 Correctly determining whether or not a jet was the product of a bottom quark hadronising is incredibly important for a variety of analyses, allowing them to separate signal processes from topologically similar background processes, including top physics searches due to the top quark's branching ratio to a W boson and bottom quark being $> 99\%$.
 Such identification, known as \emph{b-taggging}, exploits the fact that due b hadrons having a relatively long lifetime of $\approx 1.5 ps$~\cite{Beringer:1900zz}, they travel a measurable distance away from the primary vertex before decaying. 
 These secondary vertices are exploited by the \emph{Combined Secondary Vertex version 2} (CSVv2) algorithm~\cite{Chatrchyan:2012jua,CMS:206kkf}, which uses information about displaced track and secondary vertices as input into a multilayer perceptron ~\footnote{A class of neural network} to produce a discriminator value.
@@ -114,7 +119,7 @@ The CMS B-Tag and Vertexing (BTV) Physics Object Group defines working points fo
 \label{fig:bTagDiscriminator}
 \end{figure}
 
-\subsubsection{Missing Transverse Energy}
+\subsection{Missing Transverse Energy}
 Particles which only weakly interact with matter, such as neutrinos and some hypothesised BSM particles, escape the detector without being directly observed, but can be inferred from considering the conservation of the transverse momentum of the event.
 Therefore, the missing energy in the plane transverse to the beam line, \overrightarrow{\MET}, is defined as the negative vector sum of the transverse momentum in the end:
 
