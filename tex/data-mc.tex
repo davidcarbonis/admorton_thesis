@@ -60,19 +60,21 @@ Displaced vertices, such as those from heavy hadrons, are reconstructed during l
 \subsection{Particle Flow Algorithm}
 Through combining the calorimeters' energy clusters and charged particle tracks from the tracker and muon systems, the Particle Flow algorithm is able to use all the available information from an event to reconstruct and identify all stable particles in an event with far superior results than if each sub-detector were used individually.
 
-The initial stage of the process involves linking the tracks and energy clusters, known as \emph{elements}, across the sub-detectors that are compatible with belonging to the same particle.
+The initial stage of the process involves associating charged particle tracks to energy clusters in the ECAL and HCAL.
+Tracks are extrapolated from the last hit in the tracker to the typical shower profiles in the calorimeters, and if the particles' expected positions in the calorimeters are within the clusters' boundaries, these elements are linked together.
+These linked elements are used by the Particle Flow algorithm to sequentially reconstruct and identify PF particles, with the least ambiguous or cleanest objects reconstructed first, followed by progressively more difficult objects which can be constrained by previous ones.
 
-The ...
-Muons are the first objects to be reconstructed given that they are the easiest 
+Muons are the first candidates reconstructed, being identified 
 1st muons
-2nd electrons
+A Gaussian-Sum filter 
+2nd electrons + isolated photons
 Charged hadrons
-Last - photons and neutral hadrons
+Last - non-isolated photons and neutral hadrons
 
 \subsection{Electrons and photons}
 Electrons and photons 
 \subsection{Muons}
-Two algorithms are used for muon reconstruction 
+Muon tracking 
 
 Tracker muons:
 This algorithm initially considers  
@@ -106,9 +108,11 @@ d_{iB} = \frac{1}{p^{2k}_{Ti}} \;.
 where $\Delta R^{2}_{ij} = (y_{i} - y_{j})^{2} + (\phi_{i} - \phi_{j})^{2}$; k = -1, 0, 1 and R is the jet size parameter which is typically set to 0.4 for CMS analyses to provide consistency with ATLAS and as it contains hadronic showers without being sensitive to \PU.
 The \emph{anti-\kt} algorithm~\cite{Cacciari:2008gp}, where k = -1, which produces cone-shaped jets is commonly used in CMS.
 
-PF jets produced using the \emph{anti-\kt} with R = 0.4 are used.
+PF jets are produced using the \emph{anti-\kt} with R = 0.4 in conjunction with information from the tracker and ECAL, to provide the most accurate reconstruction possible.
+This 
 
-%%Talk about PF jets
+Corrections are applied to the jet energies to account for the imperfect 
+
 
 \subsection{b-Jets}
 Correctly determining whether or not a jet was the product of a bottom quark hadronising is incredibly important for a variety of analyses, allowing them to separate signal processes from topologically similar background processes, including top physics searches due to the top quark's branching ratio to a W boson and bottom quark being $> 99\%$.
