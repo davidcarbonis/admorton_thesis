@@ -62,18 +62,21 @@ Through combining the calorimeters' energy clusters and charged particle tracks 
 
 The initial stage of the process involves associating charged particle tracks to energy clusters in the ECAL and HCAL.
 Tracks are extrapolated from the last hit in the tracker to the typical shower profiles in the calorimeters, and if the particles' expected positions in the calorimeters are within the clusters' boundaries, these elements are linked together.
-These linked elements are used by the Particle Flow algorithm to sequentially reconstruct and identify PF particles, with the least ambiguous or cleanest objects reconstructed first, followed by progressively more difficult objects which can be constrained by previous ones.
+These linked elements are used by the Particle Flow algorithm to sequentially reconstruct and identify PF particles, removing classified elements from further consideration, with the least ambiguous or cleanest objects reconstructed first, followed by progressively more difficult objects which can be constrained by previous ones.
 
-Muons are the first candidates reconstructed, being identified 
-1st muons
-A Gaussian-Sum filter 
-2nd electrons + isolated photons
-Charged hadrons
-Last - non-isolated photons and neutral hadrons
+This is done in the following order: 
+\begin{itemize}
+\item muons are reconstructed, as described in Section~\ref{subsec:muons}.
+\item electrons and associated Bremsstrahlung photons and isolated photons are reconstructed, as described in Section~\ref{subsec:electrons}.
+\item charged hadrons are reconstructed from the HCAL clusters which are compatible with the remaining ECAL clusters and charged particle tracks.
+\item any remaining ECAL and HCAL clusters with no associated charged particle tracks are reconstructed as photons and neutral hadrons respectively.
+\end{itemize}
 
-\subsection{Electrons and photons}
-Electrons and photons 
-\subsection{Muons}
+\subsection{Electrons}\label{subsec:electrons}
+Electrons lose a significant amount of energy before reaching the ECAL due to undergoing Bremsstrahlung in the tracker layers, which often undergoes electron pair production which in turn produces further Bremsstrahlung photons .
+Given that Bremsstrahlung is a non-Gaussian process and Kalman Filters assumes solely Gaussian noise contributions, a Gaussian Sum Filter algorithm~\cite{Adam:2003eca} is used .
+ 
+\subsection{Muons}\label{subsec:muons}
 Muon tracking 
 
 Tracker muons:
@@ -108,9 +111,7 @@ d_{iB} = \frac{1}{p^{2k}_{Ti}} \;.
 where $\Delta R^{2}_{ij} = (y_{i} - y_{j})^{2} + (\phi_{i} - \phi_{j})^{2}$; k = -1, 0, 1 and R is the jet size parameter which is typically set to 0.4 for CMS analyses to provide consistency with ATLAS and as it contains hadronic showers without being sensitive to \PU.
 The \emph{anti-\kt} algorithm~\cite{Cacciari:2008gp}, where k = -1, which produces cone-shaped jets is commonly used in CMS.
 
-PF jets are produced using the \emph{anti-\kt} with R = 0.4 in conjunction with information from the tracker and ECAL, to provide the most accurate reconstruction possible.
-This 
-
+PF jets are produced using the \emph{anti-\kt} with R = 0.4 in conjunction with information from the tracker and ECAL, as 
 Corrections are applied to the jet energies to account for the imperfect 
 
 
