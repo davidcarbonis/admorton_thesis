@@ -85,4 +85,25 @@ As these first order approximation of these residuals depend solely on the posit
 \end{equation}
 
 \subsection{Outer Disks}
-As the outer disks do not point directly towards the interaction point, 
+As the outer disks do not provide a direct measurement of $\phi$, $\phi_{hit}$, as the 2S modules' strips do not point directly towards the interaction point, a corrective factor is used to determine this using the 
+
+\begin{equation}
+\phi_{hit} = \phi_{centre} + \alpha ( r - r_{centre} )
+\label{OuterHits1}
+\end{equation}
+
+\begin{equation}
+r(h)  = r(h + \delta h) = r(h) + \delta h \frac{\partial r}{\partial h} + \mathcal{0} (\delta h^{2})
+\phi(h)  = \phi(h + \delta h) = \phi(h) + \delta h \frac{\partial \phi}{\partial h} + \mathcal{0} (\delta h^{2})
+\label{OuterHits2}
+\end{equation}
+
+\begin{equation}
+\delta_{\phi} = \phi (h) - \phi_{hit} = \phi (h) - \phi_{centre} - \alpha ( r - r_{centre} )
+\label{OuterHits3}
+\end{equation}
+
+\begin{equation}
+\frac{\partial \delta_{phi}}{\partial h} = \frac{\partial \phi}{\partial h} - \alpha \frac{\partial r}{\partial h}
+\label{OuterHits4}
+\end{equation}

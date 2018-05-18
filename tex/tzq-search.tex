@@ -9,13 +9,40 @@ The final state
 \subsubsection{Electrons}
 Electrons
 \subsubsection{Muons}
-\editComment{discuss iso here}
+Muons
+\subsection{Lepton Isolation}
+In order to differentiate between leptons promptly produced at the primary vertex from those that result from hadronic decays, a relative isolation variable $I^{rel}$ is defined.
+This isolation variable is defined as the summed energy of all PF particles within a cone around the PF lepton, with the estimated neutral charged pileup contamination, $\rho$, removed, divided by the lepton \pT.
+
+Two different pileup contamination estimation methods are used in the work presented, one for electrons and the other for muons.
+For electrons the $\rho$ * effective area pileup alleviation technique is employed.
+This involves the estimating the expected energy within the isolation cone from the median energy density per area of pileup contamination ($\rho$), estimated for each event, with the effective area given as a function of the electron's pseudorapidity, which is expressed as: 
+
+\begin{equation}
+\begin{align}
+I^{rel}_{rho * A_{eff}} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\rm T}(Photon) -rho*A_{\rm eff} )/p_T \\
+\end{align}
+\end{equation}\label{eq:rhoEffA}
+
+Muons use the $\Delta\beta$ pileup alleviation technique, where the average pileup energy inside the cone is estimated as half of that originating from charged hadrons.
+This is expressed as:
+
+\begin{equation}
+\begin{align}
+I^{rel}_{\Delta\beta} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\rm T}(Photon) - 0.5 * \sum E_{\rm T}(PU))/p_T \\
+\end{align}
+\end{equation}\label{eq:deltaBeta}
+
+Where CH is the charged hadrons from the Primary Vertex (PV), NH is the neutral hadrons and PU the charged hadrons from pileup.
+
 \subsubsection{Invariant Mass Requirements}
 The presence of a Z boson in the final state requires  
 Therefore, the two leptons selected must have the same flavour and opposite charge
 \subsection{Jet Selection and b-tagging requirements}
 
-\section{Background Estimation}
+\section{Background Estimation}\label{sec:bkgEst}
+\subsection{Z+jets Background Estimation}\label{subsec:zPlusJets}
+\subsection{\ttbar Background Estimation}\label{subsec:ttbar}
 \subsection{Non-Prompt Leptons}\label{subsec:NPLs}
 Backgrounds which involve decays into lepton + jets and where at least one jet is incorrectly reconstructed as a lepton (predominately electrons) or a lepton from the decay of heavy quarks (predominately muons), which pass the lepton selection and isolation criteria, are estimated with data.
 
