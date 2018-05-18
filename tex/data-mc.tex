@@ -128,18 +128,17 @@ PF jets are produced using the \emph{anti-\kt} with R = 0.4 in conjunction with 
 Making use of PF jets allows a more accurate reconstruction to be undertaken than if only energy clusters from the calorimeters were used, given that jets are typically composed of 65\% charged hadrons, 25\% photons and 10\% neutral hadrons, due to the precise charged hadron measurements from the tracker and ECAL which are able to constraint the small neutral hadron contribution which relies on the relatively poor resolution HCAL.
 
 \subsubsection{Jet Energy Corrections}
-Corrections are applied to the jet energies to account for the effects of \PU, non-uniform response of the detector and the residual differences 
-
-The corrections 
+\emph{Jet Energy Corrections} (JECs) are used to take into account the effects of \PU and the non-uniform response in \pT and $eta$ of the detector and any residual differences between simulation and data to ensure that the jet energies measured by the detector properly describe the particle-level energies.
+Each effect is considered as a separation correction level and are applied sequentially as a scale factor applied to a jet's four-momentum in the following order:
 
 \begin{itemize}
-\item \textbf{L1 Pileup} - removes additional energy originating from \PU interactions from the jet energy for both data and MC simulated events.
-\item \textbf{L2 Relative} - accounts for non-uniform detector response in $\eta$, derived using , and is applied for both data and MC simulated events.
-\item \textbf{L3 Absolute} - corrects the \pT dependent scale and is derived 
-\item \textbf{L2L3 Residual} - the \emph{L2 Relative} and \emph{L3 Aboslute} , residual jet energy scale differences between data and MC simulation.
+\item \textbf{L1 Pileup} - removes additional energy originating from \PU interactions from the jet energy and is applied to for both data and MC simulated events. 
+\item \textbf{L2 Relative and L3 Absolute} - applied to data and MC simulation to account for the non-uniform detector response in $\eta$ and \pT respectively in both simulation and data by comparing generator level and reconstructed jets.
+\item \textbf{L2L3 Residual} - applied to data only to account for any remaining small differences in the jet response between data and simulation following the simulation derived \emph{L2 Relative} and \emph{L3 Absolute} corrections.
 \end{itemize}
 
-A thorough description of the jet energy corrections, their determination and associated uncertainities are discussed in~\cite{Khachatryan:2016kdb}.
+The associated uncertainties of these JECS, which are treated as systematic uncertainties, are discussed in Chapter~\ref{chapter:tzq-systematics}.
+A thorough description of the JECs, their determination and associated uncertainties are discussed in~\cite{Khachatryan:2016kdb}.
 
 \subsection{b-Jets}
 Correctly determining whether or not a jet was the product of a bottom quark hadronising is incredibly important for a variety of analyses, allowing them to separate signal processes from topologically similar background processes, including top physics searches due to the top quark's branching ratio to a W boson and bottom quark being $> 99\%$.
