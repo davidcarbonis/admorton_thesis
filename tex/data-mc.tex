@@ -75,9 +75,10 @@ This is done in the following order:
 \end{itemize}
 
 \subsection{Electrons}\label{subsec:electrons}
+Electron tracks are initially built using a combinatorial Kalman Filter with relaxed 
+
 Electrons however, lose on average between 33\% (minimal intervening material) and 86\% (maximum intervening material) before reaching the ECAL due to undergoing Bremsstrahlung in the tracker layers~\cite{Khachatryan:2015hwa}, which often undergoes electron pair production which in turn produces further Bremsstrahlung photons.
-Given that Bremsstrahlung is a non-Gaussian process and Kalman Filters assumes solely Gaussian noise contributions, a Gaussian Sum Filter (GSF) algorithm~\cite{Adam:2003eca} is used.
-As 
+Given that Bremsstrahlung is a non-Gaussian process and Kalman Filters assumes solely Gaussian noise contributions, a Gaussian Sum Filter (GSF) algorithm~\cite{Adam:2003eca} is used to fit the track candidates built with .
 
 Electron reconstruction is undertaken using two complimentary algorithms, one
 
