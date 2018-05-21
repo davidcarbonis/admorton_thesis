@@ -23,14 +23,14 @@ To meet the significant challenges of, and exploit, the increased instantaneous 
 
 The Phase-II upgrade will see both the entire silicon tracking detector being replaced with one comprised of a pixel Inner Tracker and pixel and strip Outer Tracker which have:
 \begin{itemize}
-\item \textbf{improved radiation hardness:} being able to withstand the increased fluence of the HL-LHC (up to $2.3\times10^{16} n_{eq}/cm^{2}$ for the innermost layers)and operate efficiently up to the targeted luminosity of 3000\fbinv, with a margin of $\approx50\%$ to accommodate the target being exceeded and the uncertainties in the anticipated radiation exposure.
-\item \textbf{increased sensor granularity:} - so that the channel occupancy is kept at or below the per cent (per mille) level for the Outer (Inner) Tracker, allowing for a high track reconstruction efficiency and a low misidentification rate under the increased \PU conditions. This will also enable improved track separation in dense environments, such as high \pT jets, compared to the current pixel detector and fully exploit the vast volume of data produced.
-\item \textbf{reduced material in the tracking volume:} - the current tracker's performance is significantly impacted by the amount of material present, as are the calorimeters and overall performance of CMS.
+\item \textbf{improved radiation hardness} - being able to withstand the increased fluence of the HL-LHC (up to $2.3\times10^{16} n_{eq}/cm^{2}$ for the innermost layers)and operate efficiently up to the targeted luminosity of 3000\fbinv, with a margin of $\approx50\%$ to accommodate the target being exceeded and the uncertainties in the anticipated radiation exposure.
+\item \textbf{increased sensor granularity} - so that the channel occupancy is kept at or below the per cent (per mille) level for the Outer (Inner) Tracker, allowing for a high track reconstruction efficiency and a low misidentification rate under the increased \PU conditions. This will also enable improved track separation in dense environments, such as high \pT jets, compared to the current pixel detector and fully exploit the vast volume of data produced.
+\item \textbf{reduced material in the tracking volume} - the current tracker's performance is significantly impacted by the amount of material present, as are the calorimeters and overall performance of CMS.
 Significantly reducing the tracker's material budget will greatly enhance CMS' performance at the HL-LHC.
-\item \textbf{robust pattern recognition:} - enabling fast and efficient track finding, which is especially important for the HLT, in the high \PU environment.
-\item \textbf{level-1 trigger contributions:} - it has been shown that the L1 trigger performance will deteriorate in the high luminosity environment from both the rate increase and the reduced efficiencies of the L1 selection algorithms.
+\item \textbf{robust pattern recognition} - enabling fast and efficient track finding, which is especially important for the HLT, in the high \PU environment.
+\item \textbf{level-1 trigger contributions} - it has been shown that the L1 trigger performance will deteriorate in the high luminosity environment from both the rate increase and the reduced efficiencies of the L1 selection algorithms.
 As raising the upgraded calorimeters' and muon chambers' trigger thresholds would have minimal impact on the rate, and would negatively impact sensitivity to low mass searches and measurements, the L1 bandwidth and latency will be increased (from 100\kHz to 750\kHz and from $3.2\mus$ to $12.5\mus$ respectively) and tracking information will be included in the L1 decision process to preserve and improve trigger performance.
-\item \textbf{extended tracking acceptance:} - the overall physics capabilities of the CMS experiment would greatly benefit from extended coverage of the tracker and calorimeters up to $|\eta| = 4$ in the forward region.
+\item \textbf{extended tracking acceptance} - the overall physics capabilities of the CMS experiment would greatly benefit from extended coverage of the tracker and calorimeters up to $|\eta| = 4$ in the forward region.
 \end{itemize}
 
 With the above requirements in mind, the pixel Inner Tracker is designed to cover up to $|\eta| = 4$ with $100-150\mum$ thick planar silicon pixel sensors, measuring either $25\times100\mum^{2}$ or $50\times50\mum^{2}$\footnote{This is a reduction of a factor of $\approx 6$ compared to the Phase-0 and Phase-I pixel detectors}, which provide the low (per mille) occupancy and track separation with the negligible inefficiencies required in the harsh radiation environment.
@@ -117,7 +117,7 @@ Unlike the Phase-I Calorimeter Trigger, it is infeasible to process the entire o
 Therefore, as it was assumed at the time of the December 2016 review that the DTC system would be arranged such that it forms octants~\footnote{These detector octants are not uniform as the geometry of the tracker does not have an exact eight-fold symmetry} (\ie 45 degree $\varphi$-sectors, referred to as \emph {detector octants}) in the tracker, the baseline system proposed was divided into \emph{processor octants} that were offset from the detector octants by $\approx 22.5$ degrees in $\phi$, in order to handle data duplication across hardware boundaries.
 This baseline system is illustrated in Fig.~\ref{fig:tmttarch}.
 
-{figure}[t]
+\begin{figure}[t]
 \centering
 \includegraphics[width=1.00\textwidth]{figs/tk-upgrade/tmttarch.pdf}
 \caption{The baseline system architecture uses two neighbouring DTCs to time-multiplex and duplicate stub data across processing octant boundaries, before each DTC transmits 50\% of its data to one TPF and 50\% to the neighbouring TFP Based off current electronics and high speed links available, the data requires 18 TPFs per processing octant (one for each time slice, resulting in a full system requiring 144 TFPs).}
