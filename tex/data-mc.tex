@@ -31,7 +31,7 @@ Therefore, the reweighting of the simulated samples is required and is discussed
 
 \section{Object Reconstruction}\label{sec:reco}
 Using the readouts of all of the CMS sub-detectors, a full reconstruction of the triggered physics event is undertaken.
-This process involves the \emph{Particle Flow} (PF) algorithm which combines the complementary information from each of the CMS sub-detectors, as described in Chapter~\ref{chapter:lhc-cms}, to provide an optimal reconstruction and identification of all of the stable particles present in the event~\cite{CMS:2009nxa,CMS:2010eua,CMS-PRF-14-001}.
+This process involves the \emph{Particle Flow} (PF) algorithm which combines the complementary information from each of the CMS sub-detectors to provide an optimal reconstruction and identification of all of the stable particles present in the event~\cite{CMS:2009nxa,CMS:2010eua,CMS-PRF-14-001}.
 Using these reconstructed particles, additional objects such as b-jets and missing transverse energy can also be constructed.
 
 \subsection{Charge Particle Tracks and Primary Vertices}\label{subsec:tracksVertices}
@@ -58,7 +58,7 @@ Such tracks are then clustered along the z-axis at their point of closest approa
 Out of these resultant primary vertex candidates, the one with the greatest scalar transverse momentum is considered as the \emph{primary vertex}, with the rest being considered \PU vertices.
 Displaced vertices, such as those from heavy hadrons, are reconstructed during later reconstruction stages.
 
-\subsection{Particle Flow Algorithm}
+\subsection{Particle Flow Algorithm}\label{subsec:PF}
 Through combining the calorimeters' energy clusters and charged particle tracks from the tracker and muon systems, the Particle Flow algorithm is able to use all the available information from an event to reconstruct and identify all stable particles in an event with far superior results than if each sub-detector were used individually.
 
 The initial stage of the process involves associating charged particle tracks to energy clusters in the ECAL and HCAL.
@@ -75,7 +75,7 @@ This is done in the following order:
 \end{itemize}
 
 \subsection{Electrons}\label{subsec:electrons}
-Two different methods Electron tracks are reconstructed
+Two different methods are used to reconstruct Electron tracks
 
 \begin{itemize}
 
