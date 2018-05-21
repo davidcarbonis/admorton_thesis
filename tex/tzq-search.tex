@@ -19,18 +19,14 @@ For electrons the $\rho$ * effective area pileup alleviation technique is employ
 This involves the estimating the expected energy within the isolation cone from the median energy density per area of pileup contamination ($\rho$), estimated for each event, with the effective area given as a function of the electron's pseudorapidity, which is expressed as: 
 
 \begin{equation}
-\begin{align}
 I^{rel}_{rho * A_{eff}} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\rm T}(Photon) -rho*A_{\rm eff} )/p_T \\
-\end{align}
 \end{equation}\label{eq:rhoEffA}
 
 Muons use the $\Delta\beta$ pileup alleviation technique, where the average pileup energy inside the cone is estimated as half of that originating from charged hadrons.
 This is expressed as:
 
 \begin{equation}
-\begin{align}
 I^{rel}_{\Delta\beta} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\rm T}(Photon) - 0.5 * \sum E_{\rm T}(PU))/p_T \\
-\end{align}
 \end{equation}\label{eq:deltaBeta}
 
 Where CH is the charged hadrons from the Primary Vertex (PV), NH is the neutral hadrons and PU the charged hadrons from pileup.
@@ -60,16 +56,14 @@ This control region is dominated by non-lepton lepton events, but also contains 
 This data driven estimate is obtained using the following equation:
 
 \begin{equation}
-\begin{align}
  N_{data}^{OS non-prompt} = (N_{data}^{SS} - N^{SS}_{real + mis-ID}).\frac{N_{MC}^{OS non-prompt}}{N_{MC}^{SS non-prompt}}
-\end{align}
 \end{equation}
 
 where $N_{data}^{SS}$ is the total number of same sign events observed in data, $N^{SS}_{real + mis-ID}$ is the expected number of real same-sign events and events with charge misidentification and $N_{MC}^{OS non-prompt}$ and $N_{MC}^{SS non-prompt}$ the number of opposite-sign and same-sign non-prompt leptons observed in MC used to appropriately scale the estimate.
 
 This ratio of MC opposite-sign over same-sign events is referred to as R, and is calculated using generator level information from reconstructed objects which have matched to a generator level particle. R is calculated from the W + jets, \ttZ and \ttW leptonic decaying, and single top MC samples with sufficient statistics given that these processes are expected to be the predominant source of non-prompt leptons for this analysis. 
 
-%\begin{table}[!htbp]
+\begin{table}[!htbp]
 \centering
 \begin{tabular}{| l |  c |  c |  c |  c |  c |}
 \hline
