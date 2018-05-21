@@ -17,7 +17,7 @@ Following the GEN stage, the SIM stage involves passing the GEN output through a
 This process models particle interactions and decays and the propagation of particles through the detector, the effects of solenoidal field and detector material.
 The DIGI stage uses the SIM output to produce the detector's electronics response, which then undergoes the same RECO process that data does, as described in~\ref{sec:reco}.
 
-The inelastic proton-proton interactions, typically called pileup (\PU), which occur both within and adjacent to the event's bunch crossing, referred to as \emph{in-time} and \emph{out-of-time] \PU  respectively, also require modelling in simulation.
+The inelastic proton-proton interactions, typically called pileup (\PU), which occur both within and adjacent to the event's bunch crossing, referred to as \emph{in-time} and \emph{out-of-time} \PU  respectively, also require modelling in simulation.
 Simulated \PU however, does not adequately describe observed \PU in data.
 Therefore, the reweighting of the simulated samples is required and is discussed in~\ref{}.
 
@@ -152,17 +152,16 @@ Such identification, known as \emph{b-taggging}, exploits the fact that due b ha
 These secondary vertices are exploited by the \emph{Combined Secondary Vertex version 2} (CSVv2) algorithm~\cite{Chatrchyan:2012jua,CMS:206kkf}, which uses information about displaced track and secondary vertices as input into a multilayer perceptron ~\footnote{A class of neural network} to produce a discriminator value.
 The CMS B-Tag and Vertexing (BTV) Physics Object Group defines working points for this (and other) algorithm's discriminator based on the mis-identification rate.
 
-\editComment{insert fig re. discriminator}
 \begin{figure}[h]
 \centering
 \includegraphics{figs/data-mc/ak4_pfjets_CSVIVF_Log.pdf}
-\caption{The distribution of the CSVv2 algorithm's discriminator for multijet events, for $50\GeV < \pT < 250\GeV$, at \sqrt{13\TeV, where the jets have been reconstructed with the anti-\kt algorithm with R = 0.4~\cite{CMS:2016kkf}.}
+\caption{The distribution of the CSVv2 algorithm's discriminator for multijet events, for $50\GeV < \pT < 250\GeV$, at $\sqrt{13\TeV}$, where the jets have been reconstructed with the anti-\kt algorithm with $R = 0.4$~\cite{CMS:2016kkf}.}
 \label{fig:bTagDiscriminator}
 \end{figure}
 
 \subsection{Missing Transverse Energy}
 Particles which only weakly interact with matter, such as neutrinos and some hypothesised BSM particles, escape the detector without being directly observed, but can be inferred from considering the conservation of the transverse momentum of the event.
-Therefore, the missing energy in the plane transverse to the beam line, \overrightarrow{\MET}, is defined as the negative vector sum of the transverse momentum in the end:
+Therefore, the missing energy in the plane transverse to the beam line, $\overrightarrow{\MET}$, is defined as the negative vector sum of the transverse momentum in the end:
 
 \begin{equation}
 \overrightarrow{\MET} = - \sum \overrightarrow{\pT} \;.

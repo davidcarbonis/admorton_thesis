@@ -276,7 +276,7 @@ By defining the matrices $D_{ij} = \frac{1}{\sigma_{i}} \frac{\delta s_{i}}{\del
 \end{equation}
 
 Eqn.~\ref{eq:chi4} gives a linear form which can be solved for $\delta h$ through updating the residuals with respect to the seeded track candidate.
-Calculation of the derivatives for the barrel layer and endcap disk hits, including a correction factor for \phi in the outer disks as they do not point directly towards the interaction point, are given in~\ref{app:chi2}.
+Calculation of the derivatives for the barrel layer and endcap disk hits, including a correction factor for $\phi$ in the outer disks as they do not point directly towards the interaction point, are given in~\ref{app:chi2}.
 
 \subsubsection{Software Implementation}\label{subsubsec:chi2software}
 
@@ -292,7 +292,7 @@ Given that this act has the potential to leave a track with fewer stubs than the
 Despite the performance in simulation of the linear $\chi^{2}$ track fitter being comparable to both the \KF and \LR track fitters, consideration as to whether it can be implemented in hardware had to be given, for whilst FPGAs can easily perform the addition and multiplication operations required to compute matrices, the calculation of the derivatives that form their elements will require the use of lookup tables (LUTs) to ensure latency budgets are not exceeded.
 With the first order approximation of the derivatives for the barrel hits only depend on the radial position of the hit (\ie one of the six possible barrel layer radial positions), only a small number of LUTs (\editComment{6?}) are required for these matrix elements.
 \editComment{Precision required for the elements? Expand further}
-The endcap regions however, are more complicated, with the derivatives having additional dependencies on $\tan \lambda$ and the radius of curvature of the track and an additional contribution required to account for the outer modules' strips do not provide a direct measurement of \phi as they do not point towards the interaction point.
+The endcap regions however, are more complicated, with the derivatives having additional dependencies on $\tan \lambda$ and the radius of curvature of the track and an additional contribution required to account for the outer modules' strips do not provide a direct measurement of $\phi$ as they do not point towards the interaction point.
 When considering the minimum parameter resolution which would not considerably impact on the track reconstruction efficiency or helix parameter resolutions, .... \editComment{Find out how many are required, what precision?}
 
 Given that the size of the LUTs required for the endcap regions considerably exceeds the resources of those present on currently available FPGAs, such as the $433 \times 10^{3}$ LUTs available on the Virtex 7 690 FPGAs used by the MP7s in the demonstrator, whilst a future FPGA could implement this track fitting algorithm, it would not be feasible to implement on a current generation chip.
@@ -334,12 +334,12 @@ This involved adding a contribution of the order of a milliradian, the order of 
 For small deflection angles, the scattering contribution for relativistic particles, $\theta_{rms}$, for a each layer is given by~\cite{Highland:1975pq,Lynch:1990sq}~:
 
 \begin{equation}
-\theta_{rms} = \frac{13.6\MeV}{\Beta c p} q \sqrt{\frac{x}{X_{0}}} [1 + 0.038 \ln{\frac{x}{X_{0}}] \;.
+\theta_{rms} = \frac{13.6\MeV}{\beta c p} q \sqrt{\frac{x}{X_{0}}} [1 + 0.038 \ln{\frac{x}{X_{0}}}]  \;.
 \label{eq:scatter1}
 \end{equation}
 
-where, the momentum, velocity, electrical charge of the incident particle and thickness of the scattering medium in radiation lengths are given by $p$, $\Beta c$, $q$ and $\frac{x}/{X_{0}}$ respectively.
-As the particles involved have relativistic velocities (\ie $\Beta c \cong 1$) and any scattering in the r-z plane can be ignored, using the assumption that the material contribution for each layer traversed is roughly equal, an initial conservative approximation for this multiple scattering contribution can be expressed as $\theta_{rms} = \frac{const}{r_{track}}$.
+where, the momentum, velocity, electrical charge of the incident particle and thickness of the scattering medium in radiation lengths are given by $p$, $\beta c$, $q$ and $\frac{x}/{X_{0}}$ respectively.
+As the particles involved have relativistic velocities (\ie $\beta c \cong 1$) and any scattering in the r-z plane can be ignored, using the assumption that the material contribution for each layer traversed is roughly equal, an initial conservative approximation for this multiple scattering contribution can be expressed as $\theta_{rms} = \frac{const}{r_{track}}$.
 
 Despite the increase in track finding efficiency and the reduction in the number of fake tracks and duplicate tracks this rudimentary approximation can achieve (Fig.~\ref{fig:MS1}), the are only minor improvements in the track parameters resolution.
 This is not unexpected, given that a constant inflation in the r-$\varphi$ plane hit resolution error is applied for each stub applied, whilst in reality the inflation would vary as a particle traverses material.
