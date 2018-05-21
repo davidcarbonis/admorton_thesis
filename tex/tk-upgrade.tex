@@ -18,19 +18,19 @@ Replacing Linac2 with the new Linear accelerator 4 (Linac4) during the Long Shut
 The new more radiation tolerant quadrupole magnets to be installed during LS3 will provide the larger magnetic field strength and aperture required to provide the lower $\beta^{*}$ required for increasing the instantaneous luminosity. 
 
 \section{The Phase-II Outer Tracker Upgrade}\label{sec:tk-upgrade}
-
+\editComment{Try and rephrase - seems overly long}
 To meet the significant challenges of, and exploit, the increased instantaneous luminosity environment of the HL-LHC, the CMS detector's ``Phase-II Upgrade'' during the LS3 will deliver the required improved radiation hardness for the increase in radiation and to manage the high \PU HL-LHC environment with greater detector granularity to reduce occupancy, and enhanced bandwidth and triggering capabilities to avoid compromising physics potential~\cite{CMSCollaboration:2015zni,P2TrackerTDR}.
 
 The Phase-II upgrade will see both the entire silicon tracking detector being replaced with one comprised of a pixel Inner Tracker and pixel and strip Outer Tracker which have:
 \begin{itemize}
-\item \bf{improved radiation hardness} - being able to withstand the increased fluence of the HL-LHC (up to $2.3\times10^{16} n_{eq}/cm^{2}$ for the innermost layers)and operate efficiently up to the targeted luminosity of 3000\fbinv, with a margin of $\approx50\%$ to accommodate the target being exceeded and the uncertainties in the anticipated radiation exposure.
-\item \bf{increased sensor granularity} - so that the channel occupancy is kept at or below the per cent (per mille) level for the Outer (Inner) Tracker, allowing for a high track reconstruction efficiency and a low misidentification rate under the increased \PU conditions. This will also enable improved track separation in dense environments, such as high \pT jets, compared to the current pixel detector and fully exploit the vast volume of data produced.
-\item \bf{reduced material in the tracking volume} - the current tracker's performance is significantly impacted by the amount of material present, as are the calorimeters and overall performance of CMS.
-Significant reducing the tracker's material budget will greatly enhance CMS' performance at the HL-LHC.
-\item \bf{robust pattern recognition} - enabling fast and efficient track finding, which is especially important for the HLT, in the high \PU environment.
-\item \bf{level-1 trigger contributions} - it has been shown that the L1 trigger performance will deteriorate in the high luminosity environment from both the rate increase and the reduced efficiencies of the L1 selection algorithms.
-As raising the upgraded calorimeters' and muon chambers' trigger thresholds would have minimal impact on the rate, and 	would negatively impact sensitivity to low mass searches and measurements, the L1 bandwidth and latency will be increased (from 100\kHz to 750\kHz and from $3.2\mus$ to $12.5\mus$ respectively) and tracking information will be included in the L1 decision process to preserve and improve trigger performance.
-\item \bf{extended tracking acceptance} - the overall physics capabilities of the CMS experiment would greatly benefit from extended coverage of the tracker and calorimeters up to $|\eta| = 4$ in the forward region.
+\item \textbf{improved radiation hardness:} being able to withstand the increased fluence of the HL-LHC (up to $2.3\times10^{16} n_{eq}/cm^{2}$ for the innermost layers)and operate efficiently up to the targeted luminosity of 3000\fbinv, with a margin of $\approx50\%$ to accommodate the target being exceeded and the uncertainties in the anticipated radiation exposure.
+\item \textbf{increased sensor granularity:} - so that the channel occupancy is kept at or below the per cent (per mille) level for the Outer (Inner) Tracker, allowing for a high track reconstruction efficiency and a low misidentification rate under the increased \PU conditions. This will also enable improved track separation in dense environments, such as high \pT jets, compared to the current pixel detector and fully exploit the vast volume of data produced.
+\item \textbf{reduced material in the tracking volume:} - the current tracker's performance is significantly impacted by the amount of material present, as are the calorimeters and overall performance of CMS.
+Significantly reducing the tracker's material budget will greatly enhance CMS' performance at the HL-LHC.
+\item \textbf{robust pattern recognition:} - enabling fast and efficient track finding, which is especially important for the HLT, in the high \PU environment.
+\item \textbf{level-1 trigger contributions:} - it has been shown that the L1 trigger performance will deteriorate in the high luminosity environment from both the rate increase and the reduced efficiencies of the L1 selection algorithms.
+As raising the upgraded calorimeters' and muon chambers' trigger thresholds would have minimal impact on the rate, and would negatively impact sensitivity to low mass searches and measurements, the L1 bandwidth and latency will be increased (from 100\kHz to 750\kHz and from $3.2\mus$ to $12.5\mus$ respectively) and tracking information will be included in the L1 decision process to preserve and improve trigger performance.
+\item \textbf{extended tracking acceptance:} - the overall physics capabilities of the CMS experiment would greatly benefit from extended coverage of the tracker and calorimeters up to $|\eta| = 4$ in the forward region.
 \end{itemize}
 
 With the above requirements in mind, the pixel Inner Tracker is designed to cover up to $|\eta| = 4$ with $100-150\mum$ thick planar silicon pixel sensors, measuring either $25\times100\mum^{2}$ or $50\times50\mum^{2}$\footnote{This is a reduction of a factor of $\approx 6$ compared to the Phase-0 and Phase-I pixel detectors}, which provide the low (per mille) occupancy and track separation with the negligible inefficiencies required in the harsh radiation environment.
@@ -56,7 +56,7 @@ Two \pT modules are being developed for the Outer Tracker upgrade: 2S \emph{stri
 The 2S~modules, are designed to be used at radii $r>60$\cm from the beam line, where the hit occupancies are lower and each sensor has an active area of 0.05\cm~$\times$~9.14\cm.
 Both 2S~module strip layers have a pitch of 90\mum in the transverse plane, $r$-$\varphi$, and a strip length of 5.03\cm along the direction of the beam axis, $z$.
 Each PS~module sensor layer has an active area of 4.69\cm~$\times$~9.60\cm, will be used at radii $20<r<60$\cm where the occupancies are highest.
-The upper PS~module layer consist of an upper silicon strip sensor, and the lower a silicon pixel sensor, both with a pitch of 100\mum in $r$-$\varphi$, and a strip length in $z$ of 2.35\cm for the strips and 1.47\mm for the pixels.
+The upper PS~module layers consist of an upper silicon strip sensor, and the lower a silicon pixel sensor, both with a pitch of 100\mum in $r$-$\varphi$, and a strip length in $z$ of 2.35\cm for the strips and 1.47\mm for the pixels.
 The finer granularity provided by the pixel layer affords better resolution along the $z$ axis, which is crucial for vertex identification in the high \PU environment of the HL-LHC.
 Further details on the two \pT modules can be found in~\cite{CMS_Upgrade_TP,P2TrackerTDR}.
  
@@ -97,6 +97,7 @@ Any Track Finder, which will take the stubs as input and output fully reconstruc
 % via \DeclareGraphicsExtensions.
 \caption{Illustration of data-flow and latency requirements from \pt-modules through to the off-detector electronics dedicated to forming the L1 trigger decision.}
 \label{fig:dataFlow}
+\end{figure}
 
 Three different L1 track finders have been explored by the CMS Collaboration.
 One uses Associative Memory (\emph{AM}) ASICs for track finding and FPGAs for track fitting, and the other two all-FPGA approaches, one using a fully Time-Multiplexed approaching using the Hough Transform (\emph{TMTT}) and the other a ``road search'' (\emph{tracklet}) algorithm to reconstruct tracks respectively.
@@ -149,7 +150,7 @@ The Track Finding Processor (Fig.~\ref{fig:TFP}) consists of four self-contained
 \end{figure}
 
 \subsubsection{Geometric Processor}\label{subsubsec:GP}
-Each GP performs two tasks, firstly the conversion of the 48-bit DTC stubs into a 64-bit format extended format that is used to reduce the HT processing load and the assignment of stubs to thirty six sub-sectors, two sub-sectors in $\phi$ and eighteen in $\eta$ (where $\eta$ is the pseudo-rapidity). 
+Each GP performs two tasks, firstly the conversion of the 48-bit DTC stubs into a 64-bit format extended format that is used to reduce the HT processing load and secondly the assignment of stubs to thirty six sub-sectors, two sub-sectors in $\phi$ and eighteen in $\eta$ (where $\eta$ is the pseudo-rapidity). 
 This division of the processing octants simplifies the task of the downstream logic required, allowing the track finding to be carried out independently and in parallel within each sub-sector. 
 The relatively fine $\eta$ binning ensures that any track found by the \rphi HT is consistent in the \rz plane. Stubs compatible with more than one sub-sector, usually due to track curvature in $\phi$ are duplicated. 
 The routing of stubs to sub-sectors occurs in three stages: a rough $\eta$ sorting into six bins, a fine $\eta$ sorting into three bins and a $\phi$ sorting into two bins. 
@@ -184,7 +185,7 @@ The point of intersection of these lines in Hough-space would therefore correspo
 As the line gradients in Hough-space is given by the radius of the stubs, they will always be positive, the stub radius is transformed to $r_{58} = r - 58cm$ in order to utilise a larger phase space, which leads to fewer \textit{fake} (in that the found track does not match to a simulated particle) and duplicated tracks.
 
 Given that $R$ for the lowest \pT track (3\GeV) to be considered is greater than the outer radius of the tracking detector ($r$ = 1.2m), all relevant particles are expected to traverse through at least six barrel layers or endcap disks. 
-The threshold for the identification of a track candidate however, is set at a minimum of five detector layers or disk in order to allow for detector or readout inefficiencies. 
+The threshold for the identification of a track candidate however, is set at a minimum of five detector layers or disks in order to allow for detector or readout inefficiencies. 
 This threshold can be further reduced to four layers to account for the reduced geometric coverage between $0.89 < \eta < 1.16$ or for dead detector layers or disks.
 
 A more detailed description of the firmware implementation of the \HT for the demonstrator system is discussed in~\cite{IEEE} and~\cite{TMTT_JINST}.
@@ -210,8 +211,8 @@ A greater in-depth discussion of the mathematics and implementation of online tr
 
 \subsubsection{Duplicate Removal}
 At the input to the DR, over half of the track candidates are unwanted duplicate tracks created by the HT.
-Naively one would expect the need to compare pairs of tracks to see if they are the same as each other, but by understanding how the HT produces these duplicate tracks a more elegant and subtle DR algorithm can be used.
-This approach is illustrated in Fig.~\ref{fig:DR}, where five stubs (blue lines in Hough Space) produces three candidates (green and yellow cells).
+By understanding how the HT produces these duplicate tracks, a more elegant and subtle DR algorithm can be used instead of having to compare pairs of tracks to see if they are the same as each other.
+This approach is illustrated in Fig.~\ref{fig:DR}, where five stubs (blue lines in Hough Space) produce three candidates (green and yellow cells).
 As all three candidates contain the same stubs, they will be fitted with identical helix parameters in the same cell (the yellow cell) regardless of the original HT cell.
 The algorithm accepts only tracks whose fitted parameters are consistent to those that the HT found them in initially. There is however, a small subtlety, given that the algorithm eliminates unique tracks whose fitted parameters were not consistent, which results in the loss of a few percent of efficiency. 
 By performing a second pass through the rejected tracks and rescuing those which are unique the lost efficiency can be recovered.
