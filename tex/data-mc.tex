@@ -9,7 +9,7 @@ both accurate modelling of these processes and a detailed understanding of how p
 The simulation of events is a four stage process: generation (GEN), simulation (SIM), digitisation (DIGI) and reconstruction (RECO).
 
 The initial GEN stage involves the use \emph{event generators} to simulate the proton-proton interactions and the resultant physics processes~\cite{Buckley:2011ms,Hoche:2014rga}.
-The first stage of this is the modelling of the colliding protons and the hard scattering of their constituent partons, which involves the use Parton Distribution Functions (PDFs) to assign fractions of the protons momentum to the partons and perturbation theory to compute the matrix elements of the QCD and electroweak processes involved.
+The first stage of this is the modelling of the colliding protons and the hard scattering of their constituent partons, which involves the use Parton Distribution Functions (PDFs) to assign fractions of the proton's momentum to the partons and perturbation theory to compute the matrix elements of the QCD and electroweak processes involved.
 The second stage models resultant parton showers through an iterative process until the infrared cutoff scale for the shower is reached, with the remaining particles undergoing hadronisation.
 The various event generators used in the production of MC samples used in this thesis are discussed in~\ref{subsec:eventGenerators}.
 
@@ -22,7 +22,7 @@ Simulated \PU however, does not adequately describe observed \PU in data.
 Therefore, the reweighting of the simulated samples is required and is discussed in~\ref{}.
 
 \subsection{Event Generators}\label{subsec:eventGenerators}
-\editComment{Currently being written}
+\editComment{Currently being rewritten/proofed/determined whether it'd be best suited to the bit where the MC samples are discussed}
 %\paragraph{aMC@NLO}
 %aMC@NLO~\cite{Alwall:2014hca} is a package that simulates processes to Next-To-Leading (NLO) order through the use of tree-level and one-loop
 %\paragraph{Madgraph}
@@ -31,11 +31,10 @@ Therefore, the reweighting of the simulated samples is required and is discussed
 
 \section{Object Reconstruction}\label{sec:reco}
 Using the readouts of all of the CMS sub-detectors, a full reconstruction of the triggered physics event is undertaken.
-This process involves the \emph{Particle Flow} (PF) algorithm which combines the complementary information from each of the CMS sub-detectors, as described in Chapter~\ref{subsec:PF}, to provide an optimal reconstruction and identification of all of the stable particles present in the event~\cite{CMS:2009nxa,CMS:2010eua,CMS-PRF-14-001}.
+This process involves the \emph{Particle Flow} (PF) algorithm which combines the complementary information from each of the CMS sub-detectors, known as \emph{elements}, to provide an optimal reconstruction and identification of all of the stable particles present in the event~\cite{CMS:2009nxa,CMS:2010eua,CMS-PRF-14-001}.
 Using these reconstructed particles, additional objects such as b-jets and missing transverse energy can also be constructed.
 
-\subsection{Charge Particle Tracks and Primary Vertices}\label{subsec:tracksVertices}
-%%% Tracks
+\subsection{Charged Particle Tracks}\label{subsec:tracks}
 As the charged particles produced from the proton-proton collisions traverse the silicon tracker, they interact with it and leave energy deposits known as \emph{hits}.
 These hits are used to reconstruct the particles' trajectories through multiple iterations of the Combinatorial Track Finder (CTF) algorithm, which is based off combinatorial Kalman Filtering~\cite{Chatrchyan:2014fea,Fruhwirth:1987fm}.
 
@@ -49,20 +48,32 @@ This approach minimises the bias in determining and discarding which hits are in
 \end{itemize}
 
 Up to six iterations of the CTF are performed, with selected tracks' hits removed from consideration by subsequent iterations.
-Whilst initial four iterations use seeds exclusively from the pixel tracker, the last two iterations uses seeds from the strip tracker to enable a high track reconstruction efficiency for those originating outside the pixel or those which did not leave any hits in the pixel tracker.
+Whilst initial four iterations use seeds exclusively from the pixel tracker, the last two iterations use seeds from the strip tracker to enable a high track reconstruction efficiency for those originating outside the pixel or those which did not leave any hits in the pixel tracker.
 
-%%%Primary vertices
-The reconstructed of the tracks are subsequently used to reconstruct the positions where the proton-proton collisions occurred, known as the \emph{primary vertices}~\cite{Speer:2006mh,Chatrchyan:2014fea}.
-Initially track are required to be consistent with originating promptly from the interaction region, namely having a small transverse impact parameter, a minimum number of hits in the pixel and strip trackers and a low normalised $\chi^{2}$.
+\subsection{Primary Vertices}\label{subsec:vertices}
+The reconstructed tracks are subsequently used to reconstruct the positions where the proton-proton collisions occurred, known as the \emph{primary vertices}~\cite{Speer:2006mh,Chatrchyan:2014fea}.
+Initially tracks are required to be consistent with originating promptly from the interaction region, namely having a small transverse impact parameter, a minimum number of hits in the pixel and strip trackers and a low normalised $\chi^{2}$.
 Such tracks are then clustered along the z-axis at their point of closest approach to the beamspot using a deterministic annealing algorithm	~\cite{Kenneth:1998i}, with these vertex candidates being used as input to an adaptive vertex filter~\cite{Fruhwirth:2007hz} to provide 3D position fits, uncertainties and variables such as the number of degrees of freedom to discriminate against fake vertices.
 Out of these resultant primary vertex candidates, the one with the greatest scalar transverse momentum is considered as the \emph{primary vertex}, with the rest being considered \PU vertices.
 Displaced vertices, such as those from heavy hadrons, are reconstructed during later reconstruction stages.
 
+\subsection{Calorimeter Energy Clusters}\label{subsec:clustering}
+The energy deposited by particles in the calorimeter is clustered in each sub-detector independently, except for the HF where each large cell can give rise to one cluster, to determine the energy and direction of the particles~\cite{CMS:2009nxa}.
+When these clusters are combined with charged particle tracks,
+
+The clustering algorithm consists of three steps:
+\begin{itemize}
+\item \textbf{Cluster seeding} - local cells energies above a thresholds are considered as seeds.
+\item \textbf{Topological clusters} - adjacent cells are summed together to form topological clusters.
+\item \textbf{Particle Flow clusters} - 
+\end{itemize}
+
 \subsection{Particle Flow Algorithm}\label{subsec:PF}
 Through combining the calorimeters' energy clusters and charged particle tracks from the tracker and muon systems, the Particle Flow algorithm is able to use all the available information from an event to reconstruct and identify all stable particles in an event with far superior results than if each sub-detector were used individually.
 
-The initial stage of the process involves associating charged particle tracks to energy clusters in the ECAL and HCAL.
+The initial stage of the process involves associating charged particle tracks to energy clusters from the ECAL and HCAL sub-detectors.
 Tracks are extrapolated from the last hit in the tracker to the typical shower profiles in the calorimeters, and if the particles' expected positions in the calorimeters are within the clusters' boundaries, these elements are linked together.
+
 These linked elements are used by the Particle Flow algorithm to sequentially reconstruct and identify PF particles, removing classified elements from further consideration, with the least ambiguous or cleanest objects reconstructed first, followed by progressively more difficult objects which can be constrained by previous ones.
 
 This is done in the following order: 
@@ -75,14 +86,15 @@ This is done in the following order:
 \end{itemize}
 
 \subsection{Electrons}\label{subsec:electrons}
+Electrons lose on average between 33\% (minimal intervening material) and 86\% (maximum intervening material) before reaching the ECAL due to undergoing Bremsstrahlung in the tracker layers~\cite{Khachatryan:2015hwa}, which often undergoes electron pair production which in turn produces further Bremsstrahlung photons.
+
 Two different methods are used to reconstruct Electron tracks
 
 \begin{itemize}
 \item asdhasjh
 \end{itemize}
 
-Electrons lose on average between 33\% (minimal intervening material) and 86\% (maximum intervening material) before reaching the ECAL due to undergoing Bremsstrahlung in the tracker layers~\cite{Khachatryan:2015hwa}, which often undergoes electron pair production which in turn produces further Bremsstrahlung photons.
-As Kalman Filters assumes solely Gaussian noise contributions and Bremsstrahlung is a non-Gaussian process, a Gaussian Sum Filter (GSF) algorithm~\cite{Adam:2003eca} is used to fit the track candidates.
+As Kalman Filters assume solely Gaussian noise contributions and Bremsstrahlung is a non-Gaussian process, a Gaussian Sum Filter (GSF) algorithm~\cite{Adam:2003eca} is used to fit the track candidates.
 The computationally heavy nature of the GSF algorithm however, limits its use to refitting \KF tracks which have a significant presence of Bremsstrahlung and as such benefit the most from ~/\cite{Khachatryan:2015hwa}.
 
 Electron reconstruction is undertaken using two complimentary algorithms, one
@@ -135,7 +147,7 @@ Making use of PF jets allows a more accurate reconstruction to be undertaken tha
 
 \subsubsection{Jet Energy Corrections}
 \emph{Jet Energy Corrections} (JECs) are used to take into account the effects of \PU and the non-uniform response in \pT and $eta$ of the detector and any residual differences between simulation and data to ensure that the jet energies measured by the detector properly describe the particle-level energies.
-Each effect is considered as a separation correction level and are applied sequentially as a scale factor applied to a jet's four-momentum in the following order:
+Each effect is considered as a separation correction level and is applied sequentially as a scale factor applied to a jet's four-momentum in the following order:
 
 \begin{itemize}
 \item \textbf{L1 Pileup} - removes additional energy originating from \PU interactions from the jet energy and is applied to for both data and MC simulated events. 
@@ -148,7 +160,7 @@ A thorough description of the JECs, their determination and associated uncertain
 
 \subsection{b-Jets}
 Correctly determining whether or not a jet was the product of a bottom quark hadronising is incredibly important for a variety of analyses, allowing them to separate signal processes from topologically similar background processes, including top physics searches due to the top quark's branching ratio to a W boson and bottom quark being $> 99\%$.
-Such identification, known as \emph{b-taggging}, exploits the fact that due b hadrons having a relatively long lifetime of $\approx 1.5 ps$~\cite{Beringer:1900zz}, they travel a measurable distance away from the primary vertex before decaying. 
+Such identification, known as \emph{b-tagging}, exploits the fact that because b hadrons have a relatively long lifetime of $\approx 1.5 ps$~\cite{Beringer:1900zz}, they travel a measurable distance away from the primary vertex before decaying. 
 These secondary vertices are exploited by the \emph{Combined Secondary Vertex version 2} (CSVv2) algorithm~\cite{Chatrchyan:2012jua,CMS:206kkf}, which uses information about displaced track and secondary vertices as input into a multilayer perceptron ~\footnote{A class of neural network} to produce a discriminator value.
 The CMS B-Tag and Vertexing (BTV) Physics Object Group defines working points for this (and other) algorithm's discriminator based on the mis-identification rate.
 
