@@ -118,12 +118,10 @@ Therefore, as it was assumed at the time of the December 2016 review that the DT
 This baseline system is illustrated in Fig.~\ref{fig:tmttarch}.
 
 {figure}[t]
-\begin{center}
+\centering
 \includegraphics[width=1.00\textwidth]{figs/tk-upgrade/tmttarch.pdf}
-\caption{The baseline system architecture uses two neighbouring DTCs to time-multiplex and duplicate stub data across processing octant boundaries, before each DTC transmits 50\% of its data to one TPF and 50\% to the neighbouring TFP.
-Based off current electronics and high speed links available, the data requires 18 TPFs per processing octant (one for each time slice, resulting in a full system requiring 144 TFPs).}
+\caption{The baseline system architecture uses two neighbouring DTCs to time-multiplex and duplicate stub data across processing octant boundaries, before each DTC transmits 50\% of its data to one TPF and 50\% to the neighbouring TFP Based off current electronics and high speed links available, the data requires 18 TPFs per processing octant (one for each time slice, resulting in a full system requiring 144 TFPs).}
 \label{fig:tmttarch}
-\end{center}
 \end{figure}
 
 A hardware demonstrator of the baseline system consisting of five Imperial Master Processor Virtex-7 (MP7) cards~\cite{mp7ref}, capable of processing one phi-octant of the tracker with a time-multiplexing factor of 36, was used to validate the feasibility of the proposed full system using currently available hardware for the December 2016 review.
@@ -240,7 +238,8 @@ The linearised $\chi^{2}$ fit makes use of residuals between the stubs and the s
 As the \emph{TMTT} project was formed \editComment {INSERT TIME HERE} after the other two L1 track finder projects, there was a pressing need to be able to perform precision helix parameter fits following the \HT using an algorithm which could could be conceivably implemented in hardware.
 Following discussions with members of the \emph{tracklet} and \emph{AM} projects, it was decided that a linearised $\chi^{2}$ fit based off the one proposed by the \emph{tracklet} project would be investigated.
 
-The mathematics forming the basis for the \emph{TMTT}'s implementation of the algorithm is detailed in~\cite{CMS_DN-14-043}. \editComment{Need to check re. there being a publicly available copy?}
+The mathematics forming the basis for the \emph{TMTT}'s implementation of the algorithm is detailed in~\cite{CMS_DN-14-043}. 
+\editComment{Need to check re. there being a publicly available copy?}
 
 \subsubsection{General Form of a $\chi^{2}$ Fit}\label{subsubsec:chi2maths}
 The parameters of each stub $s_{i}$, based on the track’s helix parameters $h$, are initially linearly expanded around the estimate of the helix parameters $h_{0}$:
