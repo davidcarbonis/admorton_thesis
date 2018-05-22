@@ -58,15 +58,16 @@ Out of these resultant primary vertex candidates, the one with the greatest scal
 Displaced vertices, such as those from heavy hadrons, are reconstructed during later reconstruction stages.
 
 \subsection{Calorimeter Energy Clusters}\label{subsec:clustering}
-The energy deposited by particles in the calorimeter is clustered in each sub-detector independently, except for the HF where each large cell can give rise to one cluster, to determine the energy and direction of the particles~\cite{CMS:2009nxa}.
-When these clusters are combined with charged particle tracks,
+The energy deposited by particles in the calorimeters is independently clustered in each sub-detector, except for the HF where each large cell can give rise to one cluster, to determine the energy and direction of the particles~\cite{CMS:2009nxa}.
 
 The clustering algorithm consists of three steps:
 \begin{itemize}
 \item \textbf{Cluster seeding} - local cells energies above a thresholds are considered as seeds.
-\item \textbf{Topological clusters} - adjacent cells are summed together to form topological clusters.
-\item \textbf{Particle Flow clusters} - 
+\item \textbf{Clustering} - adjacent cells are summed together to form topological clusters.
+\item \textbf{Energy threshold} - if the energy of the cluster is greater than two standard deviations of the electronics noise (80\MeV in the EB, up to 300\MeV in the EE, and 800\MeV in the HCAL), the cluster is accepted.
 \end{itemize}
+
+\editComment{Worth discussing Hybrid and Multi-clustering algos for ECAL clustering? Wary of then having to expand on HCAL clustering... Better to just state where a more complete description is given.}
 
 \subsection{Particle Flow Algorithm}\label{subsec:PF}
 Through combining the calorimeters' energy clusters and charged particle tracks from the tracker and muon systems, the Particle Flow algorithm is able to use all the available information from an event to reconstruct and identify all stable particles in an event with far superior results than if each sub-detector were used individually.
@@ -86,20 +87,17 @@ This is done in the following order:
 \end{itemize}
 
 \subsection{Electrons}\label{subsec:electrons}
-Electrons lose on average between 33\% (minimal intervening material) and 86\% (maximum intervening material) before reaching the ECAL due to undergoing Bremsstrahlung in the tracker layers~\cite{Khachatryan:2015hwa}, which often undergoes electron pair production which in turn produces further Bremsstrahlung photons.
+Electrons lose on average between 33\% (minimal intervening material) and 86\% (maximum intervening material) before reaching the ECAL due to producing Bremsstrahlung photons in the tracker layers~\cite{Khachatryan:2015hwa}, which often undergo electron pair production, producing further Bremsstrahlung photons.
+As Kalman Filters assume solely Gaussian noise contributions and Bremsstrahlung is a non-Gaussian process, a Gaussian Sum Filter (GSF) algorithm~\cite{Adam:2003eca} is used in electron track fitting.
+The computationally heavy nature of the GSF algorithm however, limits its use to refitting \KF track seeds which have a significant presence of Bremsstrahlung and for final track fitting~/\cite{Khachatryan:2015hwa}.
 
-Two different methods are used to reconstruct Electron tracks
-
+Electron track reconstruction is undertaken by the PF algorithm with two complimentary algorithms:
 \begin{itemize}
-\item asdhasjh
+\item \textbf{ECAL-based approach} - using the ECAL clusters
+\item \textbf{tracker-based approach} - 
 \end{itemize}
 
-As Kalman Filters assume solely Gaussian noise contributions and Bremsstrahlung is a non-Gaussian process, a Gaussian Sum Filter (GSF) algorithm~\cite{Adam:2003eca} is used to fit the track candidates.
-The computationally heavy nature of the GSF algorithm however, limits its use to refitting \KF tracks which have a significant presence of Bremsstrahlung and as such benefit the most from ~/\cite{Khachatryan:2015hwa}.
-
-Electron reconstruction is undertaken using two complimentary algorithms, one
-
-These GSF tracks, along with  are then used as input to the PF algorithm, 
+The tracks recons
 
 \subsection{Muons}\label{subsec:muons}
 Muons tracks are independently reconstructed in both the inner tracker, as described in Section~\ref{subsec:tracksVertices}, and the muon chambers, where local reconstruction is undertaken using a Kalman Filter to build tracks from the innermost track segments of clustered DT and CSC hits outwards using DT, CSC and RPC hits.
