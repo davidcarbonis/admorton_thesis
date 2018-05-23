@@ -90,22 +90,22 @@ It is essential that this radiated energy is collected in order to correctly det
 Two clustering algorithms are used to form SCs of $5 \times 1$ and $5 \times 5$ arrays of ECAL crystals in the EB and EE respectively due to their different geometrical arrangements.
 Both of these ECAL clustering algorithms are discussed in greater detail in~\cite{Khachatryan:2015hwa}.
 The presence of Bremsstrahlung also necessitates the use of a Gaussian Sum Filter (GSF)~\cite{Adam:2003eca} to fit electron tracks instead of a Kalman Filter as the process is non-Gaussian and Kalman Filters only assume Gaussian noise contributions.
-The computationally heavy nature of the GSF algorithm however, limits its use to refitting \KF track seeds which have a significant presence of Bremsstrahlung and for the final fitting of a track's parameters~\cite{Khachatryan:2015hwa}.
+The computationally heavy nature of the GSF algorithm however, limits its use to refitting \KF track seeds which have a significant presence of Bremsstrahlung and for the final fitting of a track's parameters.
 
 %%% Track seeding
-Electron track seeds formed of the initial two or three hits in the tracker are constructed by two complimentary algorithms:
+Electron track seeds formed of the initial two or three hits in the tracker from which tracks are built from are constructed by two complimentary algorithms~\cite{Khachatryan:2015hwa}:
 \begin{itemize}
-\item \textbf{ECAL-based approach} - an ECAL cluster's energy and position is used to extrapolate the expected electron trajectory towards the primary vertex and . 
-for both electrons and positrons 
-\item \textbf{tracker-based approach} - 
+\item \textbf{ECAL-based approach} - an electron's SC's energy and position is used to extrapolate the expected electron trajectory towards the primary vertex in order to determine where hits are anticipated to be for both electrons and positrons.
+Reconstructing electrons in jets however, suffers from large inefficiencies due to the potential to incorrectly associate hits from other charged particles with the track and the jet energy deposits  overlapping with the electron SCs impacting the assumed energy and position of the SC.
+Low \pT electrons are also poorly described as the increased bending of their trajectories results in the spread energy not being fully contained by a SC.
+\item \textbf{tracker-based approach} - this approach is designed to compliment the ECAL-based approach by being able to reconstruct non-isolated and low \pT electrons efficiently.
+A \KF is initially used for track finding which is able to accurately reconstruct electrons that emit limited Bremsstrahlung in the tracker, with the KF track matched to the closest ECAL SC.
+Tracks which are indicative of experiencing a significant amount of Bremsstrahlung are refitted with a GSF which can better follow the changes in the track's curvature.
+The track parameters from both filters, such as the quality ($\chi^{2}$) of the tracks and how well matched the track is to the ECAL SC, are used by a Multivariate Analysis (MVA) technique to determine whether or not the tracker seed is to be considered an electron seed.
 \end{itemize}
 
-%%% Track building
-Seeds from both algorithms are combined, and are used to 
-%%% Track fitting
-KF used to build tracks and GSF to fit track parameters
-
-The resultant GSF tracks are used for the PF algorithm's reconstruction of electrons.
+Seeds from both algorithms are combined and electron tracks are iteratively built using a  combinatorial \KF using loose cuts in order to accommodate trajectory changes due to Bremsstrahlung and maintain a high reconstruction efficiency.
+The helix parameters of the reconstructed tracks are determined by a GSF fit and these GSF tracks are subsequently used for the PF algorithm's reconstruction of electrons.
 
 \subsection{Muons}\label{subsec:muons}
 Muons tracks are independently reconstructed in both the inner tracker, as described in Section~\ref{subsec:tracksVertices}, and the muon chambers, where local reconstruction is undertaken using a Kalman Filter to build tracks from the innermost track segments of clustered DT and CSC hits outwards using DT, CSC and RPC hits.
