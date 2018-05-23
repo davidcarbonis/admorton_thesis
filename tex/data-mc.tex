@@ -86,25 +86,26 @@ This is done in the following order:
 
 \subsection{Electrons}\label{subsec:electrons}
 Electrons lose on average between 33\% (minimal intervening material) and 86\% (maximum intervening material) before reaching the ECAL due to producing Bremsstrahlung photons in the tracker layers~\cite{Khachatryan:2015hwa}, which often undergo electron pair production, producing further Bremsstrahlung photons.	
-As it is essential that this radiated energy is collected in order to correctly determine an electron's initial energy, the ECAL clusters, known as \emph{superclusters} (SCs), have an extended window in $\phi$ as electrons' trajectories are bent in the $\phi$ plane by the magnetic field but photons' are not, causing an energy spread across $phi$.
+It is essential that this radiated energy is collected in order to correctly determine an electron's initial energy, the ECAL clusters, known as \emph{superclusters} (SCs), have an extended window in $\phi$ as the magnetic field bends electrons trajectories in the $\phi$ direction whilst photons are unaffected, causing an energy spread across $phi$.
 Two clustering algorithms are used to form SCs of $5 \times 1$ and $5 \times 5$ arrays of ECAL crystals in the EB and EE respectively due to their different geometrical arrangements.
 Both of these ECAL clustering algorithms are discussed in greater detail in~\cite{Khachatryan:2015hwa}.
+The presence of Bremsstrahlung also necessitates the use of a Gaussian Sum Filter (GSF)~\cite{Adam:2003eca} to fit electron tracks instead of a Kalman Filter as the process is non-Gaussian and Kalman Filters only assume Gaussian noise contributions.
+The computationally heavy nature of the GSF algorithm however, limits its use to refitting \KF track seeds which have a significant presence of Bremsstrahlung and for the final fitting of a track's parameters~\cite{Khachatryan:2015hwa}.
 
-%%%
-
-As Kalman Filters assume solely Gaussian noise contributions and Bremsstrahlung is a non-Gaussian process, a Gaussian Sum Filter (GSF) algorithm~\cite{Adam:2003eca} is used in electron track fitting.
-The computationally heavy nature of the GSF algorithm however, limits its use to refitting \KF track seeds which have a significant presence of Bremsstrahlung and for final track fitting~\cite{Khachatryan:2015hwa}.
-
-Electron track reconstruction is undertaken by the PF algorithm, with seeds of the initial two or three hits in the tracker being constructed by two complimentary algorithms~\cite{•}:
+%%% Track seeding
+Electron track seeds formed of the initial two or three hits in the tracker are constructed by two complimentary algorithms:
 \begin{itemize}
 \item \textbf{ECAL-based approach} - an ECAL cluster's energy and position is used to extrapolate the expected electron trajectory towards the primary vertex and . 
 for both electrons and positrons 
 \item \textbf{tracker-based approach} - 
 \end{itemize}
 
+%%% Track building
+Seeds from both algorithms are combined, and are used to 
+%%% Track fitting
 KF used to build tracks and GSF to fit track parameters
 
-The GSF tracks 
+The resultant GSF tracks are used for the PF algorithm's reconstruction of electrons.
 
 \subsection{Muons}\label{subsec:muons}
 Muons tracks are independently reconstructed in both the inner tracker, as described in Section~\ref{subsec:tracksVertices}, and the muon chambers, where local reconstruction is undertaken using a Kalman Filter to build tracks from the innermost track segments of clustered DT and CSC hits outwards using DT, CSC and RPC hits.
