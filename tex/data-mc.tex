@@ -62,7 +62,7 @@ The energy deposited by particles in the calorimeters is independently clustered
 
 The clustering algorithm consists of three steps:
 \begin{itemize}
-\item \textbf{Cluster seeding} - local cells energies above a thresholds are considered as seeds.
+\item \textbf{Cluster seeding} - local cells' energies above a thresholds are considered as seeds.
 \item \textbf{Clustering} - adjacent cells are summed together to form topological clusters.
 \item \textbf{Energy threshold} - if the energy of the cluster is greater than two standard deviations of the electronics noise (80\MeV in the EB, up to 300\MeV in the EE, and 800\MeV in the HCAL), the cluster is accepted.
 \end{itemize}
@@ -86,7 +86,8 @@ This is done in the following order:
 
 \subsection{Electrons}\label{subsec:electrons}
 Electrons lose on average between 33\% (minimal intervening material) and 86\% (maximum intervening material) before reaching the ECAL due to producing Bremsstrahlung photons in the tracker layers~\cite{Khachatryan:2015hwa}, which often undergo electron pair production, producing further Bremsstrahlung photons.	
-It is essential that this radiated energy is collected in order to correctly determine an electron's initial energy, the ECAL clusters, known as \emph{superclusters} (SCs), have an extended window in $\phi$ as the magnetic field bends electrons trajectories in the $\phi$ direction whilst photons are unaffected, causing an energy spread across $phi$.
+It is essential that this radiated energy is collected in order to correctly determine an electron's initial energy.
+ECAL clusters, known as \emph{superclusters} (SCs), have an extended window in $\phi$ as the magnetic field bends electrons trajectories in the $\phi$ direction whilst photons are unaffected, causing an energy spread across $phi$.
 Two clustering algorithms are used to form SCs of $5 \times 1$ and $5 \times 5$ arrays of ECAL crystals in the EB and EE respectively due to their different geometrical arrangements.
 Both of these ECAL clustering algorithms are discussed in greater detail in~\cite{Khachatryan:2015hwa}.
 The presence of Bremsstrahlung also necessitates the use of a Gaussian Sum Filter (GSF)~\cite{Adam:2003eca} to fit electron tracks instead of a Kalman Filter as the process is non-Gaussian and Kalman Filters only assume Gaussian noise contributions.
