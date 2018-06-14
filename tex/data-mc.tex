@@ -9,8 +9,8 @@ both accurate modelling of these processes and a detailed understanding of how p
 The simulation of events is a four stage process: generation (GEN), simulation (SIM), digitisation (DIGI) and reconstruction (RECO).
 
 The initial GEN stage involves the use \emph{event generators} to simulate the proton-proton interactions and the resultant physics processes~\cite{Buckley:2011ms,Hoche:2014rga}.
-The first stage of this is the modelling of the colliding protons and the hard scattering of their constituent partons, which involves the use Parton Distribution Functions (PDFs) to assign fractions of the proton's momentum to the partons and perturbation theory to compute the matrix elements of the QCD and electroweak processes involved.
-The second stage models resultant parton showers through an iterative process until the infrared cutoff scale for the shower is reached, with the remaining particles undergoing hadronisation.
+The first stage of this is the modelling of the colliding protons and the hard scattering of their constituent partons, which involves the use Parton Distribution Functions (PDFs) to assign fractions of the proton's momentum to the partons and perturbation theory to compute the Matrix Elements (ME) of the QCD and electroweak processes involved.
+The second stage models resultant Parton Showers (PS) through an iterative process until the infrared cutoff scale for the shower is reached, with the remaining particles undergoing hadronisation.
 The various event generators used in the production of MC samples used in this thesis are discussed in~\ref{subsec:eventGenerators}.
 
 Following the GEN stage, the SIM stage involves passing the GEN output through a complete simulation of the CMS detector that has been with the GEANT4 program~\cite{geant4,Lefebure:1999wja}.
@@ -23,8 +23,19 @@ Therefore, the reweighting of the simulated samples is required and is discussed
 
 \subsection{Event Generators}\label{subsec:eventGenerators}
 A number of event generators are used by CMS to produce the MC simulation samples used to describe the expected processes produced at the LHC.
-Whilst several are general-purpose event generators, which, there are various 
-, including general-purpose ones and others which specialise either in specific process or a specific aspect of an event,
+Whilst there are several general-purpose event generators which can describe an event from the initial hadron collision to final state particles, they are typically used in conjunction with generators that specialise in a specific physics aspect or process in order to provide a complete event.
+
+
+
+The following event generators 
+
+%%% Generators used
+%%amcatnlo - tZq, ttZ, ttW, WZ+jets, WWW, WWZ,WZZ, ZZZ, schannel
+%%amcatnlo+FXFX - w+jets, ZZ4l
+%%amcatnlo+FXFX+madspin - WZ,ZZ2l2q
+%%madgraph - tHq, tWZ,
+%%Powheg - ttH, WW, ZZ2l2nu, ttbar inclusive, tW
+%%Powheg+madspin- t-channel
 
 \subsubsection{aMC@NLO}
 aMC@NLO~\cite{Alwall:2014hca} is a package that simulates processes to Next-To-Leading (NLO) order through the use of tree-level and one-loop
