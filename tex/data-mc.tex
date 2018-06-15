@@ -23,11 +23,17 @@ Therefore, the reweighting of the simulated samples is required and is discussed
 
 \subsection{Event Generators}\label{subsec:eventGenerators}
 A number of event generators are used by CMS to produce the MC simulation samples used to describe the expected processes produced at the LHC.
-Whilst there are several general-purpose event generators which can describe an event from the initial hadron collision to final state particles, they are typically used in conjunction with generators that specialise in a specific physics aspect or process in order to provide a complete event.
+Whilst there are several general-purpose event generators which can describe an event from the initial hadron collision to final state particles, they are typically used in conjunction with generators that specialise in a specific physics aspect (\ie ME calculations or PS simulation) or process (\eg tau decays) in order to provide a complete event.
+Perturbative calculations of the MEs of the QCD and electroweak processes are done to at least Leading Order (LO), and where possible to Next-To-Leading Order (NLO), as the ...
 
+The MC samples used to model the background and signal processes for the analysis presented in this thesis were simulated using the following generators:
 
-
-The following event generators 
+\begin{itemize}
+\item \textbf{aMC@NLO} - aMC@NLO~\cite{Alwall:2014hca} is a package that simulates processes to Next-To-Leading (NLO) order through the use of tree-level and one-loop
+\item \textbf{Madgraph} - Madgraph is package which calculates the matrix element
+\item \textbf{POWHEG} - The Positive Weight Hardest Emission Generator (POWHEG)~\cite{Alioli:2010xd}
+\item \textbf{PYTHIA} - PYTHIA~\cite{Sjostrand:2014zea} is a general-purpose generator which is typicaly 
+\end{itemize}
 
 %%% Generators used
 %%amcatnlo - tZq, ttZ, ttW, WZ+jets, WWW, WWZ,WZZ, ZZZ, schannel
@@ -36,18 +42,6 @@ The following event generators
 %%madgraph - tHq, tWZ,
 %%Powheg - ttH, WW, ZZ2l2nu, ttbar inclusive, tW
 %%Powheg+madspin- t-channel
-
-\subsubsection{aMC@NLO}
-aMC@NLO~\cite{Alwall:2014hca} is a package that simulates processes to Next-To-Leading (NLO) order through the use of tree-level and one-loop
-\subsubsection{Madgraph}
-Madgraph is package which calculates the matrix element
-\subsubsection{POWHEG}
-The Positive Weight Hardest Emission Generator (POWHEG)
-Alioli:2010xd
-\subsubsection{PYTHIA}
-PYTHIA is a general-purpose generator which 
-
-Sjostrand:2014zea
 
 \section{Object Reconstruction}\label{sec:reco}
 Using the readouts of all of the CMS sub-detectors, a full reconstruction of the triggered physics event is undertaken.
