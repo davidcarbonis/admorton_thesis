@@ -286,6 +286,8 @@ Given that this act has the potential to leave a track with fewer stubs than the
 \editComment{Comment on purity, resolution, fake rate, and duplicate rate}
 \editComment{Impact on killing genuine stubs assoc. with track?}
 
+\editComment{Results done with 1000 ttbar+pu200 events. Larger stats runs will be done prior to final draft.}
+
 \subsubsection{Firmware Feasibility}\label{subsubsec:chi2firmware}
 %% Matrix sizes
 Despite the performance in simulation of the linear $\chi^{2}$ track fitter being comparable to both the \KF and \LR track fitters, consideration as to whether it can be implemented in hardware had to be given, for whilst FPGAs can easily perform the addition and multiplication operations required to compute matrices, the calculation of the derivatives that form their elements will require the use of lookup tables (LUTs) to ensure latency budgets are not exceeded.
@@ -296,6 +298,11 @@ When considering the minimum parameter resolution which would not considerably i
 
 Given that the size of the LUTs required for the endcap regions considerably exceeds the resources of those present on currently available FPGAs, such as the $433 \times 10^{3}$ LUTs available on the Virtex 7 690 FPGAs used by the MP7s in the demonstrator, whilst a future FPGA could implement this track fitting algorithm, it would not be feasible to implement on a current generation chip.
 As one of the motivating factors behind this TFP design was to be able to demonstrate a complete system with currently available technology, it was determined that further development on the linearised $chi^{2}$ fitter would not be continued for the immediate future.
+
+
+
+
+Each CLB has 2 slices, 8 luts and 16 flip flops. So multiply the number of slices in the data sheet by four and you get the number of luts
 
 \subsubsection{Outlook}\label{subsubsec:chi2outlook}
 %%%Future work
@@ -310,26 +317,28 @@ For this track fitting approach to be considered in the future, the following wo
 \subsection{2 GeV Tracking}\label{subsec:Tmtt2GeV}
 The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may be desirable if the trigger requirements demand it and the impact of this potential requirement on the proposed track-finder system was studied for the December 2016 demonstrator review.
 This required modifying the GP and HT configuration parameters to ensure adequate duplication in $\varphi$ and increasing the number of the \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision, with the latter resulting in the FPGA resources required increasing by 50\% and the output data rate from the \HT by a factor of 2.2.
-Without any additional modifications, there is a considerable degradation in the track reconstruction efficiency in the range $2 < \pt < 2.7$\GeVc, due to these low momentum tracks being dominated by multiple scattering, resulting in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
+Without any additional modifications, there is a considerable degradation in the track reconstruction efficiency in the range $2 < \pt < 2.7$\GeVc, due to these low momentum tracks being dominated by multiple scattering (MS), resulting in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
 
-To mitigate against these track reconstruction efficiency losses, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two and the \KF state $\chi^2$ cuts for the range $2 < \pt < 2.7$ were optimised to reflect the decreased precision of the hits in these \HT cells and thus better reduce the number of duplicate and fake tracks as far as possible without impacting on the track reconstruction efficiency.
+To mitigate against these track reconstruction efficiency losses, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two, thus ...
+The \KF state $\chi^2$ cuts for this low \pT range were optimised to reflect the decreased precision of the hits in these \HT cells and thus better reduce the number of duplicate and fake tracks as far as possible without impacting on the track reconstruction efficiency.
 This variable precision \HT, which has been separately implemented in firmware, has been shown in simulation to recover some of this loss, as shown in Fig~\ref{fig:2GeVFlat}
 
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=0.8\textwidth,trim={1.1truecm 0truecm 1truecm 12truecm},clip]{CMS-bw-logo.pdf}
-\includegraphics[width=0.8\textwidth,trim={0.7truecm 0truecm 1truecm 0truecm},clip]{CMS-bw-logo.pdf}
-\caption{Images showing tracking efficiency in low pT range with no changes (upper), and with HT cell merging and \KF optimisation(right).}
+\includegraphics[width=0.80\textwidth]{figs/tk-upgrade/results-lowPtTracking/trackingEffVsInvPtFlatGeometry_1000.pdf}
+\caption{Plot showing tracking efficiency in low pT range with only the number of \qpt columns increased (red), with the increased number of \qpt columns and HT cell merging (black), and with the increased number of columns, HT cell merging and \KF optimisation(blue) for \ttbar events at \PU of 200. \editComment{Larger stats > 1000 + neater plots + legend to be added later.}}
 \label{fig:2GeVFlat}
 \end{figure}
 
+Despite the decreased precision HT cells at low \pT recovering some of the ``lost'' tracks, 
 %%% Discuss poorer tracking efficiency
-%%% - KF internal chi-squared cuts; would expect if MS was fully accounted for, then on average chi2/NDF = 1  everywhere. Show chi2/NDF vs eta plots?
+%%% - KF internal chi-squared cuts; would expect if MS was fully accounted for, then on average chi2/NDF = 1  everywhere. Show chi2/NDF vs eta plots? Yes
 
 Following the December 2016 demonstrator review and the proposition of the \emph{tilted} barrel geometry, \editComment{what impact did the new geometry have?}, the modification of the \KF hit resolution to account for the effects of multiple scattering, for low momentum tracks was explored.
 
 %%%
-This involved adding a contribution of the order of a milliradian, the order of the anticipated typical scattering angle for 2\GeV tracks in quadrature to the r-$\varphi$ plane hit resolution error~\footnote{The error for the r-z plane is not modified as the effect of multiple scattering is considerably smaller hit position resolution in r-z.}.
+This involved adding a contribution of the order of a milliradian, the order of the anticipated typical scattering angle for 2\GeV tracks in quadrature to the r-$\varphi$ plane hit resolution error.
+The error for the r-z plane is not modified as the effect of multiple scattering is considerably smaller hit position resolution in r-z.
 
 For small deflection angles, the scattering contribution for relativistic particles, $\theta_{rms}$, for a each layer is given by~\cite{Highland:1975pq,Lynch:1990sq}~:
 
@@ -339,7 +348,9 @@ For small deflection angles, the scattering contribution for relativistic partic
 \end{equation}
 
 where, the momentum, velocity, electrical charge of the incident particle and thickness of the scattering medium in radiation lengths are given by $p$, $\beta c$, $q$ and $\frac{x}/{X_{0}}$ respectively.
-As the particles involved have relativistic velocities (\ie $\beta c \cong 1$) and any scattering in the r-z plane can be ignored, using the assumption that the material contribution for each layer traversed is roughly equal, an initial conservative approximation for this multiple scattering contribution can be expressed as $\theta_{rms} = \frac{const}{r_{track}}$.
+With the particles involved having relativistic velocities (\ie $\beta c \cong 1$) and any scattering in the r-z plane being ignored, 
+
+using the assumption that the material contribution for each layer traversed is roughly equal, an initial conservative approximation for this multiple scattering contribution can be expressed as $\theta_{rms} = \frac{const}{r_{track}}$.
 
 Despite the increase in track finding efficiency and the reduction in the number of fake tracks and duplicate tracks this rudimentary approximation can achieve (Fig.~\ref{fig:MS1}), the are only minor improvements in the track parameters resolution.
 This is not unexpected, given that a constant inflation in the r-$\varphi$ plane hit resolution error is applied for each stub applied, whilst in reality the inflation would vary as a particle traverses material.
