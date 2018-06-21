@@ -315,11 +315,11 @@ For this track fitting approach to be considered in the future, the following wo
 \end{itemize}
 
 \subsection{2 GeV Tracking}\label{subsec:Tmtt2GeV}
-The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may be desirable if the trigger requirements demand it and the impact of this potential requirement on the proposed track-finder system was studied for the December 2016 demonstrator review.
+The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may be desirable if the trigger requirements demand it and the impact of this potential requirement on the proposed track-finder system was initially studied as one of the robustness studies for the December 2016 demonstrator review.
 This required modifying the GP and HT configuration parameters to ensure adequate duplication in $\varphi$ and increasing the number of the \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision, with the latter resulting in the FPGA resources required increasing by 50\% and the output data rate from the \HT by a factor of 2.2.
-Without any additional modifications, there is a considerable degradation in the track reconstruction efficiency in the range $2 < \pt < 2.7$\GeVc, due to these low momentum tracks being dominated by multiple scattering (MS), resulting in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
 
-To mitigate against these track reconstruction efficiency losses, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two, thus ...
+Without any additional modifications, there is a considerable degradation in the track reconstruction efficiency in the range $2 < \pt < 2.7$\GeVc, due to these low momentum tracks being dominated by multiple scattering (MS), resulting in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
+To mitigate against such track reconstruction efficiency losses, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two.
 The \KF state $\chi^2$ cuts for this low \pT range were optimised to reflect the decreased precision of the hits in these \HT cells and thus better reduce the number of duplicate and fake tracks as far as possible without impacting on the track reconstruction efficiency.
 This variable precision \HT, which has been separately implemented in firmware, has been shown in simulation to recover some of this loss, as shown in Fig~\ref{fig:2GeVFlat}
 
@@ -330,7 +330,11 @@ This variable precision \HT, which has been separately implemented in firmware, 
 \label{fig:2GeVFlat}
 \end{figure}
 
-Despite the decreased precision HT cells at low \pT recovering some of the ``lost'' tracks, 
+As the decreased precision HT cells at low \pT only partially take the
+
+%nly a partial recovery of the lost tracking efficiency is achieved by using
+
+The time constraints for working on this robustness test however, 
 %%% Discuss poorer tracking efficiency
 %%% - KF internal chi-squared cuts; would expect if MS was fully accounted for, then on average chi2/NDF = 1  everywhere. Show chi2/NDF vs eta plots? Yes
 
