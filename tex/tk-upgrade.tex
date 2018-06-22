@@ -320,8 +320,8 @@ This required modifying the GP and HT configuration parameters to ensure adequat
 
 Without any additional modifications, there is a considerable degradation in the track reconstruction efficiency by the \HT in the range $2 < \pt < 2.7$\GeVc, due to these low momentum tracks being dominated by multiple scattering (MS), resulting in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
 To mitigate against such track reconstruction efficiency losses, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two.
-In addition to this, \KF state $\chi^2$ cuts for this low \pT range were optimised to reflect the decreased precision of the hits in these \HT cells and thus better reduce the number of duplicate and fake tracks as far as possible without impacting on the track reconstruction efficiency.
-This variable precision \HT, which has been separately implemented in firmware, has been shown in simulation to recover some of this loss, as shown in Fig~\ref{fig:2GeVFlatEff}
+In addition to this, \KF state $\chi^2$ cuts for this low \pT range were optimised to reflect the decreased precision of the hits in these \HT cells and thus better reduce the number of duplicate and fake tracks as far as possible without impacting on the \HT track reconstruction efficiency.
+This variable precision \HT, which has been separately implemented in firmware, together with the optimised \KF state cuts, has been shown in simulation to recover some of these losses, as shown in Fig.~\ref{fig:2GeVFlatEff}.
 
 \begin{figure}[tbp]
 \centering
@@ -333,16 +333,14 @@ This variable precision \HT, which has been separately implemented in firmware, 
 
 \editComment{Add table or plots to illustrate impact on duplicate/fake rates and resolutions? Here or in appendices?}
 
-As the decreased precision HT cells at low \pT only partially took the effects of MS into account, as supported by Fig.~\ref{2GeVFlatChi2Ndof}, it was clear that the \KF required modifying to model the impact of MS given the considerable 
-The time constraints for working on this robustness test however, resulted in 
-
-%nly a partial recovery of the lost tracking efficiency is achieved by using
+Whilst the decreased precision HT cells at low \pT recovers a proportion of the lost tracks, Fig.~\ref{fig:2GeVFlatEff}  also shows that additional low \pT track losses occur during the \KF fit due to it not properly taking into account the increased uncertainty in the hit positions resulting from MS.
+This is illustrated by the looking at the $\chi^{2} \div \text{number of degrees of freedom}$ ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ in Fig.~\ref{fig:2GeVFlatChi2Ndf}, where $\frac{\chi^{2}}{ndf}$ is approximately flat near unity for high \pT (low $\frac{1}{\pT}$) but significantly increases 
 
 %%% Discuss poorer tracking efficiency
-%%% - KF internal chi-squared cuts; would expect if MS was fully accounted for, then on average chi2/NDF = 1  everywhere. Show chi2/NDF vs eta plots? Yes
+%%% - KF internal chi-squared cuts; would expect if MS was fully accounted for, then on average chi2/NDF = 1  everywhere. Show chi2/NDF vs pT plots? Yes
 
-Following the December 2016 demonstrator review and the proposition of the \emph{tilted} barrel geometry, \editComment{what impact did the new geometry have?}, the modification of the \KF hit resolution to account for the effects of multiple scattering, for low momentum tracks was explored.
-
+Due to the time constraints in undertaking these studies in time for the December 2016 demonstrator review, studies accounting for the effects of MS within the \KF were undertaken followine review.
+Following the review all studies made use of the proposed emph{tilted} barrel geometry. 
 %%%
 This involved adding a contribution of the order of a milliradian, the order of the anticipated typical scattering angle for 2\GeV tracks in quadrature to the r-$\varphi$ plane hit resolution error.
 The error for the r-z plane is not modified as the effect of multiple scattering is considerably smaller hit position resolution in r-z.
