@@ -325,8 +325,8 @@ This variable precision \HT, which has been separately implemented in firmware, 
 
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/htTrackingEffVsInvPtFlatGeometry_1000.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_1000.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/htTrackingEffVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
 \caption{Plots post-\HT (left) and post-\KF (right) showing tracking efficiency in low pT range with only the number of \qpt columns increased (red), with the increased number of \qpt columns and HT cell merging (black), and with the increased number of columns, HT cell merging and \KF optimisation(blue) for \ttbar events at \PU of 200. \editComment{Larger stats > 1000 + neater plots + legend to be added later.}}
 \label{fig:2GeVFlatEff}
 \end{figure}
@@ -334,13 +334,20 @@ This variable precision \HT, which has been separately implemented in firmware, 
 \editComment{Add table or plots to illustrate impact on duplicate/fake rates and resolutions? Here or in appendices?}
 
 Whilst the decreased precision HT cells at low \pT recovers a proportion of the lost tracks, Fig.~\ref{fig:2GeVFlatEff}  also shows that additional low \pT track losses occur during the \KF fit due to it not properly taking into account the increased uncertainty in the hit positions resulting from MS.
-This is illustrated by the looking at the $\chi^{2} \div \text{number of degrees of freedom}$ ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ in Fig.~\ref{fig:2GeVFlatChi2Ndf}, where $\frac{\chi^{2}}{ndf}$ is approximately flat near unity for high \pT (low $\frac{1}{\pT}$) but significantly increases 
+This is illustrated by the looking at the $\chi^{2} \div \text{number of degrees of freedom}$ ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ in Fig.~\ref{fig:2GeVFlatChi2Ndf}, where $\frac{\chi^{2}}{ndf}$ is approximately flat near unity for high \pT (low $\frac{1}{\pT}$) but significantly increases ... \editComment{Finish detailed description once plots have been made - delayed as these plots apparently didn't exist for the flat geometry era! Need to backport and remake ...}
 
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/htTrackingEffVsInvPtFlatGeometry_1000.pdf}
+\caption{\editComment{Chi2/ndf vs invPt plot to be added once the backported plot code (from titled geometry histo code) to the flat geometry histo code has run to create these plots.}}
+\label{fig:2GeVFlatChi2Ndf}
+\end{figure}
 %%% Discuss poorer tracking efficiency
 %%% - KF internal chi-squared cuts; would expect if MS was fully accounted for, then on average chi2/NDF = 1  everywhere. Show chi2/NDF vs pT plots? Yes
 
-Due to the time constraints in undertaking these studies in time for the December 2016 demonstrator review, studies accounting for the effects of MS within the \KF were undertaken followine review.
-Following the review all studies made use of the proposed emph{tilted} barrel geometry. 
+Due to the time constraints in undertaking these studies in time for the December 2016 demonstrator review, it was not possible to undertake studies into improving the performance of the \KF at low \pT.
+Following the review, all projects migrated from using the \textit{flat} barrel geometry to the \textit{tilted} barrel geometry and as such, all the results discussed from this point onwards are produced using the latter.
+
 %%%
 This involved adding a contribution of the order of a milliradian, the order of the anticipated typical scattering angle for 2\GeV tracks in quadrature to the r-$\varphi$ plane hit resolution error.
 The error for the r-z plane is not modified as the effect of multiple scattering is considerably smaller hit position resolution in r-z.
