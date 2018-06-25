@@ -351,13 +351,8 @@ Following the review, all projects migrated from using the \textit{flat} barrel 
 
 %%%
 
-The Kalman State 
-As discussed in Chapter~\ref{subsubsec:KF}, the \KF constructs ...
-
-This involved adding a contribution of the order of a milliradian, the order of the anticipated typical scattering angle for 2\GeV tracks in quadrature to the r-$\varphi$ plane hit resolution error.
-The error for the r-z plane is not modified as the effect of multiple scattering is considerably smaller hit position resolution in r-z.
-
-For small deflection angles, the scattering contribution for relativistic particles, $\theta_{rms}$, for a each layer is given by~\cite{Highland:1975pq,Lynch:1990sq}~:
+The subsequent studies into improving the \KF 's performance for tracks with $\pT < 3.0\GeV$ focussed on 
+For small deflection angles, the multiple scattering contribution for relativistic particles, $\theta_{rms}$, for a each layer is given by~\cite{Highland:1975pq,Lynch:1990sq}~:
 
 \begin{equation}
 \theta_{rms} = \frac{13.6\MeV}{\beta c p} q \sqrt{\frac{x}{X_{0}}} [1 + 0.038 \ln{\frac{x}{X_{0}}}]  \;.
@@ -368,6 +363,13 @@ where, the momentum, velocity, electrical charge of the incident particle and th
 With the particles involved having relativistic velocities (\ie $\beta c \cong 1$) and any scattering in the r-z plane being ignored, 
 
 using the assumption that the material contribution for each layer traversed is roughly equal, an initial conservative approximation for this multiple scattering contribution can be expressed as $\theta_{rms} = \frac{const}{r_{track}}$.
+
+
+Stubs belonging to 
+
+This involved adding a contribution of the order of a milliradian, the order of the anticipated typical scattering angle for 2\GeV tracks in quadrature to the r-$\varphi$ plane hit resolution error.
+The error for the r-z plane is not modified as the effect of multiple scattering is considerably smaller hit position resolution in r-z.
+
 
 Despite the increase in track finding efficiency and the reduction in the number of fake tracks and duplicate tracks this rudimentary approximation can achieve (Fig.~\ref{fig:MS1}), the are only minor improvements in the track parameters resolution.
 This is not unexpected, given that a constant inflation in the r-$\varphi$ plane hit resolution error is applied for each stub applied, whilst in reality the inflation would vary as a particle traverses material.
