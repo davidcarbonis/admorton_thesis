@@ -188,7 +188,7 @@ This threshold can be further reduced to four layers to account for the reduced 
 
 A more detailed description of the firmware implementation of the \HT for the demonstrator system is discussed in~\cite{IEEE} and~\cite{TMTT_JINST}.
 
-\subsubsection{Kalman Filter}
+\subsubsection{Kalman Filter}\label{subsubsec:KF}
 Coarse \rphi helix parameters out of the \HT are used as the initial variables for track finding, with the segment assignment also providing a good seed value.
 Given that in simulation over half the track candidates from by the HT are considered to be \textit{fake} or contain at least one stub associated with another particle, a Kalman Filter is used to both remove these incorrect stubs and reject fake tracks. 
 
@@ -351,7 +351,8 @@ Following the review, all projects migrated from using the \textit{flat} barrel 
 
 %%%
 
-
+The Kalman State 
+As discussed in Chapter~\ref{subsubsec:KF}, the \KF constructs ...
 
 This involved adding a contribution of the order of a milliradian, the order of the anticipated typical scattering angle for 2\GeV tracks in quadrature to the r-$\varphi$ plane hit resolution error.
 The error for the r-z plane is not modified as the effect of multiple scattering is considerably smaller hit position resolution in r-z.
@@ -389,3 +390,4 @@ Potential improvements to tracking at 2\GeV which merit further investigation in
 \end{itemize}
 
 %%% NB jump in duplicate rate ~2.7 GeV - algo50 vs fewer dups in 2x2 cells, appear to be the latter
+%%% Update - change to 3.5 GeV
