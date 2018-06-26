@@ -128,7 +128,7 @@ This baseline system is illustrated in Fig.~\ref{fig:tmttarch}.
 A hardware demonstrator of the baseline system consisting of five Imperial Master Processor Virtex-7 (MP7) cards~\cite{mp7ref}, capable of processing one phi-octant of the tracker with a time-multiplexing factor of 36, was used to validate the feasibility of the proposed full system using currently available hardware for the December 2016 review.
 All of the results achieved, and a complete description of the system, are given in~\cite{TMTT_JINST}.
 
-\subsection{The Track Finding Processor}\label{subsec:TFF}
+\subsection{The Track Finding Processor}\label{subsec:TFP}
 The Track Finding Processor (Fig.~\ref{fig:TFP}) consists of four self-contained components:
 \begin{itemize}
 \item {\bf Geometric Processor (GP)} - responsible for pre-processing the stubs from the DTC.
@@ -228,7 +228,6 @@ By performing a second pass through the rejected tracks and rescuing those which
 A more detailed description of the firmware implementation of the \DR for the demonstrator system is discussed in~\cite{TMTT_JINST}.
 
 \section{Simulation Studies}\label{sec:TmttSimStudies}
-%\section{Simulation Studies}\label{sec:TmttSimStudies}
 During the development of the \emph{TMTT} demonstrator system both before and following the December 2016 review, the author was involved in a number of simulation studies, the more substantive of which are discussed below.
 
 \subsection{Linearised $\chi^{2}$ Track Fitter}\label{subsec:chi2}
@@ -237,7 +236,7 @@ Both track fitting algorithms require a proceeding \emph{Seed Filter} (SF) stage
 The LR fitter~\cite{TMTT_FLP} was developed as an alternative to the KF and exploits the fact that sufficiently high \pT tracks should form a straight line in the \emph{r-$\varphi$} and \emph{r-z} planes to perform independent fits in each planes.
 The linearised $\chi^{2}$ fit makes use of residuals between the stubs and the seeded track that minimise $\chi^{2}$ of the fit in order to obtain improved helix parameters for the track candidate.
 
-As the \emph{TMTT} project was formed \editComment {INSERT TIME HERE} after the other two L1 track finder projects, there was a pressing need to be able to perform precision helix parameter fits following the \HT using an algorithm which could could be conceivably implemented in hardware.
+As the \emph{TMTT} project was formed a significant amount of time (\editComment{Find out how much? Cannot recall off hand...}) after the other two L1 track finder projects, there was a pressing need to be able to perform precision helix parameter fits following the \HT using an algorithm which could could be conceivably implemented in hardware.
 Following discussions with members of the \emph{tracklet} and \emph{AM} projects, it was decided that a linearised $\chi^{2}$ fit based off the one proposed by the \emph{tracklet} project would be investigated.
 
 The mathematics forming the basis for the \emph{TMTT}'s implementation of the algorithm is detailed in~\cite{CMS_DN-14-043}. 
@@ -275,7 +274,8 @@ By defining the matrices $D_{ij} = \frac{1}{\sigma_{i}} \frac{\delta s_{i}}{\del
 \end{equation}
 
 Eqn.~\ref{eq:chi4} gives a linear form which can be solved for $\delta h$ through updating the residuals with respect to the seeded track candidate.
-Calculation of the derivatives for the barrel layer and endcap disk hits, including a correction factor for $\phi$ in the outer disks as they do not point directly towards the interaction point, are given in~\ref{app:chi2}.
+
+Calculation of the derivatives for the barrel layer and endcap disk hits, including a correction factor for $\phi$ in the outer disks which do not point directly towards the interaction point, are given in~\ref{app:chi2}.
 
 \subsubsection{Software Implementation}\label{subsubsec:chi2software}
 
@@ -316,6 +316,7 @@ For this track fitting approach to be considered in the future, the following wo
 
 \subsection{2 GeV Tracking}\label{subsec:Tmtt2GeV}
 The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may be desirable if the trigger requirements demand it and the impact of this potential requirement on the proposed track-finder system was initially studied as one of the robustness studies for the December 2016 demonstrator review.
+
 This required modifying the GP and HT configuration parameters to ensure adequate duplication in $\varphi$ and increasing the number of the \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision, with the latter resulting in the FPGA resources required increasing by 50\% and the output data rate from the \HT by a factor of 2.2.
 
 Without any additional modifications, there is a considerable degradation in the track reconstruction efficiency by the \HT in the range $2 < \pt < 2.7$\GeVc, due to these low momentum tracks being dominated by multiple scattering (MS), resulting in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
@@ -333,8 +334,11 @@ This variable precision \HT, which has been separately implemented in firmware, 
 
 \editComment{Add table or plots to illustrate impact on duplicate/fake rates and resolutions? Here or in appendices?}
 
-Whilst the decreased precision HT cells at low \pT recovers a proportion of the lost tracks, Fig.~\ref{fig:2GeVFlatEff}  also shows that additional low \pT track losses occur during the \KF fit due to it not properly taking into account the increased uncertainty in the hit positions resulting from MS.
-This is illustrated by the looking at the $\chi^{2} \div \text{number of degrees of freedom}$ ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ in Fig.~\ref{fig:2GeVFlatChi2Ndf}, where $\frac{\chi^{2}}{ndf}$ is approximately flat near unity for high \pT (low $\frac{1}{\pT}$) but significantly increases ... \editComment{Finish detailed description once plots have been made - delayed as these plots apparently didn't exist for the flat geometry era! Need to backport and remake ...}
+Whilst the decreased precision HT cells at low \pT recovers a proportion of the lost tracks, Fig.~\ref{fig:2GeVFlatEff}  also shows that the \KF's performance is significantly degraded for $\pT < 3 \GeV$ compared to $\pT > 3 \GeV$.
+These additional low \pT track losses are the result of the \KF not modelling taking into account the increased uncertainty in the hit positions resulting from MS. 
+This is illustrated by the distributions of $\chi^{2} \div \text{number of degrees of freedom}$ ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ in Fig.~\ref{fig:2GeVFlatChi2Ndf}, where $\frac{\chi^{2}}{ndf}$ is approximately flat near unity for high \pT (low $\frac{1}{\pT}$) but significantly increases ... 
+
+\editComment{Finish detailed description once plots have been made - delayed as these plots apparently didn't exist for the flat geometry era! Need to backport and remake ...}
 
 \begin{figure}[tbp]
 \centering
@@ -344,14 +348,16 @@ This is illustrated by the looking at the $\chi^{2} \div \text{number of degrees
 \label{fig:2GeVFlatChi2Ndf}
 \end{figure}
 %%% Discuss poorer tracking efficiency
-%%% - KF internal chi-squared cuts; would expect if MS was fully accounted for, then on average chi2/NDF = 1  everywhere. Show chi2/NDF vs pT plots? Yes
+%%% - KF internal chi-squared cuts; would expect if MS was fully accounted for, then on average chi2/NDF = 1  everywhere. 
 
-Due to the time constraints in undertaking these studies in time for the December 2016 demonstrator review, it was not possible to undertake studies into improving the performance of the \KF at low \pT.
-Following the review, all projects migrated from using the \textit{flat} barrel geometry to the \textit{tilted} barrel geometry and as such, all the results discussed from this point onwards are produced using the latter.
+Due to the higher priority elements of the \emph{TMTT} demonstrator limiting the time and resources given to the robustness studies, studies into the incorporation of MS in the \KF were undertaken after the December 2016 demonstrator review.
+As all the projects migrated from using the \textit{flat} barrel geometry to the \textit{tilted} barrel geometry at the start of 2017, all the following results are presented using the latter geometry.
 
 %%%
+As discussed in \ref{subsubsec:KF}, the Kalman state is iteratively updated by applying stubs and their associated uncertainties.
+By including the effects of multiple scattering in t
+%%%high energies = resolution error
 
-The subsequent studies into improving the \KF 's performance for tracks with $\pT < 3.0\GeV$ focussed on 
 For small deflection angles, the multiple scattering contribution for relativistic particles, $\theta_{rms}$, for a each layer is given by~\cite{Highland:1975pq,Lynch:1990sq}~:
 
 \begin{equation}
@@ -360,12 +366,21 @@ For small deflection angles, the multiple scattering contribution for relativist
 \end{equation}
 
 where, the momentum, velocity, electrical charge of the incident particle and thickness of the scattering medium in radiation lengths are given by $p$, $\beta c$, $q$ and $\frac{x}/{X_{0}}$ respectively.
-With the particles involved having relativistic velocities (\ie $\beta c \cong 1$) and any scattering in the r-z plane being ignored, 
+With the particles involved having relativistic velocities (\ie $\beta c \cong 1$) and any scattering in the r-z plane being ignored, and te
 
-using the assumption that the material contribution for each layer traversed is roughly equal, an initial conservative approximation for this multiple scattering contribution can be expressed as $\theta_{rms} = \frac{const}{r_{track}}$.
+, an initial conservative approximation for this multiple scattering contribution can be expressed as:
+
+\begin{equation}
+ $\theta_{rms} = \frac{const}{r_{track}}$.
+\label{eq:scatter2}
+\end{equation}
+
+Using this appro
+Two ideas:
+
+using the assumption that the material contribution for each layer traversed is roughly equal
 
 
-Stubs belonging to 
 
 This involved adding a contribution of the order of a milliradian, the order of the anticipated typical scattering angle for 2\GeV tracks in quadrature to the r-$\varphi$ plane hit resolution error.
 The error for the r-z plane is not modified as the effect of multiple scattering is considerably smaller hit position resolution in r-z.
