@@ -73,10 +73,11 @@ Further details on the two \pT modules can be found in~\cite{CMS_Upgrade_TP,P2Tr
 \label{fig:2Spsmodules}
 \end{figure}
 
-The current proposed layout of the Phase-II Outer Tracker, referred to as the \emph{tilted barrel} geometry, is depicted in the upper diagram in Fig.~\ref{fig:trackerlayout}, illustrating the PS and 2S module positions in the six barrel layers and the five endcap disks either side of the barrel.
-Only modules located at $|\eta| < 2.4$ will be configured to send stub data off-detector.
-The geometry's name is inspired by modules in the three innermost barrel layers being tilted so that their normals point towards the interaction region.
-This layout was adopted as it not only improves stub-finding efficiency for tracks with large incident angles but also reduces the overall cost of the system~\cite{P2TrackerTDR}.
+The current proposed layout of the Phase-II Outer Tracker, referred to as the \emph{tilted barrel} geometry, is depicted in the upper diagram in Fig.~\ref{fig:trackerlayout}, and a previous proposal, referred to as the \emph{flat barrel} geometry, is shown in the lower diagram~\cite{CMS_Upgrade_TP}.
+Both plots illustrate the PS and 2S module positions in the six barrel layers and the five endcap disks either side of the barrel, with only modules located at $|\eta| < 2.4$ being configured to send stub data off-detector.
+Both geometries' names were inspired by whether or not the modules in the three innermost barrel layers being tilted so that their normals point towards the interaction region.
+The advantages of the tilted geometry over the original flat barrel are that it not only improves stub-finding efficiency for tracks with large incident angles but also reduces the overall cost of the system~\cite{P2TrackerTDR}.
+Due to the maturity of the preparations for the review between the three competing proposed track finding systems, discussed in Chapter~\ref{subsec:TrackFinderReview}, at the time the tilted barrel geometry was adopted for the Phase-II Outer Tracker TDR, the flat barrel geometry was in producing the results for the review.
 
 \begin{figure}[tbp]
 \centering
@@ -100,14 +101,16 @@ Any Track Finder, which will take the stubs as input and output fully reconstruc
 \label{fig:dataFlow}
 \end{figure}
 
+\subsection{Level-1 Track Finding Proposals}\label{subsec:TrackFinderReview}
+
 Three different L1 track finders have been explored by the CMS Collaboration.
 One uses Associative Memory (\emph{AM}) ASICs for track finding and FPGAs for track fitting, and the other two all-FPGA approaches, one using a fully Time-Multiplexed approaching using the Hough Transform (\emph{TMTT}) and the other a ``road search'' (\emph{tracklet}) algorithm to reconstruct tracks respectively.
 
 Hardware demonstrators for each of the three proposed L1 track finder projects were constructed to prove the feasibility of each approach, which were reviewed in December 2016.
 As all of the work discussed in this chapter was on the FPGA-based \HT approach, more detailed descriptions and results of both the AM and tracklet projects' approaches are not discussed here, but are given in~\cite{AM,P2TrackerTDR} and~\cite{tracklet,P2TrackerTDR} respectively.
 
-At the time of the review, the then proposed \emph{flat barrel} geometry~\cite{CMS_Upgrade_TP} was used for all the studies undertaken, as depicted in the lower diagram in Fig.~\ref{fig:trackerlayout}.
-Unless stated otherwise, the results discussed below use the old \emph{flat barrel} geometry instead of the currently proposed layout.
+As mentioned above, at the time of the review the flat barrel geometry was used for all the studies undertaken, as depicted in the lower diagram in Fig.~\ref{fig:trackerlayout}.
+Unless stated otherwise, the results discussed below use the flat barrel geometry instead of the tilted barrel geometry layout.
 
 \section{An FPGA Based Track Finding Architecture and Processor}\label{sec:TMTT}
 \subsection{The Track Finding Architecture}\label{subsec:TFA}
@@ -319,7 +322,7 @@ The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may
 
 This required modifying the GP and HT configuration parameters to ensure adequate duplication in $\varphi$ and increasing the number of the \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision, with the latter resulting in the FPGA resources required increasing by 50\% and the output data rate from the \HT by a factor of 2.2.
 
-Without any additional modifications, there is a considerable degradation in the track reconstruction efficiency by the \HT in the range $2 < \pt < 2.7$\GeVc, due to these low momentum tracks being dominated by multiple scattering (MS), resulting in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
+Without any additional modifications, there is a considerable degradation in the track reconstruction efficiency by the \HT in the range $2 < \pt < 2.7$\GeVc, due to these low momentum tracks being dominated by multiple scattering, resulting in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
 To mitigate against such track reconstruction efficiency losses, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two.
 In addition to this, \KF state $\chi^2$ cuts for this low \pT range were optimised to reflect the decreased precision of the hits in these \HT cells and thus better reduce the number of duplicate and fake tracks as far as possible without impacting on the \HT track reconstruction efficiency.
 This variable precision \HT, which has been separately implemented in firmware, together with the optimised \KF state cuts, has been shown in simulation to recover some of these losses, as shown in Fig.~\ref{fig:2GeVFlatEff}.
@@ -335,10 +338,8 @@ This variable precision \HT, which has been separately implemented in firmware, 
 \editComment{Add table or plots to illustrate impact on duplicate/fake rates and resolutions? Here or in appendices?}
 
 Whilst the decreased precision HT cells at low \pT recovers a proportion of the lost tracks, Fig.~\ref{fig:2GeVFlatEff}  also shows that the \KF's performance is significantly degraded for $\pT < 3 \GeV$ compared to $\pT > 3 \GeV$.
-These additional low \pT track losses are the result of the \KF not modelling taking into account the increased uncertainty in the hit positions resulting from MS. 
-This is illustrated by the distributions of $\chi^{2} \div \text{number of degrees of freedom}$ ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ in Fig.~\ref{fig:2GeVFlatChi2Ndf} for genuine tracks produced by the \KF, where $\frac{\chi^{2}}{ndf}$ is almost flat for a value of order unity for high \pT (low $\frac{1}{\pT}$) but begins to dramatically increase above approximately 3\GeV.
-If MS was fully accounted for
-%%% - KF internal chi-squared cuts; would expect if MS was fully accounted for, then on average chi2/NDF = 1  everywhere. 
+These additional low \pT track losses are the result of the \KF not modelling taking into account the increased uncertainty in the hit positions resulting from multiple scattering. 
+This is illustrated by the distributions of $\chi^{2} \div \text{number of degrees of freedom}$ ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ in Fig.~\ref{fig:2GeVFlatChi2Ndf} for genuine tracks produced by the \KF, where $\frac{\chi^{2}}{ndf}$ is almost flat for a value of order unity for high \pT (low $\frac{1}{\pT}$) but begins to dramatically increase above approximately 3\GeV, in contrast to the ideal value of {$\frac{\chi^{2}}{ndf} = 1$ if multiple scattering were fully accounted for.
 
 \begin{figure}[tbp]
 \centering
@@ -347,13 +348,10 @@ If MS was fully accounted for
 \label{fig:2GeVFlatChi2Ndf}
 \end{figure}
 
-Due to the higher priority elements of the \emph{TMTT} demonstrator limiting the time and resources given to the robustness studies, studies into the incorporation of MS in the \KF were undertaken after the December 2016 demonstrator review.
-As all the projects migrated from using the \textit{flat} barrel geometry to the \textit{tilted} barrel geometry at the start of 2017, all the following results are presented using the latter geometry.
-
-%%%
-As discussed in \ref{subsubsec:KF}, the Kalman state is iteratively updated by applying stubs and their associated uncertainties.
-By including the effects of multiple scattering in t
-%%%high energies = resolution error
+Due to the higher priority elements of the \emph{TMTT} demonstrator limiting the time and resources given to the robustness studies, studies into the incorporation of multiple scattering in the \KF were undertaken after the December 2016 demonstrator review.
+Following the review, 
+All the following results presented were produced using the \textit{tilted} barrel geometry\footnote{Whilst the As all the projects migrated from using the \textit{flat} barrel geometry to the } barrel geometry at the start of 2017, all the following results are presented}.
+Initially the form  
 
 For small deflection angles, the multiple scattering contribution for relativistic particles, $\theta_{rms}$, for a each layer is given by~\cite{Highland:1975pq,Lynch:1990sq}~:
 
@@ -363,24 +361,25 @@ For small deflection angles, the multiple scattering contribution for relativist
 \end{equation}
 
 where, the momentum, velocity, electrical charge of the incident particle and thickness of the scattering medium in radiation lengths are given by $p$, $\beta c$, $q$ and $\frac{x}/{X_{0}}$ respectively.
-With the particles involved having relativistic velocities (\ie $\beta c \cong 1$) and any scattering in the r-z plane being ignored, and te
-
-, an initial conservative approximation for this multiple scattering contribution can be expressed as:
+With the particles involved having relativistic velocities (\ie $\beta c \cong 1$) and any scattering in the r-z plane being ignored as the effect of multiple scattering is considerably smaller hit position resolution in r-z, an initial conservative approximation for this multiple scattering contribution can be expressed as:
 
 \begin{equation}
- $\theta_{rms} = \frac{const}{r_{track}}$.
+\theta_{rms} = \frac{const}{r_{track}}
 \label{eq:scatter2}
 \end{equation}
 
-Using this appro
+As discussed in \ref{subsubsec:KF}, the Kalman state is iteratively updated by applying stubs and their associated uncertainties.
+
+
+Therefore, by considering the deflection of the charged particle tracks due to multiple scattering as a, the \KF
+%%%
+
+With this simplified expression of the multiple scattering angle
 Two ideas:
 
 using the assumption that the material contribution for each layer traversed is roughly equal
 
-
-
-This involved adding a contribution of the order of a milliradian, the order of the anticipated typical scattering angle for 2\GeV tracks in quadrature to the r-$\varphi$ plane hit resolution error.
-The error for the r-z plane is not modified as the effect of multiple scattering is considerably smaller hit position resolution in r-z.
+The first idea involved adding a contribution of the order of a milliradian, the order of the anticipated typical scattering angle for 2\GeV tracks in quadrature to the r-$\varphi$ plane hit resolution error.
 
 
 Despite the increase in track finding efficiency and the reduction in the number of fake tracks and duplicate tracks this rudimentary approximation can achieve (Fig.~\ref{fig:MS1}), the are only minor improvements in the track parameters resolution.
@@ -397,7 +396,7 @@ The amount of material traversed previously traversed between measurements will 
 
 Potential improvements to tracking at 2\GeV which merit further investigation include:
 \begin{itemize}
-\item determining suitable coefficients experimentally through simulation to account for the increased hit resolution error of a stub based on the amount of material that has been previously traversed.
+\item determining suitable coefficients as functions of both \pT and $\eta$ experimentally through simulation to account for the increased hit resolution error of a stub based on the amount of material that has been previously traversed.
 \item separate \KF $\chi^{2}$ cuts for the r-$\varphi$ and r-z planes.
 \item \pt dependent threshold criteria for the \HT.
 \item optimisation of the \KF to such changes.
