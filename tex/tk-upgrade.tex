@@ -368,16 +368,25 @@ where, the momentum, velocity, electrical charge of the incident particle and th
 With the particles involved having relativistic velocities (\ie $\beta c \cong 1$) and any scattering in the r-z plane being ignored as the effect of multiple scattering is considerably smaller hit position resolution in r-z, the multiple scattering contribution can be expressed as:
 
 \begin{equation}
-\sigma_{\theta} = \frac{const}{r_{track}}
+\sigma_{\theta} = \frac{k}{r_{track}}
 \label{eq:scatter2}
 \end{equation}
 
-From the simplified form of Eq.~\ref{eq:scatter2}, two alternative approaches for modelling the effects of \MS were 
+where $k$ is a constant.
+
+From the simplified form of Eq.~\ref{eq:scatter2}, two alternative approaches for modelling the effects of \MS were investigated:
+
+\begin{itemize}
+\item use an optimised constant 
+\item 
+\end{itemize}
 
 using the assumption that the material contribution for each layer traversed is roughly equal
 
 The first idea involved adding a contribution of the order of a milliradian, the order of the anticipated typical scattering angle for 2\GeV tracks in quadrature to the r-$\varphi$ plane hit resolution error.
 
+%%% NB jump in duplicate rate ~2.7 GeV - algo50 vs fewer dups in 2x2 cells, appear to be the latter
+%%% Update - change to 3.5 GeV
 
 Despite the increase in track finding efficiency and the reduction in the number of fake tracks and duplicate tracks this rudimentary approximation can achieve (Fig.~\ref{fig:MS1}), the are only minor improvements in the track parameters resolution.
 This is not unexpected, given that a constant inflation in the r-$\varphi$ plane hit resolution error is applied for each stub applied, whilst in reality the inflation would vary as a particle traverses material.
@@ -399,6 +408,3 @@ to account for the increased hit resolution error of a stub based on the  previo
 \item \pt dependent threshold criteria for the \HT.
 \item optimisation of the \KF to such changes.
 \end{itemize}
-
-%%% NB jump in duplicate rate ~2.7 GeV - algo50 vs fewer dups in 2x2 cells, appear to be the latter
-%%% Update - change to 3.5 GeV
