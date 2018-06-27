@@ -192,6 +192,7 @@ This threshold can be further reduced to four layers to account for the reduced 
 A more detailed description of the firmware implementation of the \HT for the demonstrator system is discussed in~\cite{IEEE} and~\cite{TMTT_JINST}.
 
 \subsubsection{Kalman Filter}\label{subsubsec:KF}
+\editComment{More detail - including on the covariance matrix ...}
 Coarse \rphi helix parameters out of the \HT are used as the initial variables for track finding, with the segment assignment also providing a good seed value.
 Given that in simulation over half the track candidates from by the HT are considered to be \textit{fake} or contain at least one stub associated with another particle, a Kalman Filter is used to both remove these incorrect stubs and reject fake tracks. 
 
@@ -232,6 +233,7 @@ A more detailed description of the firmware implementation of the \DR for the de
 
 \section{Simulation Studies}\label{sec:TmttSimStudies}
 During the development of the \emph{TMTT} demonstrator system both before and following the December 2016 review, the author was involved in a number of simulation studies, the more substantive of which are discussed below.
+\editComment {Define track algo reco eff, perf and fakes here.}
 
 \subsection{Linearised $\chi^{2}$ Track Fitter}\label{subsec:chi2}
 Whilst the Kalman Filter was used as a track fitter for the December 2016 hardware demonstrator, a Linear Regression (LR) and a Linearised $\chi^{2}$ fitting algorithms were explored.
@@ -338,8 +340,8 @@ This variable precision \HT, which has been separately implemented in firmware, 
 \editComment{Add table or plots to illustrate impact on duplicate/fake rates and resolutions? Here or in appendices?}
 
 Whilst the decreased precision HT cells at low \pT recovers a proportion of the lost tracks, Fig.~\ref{fig:2GeVFlatEff}  also shows that the \KF's performance is significantly degraded for $\pT < 3 \GeV$ compared to $\pT > 3 \GeV$.
-These additional low \pT track losses are the result of the \KF not modelling taking into account the increased uncertainty in the hit positions resulting from multiple scattering. 
-This is illustrated by the distributions of $\chi^{2} \div \text{number of degrees of freedom}$ ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ in Fig.~\ref{fig:2GeVFlatChi2Ndf} for genuine tracks produced by the \KF, where $\frac{\chi^{2}}{ndf}$ is almost flat for a value of order unity for high \pT (low $\frac{1}{\pT}$) but begins to dramatically increase above approximately 3\GeV, in contrast to the ideal value of {$\frac{\chi^{2}}{ndf} = 1$ if multiple scattering were fully accounted for.
+These additional low \pT track losses are the result of the \KF not modelling the scattering of the expected hit positions.
+This is illustrated by the distributions of $\chi^{2} \div \text{number of degrees of freedom}$ ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ in Fig.~\ref{fig:2GeVFlatChi2Ndf} for genuine tracks produced by the \KF, where $\frac{\chi^{2}}{ndf}$ is almost flat for a value of order unity for high \pT (low $\frac{1}{\pT}$) but begins to dramatically increase above approximately 3\GeV, in contrast to the ideal value of {$\frac{\chi^{2}}{ndf} = 1$ if all uncertainties were properly modelled.
 
 \begin{figure}[tbp]
 \centering
@@ -348,36 +350,29 @@ This is illustrated by the distributions of $\chi^{2} \div \text{number of degre
 \label{fig:2GeVFlatChi2Ndf}
 \end{figure}
 
+Studies into the incorporation of multiple scattering in the \KF were undertaken after the December 2016 demonstrator, and the associated time and resource pressures, concluded and used the tilted barrel geometry.
 
+Incorporation of \MS into the \KF involved including a \emph{process noise} term, namely the variance of the multiple scattering angles, to the \emph{measurement noise} (\ie measurement error) term already present in the \KF covariance matrix.
+In this updated form, the \KF now can consider stubs which are compatible with those that have undergone \MS, allowing for the reconstruction of tracks whose stubs were previously discarded and more accurate $\chi^{2}$ values which can be used to better discriminate against states of fake tracks.
+%%%The form of the multiple scattering contribution, $\sigma_{\theta}$, must be considered in a form that requires minimal resources and time to use.
 
-The following results 
-Due to the higher priority elements of the \emph{TMTT} demonstrator limiting the time and resources given to the robustness studies, studies into the incorporation of multiple scattering in the \KF were undertaken after the December 2016 demonstrator review.
-As such, all the following results discussed were produced using the \textit{tilted} barrel geometry.
-
-As discussed in \ref{subsubsec:KF}, the Kalman state is iteratively updated by applying stubs and their associated uncertainties.
-
-For small deflection angles, the multiple scattering contribution for relativistic particles, $\theta_{rms}$, for a each layer is given by~\cite{Highland:1975pq,Lynch:1990sq}~:
+For small deflection angles and relativistic particles, $\sigma_{\theta}$ for a each layer is given by~\cite{Lynch:1990sq}~:
 
 \begin{equation}
-\theta_{rms} = \frac{13.6\MeV}{\beta c p} q \sqrt{\frac{x}{X_{0}}} [1 + 0.038 \ln{\frac{x}{X_{0}}}]  \;.
+\sigma_{\theta} = \frac{13.6\MeV}{\beta c p} q \sqrt{\frac{x}{X_{0}}} [1 + 0.088 \log_{10}{\frac{x}{X_{0}}}]  \;.
 \label{eq:scatter1}
 \end{equation}
 
-where, the momentum, velocity, electrical charge of the incident particle and thickness of the scattering medium in radiation lengths are given by $p$, $\beta c$, $q$ and $\frac{x}/{X_{0}}$ respectively.
-With the particles involved having relativistic velocities (\ie $\beta c \cong 1$) and any scattering in the r-z plane being ignored as the effect of multiple scattering is considerably smaller hit position resolution in r-z, an initial conservative approximation for this multiple scattering contribution can be expressed as:
+where, the momentum, velocity, electrical charge of the incident particle and thickness of the scattering medium in radiation lengths are given by $p$, $\beta c$, $q$ and $\frac{x}/{X_{0}}$ respectively and the result being good to better than 11\%.
+
+With the particles involved having relativistic velocities (\ie $\beta c \cong 1$) and any scattering in the r-z plane being ignored as the effect of multiple scattering is considerably smaller hit position resolution in r-z, the multiple scattering contribution can be expressed as:
 
 \begin{equation}
-\theta_{rms} = \frac{const}{r_{track}}
+\sigma_{\theta} = \frac{const}{r_{track}}
 \label{eq:scatter2}
 \end{equation}
 
-
-
-Therefore, by considering the deflection of the charged particle tracks due to multiple scattering as a, the \KF
-%%%
-
-With this simplified expression of the multiple scattering angle
-Two ideas:
+From the simplified form of Eq.~\ref{eq:scatter2}, two alternative approaches for modelling the effects of \MS were 
 
 using the assumption that the material contribution for each layer traversed is roughly equal
 
