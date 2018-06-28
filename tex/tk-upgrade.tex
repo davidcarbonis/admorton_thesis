@@ -311,12 +311,12 @@ Each CLB has 2 slices, 8 luts and 16 flip flops. So multiply the number of slice
 
 \subsubsection{Outlook}\label{subsubsec:chi2outlook}
 %%%Future work
-For this track fitting approach to be considered in the future, the following would require further study:
+For this track fitting algorithm to be considered in the future, the following would require further study:
 \begin{itemize}
 \item Improving the purity of the fitted tracks. Currently the \KF and \LR have achieve 100\% purity through enforcing 
 \editComment{Remark on LR +KF having 100\% purity}.
 \item Whether or not the inclusion of the fifth helix parameter, the vertex impact parameter in the x-y plane, $d_{0}$, would provide comparable performance to other fitting algorithms which produce it.
-\item 
+\item Demonstrating the feasibility 
 \end{itemize}
 
 \subsection{2 GeV Tracking}\label{subsec:Tmtt2GeV}
@@ -325,7 +325,7 @@ The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may
 This required modifying the GP and HT configuration parameters to ensure adequate duplication in $\varphi$ and increasing the number of the \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision, with the latter resulting in the FPGA resources required increasing by 50\% and the output data rate from the \HT by a factor of 2.2.
 
 Without any additional modifications, there is a considerable degradation in the track reconstruction efficiency by the \HT in the range $2 < \pt < 2.7$\GeVc, due to these low momentum tracks being dominated by multiple scattering, resulting in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
-To mitigate against such track reconstruction efficiency losses, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two.
+To mitigate against such track reconstruction efficiency losses, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two (\ie $2 \times 2$ cells were merged).
 In addition to this, \KF state $\chi^2$ cuts for this low \pT range were optimised to reflect the decreased precision of the hits in these \HT cells and thus better reduce the number of duplicate and fake tracks as far as possible without impacting on the \HT track reconstruction efficiency.
 This variable precision \HT, which has been separately implemented in firmware, together with the optimised \KF state cuts, has been shown in simulation to recover some of these losses, as shown in Fig.~\ref{fig:2GeVFlatEff}.
 
@@ -354,7 +354,6 @@ Studies into the incorporation of multiple scattering in the \KF were undertaken
 
 Incorporation of \MS into the \KF involved including a \emph{process noise} term, namely the variance of the multiple scattering angles, to the \emph{measurement noise} (\ie measurement error) term already present in the \KF covariance matrix.
 In this updated form, the \KF now can consider stubs which are compatible with those that have undergone \MS, allowing for the reconstruction of tracks whose stubs were previously discarded and more accurate $\chi^{2}$ values which can be used to better discriminate against states of fake tracks.
-%%%The form of the multiple scattering contribution, $\sigma_{\theta}$, must be considered in a form that requires minimal resources and time to use.
 
 For small deflection angles and relativistic particles, $\sigma_{\theta}$ for a each layer is given by~\cite{Lynch:1990sq}~:
 
@@ -368,25 +367,36 @@ where, the momentum, velocity, electrical charge of the incident particle and th
 With the particles involved having relativistic velocities (\ie $\beta c \cong 1$) and any scattering in the r-z plane being ignored as the effect of multiple scattering is considerably smaller hit position resolution in r-z, the multiple scattering contribution can be expressed as:
 
 \begin{equation}
-\sigma_{\theta} = \frac{k}{r_{track}}
+\sigma_{\theta} = \frac{k}{\pT}}
 \label{eq:scatter2}
 \end{equation}
 
-where $k$ is a constant.
+where $k$ is a coefficient.
 
-From the simplified form of Eq.~\ref{eq:scatter2}, two alternative approaches for modelling the effects of \MS were investigated:
+From the simplified form of Eq.~\ref{eq:scatter2}, two alternative forms of the coefficient $k$, which should require minimal resources and latency, were investigated:
 
 \begin{itemize}
-\item use an optimised constant 
-\item 
+\item \textbf{constant coefficient - } a constant coefficient of the order of the average anticipated scattering angle is used as the anticipated typical scattering angle for $2-3\GeV$ tracks is of the order of a milliradian.
+\item \textbf{layer dependent coefficient -} the coefficient used is a function of the layer ID (\ie which layer the stub is found) in order to take into account the impact of repeated scattering from passing through multiple layers increasing the uncertainty associated of the hit position.
 \end{itemize}
 
-using the assumption that the material contribution for each layer traversed is roughly equal
+The initial layer dependent coefficients were obtained through experimentally determining in simulation the \MS contribution to the observed variance in $\phi$.
+Both these initial layer dependent coefficients and the initial constant coefficient of a milliradian were subsequently fine tuned through \editComment{name of iterative method?} in order to recover as much tracking efficiency as possible.
+Similarly, the \KF state $chi^{2}$ cuts for both approaches were also tuned in order to reject the optimal number of fake and duplicate tracks without compromising on tracking efficiency.
 
-The first idea involved adding a contribution of the order of a milliradian, the order of the anticipated typical scattering angle for 2\GeV tracks in quadrature to the r-$\varphi$ plane hit resolution error.
+During the comparative studies of these two approaches, it was observed in the results following the \DR stage that in contrast to the trend of the fraction of duplicates decreasing as \pT decreases, the fraction of duplications present increases above circa $3\GeV$, as shown in Fig~\ref{2GeVfracDups} (right).
+The presence of this trend following in tracks produced by the \HT shown in Fig~\ref{2GeVfracDups} (left), prior to tracking fitting and \DR, implies that the\HT produces more duplicates at low \pT is the cause of this rather than a shortcoming of the \DR algorithm.
+As the fraction of duplicate tracks produced where decreased precision \HT cells are used is well controlled, the \pT threshold for the $2 \times 2$ merging of \HT cells was increased from $2.7\GeV$ to $3.5\GeV$.
+All results presented for the two \MS coefficient forms were produced using this increased threshold. 
+This change also had the additional benefit of recovering an additional 0.2\% of the tracks which were previously lost to \MS.
 
-%%% NB jump in duplicate rate ~2.7 GeV - algo50 vs fewer dups in 2x2 cells, appear to be the latter
-%%% Update - change to 3.5 GeV
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.47\textwidth]{CMS-bw-logo.pdf}
+\includegraphics[width=0.47\textwidth]{CMS-bw-logo.pdf}
+\caption{Plots showing tracking efficiency in low pT range with no changes (upper), and with HT cell merging and \KF optimisation(right).}
+\label{fig:2GeVfracDups}
+\end{figure}
 
 Despite the increase in track finding efficiency and the reduction in the number of fake tracks and duplicate tracks this rudimentary approximation can achieve (Fig.~\ref{fig:MS1}), the are only minor improvements in the track parameters resolution.
 This is not unexpected, given that a constant inflation in the r-$\varphi$ plane hit resolution error is applied for each stub applied, whilst in reality the inflation would vary as a particle traverses material.
@@ -402,7 +412,7 @@ The amount of material traversed previously traversed between measurements will 
 
 Potential improvements to tracking at 2\GeV which merit further investigation include:
 \begin{itemize}
-\item determining suitable coefficients as functions of both \pT and $\eta$ experimentally through simulation in order to produce ... account for the amount of material traversed.
+\item determining suitable coefficients as functions of both \pT and $\eta$ experimentally through simulation in order to more accurately account for the amount of material traversed.
 to account for the increased hit resolution error of a stub based on the  previously traversed.
 \item separate \KF $\chi^{2}$ cuts for the r-$\varphi$ and r-z planes.
 \item \pt dependent threshold criteria for the \HT.
