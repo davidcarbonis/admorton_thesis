@@ -241,9 +241,8 @@ Both track fitting algorithms require a proceeding \emph{Seed Filter} (SF) stage
 The LR fitter~\cite{TMTT_FLP} was developed as an alternative to the KF and exploits the fact that sufficiently high \pT tracks should form a straight line in the \emph{r-$\varphi$} and \emph{r-z} planes to perform independent fits in each planes.
 The linearised $\chi^{2}$ fit makes use of residuals between the stubs and the seeded track that minimise $\chi^{2}$ of the fit in order to obtain improved helix parameters for the track candidate.
 
-As the \emph{TMTT} project was formed a significant amount of time (\editComment{Find out how much? Cannot recall off hand...}) after the other two L1 track finder projects, there was a pressing need to be able to perform precision helix parameter fits following the \HT using an algorithm which could could be conceivably implemented in hardware.
-Following discussions with members of the \emph{tracklet} and \emph{AM} projects, it was decided that a linearised $\chi^{2}$ fit based off the one proposed by the \emph{tracklet} project would be investigated.
-
+As the \emph{TMTT} project was formed a significantly after the other two L1 track finder projects, there were naturally greater time and resource pressures in developing the multiple components of a complete system, including the ability to perform precision helix parameter fits on the \HT output with an algorithm that could be  implemented in hardware. 
+Following discussions with members of the \emph{tracklet} and \emph{AM} projects, it was decided that the use of a linearised $\chi^{2}$ fit based off the one proposed by the \emph{tracklet} project would be investigated.
 The mathematics forming the basis for the \emph{TMTT}'s implementation of the algorithm is detailed in~\cite{CMS_DN-14-043}. 
 \editComment{Need to check re. there being a publicly available copy?}
 
@@ -280,18 +279,17 @@ By defining the matrices $D_{ij} = \frac{1}{\sigma_{i}} \frac{\delta s_{i}}{\del
 
 Eqn.~\ref{eq:chi4} gives a linear form which can be solved for $\delta h$ through updating the residuals with respect to the seeded track candidate.
 
-Calculation of the derivatives for the barrel layer and endcap disk hits, including a correction factor for $\phi$ in the outer disks which do not point directly towards the interaction point, are given in~\ref{app:chi2}.
+Calculation of the derivatives for the barrel layer and endcap disk hits from this general form, including a correction factor for $\phi$ in the outer disks which do not point directly towards the interaction point, are given in~\ref{app:chi2}.
 
 \subsubsection{Software Implementation}\label{subsubsec:chi2software}
-
-The diminishing improvements (Fig.~\ref{fig:} of performing repeated iterations of Eqn.~\ref{eq:chi4} can be improved upon by considering the residuals associated to each stub.
+The diminishing improvements from performing repeated iterations of Eqn.~\ref{eq:chi4}, as shown in Fig.~\ref{fig:}, can be improved upon by considering the residuals associated to each stub.
 As stubs which are incorrectly associated with a track are expected have larger residuals than those which are correctly associated, given that the residuals of each stub are known after a fit, the stub with the largest residual is compared against a configurable cut and if it fails, removed from the track and future fitting iterations.
 Given that this act has the potential to leave a track with fewer stubs than the minimum of four required required, it was found that the optimal residual cuts applied were considerably looser when a track was only comprised of four stubs.
 
 \editComment{Comment on purity, resolution, fake rate, and duplicate rate}
 \editComment{Impact on killing genuine stubs assoc. with track?}
 
-\editComment{Results done with 1000 ttbar+pu200 events. Larger stats runs will be done prior to final draft.}
+\editComment{Results done with 5000 ttbar+pu200 events. Larger stats runs will be done prior to final draft.}
 
 \subsubsection{Firmware Feasibility}\label{subsubsec:chi2firmware}
 %% Matrix sizes
@@ -320,7 +318,11 @@ For this track fitting algorithm to be considered in the future, the following w
 \end{itemize}
 
 \subsection{2 GeV Tracking}\label{subsec:Tmtt2GeV}
-The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may be desirable if the trigger requirements demand it and the impact of this potential requirement on the proposed track-finder system was initially studied as one of the robustness studies for the December 2016 demonstrator review.
+The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may be desirable if the trigger requirements demand it and the impact of this potential requirement on the proposed Track Finder was studied 
+
+\subsubsection{Hough Transform Optimisation}
+
+The impact of this potential requirement on the proposed track-finder system was initially studied as one of the robustness studies for the December 2016 demonstrator review.
 
 This required modifying the GP and HT configuration parameters to ensure adequate duplication in $\varphi$ and increasing the number of the \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision, with the latter resulting in the FPGA resources required increasing by 50\% and the output data rate from the \HT by a factor of 2.2.
 
@@ -349,6 +351,8 @@ This is illustrated by the distributions of $\chi^{2} \div \text{number of degre
 \caption{Plot of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ for genuine tracks produced by the \KF.}
 \label{fig:2GeVFlatChi2Ndf}
 \end{figure}
+
+\subsubsection{Kalman Filter Optimisation}
 
 Studies into the incorporation of multiple scattering in the \KF were undertaken after the December 2016 demonstrator, and the associated time and resource pressures, concluded and used the tilted barrel geometry.
 
@@ -393,9 +397,79 @@ This change also had the additional benefit of recovering an additional 0.2\% of
 %%% Results
 
 %%% Require ROOT files for
+%%% No merge
+%=========================================================================
+%               TRACK-FINDING SUMMARY AFTER HOUGH TRANSFORM
+%Number of track candidates found per event = 646.8546 +- 1.7561
+%                     with mean stubs/track = 6.8726
+%Fraction of track cands that are fake = 0.1913
+%Fraction of track cands that are genuine, but extra duplicates = 0.5491
+%Algorithmic tracking efficiency = 111949/117377 = 0.9538 +- 0.0006
+%Perfect algorithmic tracking efficiency = 65155/117377 = 0.5551 +- 0.0015 (no incorrect hits)
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: KF4ParamsComb
+%Number of fitted track candidates found per event = 193.7248 +- 0.4772
+%                     with mean stubs/track = 4.0000
+%Fraction of fitted tracks that are fake = 0.1083
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.0648
+%Algorithmic fitting efficiency = 109022/117377 = 0.9288 +- 0.0008
+%Perfect algorithmic fitting efficiency = 109022/117377 = 0.9288 +- 0.0008 (no incorrect hits)
+%=========================================================================
 %%% Default MS - producing for 5000 events
+%=========================================================================
+%               TRACK-FINDING SUMMARY AFTER HOUGH TRANSFORM
+%Number of track candidates found per event = 751.9842 +- 2.1109
+%                     with mean stubs/track = 7.3469
+%Fraction of track cands that are fake = 0.2820
+%Fraction of track cands that are genuine, but extra duplicates = 0.4730
+%Algorithmic tracking efficiency = 112949/117377 = 0.9623 +- 0.0006
+%Perfect algorithmic tracking efficiency = 55340/117377 = 0.4715 +- 0.0015 (no incorrect hits)
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: KF4ParamsComb
+%Number of fitted track candidates found per event = 215.9748 +- 0.5381
+%                     with mean stubs/track = 4.0000
+%Fraction of fitted tracks that are fake = 0.1332
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.0943
+%Algorithmic fitting efficiency = 109841/117377 = 0.9358 +- 0.0007
+%Perfect algorithmic fitting efficiency = 109841/117377 = 0.9358 +- 0.0007 (no incorrect hits)
+%=========================================================================
 %%% Ian MS
+%=========================================================================
+%               TRACK-FINDING SUMMARY AFTER HOUGH TRANSFORM
+%Number of track candidates found per event = 751.9842 +- 2.1109
+%                     with mean stubs/track = 7.3469
+%Fraction of track cands that are fake = 0.2820
+%Fraction of track cands that are genuine, but extra duplicates = 0.4730
+%Algorithmic tracking efficiency = 112949/117377 = 0.9623 +- 0.0006
+%Perfect algorithmic tracking efficiency = 55340/117377 = 0.4715 +- 0.0015 (no incorrect hits)
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: KF4ParamsComb
+%Number of fitted track candidates found per event = 216.3250 +- 0.5199
+%                     with mean stubs/track = 4.0000
+%Fraction of fitted tracks that are fake = 0.1033
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.1124
+%Algorithmic fitting efficiency = 110519/117377 = 0.9416 +- 0.0007
+%Perfect algorithmic fitting efficiency = 110519/117377 = 0.9416 +- 0.0007 (no incorrect hits)
+%=========================================================================
 %%% Alex MS
+%=========================================================================
+%               TRACK-FINDING SUMMARY AFTER HOUGH TRANSFORM
+%Number of track candidates found per event = 751.9842 +- 2.1109
+%                     with mean stubs/track = 7.3469
+%Fraction of track cands that are fake = 0.2820
+%Fraction of track cands that are genuine, but extra duplicates = 0.4730
+%Algorithmic tracking efficiency = 112949/117377 = 0.9623 +- 0.0006
+%Perfect algorithmic tracking efficiency = 55340/117377 = 0.4715 +- 0.0015 (no incorrect hits)
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: KF4ParamsComb
+%Number of fitted track candidates found per event = 222.0674 +- 0.5324
+%                     with mean stubs/track = 4.0000
+%Fraction of fitted tracks that are fake = 0.1078
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.1233
+%Algorithmic fitting efficiency = 110553/117377 = 0.9419 +- 0.0007
+%Perfect algorithmic fitting efficiency = 110553/117377 = 0.9419 +- 0.0007 (no incorrect hits)
+%=========================================================================
+
 In both cases, 
 
 \begin{figure}[tbp]
@@ -406,16 +480,19 @@ In both cases,
 \label{fig:2GeVfracDups}
 \end{figure}
 
-Despite the increase in track finding efficiency and the reduction in the number of fake tracks and duplicate tracks this rudimentary approximation can achieve (Fig.~\ref{fig:MS1}), the are only minor improvements in the track parameters resolution.
-This is not unexpected, given that a constant inflation in the r-$\varphi$ plane hit resolution error is applied for each stub applied, whilst in reality the inflation would vary as a particle traverses material.
-The amount of material traversed previously traversed between measurements will also vary, with same tracks featuring layers which have no stubs, and material contributions from the Inner Tracker, between the Inner and Outer Trackers and services needing consideration.
+
+%%%
+%Despite the increase in track finding efficiency and the reduction in the number of fake tracks and duplicate tracks this rudimentary approximation can achieve (Fig.~\ref{fig:MS1}), the are only minor improvements in the track parameters resolution.
+%This is not unexpected, given that a constant inflation in the r-$\varphi$ plane hit resolution error is applied for each stub applied, whilst in reality the inflation would vary as a particle traverses material.
+%The amount of material traversed previously traversed between measurements will also vary, with same tracks featuring layers which have no stubs, and material contributions from the Inner Tracker, between the Inner and Outer Trackers and services needing consideration.
+%%%
 
 %%% Improvements
-Potential improvements to tracking at 2\GeV which merit further investigation include:
+There are a number of potential improvements for tracking down to 2\GeV which merit further investigation which include:
 \begin{itemize}
-\item determining suitable coefficients as functions of both \pT and $\eta$ experimentally through simulation in order to more accurately account for the amount of material traversed.
-to account for the increased hit resolution error of a stub based on the  previously traversed.
-\item separate \KF $\chi^{2}$ cuts for the r-$\varphi$ and r-z planes.
+\item determining suitable coefficients as functions of both \pT and $\eta$ experimentally through simulation in order to more accurately account for the amount of material traversed and thus a more accurate description of the uncertainty in the hit position caused by \MS.
+\item separate \KF $\chi^{2}$ cuts for the r-$\phi$ and r-z planes ....
+ in order to reflect the lack of multiple scattering contributions to the r-z plane.
 \item \pt dependent threshold criteria for the \HT.
-\item optimisation of the \KF to such changes.
+\item further optimisation of the \KF in relation to any such changes.
 \end{itemize}
