@@ -288,7 +288,7 @@ Eqn.~\ref{eq:chi4} gives a linear form which can be solved for $\delta h$ throug
 Calculation of the derivatives for the barrel layer and endcap disk hits from this general form, including a correction factor for $\phi$ in the outer disks which do not point directly towards the interaction point, are given in~\ref{app:chi2}.
 
 \subsubsection{Software Implementation}\label{subsubsec:chi2software}
-
+The software implementation of Eqn.~\ref{eq:chi4} 
 
 The diminishing improvements from performing repeated iterations of Eqn.~\ref{eq:chi4}, as shown in Fig.~\ref{fig:}, can be improved upon by considering the residuals associated to each stub.
 As stubs which are incorrectly associated with a track are expected have larger residuals than those which are correctly associated, given that the residuals of each stub are known after a fit, the stub with the largest residual is compared against a configurable cut and if it fails, removed from the track and future fitting iterations.
