@@ -396,7 +396,7 @@ The initial layer dependent coefficients were obtained through experimentally de
 Both these initial layer dependent coefficients and the initial constant coefficient of a milliradian were subsequently fine tuned through \editComment{name of iterative method?} in order to recover as much tracking efficiency as possible.
 Similarly, the \KF state $chi^{2}$ cuts for both approaches were also tuned in order to reject the optimal number of fake and duplicate tracks without compromising on tracking efficiency.
 
-During the comparative studies of these two approaches, it was observed in the results following the \DR stage that in contrast to the trend of the fraction of duplicates decreasing as \pT decreases, the fraction of duplications present increases above circa $3\GeV$, as shown in Fig~\ref{2GeVfracDups}.
+During the comparative studies of these two approaches, it was observed in the results following the \DR stage that in contrast to the trend of the fraction of duplicates decreasing as \pT decreases, the fraction of duplications present increases above circa $3\GeV$, as shown in Fig~\ref{fig:2GeVfracDups}.
 The presence of this trend following in tracks produced by the \HT prior to tracking fitting and \DR, implies that the \HT produces more duplicates at low \pT is the cause of this rather than a shortcoming of the \DR algorithm.
 As the fraction of duplicate tracks produced where decreased precision \HT cells are used is well controlled, the \pT threshold for the $2 \times 2$ merging of \HT cells was increased from $2.7\GeV$ to $3.5\GeV$.
 All results presented for the two \MS coefficient forms were produced using this increased threshold. 
@@ -405,7 +405,7 @@ This change also had the additional benefit of recovering an additional 0.2\% of
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/htFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfFracDuplicatesVsInvPtTiltedGeometry_5000-logo.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
 \caption{The fraction of genuine tracks with duplicates as a function of $\frac{1}{\pT}$ following reconstruction by the \HT (left) and fitting and filtering by the \KF and \DR (right) for where the \HT cell merging \pT threshold is set to 2.7\GeV (red) and 3.5\GeV (blue). 
 The constant coefficient for the \MS contribution approach was used for these \KF results.
 \editComment{Add legend to plots and polish plots}
