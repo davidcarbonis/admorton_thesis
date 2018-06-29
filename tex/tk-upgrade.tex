@@ -158,8 +158,8 @@ The routing of stubs to sub-sectors occurs in three stages: a rough $\eta$ sorti
 Each block in this router is highly reconfigurable and can easily be adapted to any alternative sub-sector definition.
 
 \subsubsection{Hough Transform}
-The Hough Transform algorithm is a widely used means of detecting geometric features in digital image processing \cite{HT}. 
-The TFP uses it to find primary charged particles with \pT > 3\GeV in the \rphi plane. 
+The Hough Transform algorithm is a widely used means of detecting geometric features in digital image processing \cite{HT} and is used by the TFP to find charged particles with \pT > 3\GeV in the \rphi plane. 
+
 Within the tracking volume, permeated by a homogeneous 3.8T magnetic field ($B$), a radius of curvature ($R$) can be described as a function of its\pT and charge $q$:
 
 \begin{equation}
@@ -244,7 +244,7 @@ If the reconstruction of a charged particle produces more than one track, these 
 \subsection{Linearised $\chi^{2}$ Track Fitter}\label{subsec:chi2}
 Whilst the Kalman Filter was used as a track fitter for the December 2016 hardware demonstrator, a Linear Regression (LR) and a Linearised $\chi^{2}$ fitting algorithms were explored.
 Both track fitting algorithms require a proceeding \emph{Seed Filter} (SF) stage to remove stubs in a HT cell which are inconsistent with a straight line in the \emph{r-z} plane to filter out both fake tracks and stubs incorrectly assigned to tracks.
-The LR fitter~\cite{TMTT_FLP} was developed as an alternative to the KF and exploits the fact that sufficiently high \pT tracks should form a straight line in the \emph{r-$\phi$} and \emph{r-z} planes to perform independent fits in each planes.
+The LR fitter~\cite{TMTT_FLP} was developed as an alternative to the KF and exploits the fact that sufficiently high \pT tracks should form a straight line in the \emph{\rphi} and \emph{r-z} planes to perform independent fits in each planes.
 The linearised $\chi^{2}$ fit makes use of residuals between the stubs and the seeded track that minimise $\chi^{2}$ of the fit in order to obtain improved helix parameters for the track candidate.
 
 As the \emph{TMTT} project was formed a significantly after the other two L1 track finder projects, there were naturally greater time and resource pressures in developing the multiple components of a complete system, including the ability to perform precision helix parameter fits on the \HT output with an algorithm that could be  implemented in hardware. 
@@ -376,7 +376,7 @@ For small deflection angles and relativistic particles, $\sigma_{\theta}$ for a 
 
 where, the momentum, velocity, electrical charge of the incident particle and thickness of the scattering medium in radiation lengths are given by $p$, $\beta c$, $q$ and $\frac{x}/{X_{0}}$ respectively and the result being good to better than 11\%.
 
-With the particles involved having relativistic velocities (\ie $\beta c \cong 1$) and scattering in the r-z plane ignored as the impact of multiple scattering is considerably smaller hit position resolution in r-z, the multiple scattering contribution in the r-$\phi$ plane can be expressed as:
+With the particles involved having relativistic velocities (\ie $\beta c \cong 1$) and scattering in the r-z plane ignored as the impact of multiple scattering is considerably smaller hit position resolution in r-z, the multiple scattering contribution in the \rphi plane can be expressed as:
 
 \begin{equation}
 \sigma_{\theta} = \frac{k}{\pT}}
@@ -404,8 +404,8 @@ This change also had the additional benefit of recovering an additional 0.2\% of
 
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=0.47\textwidth]{CMS-bw-logo.pdf}
-\includegraphics[width=0.47\textwidth]{CMS-bw-logo.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/htFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfFracDuplicatesVsInvPtTiltedGeometry_5000-logo.pdf}
 \caption{The fraction of genuine tracks with duplicates as a function of $\frac{1}{\pT}$ following reconstruction by the \HT (left) and fitting and filtering by the \KF and \DR (right) for where the \HT cell merging \pT threshold is set to 2.7\GeV (red) and 3.5\GeV (blue). 
 The constant coefficient for the \MS contribution approach was used for these \KF results.
 \editComment{Add legend to plots and polish plots}
@@ -515,7 +515,7 @@ Whilst the similar performance
 
 %%%
 %Despite the increase in track finding efficiency and the reduction in the number of fake tracks and duplicate tracks this rudimentary approximation can achieve (Fig.~\ref{fig:MS1}), the are only minor improvements in the track parameters resolution.
-%This is not unexpected, given that a constant inflation in the r-$\phi$ plane hit resolution error is applied for each stub applied, whilst in reality the inflation would vary as a particle traverses material.
+%This is not unexpected, given that a constant inflation in the \rphi plane hit resolution error is applied for each stub applied, whilst in reality the inflation would vary as a particle traverses material.
 %The amount of material traversed previously traversed between measurements will also vary, with same tracks featuring layers which have no stubs, and material contributions from the Inner Tracker, between the Inner and Outer Trackers and services needing consideration.
 %%%
 
@@ -523,7 +523,7 @@ Whilst the similar performance
 There are a number of potential improvements for tracking down to 2\GeV which merit further investigation which include:
 \begin{itemize}
 \item determining suitable coefficients as functions of both \pT and $\eta$ experimentally through simulation in order to more accurately account for the amount of material traversed and thus a more accurate description of the uncertainty in the hit position caused by \MS.
-\item separate \KF $\chi^{2}$ cuts for the r-$\phi$ and r-z planes ... WHY?
+\item separate \KF $\chi^{2}$ cuts for the \rphi and r-z planes ... WHY?
  in order to reflect the lack of multiple scattering contributions to the r-z plane.
 \item \pt dependent threshold criteria for the \HT.
 \item further optimisation of the \KF in relation to any such changes.
