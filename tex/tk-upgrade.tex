@@ -256,45 +256,60 @@ The mathematics forming the basis for the \emph{TMTT}'s implementation of the al
 The parameters of each stub $s_{i}$, based on the track’s helix parameters $h$, are initially linearly expanded around the estimate of the helix parameters $h_{0}$:
 
 \begin{equation}
-s_{i}(h) = s_{i}(\overline{h_{0}} + \delta h) = s_{i}(\overline{h_{0}}) + \delta h \frac{\delta s_{i}}{\delta h} + \mathcal{0}(\delta h^{2}) \;.
+s_{i}(h) = s_{i}(\overline{h_{0}} + \delta h) = s_{i}(\overline{h_{0}}) + \delta h \frac{\delta s_{i}}{\delta h} + \mathcal{O}(\delta h^{2}) \;.
 \label{eq:chi1}
 \end{equation}
 
 With $\chi^{2}$ being defined as:
 
 \begin{equation}
-\chi^{2} = \frac{\sum_{i}(s_{i}(h) - s_{track}(\overline{h_{0}}))^{2}}{\sigma^{2}_{s}} = \frac{\sum_{i}(s_{i}(\overline{h_{0}} - s_{track}(\overline{h_{0}}) + \delta h \frac{\delta s_{i}}{\delta h}))^{2}}{\sigma^{2}_{s}} \;.
+\chi^{2} = \frac{\sum_{i}\(s_{i}(h) - s_{track}(\overline{h_{0}}))\^{2}}{\sigma^{2}_{s}}  \;.
+          = \frac{\sum_{i}\(s_{i}(\overline{h_{0}} - s_{track}(\overline{h_{0}}) + \delta h \frac{\delta s_{i}}{\delta h}))\^{2}}{\sigma^{2}_{s}} \;.
 \label{eq:chi2}
 \end{equation}
 
 Which, in order to obtain $\delta h$, is minimised:
 
 \begin{equation}
-0 = \frac{\partial \chi^{2}}{\partial \delta h} = 2 \sum_{i}\frac{\partial s_{i}}{\delta h}(s_{i}(\overline{h_{0}}) - s_{track}(\overline{h_{0}}) + \delta h \frac{\partial s_{i}}{\partial h}) + 2 \sum_{i}\frac{\partial s_{i}}{\delta h}(\delta s_{i}^{t} + \delta h \frac{\partial s_{i}}{\partial h}) \;.
+0 = \frac{\partial \chi^{2}}{\partial \delta h} = 2 \sum_{i}\frac{\partial s_{i}}{\delta h}(s_{i}(\overline{h_{0}}) - s_{track}(\overline{h_{0}}) + \delta h \frac{\partial s_{i}}{\partial h}) + 2 \sum_{i}\frac{\partial s_{i}}{\delta h}(\delta s_{i}^{T} + \delta h \frac{\partial s_{i}}{\partial h}) \;.
 \label{eq:chi3}
 \end{equation}
 
-Where $\delta s_{i}^{t} = s_{i}(\overline{h_{0}}) - s_{track}(\overline{h_{0}})$ are the residuals between the hits and the seeded track.
+Where $\delta s_{i}^{T} = s_{i}(\overline{h_{0}}) - s_{track}(\overline{h_{0}})$ are the residuals between the hits and the seeded track.
 
 By defining the matrices $D_{ij} = \frac{1}{\sigma_{i}} \frac{\delta s_{i}}{\delta h_{j}}$ and $M = D^{T} D$, Eqn.~\ref{eq:chi3} can be rewritten and solved for $\delta h$ as:
 
 \begin{equation}
-0 = D^{T} \delta s^{t} + M \delta h \Rightarrow \delta h = - M^{-1} D^{T} \delta s^{t} \;.
+0 = D^{T} \delta s^{T} + M \delta h \Rightarrow \delta h = - M^{-1} D^{T} \delta s^{T} \;.
 \label{eq:chi4}
 \end{equation}
 
 Eqn.~\ref{eq:chi4} gives a linear form which can be solved for $\delta h$ through updating the residuals with respect to the seeded track candidate.
 
-Calculation of the derivatives for the barrel layer and endcap disk hits from this general form, including a correction factor for $\phi$ in the outer disks which do not point directly towards the interaction point, are given in~\ref{app:chi2}.
+Calculation of the derivatives for the barrel layer and endcap disk hits from this general form, including a correction factor for $\phi$ in the outer disks to account for the fact that these modulesb b do not point directly towards the interaction point, are given in~\ref{app:chi2}.
 
-\subsubsection{Software Implementation}\label{subsubsec:chi2software}
-The software implementation of Eqn.~\ref{eq:chi4} 
+Similarly the $chi^{2}$ of the fit can also be expressed in a linear form:
 
-The diminishing improvements from performing repeated iterations of Eqn.~\ref{eq:chi4}, as shown in Fig.~\ref{fig:}, can be improved upon by considering the residuals associated to each stub.
-As stubs which are incorrectly associated with a track are expected have larger residuals than those which are correctly associated, given that the residuals of each stub are known after a fit, the stub with the largest residual is compared against a configurable cut and if it fails, removed from the track and future fitting iterations.
+\begin{equation}
+chi^{2} = (\delta s^{T} + D \delta h)^{T}(\delta s^{T} + D \delta h)\;.
+        = (\delta s^{T} - DM^{-1}D^{T}\delta s^{t})^{T} (\delta s^{T} - DM^{-1}D^{T}\delta s^{t})\;.
+        + \delta s^{T} (1 - DM^{-1}D^{T}) (1 - DM^{-1}D^{T}) \delta s
+\label{eq:chi5}
+\end{equation}
+
+\subsubsection{Software Results}\label{subsubsec:chi2software}
+Initially a floating point software implementation of the algorithm, using the derivatives derived from the general form of Eqn.~\ref{eq:chi4} and the $chi^{2}$ of the fit from  Eqn.~\ref{eq:chi5}, was used to validate the algorithm and optimise its performance.
+%%%
+Given that a significant proportion of tracks reconstructed by the \HT contain at least one incorrect stub, up to 40\% for \ttbar events at \PU of 200, and each additional iteration of the fitting algorithm yields diminishing improvements, the residuals associated to each stub were considered following each fitting iteration.
+Stubs which are incorrectly associated with a track are expected have larger residuals than those which are correctly associated.
+Therefore once the residuals of each stub were known following a fit, if the stub with the largest residual exceeded a predefined cut it was removed from the track and the track was refitted with its reduced collection of hits. 
+
+
+
 Given that this act has the potential to leave a track with fewer stubs than the minimum of four required required, it was found that the optimal residual cuts applied were considerably looser when a track was only comprised of four stubs.
 
 %%% Discuss making approximations and reducing precision to that of digital input
+Following validating the floating point implementation of the linear $\chi^{2}$ track fitter in software, approximations of the 
 
 
 \editComment{Comment on purity, resolution, fake rate, and duplicate rate}
@@ -304,10 +319,16 @@ Given that this act has the potential to leave a track with fewer stubs than the
 
 \subsubsection{Firmware Feasibility}\label{subsubsec:chi2firmware}
 %% Matrix sizes
-Despite the performance in simulation of the linear $\chi^{2}$ track fitter being comparable to both the \KF and \LR track fitters, consideration as to whether it can be implemented in hardware had to be given, for whilst FPGAs can easily perform the addition and multiplication operations required to compute matrices, the calculation of the derivatives that form their elements will require the use of lookup tables (LUTs) to ensure latency budgets are not exceeded.
-With the first order approximation of the derivatives for the barrel hits only depend on the radial position of the hit (\ie one of the six possible barrel layer radial positions), only a small number of LUTs (\editComment{6?}) are required for these matrix elements.
+Despite the performance in simulation of the linear $\chi^{2}$ track fitter being comparable to both the \KF and \LR track fitter in terms of the fake and duplication rate and reconstruction efficiency, consideration needed to be given as to whether it would be feasible to implement it in hardware.
+This concern arose from the fact that whilst FPGAs can easily perform the addition and multiplication operations required to compute matrices, the calculation of the derivatives that form their elements will require the use of lookup tables (LUTs) to ensure latency budgets are not exceeded.
+
+As the first order approximation of the derivatives for the barrel hits only depend on the radial position of the hit (\ie one of the six possible barrel layer radial positions), only a small number of LUTs (\editComment{6?}) are required for these matrix elements.
+
 \editComment{Precision required for the elements? Expand further}
-The endcap regions however, are more complicated, with the derivatives having additional dependencies on $\tan \lambda$ and the radius of curvature of the track and an additional contribution required to account for the outer modules' strips do not provide a direct measurement of $\phi$ as they do not point towards the interaction point.
+The endcap regions however, are more complicated, with the derivatives having additional dependencies on $\tan$, $\lambda$ and the radius of curvature of the track.
+Additionally, as the outer modules' strips do not point towards the interaction point and thus do not provide a direct measurement of $\phi$,  the ... contribution required to account for 
+
+ 
 When considering the minimum parameter resolution which would not considerably impact on the track reconstruction efficiency or helix parameter resolutions, .... \editComment{Find out how many are required, what precision?}
 
 Given that the size of the LUTs required for the endcap regions considerably exceeds the resources of those present on currently available FPGAs, such as the $433 \times 10^{3}$ LUTs available on the Virtex 7 690 FPGAs used by the MP7s in the demonstrator, whilst a future FPGA could implement this track fitting algorithm, it would not be feasible to implement on a current generation chip.
@@ -393,7 +414,7 @@ From the simplified form of Eq.~\ref{eq:scatter2}, two alternative forms of the 
 \end{itemize}
 
 The initial layer dependent coefficients were obtained through experimentally determining in simulation the \MS contribution to the observed variance in $\phi$.
-Both these initial layer dependent coefficients and the initial constant coefficient of a milliradian were subsequently fine tuned through \editComment{name of iterative method?} in order to recover as much tracking efficiency as possible.
+Both these initial layer dependent coefficients and the initial constant coefficient of a milliradian were subsequently further optimised in order to recover as much tracking efficiency as  possible.
 Similarly, the \KF state $chi^{2}$ cuts for both approaches were also tuned in order to reject the optimal number of fake and duplicate tracks without compromising on tracking efficiency.
 
 During the comparative studies of these two approaches, it was observed in the results following the \DR stage that in contrast to the trend of the fraction of duplicates decreasing as \pT decreases, the fraction of duplications present increases above circa $3\GeV$, as shown in Fig~\ref{fig:2GeVfracDups}.
