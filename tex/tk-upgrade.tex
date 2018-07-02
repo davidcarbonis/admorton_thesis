@@ -489,7 +489,7 @@ The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may
 These studies were initially undertaken as part of the the robustness studies required for the December 2016 demonstrator review, focussing on recovering tracking efficiency below 3\GeV with the \HT, and were subsequently built upon with modifications to the \KF algorithm. 
 The results relating to \HT modifications were produced prior to the conclusion of the demonstrator review and were produced using the flat barrel geometry, and the results for the \KF improvements produced with the tilted barrel geometry.
 
-\subsubsection{Hough Transform Optimisation}
+\subsubsection{Hough Transform Optimisation}\label{subsubsec:lowPtOptHT}
 Lowering the \HT \pT threshold from 3\GeV to 2\GeV required modifying the GP and HT configuration parameters to ensure adequate duplication in $\phi$ and increasing the number of the \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision, respectively.
 The increased number of \qpt columns has the impact of increasing the required FPGA resources by 50\% and the output data rate from the \HT by a factor of 2.2.
 
@@ -603,7 +603,7 @@ This is illustrated by the distributions of $\chi^{2} \div \text{number of degre
 \label{fig:2GeVFlatChi2Ndf}
 \end{figure}
 
-\subsubsection{Kalman Filter Optimisation}
+\subsubsection{Kalman Filter Optimisation}\label{subsubsec:lowPtOptKF}
 Incorporation of \MS into the \KF involved including a \emph{process noise} term, namely the variance of the multiple scattering angles, to the \emph{measurement noise} (\ie measurement error) term already present in the \KF covariance matrix.
 In this updated form, the \KF now can consider stubs which are compatible with those that have undergone \MS, allowing for the reconstruction of tracks whose stubs were previously discarded and more accurate $\chi^{2}$ values which can be used to better discriminate against states of fake tracks.
 
@@ -655,11 +655,8 @@ The constant coefficient for the \MS contribution approach was used for these \K
 \end{figure}
 
 In comparison to just the \HT optimisations alone, both approaches at incorporating the effects of MS in the \KF are capable of rejecting an additional 3\% of the incorrectly reconstructed tracks, increasing the tracking efficiency by circa 0.6\%, and improving upon the track parameter resolution for low \pT tracks in \ttbar at at \PU of 200.
-The similar performance between the two coefficients though is due the amount of material traversed by a track not being constant for a single layer as 
 
-
-%The amount of material traversed previously traversed between measurements will also vary, with some tracks featuring layers which have no stubs, and material contributions from the Inner Tracker, between the Inner and Outer Trackers and services needing consideration.
-
+\editComment{Comment on resolutions, etc}
 %%% Results
 
 %% default vs Ian vs Alex
@@ -779,8 +776,12 @@ The similar performance between the two coefficients though is due the amount of
 % \addtolength{\tabcolsep}{-1ex}
 %\end{table}
 
+The similar performance between the two coefficients though is due the amount of material traversed by a track not being constant for a single layer due to the amount of material contributions in both the tracker and the prior contributions from the Inner Tracker, between the Inner and Outer Trackers and services varying as a function of $\eta$~\cite{P2TrackerTDR}.
+
+\editComment{State which one was adopted when I left things?}
 
 %%% Improvements
+\subsubsection{Future improvements}\label{subsubsec:2GeVoutlook}
 There are a number of potential improvements for tracking down to 2\GeV which merit further investigation which include:
 \begin{itemize}
 \item determining suitable coefficients as functions of both \pT and $\eta$ experimentally through simulation in order to more accurately account for the amount of material traversed and thus a more accurate description of the uncertainty in the hit position caused by \MS.
@@ -788,10 +789,3 @@ There are a number of potential improvements for tracking down to 2\GeV which me
 \item \pt dependent threshold criteria for the \HT.
 \item further optimisation of the \KF in relation to any such changes.
 \end{itemize}
-
-
-%%% OLD
-%Despite the increase in track finding efficiency and the reduction in the number of fake tracks and duplicate tracks this rudimentary approximation can achieve (figure~\ref{fig:MS1}), the are only minor improvements in the track parameters resolution.
-%This is not unexpected, given that a constant inflation in the \rphi plane hit resolution error is applied for each stub applied, whilst in reality the inflation would vary as a particle traverses material.
-%The amount of material traversed previously traversed between measurements will also vary, with same tracks featuring layers which have no stubs, and material contributions from the Inner Tracker, between the Inner and Outer Trackers and services needing consideration.
-%%%
