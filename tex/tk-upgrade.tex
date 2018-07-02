@@ -548,9 +548,19 @@ The track finding efficiencies, the mean numbers of reconstructed tracks per eve
  \addtolength{\tabcolsep}{-1ex}
 \end{table}
 
+The point made about \MS not being properly accounted for in the \KF is nicey illustrated by figure ~\ref{fig:2GeVFlatChi2Ndf} which shows the distributions of $\chi^{2} \div \text{number of degrees of freedom}$ ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ in figure~\ref{fig:2GeVFlatChi2Ndf} for genuine tracks produced by the \KF.
+If all uncertainties were accounted for, the ideal distribution of $\frac{\chi^{2}}{ndf}$ would be unity for all \pT, in contrast to the dramatic increase above approximately 3\GeV from the approximately flat distribution at order unity.
+
+%\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfChi2NdfVsInvPtFlatGeometry_5000.pdf}
+\caption{Plot of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ for genuine tracks produced by the \KF.}
+\label{fig:2GeVFlatChi2Ndf}
+\end{figure}
+
 %% Discuss the resolution plots here
-Figure~\ref{fig:htHelixParametersResVsInvPt} shows the resolutions of the four track parameters as a function of transverse momenta in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200.
-The resolutions compare well
+Figure~\ref{fig:htHelixParametersResVsInvPt} shows the resolutions of the four track parameters as a function of transverse momenta in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200 following fitting by the \KF for both before and after optimising the \HT for tracking at low transverse momenta.
+The resolutions are comparable for $\pT < 3\GeV$, with slight a degradation in the $\phi_{0}$ resulting from the decreased precision coordinates from the \HT and small improvements in the $z_{0}$ resolution due to decreased precision \HT reconstructing more correct stubs, which provides the \KF with more (and potentially better) stubs to chose from during the filtering and fitting process.
 
 \begin{figure}[htb]
 \centering
@@ -562,15 +572,6 @@ The resolutions compare well
 \caption{\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200.}
 \label{fig:htHelixParametersResVsInvPt}
 \end{figure}
-
-%This is illustrated by the distributions of $\chi^{2} \div \text{number of degrees of freedom}$ ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ in figure~\ref{fig:2GeVFlatChi2Ndf} for genuine tracks produced by the \KF, where $\frac{\chi^{2}}{ndf}$ is almost flat for a value of order unity for high \pT (low $\frac{1}{\pT}$) but begins to dramatically increase above approximately 3\GeV, in contrast to the ideal value of {$\frac{\chi^{2}}{ndf} = 1$ if all uncertainties were properly modelled.
-
-%\begin{figure}[tbp]
-%\centering
-%\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfChi2NdfVsInvPtFlatGeometry_5000.pdf}
-%\caption{Plot of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ for genuine tracks produced by the \KF.}
-%\label{fig:2GeVFlatChi2Ndf}
-%\end{figure}
 
 \subsubsection{Kalman Filter Optimisation}\label{subsubsec:lowPtOptKF}
 Incorporation of \MS into the \KF involved including a \emph{process noise} term, namely the variance of the multiple scattering angles, to the \emph{measurement noise} (\ie measurement error) term already present in the \KF covariance matrix.
