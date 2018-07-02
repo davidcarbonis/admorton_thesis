@@ -517,18 +517,18 @@ This variable precision \HT, which has been separately implemented in firmware, 
 %% This right-aligns numbers in column, but centers them under column title.
 %  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{6ex}}}
 %   \hline
-%   \bf{Configuration} & \bf{Stage} & \bf{Efficiency [\%]} & \multicolumn{1}{r}{\bf{Total \# of tracks}} & \multicolumn{1}{r}{\bf{\# of fakes}} & \multicolumn{1}{r}{\bf{\# of duplicates}}  \\
+%   \bf{Configuration} & \bf{Stage} & \bf{Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{\# of fakes}} & \multicolumn{1}{r}{\bf{\# of duplicates}}  \\
 %        \hline
-%    Default & \bf{HT}     &  97.1 &  331  &  139 &   126 \\  
-%    & \bf{Full chain}     &  94.4 &  79   &  16  &     3 \\      
+%    Default & \bf{HT}     &  93.6 &  719  &  247 &   318 \\  
+%    & \bf{Full chain}     &  89.2 &  196   &  42  &     10 \\      
 %   \hline
 %        \hline
-%    Merge & \bf{HT}     &  97.1 &  331  &  139 &   126 \\  
-%    & \bf{Full chain}     &  94.4 &  79   &  16  &     3 \\      
+%    Merge & \bf{HT}     &  94.5 &  808  &  330 &   319 \\  
+%    & \bf{Full chain}     &  89.8 &  209   &  53  &     8 \\      
 %   \hline
 %        \hline
-%    Optimised & \bf{HT}     &  97.1 &  331  &  139 &   126 \\  
-%    & \bf{Full chain}     &  94.4 &  79   &  16  &     3 \\      
+%    Optimised & \bf{HT}     &  94.5 &  808  &  330 &   319 \\  
+%    & \bf{Full chain}     &  90.0 &  213   &  56  &     8 \\      
 %   \hline
 %   
 % \end{tabular}
@@ -573,6 +573,23 @@ This variable precision \HT, which has been separately implemented in firmware, 
 %Perfect algorithmic fitting efficiency(post-cut) = 2190/2439 = 0.8979 +- 0.0061 (no incorrect hits)
 %=========================================================================
 %% optimised KF
+%=========================================================================
+%               TRACK-FINDING SUMMARY (before track fit)
+%Number of track candidates found per event = 808.2100 +- 18.1206
+%                     with mean stubs/track = 7.4645
+%Fraction of track cands that are fake = 0.4080
+%Fraction of track cands that are genuine, but extra duplicates = 0.3948
+%Algorithmic tracking efficiency = 2304/2439 = 0.9446 +- 0.0046
+%Perfect algorithmic tracking efficiency = 981/2439 = 0.4022 +- 0.0099 (no incorrect hits)
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: KF4ParamsComb
+%Number of fitted track candidates found per event = 212.9900 +- 2.8835
+%                            with mean stubs/track = 4.0000
+%Fraction of fitted tracks that are fake = 0.2633
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0390
+%Algorithmic fitting efficiency (post-cut) = 2195/2439 = 0.9000 +- 0.0061
+%Perfect algorithmic fitting efficiency(post-cut) = 2195/2439 = 0.9000 +- 0.0061 (no incorrect hits)
+%=========================================================================
 
 
 Whilst the decreased precision HT cells at low \pT recovers a proportion of the lost tracks, figure~\ref{fig:2GeVFlatEff}  also shows that the \KF's performance is significantly degraded for $\pT < 3 \GeV$ compared to $\pT > 3 \GeV$.
@@ -738,6 +755,29 @@ The similar performance between the two coefficients though is due the amount of
 %Algorithmic fitting efficiency = 110553/117377 = 0.9419 +- 0.0007
 %Perfect algorithmic fitting efficiency = 110553/117377 = 0.9419 +- 0.0007 (no incorrect hits)
 %=========================================================================
+ 
+%\begin{table}[htbp]
+%\topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain (\HT + \KF + \DR) for the optiminal \HT configuration discussed above and the three differing \KF configurations where \MS is not considered (\emph{no \MS}), a constant \MS coefficient (\emph{$k$}) is used and a layer depedent \MS coefficient (\emph{$k(layer)$})is used. The track finding efficiencies, the mean numbers of reconstructed tracks per event in the entire tracker, and the number of those tracks which are fakes or duplicates, are given using the efficiency definitions described in Chapter~\ref{TmttSimStudies}.}
+%\label{tab:trackFindingPerformance2GeVKF}
+%  \centering
+%% This increases column spacing.
+%  \addtolength{\tabcolsep}{1ex}
+%% This right-aligns numbers in column, but centers them under column title.
+%  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{6ex}}}
+%   \hline
+%   \bf{Configuration} & \bf{Stage} & \bf{Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{\# of fakes}} & \multicolumn{1}{r}{\bf{\# of duplicates}}  \\
+%   \hline
+%     & \bf{HT}     &  96.2 &  752  &  212 &   356 \\  
+%   No \MS  & \bf{Full Chain}     &  93.6 &  216   &  29  &     20 \\      
+%   \hline
+%   const $k$  & \bf{Full Chain}     & 90.0 &  222   &  22  &     31 \\      
+%   \hline
+%    $k(layer)$ & \bf{Full Chain}     &  94.2 &  222   &  24  &     27 \\  
+%   \hline
+%   
+% \end{tabular}
+% \addtolength{\tabcolsep}{-1ex}
+%\end{table}
 
 
 %%% Improvements
