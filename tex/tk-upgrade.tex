@@ -502,11 +502,39 @@ This variable precision \HT, which has been separately implemented in firmware, 
 \centering
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/htTrackingEffVsInvPtFlatGeometry_5000.pdf}
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
-\caption{Plots post-\HT (left) and post-\KF (right) showing tracking efficiency in low pT range with only the number of \qpt columns increased (red), with the increased number of \qpt columns and HT cell merging (black), and with the increased number of columns, HT cell merging and \KF optimisation(blue) for \ttbar events at \PU of 200. \editComment{Larger stats > 1000 + neater plots + legend to be added later.}}
+\caption{Plots post-\HT (left) and post-\KF (right) showing tracking efficiency in low pT range with only the number of \qpt columns increased (red), with the increased number of \qpt columns and \HT cell merging (black), and with the increased number of columns, HT cell merging and \KF state cuts optimisation(blue) for \ttbar events at \PU of 200. \editComment{Larger stats > 1000 + neater plots + legend to be added later.}}
 \label{fig:2GeVFlatEff}	
 \end{figure}
 
+Table~\ref{tab:trackFindingPerformance2GeVHT} shows how 
 \editComment{Add table or plots to illustrate impact on duplicate/fake rates and resolutions? Here or in appendices?}
+
+\begin{table}[htbp]
+\topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain (\HT + \KF + \DR) for the configurations of only increasing the number of \qpt columns (\emph{Default}), additionally using \HT cell merging (\emph{Merge}) and including \KF state cuts optimisation(\emph{Optimised}). The track finding efficiencies, the mean numbers of reconstructed tracks per event in the entire tracker, and the number of those tracks which are fakes or duplicates, are given using the efficiency definitions described in Chapter~\ref{TmttSimStudies}.}
+\label{tab:trackFindingPerformance2GeVHT}
+  \centering
+% This increases column spacing.
+  \addtolength{\tabcolsep}{1ex}
+% This right-aligns numbers in column, but centers them under column title.
+  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{6ex}}}
+   \hline
+   \bf{Configuration} & \bf{Stage} & \bf{Efficiency [\%]} & \multicolumn{1}{r}{\bf{Total \# of tracks}} & \multicolumn{1}{r}{\bf{\# of fakes}} & \multicolumn{1}{r}{\bf{\# of duplicates}}  \\
+        \hline
+    Default & \bf{HT}     &  97.1 &  331  &  139 &   126 \\  
+    & \bf{Full chain}     &  94.4 &  79   &  16  &     3 \\      
+   \hline
+        \hline
+    Merge & \bf{HT}     &  97.1 &  331  &  139 &   126 \\  
+    & \bf{Full chain}     &  94.4 &  79   &  16  &     3 \\      
+   \hline
+        \hline
+    Optimised & \bf{HT}     &  97.1 &  331  &  139 &   126 \\  
+    & \bf{Full chain}     &  94.4 &  79   &  16  &     3 \\      
+   \hline
+   
+ \end{tabular}
+ \addtolength{\tabcolsep}{-1ex}
+\end{table}
 
 Whilst the decreased precision HT cells at low \pT recovers a proportion of the lost tracks, Fig.~\ref{fig:2GeVFlatEff}  also shows that the \KF's performance is significantly degraded for $\pT < 3 \GeV$ compared to $\pT > 3 \GeV$.
 These additional low \pT track losses are the result of the \KF not modelling the scattering of the expected hit positions.
@@ -572,14 +600,19 @@ The constant coefficient for the \MS contribution approach was used for these \K
 
 In comparison to just the \HT optimisations alone, both approaches at incorporating the effects of MS in the \KF are capable of rejecting an additional 3\% of the incorrectly reconstructed tracks, increasing the tracking efficiency by circa 0.6\%, and improving upon the track parameter resolution for low \pT tracks in \ttbar at at \PU of 200.
 
-The similar performance between the two coefficients though implies that parametrising the coefficient as a function of the layer ID, does not 
+
+%%% Say something about the two similar approaches
+
+the coefficient as a function of the layer ID, does not 
 
 
 %The amount of material traversed previously traversed between measurements will also vary, with same tracks featuring layers which have no stubs, and material contributions from the Inner Tracker, between the Inner and Outer Trackers and services needing consideration.
 
 %%% Results
 
-%%% Require ROOT files for
+%% default vs Ian vs Alex
+%% track efficiency vs pT; fake rate; pT res, eta res, phi0 res, z0 res
+
 %%% No merge
 %=========================================================================
 %               TRACK-FINDING SUMMARY AFTER HOUGH TRANSFORM
