@@ -286,7 +286,7 @@ By defining the matrices $D_{ij} = \frac{1}{\sigma_{i}} \frac{\delta s_{i}}{\del
 
 Eqn.~\ref{eq:chi4} gives a linear form which can be solved for $\delta h$ through updating the residuals with respect to the seeded track candidate.
 
-Calculation of the derivatives for the barrel layer and endcap disk hits from this general form, including a correction factor for $\phi$ in the outer disks to account for the fact that these modulesb b do not point directly towards the interaction point, are given in~\ref{app:chi2}.
+Calculation of the derivatives for the barrel layer and endcap disk hits from this general form, including a correction factor for $\phi$ in the outer disks to account for the fact that these modules do not point directly towards the interaction point, are given in~\ref{app:chi2}.
 
 Similarly the $chi^{2}$ of the fit can also be expressed in a linear form:
 
@@ -297,7 +297,7 @@ chi^{2} = (\delta s^{T} + D \delta h)^{T}(\delta s^{T} + D \delta h)\;.
 \label{eq:chi5}
 \end{equation}
 
-\subsubsection{Software Results}\label{subsubsec:chi2software}
+\subsubsection{Software Results and Firmware Feasibility}\label{subsubsec:chi2software}
 Initially a floating point software implementation of the algorithm, using the derivatives derived from the general form of Eqn.~\ref{eq:chi4} and the $chi^{2}$ of the fit from  Eqn.~\ref{eq:chi5}, was used to validate the algorithm and optimise its performance.
 
 Given that a significant proportion of tracks reconstructed by the \HT contain at least one incorrect stub, up to 40\% for \ttbar events at \PU of 200, and each additional iteration of the fitting algorithm yields diminishing improvements, the residuals associated to each stub were considered following each fitting iteration.
@@ -308,6 +308,7 @@ Therefore once the residuals of each stub were known following a fit, if the stu
 During the optimisation of the cut, it was found that this approach had the potential to leave a track with fewer stubs than the minimum of four required required and lead to a matched track being discarded.
 To avoid discarding matched tracks whilst retaining the benefits of improving the purity of the tracks and their helix parameter resolutions and removing fake tracks, a looser residual cut was applied for tracks only comprised of four stubs.
 
+Figs.~\ref{} 
 %%%100 events - 15 iterations (default)
 %=========================================================================
 %               TRACK-FINDING SUMMARY (before track fit)
@@ -442,44 +443,45 @@ To avoid discarding matched tracks whilst retaining the benefits of improving th
 %
 %%% discuss results
 \editComment{Discuss results!}
-%%% Discuss making approximations and reducing precision to that of digital input
-Following the validation of the floating point implementation of the linear $\chi^{2}$ track fitter in software, 
-
 \editComment{Comment on purity, resolution, fake rate, and duplicate rate}
 \editComment{Impact on killing genuine stubs assoc. with track?}
 
-\editComment{Results in this sec done with 100 ttbar+pu200 events. Larger stats (~5000) runs will be done prior to final draft.}
+%%% Discuss making approximations and reducing precision to that of digital input
+Following the validation the floating point implementation of the linear $\chi^{2}$ track fitter algorithm's performance in software, a version using approximated calculations of the track derivatives and fixed precision parameters was developed in order to help determine the feasibility of implementing the algorithm in hardware .
 
-\subsubsection{Firmware Feasibility}\label{subsubsec:chi2firmware}
-%% Matrix sizes
-Despite the performance in simulation of the linear $\chi^{2}$ track fitter being comparable to both the \KF and \LR track fitter in terms of the fake and duplication rate and reconstruction efficiency, consideration needed to be given as to whether it would be feasible to implement it in hardware.
-This concern arose from the fact that whilst FPGAs can easily perform the addition and multiplication operations required to compute matrices, the calculation of the derivatives that form their elements will require the use of lookup tables (LUTs) to ensure latency budgets are not exceeded.
+The resource constraints facing a L1 track finder rules out the use of floating-point calculations in firmware, given their resource intensive nature, necessitating the use of fixed-point arithmetic.
+As the precision of the input track parameters will be limited by the number of bits the \HT uses to store each parameter, the precision used by was the natural starting point.
 
-As the first order approximation of the derivatives for the barrel hits only depend on the radial position of the hit (\ie one of the six possible barrel layer radial positions), only a small number of LUTs (\editComment{6?}) are required for these matrix elements.
-
-\editComment{Precision required for the elements? Expand further}
-The endcap regions however, are more complicated, with the derivatives having additional dependencies on $\tan$, $\lambda$ and the radius of curvature of the track.
-Additionally, as the outer modules' strips do not point towards the interaction point and thus do not provide a direct measurement of $\phi$,  the ... contribution required to account for 
-
- 
 When considering the minimum parameter resolution which would not considerably impact on the track reconstruction efficiency or helix parameter resolutions, .... \editComment{Find out how many are required, what precision?}
 
-Given that the size of the LUTs required for the endcap regions considerably exceeds the resources of those present on currently available FPGAs, such as the $433 \times 10^{3}$ LUTs available on the Virtex 7 690 FPGAs used by the MP7s in the demonstrator, whilst a future FPGA could implement this track fitting algorithm, it would not be feasible to implement on a current generation chip.
-As one of the motivating factors behind this TFP design was to be able to demonstrate a complete system with currently available technology, it was determined that further development on the linearised $chi^{2}$ fitter would not be continued for the immediate future.
+\editComment{Results in this sec done with 100 ttbar+pu200 events. Larger stats (~5000) runs will be done prior to final draft.}
+
+%% Matrix sizes
+
+Whilst FPGAs can easily perform the addition and multiplication operations required to compute the matrices discussed in Chatper~\ref{subsubsec:chi2maths}, the calculation of the derivatives that form their elements would not trivial for them given the presence of divisions and trigonometric functions.
+The use of lookup tables (LUTs) would therefore be essential in order to ensure latency budgets are not exceeded.
+Using approximations for the track derivatives' calculations 
+
+As the first order approximation of the derivatives for the barrel hits only depend on the radial position of the hit (\ie one of the six possible barrel layer radial positions), their implementation would be trivial with only a small number of LUTs (\editComment{insert number and explain}) being required.
+
+The endcap regions however, are more complicated, with the derivatives having additional dependencies on $\tan$, $\lambda$, the radius of curvature of the track, and for the outer modules, a correction factor to obtain a measurement of $\phi$, 
 
 
+As shown above, the size of the LUTs required for the endcap regions considerably exceeds the resources of those present on currently available FPGAs, such as the $433 \times 10^{3}$ LUTs available on the Virtex 7 690 FPGAs used by the MP7s in the demonstrator.
+Whilst a future FPGA could implement this track fitting algorithm, it would not be feasible to implement on a current generation chip.
+Given that one of the motivating factors behind this TFP design was to be able to demonstrate a complete system with currently available technology, and at the time of development the \KF had demonstrated superior performance and been shown to be feasible to implement in firmware, it was determined that work on the linearised $chi^{2}$ fitter would not be continued for the immediate future.
 
 
-Each CLB has 2 slices, 8 luts and 16 flip flops (8 storage element per slice). So multiply the number of slices in the data sheet by four and you get the number of luts
+%Each CLB has 2 slices, 8 luts and 16 flip flops (8 storage element per slice). So multiply the number of slices in the data sheet by four and you get the number of luts
 
 \subsubsection{Outlook}\label{subsubsec:chi2outlook}
 %%%Future work
-For this track fitting algorithm to be considered in the future, the following would require further study:
+For the linearised $chi^{2}$ track fitting algorithm to be considered in the future, the following would to be addressed:
 \begin{itemize}
-\item Improving the purity of the fitted tracks. Currently the \KF and \LR have achieve 100\% purity through enforcing 
-\editComment{Remark on LR +KF having 100\% purity}.
-\item Whether or not the inclusion of the fifth helix parameter, the vertex impact parameter in the x-y plane, $d_{0}$, would provide comparable performance to other fitting algorithms which produce it.
-\item Demonstrating the feasibility 
+\item An improved track fitting efficiency which obtains a high, if not 100\%, tracks purity, in order to be competitive with both the \KF and \LR which are currently able achieve 100\% purity.
+\item Can the algorithm resources be reduced and/or are there sufficient resources on the board be implement the algorithm with.
+\item Whether or not the inclusion of the fifth helix parameter, the vertex impact parameter in the x-y plane, $d_{0}$, would provide comparable or improved performance to other fitting algorithms which produce it.
+\item The cause of the increased number of duplicate tracks compared to the \KF, and whether or not they can be reduced to a similar level.
 \end{itemize}
 
 \subsection{2 GeV Tracking}\label{subsec:Tmtt2GeV}
@@ -553,8 +555,9 @@ Similarly, the \KF state $chi^{2}$ cuts for both approaches were also tuned in o
 During the comparative studies of these two approaches, it was observed in the results following the \DR stage that in contrast to the trend of the fraction of duplicates decreasing as \pT decreases, the fraction of duplications present increases above circa $3\GeV$, as shown in Fig~\ref{fig:2GeVfracDups}.
 The presence of this trend following in tracks produced by the \HT prior to tracking fitting and \DR, implies that the \HT produces more duplicates at low \pT is the cause of this rather than a shortcoming of the \DR algorithm.
 As the fraction of duplicate tracks produced where decreased precision \HT cells are used is well controlled, the \pT threshold for the $2 \times 2$ merging of \HT cells was increased from $2.7\GeV$ to $3.5\GeV$.
-All results presented for the two \MS coefficient forms were produced using this increased threshold. 
-This change also had the additional benefit of recovering an additional 0.2\% of the tracks which were previously lost to \MS.
+Whilst an increase in the duplicate rate is observed between $3.2\GeV$ and $5\GeV$ in Fig.~\ref{fig:2GeVfracDups}, a decreased number of duplicates were produced below $3.5\GeV$ which lead to an overall reduction in the number of duplicates produced of circa 2.8\%.
+The increased \HT cell merging threshold also had the additional benefit of recovering an additional 0.2\% of the tracks which were previously lost to \MS.
+Consequently, this change was adopted by the project and all the results presented below for the two \MS coefficient forms were produced using this increased threshold. 
 
 \begin{figure}[tbp]
 \centering
@@ -567,9 +570,12 @@ The constant coefficient for the \MS contribution approach was used for these \K
 \label{fig:2GeVfracDups}
 \end{figure}
 
-Both approaches 
+In comparison to just the \HT optimisations alone, both approaches at incorporating the effects of MS in the \KF are capable of rejecting an additional 3\% of the incorrectly reconstructed tracks, increasing the tracking efficiency by circa 0.6\%, and improving upon the track parameter resolution for low \pT tracks in \ttbar at at \PU of 200.
 
-Whilst the similar performance 
+The similar performance between the two coefficients though implies that parametrising the coefficient as a function of the layer ID, does not 
+
+
+%The amount of material traversed previously traversed between measurements will also vary, with same tracks featuring layers which have no stubs, and material contributions from the Inner Tracker, between the Inner and Outer Trackers and services needing consideration.
 
 %%% Results
 
@@ -666,19 +672,20 @@ Whilst the similar performance
 %=========================================================================
 
 
-
-%%%
-%Despite the increase in track finding efficiency and the reduction in the number of fake tracks and duplicate tracks this rudimentary approximation can achieve (Fig.~\ref{fig:MS1}), the are only minor improvements in the track parameters resolution.
-%This is not unexpected, given that a constant inflation in the \rphi plane hit resolution error is applied for each stub applied, whilst in reality the inflation would vary as a particle traverses material.
-%The amount of material traversed previously traversed between measurements will also vary, with same tracks featuring layers which have no stubs, and material contributions from the Inner Tracker, between the Inner and Outer Trackers and services needing consideration.
-%%%
-
 %%% Improvements
 There are a number of potential improvements for tracking down to 2\GeV which merit further investigation which include:
 \begin{itemize}
 \item determining suitable coefficients as functions of both \pT and $\eta$ experimentally through simulation in order to more accurately account for the amount of material traversed and thus a more accurate description of the uncertainty in the hit position caused by \MS.
-\item separate \KF $\chi^{2}$ cuts for the \rphi and r-z planes ... WHY?
- in order to reflect the lack of multiple scattering contributions to the r-z plane.
+\item separate \KF $\chi^{2}$ cuts for the \rphi and r-z planes ... in order to reflect the lack of multiple scattering contributions to the r-z plane.
 \item \pt dependent threshold criteria for the \HT.
 \item further optimisation of the \KF in relation to any such changes.
 \end{itemize}
+
+
+
+
+%%% OLD
+%Despite the increase in track finding efficiency and the reduction in the number of fake tracks and duplicate tracks this rudimentary approximation can achieve (Fig.~\ref{fig:MS1}), the are only minor improvements in the track parameters resolution.
+%This is not unexpected, given that a constant inflation in the \rphi plane hit resolution error is applied for each stub applied, whilst in reality the inflation would vary as a particle traverses material.
+%The amount of material traversed previously traversed between measurements will also vary, with same tracks featuring layers which have no stubs, and material contributions from the Inner Tracker, between the Inner and Outer Trackers and services needing consideration.
+%%%
