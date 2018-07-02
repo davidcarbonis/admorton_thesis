@@ -502,7 +502,7 @@ The increased number of \qpt columns has the impact of increasing the required F
 Without any further modifications, there is a considerable degradation in the track reconstruction efficiency by the \HT in the range $2 < \pt < 2.7$\GeVc, due to these low momentum tracks being dominated by multiple scattering, resulting in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
 To mitigate against such track reconstruction efficiency losses, using a preexisting feature that had been separately implemented in firmware, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two (\ie $2 \times 2$ cells were merged).
 Additionally, the \KF state $\chi^2$ cuts for this low \pT range were optimised to reflect the increased hit position uncertainty resulting from the decreased precision of the hits in these \HT cells and thus reduce the number of duplicate and fake tracks as far as possible without impacting on the \HT track reconstruction efficiency.
-Figure~\ref{fig:2GeVFlatEff} shows how the tracking efficiency improves following the use of the variable precision \HT with and without optimised \KF state cuts for both following the \HT and following the full demonstrator chain. 
+Figure~\ref{fig:2GeVFlatEff} shows how the tracking efficiency improves following the use of the variable precision \HT with and without optimised \KF state cuts after both the \HT and the full demonstrator chain. 
 
 \begin{figure}[tbp]
 \centering
@@ -524,6 +524,7 @@ The duplicate removal algorithm however, remains effective at removing almost al
 \begin{table}[htbp]
 \topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain  for the configurations of only increasing the number of \qpt columns (\emph{Default}), additionally using \HT cell merging and the optimised \KF state cuts (\emph{Optimised}).
 The track finding efficiencies, the mean numbers of reconstructed tracks per event in the entire tracker, and the number of those tracks which are fakes or duplicates, are given using the efficiency definitions described in Chapter~\ref{TmttSimStudies}.
+\editComment{better to quote non-integer numbers and fractions of duplicates/fakes?}.
 }
 \label{tab:trackFindingPerformance2GeVHT}
   \centering
@@ -618,16 +619,30 @@ Consequently, this change was adopted by the project and all the results present
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/htFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
 \caption{The fraction of genuine tracks with duplicates as a function of $\frac{1}{\pT}$ following reconstruction by the \HT (left) and fitting and filtering by the \KF and \DR (right) for where the \HT cell merging \pT threshold is set to 2.7\GeV (red) and 3.5\GeV (blue). 
-The constant coefficient for the \MS contribution approach was used for these \KF results.
+The constant coefficient for the \MS contribution was used for these \KF results.
 }
 \label{fig:2GeVfracDups}
 \end{figure}
 
-Table~\ref{trackFindingPerformance2GeVKF} shows that compared to just the \HT optimisations alone, both the \MS coefficients used in the \KF are capable of rejecting an additional 3\% of the incorrectly reconstructed tracks, increasing the tracking efficiency by circa 0.6\%.
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtTiltedGeometry_5000.pdf}
+\caption{Plots showing tracking efficiency as a function of $\frac{1}{\pT}$ for \ttbar events at \PU of 200 after the full chain has been run, where the \KF has not been modified to take \MS into account (red), a constant coefficient for \MS is used (black) and a layer dependent coefficient for \MS is used (blue).
+}
+\label{fig:2GeVTiltEff}	
+\end{figure}
+
+Figure~\ref{fig:2GeVTiltEff} shows how the tracking efficiency for the whole chain improves when \MS is accounted for in the \KF.
+The similar performance observed between the two coefficients in Figure~\ref{fig:2GeVTiltEff} and table~\ref{trackFindingPerformance2GeVKF} is due the amount of material traversed by a track not being constant for a single layer as the amount of material contributions in both the tracker and the prior contributions from the Inner Tracker, between the Inner and Outer Trackers and services varying as a function of $\eta$~\cite{P2TrackerTDR}.
+Table~\ref{trackFindingPerformance2GeVKF} also shows that compared to just the \HT optimisations alone, for both \MS coefficients, the \KF is more capable at rejecting incorrectly reconstructed tracks by up to an additional 3-4\%.
+In contrast though, the duplicate increases for both coefficients by 3-5\% for the full chain, with the increase in duplicates occurring around the \pT at which reduced precision of \HT cells are used.
+At the time of writing this chapter, it is not understood how incorporating \MS into the \KF causes this. \editComment{It is hoped that by the time of submission, someone will have figured this out.}
+%Tracks with \pt approaching the \pt threshold at which reduced precision of \HT cells are used are have the potential to be built out of both stubs from both the full and reduced precision \HT cells.
 
 \begin{table}[htbp]
 \topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain (\HT + \KF + \DR) for the three differing \KF configurations where \MS is not considered (\emph{no \MS}), a constant \MS coefficient (\emph{$k$}) is used and a layer depedent \MS coefficient (\emph{$k(layer)$})is used. 
 The track finding efficiencies, the mean numbers of reconstructed tracks per event in the entire tracker, and the number of those tracks which are fakes or duplicates, are given using the efficiency definitions described at the start of Chapter~\ref{TmttSimStudies}.
+\editComment{better to quote non-integer numbers and fractions of duplicates/fakes?}.
 }
 \label{tab:trackFindingPerformance2GeVKF}
   \centering
@@ -651,9 +666,8 @@ The track finding efficiencies, the mean numbers of reconstructed tracks per eve
 \end{table}
 
 Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the four track parameters as a function of transverse momenta in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200.
-For both \MS coefficients, the effects of \MS which dominate at low transverse momenta are significantly 
-
-\editComment{Comment on resolutions, rates, chi2, etc}
+Both \MS coefficients 
+... the effects of \MS which dominate at low transverse momenta are significantly 
 
 \begin{figure}[htb]
 \centering
@@ -662,11 +676,9 @@ For both \MS coefficients, the effects of \MS which dominate at low transverse m
 \\
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtTiltedGeometry_5000.pdf}
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/etaResVsInvPtTiltedGeometry_5000.pdf}
-\caption{\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated s\ttbar events at \PU of 200.}
+\caption{\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200.}
 \label{fig:kfHelixParametersResVsInvPt}
 \end{figure}
-
-The similar performance between the two coefficients though is due the amount of material traversed by a track not being constant for a single layer as the amount of material contributions in both the tracker and the prior contributions from the Inner Tracker, between the Inner and Outer Trackers and services varying as a function of $\eta$~\cite{P2TrackerTDR}.
 
 %%% Future Improvements?
 \subsubsection{Future improvements}\label{subsubsec:2GeVoutlook}
@@ -674,6 +686,7 @@ There are a number of potential improvements for tracking down to 2\GeV which me
 \begin{itemize}
 \item determining suitable coefficients as functions of both \pT and $\eta$ experimentally through simulation in order to more accurately account for the amount of material traversed and thus a more accurate description of the uncertainty in the hit position caused by \MS.
 \item whether separate \KF $\chi^{2}$ cuts for the \rphi and r-z planes could enhance performance, given that the dominant uncertainty contribution for the former varies depending on $\pT$.
+\item further studies into optimising the \pT threshold used for reducing the precision of \HT cells.
 \item \pt dependent threshold criteria for the \HT.
 \item further optimisation of the \KF in relation to any such changes.
 \end{itemize}
