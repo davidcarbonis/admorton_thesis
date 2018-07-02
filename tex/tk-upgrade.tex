@@ -232,6 +232,8 @@ By performing a second pass through the rejected tracks and rescuing those which
 A more detailed description of the firmware implementation of the \DR for the demonstrator system is discussed in~\cite{TMTT_JINST}.
 
 \section{Simulation Studies}\label{sec:TmttSimStudies}
+\editComment{Add legend to plots}
+
 During the development of the \emph{TMTT} demonstrator system both before and following the December 2016 review, the author was involved in a number of simulation studies, the more substantive of which are presented below.
 
 For these results, the reconstruction efficiency is measured relative to all generated charged particles from the primary interaction that produce stubs in at least four layers of the tracker and lies within $\pT > 3\GeV$, $|\eta| < 2.4$, $|z_{0}| < 30\cm$ and $d_{xy} < 1\cm$.
@@ -607,7 +609,6 @@ Consequently, this change was adopted by the project and all the results present
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
 \caption{The fraction of genuine tracks with duplicates as a function of $\frac{1}{\pT}$ following reconstruction by the \HT (left) and fitting and filtering by the \KF and \DR (right) for where the \HT cell merging \pT threshold is set to 2.7\GeV (red) and 3.5\GeV (blue). 
 The constant coefficient for the \MS contribution approach was used for these \KF results.
-\editComment{Add legend to plots and polish plots}
 }
 \label{fig:2GeVfracDups}
 \end{figure}
@@ -653,11 +654,9 @@ For both \MS coefficients, the effects of \MS which dominate at low transverse m
 \label{fig:kfHelixParametersResVsInvPt}
 \end{figure}
 
-The similar performance between the two coefficients though is due the amount of material traversed by a track not being constant for a single layer due to the amount of material contributions in both the tracker and the prior contributions from the Inner Tracker, between the Inner and Outer Trackers and services varying as a function of $\eta$~\cite{P2TrackerTDR}.
+The similar performance between the two coefficients though is due the amount of material traversed by a track not being constant for a single layer as the amount of material contributions in both the tracker and the prior contributions from the Inner Tracker, between the Inner and Outer Trackers and services varying as a function of $\eta$~\cite{P2TrackerTDR}.
 
-\editComment{State which one was adopted when I left things?}
-
-%%% Improvements
+%%% Future Improvements?
 \subsubsection{Future improvements}\label{subsubsec:2GeVoutlook}
 There are a number of potential improvements for tracking down to 2\GeV which merit further investigation which include:
 \begin{itemize}
