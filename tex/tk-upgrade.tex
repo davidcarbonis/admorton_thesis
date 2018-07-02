@@ -500,19 +500,57 @@ Lowering the \HT \pT threshold from 3\GeV to 2\GeV required modifying the GP and
 The increased number of \qpt columns has the impact of increasing the required FPGA resources by 50\% and the output data rate from the \HT by a factor of 2.2.
 
 Without any further modifications, there is a considerable degradation in the track reconstruction efficiency by the \HT in the range $2 < \pt < 2.7$\GeVc, due to these low momentum tracks being dominated by multiple scattering, resulting in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
-To mitigate against such track reconstruction efficiency losses, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two (\ie $2 \times 2$ cells were merged).
-In addition to this, \KF state $\chi^2$ cuts for this low \pT range were optimised to reflect the decreased precision of the hits in these \HT cells and thus better reduce the number of duplicate and fake tracks as far as possible without impacting on the \HT track reconstruction efficiency.
-This variable precision \HT, which has been separately implemented in firmware, together with the optimised \KF state cuts, has been shown in simulation to recover some of these losses, as shown in figure~\ref{fig:2GeVFlatEff}.
+To mitigate against such track reconstruction efficiency losses, using a preexisting feature that had been separately implemented in firmware, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2 < \pt < 2.7$\GeVc was reduced by a factor of two (\ie $2 \times 2$ cells were merged).
+Additionally, the \KF state $\chi^2$ cuts for this low \pT range were optimised to reflect the increased hit position uncertainty resulting from the decreased precision of the hits in these \HT cells and thus reduce the number of duplicate and fake tracks as far as possible without impacting on the \HT track reconstruction efficiency.
+Figure~\ref{fig:2GeVFlatEff} shows how the tracking efficiency improves following the use of the variable precision \HT with and without optimised \KF state cuts for both following the \HT and following the full demonstrator chain. 
 
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/htTrackingEffVsInvPtFlatGeometry_5000.pdf}
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
-\caption{Plots post-\HT (left) and post-\KF (right) showing tracking efficiency in low pT range with only the number of \qpt columns increased (red), with the increased number of \qpt columns and \HT cell merging (black), and with the increased number of columns, HT cell merging and \KF state cuts optimisation(blue) for \ttbar events at \PU of 200. \editComment{Larger stats > 1000 + neater plots + legend to be added later.}}
+\caption{Plots post-\HT (left) and post-\KF (right) showing tracking efficiency in low pT range with only the number of \qpt columns increased (red) and with the increased number of columns, HT cell merging and \KF state cuts optimisation(blue) for \ttbar events at \PU of 200.
+\editComment{Plots require legend and removal of black coloured data points!}
+}
 \label{fig:2GeVFlatEff}	
 \end{figure}
 
-\editComment{Add plots to illustrate impact on resolutions? Here or in appendices? Worth including a table instead of plots? Table will be good for showing how different parts of the chain compare}
+%%% Disucss table here
+Table~\ref{tab:trackFindingPerformance2GeVHT} shows the impact that the decreased precision \HT cells and optimised \KF state cuts have on tracking performance both following the \HT and the full chain.
+It is clear that whilst the merging of adjacent \HT cells recovers  tracks which did not previously intersect within a single \HT cell, the tracking efficiency following the full chain is significantly less than that post-\HT.
+As shown in Figure~\ref{fig:2GeVFlatEff}, these losses occur for tracks where the particle's transverse momenta is less than 3\GeV, as the \KF does not take the effects of \MS into account.
+This shortcoming of the \KF also accounts for it not being as efficient at removing fake tracks, with an observed increase of 5\% in the fraction of fakes reconstructed.
+The duplicate removal algorithm however, remains effective at removing almost all the duplicates.
+
+\begin{table}[htbp]
+\topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain  for the configurations of only increasing the number of \qpt columns (\emph{Default}), additionally using \HT cell merging and the optimised \KF state cuts (\emph{Optimised}).
+The track finding efficiencies, the mean numbers of reconstructed tracks per event in the entire tracker, and the number of those tracks which are fakes or duplicates, are given using the efficiency definitions described in Chapter~\ref{TmttSimStudies}.
+}
+\label{tab:trackFindingPerformance2GeVHT}
+  \centering
+% This increases column spacing.
+  \addtolength{\tabcolsep}{1ex}
+% This right-aligns numbers in column, but centers them under column title.
+  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{6ex}}}
+   \hline
+   \bf{Configuration} & \bf{Stage} & \bf{Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{\# of fakes}} & \multicolumn{1}{r}{\bf{\# of duplicates}}  \\
+        \hline
+    Default & \bf{HT}     &  93.6 &  713  &  242 &   317 \\  
+    & \bf{Full chain}     &  89.2 &  194   &  41  &     10 \\      
+%   \hline
+%    Merge & \bf{HT}     &  94.6 &  799  &  324 &   317 \\  
+%    & \bf{Full chain}     &  89.8 &  206   &  53  &     8 \\      
+    \hline
+    Optimised & \bf{HT}     &  94.6 &  799  &  324 &   317 \\  
+    & \bf{Full chain}     &  90.0 &  210   &  55  &     8 \\      
+   \hline
+   
+ \end{tabular}
+ \addtolength{\tabcolsep}{-1ex}
+\end{table}
+
+%% Discuss the resolution plots here
+Figure~\ref{fig:htHelixParametersResVsInvPt} shows the resolutions of the four track parameters as a function of transverse momenta in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200.
+The resolutions compare well
 
 \begin{figure}[htb]
 \centering
@@ -525,43 +563,14 @@ This variable precision \HT, which has been separately implemented in firmware, 
 \label{fig:htHelixParametersResVsInvPt}
 \end{figure}
 
-%\begin{table}[htbp]
-%\topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain (\HT + \KF + \DR) for the configurations of only increasing the number of \qpt columns (\emph{Default}), additionally using \HT cell merging (\emph{Merge}) and including \KF state cuts optimisation(\emph{Optimised}). The track finding efficiencies, the mean numbers of reconstructed tracks per event in the entire tracker, and the number of those tracks which are fakes or duplicates, are given using the efficiency definitions described in Chapter~\ref{TmttSimStudies}.}
-%\label{tab:trackFindingPerformance2GeVHT}
-%  \centering
-%% This increases column spacing.
-%  \addtolength{\tabcolsep}{1ex}
-%% This right-aligns numbers in column, but centers them under column title.
-%  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{6ex}}}
-%   \hline
-%   \bf{Configuration} & \bf{Stage} & \bf{Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{\# of fakes}} & \multicolumn{1}{r}{\bf{\# of duplicates}}  \\
-%        \hline
-%    Default & \bf{HT}     &  93.6 &  713  &  242 &   317 \\  
-%    & \bf{Full chain}     &  89.2 &  194   &  41  &     10 \\      
-%   \hline
-%        \hline
-%    Merge & \bf{HT}     &  94.6 &  799  &  324 &   317 \\  
-%    & \bf{Full chain}     &  89.8 &  206   &  53  &     8 \\      
-%   \hline
-%        \hline
-%    Optimised & \bf{HT}     &  94.6 &  799  &  324 &   317 \\  
-%    & \bf{Full chain}     &  90.0 &  210   &  55  &     8 \\      
-%   \hline
-%   
-% \end{tabular}
-% \addtolength{\tabcolsep}{-1ex}
-%\end{table}
+%This is illustrated by the distributions of $\chi^{2} \div \text{number of degrees of freedom}$ ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ in figure~\ref{fig:2GeVFlatChi2Ndf} for genuine tracks produced by the \KF, where $\frac{\chi^{2}}{ndf}$ is almost flat for a value of order unity for high \pT (low $\frac{1}{\pT}$) but begins to dramatically increase above approximately 3\GeV, in contrast to the ideal value of {$\frac{\chi^{2}}{ndf} = 1$ if all uncertainties were properly modelled.
 
-Whilst the decreased precision HT cells at low \pT recovers a proportion of the lost tracks, figure~\ref{fig:2GeVFlatEff}  also shows that the \KF's performance is significantly degraded for $\pT < 3 \GeV$ compared to $\pT > 3 \GeV$.
-These additional low \pT track losses are the result of the \KF not modelling the scattering of the expected hit positions.
-This is illustrated by the distributions of $\chi^{2} \div \text{number of degrees of freedom}$ ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ in figure~\ref{fig:2GeVFlatChi2Ndf} for genuine tracks produced by the \KF, where $\frac{\chi^{2}}{ndf}$ is almost flat for a value of order unity for high \pT (low $\frac{1}{\pT}$) but begins to dramatically increase above approximately 3\GeV, in contrast to the ideal value of {$\frac{\chi^{2}}{ndf} = 1$ if all uncertainties were properly modelled.
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfChi2NdfVsInvPtFlatGeometry_5000.pdf}
-\caption{Plot of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ for genuine tracks produced by the \KF.}
-\label{fig:2GeVFlatChi2Ndf}
-\end{figure}
+%\begin{figure}[tbp]
+%\centering
+%\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfChi2NdfVsInvPtFlatGeometry_5000.pdf}
+%\caption{Plot of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ for genuine tracks produced by the \KF.}
+%\label{fig:2GeVFlatChi2Ndf}
+%\end{figure}
 
 \subsubsection{Kalman Filter Optimisation}\label{subsubsec:lowPtOptKF}
 Incorporation of \MS into the \KF involved including a \emph{process noise} term, namely the variance of the multiple scattering angles, to the \emph{measurement noise} (\ie measurement error) term already present in the \KF covariance matrix.
@@ -613,10 +622,12 @@ The constant coefficient for the \MS contribution approach was used for these \K
 \label{fig:2GeVfracDups}
 \end{figure}
 
-In comparison to just the \HT optimisations alone, both approaches at incorporating the effects of MS in the \KF are capable of rejecting an additional 3\% of the incorrectly reconstructed tracks, increasing the tracking efficiency by circa 0.6\%, as shown in Table~\ref{trackFindingPerformance2GeVKF}.
+Table~\ref{trackFindingPerformance2GeVKF} shows that compared to just the \HT optimisations alone, both the \MS coefficients used in the \KF are capable of rejecting an additional 3\% of the incorrectly reconstructed tracks, increasing the tracking efficiency by circa 0.6\%.
 
 \begin{table}[htbp]
-\topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain (\HT + \KF + \DR) for the three differing \KF configurations where \MS is not considered (\emph{no \MS}), a constant \MS coefficient (\emph{$k$}) is used and a layer depedent \MS coefficient (\emph{$k(layer)$})is used. The track finding efficiencies, the mean numbers of reconstructed tracks per event in the entire tracker, and the number of those tracks which are fakes or duplicates, are given using the efficiency definitions described at the start of Chapter~\ref{TmttSimStudies}.}
+\topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain (\HT + \KF + \DR) for the three differing \KF configurations where \MS is not considered (\emph{no \MS}), a constant \MS coefficient (\emph{$k$}) is used and a layer depedent \MS coefficient (\emph{$k(layer)$})is used. 
+The track finding efficiencies, the mean numbers of reconstructed tracks per event in the entire tracker, and the number of those tracks which are fakes or duplicates, are given using the efficiency definitions described at the start of Chapter~\ref{TmttSimStudies}.
+}
 \label{tab:trackFindingPerformance2GeVKF}
   \centering
 % This increases column spacing.
