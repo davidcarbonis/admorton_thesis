@@ -232,7 +232,7 @@ By performing a second pass through the rejected tracks and rescuing those which
 A more detailed description of the firmware implementation of the \DR for the demonstrator system is discussed in~\cite{TMTT_JINST}.
 
 \section{Simulation Studies}\label{sec:TmttSimStudies}
-\editComment{Add legend to plots}
+\editComment{Add legend to plots and reduce size of points on plots by half}
 
 During the development of the \emph{TMTT} demonstrator system both before and following the December 2016 review, the author was involved in a number of simulation studies, the more substantive of which are presented below.
 
@@ -456,6 +456,7 @@ As the precision of the input track parameters will be limited by the number of 
 From this upper limit
 
 \editComment{min precision acceptable?}
+\editComment{input already digitised/degraded}
 
 When considering the minimum parameter resolution which would not considerably impact on the track reconstruction efficiency or helix parameter resolutions, .... \editComment{Find out how many are required, what precision?}
 
@@ -636,7 +637,8 @@ Figure~\ref{fig:2GeVTiltEff} shows how the tracking efficiency for the whole cha
 The similar performance observed between the two coefficients in Figure~\ref{fig:2GeVTiltEff} and table~\ref{trackFindingPerformance2GeVKF} is due the amount of material traversed by a track not being constant for a single layer as the amount of material contributions in both the tracker and the prior contributions from the Inner Tracker, between the Inner and Outer Trackers and services varying as a function of $\eta$~\cite{P2TrackerTDR}.
 Table~\ref{trackFindingPerformance2GeVKF} also shows that compared to just the \HT optimisations alone, for both \MS coefficients, the \KF is more capable at rejecting incorrectly reconstructed tracks by up to an additional 3-4\%.
 In contrast though, the duplicate increases for both coefficients by 3-5\% for the full chain, with the increase in duplicates occurring around the \pT at which reduced precision of \HT cells are used.
-At the time of writing this chapter, it is not understood how incorporating \MS into the \KF causes this. \editComment{It is hoped that by the time of submission, someone will have figured this out.}
+At the time of writing this chapter, it is not understood how incorporating \MS into the \KF causes this, but it is suspected to be related to the use of the reduced precision of \HT cells.
+\editComment{It is hoped that by the time of submission, someone will have figured this out.}
 %Tracks with \pt approaching the \pt threshold at which reduced precision of \HT cells are used are have the potential to be built out of both stubs from both the full and reduced precision \HT cells.
 
 \begin{table}[htbp]
@@ -665,9 +667,11 @@ The track finding efficiencies, the mean numbers of reconstructed tracks per eve
  \addtolength{\tabcolsep}{-1ex}
 \end{table}
 
-Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the four track parameters as a function of transverse momenta in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200.
-Both \MS coefficients 
-... the effects of \MS which dominate at low transverse momenta are significantly 
+Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the four track parameters as a function of transverse momenta in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200 for  the both \MS coefficients investigated and for no consideration of \MS at all.
+In general, the resolutions of both \MS coefficients are superior across all \pt to when \MS is not considered at all, with the constant \MS coefficient typically providing more precise measurements than the layer dependent coefficient.  
+As expected, lower transverse momenta tracks experience the greatest improvements given that \MS dominants at lower transverse momenta.
+For both coefficients however, the \pt resolution resolution in the range $ 3.8 \GeV < \pt < 5.5\GeVc$ is worse than when \MS is not considered.
+At the time of writing, this observation is still being investigated, but is suspected, like the increased duplicate rate in the same \pT range, to be related to the reduced precision of \HT cells.
 
 \begin{figure}[htb]
 \centering
