@@ -341,39 +341,39 @@ Figs.~\ref{}
 % 10 iterations
 %=========================================================================
 %                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsApprox
-%Number of fitted track candidates found per event = 87.7600 +- 1.8526
-%                            with mean stubs/track = 5.5546
-%Fraction of fitted tracks that are fake = 0.1195
-%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.2007
-%Algorithmic fitting efficiency (post-cut) = 1532/1686 = 0.9087 +- 0.0070
-%Perfect algorithmic fitting efficiency(post-cut) = 1445/1686 = 0.8571 +- 0.0085 (no incorrect hits)
+%Number of fitted track candidates found per event = 87.2322 +- 0.2487
+%                            with mean stubs/track = 5.5493
+%Fraction of fitted tracks that are fake = 0.1124
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.1999
+%Algorithmic fitting efficiency (post-cut) = 79464/87249 = 0.9108 +- 0.0010
+%Perfect algorithmic fitting efficiency(post-cut) = 75821/87249 = 0.8690 +- 0.0011 (no incorrect hits)
 %=========================================================================
 %                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsTrackletStyle
-%Number of fitted track candidates found per event = 86.9400 +- 1.8229
-%                            with mean stubs/track = 5.5749
-%Fraction of fitted tracks that are fake = 0.1190
-%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.1865
-%Algorithmic fitting efficiency (post-cut) = 1532/1686 = 0.9087 +- 0.0070
-%Perfect algorithmic fitting efficiency(post-cut) = 1455/1686 = 0.8630 +- 0.0084 (no incorrect hits)
+%Number of fitted track candidates found per event = 86.7218 +- 0.2462
+%                            with mean stubs/track = 5.5887
+%Fraction of fitted tracks that are fake = 0.1146
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.1874
+%Algorithmic fitting efficiency (post-cut) = 79895/87249 = 0.9157 +- 0.0009
+%Perfect algorithmic fitting efficiency(post-cut) = 76505/87249 = 0.8769 +- 0.0011 (no incorrect hits)
 %=========================================================================
 %
 % 5 iterations
 %=========================================================================
 %                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsApprox
-%Number of fitted track candidates found per event = 95.1200 +- 2.1088
-%                            with mean stubs/track = 5.9711
-%Fraction of fitted tracks that are fake = 0.1605
-%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.2055
-%Algorithmic fitting efficiency (post-cut) = 1549/1686 = 0.9187 +- 0.0067
-%Perfect algorithmic fitting efficiency(post-cut) = 1356/1686 = 0.8043 +- 0.0097 (no incorrect hits)
+%Number of fitted track candidates found per event = 94.3022 +- 0.2845
+%                            with mean stubs/track = 5.9634
+%Fraction of fitted tracks that are fake = 0.1490
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.2086
+%Algorithmic fitting efficiency (post-cut) = 80486/87359 = 0.9213 +- 0.0009
+%Perfect algorithmic fitting efficiency(post-cut) = 71394/87359 = 0.8172 +- 0.0013 (no incorrect hits)
 %=========================================================================
 %                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsTrackletStyle
-%Number of fitted track candidates found per event = 94.5600 +- 2.1009
-%                            with mean stubs/track = 5.9852
-%Fraction of fitted tracks that are fake = 0.1592
-%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.1952
-%Algorithmic fitting efficiency (post-cut) = 1554/1686 = 0.9217 +- 0.0065
-%Perfect algorithmic fitting efficiency(post-cut) = 1368/1686 = 0.8114 +- 0.0095 (no incorrect hits)
+%Number of fitted track candidates found per event = 93.9226 +- 0.2829
+%                            with mean stubs/track = 5.9905
+%Fraction of fitted tracks that are fake = 0.1516
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.1975
+%Algorithmic fitting efficiency (post-cut) = 80941/87359 = 0.9265 +- 0.0009
+%Perfect algorithmic fitting efficiency(post-cut) = 71984/87359 = 0.8240 +- 0.0013 (no incorrect hits)
 %=========================================================================
 %
 % 3 iterations
@@ -491,7 +491,7 @@ For the linearised $chi^{2}$ track fitting algorithm to be considered in the fut
 \item The cause of the increased number of duplicate tracks compared to the \KF, and whether or not they can be reduced to a similar level.
 \end{itemize}
 
-\subsection{2 GeV Tracking}\label{subsec:Tmtt2GeV}
+\subsection{Tracking at low transverse momenta}\label{subsec:Tmtt2GeV}
 The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may be desirable if the trigger requirements demand it and the impact of this potential requirement on the proposed proposed track-finder system was studied.
 These studies were initially undertaken as part of the the robustness studies required for the December 2016 demonstrator review, focussing on recovering tracking efficiency below 3\GeV with the \HT, and were subsequently built upon with modifications to the \KF algorithm. 
 The results relating to \HT modifications were produced prior to the conclusion of the demonstrator review and were produced using the flat barrel geometry, and the results for the \KF improvements produced with the tilted barrel geometry.
@@ -612,7 +612,7 @@ During the comparative studies of these two approaches, it was observed in the r
 The presence of this trend following in tracks produced by the \HT prior to tracking fitting and \DR, implies that the \HT produces more duplicates at low \pT is the cause of this rather than a shortcoming of the \DR algorithm.
 As the fraction of duplicate tracks produced where decreased precision \HT cells are used is well controlled, the \pT threshold for the $2 \times 2$ merging of \HT cells was increased from $2.7\GeV$ to $3.5\GeV$.
 Whilst an increase in the duplicate rate is observed between $3.2\GeV$ and $5\GeV$ in figure~\ref{fig:2GeVfracDups}, a decreased number of duplicates were produced below $3.5\GeV$ which lead to an overall reduction in the number of duplicates produced of circa 2.8\%.
-The increased \HT cell merging threshold also had the additional benefit of recovering an additional 0.2\% of the tracks which were previously lost to \MS.
+The increased \pT threshold for \HT cell merging also had the additional benefit of recovering an additional 0.2\% of the tracks which were previously lost to \MS.
 Consequently, this change was adopted by the project and all the results presented below for the two \MS coefficient forms were produced using this increased threshold. 
 
 \begin{figure}[tbp]
@@ -638,7 +638,7 @@ The constant coefficient for the \MS contribution was used for these \KF results
 Figure~\ref{fig:2GeVTiltEff} shows how the tracking efficiency for the whole chain improves when \MS is accounted for in the \KF.
 The similar performance observed between the two coefficients in Figure~\ref{fig:2GeVTiltEff} and table~\ref{trackFindingPerformance2GeVKF} is due the amount of material traversed by a track not being constant for a single layer as the amount of material contributions in both the tracker and the prior contributions from the Inner Tracker, between the Inner and Outer Trackers and services varying as a function of $\eta$~\cite{P2TrackerTDR}.
 Table~\ref{trackFindingPerformance2GeVKF} also shows that compared to just the \HT optimisations alone, for both \MS coefficients, the \KF is more capable at rejecting incorrectly reconstructed tracks by up to an additional 3-4\%.
-In contrast though, the duplicate increases for both coefficients by 3-5\% for the full chain, with the increase in duplicates occurring around the \pT at which reduced precision of \HT cells are used.
+In contrast though, the duplicate increases for both coefficients by 3-5\% for the full chain, with the increase in duplicates occurring between $3.2\GeV$ and $5\GeV$, as shown in figure~\ref{fig:2GeVfracDups}, near the $3.5\GeV$ threshold for merging adjacent \HT cells.
 At the time of writing this chapter, it is not understood how incorporating \MS into the \KF causes this, but it is suspected to be related to the use of the reduced precision of \HT cells.
 \editComment{It is hoped that by the time of submission, someone will have figured this out.}
 %Tracks with \pt approaching the \pt threshold at which reduced precision of \HT cells are used are have the potential to be built out of both stubs from both the full and reduced precision \HT cells.
@@ -690,6 +690,7 @@ At the time of writing, this observation is still being investigated, but is sus
 \subsubsection{Future improvements}\label{subsubsec:2GeVoutlook}
 There are a number of potential improvements for tracking down to 2\GeV which merit further investigation which include:
 \begin{itemize}
+\item understanding why the duplicate rate increases near the boundary between normal and reduced precision \HT cells increase when \MS is accounted for.
 \item determining suitable coefficients as functions of both \pT and $\eta$ experimentally through simulation in order to more accurately account for the amount of material traversed and thus a more accurate description of the uncertainty in the hit position caused by \MS.
 \item whether separate \KF $\chi^{2}$ cuts for the \rphi and r-z planes could enhance performance, given that the dominant uncertainty contribution for the former varies depending on $\pT$.
 \item further studies into optimising the \pT threshold used for reducing the precision of \HT cells.
