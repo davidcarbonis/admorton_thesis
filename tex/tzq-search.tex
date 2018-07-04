@@ -1,20 +1,37 @@
-%\chapter{Event Selection and Background Estimation for Single Top Physics Searches}\label{chapter:tzq-search}
 \chapter{Analysis Strategy }\label{chapter:tzq-search}
-
 Using the particles identified and reconstructed, as discussed in Chapter~\ref{chapter:data-mc}, 
+
 \section{Data and MC Simulation Samples}
 
 \section{Event Selection}
+In order to 
+
+
 \subsection{Trigger Strategy}
+As the final states of the single top process being searched for contains two leptons (\ie two electrons or two muons)
+
 \subsection{Event Cleaning}
-Following the trigger requirements, a number of filters are applied to  
+Following the trigger requirements, a number of filters are applied in order to so that events with beam or detector anomalies which result in anomalous \MET are not considered for use in the analysis.
+\editComment{CITATION REQUIRED!}
+
+
+\begin{itemize}
+\item \textbf{Primary Vertex Filter} - ensures that the primary vertex is ..., requiring it to be within $|z| \leq 24\cm$ of the interaction point and within $d_{0} < 2\cm$ of the beam line.
+\item \textbf{Beam Halo Filter} - beam halo effects, 
+\item \textbf{HBHE Noise and Isolation Filters} - removes noise in the HBHE caused by particle interactions in the read-out systems and dead regions. Whilst a 
+\item \textbf{ECAL Trigger Primitive Filter} - A number of known ECAL channels lack regular data links ..., but the L1 trigger primitive readout can be used for approximately 70\% of these channels to estimate the energy deposited. As trigger primitives 
+\item \textbf{ECAL Endcap SC Filters} - A number of known supercrystals in the ECAL endcap 
+\item \textbf{Bad Charged Hadron Filter} - 
+\item \textbf{Bad Muon Filter}
+\end{itemize}
+
 \subsection{Lepton Selection}
 The final state 
 \subsubsection{Electrons}
 Electrons
 \subsubsection{Muons}
 Muons
-\subsection{Lepton Isolation}
+\subsubsection{Lepton Isolation}
 In order to differentiate between leptons promptly produced at the primary vertex from those that result from hadronic decays, a relative isolation variable $I^{rel}$ is defined.
 This isolation variable is defined as the summed energy of all PF particles within a cone around the PF lepton, with the estimated neutral charged pileup contamination, $\rho$, removed, divided by the lepton \pT.
 
@@ -34,19 +51,32 @@ I^{rel}_{\Delta\beta} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\r
 \end{equation}\label{eq:deltaBeta}
 
 Where CH is the charged hadrons from the Primary Vertex (PV), NH is the neutral hadrons and PU the charged hadrons from pileup.
-
 \subsubsection{Z Boson Candidate Invariant Mass Requirements}
 The presence of a Z boson in the final state requires  
 Therefore, the two leptons selected must have the same flavour and opposite charge
-\subsection{Jet Selection, b-tagging and W Boson Candidate Requirements}
+\subsection{Jet, b-tagging and W Boson Candidate Requirements}
+\subsubsection{Jet Requirements}
+Four to six jets, inclusive, 
+PF jets reconstructed using the \emph{anti-\kt} algorithm with R = 0.4
+
+\subsubsection{b-tagging Requirements}
+For each jet, the discriminant for the CSVv2 tagging algorithm, previously discussed in Chapter~\ref{subsec:objReco-bJets}, is determined to medium WP
+
+\subsubsection{W Boson Candidate Invariant Mass Requirements}
+In contrast to the previous tZq searches where the W boson decays into a lepton and its associated antineutrino, the W boson in the dilepton final state decays hadronically, allowing for the top quark to be fully reconstructed.
+Each possible pair of jets is considered, with the pair with a dijet invariant mass closest to the W boson mass of 80.4\GeVcc being chosen as the W candidate.
+The leading b-jet however, is not excluded from consideration as the hardest b-jet is assumed to be produced from the decay of the top quark. 
 
 \section{Simulation Corrections}\label{sec:simCorrections}
-
+As 
+\subsection{\PU modelling}
+\subsection{•}
 \section{Background Estimation}\label{sec:bkgEst}
 In any high energy particle physics analysis, accurate modelling of the background processes is essential in order to 
 \subsection{Z+jets Background Estimation}\label{subsec:zPlusJets}
 
 \subsection{\ttbar Background Estimation}\label{subsec:ttbar}
+
 \subsection{Non-Prompt Leptons}\label{subsec:NPLs}
 Backgrounds which involve decays into lepton + jets and where at least one jet is incorrectly reconstructed as a lepton (predominately electrons) or a lepton from the decay of heavy quarks (predominately muons), which pass the lepton selection and isolation criteria, are estimated with data.
 
