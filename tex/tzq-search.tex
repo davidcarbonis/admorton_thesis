@@ -45,21 +45,20 @@ Triggers and datasets used for each decay channel.
    \hline
    \bf{Final State} & \bf{Dataset} & \bf{HLT Paths}  \\
    \hline
-    ee & SingleElectron &  HLT_Ele32_eta2p1_WPTight_Gsf &  \\
+    ee & SingleElectron &  HLT_Ele32_eta2p1_WPTight_Gsf   \\
     & DoubleElectron & HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ \\
    \hline
     $\mu\mu$ & SingleMuon &  HLT_Iso(Tk)Mu24  \\  
         & DoubleMuon  & HLT_Mu17_TrkIsoVVL_(Tk)Mu8_TrkIsoVVL_DZ \\  
 
    \hline
-   e$\mu$ & MuonEG &  HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL(_DZ) &  \\  
-          &        &  HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL(_DZ) & \\
+   e$\mu$ & MuonEG &  HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL(_DZ)   \\  
+          &        &  HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL(_DZ)  \\
    \hline
    
  \end{tabular}
  \addtolength{\tabcolsep}{-1ex}
 \end{table}
-
 
 \subsection{Event Cleaning}
 Following the trigger requirements, a number of filters are applied in order to so that events with beam or detector anomalies which result in anomalous \MET are not considered for use in the analysis.
@@ -149,23 +148,49 @@ and for jets with $\eta > 3.0$ the loose ID criteria are:
 \item at least eleven neutral particles are present.
 \end{itemize}
 
-\subsubsection{b-tagging Requirements}
-For each jet, the CSVv2 tagging algorithm described in Chapter~\ref{subsec:objReco-bJets}, is evaluated to medium WP
+\subsubsection{b-tagging }
+The CSVv2 tagging algorithm described in Chapter~\ref{subsec:objReco-bJets} is used to tag jets, with a working point (WP) cut applied to the b-tag discriminator.
+If the value of a jet's discriminator exceeds that of the Medium WP and has $|\eta| < 2.40$, the jet is considered to be a b-jet.
+From the \emph{Loose}, \emph{Medium} and \emph{Tight} WPs defined by CMS~\ref{Sirunyan:2017ezt}, as given in Table~\ref{tab:bTagWPs}, the Medium WP was chosen as it provided the optimum performance in terms of providing as large statistics as possible for the signal process without too great a compromise on the purity of the selection.
 
-Either one or two of the jets present is required to be b-tagged given that the top quark predominantly decays into a bottom quark and the W boson and recoil quark ... 
+\begin{table}[htbp]
+\topcaption {
+The CSVv2 algorithm's selection efficiencies for bottom, charm, and light jets with $\pT > 20\GeVc$ in simulated \ttbar events~\ref{Sirunyan:2017ezt}.
+}
+\label{tab:bTagWPs}
+  \centering
+% This increases column spacing.
+  \addtolength{\tabcolsep}{1ex}
+% This right-aligns numbers in column, but centers them under column title.
+  \begin{tabular}{|l|l|1|1|}
+   \hline
+   \bf{CSVv2 WP Name (value)} & \bf{$\epsilon_{b}}$ (\%)} & \bf{$\epsilon_{c}}$ (\%)} & \bf{$\epsilon_{udsg}}$ (\%)}   \\
+   \hline
+   Loose (0.5426) & 84 &  39 & 8.3 \\
+   \hline
+   Medium (0.8484) & 66 &  13  & 0.8\\  
+   \hline
+   Tight (0.9535) & 46 &  2.6 & 0.1 \\  
+   \hline
+   
+ \end{tabular}
+ \addtolength{\tabcolsep}{-1ex}
+\end{table}
 
 \subsubsection{W Boson Candidate Invariant Mass Requirements}
 In contrast to the previous tZq searches where the W boson decays into a lepton and its associated antineutrino, the W boson in the dilepton final state decays hadronically, allowing for the top quark to be fully reconstructed.
-Each possible pair of jets is considered, with the pair with a dijet invariant mass closest to the W boson mass of 80.4\GeVcc being chosen as the W candidate.
-The leading b-jet however, is not excluded from consideration as the hardest b-jet is assumed to be produced from the decay of the top quark. 
+The W boson candidate is constructed by considering each possible pair of jets, with the pair with a dijet invariant mass closest to the W boson mass of 80.4\GeVcc being chosen as the W candidate.
+The leading b-jet however, is excluded from consideration as the hardest b-jet is assumed to be produced from the decay of the top quark. 
 
 \section{Data and MC Simulation Samples}
 The analysis uses proton-proton collision data at $\sqrt{13}$ in 2016 ,using 
 
 \section{Simulation Corrections}\label{sec:simCorrections}
 As 
+
+\subsection{Miscalibrated Tracker APV}
+
 \subsection{\PU modelling}
-\subsection{•}
 
 \section{Background Estimation}\label{sec:bkgEst}
 In any high energy particle physics analysis, accurate modelling of the background processes is essential in order to 
