@@ -13,7 +13,7 @@ The sysy
 The main challenge for this search 
 
 
-\section{Event Selection}
+\section{Event Selection}\label{sec:signalRegion}
 A number of selection criteria 
 
 
@@ -22,7 +22,8 @@ Therefore, the final state contains two leptons from the Z boson decay and at le
 , a b-jet originating from 
 
 \subsection{Trigger Strategy}
-As the presence of the two leptons from the Z boson decay is an essential component of the event reconstruction, the trigger strategy consists of 
+As the presence of the two leptons from the Z boson decay is an essential component of the event reconstruction, the trigger strategy consists of selecting events from datasets identified by the 
+
  whilst retaining as low a transverse momenta threshold as possible
 
 the final state of the process searched for contains two leptons 
@@ -40,7 +41,7 @@ Triggers and datasets used for each decay channel.
 % This increases column spacing.
   \addtolength{\tabcolsep}{1ex}
 % This right-aligns numbers in column, but centers them under column title.
-  \begin{tabular}{}
+  \begin{tabular}{|l|l|1|}
    \hline
    \bf{Final State} & \bf{Dataset} & \bf{HLT Paths}  \\
    \hline
@@ -89,14 +90,15 @@ In order to differentiate between leptons promptly produced at the primary verte
 This isolation variable is defined as the summed energy of all PF particles within a cone around the PF lepton, with the estimated neutral charged pileup contamination, $\rho$, removed, divided by the lepton \pT.
 
 Two different pileup contamination estimation methods are used in the work presented, one for electrons and the other for muons.
-For electrons the $\rho$ * effective area pileup alleviation technique is employed.
+
+For electrons, the $\rho$ * effective area pileup alleviation technique is used.
 This involves the estimating the expected energy within the isolation cone from the median energy density per area of pileup contamination ($\rho$), estimated for each event, with the effective area given as a function of the electron's pseudorapidity, which is expressed as: 
 
 \begin{equation}
 I^{rel}_{rho * A_{eff}} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\rm T}(Photon) -rho*A_{\rm eff} )/p_T \\
 \end{equation}\label{eq:rhoEffA}
 
-Muons use the $\Delta\beta$ pileup alleviation technique, where the average pileup energy inside the cone is estimated as half of that originating from charged hadrons.
+Muons employ the $\Delta\beta$ pileup alleviation technique, where the average pileup energy inside the cone is estimated as half of that originating from charged hadrons.
 This is expressed as:
 
 \begin{equation}
@@ -104,15 +106,48 @@ I^{rel}_{\Delta\beta} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\r
 \end{equation}\label{eq:deltaBeta}
 
 Where CH is the charged hadrons from the Primary Vertex (PV), NH is the neutral hadrons and PU the charged hadrons from pileup.
+
 \subsubsection{Z Boson Candidate Invariant Mass Requirements}
-The presence of a Z boson in the final state requires that two leptons selected must be consistent with a Z boson decay, thus requiring them to have the same flavour and opposite charge and an invariant mass within 
-Different
+The presence of a Z boson in the final state requires that two leptons selected must be consistent with a Z boson decay, thus requiring them to have the same flavour and opposite charge and an invariant mass within 20\GeVcc of the known Z mass.
+This mass window was determined on the basis of including sufficient signal events 
 
 \subsection{Jet, b-tagging and W Boson Candidate Requirements}
 \subsubsection{Jet Requirements}
-Jets from the PF jet collection which have been reconstructed using the \emph{anti-\kt} algorithm with R = 0.4 with charged hadrons 
+Jets are considered from the PF jet collection which reconstructs jets using the \emph{anti-\kt} algorithm with R = 0.4 with charged hadrons originating from \PU vertices excluded from clustering.
+Following identification, the jet energy corrections are applied as described in Chapter~\ref{subsubsec:JECs}.
 
-The \emph{loose} working point jet criteria, as defined by CMS to , 
+Jets are considered in the analysis if they have a $\pT > 30\GeVc$, are within $|\eta| < 4.7$ and meet the \emph{loose} working point jet identification criteria developed by CMS.
+Additionally, selected leptons (electron or muon) which lie within a cone of $\Delta R = 0.4$ of a selected jet are not considered to be a prompt leptons and instead part of the jet in question.
+
+The loose jet ID was designed to reject the majority of the fake tracks produced from detector and/or electronics noise whilst maintaining a high selection efficiency for real jets by requiring all jets to have part of their energy deposited in both the ECAL and HCAL and be composed of more than one particle.
+
+\editComment{Necessary to spell this out? Or comment out ...}
+The loose jet identification criteria are as follows:
+
+for jets with $\eta \leq 2.70$ the loose ID criteria are:
+\begin{itemize}
+\item the fraction of the jet energy from btoh neutral electromagnetic particles in the ECAL and neutral hadronic particles in the HCAL is less than $0.99$.
+\item at least two constituent particles are present.
+\end{itemize}
+
+with these applying in addition for $\eta \leq 2.40$:
+\begin{itemize}
+\item the fraction of the jet energy from charged electromagnetic particles in the ECAL is less than $0.99$ and greater than 0.0 for charged hadronic particles in the HCAL.
+\item at least one charged particle is present.
+\end{itemize}
+
+
+for jets with $ 2.70 \leq \eta \leq 3.0$ the loose ID criteria are:
+\begin{itemize}
+\item the fraction of the jet energy from neutral electromagnetic particles in the ECAL is greater than than $0.01$ and less than $0.98$ for neutral hadronic particles in the HCAL.
+\item at least three neutral particles are present.
+\end{itemize}
+
+and for jets with $\eta > 3.0$ the loose ID criteria are:
+\begin{itemize}
+\item the fraction of the jet energy in the ECAL that is from neutral electromagnetic particles is less than $0.90$.
+\item at least eleven neutral particles are present.
+\end{itemize}
 
 \subsubsection{b-tagging Requirements}
 For each jet, the CSVv2 tagging algorithm described in Chapter~\ref{subsec:objReco-bJets}, is evaluated to medium WP
@@ -134,10 +169,13 @@ As
 
 \section{Background Estimation}\label{sec:bkgEst}
 In any high energy particle physics analysis, accurate modelling of the background processes is essential in order to 
-\subsection{Z+jets Background Estimation}\label{subsec:zPlusJets}
+\subsection{Z+jets Background Control Region}\label{subsec:zPlusJetsCR}
 Z+jets constitute the largest component of the 
 
-\subsection{\ttbar Background Estimation}\label{subsec:ttbar}
+\subsection{\ttbar Background Control Region}\label{subsec:ttbarCR}
+The selection criteria for the \ttbar control region differs from the signal region definition defined in Chapter~\ref{sec:signalRegion}, by requiring that the two leptons selected to have different flavours.
+... JETS ...
+As the branching ratio for 
 
 \subsection{Non-Prompt Leptons}\label{subsec:NPLs}
 Backgrounds which involve decays into lepton + jets and where at least one jet is incorrectly reconstructed as a lepton (predominately electrons) or a lepton from the decay of heavy quarks (predominately muons), which pass the lepton selection and isolation criteria, are estimated with data.
