@@ -481,16 +481,6 @@ Given that one of the motivating factors behind this TFP design was to be able t
 
 %Each CLB has 2 slices, 8 luts and 16 flip flops (8 storage element per slice). So multiply the number of slices in the data sheet by four and you get the number of luts
 
-\subsubsection{Outlook}\label{subsubsec:chi2outlook}
-%%%Future work
-For the linearised $chi^{2}$ track fitting algorithm to be considered in the future, the following would to be addressed:
-\begin{itemize}
-\item An improved track fitting efficiency which obtains a high, if not 100\%, tracks purity, in order to be competitive with both the \KF and \LR which are currently able achieve 100\% purity.
-\item Can the algorithm resources be reduced and/or are there sufficient resources on the board be implement the algorithm with.
-\item Whether or not the inclusion of the fifth helix parameter, the vertex impact parameter in the x-y plane, $d_{0}$, would provide comparable or improved performance to other fitting algorithms which produce it.
-\item The cause of the increased number of duplicate tracks compared to the \KF, and whether or not they can be reduced to a similar level.
-\end{itemize}
-
 \subsection{Tracking at low transverse momenta}\label{subsec:Tmtt2GeV}
 The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may be desirable if the trigger requirements demand it and the impact of this potential requirement on the proposed proposed track-finder system was studied.
 These studies were initially undertaken as part of the the robustness studies required for the December 2016 demonstrator review, focussing on recovering tracking efficiency below 3\GeV with the \HT, and were subsequently built upon with modifications to the \KF algorithm. 
@@ -685,19 +675,6 @@ At the time of writing, this observation is still being investigated, but is sus
 \caption{\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200.}
 \label{fig:kfHelixParametersResVsInvPt}
 \end{figure}
-
-%%% Future Improvements?
-\subsubsection{Future improvements}\label{subsubsec:2GeVoutlook}
-There are a number of potential improvements for tracking down to 2\GeV which merit further investigation which include:
-\begin{itemize}
-\item understanding why the duplicate rate increases near the boundary between normal and reduced precision \HT cells increase when \MS is accounted for.
-\item determining suitable coefficients as functions of both \pT and $\eta$ experimentally through simulation in order to more accurately account for the amount of material traversed and thus a more accurate description of the uncertainty in the hit position caused by \MS.
-\item whether separate \KF $\chi^{2}$ cuts for the \rphi and r-z planes could enhance performance, given that the dominant uncertainty contribution for the former varies depending on $\pT$.
-\item further studies into optimising the \pT threshold used for reducing the precision of \HT cells.
-\item \pt dependent threshold criteria for the \HT.
-\item further optimisation of the \KF in relation to any such changes.
-\end{itemize}
-
 
 %%% Results - 1000 events -- HT opt
 %% no merge

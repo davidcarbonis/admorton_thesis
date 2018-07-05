@@ -18,3 +18,25 @@ Whilst the demonstrator system had
 The tZq analysis
 
 \section{Future development of an FPGA Based Track Finder for the CMS Tracker Upgrade}
+
+%%% Future Improvements?
+\subsubsection{Chi2}\label{subsubsec:chi2outlook}
+%%%Future work
+For the linearised $chi^{2}$ track fitting algorithm to be considered in the future, the following would to be addressed:
+\begin{itemize}
+\item An improved track fitting efficiency which obtains a high, if not 100\%, tracks purity, in order to be competitive with both the \KF and \LR which are currently able achieve 100\% purity.
+\item Can the algorithm resources be reduced and/or are there sufficient resources on the board be implement the algorithm with.
+\item Whether or not the inclusion of the fifth helix parameter, the vertex impact parameter in the x-y plane, $d_{0}$, would provide comparable or improved performance to other fitting algorithms which produce it.
+\item The cause of the increased number of duplicate tracks compared to the \KF, and whether or not they can be reduced to a similar level.
+\end{itemize}
+
+\subsubsection{2 GeV}\label{subsubsec:2GeVoutlook}
+There are a number of potential improvements for tracking down to 2\GeV which merit further investigation which include:
+\begin{itemize}
+\item understanding why the duplicate rate increases near the boundary between normal and reduced precision \HT cells increase when \MS is accounted for.
+\item determining suitable coefficients as functions of both \pT and $\eta$ experimentally through simulation in order to more accurately account for the amount of material traversed and thus a more accurate description of the uncertainty in the hit position caused by \MS.
+\item whether separate \KF $\chi^{2}$ cuts for the \rphi and r-z planes could enhance performance, given that the dominant uncertainty contribution for the former varies depending on $\pT$.
+\item further studies into optimising the \pT threshold used for reducing the precision of \HT cells.
+\item \pt dependent threshold criteria for the \HT.
+\item further optimisation of the \KF in relation to any such changes.
+\end{itemize}
