@@ -1,28 +1,78 @@
 \chapter{Analysis Strategy }\label{chapter:tzq-search}
-Using the particles identified and reconstructed, as discussed in Chapter~\ref{chapter:data-mc}, 
+%Following from the ... next chapters of this thesis describe the search for a singly produced top quark in association with a Z boson using the reconstructed proton-proton collision data at $\sqrt{13}$ collected by the CMS detector during 2016.
+%Using the particles identified and reconstructed, as discussed in Chapter~\ref{chapter:data-mc}, 
+
+The first stage of a physics analysis is to determine an event selection based on the topology of the process in order to create a region which is enriched with signal events.
+The main challenge in defining a signal enriched region for the dilepton final state of tZq is that its topology is identical to final states of other processes with much larger cross sections, resulting in a background dominated.
+
+Whilst the 
+
+The sysy
+
+
+The main challenge for this search 
 
 \section{Data and MC Simulation Samples}
+The analysis uses proton-proton collision data at $\sqrt{13}$ in 2016 ,using 
 
 \section{Event Selection}
-In order to 
+A number of selection criteria 
 
+
+The tZq process at leading order consists of a single top quark, a radiated Z boson and a recoil quark.
+Therefore, the final state contains two leptons from the Z boson decay and at least four jets, 
+, a b-jet originating from 
 
 \subsection{Trigger Strategy}
-As the final states of the single top process being searched for contains two leptons (\ie two electrons or two muons)
+As the presence of the two leptons from the Z boson decay is an essential component of the event reconstruction, the trigger strategy is based on ... whilst retaining as low a transverse momenta threshold as possible
+
+the final state of the process searched for contains two leptons 
+
+contains two leptons (\ie two electrons or two muons)
+
+Events in the \ttbar control region 
+
+\begin{table}[htbp]
+\topcaption {
+Triggers and datasets used for each decay channel.
+}
+\label{tab:triggersDatasets}
+  \centering
+% This increases column spacing.
+  \addtolength{\tabcolsep}{1ex}
+% This right-aligns numbers in column, but centers them under column title.
+  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{6ex}}}
+   \hline
+   \bf{Final State} & \bf{Dataset} & \bf{HLT Paths}  \\
+   \hline
+    ee & SingleElectron &  HLT_Ele32_eta2p1_WPTight_Gsf &  \\
+    & DoubleElectron & HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ \\
+   \hline
+    $\mu\mu$ & SingleMuon &  HLT_Iso(Tk)Mu24  \\  
+        & DoubleMuon  & HLT_Mu17_TrkIsoVVL_(Tk)Mu8_TrkIsoVVL_DZ \\  
+
+   \hline
+   e$\mu$ & MuonEG &  HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL(_DZ) &  \\  
+          &        &  HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL(_DZ) & \\
+   \hline
+   
+ \end{tabular}
+ \addtolength{\tabcolsep}{-1ex}
+\end{table}
+
 
 \subsection{Event Cleaning}
 Following the trigger requirements, a number of filters are applied in order to so that events with beam or detector anomalies which result in anomalous \MET are not considered for use in the analysis.
 \editComment{CITATION REQUIRED!}
 
-
 \begin{itemize}
-\item \textbf{Primary Vertex Filter} - ensures that the primary vertex is ..., requiring it to be within $|z| \leq 24\cm$ of the interaction point and within $d_{0} < 2\cm$ of the beam line.
-\item \textbf{Beam Halo Filter} - beam halo effects, 
-\item \textbf{HBHE Noise and Isolation Filters} - removes noise in the HBHE caused by particle interactions in the read-out systems and dead regions. Whilst a 
-\item \textbf{ECAL Trigger Primitive Filter} - A number of known ECAL channels lack regular data links ..., but the L1 trigger primitive readout can be used for approximately 70\% of these channels to estimate the energy deposited. As trigger primitives 
-\item \textbf{ECAL Endcap SC Filters} - A number of known supercrystals in the ECAL endcap 
-\item \textbf{Bad Charged Hadron Filter} - 
-\item \textbf{Bad Muon Filter}
+\item \textbf{Primary Vertex Filter} - ensures that the primary vertex is well reconstructed by requiring it to be within $|z| \leq 24\cm$ of the interaction point and within $d_{0} < 2\cm$ of the beam line.
+\item \textbf{Beam Halo Filter} - whilst the LHC uses collimator blocks to remove beam halos which form around the beam, , the filter removes events with calorimeter and muon chamber energy deposits consistent with ...
+\item \textbf{HBHE Noise and Isolation Filters} - removes noise in the HBHE caused by particle interactions in the read-out systems and dead regions.  
+\item \textbf{ECAL Trigger Primitive and  Filter} - a number of known ECAL channels lack regular data links and some are masked out for reconstruction, but the L1 trigger primitive readout can be used for approximately 70\% of these channels to estimate the energy deposited. As trigger primitives have a narrower
+\item \textbf{ECAL Endcap SC Filters} - a number of known supercrystals in the ECAL endcap 
+\item \textbf{Bad Charged Hadron Filter} - removes events where a muon is not defined as a PF muon due to its low quality, but makes its way into the PF MET calculation as a charged hadron candidate.
+\item \textbf{Bad Muon Filter} - removes events where a muon is defined as a PF muon, but is still has too low a quality and large \pT to be considered.
 \end{itemize}
 
 \subsection{Lepton Selection}
@@ -31,6 +81,11 @@ The final state
 Electrons
 \subsubsection{Muons}
 Muons
+
+
+\cite{Chatrchyan:2012xi}
+
+
 \subsubsection{Lepton Isolation}
 In order to differentiate between leptons promptly produced at the primary vertex from those that result from hadronic decays, a relative isolation variable $I^{rel}$ is defined.
 This isolation variable is defined as the summed energy of all PF particles within a cone around the PF lepton, with the estimated neutral charged pileup contamination, $\rho$, removed, divided by the lepton \pT.
@@ -52,15 +107,19 @@ I^{rel}_{\Delta\beta} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\r
 
 Where CH is the charged hadrons from the Primary Vertex (PV), NH is the neutral hadrons and PU the charged hadrons from pileup.
 \subsubsection{Z Boson Candidate Invariant Mass Requirements}
-The presence of a Z boson in the final state requires  
-Therefore, the two leptons selected must have the same flavour and opposite charge
+The presence of a Z boson in the final state requires that two leptons selected must be consistent with a Z boson decay, thus requiring them to have the same flavour and opposite charge and an invariant mass within 
+Different
+
 \subsection{Jet, b-tagging and W Boson Candidate Requirements}
 \subsubsection{Jet Requirements}
-Four to six jets, inclusive, 
-PF jets reconstructed using the \emph{anti-\kt} algorithm with R = 0.4
+Jets from the PF jet collection which have been reconstructed using the \emph{anti-\kt} algorithm with R = 0.4 with charged hadrons 
+
+The \emph{loose} working point jet criteria, as defined by CMS to , 
 
 \subsubsection{b-tagging Requirements}
-For each jet, the discriminant for the CSVv2 tagging algorithm, previously discussed in Chapter~\ref{subsec:objReco-bJets}, is determined to medium WP
+For each jet, the CSVv2 tagging algorithm described in Chapter~\ref{subsec:objReco-bJets}, is evaluated to medium WP
+
+Either one or two of the jets present is required to be b-tagged given that the top quark predominantly decays into a bottom quark and the W boson and recoil quark ... 
 
 \subsubsection{W Boson Candidate Invariant Mass Requirements}
 In contrast to the previous tZq searches where the W boson decays into a lepton and its associated antineutrino, the W boson in the dilepton final state decays hadronically, allowing for the top quark to be fully reconstructed.
@@ -71,9 +130,11 @@ The leading b-jet however, is not excluded from consideration as the hardest b-j
 As 
 \subsection{\PU modelling}
 \subsection{•}
+
 \section{Background Estimation}\label{sec:bkgEst}
 In any high energy particle physics analysis, accurate modelling of the background processes is essential in order to 
 \subsection{Z+jets Background Estimation}\label{subsec:zPlusJets}
+Z+jets constitute the largest component of the 
 
 \subsection{\ttbar Background Estimation}\label{subsec:ttbar}
 
