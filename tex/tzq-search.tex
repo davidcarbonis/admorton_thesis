@@ -5,6 +5,7 @@
 The first stage of a physics analysis is to determine an event selection based on the topology of the process in order to create a region which is enriched with signal events.
 
 
+
 At leading order, tZq consists single top quark, a radiated Z boson and a recoil quark.
 
 Therefore, the final state contains two leptons from the Z boson decay and at least four jets, 
@@ -13,7 +14,7 @@ Therefore, the final state contains two leptons from the Z boson decay and at le
 The main challenge in defining a signal enriched region for the dilepton final state of tZq is that its topology is identical to final states of other processes with much larger cross sections, resulting in a background dominated
 
 
-\section{Event Selction}\label{sec:signalRegion}
+\section{Event Reconstruction}\label{sec:eventReconstruction}
 
 \subsection{Trigger Strategy}\label{subsec:triggerStrategy}
 As the presence of the exactly two leptons resulting from the Z boson decaying is 
@@ -22,7 +23,7 @@ As the presence of the exactly two leptons resulting from the Z boson decaying i
 
 
 As mentioned at the start of this chapter, as the process being searched for is dominated by background processes and will likely be limited by statistics, it is essential to reconstruct and select as many signal events as possible.
-To this end,  
+To this end, in order to ensure that the maximum possible statistics can be obtained
 
 contains two leptons (\ie two electrons or two muons)
 
@@ -74,16 +75,37 @@ Following the trigger requirements, a number of filters are applied in order to 
 \end{itemize}
 
 \subsection{Lepton Selection}
-As the tZq dilepton final state is distinguished by the Z boson decaying leptonically and the W boson decaying purely hadronically, it is of upmost importance to be able to identify isolated leptons with a high efficiency.
+As the tZq dilepton final state is distinguished by the Z boson decaying leptonically and the W boson decaying purely hadronically, it is of upmost importance to be able to identify isolated leptons with a low misidentification rate.
 
 
-
-Whilst 
 \subsubsection{Electrons}
-In order electrons
-\subsubsection{Muons}
-Muons
+PF electrons
 
+Tight ~ 70\% efficiency
+Veto ~ 95\% efficiency
+
+
+All electrons: \pT > 35/15 \GeVc, $\eta < 2.50$, exclude electrons in the EB/EE gap $1.4442 \leq \eta_{SC} \leq 1.566$, EB $d_{0} < 0.05\cm$ and $d_{z} < 0.10\cm$ and EE $d_{0} < 0.10\cm$ and $d_{z} < 0.20\cm$
+
+\subsubsection{Muons}
+PF muons 
+
+Tight 
+
+\begin{itemize}
+\item is a PF Muon and is also both a tracker and global muon.
+\item the $\chi^{2}/ndf$ of the global muon track fit is less than ten to surpress hadronic punch-through into the muon system and non-prompt muons.
+\item at least one muon chamber is included in the global track fit - ditto above.
+\item that muon segments are found in at least two muon stations ...
+\item $d_{0} < 0.2\cm$ and $d_{z} < 0.5\cm$ - surpress cosmic muons and non-prompt leptons
+\item the muon must have at least one hit in the pixel detector to further suppress non-prompt muons.
+\item hits must be present in at least six tracker layers in order to achieve a good \pT measurement and to suppress non-prompt muons.
+\end{itemize}
+
+Loose muons are defined 
+\begin{itemize}
+\item is both a PF muon and is also either a tracker or global muon
+\end{itemize}
 
 \cite{Chatrchyan:2012xi}
 
@@ -186,63 +208,7 @@ In contrast to the previous tZq searches where the W boson decays into a lepton 
 The W boson candidate is constructed by considering each possible pair of jets, with the pair with a dijet invariant mass closest to the W boson mass of 80.4\GeVcc being chosen as the W candidate.
 The leading b-jet however, is excluded from consideration as the hardest b-jet is assumed to be produced from the decay of the top quark. 
 
-\section{Data and MC Simulation Samples}
-The analysis uses proton-proton collision data at $\sqrt{13}$ in 2016, considering events in the double lepton and single lepton datasets where the double and single lepton triggers respectively have fired, using the strategy discussed in Chapter~\ref{subsec:triggerStrategy}.
-
-The MC samples used to simulate the signal and background processes considered are given in Table~\ref{tab:mcList}.
-
-\begin{table}[htbp]
-\topcaption {
-The MC processes and their associated total number of events, cross sections and generators, considered for the search for tZq in the dilepton final state.
-}
-\label{tab:mcList}
-  \centering
-% This increases column spacing.
-  \addtolength{\tabcolsep}{1ex}
-% This right-aligns numbers in column, but centers them under column title.
-  \begin{tabular}{|l|l|1|1|}
-   \hline
-   \bf{MC process} & \bf{Events} & \bf{Cross section (pb)} & \bf{Generator (Order)}   \\
-   \hline
-   tZq  & 2973639 & 0.0758  & aMC@NLO (NLO) \\
-   \hline
-   tHq  & 3495799 & 0.07462  & Madgraph (LO) \\
-   \hline
-   tWZ/tWll  & 50000 & 0.01104  & Madgraph (LO) \\
-   \hline
-   \ttbar & 77081156 & 831.76 & POWHEG (NLO) \\
-   \hline
-   \ttbarZ $\rightarrow$ ll\nu\nu & 13908701 & 0.2529   & aMC@NLO (NLO) \\
-   \ttbarZ $\rightarrow$ 2q & 749400 & 0.5297   & aMC@NLO (NLO) \\
-   \hline
-   \ttbarW $\rightarrow$ l\nu & 5280565 & 0.2001   & aMC@NLO (NLO) \\
-   \ttbarW $\rightarrow$ 2q & 833298 & 0.405  & aMC@NLO (NLO) \\
-   \hline
-   \ttbarH $\rightarrow$ bb & 3845992 & 0.2942 & POWHEG (NLO) \\
-   \ttbarH $\rightarrow$ non bb & 3981250 & 0.2123 & POWHEG (NLO) \\
-   \hline
-   W+jets & 24120319 & 61526.7 & aMC@NLO (NLO) \\
-   \hline
-   Z+jets ($m_{Z} \geq 50\GeVcc& $& 151023640 & 5765.4 & aMC@NLO (NLO) \\
-   Z+jets ($10 \GeVcc \leq m_{Z} < 50\GeVcc& $& 106269624 & 18610.0 & aMC@NLO (NLO) \\
-   \hline
-   
- \end{tabular}
- \addtolength{\tabcolsep}{-1ex}
-\end{table}
-
-
-
-
-
-\section{Simulation Corrections}\label{sec:simCorrections}
-As 
-
-\subsection{Miscalibrated Tracker APV}
-
-\subsection{\PU modelling}
-
-
+\section{Signal Region}
 \section{Background Estimation}\label{sec:bkgEst}
 In any high energy particle physics analysis, accurate modelling of the background processes is essential in order to be able to make a measurement 
 The main challenge in defining a signal enriched region for the dilepton final state of tZq is that its topology is identical to final states of other processes with much larger cross sections, resulting in a background dominated
@@ -303,3 +269,62 @@ Non-prompt estimation: & a$\pm$b & c$\pm$d & e$\pm$f \\
 \caption{Non-prompt lepton estimation following all selection cuts}
 \label{tab:fakeLeptonYields}
 \end{table}
+
+\section{Data and MC Simulation Samples}
+The analysis uses proton-proton collision data at $\sqrt{13}$ in 2016, considering events in the double lepton and single lepton datasets where the double and single lepton triggers respectively have fired, using the strategy discussed in Chapter~\ref{subsec:triggerStrategy}.
+
+The MC samples used to simulate the signal and background processes considered are given in Table~\ref{tab:mcList}.
+
+\begin{table}[htbp]
+\topcaption {
+The MC processes and their associated total number of events, cross sections and generators, considered for the search for tZq in the dilepton final state.
+}
+\label{tab:mcList}
+  \centering
+% This increases column spacing.
+  \addtolength{\tabcolsep}{1ex}
+% This right-aligns numbers in column, but centers them under column title.
+  \begin{tabular}{|l|l|1|1|}
+   \hline
+   \bf{MC process} & \bf{Events} & \bf{Cross section (pb)} & \bf{Generator (Order)}   \\
+   \hline
+   tZq  & 2973639 & 0.0758  & aMC@NLO (NLO) \\
+   \hline
+   tHq  & 3495799 & 0.07462  & Madgraph (LO) \\
+   \hline
+   tWZ/tWll  & 50000 & 0.01104  & Madgraph (LO) \\
+   \hline
+   \ttbar & 77081156 & 831.76 & POWHEG (NLO) \\
+   \hline
+   \ttbarZ $\rightarrow$ ll\nu\nu & 13908701 & 0.2529   & aMC@NLO (NLO) \\
+   \ttbarZ $\rightarrow$ 2q & 749400 & 0.5297   & aMC@NLO (NLO) \\
+   \hline
+   \ttbarW $\rightarrow$ l\nu & 5280565 & 0.2001   & aMC@NLO (NLO) \\
+   \ttbarW $\rightarrow$ 2q & 833298 & 0.405  & aMC@NLO (NLO) \\
+   \hline
+   \ttbarH $\rightarrow$ bb & 3845992 & 0.2942 & POWHEG (NLO) \\
+   \ttbarH $\rightarrow$ non bb & 3981250 & 0.2123 & POWHEG (NLO) \\
+   \hline
+   W+jets & 24120319 & 61526.7 & aMC@NLO (NLO) \\
+   \hline
+   Z+jets ($m_{Z} \geq 50\GeVcc& $& 151023640 & 5765.4 & aMC@NLO (NLO) \\
+   Z+jets ($10 \GeVcc \leq m_{Z} < 50\GeVcc& $& 106269624 & 18610.0 & aMC@NLO (NLO) \\
+   \hline
+   
+ \end{tabular}
+ \addtolength{\tabcolsep}{-1ex}
+\end{table}
+
+
+
+
+
+\section{Simulation Corrections}\label{sec:simCorrections}
+As 
+
+\subsection{Miscalibrated Tracker APV}
+\subsection{Lepton Reconstruction}
+\subsection{•}
+\subsection{\PU modelling}
+
+
