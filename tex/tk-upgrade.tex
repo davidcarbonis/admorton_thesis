@@ -251,8 +251,7 @@ The linearised $\chi^{2}$ fit makes use of residuals between the stubs and the s
 
 As the \emph{TMTT} project was formed a significantly after the other two L1 track finder projects, there were naturally greater time and resource pressures in developing the multiple components of a complete system, including the ability to perform precision helix parameter fits on the \HT output with an algorithm that could be  implemented in hardware. 
 Following discussions with members of the \emph{tracklet} and \emph{AM} projects, it was decided that the use of a linearised $\chi^{2}$ fit based off the one proposed by the \emph{tracklet} project would be investigated.
-The mathematics forming the basis for the \emph{TMTT}'s implementation of the algorithm is detailed in~\cite{CMS_DN-14-043}. 
-\editComment{Need to check re. there being a publicly available copy? Emailed Louise}
+The mathematics forming the basis for the \emph{TMTT}'s implementation of the algorithm is detailed in~\cite{CMS_DN-14-043} and the 
 
 \subsubsection{General Form of a $\chi^{2}$ Fit}\label{subsubsec:chi2maths}
 The parameters of each stub $s_{i}$, based on the track’s helix parameters $h$, are initially linearly expanded around the estimate of the helix parameters $h_{0}$:
@@ -299,7 +298,7 @@ chi^{2} = (\delta s^{T} + D \delta h)^{T}(\delta s^{T} + D \delta h)\;.
 \label{eq:chi5}
 \end{equation}
 
-\subsubsection{Software Results and Firmware Feasibility}\label{subsubsec:chi2software}
+\subsubsection{Software Results and Outlook}\label{subsubsec:chi2software}
 Initially a floating point software implementation of the algorithm, using the derivatives derived from the general form of Eqn.~\ref{eq:chi4} and the $chi^{2}$ of the fit from  Eqn.~\ref{eq:chi5}, was used to validate the algorithm and optimise its performance.
 
 Given that a significant proportion of tracks reconstructed by the \HT contain at least one incorrect stub, up to 40\% for \ttbar events at \PU of 200, and each additional iteration of the fitting algorithm yields diminishing improvements, the residuals associated to each stub were considered following each fitting iteration.

@@ -13,8 +13,9 @@ Therefore, the final state contains two leptons from the Z boson decay and at le
 
 The main challenge in defining a signal enriched region for the dilepton final state of tZq is that its topology is identical to final states of other processes with much larger cross sections, resulting in a background dominated
 
+%%% Discuss signal/bkg processes
 
-\section{Event Reconstruction}\label{sec:eventReconstruction}
+\section{Event Selection}\label{sec:eventSelection}
 
 \subsection{Trigger Strategy}\label{subsec:triggerStrategy}
 As the presence of the exactly two leptons resulting from the Z boson decaying is 
@@ -27,7 +28,7 @@ To this end, in order to ensure that the maximum possible statistics can be obta
 
 contains two leptons (\ie two electrons or two muons)
 
-Whilst the Z boson can decay into a tau anti-tau pair, with these leptons being simulated and reconstructed in the MC, they are not considered in the event selection for this analysis due to the ..
+Whilst the Z boson can decay into a tau anti-tau pair, with these leptons being simulated and reconstructed in the MC, they are not considered in the event selection for this analysis due to the .. %%% hard to simulate due to their high mass
 
 The triggers selected have been chosen to retain as low a transverse momenta threshold as possible so as to maximise the maximum possible of phase space that can be covered ...
 
@@ -75,7 +76,7 @@ Following the trigger requirements, a number of filters are applied in order to 
 \end{itemize}
 
 \subsection{Lepton Selection}
-As the tZq dilepton final state is distinguished by the Z boson decaying leptonically and the W boson decaying purely hadronically, it is of upmost importance to be able to identify isolated leptons with a low misidentification rate.
+As the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay, being able to identify isolated leptons with a low misidentification rate is essential.
 
 
 \subsubsection{Electrons}
@@ -208,7 +209,6 @@ In contrast to the previous tZq searches where the W boson decays into a lepton 
 The W boson candidate is constructed by considering each possible pair of jets, with the pair with a dijet invariant mass closest to the W boson mass of 80.4\GeVcc being chosen as the W candidate.
 The leading b-jet however, is excluded from consideration as the hardest b-jet is assumed to be produced from the decay of the top quark. 
 
-\section{Signal Region}
 \section{Background Estimation}\label{sec:bkgEst}
 In any high energy particle physics analysis, accurate modelling of the background processes is essential in order to be able to make a measurement 
 The main challenge in defining a signal enriched region for the dilepton final state of tZq is that its topology is identical to final states of other processes with much larger cross sections, resulting in a background dominated
@@ -270,10 +270,14 @@ Non-prompt estimation: & a$\pm$b & c$\pm$d & e$\pm$f \\
 \label{tab:fakeLeptonYields}
 \end{table}
 
-\section{Data and MC Simulation Samples}
+\section{Data and MC Simulation Samples}\label{sec:samples}
 The analysis uses proton-proton collision data at $\sqrt{13}$ in 2016, considering events in the double lepton and single lepton datasets where the double and single lepton triggers respectively have fired, using the strategy discussed in Chapter~\ref{subsec:triggerStrategy}.
 
-The MC samples used to simulate the signal and background processes considered are given in Table~\ref{tab:mcList}.
+Table~\ref{tab:mcList} lists the MC samples used to simulate the signal and background processes that were considered.
+ with the number of events generated, their cross sections and the generator used and to which order of perturbative accuracy in QCD was used to produce them.
+
+The hadronisation of all the MC samples considered was done using PYTHIA 8.
+
 
 \begin{table}[htbp]
 \topcaption {
@@ -294,6 +298,14 @@ The MC processes and their associated total number of events, cross sections and
    \hline
    tWZ/tWll  & 50000 & 0.01104  & Madgraph (LO) \\
    \hline
+   t tW-channel & 3516550 & 35.85 & POWHEG (NLO) \\
+   $\overline{\text{t}}$ tW-channel & 5205966 & 35.85 & POWHEG (NLO) \\
+   \hline
+   t s-channel & 2989199 & 10.32 & aMC@NLO (NLO) \\
+   \hline
+   t t-channel & 67240808 & 136.02 & POWHEG (NLO) \\
+   $\overline{\text{t}}$ t-channel & 38811017 & 80.95 & POWHEG (NLO) \\
+   \hline
    \ttbar & 77081156 & 831.76 & POWHEG (NLO) \\
    \hline
    \ttbarZ $\rightarrow$ ll\nu\nu & 13908701 & 0.2529   & aMC@NLO (NLO) \\
@@ -303,28 +315,35 @@ The MC processes and their associated total number of events, cross sections and
    \ttbarW $\rightarrow$ 2q & 833298 & 0.405  & aMC@NLO (NLO) \\
    \hline
    \ttbarH $\rightarrow$ bb & 3845992 & 0.2942 & POWHEG (NLO) \\
-   \ttbarH $\rightarrow$ non bb & 3981250 & 0.2123 & POWHEG (NLO) \\
+           $\rightarrow$ non bb & 3981250 & 0.2123 & POWHEG (NLO) \\
    \hline
    W+jets & 24120319 & 61526.7 & aMC@NLO (NLO) \\
    \hline
    Z+jets ($m_{Z} \geq 50\GeVcc& $& 151023640 & 5765.4 & aMC@NLO (NLO) \\
    Z+jets ($10 \GeVcc \leq m_{Z} < 50\GeVcc& $& 106269624 & 18610.0 & aMC@NLO (NLO) \\
    \hline
+   WW $\rightarrow$ $l\nuqq$ & 8997800 & 49.997  & POWHEG (NLO) \\
+      $\rightarrow$ $ll\ny\nu$ & 1999000 & 12.178 & POWHEG (NLO) \\
+   \hline
+   WZ $\rightarrow l\nuqq$ & 24221923 & 10.73 & aMC@NLO (NLO) \\
+      $\rightarrow llqq$ & 26517272 & 5.606 & aMC@NLO (NLO) \\
+      $\rightarrow lll\nu$ 1927043 & 5.26 & aMC@NLO (NLO) \\
+   \hline
+   ZZ $\rightarrow ll\nu\nu$ & 8842475 & 0.5644 & POWHEG (NLO) \\
+      $\rightarrow llqq$ & 14534622 & 3.222 & aMC@NLO (NLO) \\
+      $\rightarrow llll$ & 10709784 & 1.204 & aMC@NLO (NLO) \\
+   \hline
+   WWW & 240000 & 0.2086 & aMC@NLO (NLO) \\
+   \hline
+   WWZ & 250000 & 0.1651 & aMC@NLO (NLO) \\
+   \hline
+   WZZ & 246800 & 0.05565 & aMC@NLO (NLO) \\
+   \hline
+   ZZZ & 249237 & 0.01398 & aMC@NLO (NLO) \\
+   \hline
    
  \end{tabular}
  \addtolength{\tabcolsep}{-1ex}
 \end{table}
-
-
-
-
-
-\section{Simulation Corrections}\label{sec:simCorrections}
-As 
-
-\subsection{Miscalibrated Tracker APV}
-\subsection{Lepton Reconstruction}
-\subsection{•}
-\subsection{\PU modelling}
 
 
