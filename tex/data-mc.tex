@@ -184,10 +184,35 @@ Such identification, known as \emph{b-tagging}, exploits the fact that because b
 These secondary vertices are exploited by the \emph{Combined Secondary Vertex version 2} (CSVv2) algorithm~\cite{Chatrchyan:2012jua,CMS:206kkf}, which uses information about displaced track and secondary vertices as input into a multilayer perceptron ~\footnote{A class of neural network} to produce a discriminator value.
 The CMS B-Tag and Vertexing (BTV) Physics Object Group defines working points for this (and other) algorithm's discriminator based on the mis-identification rate.
 
+
+\begin{table}[htbp]
+\topcaption {
+The CSVv2 algorithm's selection efficiencies for bottom, charm, and light jets with $\pT > 20\GeVc$ in simulated \ttbar events~\ref{Sirunyan:2017ezt}.
+}
+\label{tab:bTagWPs}
+  \centering
+% This increases column spacing.
+  \addtolength{\tabcolsep}{1ex}
+% This right-aligns numbers in column, but centers them under column title.
+  \begin{tabular}{|l|l|1|1|}
+   \hline
+   \bf{CSVv2 WP Name (value)} & \bf{$\epsilon_{b}}$ (\%)} & \bf{$\epsilon_{c}}$ (\%)} & \bf{$\epsilon_{udsg}}$ (\%)}   \\
+   \hline
+   Loose (0.5426) & 84 &  39 & 8.3 \\
+   \hline
+   Medium (0.8484) & 66 &  13  & 0.8\\  
+   \hline
+   Tight (0.9535) & 46 &  2.6 & 0.1 \\  
+   \hline
+   
+ \end{tabular}
+ \addtolength{\tabcolsep}{-1ex}
+\end{table}
+
 \begin{figure}[h]
 \centering
 \includegraphics{figs/data-mc/ak4_pfjets_CSVIVF_Log.pdf}
-\caption{The distribution of the CSVv2 algorithm's discriminator for multijet events, for $50\GeV < \pT < 250\GeV$, at $\sqrt{13\TeV}$, where the jets have been reconstructed with the anti-\kt algorithm with $R = 0.4$~\cite{CMS:2016kkf}.}
+\caption{The distribution of the CSVv2 algorithm's discriminator for multijet events, for $50\GeV < \pT < 250\GeV$, at $\sqrt{13\TeV}$, where the jets have been reconstructed with the anti-\kt algorithm with $R = 0.4$~\cite{CMS:2016kkf}. T}
 \label{fig:bTagDiscriminator}
 \end{figure}
 
