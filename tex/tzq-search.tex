@@ -44,19 +44,19 @@ Triggers and datasets used for each decay channel.
 % This increases column spacing.
   \addtolength{\tabcolsep}{1ex}
 % This right-aligns numbers in column, but centers them under column title.
-  \begin{tabular}{|l|l|1|}
+  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
    \hline
    \bf{Final State} & \bf{Dataset} & \bf{HLT Paths}  \\
    \hline
-    ee & SingleElectron &  HLT_Ele32_eta2p1_WPTight_Gsf   \\
-    & DoubleElectron & HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ \\
+    ee & SingleElectron &  HLT\_Ele32\_eta2p1\_WPTight\_Gsf   \\
+    & DoubleElectron & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ \\
    \hline
-    $\mu\mu$ & SingleMuon &  HLT_Iso(Tk)Mu24  \\  
-        & DoubleMuon  & HLT_Mu17_TrkIsoVVL_(Tk)Mu8_TrkIsoVVL_DZ \\  
+    $\mu\mu$ & SingleMuon &  HLT\_Iso(Tk)Mu24  \\  
+        & DoubleMuon  & HLT\_Mu17\_TrkIsoVVL\_(Tk)Mu8\_TrkIsoVVL\_DZ \\  
 
    \hline
-   e$\mu$ & MuonEG &  HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL(_DZ)   \\  
-          &        &  HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL(_DZ)  \\
+   e$\mu$ & MuonEG &  HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL(\_DZ)   \\  
+          &        &  HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL(\_DZ)  \\
    \hline
    
  \end{tabular}
@@ -207,7 +207,7 @@ The MC processes and their associated total number of events, cross sections and
 % This increases column spacing.
   \addtolength{\tabcolsep}{1ex}
 % This right-aligns numbers in column, but centers them under column title.
-  \begin{tabular}{|l|l|1|1|}
+  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
    \hline
    \bf{MC process} & \bf{Events} & \bf{Cross section (pb)} & \bf{Generator (Order)}   \\
    \hline
@@ -227,10 +227,10 @@ The MC processes and their associated total number of events, cross sections and
    \hline
    \ttbar & 77.1M & 831.76 & POWHEG (NLO) \\
    \hline
-   \ttbarZ $\rightarrow$ ll\nu\nu & 13.9M & 0.2529   & aMC@NLO (NLO) \\
+   \ttbarZ $\rightarrow$ ll$\nu\nu$ & 13.9M & 0.2529   & aMC@NLO (NLO) \\
    \ttbarZ $\rightarrow$ qq & 749K & 0.5297   & aMC@NLO (NLO) \\
    \hline
-   \ttbarW $\rightarrow$ l\nu & 5.3M & 0.2001   & aMC@NLO (NLO) \\
+   \ttbarW $\rightarrow$ l$\nu$ & 5.3M & 0.2001   & aMC@NLO (NLO) \\
    \ttbarW $\rightarrow$ qq & 833K & 0.405  & aMC@NLO (NLO) \\
    \hline
    \ttbarH $\rightarrow$ bb & 3.8M & 0.2942 & POWHEG (NLO) \\
@@ -238,19 +238,19 @@ The MC processes and their associated total number of events, cross sections and
    \hline
    W+jets & 24.1M & 61526.7 & aMC@NLO (NLO) \\
    \hline
-   Z+jets ($m_{Z} \geq 50\GeVcc& $& 151M & 5765.4 & aMC@NLO (NLO) \\
-   Z+jets ($10 \GeVcc \leq m_{Z} < 50\GeVcc& $& 106M & 18610.0 & aMC@NLO (NLO) \\
+   Z+jets ($m_{Z} \geq 50\GeVcc $ & 151M & 5765.4 & aMC@NLO (NLO) \\
+   Z+jets ($10 \GeVcc \leq m_{Z} < 50\GeVcc$ & 106M & 18610.0 & aMC@NLO (NLO) \\
    \hline
-   WW $\rightarrow$ $l\nuqq$ & 9.0M & 49.997  & POWHEG (NLO) \\
-      $\rightarrow$ $ll\ny\nu$ & 2.0M & 12.178 & POWHEG (NLO) \\
+   WW $\rightarrow$ l$\nu$qq & 9.0M & 49.997  & POWHEG (NLO) \\
+      $\rightarrow$ ll$nu\nu$ & 2.0M & 12.178 & POWHEG (NLO) \\
    \hline
-   WZ $\rightarrow l\nuqq$ & 24.2M & 10.73 & aMC@NLO (NLO) \\
-      $\rightarrow llqq$ & 26.5M & 5.606 & aMC@NLO (NLO) \\
-      $\rightarrow lll\nu$ 1.9M & 5.26 & aMC@NLO (NLO) \\
+   WZ $\rightarrow$ l$\nu$qq & 24.2M & 10.73 & aMC@NLO (NLO) \\
+      $\rightarrow$ llqq & 26.5M & 5.606 & aMC@NLO (NLO) \\
+      $\rightarrow$ lll$\nu$ 1.9M & 5.26 & aMC@NLO (NLO) \\
    \hline
-   ZZ $\rightarrow ll\nu\nu$ & 8.8M & 0.5644 & POWHEG (NLO) \\
-      $\rightarrow llqq$ & 15.3M & 3.222 & aMC@NLO (NLO) \\
-      $\rightarrow llll$ & 10.7M & 1.204 & aMC@NLO (NLO) \\
+   ZZ $\rightarrow$ ll$\nu\nu$ & 8.8M & 0.5644 & POWHEG (NLO) \\
+      $\rightarrow$ llqq & 15.3M & 3.222 & aMC@NLO (NLO) \\
+      $\rightarrow$ llll & 10.7M & 1.204 & aMC@NLO (NLO) \\
    \hline
    WWW & 240K & 0.2086 & aMC@NLO (NLO) \\
    \hline
@@ -275,7 +275,7 @@ The MC processes and their associated total number of events, cross sections and
 % This increases column spacing.
   \addtolength{\tabcolsep}{1ex}
 % This right-aligns numbers in column, but centers them under column title.
-  \begin{tabular}{|l|l|1|1|}
+  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}@{\hspace{4ex}}}
    \hline
    \bf{MC process} & \bf{Events} & \bf{Cross section (pb)} & \bf{Generator (Order)}   \\
    \hline

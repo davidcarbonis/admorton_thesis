@@ -51,7 +51,7 @@ Using these reconstructed particles, additional objects such as b-jets and missi
 As the charged particles produced from the proton-proton collisions traverse the silicon tracker, they interact with it and leave energy deposits known as \emph{hits}.
 These hits are used to reconstruct the particles' trajectories through multiple iterations of the Combinatorial Track Finder (CTF) algorithm, which is based off combinatorial Kalman Filtering~\cite{Chatrchyan:2014fea,Fruhwirth:1987fm}.
 
-The steps of each iteration	of the CTF algorithm are:
+The steps of each iteration of the CTF algorithm are:
 \begin{itemize}
 \item \textbf{Seed generation:} initial track candidates are formed from two or three hits to provide a first estimate of the tracks' helix parameters.
 \item \textbf{Track Finding:} A combinatorial Kalman Filter then builds a candidate by adding hits from successive layers which are compatible with the extrapolated trajectory, which is updated with the addition of each subsequent hit, taking into account the hit's position, uncertainty and material traversed.
@@ -184,7 +184,6 @@ Such identification, known as \emph{b-tagging}, exploits the fact that because b
 These secondary vertices are exploited by the \emph{Combined Secondary Vertex version 2} (CSVv2) algorithm~\cite{Chatrchyan:2012jua,CMS:206kkf}, which uses information about displaced track and secondary vertices as input into a multilayer perceptron ~\footnote{A class of neural network} to produce a discriminator value.
 The CMS B-Tag and Vertexing (BTV) Physics Object Group defines working points for this (and other) algorithm's discriminator based on the mis-identification rate.
 
-
 \begin{table}[htbp]
 \topcaption {
 The CSVv2 algorithm's selection efficiencies for bottom, charm, and light jets with $\pT > 20\GeVc$ in simulated \ttbar events~\ref{Sirunyan:2017ezt}.
@@ -194,9 +193,11 @@ The CSVv2 algorithm's selection efficiencies for bottom, charm, and light jets w
 % This increases column spacing.
   \addtolength{\tabcolsep}{1ex}
 % This right-aligns numbers in column, but centers them under column title.
-  \begin{tabular}{|l|l|1|1|}
+  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
    \hline
-   \bf{CSVv2 WP Name (value)} & \bf{$\epsilon_{b}}$ (\%)} & \bf{$\epsilon_{c}}$ (\%)} & \bf{$\epsilon_{udsg}}$ (\%)}   \\
+
+   \hline
+   \textbf{CSVv2 WP Name (value)} & \textbf{$\epsilon_{b}$ (\%)} & \textbf{$\epsilon_{c}$ (\%)} & \textbf{$\epsilon_{udsg}$ (\%)}   \\
    \hline
    Loose (0.5426) & 84 &  39 & 8.3 \\
    \hline
