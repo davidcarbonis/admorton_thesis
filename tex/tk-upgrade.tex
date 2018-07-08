@@ -245,7 +245,7 @@ If the reconstruction of a charged particle produces more than one track, these 
 
 \subsection{Linearised $\chi^{2}$ Track Fitter}\label{subsec:chi2}
 Whilst the Kalman Filter was used as a track fitter for the December 2016 hardware demonstrator, a Linear Regression (LR) and a Linearised $\chi^{2}$ fitting algorithms were explored.
-Both track fitting algorithms require a proceeding \emph{Seed Filter} (SF) stage to remove stubs in a HT cell which are inconsistent with a straight line in the \emph{r-z} plane to filter out both fake tracks and stubs incorrectly assigned to tracks.
+Both the Linear Regression and Linearised $\chi^{2}$ fitting algorithms require a proceeding \emph{Seed Filter} (SF) stage to remove stubs in a HT cell which are inconsistent with a straight line in the \emph{r-z} plane to filter out both fake tracks and stubs incorrectly assigned to remove stubs in a HT cell which are inconsistent with a straight line in the \emph{r-z} plane to filter out both fake tracks and stubs incorrectly assigned to tracks.
 The LR fitter~\cite{TMTT_FLP} was developed as an alternative to the KF and exploits the fact that sufficiently high \pT tracks should form a straight line in the \emph{\rphi} and \emph{r-z} planes to perform independent fits in each planes.
 The linearised $\chi^{2}$ fit makes use of residuals between the stubs and the seeded track that minimise $\chi^{2}$ of the fit in order to obtain improved helix parameters for the track candidate.
 
@@ -264,7 +264,7 @@ Tracks throughout this chapter are described using five helix parameters:
 \item \textbf{$\frac{1}{R}$} - the inverse radius of curvature of the track. As the magnetic field in the tracker is constant and the radius of curvature is proportional to the transverse momentum of the track, results are quoted in terms of $\frac{q}{\pT}$ (where q is the charge of the particle).
 \item \textbf{$\phi{0}$} - the track direction at the point of closest approach to the interaction point.
 \item \textbf{$z_{0}$} - the z position of the helix at the point of closest approach to the interaction point.
-\item \textbf{$\tan(\lamda)$} - the tangent of the \emph{dip} angle, related to $\eta$ by $\tan(\lamda) = \sinh{\eta}$ and expressed in terms of $\eta$ for the results presented.
+\item \textbf{$\tan (\lamda)$} - the tangent of the \emph{dip} angle, related to $\eta$ by $\tan (\lamda) = \sinh (\eta)$ and expressed in terms of $\eta$ for the results presented.
 \item \textbf{$d_{0}$} - the \emph{impact parameter}, \ie the distance of the track vertex from the interaction point in the $x-y$ plane. The \HT and track fitting algorithms discussed all assume that all tracks originate at the interaction point.
 \end{itemize}
 
