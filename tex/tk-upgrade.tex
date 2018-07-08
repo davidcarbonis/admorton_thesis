@@ -264,7 +264,7 @@ This stricter latter definition is only used in quoting results from the entire 
 \end{itemize}
 
 \subsection{Linearised $\chi^{2}$ Track Fitter}\label{subsec:chi2}
-Whilst the Kalman Filter was used as a track fitter for the December 2016 hardware demonstrator, a Linear Regression (LR) and a Linearised $\chi^{2}$ fitting algorithms were explored.
+Whilst the Kalman Filter was used as a track fitter for the December 2016 hardware demonstrator, a Linear Regression (LR) and a Linearised $\chi^{2}$ fitting algorithms were also explored.
 Both the Linear Regression and Linearised $\chi^{2}$ fitting algorithms require a proceeding \emph{Seed Filter} (SF) stage to remove stubs in a HT cell which are inconsistent with a straight line in the \emph{r-z} plane to filter out both fake tracks and stubs incorrectly assigned to remove stubs in a HT cell which are inconsistent with a straight line in the \emph{r-z} plane to filter out both fake tracks and stubs incorrectly assigned to tracks.
 The LR fitter~\cite{TMTT_FLP} was developed as an alternative to the KF and exploits the fact that sufficiently high \pT tracks should form a straight line in the \emph{\rphi} and \emph{r-z} planes to perform independent fits in each planes.
 The linearised $\chi^{2}$ fit makes use of residuals between the stubs and the seeded track that minimise $\chi^{2}$ of the fit in order to obtain improved helix parameters for the track candidate.
@@ -274,15 +274,11 @@ Following discussions with both the \emph{tracklet} and \emph{AM} projects, it w
 The general form of the $\chi^{2}$ fit and the derivation of the track derivatives required by the algorithm were provided in a private communication~\cite{CMS_DN-14-043} and were used to produce our own implementation of the track fitting algorithm.
 
 The general form of the $\chi^{2}$ fit is described in Chapter~\ref{subsec:chi2maths}, followed by a discussion of the development and outcomes of the software implementation of the fitting algorithm in Chapter~\ref{subsubsec:chi2software}.
-%Appendix~\ref{app:chi2} provides the derivation of the individual track derivatives used by the algorithm.
-Calculation of the derivatives for the barrel layer and endcap disk hits from this general form, including a correction factor for $\phi$ in the outer disks to account for the fact that these modules do not point directly towards the interaction point, are given in Appendix~\ref{app:chi2}.
-
+The calculation of the track derivatives for the barrel layer and endcap disk hits used by the algorithm, including a correction factor for $\phi$ in the outer disks to account for the fact that these modules do not point directly towards the interaction point, are given in full in Appendix~\ref{app:chi2}.
 
 \subsubsection{General Form of a $\chi^{2}$ Fit}\label{subsubsec:chi2maths}
-
-For the general form  of a $\chi^{2}$ fit, a track composed of hits (\ie stubs) 
-
-Initially the projection of the track, $f_{i}(overrightarrow{h})$, described as a function of its helix parameters, is linearly expanded around the estimate of the helix parameters $\overline{h}$:
+For the general form of a $\chi^{2}$ fit for a track, $f$, described by its helix parameters, $overrightarrow{h}$, and 
+the position of its $i$ hits (\ie stubs) given at $s_{i}$, we initially linearly expand the projection of the track, $f_{i}$, around the estimate of the helix parameters $\overline{h}$:
 
 \begin{equation}
 f_{i}(\overrightarrow{h} ) = f_{i}(\overrightarrow{h} + \delta \overrightarrow{h}) \;.
@@ -290,7 +286,7 @@ f_{i}(\overrightarrow{h} ) = f_{i}(\overrightarrow{h} + \delta \overrightarrow{h
 \label{eq:chi1}
 \end{equation}
 
-Using Eqn.~\ref{eq:chi1}, the form of the track' $\chi^{2}$ can be expressed as:
+The $\chi^{2}$ of such a track is expressed as:
 
 \begin{equation}
 \chi^{2} = \sum_{ij} \big(f_{i}(\overrightarrow{h}) - s_{i} \big) V^{-1}_{ij}  \big(f_{j}(\overrightarrow{h}) - s_{j} \big)  \;.
@@ -302,26 +298,21 @@ Using Eqn.~\ref{eq:chi1}, the form of the track' $\chi^{2}$ can be expressed as:
 
 where $\delta f_{i} \equiv f_{i}(\overline{h}) - s_{i}$ are the residuals between the expected position of the track (given by the seed helix parameters) and the position of the track given by the stub, and $V^{-1}_{ij} = diag(\sigma^{2}_{ii})$ is the variance matrix which describes the uncertainty associated to the measurement of the stubs.
 
-
-By is minimising $\chi^{2}$, $\delta h$ can be :
+By is minimising $\chi^{2}$, $\delta h$ can be determined:
 
 \begin{equation}
 0 = \frac{\partial \chi^{2}}{\partial \delta h_{k}} = \sum_{ij} \frac{\partial f_{i}}{\partial delta h_{k}} V^{-1}_{ij} ( \delta f_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} ) + \sum_{ij}	( \delta f_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} ) V^{-1}_{ij} \frac{\partial f_{j}}{\partial delta h_{k}}  \;.
 \label{eq:chi3}
 \end{equation}
 
-
-By defining the matrices $D_{ij} = \frac{\partial f_{i}}{\partial h_{k}}$ and $M = D^{T} V^{-1} D$, Eqn.~\ref{eq:chi3} can be rewritten and solved for $\delta h$ as:
-
-%%%%
-
+By defining the matrices $D_{ij} = \frac{\partial f_{i}}{\partial h_{k}}$ and $M = D^{T} V^{-1} D$, Eqn.~\ref{eq:chi3} can be rewritten and solved for $\delta h$:
 
 \begin{equation}
 0 = D^{T} V^{-1} \delta f + M \delta h \Rightarrow \delta h = - M^{-1} D^{T} \delta f \;.
 \label{eq:chi4}
 \end{equation}
 
-Eqn.~\ref{eq:chi4} gives a linear form which can be solved for $\delta h$ through updating the residuals with respect to the seeded track candidate.
+Therefore Eqn~\ref{eq:chi4} provides a simple linear form for how the track helix parameters should be updated for a set of residuals with respect to the seed track candidate.
 
 Similarly the $\chi^{2}$ of the fit can also be expressed in a linear form:
 
@@ -335,13 +326,11 @@ Similarly the $\chi^{2}$ of the fit can also be expressed in a linear form:
 \label{eq:chi5}
 \end{equation}
 
-From these 
 
 \subsubsection{Software Results and Outlook}\label{subsubsec:chi2software}
-Using the track derivatives derived from the general form of Eqn.~\ref{eq:chi4} and detailed in Appendix~\ref{app:chi2}, a floating point software implementation of the algorithm was developed.
-This implementation was used in order to both validate the algorithm and to optimise its performance prior to producing a version 
+From Eqns~\ref{eq:chi4,eq:chi5} and the track derivatives $D_{ij}$ derived in Appendix~\ref{app:chi2}, a floating point software implementation of the algorithm was initially developed to both validate the algorithm and to optimise its performance prior to producing a version ...
 
-%%% r-z filter
+
 
 Given that a significant proportion of tracks reconstructed by the \HT contain at least one incorrect stub, up to 40\% for \ttbar events at \PU of 200, and each additional iteration of the fitting algorithm yields diminishing improvements, the residuals associated to each stub were considered following each fitting iteration.
 %%% Fake rate?!
