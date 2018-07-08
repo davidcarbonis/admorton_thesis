@@ -236,12 +236,32 @@ A more detailed description of the firmware implementation of the \DR for the de
 
 During the development of the \emph{TMTT} demonstrator system both before and following the December 2016 review, the author was involved in a number of simulation studies, the more substantive of which are presented below.
 
-For these results, the reconstruction efficiency is measured relative to all generated charged particles from the primary interaction that produce stubs in at least four layers of the tracker and lies within $\pT > 3\GeV$, $|\eta| < 2.4$, $|z_{0}| < 30\cm$ and $d_{xy} < 1\cm$.
-A track is a defined as being correctly reconstructed or \emph{matched} if the reconstructed track has stubs associated to the particle in at least four tracker layers.
-Those track which fail this criteria are known either as \emph{unmatched} or \emph{fake} tracks.
-If all a reconstructed track's stubs originated from the same particle, the track is defined as being \emph{perfectly} reconstructed.
+\subsubsection{Common definitions}\label{subsubsec:helixParameter}
+A number of parameters and metrics are used to describe tracks and how well the track fitters have reconstructed them are used throughout this chapter and are given below.
+
+\paragraph{Helix Parameters}
+Five helix parameters are used to parametrise the helical path of a charged particle as it travels through the detector.
+They are:
+
+\begin{itemize}
+\item $\mathbf{\frac{1}{R}}$ - the inverse radius of curvature of the track. As the magnetic field in the tracker is constant and the radius of curvature is proportional to the transverse momentum of the track, results are quoted in terms of $\frac{q}{\pT}$ (where q is the charge of the particle).
+\item $\mathbf{\phi{0}}$ - the track direction at the point of closest approach to the interaction point.
+\item $\mathbf{z_{0}}$ - the z position of the helix at the point of closest approach to the interaction point.
+\item $\mathbf{\tan(\lambda)}$ - the tangent of the \emph{dip} angle, related to $\eta$ by $\tan(\lambda) = \sinh (\eta)$ and expressed in terms of $\eta$ for the results presented.
+\item $\mathbf{d_{0}}$ - the \emph{impact parameter}, \ie the distance of the track vertex from the interaction point in the $x-y$ plane. The \HT and track fitting algorithms discussed all assume that all tracks originate at the interaction point.
+\end{itemize}
+
+\paragraph{Reconstructed Track Definition}
+The common definitions of track reconstruction efficiency~\cite{TMTT_JINST} used for the three proposed L1 Track Finder systems are used for the results presented in this chapter:
+
+\begin{itemize}
+\item The reconstruction efficiency is measured relative to all generated charged particles from the primary interaction that produce stubs in at least four layers of the tracker and lies within $\pT > 3\GeV$, $|\eta| < 2.4$, $|z_{0}| < 30\cm$ and $d_{xy} < 1\cm$.
+\item A track is a defined as being correctly reconstructed or \emph{matched} if the reconstructed track has stubs associated to the particle in at least four tracker layers.
+\item Tracks which fail this matching criteria are known either as \emph{unmatched} or \emph{fake} tracks.
+\item If all a reconstructed track's stubs originated from the same particle, the track is defined as being \emph{perfectly} reconstructed. 
 This stricter latter definition is only used in quoting results from the entire chain (\ie all four components of the TFP discussed in Chapter~\ref{subsec:TFP}), as the presence of stubs incorrectly associated to a track is to be expected if only part of the TFP chain has been run.
-If the reconstruction of a charged particle produces more than one track, these additional tracks are considered to be \emph{duplicates}.
+\item If the reconstruction of a charged particle produces more than one track, these additional tracks are considered to be \emph{duplicates}.
+\end{itemize}
 
 \subsection{Linearised $\chi^{2}$ Track Fitter}\label{subsec:chi2}
 Whilst the Kalman Filter was used as a track fitter for the December 2016 hardware demonstrator, a Linear Regression (LR) and a Linearised $\chi^{2}$ fitting algorithms were explored.
@@ -257,62 +277,65 @@ The general form of the $\chi^{2}$ fit is described in Chapter~\ref{subsec:chi2m
 %Appendix~\ref{app:chi2} provides the derivation of the individual track derivatives used by the algorithm.
 Calculation of the derivatives for the barrel layer and endcap disk hits from this general form, including a correction factor for $\phi$ in the outer disks to account for the fact that these modules do not point directly towards the interaction point, are given in Appendix~\ref{app:chi2}.
 
-\subsubsection{Track Helix Parameters}\label{subsubsec:helixParameter}
-Tracks throughout this chapter are described using five helix parameters:
-
-\begin{itemize}
-\item $\mathbf{\frac{1}{R}}$ - the inverse radius of curvature of the track. As the magnetic field in the tracker is constant and the radius of curvature is proportional to the transverse momentum of the track, results are quoted in terms of $\frac{q}{\pT}$ (where q is the charge of the particle).
-\item $\mathbf{\phi{0}}$ - the track direction at the point of closest approach to the interaction point.
-\item $\mathbf{z_{0}}$ - the z position of the helix at the point of closest approach to the interaction point.
-\item $\mathbf{\tan(\lambda)}$ - the tangent of the \emph{dip} angle, related to $\eta$ by $\tan(\lambda) = \sinh (\eta)$ and expressed in terms of $\eta$ for the results presented.
-\item $\mathbf{d_{0}}$ - the \emph{impact parameter}, \ie the distance of the track vertex from the interaction point in the $x-y$ plane. The \HT and track fitting algorithms discussed all assume that all tracks originate at the interaction point.
-\end{itemize}
 
 \subsubsection{General Form of a $\chi^{2}$ Fit}\label{subsubsec:chi2maths}
 
-Initially, assuming one has a track with at least two hits, the 
+For the general form  of a $\chi^{2}$ fit, a track composed of hits (\ie stubs) 
 
-of each stub $s_{i}$, based on the track’s helix parameters $h$, are initially linearly expanded around the estimate of the helix parameters $h_{0}$:
+Initially the projection of the track, $f_{i}(overrightarrow{h})$, described as a function of its helix parameters, is linearly expanded around the estimate of the helix parameters $\overline{h}$:
 
 \begin{equation}
-s_{i}(h) = s_{i}(\overline{h_{0}} + \delta h) = s_{i}(\overline{h_{0}}) + \delta h \frac{\delta s_{i}}{\delta h} + \mathcal{O}(\delta h^{2}) \;.
+f_{i}(\overrightarrow{h} ) = f_{i}(\overrightarrow{h} + \delta \overrightarrow{h}) \;.
+                           = f_{i}(\overline{h} + \delta \overline{h} \frac{\partial f_{i}}{\partial \overline{h}} + \mathcal{0}(\delta \overline{h}^{2}) \;.
 \label{eq:chi1}
 \end{equation}
 
-Where $\chi^{2}$ is defined as:
+Using Eqn.~\ref{eq:chi1}, the form of the track' $\chi^{2}$ can be expressed as:
 
 \begin{equation}
-%\chi^{2} = \frac{\sum_{i}\(s_{i}(h) - s_{track}(\overline{h_{0}}))\^{2}}{\sigma^{2}_{s}}  \;.
-%          = \frac{\sum_{i}\(s_{i}(\overline{h_{0}} - s_{track}(\overline{h_{0}}) + \delta h \frac{\delta s_{i}}{\delta h}))\^{2}}{\sigma^{2}_{s}} \;.
+\chi^{2} = \sum_{ij} \big(f_{i}(\overrightarrow{h}) - s_{i} \big) V^{-1}_{ij}  \big(f_{j}(\overrightarrow{h}) - s_{j} \big)  \;.
+
+         = \sum_{ij} \big( f_{i}(\overrightarrow{h})  - s_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( f_{j}(\overrightarrow{h})  - s_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)  \;.
+         = \sum_{ij} \big( \delta f_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( \delta f_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)  \;.
 %\label{eq:chi2}
 \end{equation}
 
-which, in order to obtain $\delta h$ so that ... , is minimised:
+where $\delta f_{i} \equiv f_{i}(\overline{h}) - s_{i}$ are the residuals between the expected position of the track (given by the seed helix parameters) and the position of the track given by the stub, and $V^{-1}_{ij} = diag(\sigma^{2}_{ii})$ is the variance matrix which describes the uncertainty associated to the measurement of the stubs.
+
+
+By is minimising $\chi^{2}$, $\delta h$ can be :
 
 \begin{equation}
-0 = \frac{\partial \chi^{2}}{\partial \delta h} = 2 \sum_{i}\frac{\partial s_{i}}{\delta h}(s_{i}(\overline{h_{0}}) - s_{track}(\overline{h_{0}}) + \delta h \frac{\partial s_{i}}{\partial h}) + 2 \sum_{i}\frac{\partial s_{i}}{\delta h}(\delta s_{i}^{T} + \delta h \frac{\partial s_{i}}{\partial h}) \;.
+0 = \frac{\partial \chi^{2}}{\partial \delta h_{k}} = \sum_{ij} \frac{\partial f_{i}}{\partial delta h_{k}} V^{-1}_{ij} ( \delta f_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} ) + \sum_{ij}	( \delta f_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} ) V^{-1}_{ij} \frac{\partial f_{j}}{\partial delta h_{k}}  \;.
 \label{eq:chi3}
 \end{equation}
 
-Where $\delta s_{i}^{T} = s_{i}(\overline{h_{0}}) - s_{track}(\overline{h_{0}})$ are the residuals between the hits and the seeded track.
 
-By defining the matrices $D_{ij} = \frac{1}{\sigma_{i}} \frac{\delta s_{i}}{\delta h_{j}}$ and $M = D^{T} D$, Eqn.~\ref{eq:chi3} can be rewritten and solved for $\delta h$ as:
+By defining the matrices $D_{ij} = \frac{\partial f_{i}}{\partial h_{k}}$ and $M = D^{T} V^{-1} D$, Eqn.~\ref{eq:chi3} can be rewritten and solved for $\delta h$ as:
+
+%%%%
+
 
 \begin{equation}
-0 = D^{T} \delta s^{T} + M \delta h \Rightarrow \delta h = - M^{-1} D^{T} \delta s^{T} \;.
+0 = D^{T} V^{-1} \delta f + M \delta h \Rightarrow \delta h = - M^{-1} D^{T} \delta f \;.
 \label{eq:chi4}
 \end{equation}
 
 Eqn.~\ref{eq:chi4} gives a linear form which can be solved for $\delta h$ through updating the residuals with respect to the seeded track candidate.
 
-Similarly the $chi^{2}$ of the fit can also be expressed in a linear form:
+Similarly the $\chi^{2}$ of the fit can also be expressed in a linear form:
 
 \begin{equation}
-chi^{2} = (\delta s^{T} + D \delta h)^{T}(\delta s^{T} + D \delta h)\;.
-        = (\delta s^{T} - DM^{-1}D^{T}\delta s^{t})^{T} (\delta s^{T} - DM^{-1}D^{T}\delta s^{t})\;.
-        + \delta s^{T} (1 - DM^{-1}D^{T}) (1 - DM^{-1}D^{T}) \delta s
+\chi^{2} = (\delta f + D \delta h)^{T}(\delta f + D \delta h) \;.
+         = (\delta f - DM^{-1}D^{T}\delta f)^{T} (\delta f - DM^{-1}D^{T}\delta f) \;.
+         = \delta f^{T} (1- DM^{-1}D^{T}) (1- DM^{-1}D^{T}) \delta f \;.
+         = delta f^{T} (1- DM^{-1}D^{T}) \delta f \;.
+         = delta f^{T} \delta f - \delta f^{T} DM^{-1}D^{T} \delta f \;.
+         = \chi^{2}_{seed} + \delta f^{T} D \delta \overrightarrow{h} \;.
 \label{eq:chi5}
 \end{equation}
+
+From these 
 
 \subsubsection{Software Results and Outlook}\label{subsubsec:chi2software}
 Using the track derivatives derived from the general form of Eqn.~\ref{eq:chi4} and detailed in Appendix~\ref{app:chi2}, a floating point software implementation of the algorithm was developed.
@@ -532,8 +555,9 @@ The duplicate removal algorithm however, remains effective at removing almost al
 
 \begin{table}[htbp]
 \topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain  for the configurations of only increasing the number of \qpt columns (\emph{Default}), additionally using \HT cell merging and the optimised \KF state cuts (\emph{Optimised}).
-The track finding efficiencies, the mean numbers of reconstructed tracks per event in the entire tracker, and the number of those tracks which are fakes or duplicates, are given using the efficiency definitions described in Chapter~\ref{TmttSimStudies}.
+The track finding efficiencies, the mean numbers of reconstructed tracks per event in the entire tracker, and the number of those tracks which are fakes or duplicates, are given using the efficiency definitions described in Chapter~\ref{sec:TmttSimStudies}.
 \editComment{better to quote non-integer numbers and fractions of duplicates/fakes?}.
+\editComment{Ermm ... get table to fit onto page!}
 }
 \label{tab:trackFindingPerformance2GeVHT}
   \centering
@@ -579,7 +603,11 @@ The resolutions are comparable for $\pT < 3\GeV$, with slight a degradation in t
 \\
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtFlatGeometry_5000.pdf}
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/etaResVsInvPtFlatGeometry_5000.pdf}
-\caption{\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200.}
+\caption{
+\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200.
+\editComment{Make plots bigger!}
+\editComment{Best to express resolution in terms of $\pT$ or $\frac{1}{\pT}$?
+}
 \label{fig:htHelixParametersResVsInvPt}
 \end{figure}
 
@@ -614,7 +642,7 @@ From the simplified form of Eq.~\ref{eq:scatter2}, two alternative forms of the 
 
 The initial layer dependent coefficients were obtained through experimentally determining in simulation the \MS contribution to the observed variance in $\phi$.
 Both these initial layer dependent coefficients and the initial constant coefficient of a milliradian were subsequently further optimised in order to recover as much tracking efficiency as  possible.
-Similarly, the \KF state $chi^{2}$ cuts for both approaches were also tuned in order to reject the optimal number of fake and duplicate tracks without compromising on tracking efficiency.
+Similarly, the \KF state $\chi^{2}$ cuts for both approaches were also tuned in order to reject the optimal number of fake and duplicate tracks without compromising on tracking efficiency.
 
 During the comparative studies of these two approaches, it was observed in the results following the \DR stage that in contrast to the trend of the fraction of duplicates decreasing as \pT decreases, the fraction of duplications present increases above circa $3\GeV$, as shown in Fig~\ref{fig:2GeVfracDups}.
 The presence of this trend following in tracks produced by the \HT prior to tracking fitting and \DR, implies that the \HT produces more duplicates at low \pT is the cause of this rather than a shortcoming of the \DR algorithm.
@@ -629,6 +657,7 @@ Consequently, this change was adopted by the project and all the results present
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
 \caption{The fraction of genuine tracks with duplicates as a function of $\frac{1}{\pT}$ following reconstruction by the \HT (left) and fitting and filtering by the \KF and \DR (right) for where the \HT cell merging \pT threshold is set to 2.7\GeV (red) and 3.5\GeV (blue). 
 The constant coefficient for the \MS contribution was used for these \KF results.
+\editComment{Resize plots!}
 }
 \label{fig:2GeVfracDups}
 \end{figure}
@@ -644,8 +673,8 @@ The constant coefficient for the \MS contribution was used for these \KF results
 \end{figure}
 
 Figure~\ref{fig:2GeVTiltEff} shows how the tracking efficiency for the whole chain improves when \MS is accounted for in the \KF.
-The similar performance observed between the two coefficients in Figure~\ref{fig:2GeVTiltEff} and table~\ref{trackFindingPerformance2GeVKF} is due the amount of material traversed by a track not being constant for a single layer as the amount of material contributions in both the tracker and the prior contributions from the Inner Tracker, between the Inner and Outer Trackers and services varying as a function of $\eta$~\cite{P2TrackerTDR}.
-Table~\ref{trackFindingPerformance2GeVKF} also shows that compared to just the \HT optimisations alone, for both \MS coefficients, the \KF is more capable at rejecting incorrectly reconstructed tracks by up to an additional 3-4\%.
+The similar performance observed between the two coefficients in figure~\ref{fig:2GeVTiltEff} and table~\ref{tab:trackFindingPerformance2GeVKF} is due the amount of material traversed by a track not being constant for a single layer as the amount of material contributions in both the tracker and the prior contributions from the Inner Tracker, between the Inner and Outer Trackers and services varying as a function of $\eta$~\cite{P2TrackerTDR}.
+Table~\ref{tab:trackFindingPerformance2GeVKF} also shows that compared to just the \HT optimisations alone, for both \MS  coefficients, the \KF is more capable at rejecting incorrectly reconstructed tracks by up to an additional 3-4\%.
 In contrast though, the duplicate increases for both coefficients by 3-5\% for the full chain, with the increase in duplicates occurring between $3.2\GeV$ and $5\GeV$, as shown in figure~\ref{fig:2GeVfracDups}, near the $3.5\GeV$ threshold for merging adjacent \HT cells.
 At the time of writing this chapter, it is not understood how incorporating \MS into the \KF causes this, but it is suspected to be related to the use of the reduced precision of \HT cells.
 \editComment{It is hoped that by the time of submission, someone will have figured this out.}
