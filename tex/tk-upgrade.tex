@@ -401,16 +401,10 @@ The track finding efficiencies following each stage are given using the efficien
 
 As shown in table~\ref{tab:chi2_exactVsApprox}, in \ttbar events at \PU of 200, a significant proportion of the tracks reconstructed by the linearised $\chi^{2}$ fit are fake tracks, approximately 50\%, and the majority of the matched tracks reconstructed contain at least one incorrect stub, approximately 60\%.
 
+Given that stubs which are either incorrectly associated with a track or belong to a fake would be expected have larger residuals than those which are correctly associated, once a fit has been performed and the residuals of each stub are known, filtering of the stubs can be undertaken
+
 Running multiple iterations of the fitting algorithm had been previously been considered in the context of improving upon the resolution of the fitted track's helix parameters, but had been shown to only produce rapidly diminishing returns with each new iteration.
 
-When 
-
-Given that stubs which are either incorrectly associated with a track or belong to a fake would be expected have larger residuals than those which are correctly associated, once a fit has been performed and the residuals of each stub are known, 
-
-When considering that following a fit
-
-
- each additional iteration of the fitting algorithm yields diminishing improvements, the residuals associated to each stub were considered following each fitting iteration.
 
 Therefore once the residuals of each stub were known following a fit, if the stub with the largest residual exceeded a predefined cut it was removed from the track and the track was refitted with its reduced collection of hits. 
 During the optimisation of the cut, it was found that this approach had the potential to leave a track with fewer than the minimum of four stubs required for a track candidate to be considered, potentially leading to the mistaken discarding of a matched track.
