@@ -346,9 +346,9 @@ Both versions produce comparable results for the mean tracking efficiency, the m
 
 It is also useful to consider the quality of the reconstructed tracks in terms of the resolutions obtained for their helix parameters.
 Figure~\ref{fig:chi2HelixParametersResVsEtaApproxVsExact} shows the resolutions of the four track parameters produced by both version of the algorithm as a function of $\eta$ in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200.
-In contrast to the floating point algorithm, the ``approximated'' maths version of the algorithm is noticeably poorer 
-
-\editComment{Elaborate on resolutions}
+In contrast to the floating point algorithm, the ``approximated'' maths version of the algorithm provides noticeably worse resolutions for \qpt and $\phi_{0}$ by approximately a factor of two.
+The resolutions obtained for \qpt and $\phi_{0}$ endcaps and for $\eta$ and $z_{0}$ across the tracker are broadly comparable between the two approaches.
+\editComment{Elaborate on resolutions further once the higher stats results are in - can make statements with much greater confidence! \ie explain why the worse barrel resolution for \qpt and $phi_{0}$ is acceptable - as my notes and memory does not correspond with this!}
 
 \begin{table}[htbp]
 \topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain for  both the floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
@@ -390,14 +390,13 @@ The track finding efficiencies following each stage are given using the efficien
 \caption{
 \pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200 for the floating point (red) and approximated maths (blue) implementations of the linearised $\chi^{2}$ fit algorithm for a single fitting iteration.
 \editComment{Make plots bigger!}
-\editComment{Increase stats from 100}
+\editComment{Increase stats from 100!}
 }
 \label{fig:chi2HelixParametersResVsEtaApproxVsExact}
 \end{figure}
 
-
-As shown in table~\ref{tab:chi2_exactVsApprox}, in \ttbar events at \PU of 200, a significant proportion of the tracks reconstructed by the linearised $\chi^{2}$ fit are fake tracks, approximately 50\%, and the majority of the matched tracks reconstructed contain at least one incorrect stub, approximately 60\%.
-
+\editComment{Note numbers when higher stats runs are complete}
+As shown in table~\ref{tab:chi2_exactVsApprox}, in \ttbar events at \PU of 200, a significant proportion of the tracks reconstructed by the linearised $\chi^{2}$ fit either are fake tracks or are matched tracks which contain at least one incorrect stub.
 Given that stubs which are either incorrectly associated with a track or belong to a fake would be expected have larger residuals than those which are correctly associated.
 
 
@@ -414,6 +413,11 @@ Table\ref~{tab:chi2-exactVsApprox}
 \editComment{Comment on purity, resolution, fake rate, and duplicate rate}
 \editComment{Impact on killing genuine stubs assoc. with track?}
 
+kf - red
+it1 - green
+it2 - purple
+it3 - black
+it4 - blue
 
 \begin{table}[htbp]
 \topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain for  both the floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
@@ -434,7 +438,7 @@ The track finding efficiencies following each stage are given using the efficien
    & 2 & 93.0 & 89.6 & 74.2 & 7.2 & 8.6 \\
    & 3 & 92.2 & 89.4 & 71.6 & 5.6 & 8.1 \\
    & 4 & 92.2 & 89.5 & 71.4 & 5.5 & 8.0 \\
-   & 5 & 92.2 & 89.5 & 71.4 & 5.5 & 8.0 \\
+%   & 5 & 92.2 & 89.5 & 71.4 & 5.5 & 8.0 \\
 %   & 10 & 92.2 & 89.5 & 71.4 & 5.5 & 8.0 \\
 %   & 15 & 92.2 & 89.5 & 71.4 & 5.5 & 8.0 \\
    \hline
