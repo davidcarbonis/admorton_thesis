@@ -249,7 +249,7 @@ They are:
 \item $\mathbf{\phi{0}}$ - the track direction at the point of closest approach to the interaction point.
 \item $\mathbf{z_{0}}$ - the z position of the helix at the point of closest approach to the interaction point.
 \item $\mathbf{\tan(\lambda)}$ - the tangent of the \emph{dip} angle, related to $\eta$ by $\tan(\lambda) = \sinh (\eta)$ and expressed in terms of $\eta$ for the results presented.
-\item $\mathbf{d_{0}}$ - the \emph{impact parameter}, \ie the distance of the track vertex from the interaction point in the $x-y$ plane. The \HT and track fitting algorithms discussed all assume that all tracks originate at the interaction point.
+\item $\mathbf{d_{0}}$ - the \emph{impact parameter}, \ie the distance of the track vertex from the interaction point in the $x-y$ plane. The \HT and track fitting algorithms discussed all assume that all tracks originate at the interaction point, \ie $d_{0} = 0$. As such, results involving this helix parameter are not given below.
 \end{itemize}
 
 \paragraph{Reconstructed Track Definition}
@@ -343,7 +343,13 @@ From Eqns~\ref{eq:chi4,eq:chi5} and the track derivatives $D_{ij}$ derived in Ap
 Following the validation of a floating point version of the algorithm, a version was developed using approximated calculations of the track derivatives in order to simply (and reduce resources required for) any future derivative tabulation by reducing the number of variables that it would depend on.
 
 Table\ref~{tab:chi2-exactVsApprox} shows how the tracking performance compares between the floating point maths and ``approximated'' maths versions of the algorithm compare against each other and from the raw track finding output from the \HT.
-The mean tracking efficiency is comparable
+Both versions produce comparable results for the mean tracking efficiency, the mean number of tracks reconstructed  and what proportion of them are with or fake and duplicate tracks, indicating that the approximations made are broadly acceptable.
+
+It is also useful to consider the quality of the reconstructed tracks in terms of the resolutions obtained for their helix parameters.
+Figure~\ref{fig:chi2HelixParametersResVsEtaApproxVsExact} shows the resolutions of the four track parameters produced by both version of the algorithm as a function of $\eta$ in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200.
+In contrast to the floating point algorithm, the ``approximated'' maths version of the algorithm 
+
+\editComment{Elaborate on resolutions}
 
 \begin{table}[htbp]
 \topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain for  both the floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
@@ -375,8 +381,6 @@ The track finding efficiencies following each stage are given using the efficien
  \addtolength{\tabcolsep}{-1ex}
 \end{table}
 
-In contrast to the floating point algorithm, the ``approximated'' maths version of the algorithm 
-
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/qOverPtResVsEta_It1_ApproxVsExact.pdf}
@@ -385,7 +389,7 @@ In contrast to the floating point algorithm, the ``approximated'' maths version 
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_It1_ApproxVsExact.pdf}
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/etaResVsEta_It1_ApproxVsExact.pdf}
 \caption{
-\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200.
+\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200 for the floating point and approximated maths implementations of the linearised $\chi^{2}$ fit algorithm for a single fitting iteration.
 \editComment{Make plots bigger!}
 \editComment{Increase stats from 100}
 }
@@ -393,7 +397,7 @@ In contrast to the floating point algorithm, the ``approximated'' maths version 
 \end{figure}
 
 
-As shown in table~\ref{tab:chi2_exactVsApprox}, a significant proportion of tracks reconstructed by the \HT contain at least one incorrect stub, approximately 60\% for \ttbar events at \PU of 200, and
+As shown in table~\ref{tab:chi2_exactVsApprox}, in \ttbar events at \PU of 200, a significant proportion of the tracks reconstructed by the linearised $\chi^{2}$ fit are fake tracks, approximately 50\%, and the majority of the matched tracks reconstructed contain at least one incorrect stub, approximately 60\%.
 
 
 
@@ -666,7 +670,7 @@ If all uncertainties were accounted for, the ideal distribution of $\frac{\chi^{
 \end{figure}
 
 %% Discuss the resolution plots here
-Figure~\ref{fig:htHelixParametersResVsInvPt} shows the resolutions of the four track parameters as a function of transverse momenta in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200 following fitting by the \KF for both before and after optimising the \HT for tracking at low transverse momenta.
+Figure~\ref{fig:htHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of transverse momenta in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200 following fitting by the \KF for both before and after optimising the \HT for tracking at low transverse momenta.
 The resolutions are comparable for $\pT < 3\GeV$, with slight a degradation in the $\phi_{0}$ resulting from the decreased precision coordinates from the \HT and small improvements in the $z_{0}$ resolution due to decreased precision \HT reconstructing more correct stubs, which provides the \KF with more (and potentially better) stubs to chose from during the filtering and fitting process.
 
 \begin{figure}[htb]
@@ -779,7 +783,7 @@ The track finding efficiencies following each stage are given using the efficien
  \addtolength{\tabcolsep}{-1ex}
 \end{table}
 
-Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the four track parameters as a function of transverse momenta in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200 for  the both \MS coefficients investigated and for no consideration of \MS at all.
+Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of transverse momenta in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200 for  the both \MS coefficients investigated and for no consideration of \MS at all.
 In general, the resolutions of both \MS coefficients are superior across all \pt to when \MS is not considered at all, with the constant \MS coefficient typically providing more precise measurements than the layer dependent coefficient.  
 As expected, lower transverse momenta tracks experience the greatest improvements given that \MS dominants at lower transverse momenta.
 For both coefficients however, the \pt resolution resolution in the range $ 3.8 \GeV < \pt < 5.5\GeVc$ is worse than when \MS is not considered.
