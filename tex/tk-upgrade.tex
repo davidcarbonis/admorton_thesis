@@ -297,7 +297,7 @@ The $\chi^{2}$ of such a track is expressed as:
 
          = \sum_{ij} \big( f_{i}(\overrightarrow{h})  - s_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( f_{j}(\overrightarrow{h})  - s_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)  \;.
          = \sum_{ij} \big( \delta f_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( \delta f_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)  \;.
-%\label{eq:chi2}
+\label{eq:chi2}
 \end{equation}
 
 where $\delta f_{i} \equiv f_{i}(\overline{h}) - s_{i}$ are the residuals between the expected position of the track (given by the seed helix parameters) and the position of the track given by the stub, and $V^{-1}_{ij} = diag(\sigma^{2}_{ii})$ is the variance matrix which describes the uncertainty associated to the measurement of the stubs.
@@ -342,7 +342,7 @@ From Eqns~\ref{eq:chi4,eq:chi5} and the track derivatives $D_{ij}$ derived in Ap
 
 Following the validation of a floating point version of the algorithm, a version was developed using approximated calculations of the track derivatives in order to simply (and reduce resources required for) any future derivative tabulation by reducing the number of variables that it would depend on.
 
-Table\ref~{tab:chi2_exactVsApprox} shows how the tracking performance compares between the floating point maths and ``approximated'' maths versions of the algorithm compare against each other and from the raw track finding output from the \HT.
+Table\ref~{tab:chi2-exactVsApprox} shows how the tracking performance compares between the floating point maths and ``approximated'' maths versions of the algorithm compare against each other and from the raw track finding output from the \HT.
 The mean tracking efficiency is comparable
 
 \begin{table}[htbp]
@@ -351,7 +351,7 @@ The track finding efficiencies following each stage are given using the efficien
 \editComment{Ermm ... get table to fit onto page!}
 \editComment{Increase stats from 100}
 }
-\label{tab:chi2_exactVsApprox}
+\label{tab:chi2-exactVsApprox}
   \centering
 % This increases column spacing.
   \addtolength{\tabcolsep}{1ex}
@@ -406,7 +406,6 @@ During the optimisation of the cut, it was found that this approach had the pote
 To avoid discarding matched tracks whilst retaining the benefits of improving the purity of the tracks and their helix parameter resolutions and removing fake tracks, a looser residual cut was applied for tracks only comprised of four stubs.
 
 %%% discuss results
-\editComment{Discuss results!}
 \editComment{Comment on purity, resolution, fake rate, and duplicate rate}
 \editComment{Impact on killing genuine stubs assoc. with track?}
 
