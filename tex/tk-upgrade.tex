@@ -367,10 +367,10 @@ The track finding efficiencies following each stage are given using the efficien
         \hline
    HT &  97.3 & 40.9 & 350.0 & 44.2 & 36.7 \\  
    \hline
-   $\chi^{2}$+DR & 97.1 & 32.3 & 248.3 & 50.2 & 22.9 \\
+   $\chi^{2}$+DR & 95.1 & 84.2 & 87.3 & 15.5 & 9.5 \\
    (floating point) & & & & & \\
    \hline
-   $\chi^{2}$+DR & 96.9 & 32.3 & 243.3 & 50.6 & 22.1 \\  
+   $\chi^{2}$+DR & 94.8 & 84.1 & 89.42 & 16.2 & 11.9 \\  
    (approximated) & & & & & \\   
 %   \hline
 %   KF+DR & 94.3 & 94.3 & 81.9 & 20.9 & 4.7 \\
@@ -430,12 +430,13 @@ The track finding efficiencies following each stage are given using the efficien
    \hline
    \bf{Track Fitting Algo} & # of iterations & \bf{Efficiency [\%]} & \bf{``Perfect'' Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{[\%] of fakes}} & \multicolumn{1}{r}{\bf{[\%] of duplicates}}  \\
    \hline
-   $\chi^{2}$ & 1 & 96.9 & 32.3 & 243.3 & 50.6 & 22.1 \\  
-   & 2 & 95.6 & 52.6 & 166.4 & 39.5 & 22.0 \\
-   & 3 & 94.1 & 67.2 & 123.9 & 27.9 & 21.9 \\
-   & 5 & 92.1 & 81.7 & 94.3 & 14.9 & 20.9 \\
-   & 10 & 91.1 & 86.9 & 87.2 & 11.2 & 20.0 \\
-   & 15 & 90.1 & 86.0 & 87.7 & 11.9 & 20.1 \\
+   $\chi^{2}$ & 1 & 94.8 & 84.1 & 89.4 & 16.2 & 11.9 \\  
+   & 2 & 93.0 & 89.6 & 74.2 & 7.2 & 8.6 \\
+   & 3 & 92.2 & 89.4 & 71.6 & 5.6 & 8.1 \\
+   & 4 & 92.2 & 89.5 & 71.4 & 5.5 & 8.0 \\
+   & 5 & 92.2 & 89.5 & 71.4 & 5.5 & 8.0 \\
+%   & 10 & 92.2 & 89.5 & 71.4 & 5.5 & 8.0 \\
+%   & 15 & 92.2 & 89.5 & 71.4 & 5.5 & 8.0 \\
    \hline
    KF+DR & - & 94.3 & 94.3 & 81.9 & 20.9 & 4.7 \\
    \hline
@@ -450,12 +451,12 @@ When considering the performance of the linearised $chi^{2}$ fitter compared to 
 %%%100 events - 15 iterations (default)
 %=========================================================================
 %               TRACK-FINDING SUMMARY (before track fit)
-%Number of track candidates found per event = 191.9100 +- 5.1409
-%                     with mean stubs/track = 5.3280
-%Fraction of track cands that are fake = 0.1903
-%Fraction of track cands that are genuine, but extra duplicates = 0.4667
-%Algorithmic tracking efficiency = 1620/1686 = 0.9609 +- 0.0047
-%Perfect algorithmic tracking efficiency = 1485/1686 = 0.8808 +- 0.0079 (no incorrect hits)
+%Number of track candidates found per event = 349.9800 +- 10.4617
+%                     with mean stubs/track = 7.3075
+%Fraction of track cands that are fake = 0.4415
+%Fraction of track cands that are genuine, but extra duplicates = 0.3674
+%Algorithmic tracking efficiency = 1640/1686 = 0.9727 +- 0.0040
+%Perfect algorithmic tracking efficiency = 690/1686 = 0.4093 +- 0.0120 (no incorrect hits)
 %=========================================================================
 %                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsApprox
 %Number of fitted track candidates found per event = 71.4200 +- 1.4287
@@ -592,12 +593,12 @@ When considering the performance of the linearised $chi^{2}$ fitter compared to 
 %% KF4
 %=========================================================================
 %                    GENERAL FITTING SUMMARY FOR: KF4ParamsComb
-%Number of fitted track candidates found per event = 73.3700 +- 1.4945
+%Number of fitted track candidates found per event = 81.8900 +- 1.6735
 %                            with mean stubs/track = 4.0000
-%Fraction of fitted tracks that are fake = 0.1299
-%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0488
-%Algorithmic fitting efficiency (post-cut) = 1567/1686 = 0.9294 +- 0.0062
-%Perfect algorithmic fitting efficiency(post-cut) = 1567/1686 = 0.9294 +- 0.0062 (no incorrect hits)
+%Fraction of fitted tracks that are fake = 0.2088
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0474
+%Algorithmic fitting efficiency (post-cut) = 1590/1686 = 0.9431 +- 0.0056
+%Perfect algorithmic fitting efficiency(post-cut) = 1590/1686 = 0.9431 +- 0.0056 (no incorrect hits)
 %=========================================================================
 %
 
@@ -779,6 +780,8 @@ When considering the performance of the linearised $chi^{2}$ fitter compared to 
 The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may be desirable if the trigger requirements demand it and the impact of this potential requirement on the proposed proposed track-finder system was studied.
 These studies were initially undertaken as part of the the robustness studies required for the December 2016 demonstrator review, focussing on recovering tracking efficiency below 3\GeV with the \HT, and were subsequently built upon with modifications to the \KF algorithm. 
 The results relating to \HT modifications were produced prior to the conclusion of the demonstrator review and were produced using the flat barrel geometry, and the results for the \KF improvements produced with the tilted barrel geometry.
+
+%%% kalman filter dead layers?
 
 \subsubsection{Hough Transform Optimisation}\label{subsubsec:lowPtOptHT}
 Lowering the \HT \pT threshold from 3\GeV to 2\GeV required modifying the GP and HT configuration parameters to ensure adequate duplication in $\phi$ and increasing the number of the \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision, respectively.
