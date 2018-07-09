@@ -265,15 +265,9 @@ This stricter latter definition is only used in quoting results from the entire 
 \end{itemize}
 
 \subsection{Linearised $\chi^{2}$ Track Fitter}\label{subsec:chi2}
-\editComment{WARNING - all current results were made WITHOUT SEED FILTER. Emergency reprocessing ongoing.}
-
 Whilst the Kalman Filter was used as a track fitter for the December 2016 hardware demonstrator, a Linear Regression (LR) and a Linearised $\chi^{2}$ fitting algorithms were also explored.
 The LR fitter~\cite{TMTT_FLP} was developed as an alternative to the KF and exploits the fact that sufficiently high \pT tracks should form a straight line in the \emph{\rphi} and \emph{r-z} planes to perform independent fits in each planes.
 The linearised $\chi^{2}$ fit makes use of residuals between the stubs and the seeded track that minimise $\chi^{2}$ of the fit in order to obtain improved helix parameters for the track candidate.
-
-Both the Linear Regression and Linearised $\chi^{2}$ fitting algorithms required a proceeding \emph{Seed Filter} (SF) stage to remove stubs in a \HT cell which are inconsistent with a straight line in the \emph{r-z} plane.
-This process filters out both fake tracks and stubs incorrectly assigned to tracks.
-Additionally, as this reduces the data rate further, it allows for resource intensive track fitting to be used for on more viable track candidates.
 
 The studies into a linearised $\chi^{2}$ track fit were initially motivated by the \emph{TMTT} project anticipating potential time and resource pressures in developing all the components of a complete track finding system that could be implemented in hardware due to the project being formed significantly after the other two L1 track finder projects.
 Following discussions with both the \emph{tracklet} and \emph{AM} projects, it was decided that the use of a linearised $\chi^{2}$ fit based off the one proposed by the \emph{tracklet} project would be investigated.
@@ -281,6 +275,9 @@ The general form of the $\chi^{2}$ fit and the derivation of the track derivativ
 
 The general form of the $\chi^{2}$ fit is described in Chapter~\ref{subsec:chi2maths}, followed by a discussion of the development and outcomes of the software implementation of the fitting algorithm in Chapter~\ref{subsubsec:chi2software}.
 The calculation of the track derivatives for the barrel layer and endcap disk hits used by the algorithm, including a correction factor for $\phi$ in the outer disks to account for the fact that these modules do not point directly towards the interaction point, are given in full in Appendix~\ref{app:chi2}.
+
+All the results presented involve the use of a \emph{Seed Filter} (SF) stage which was run following the \HT stage for both the Linear Regression and Linearised $\chi^{2}$ fitting algorithms.
+This process remove stubs in a \HT cell which are inconsistent with a straight line in the \emph{r-z} plane and filters out both fake tracks and stubs incorrectly assigned to tracks.
 
 \subsubsection{General Form of a $\chi^{2}$ Fit}\label{subsubsec:chi2maths}
 For the general form of a $\chi^{2}$ fit for a track, $f$, described by its helix parameters, $overrightarrow{h}$, and 
