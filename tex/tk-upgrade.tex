@@ -407,7 +407,7 @@ During the optimisation of this cut, it was found that this approach had the pot
 To avoid the discarding of genuine tracks whilst retaining the benefits of improving the quality of the tracks reconstructed whilst removing fake tracks, a looser residual cut was applied for tracks only comprised of four stubs.
 Considering the removal of stubs occurs for each of the fitting iterations except for the final iteration, as by definition the final track fit has to occur on final collection of hits considered.
 
-Table\ref~{tab:chi2-exactVsApprox} shows 
+Table\ref~{tab:chi2-exactVsApprox} shows that 
 
 %%% discuss results
 \editComment{Comment on purity, resolution, fake rate, and duplicate rate}
@@ -416,7 +416,8 @@ Table\ref~{tab:chi2-exactVsApprox} shows
 \editComment{Better to show comparison between KF and it1 and it4? For the sake of clarity?}
 
 \begin{table}[htbp]
-\topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, for the $\chi^{2}$ track fit using approximated calculations of the track derivatives for various number of fitting iterations.
+\topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, for the $\chi^{2}$ track fit using approximated calculations of the track derivatives for when one to four fitting iterations are undertaken. 
+The results of further fitting iterations are not shown as they no further improvement by any metric.
 The track finding efficiencies following each stage are given using the efficiency definitions given in Chapter~\ref{subsubsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
 \editComment{Ermm ... get table to fit onto page!}
 \editComment{Increase stats from 100}
@@ -667,8 +668,8 @@ The track finding efficiencies following each stage are given using the efficien
  \addtolength{\tabcolsep}{-1ex}
 \end{table}
 
-Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of transverse momenta in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200 for  the both \MS coefficients investigated and for no consideration of \MS at all.
-In general, the resolutions of both \MS coefficients are superior across all \pt to when \MS is not considered at all, with the constant \MS coefficient typically providing more precise measurements than the layer dependent coefficient.  
+Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of transverse momenta in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200 for both \MS coefficients considered and for when \MS is not accounted for at all.
+The resolutions of both \MS coefficients are superior across all \pt to when \MS is not considered at all, with the constant \MS coefficient typically providing more precise measurements than the layer dependent coefficient.  
 As expected, lower transverse momenta tracks experience the greatest improvements given that \MS dominants at lower transverse momenta.
 For both coefficients however, the \pt resolution resolution in the range $ 3.8 \GeV < \pt < 5.5\GeVc$ is worse than when \MS is not considered.
 At the time of writing, this observation is still being investigated, but is suspected, like the increased duplicate rate in the same \pT range, to be related to the reduced precision of \HT cells.
