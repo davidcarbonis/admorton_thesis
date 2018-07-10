@@ -1,3 +1,180 @@
+%%% 5000 events - default + KF
+%=========================================================================
+%               TRACK-FINDING SUMMARY (before track fit)
+%Number of track candidates found per event = 351.1934 +- 1.3462
+%                     with mean stubs/track = 7.2797
+%Fraction of track cands that are fake = 0.4393
+%Fraction of track cands that are genuine, but extra duplicates = 0.3701
+%Algorithmic tracking efficiency = 84990/87665 = 0.9695 +- 0.0006
+%Perfect algorithmic tracking efficiency = 37776/87665 = 0.4309 +- 0.0017 (no incorrect hits)
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: KF4ParamsComb
+%Number of fitted track candidates found per event = 82.1428 +- 0.2398
+%                            with mean stubs/track = 4.0000
+%Fraction of fitted tracks that are fake = 0.2105
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0450
+%Algorithmic fitting efficiency (post-cut) = 82494/87665 = 0.9410 +- 0.0008
+%Perfect algorithmic fitting efficiency(post-cut) = 82494/87665 = 0.9410 +- 0.0008 (no incorrect hits)
+%=========================================================================
+
+
+% 15 iterations
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsApprox
+%Number of fitted track candidates found per event = 71.5068 +- 0.2013
+%                            with mean stubs/track = 4.8723
+%Fraction of fitted tracks that are fake = 0.0518
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0822
+%Algorithmic fitting efficiency (post-cut) = 81074/87665 = 0.9248 +- 0.0009
+%Perfect algorithmic fitting efficiency(post-cut) = 79196/87665 = 0.9034 +- 0.0010 (no incorrect hits)
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsTrackletStyle
+%Number of fitted track candidates found per event = 71.4156 +- 0.1986
+%                            with mean stubs/track = 4.8760
+%Fraction of fitted tracks that are fake = 0.0526
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0631
+%Algorithmic fitting efficiency (post-cut) = 81883/87665 = 0.9340 +- 0.0008
+%Perfect algorithmic fitting efficiency(post-cut) = 80108/87665 = 0.9138 +- 0.0009 (no incorrect hits)
+%=========================================================================
+%
+% 10 iterations
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsApprox
+%Number of fitted track candidates found per event = 71.5068 +- 0.2013
+%                            with mean stubs/track = 4.8723
+%Fraction of fitted tracks that are fake = 0.0518
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0822
+%Algorithmic fitting efficiency (post-cut) = 81074/87665 = 0.9248 +- 0.0009
+%Perfect algorithmic fitting efficiency(post-cut) = 79196/87665 = 0.9034 +- 0.0010 (no incorrect hits)
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsTrackletStyle
+%Number of fitted track candidates found per event = 71.4156 +- 0.1986
+%                            with mean stubs/track = 4.8760
+%Fraction of fitted tracks that are fake = 0.0526
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0631
+%Algorithmic fitting efficiency (post-cut) = 81883/87665 = 0.9340 +- 0.0008
+%Perfect algorithmic fitting efficiency(post-cut) = 80108/87665 = 0.9138 +- 0.0009 (no incorrect hits)
+%=========================================================================
+%
+% 5 iterations
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsApprox
+%Number of fitted track candidates found per event = 71.5064 +- 0.2013
+%                            with mean stubs/track = 4.8723
+%Fraction of fitted tracks that are fake = 0.0518
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0821
+%Algorithmic fitting efficiency (post-cut) = 81074/87665 = 0.9248 +- 0.0009
+%Perfect algorithmic fitting efficiency(post-cut) = 79196/87665 = 0.9034 +- 0.0010 (no incorrect hits)
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsTrackletStyle
+%Number of fitted track candidates found per event = 71.4156 +- 0.1986
+%                            with mean stubs/track = 4.8760
+%Fraction of fitted tracks that are fake = 0.0526
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0631
+%Algorithmic fitting efficiency (post-cut) = 81883/87665 = 0.9340 +- 0.0008
+%Perfect algorithmic fitting efficiency(post-cut) = 80108/87665 = 0.9138 +- 0.0009 (no incorrect hits)
+%=========================================================================
+%
+% 4 iterations
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsApprox
+%Number of fitted track candidates found per event = 71.5062 +- 0.2013
+%                            with mean stubs/track = 4.8723
+%Fraction of fitted tracks that are fake = 0.0518
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0821
+%Algorithmic fitting efficiency (post-cut) = 81074/87665 = 0.9248 +- 0.0009
+%Perfect algorithmic fitting efficiency(post-cut) = 79196/87665 = 0.9034 +- 0.0010 (no incorrect hits)
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsTrackletStyle
+%Number of fitted track candidates found per event = 71.4166 +- 0.1986
+%                            with mean stubs/track = 4.8760
+%Fraction of fitted tracks that are fake = 0.0526
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0631
+%Algorithmic fitting efficiency (post-cut) = 81883/87665 = 0.9340 +- 0.0008
+%Perfect algorithmic fitting efficiency(post-cut) = 80108/87665 = 0.9138 +- 0.0009 (no incorrect hits)
+%=========================================================================
+%
+% 3 iterations
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsApprox
+%Number of fitted track candidates found per event = 71.7396 +- 0.2021
+%                            with mean stubs/track = 4.8724
+%Fraction of fitted tracks that are fake = 0.0526
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0831
+%Algorithmic fitting efficiency (post-cut) = 81145/87665 = 0.9256 +- 0.0009
+%Perfect algorithmic fitting efficiency(post-cut) = 79245/87665 = 0.9040 +- 0.0010 (no incorrect hits)
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsTrackletStyle
+%Number of fitted track candidates found per event = 71.5272 +- 0.1991
+%                            with mean stubs/track = 4.8760
+%Fraction of fitted tracks that are fake = 0.0533
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0636
+%Algorithmic fitting efficiency (post-cut) = 81890/87665 = 0.9341 +- 0.0008
+%Perfect algorithmic fitting efficiency(post-cut) = 80098/87665 = 0.9137 +- 0.0009 (no incorrect hits)
+%=========================================================================
+%
+% 2 iterations
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsApprox
+%Number of fitted track candidates found per event = 74.2280 +- 0.2111
+%                            with mean stubs/track = 4.9992
+%Fraction of fitted tracks that are fake = 0.0657
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0901
+%Algorithmic fitting efficiency (post-cut) = 81831/87665 = 0.9335 +- 0.0008
+%Perfect algorithmic fitting efficiency(post-cut) = 79300/87665 = 0.9046 +- 0.0010 (no incorrect hits)
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsTrackletStyle
+%Number of fitted track candidates found per event = 73.3054 +- 0.2067
+%                            with mean stubs/track = 5.0012
+%Fraction of fitted tracks that are fake = 0.0664
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0675
+%Algorithmic fitting efficiency (post-cut) = 82334/87665 = 0.9392 +- 0.0008
+%Perfect algorithmic fitting efficiency(post-cut) = 79919/87665 = 0.9116 +- 0.0010 (no incorrect hits)
+%=========================================================================
+%
+% 1 iterations
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsApprox
+%Number of fitted track candidates found per event = 89.0990 +- 0.2665
+%                            with mean stubs/track = 5.5697
+%Fraction of fitted tracks that are fake = 0.1522
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.1254
+%Algorithmic fitting efficiency (post-cut) = 83127/87665 = 0.9482 +- 0.0007
+%Perfect algorithmic fitting efficiency(post-cut) = 75036/87665 = 0.8559 +- 0.0012 (no incorrect hits)
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: ChiSquared4ParamsTrackletStyle
+%Number of fitted track candidates found per event = 86.4180 +- 0.2593
+%                            with mean stubs/track = 5.5892
+%Fraction of fitted tracks that are fake = 0.1565
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0954
+%Algorithmic fitting efficiency (post-cut) = 83304/87665 = 0.9503 +- 0.0007
+%Perfect algorithmic fitting efficiency(post-cut) = 75222/87665 = 0.8581 +- 0.0012 (no incorrect hits)
+%=========================================================================
+%
+
+
+
+
+
+
+
+
+
+
+
+
+%////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
 %%%100 events - 15 iterations (default)
 %=========================================================================
 %               TRACK-FINDING SUMMARY (before track fit)
