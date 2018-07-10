@@ -412,15 +412,11 @@ Table\ref~{tab:chi2-exactVsApprox}
 %%% discuss results
 \editComment{Comment on purity, resolution, fake rate, and duplicate rate}
 \editComment{Impact on killing genuine stubs assoc. with track?}
-
-kf - red
-it1 - green
-it2 - purple
-it3 - black
-it4 - blue
+\editComment{Note that additional fitting iterations did not further improve on eff, or res}
+\editComment{Better to show comparison between KF and it1 and it4? For the sake of clarity?}
 
 \begin{table}[htbp]
-\topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain for  both the floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
+\topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, for the $\chi^{2}$ track fit using approximated calculations of the track derivatives for various number of fitting iterations.
 The track finding efficiencies following each stage are given using the efficiency definitions given in Chapter~\ref{subsubsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
 \editComment{Ermm ... get table to fit onto page!}
 \editComment{Increase stats from 100}
@@ -448,6 +444,21 @@ The track finding efficiencies following each stage are given using the efficien
  \end{tabular}
  \addtolength{\tabcolsep}{-1ex}
 \end{table}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/qOverPtResVsEta_IterationComparison.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/phi0ResVsEta_IterationComparison.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_IterationComparison.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/etaResVsEta_IterationComparison.pdf}
+\caption{
+\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200 for the approximated maths implementation of the linearised $\chi^{2}$ fit algorithm for one (green), two (purple), three (black) and four (blue) fitting iterations. The \KF (red) is also included for comparison.
+\editComment{Make plots bigger!}
+\editComment{Increase stats from 100!}
+}
+\label{fig:chi2HelixParametersResIterationsComparison}
+\end{figure}
 
 
 When considering the performance of the linearised $chi^{2}$ fitter compared to that of the \KF,
