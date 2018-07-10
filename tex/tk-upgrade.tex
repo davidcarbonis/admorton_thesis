@@ -401,27 +401,23 @@ As offline reconstruction is able to use more sophisticated reconstruction techn
 
 \editComment{Note numbers when higher stats runs are complete}
 
-As a significant proportion of the tracks reconstructed by the linearised $\chi^{2}$ fit contain either at least one incorrect stub the values for the two tracking efficiency definitions are not equal.
+%Running multiple iterations of the fitting algorithm had been previously been considered in the context of improving upon the resolution of a fitted track's helix parameters, but had been shown to produce only marginal improvements.
+
+A significant proportion of the tracks reconstructed by the linearised $\chi^{2}$ fit, as shown in table~\ref{tab:chi2-exactVsApprox}, contain either at least one incorrect stub, resulting in the values for the two tracking efficiency definitions being not equal.
 In order to filter out these incorrectly assigned stubs from matched tracks, and also remove fake tracks, the residuals calculated for each stub following the fit were considered.
-As such ``fake'' stubs are expected have large residuals compared to stubs correctly associated to genuine tracks or if
+As such ``fake'' stubs are expected have large residuals compared to stubs correctly associated to genuine tracks or stubs belonging to a fake track.
 
-Running multiple iterations of the fitting algorithm had been previously been considered in the context of improving upon the resolution of a fitted track's helix parameters, but had been shown to produce only marginal improvements.
-This concept was revisited however, when considering how to remove stubs which are either incorrectly associated with a matched track or belong to a fake track.
-Such and given that the residuals of each stub were known following a fit.
-Therefore if the stub with the largest residual exceeded a suitable cut, it was removed from the track and the track was refitted with its reduced collection of hits. 
-During the optimisation of this cut, it was found that this approach had the potential to leave a track with fewer than the minimum of four stubs required for a track candidate to be considered, thus potentially discarding a matched track by mistaken.
-To avoid the discarding of genuine tracks whilst retaining the benefits of improving the quality of the tracks reconstructed whilst removing fake tracks, a looser residual cut was applied for tracks only comprised of four stubs.
-Considering the removal of stubs occurs for each of the fitting iterations except for the final iteration, as by definition the final track fit has to occur on final collection of hits considered.
+Therefore, in order to increase the fake rate and matched track purity:
+\begin{itemize}
+\item the stub with the worse/largest residual is found;
+\item this stub is compared against a configurable cut;
+\item the stub is removed from the track if its residua exceeds the cut value;
+\item the track is refitted with using its remaining stubs;
+\item and the process is repeated until the latency budget is exceeded/no further stubs are removed, with no further consideration of the remaining stubs' residuals following the final cut.
+\end{itemize}
 
-Table\ref~{tab:chi2-exactVsApprox} shows that whilst the tracking efficiency with no purity requirement
-
-losses considerably impacted as the stub removal does mistakenly 
-
-%%% discuss results
-\editComment{Comment on purity, resolution, fake rate, and duplicate rate}
-\editComment{Impact on killing genuine stubs assoc. with track?}
-\editComment{Note that additional fitting iterations did not further improve on eff, or res}
-\editComment{Better to show comparison between KF and it1 and it4? For the sake of clarity?}
+During the optimisation of this cut, it was found that a track could end up with having fewer than the minimum of four stubs required to be considered track candidate - thus potentially discarding a matched track by mistake!
+To avoid this happening whilst retaining the improved matched track purity and reduced rate of fake tracks, a looser residual cut was applied for tracks only comprised of four stubs.
 
 \begin{table}[htbp]
 \topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, for the $\chi^{2}$ track fit using approximated calculations of the track derivatives for when one to four fitting iterations are undertaken. 
@@ -451,6 +447,16 @@ The track finding efficiencies following each stage are given using the efficien
  \end{tabular}
  \addtolength{\tabcolsep}{-1ex}
 \end{table}
+
+Table\ref~{tab:chi2-exactVsApprox} shows that whilst the tracking efficiency with no purity requirement
+
+losses considerably impacted as the stub removal does mistakenly 
+
+%%% discuss results
+\editComment{Comment on purity, resolution, fake rate, and duplicate rate}
+\editComment{Impact on killing genuine stubs assoc. with track?}
+\editComment{Note that additional fitting iterations did not further improve on eff, or res}
+\editComment{Better to show comparison between KF and it1 and it4? For the sake of clarity?}
 
 \begin{figure}[htb]
 \centering
