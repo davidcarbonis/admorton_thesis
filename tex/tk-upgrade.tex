@@ -335,7 +335,10 @@ For whilst FPGAs can easily perform such operations, potential complications ari
 Therefore, any implementation in firmware for an FPGA will require the use of lookup tables containing the precomputed values of the derivatives in order to quickly update a track's helix parameters without exceeding latency budgets.
 
 \subsubsection{Software Results and Outlook}\label{subsubsec:chi2software}
-\editComment{Results in this subsub section have been made with 100 ttbar+pu200 events. Larger stats (~5000) runs will be done prior to final draft.}
+\editComment{Results in this subsub section have been made with 100 ttbar+pu200 events. 
+This is due to a bug being discovered in the final version of the TMTT code for the flat geometry used to produce these results, which was not present during the development of this algo.
+As the bug had a LARGE impact on the results, a low stats run has been done in order to not to delay the completion of this chapter draft any longer than it already has been!
+The larger stats (~1000 to 5000 events) runs will be done prior to final draft.}
 
 From Eqns~\ref{eq:chi4,eq:chi5} and the track derivatives $D_{ij}$ derived in Appendix~\ref{app:chi2}, a software implementation of the linearised $\chi^{2}$ track fit algorithm was developed.
 
@@ -349,7 +352,8 @@ Figure~\ref{fig:chi2HelixParametersResVsEtaApproxVsExact} shows the resolutions 
 In contrast to the floating point algorithm, the ``approximated'' maths version of the algorithm provides noticeably worse resolutions for \qpt and $\phi_{0}$ by approximately a factor of two.
 The resolutions obtained for \qpt and $\phi_{0}$ endcaps and for $\eta$ and $z_{0}$ across the tracker are broadly comparable between the two approaches.
 
-\editComment{Elaborate on resolutions further once the higher stats results are in - can make statements with much greater confidence! \ie explain why the worse barrel resolution for \qpt and $phi_{0}$ is acceptable - as my notes and memory does not correspond with this!}
+\editComment{Elaborate on resolutions further once the higher stats results are in - can make statements with much greater confidence! \ie explain why the worse barrel resolution for \qpt and $phi_{0}$ is acceptable - as my notes and memory does not correspond with this!
+How does it compare to offline resolutions?}
 
 \begin{table}[htbp]
 \topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain for  both the floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
@@ -366,15 +370,15 @@ The track finding efficiencies following each stage are given using the efficien
    \hline
    \bf{Stage} & \bf{Efficiency [\%]} & \bf{``Perfect'' Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{\% of fakes}} & \multicolumn{1}{r}{\bf{\% of duplicates}}  \\
         \hline
-   HT &  97.3 & 40.9 & 350.0 & 44.2 & 36.7 \\  
+   HT &  97.0 & 43.1 & 351.2 & 43.9 & 37.0 \\  
    \hline
-   $\chi^{2}$+DR & 95.1 & 84.2 & 87.3 & 15.5 & 9.5 \\
+   $\chi^{2}$+DR & 95.0 & 85.8 & 86.4 & 15.7 & 9.5 \\
    (floating point) & & & & & \\
    \hline
-   $\chi^{2}$+DR & 94.8 & 84.1 & 89.42 & 16.2 & 11.9 \\  
+   $\chi^{2}$+DR & 94.8 & 85.6 & 89.1 & 15.2 & 12.5 \\  
    (approximated) & & & & & \\   
 %   \hline
-%   KF+DR & 94.3 & 94.3 & 81.9 & 20.9 & 4.7 \\
+%   KF+DR & 94.1 & 94.1 & 82.1 & 21.1 & 4.5 \\
    \hline
    
  \end{tabular}
@@ -407,7 +411,9 @@ During the optimisation of this cut, it was found that this approach had the pot
 To avoid the discarding of genuine tracks whilst retaining the benefits of improving the quality of the tracks reconstructed whilst removing fake tracks, a looser residual cut was applied for tracks only comprised of four stubs.
 Considering the removal of stubs occurs for each of the fitting iterations except for the final iteration, as by definition the final track fit has to occur on final collection of hits considered.
 
-Table\ref~{tab:chi2-exactVsApprox} shows that 
+Table\ref~{tab:chi2-exactVsApprox} shows that whilst the tracking efficiency with no purity requirement
+
+losses considerably impacted as the stub removal does mistakenly 
 
 %%% discuss results
 \editComment{Comment on purity, resolution, fake rate, and duplicate rate}
@@ -431,10 +437,10 @@ The track finding efficiencies following each stage are given using the efficien
    \hline
    \bf{Track Fitting Algo} & # of iterations & \bf{Efficiency [\%]} & \bf{``Perfect'' Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{[\%] of fakes}} & \multicolumn{1}{r}{\bf{[\%] of duplicates}}  \\
    \hline
-   $\chi^{2}$ & 1 & 94.8 & 84.1 & 89.4 & 16.2 & 11.9 \\  
-   & 2 & 93.0 & 89.6 & 74.2 & 7.2 & 8.6 \\
-   & 3 & 92.2 & 89.4 & 71.6 & 5.6 & 8.1 \\
-   & 4 & 92.2 & 89.5 & 71.4 & 5.5 & 8.0 \\
+   $\chi^{2}$ & 1 & 94.8 & 85.6 & 89.1 & 15.2 & 12.5 \\  
+   & 2 & 93.4 & 90.5 & 74.2 & 6.6 & 9.0 \\
+   & 3 & 92.6 & 90.4 & 71.7 & 5.3 & 8.3 \\
+   & 4 & 92.5 & 90.3 & 71.5 & 5.2 & 8.2 \\
 %   & 5 & 92.2 & 89.5 & 71.4 & 5.5 & 8.0 \\
 %   & 10 & 92.2 & 89.5 & 71.4 & 5.5 & 8.0 \\
 %   & 15 & 92.2 & 89.5 & 71.4 & 5.5 & 8.0 \\
@@ -461,7 +467,8 @@ The track finding efficiencies following each stage are given using the efficien
 \label{fig:chi2HelixParametersResIterationsComparison}
 \end{figure}
 
-Following these preliminary studies of a linearised $chi^{2}$ track fit, a comparison was made between it and the \KF.
+\editComment{Write bit on why \KF was chosen and $\chi^{2}$ put on ice}
+Following these preliminary studies of a linearised $\chi^{2}$ track fit, a comparison was made between it and the \KF.
 
 %%% Old hardware discussion
 %% Matrix sizes
