@@ -363,7 +363,7 @@ The track finding efficiencies following each stage are given using the efficien
 % This right-aligns numbers in column, but centers them under column title.
   \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
    \hline
-   \bf{Stage} & \bf{Efficiency [\%]} & \bf{``Perfect'' Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{[\%] of fakes}} & \multicolumn{1}{r}{\bf{[\%] of duplicates}}  \\
+   \bf{Stage} & \bf{Efficiency [\%]} & \bf{``Perfect'' Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{\% of fakes}} & \multicolumn{1}{r}{\bf{\% of duplicates}}  \\
         \hline
    HT &  97.3 & 40.9 & 350.0 & 44.2 & 36.7 \\  
    \hline
@@ -460,8 +460,8 @@ The track finding efficiencies following each stage are given using the efficien
 \label{fig:chi2HelixParametersResIterationsComparison}
 \end{figure}
 
+Following these preliminary studies of a linearised $chi^{2}$ track fit, a comparison was made between it and the \KF.
 
-When considering the performance of the linearised $chi^{2}$ fitter compared to that of the \KF,
 
 %%%100 events - 15 iterations (default)
 %=========================================================================
@@ -837,16 +837,16 @@ The track finding efficiencies following each stage are given using the efficien
 % This right-aligns numbers in column, but centers them under column title.
   \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
    \hline
-   \bf{Configuration} & \bf{Stage} & \bf{Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{\# of fakes}} & \multicolumn{1}{r}{\bf{\# of duplicates}}  \\
+   \bf{Configuration} & \bf{Stage} & \bf{Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{\% of fakes}} & \multicolumn{1}{r}{\bf{\% of duplicates}}  \\
         \hline
-    Default & \bf{HT}     &  93.6 &  713  &  242 &   317 \\  
-    & \bf{Full chain}     &  89.2 &  194   &  41  &     10 \\      
+    Default & \bf{HT}     & 93.6 & 713.2 & 34.0 & 44.5 \\  
+    & \bf{Full chain}     & 89.2 & 193.9 & 21.1 & 5.1 \\      
 %   \hline
-%    Merge & \bf{HT}     &  94.6 &  799  &  324 &   317 \\  
-%    & \bf{Full chain}     &  89.8 &  206   &  53  &     8 \\      
+%    Merge & \bf{HT}     & 94.6 & 799.2 & 40.5 & 39.7 \\  
+%    & \bf{Full chain}     & 89.8 & 206.5 & 25.4 & 3.9 \\      
     \hline
-    Optimised & \bf{HT}     &  94.6 &  799  &  324 &   317 \\  
-    & \bf{Full chain}     &  90.0 &  210   &  55  &     8 \\      
+    Optimised & \bf{HT}     & 94.6 & 799.2 & 40.5 & 39.7 \\  
+    & \bf{Full chain}     & 90.0 & 210.4 & 26.3 & 3.8 \\      
    \hline
    
  \end{tabular}
@@ -945,6 +945,7 @@ The constant coefficient for the \MS contribution was used for these \KF results
 
 Figure~\ref{fig:2GeVTiltEff} shows how the tracking efficiency for the whole chain improves when \MS is accounted for in the \KF.
 The similar performance observed between the two coefficients in figure~\ref{fig:2GeVTiltEff} and table~\ref{tab:trackFindingPerformance2GeVKF} is due the amount of material traversed by a track not being constant for a single layer as the amount of material contributions in both the tracker and the prior contributions from the Inner Tracker, between the Inner and Outer Trackers and services varying as a function of $\eta$~\cite{P2TrackerTDR}.
+
 Table~\ref{tab:trackFindingPerformance2GeVKF} also shows that compared to just the \HT optimisations alone, for both \MS  coefficients, the \KF is more capable at rejecting incorrectly reconstructed tracks by up to an additional 3-4\%.
 In contrast though, the duplicate increases for both coefficients by 3-5\% for the full chain, with the increase in duplicates occurring between $3.2\GeV$ and $5\GeV$, as shown in figure~\ref{fig:2GeVfracDups}, near the $3.5\GeV$ threshold for merging adjacent \HT cells.
 At the time of writing this chapter, it is not understood how incorporating \MS into the \KF causes this, but it is suspected to be related to the use of the reduced precision of \HT cells.
@@ -963,14 +964,14 @@ The track finding efficiencies following each stage are given using the efficien
 % This right-aligns numbers in column, but centers them under column title.
   \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
    \hline
-   \bf{Configuration} & \bf{Stage} & \bf{Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{\# of fakes}} & \multicolumn{1}{r}{\bf{\# of duplicates}}  \\
+   \bf{Configuration} & \bf{Stage} & \bf{Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{\% of fakes}} & \multicolumn{1}{r}{\bf{\% of duplicates}}  \\
    \hline
-     & \bf{HT}     &  96.2 &  752  &  212 &   356 \\  
-   No \MS  & \bf{Full Chain}     &  93.6 &  216   &  29  &     20 \\      
+     & \bf{HT}     &  96.2 & 752.0 & 28.2 & 47.3 \\  
+   No \MS  & \bf{Full Chain}     & 93.6 & 216.0 & 13.3 & 9.4 \\      
    \hline
-   const $k$  & \bf{Full Chain}     & 90.0 &  222   &  22  &     31 \\      
+   const $k$  & \bf{Full Chain}     & 94.2 & 216.3 & 10.3 & 11.2 \\      
    \hline
-    $k(layer)$ & \bf{Full Chain}     &  94.2 &  222   &  24  &     27 \\  
+    $k(layer)$ & \bf{Full Chain}     & 94.2 & 222.1 & 10.8 & 12.3 \\  
    \hline
    
  \end{tabular}
