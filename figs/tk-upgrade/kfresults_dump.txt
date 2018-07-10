@@ -1,0 +1,148 @@
+
+%%% Results - 1000 events -- HT opt
+%% no merge
+%=========================================================================
+%               TRACK-FINDING SUMMARY (before track fit)
+%Number of track candidates found per event = 713.2430 +- 4.7173
+%                     with mean stubs/track = 7.1447
+%Fraction of track cands that are fake = 0.3396
+%Fraction of track cands that are genuine, but extra duplicates = 0.4451
+%Algorithmic tracking efficiency = 23760/25387 = 0.9359 +- 0.0015
+%Perfect algorithmic tracking efficiency = 11504/25387 = 0.4531 +- 0.0031 (no incorrect hits)
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: KF4ParamsComb
+%Number of fitted track candidates found per event = 193.9210 +- 0.8799
+%                            with mean stubs/track = 4.0000
+%Fraction of fitted tracks that are fake = 0.2105
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0510
+%Algorithmic fitting efficiency (post-cut) = 22635/25387 = 0.8916 +- 0.0020
+%Perfect algorithmic fitting efficiency(post-cut) = 22635/25387 = 0.8916 +- 0.0020 (no incorrect hits)
+%=========================================================================
+%%  merge + no KF opt
+%=========================================================================
+%               TRACK-FINDING SUMMARY (before track fit)
+%Number of track candidates found per event = 799.2220 +- 5.3945
+%                     with mean stubs/track = 7.4801
+%Fraction of track cands that are fake = 0.4052
+%Fraction of track cands that are genuine, but extra duplicates = 0.3966
+%Algorithmic tracking efficiency = 24026/25387 = 0.9464 +- 0.0014
+%Perfect algorithmic tracking efficiency = 10472/25387 = 0.4125 +- 0.0031 (no incorrect hits)
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: KF4ParamsComb
+%Number of fitted track candidates found per event = 206.4650 +- 0.9216
+%                            with mean stubs/track = 4.0000
+%Fraction of fitted tracks that are fake = 0.2543
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0385
+%Algorithmic fitting efficiency (post-cut) = 22801/25387 = 0.8981 +- 0.0019
+%Perfect algorithmic fitting efficiency(post-cut) = 22801/25387 = 0.8981 +- 0.0019 (no incorrect hits)
+%=========================================================================
+%% optimised KF
+%=========================================================================
+%               TRACK-FINDING SUMMARY (before track fit)
+%Number of track candidates found per event = 799.2220 +- 5.3945
+%                     with mean stubs/track = 7.4801
+%Fraction of track cands that are fake = 0.4052
+%Fraction of track cands that are genuine, but extra duplicates = 0.3966
+%Algorithmic tracking efficiency = 24026/25387 = 0.9464 +- 0.0014
+%Perfect algorithmic tracking efficiency = 10472/25387 = 0.4125 +- 0.0031 (no incorrect hits)
+%=========================================================================
+%                    GENERAL FITTING SUMMARY FOR: KF4ParamsComb
+%Number of fitted track candidates found per event = 210.4050 +- 0.9364
+%                            with mean stubs/track = 4.0000
+%Fraction of fitted tracks that are fake = 0.2630
+%Fraction of fitted tracks that are genuine, but extra duplicates (post-cut) = 0.0382
+%Algorithmic fitting efficiency (post-cut) = 22865/25387 = 0.9007 +- 0.0019
+%Perfect algorithmic fitting efficiency(post-cut) = 22865/25387 = 0.9007 +- 0.0019 (no incorrect hits)
+%=========================================================================
+
+%%% Results - 5000 events -- KF opt
+%%% No merge
+%=========================================================================
+%               TRACK-FINDING SUMMARY AFTER HOUGH TRANSFORM
+%Number of track candidates found per event = 646.8546 +- 1.7561
+%                     with mean stubs/track = 6.8726
+%Fraction of track cands that are fake = 0.1913
+%Fraction of track cands that are genuine, but extra duplicates = 0.5491
+%Algorithmic tracking efficiency = 111949/117377 = 0.9538 +- 0.0006
+%Perfect algorithmic tracking efficiency = 65155/117377 = 0.5551 +- 0.0015 (no incorrect hits)
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: KF4ParamsComb
+%Number of fitted track candidates found per event = 193.7248 +- 0.4772
+%                     with mean stubs/track = 4.0000
+%Fraction of fitted tracks that are fake = 0.1083
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.0648
+%Algorithmic fitting efficiency = 109022/117377 = 0.9288 +- 0.0008
+%Perfect algorithmic fitting efficiency = 109022/117377 = 0.9288 +- 0.0008 (no incorrect hits)
+%=========================================================================
+%%% Default MS - producing for 5000 events
+%=========================================================================
+%               TRACK-FINDING SUMMARY AFTER HOUGH TRANSFORM
+%Number of track candidates found per event = 751.9842 +- 2.1109
+%                     with mean stubs/track = 7.3469
+%Fraction of track cands that are fake = 0.2820
+%Fraction of track cands that are genuine, but extra duplicates = 0.4730
+%Algorithmic tracking efficiency = 112949/117377 = 0.9623 +- 0.0006
+%Perfect algorithmic tracking efficiency = 55340/117377 = 0.4715 +- 0.0015 (no incorrect hits)
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: KF4ParamsComb
+%Number of fitted track candidates found per event = 215.9748 +- 0.5381
+%                     with mean stubs/track = 4.0000
+%Fraction of fitted tracks that are fake = 0.1332
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.0943
+%Algorithmic fitting efficiency = 109841/117377 = 0.9358 +- 0.0007
+%Perfect algorithmic fitting efficiency = 109841/117377 = 0.9358 +- 0.0007 (no incorrect hits)
+%=========================================================================
+%%% Ian MS
+%=========================================================================
+%               TRACK-FINDING SUMMARY AFTER HOUGH TRANSFORM
+%Number of track candidates found per event = 751.9842 +- 2.1109
+%                     with mean stubs/track = 7.3469
+%Fraction of track cands that are fake = 0.2820
+%Fraction of track cands that are genuine, but extra duplicates = 0.4730
+%Algorithmic tracking efficiency = 112949/117377 = 0.9623 +- 0.0006
+%Perfect algorithmic tracking efficiency = 55340/117377 = 0.4715 +- 0.0015 (no incorrect hits)
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: KF4ParamsComb
+%Number of fitted track candidates found per event = 216.3250 +- 0.5199
+%                     with mean stubs/track = 4.0000
+%Fraction of fitted tracks that are fake = 0.1033
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.1124
+%Algorithmic fitting efficiency = 110519/117377 = 0.9416 +- 0.0007
+%Perfect algorithmic fitting efficiency = 110519/117377 = 0.9416 +- 0.0007 (no incorrect hits)
+%=========================================================================
+%%% Ian MS - 2p7
+%=========================================================================
+%               TRACK-FINDING SUMMARY AFTER HOUGH TRANSFORM
+%Number of track candidates found per event = 712.2834 +- 1.9684
+%                     with mean stubs/track = 7.2053
+%Fraction of track cands that are fake = 0.2498
+%Fraction of track cands that are genuine, but extra duplicates = 0.4922
+%Algorithmic tracking efficiency = 112721/117377 = 0.9603 +- 0.0006
+%Perfect algorithmic tracking efficiency = 59544/117377 = 0.5073 +- 0.0015 (no incorrect hits)
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: KF4ParamsComb
+%Number of fitted track candidates found per event = 222.3146 +- 0.5343
+%                     with mean stubs/track = 4.0000
+%Fraction of fitted tracks that are fake = 0.0978
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.1405
+%Algorithmic fitting efficiency = 110347/117377 = 0.9401 +- 0.0007
+%Perfect algorithmic fitting efficiency = 110347/117377 = 0.9401 +- 0.0007 (no incorrect hits)
+%=========================================================================
+%%% Alex MS
+%=========================================================================
+%               TRACK-FINDING SUMMARY AFTER HOUGH TRANSFORM
+%Number of track candidates found per event = 751.9842 +- 2.1109
+%                     with mean stubs/track = 7.3469
+%Fraction of track cands that are fake = 0.2820
+%Fraction of track cands that are genuine, but extra duplicates = 0.4730
+%Algorithmic tracking efficiency = 112949/117377 = 0.9623 +- 0.0006
+%Perfect algorithmic tracking efficiency = 55340/117377 = 0.4715 +- 0.0015 (no incorrect hits)
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: KF4ParamsComb
+%Number of fitted track candidates found per event = 222.0674 +- 0.5324
+%                     with mean stubs/track = 4.0000
+%Fraction of fitted tracks that are fake = 0.1078
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.1233
+%Algorithmic fitting efficiency = 110553/117377 = 0.9419 +- 0.0007
+%Perfect algorithmic fitting efficiency = 110553/117377 = 0.9419 +- 0.0007 (no incorrect hits)
+%=========================================================================

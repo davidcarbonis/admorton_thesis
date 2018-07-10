@@ -1,0 +1,153 @@
+%%% TILTED
+%%%100 events - 15 iterations (default)
+%=========================================================================
+%               TRACK-FINDING SUMMARY AFTER HOUGH TRANSFORM
+%Number of track candidates found per event = 258.6600 +- 6.6133
+%                     with mean stubs/track = 6.9811
+%Fraction of track cands that are fake = 0.2684
+%Fraction of track cands that are genuine, but extra duplicates = 0.4853
+%Algorithmic tracking efficiency = 1619/1679 = 0.9643 +- 0.0045
+%Perfect algorithmic tracking efficiency = 896/1679 = 0.5337 +- 0.0122 (no incorrect hits)
+%=========================================================================
+%               TRACK-FINDING SUMMARY AFTER R-Z TRACK FILTER
+%Number of track candidates found per event = 181.5000 +- 4.3457
+%                     with mean stubs/track = 5.4036
+%Fraction of track cands that are fake = 0.1350
+%Fraction of track cands that are genuine, but extra duplicates = 0.5163
+%Algorithmic tracking efficiency = 1615/1679 = 0.9619 +- 0.0047
+%Perfect algorithmic tracking efficiency = 1552/1679 = 0.9244 +- 0.0065 (no incorrect hits)
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: ChiSquared4ParamsApprox
+%Number of fitted track candidates found per event = 80.3500 +- 1.7306
+%                     with mean stubs/track = 4.0054
+%Fraction of fitted tracks that are fake = 0.1133
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.1200
+%Algorithmic fitting efficiency = 1565/1679 = 0.9321 +- 0.0061
+%Perfect algorithmic fitting efficiency = 1564/1679 = 0.9315 +- 0.0062 (no incorrect hits)
+%(The above fitter used the 'SeedFilter' r-z track filter.)
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: ChiSquared4ParamsTrackletStyle
+%Number of fitted track candidates found per event = 78.7699966431 +- 1.6922680140
+%                     with mean stubs/track = 4.0055856705
+%Fraction of fitted tracks that are fake = 0.1206042916
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.0924209133
+%Algorithmic fitting efficiency = 1565/1679 = 0.9321024418 +- 0.0061395080
+%Perfect algorithmic fitting efficiency = 1564/1679 = 0.9315068722 +- 0.0061644050 (no incorrect hits)
+%(The above fitter used the 'SeedFilter' r-z track filter.)
+%=========================================================================
+% 10 iterations
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: ChiSquared4ParamsApprox
+%Number of fitted track candidates found per event = 80.3500 +- 1.7306
+%                     with mean stubs/track = 4.0054
+%Fraction of fitted tracks that are fake = 0.1133
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.1200
+%Algorithmic fitting efficiency = 1565/1679 = 0.9321 +- 0.0061
+%Perfect algorithmic fitting efficiency = 1564/1679 = 0.9315 +- 0.0062 (no incorrect hits)
+%(The above fitter used the 'SeedFilter' r-z track filter.)
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: ChiSquared4ParamsTrackletStyle
+%Number of fitted track candidates found per event = 78.7699966431 +- 1.6922680140
+%                     with mean stubs/track = 4.0055856705
+%Fraction of fitted tracks that are fake = 0.1206042916
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.0924209133
+%Algorithmic fitting efficiency = 1565/1679 = 0.9321024418 +- 0.0061395080
+%Perfect algorithmic fitting efficiency = 1564/1679 = 0.9315068722 +- 0.0061644050 (no incorrect hits)
+%(The above fitter used the 'SeedFilter' r-z track filter.)
+%=========================================================================
+%
+% 5 iterations
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: ChiSquared4ParamsApprox
+%Number of fitted track candidates found per event = 80.3400 +- 1.7314
+%                     with mean stubs/track = 4.0054
+%Fraction of fitted tracks that are fake = 0.1133
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.1199
+%Algorithmic fitting efficiency = 1565/1679 = 0.9321 +- 0.0061
+%Perfect algorithmic fitting efficiency = 1564/1679 = 0.9315 +- 0.0062 (no incorrect hits)
+%(The above fitter used the 'SeedFilter' r-z track filter.)
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: ChiSquared4ParamsTrackletStyle
+%Number of fitted track candidates found per event = 78.7699966431 +- 1.6922680140
+%                     with mean stubs/track = 4.0055856705
+%Fraction of fitted tracks that are fake = 0.1206042916
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.0924209133
+%Algorithmic fitting efficiency = 1565/1679 = 0.9321024418 +- 0.0061395080
+%Perfect algorithmic fitting efficiency = 1564/1679 = 0.9315068722 +- 0.0061644050 (no incorrect hits)
+%(The above fitter used the 'SeedFilter' r-z track filter.)
+%=========================================================================
+%
+% 3 iterations
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: ChiSquared4ParamsApprox
+%Number of fitted track candidates found per event = 81.5100 +- 1.7498
+%                     with mean stubs/track = 4.0897
+%Fraction of fitted tracks that are fake = 0.1154
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.1243
+%Algorithmic fitting efficiency = 1576/1679 = 0.9387 +- 0.0059
+%Perfect algorithmic fitting efficiency = 1570/1679 = 0.9351 +- 0.0060 (no incorrect hits)
+%(The above fitter used the 'SeedFilter' r-z track filter.)
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: ChiSquared4ParamsTrackletStyle
+%Number of fitted track candidates found per event = 79.2300033569 +- 1.7016965151
+%                     with mean stubs/track = 4.0908741951
+%Fraction of fitted tracks that are fake = 0.1220497936
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.0939038023
+%Algorithmic fitting efficiency = 1574/1679 = 0.9374627471 +- 0.0059090964
+%Perfect algorithmic fitting efficiency = 1567/1679 = 0.9332936406 +- 0.0060893008 (no incorrect hits)
+%(The above fitter used the 'SeedFilter' r-z track filter.)
+%=========================================================================
+%
+% 2 iterations
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: ChiSquared4ParamsApprox
+%Number of fitted track candidates found per event = 84.9200 +- 1.9176
+%                     with mean stubs/track = 4.6528
+%Fraction of fitted tracks that are fake = 0.1361
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.1261
+%Algorithmic fitting efficiency = 1595/1679 = 0.9500 +- 0.0053
+%Perfect algorithmic fitting efficiency = 1566/1679 = 0.9327 +- 0.0061 (no incorrect hits)
+%(The above fitter used the 'SeedFilter' r-z track filter.)
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: ChiSquared4ParamsTrackletStyle
+%Number of fitted track candidates found per event = 82.3799972534 +- 1.9031437635
+%                     with mean stubs/track = 4.6672735214
+%Fraction of fitted tracks that are fake = 0.1414177418
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.0969895795
+%Algorithmic fitting efficiency = 1597/1679 = 0.9511613846 +- 0.0052599721
+%Perfect algorithmic fitting efficiency = 1561/1679 = 0.9297200441 +- 0.0062383031 (no incorrect hits)
+%(The above fitter used the 'SeedFilter' r-z track filter.)
+%=========================================================================
+%
+% 1 iterations
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: ChiSquared4ParamsApprox
+%Number of fitted track candidates found per event = 93.5000 +- 2.2792
+%                     with mean stubs/track = 5.4689
+%Fraction of fitted tracks that are fake = 0.1747
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.1490
+%Algorithmic fitting efficiency = 1610/1679 = 0.9589 +- 0.0048
+%Perfect algorithmic fitting efficiency = 1507/1679 = 0.8976 +- 0.0074 (no incorrect hits)
+%(The above fitter used the 'SeedFilter' r-z track filter.)
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: ChiSquared4ParamsTrackletStyle
+%Number of fitted track candidates found per event = 90.0400009155 +- 2.2519733906
+%                     with mean stubs/track = 5.4858951569
+%Fraction of fitted tracks that are fake = 0.1815859377
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.1160595343
+%Algorithmic fitting efficiency = 1611/1679 = 0.9594997168 +- 0.0048108976
+%Perfect algorithmic fitting efficiency = 1509/1679 = 0.8987492323 +- 0.0073619536 (no incorrect hits)
+%(The above fitter used the 'SeedFilter' r-z track filter.)
+%=========================================================================
+
+%% KF4
+%=========================================================================
+%                    TRACK FIT SUMMARY FOR: KF4ParamsComb
+%Number of fitted track candidates found per event = 70.5000 +- 1.5517
+%                     with mean stubs/track = 4.0000
+%Fraction of fitted tracks that are fake = 0.1018
+%Fraction of fitted tracks that are genuine, but extra duplicates = 0.0614
+%Algorithmic fitting efficiency = 1595/1679 = 0.9500 +- 0.0053
+%Perfect algorithmic fitting efficiency = 1595/1679 = 0.9500 +- 0.0053 (no incorrect hits)
+%=========================================================================
+%
