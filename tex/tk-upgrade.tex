@@ -405,8 +405,9 @@ Such ``fake'' stubs are expected have larger residuals than those which are corr
 Therefore if the stub with the largest residual exceeded a suitable cut, it was removed from the track and the track was refitted with its reduced collection of hits. 
 During the optimisation of this cut, it was found that this approach had the potential to leave a track with fewer than the minimum of four stubs required for a track candidate to be considered, thus potentially discarding a matched track by mistaken.
 To avoid the discarding of genuine tracks whilst retaining the benefits of improving the quality of the tracks reconstructed whilst removing fake tracks, a looser residual cut was applied for tracks only comprised of four stubs.
+Considering the removal of stubs occurs for each of the fitting iterations except for the final iteration, as by definition the final track fit has to occur on final collection of hits considered.
 
-Table\ref~{tab:chi2-exactVsApprox}
+Table\ref~{tab:chi2-exactVsApprox} shows 
 
 %%% discuss results
 \editComment{Comment on purity, resolution, fake rate, and duplicate rate}
