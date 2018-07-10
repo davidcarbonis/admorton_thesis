@@ -235,7 +235,7 @@ A more detailed description of the firmware implementation of the \DR for the de
 \editComment{Add legend to plots and reduce size of points on plots by half}
 
 During the development of the \emph{TMTT} demonstrator system both before and following the December 2016 review, the author was involved in a number of simulation studies, the more substantive of which are presented below.
-All of the results discussed use a common set of definitions, as defined in Chapter~\ref{subsubsec:helixParameter}, and the track fitters discussed use the digitised output from the \HT.
+All of the results discussed use a common set of definitions, as defined in Chapter~\ref{subsubsec:helixParameter}, and the track fitters discussed use digitised output from the \HT.
 
 \subsubsection{Common definitions}\label{subsubsec:helixParameter}
 A number of parameters and metrics are used to describe tracks and how well the track fitters have reconstructed them are used throughout this chapter and are given below.
@@ -336,24 +336,13 @@ Therefore, any implementation in firmware for an FPGA will require the use of lo
 
 \subsubsection{Software Results and Outlook}\label{subsubsec:chi2software}
 \editComment{Results in this subsub section have been made with 100 ttbar+pu200 events. 
-This is due to a bug being discovered in the final version of the TMTT code for the flat geometry used to produce these results, which was not present during the development of this algo.
+This is due to several bugs being discovered in the final version of the TMTT code for the flat geometry used to produce these results, which was not present during the development of this algo.
 As the bug had a LARGE impact on the results, a low stats run has been done in order to not to delay the completion of this chapter draft any longer than it already has been!
-The larger stats (~1000 to 5000 events) runs will be done prior to final draft.}
+The larger stats (~1000 to 5000 events) runs are currently in progress.}
 
-From Eqns~\ref{eq:chi4,eq:chi5} and the track derivatives $D_{ij}$ derived in Appendix~\ref{app:chi2}, a software implementation of the linearised $\chi^{2}$ track fit algorithm was developed.
-
-Following the validation of a floating point version of the algorithm, a version was developed using approximated expressions of the track derivatives in order to simply (and reduce resources required for) any future derivative tabulation by reducing the number of variables that it would depend on.
-
-Table\ref~{tab:chi2-exactVsApprox} shows how the tracking performance compares between the floating point maths and ``approximated'' maths versions of the algorithm compare against each other and from the raw track finding output from the \HT.
-Both versions produce comparable results for the mean tracking efficiency, the mean number of tracks reconstructed  and what proportion of them are with or fake and duplicate tracks, indicating that the approximations made are broadly acceptable.
-
-It is also useful to consider the quality of the reconstructed tracks in terms of the resolutions obtained for their helix parameters.
-Figure~\ref{fig:chi2HelixParametersResVsEtaApproxVsExact} shows the resolutions of the four track parameters produced by both version of the algorithm as a function of $\eta$ in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200.
-In contrast to the floating point algorithm, the ``approximated'' maths version of the algorithm provides noticeably worse resolutions for \qpt and $\phi_{0}$ by approximately a factor of two.
-The resolutions obtained for \qpt and $\phi_{0}$ endcaps and for $\eta$ and $z_{0}$ across the tracker are broadly comparable between the two approaches.
-
-\editComment{Elaborate on resolutions further once the higher stats results are in - can make statements with much greater confidence! \ie explain why the worse barrel resolution for \qpt and $phi_{0}$ is acceptable - as my notes and memory does not correspond with this!
-How does it compare to offline resolutions?}
+From Eqns~\ref{eq:chi4,eq:chi5} and the track derivatives derived in Appendix~\ref{app:chi2}, a software implementation of the linearised $\chi^{2}$ track fit algorithm was developed.
+Initially this implementation used exact floating point mathematics in order to validate the algorithm, before a version using approximated expressions of the track derivatives was developed.
+The motivation behind this was to reduce the number of variables that the matrix of derivatives would depend on in order to simplify (and reduce resources required for) any future tabulation of the matrix.
 
 \begin{table}[htbp]
 \topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain for  both the exact floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
@@ -385,6 +374,16 @@ The track finding efficiencies following each stage are given using the efficien
  \addtolength{\tabcolsep}{-1ex}
 \end{table}
 
+Table\ref~{tab:chi2-exactVsApprox} shows how the tracking performance compares between the floating point maths and ``approximated'' maths versions of the algorithm compare against each other and from the raw track finding output from the \HT.
+It can be seen that whilst the \HT finds tracks with high efficiency, over half have at least one incorrectly associated stub and a significant number of the tracks found are fake or duplicated tracks.
+Both floating point and approximated maths implementations give comparable results, indicating that the approximations made are acceptable.
+The $chi^{2}$ track fit increases the purity of the reconstructed tracks by a factor of two and eliminating the majority of the fake tracks, whilst the \DR algorithm removes the majority of the duplicates.
+
+Figure~\ref{fig:chi2HelixParametersResVsEtaApproxVsExact} shows that resolutions of the four track parameters as a function of $\eta$ from primary tracks in \ttbar events at \PU of 200 for both maths implementations of the algorithm.
+The resolutions compare well not just between the two implementation of the algorithm's mathematics, but also with those obtained with offline track reconstruction~\cite{P-2TrackerTDR}.
+As offline reconstruction is able to use more sophisticated reconstruction techniques using all information from the detector, this guarantees that the tracks found will be useful to the L1 trigger.
+
+
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/qOverPtResVsEta_It1_ApproxVsExact.pdf}
@@ -401,11 +400,14 @@ The track finding efficiencies following each stage are given using the efficien
 \end{figure}
 
 \editComment{Note numbers when higher stats runs are complete}
-As shown in table~\ref{tab:chi2_exactVsApprox}, in \ttbar events at \PU of 200, a significant proportion of the tracks reconstructed by the linearised $\chi^{2}$ fit either are fake tracks or are matched tracks which contain at least one incorrect stub.
+
+As a significant proportion of the tracks reconstructed by the linearised $\chi^{2}$ fit contain either at least one incorrect stub the values for the two tracking efficiency definitions are not equal.
+In order to filter out these incorrectly assigned stubs from matched tracks, and also remove fake tracks, the residuals calculated for each stub following the fit were considered.
+As such ``fake'' stubs are expected have large residuals compared to stubs correctly associated to genuine tracks or if
 
 Running multiple iterations of the fitting algorithm had been previously been considered in the context of improving upon the resolution of a fitted track's helix parameters, but had been shown to produce only marginal improvements.
 This concept was revisited however, when considering how to remove stubs which are either incorrectly associated with a matched track or belong to a fake track.
-Such ``fake'' stubs are expected have larger residuals than those which are correctly associated and given that the residuals of each stub were known following a fit.
+Such and given that the residuals of each stub were known following a fit.
 Therefore if the stub with the largest residual exceeded a suitable cut, it was removed from the track and the track was refitted with its reduced collection of hits. 
 During the optimisation of this cut, it was found that this approach had the potential to leave a track with fewer than the minimum of four stubs required for a track candidate to be considered, thus potentially discarding a matched track by mistaken.
 To avoid the discarding of genuine tracks whilst retaining the benefits of improving the quality of the tracks reconstructed whilst removing fake tracks, a looser residual cut was applied for tracks only comprised of four stubs.
