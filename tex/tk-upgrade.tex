@@ -342,7 +342,7 @@ The larger stats (~1000 to 5000 events) runs will be done prior to final draft.}
 
 From Eqns~\ref{eq:chi4,eq:chi5} and the track derivatives $D_{ij}$ derived in Appendix~\ref{app:chi2}, a software implementation of the linearised $\chi^{2}$ track fit algorithm was developed.
 
-Following the validation of a floating point version of the algorithm, a version was developed using approximated calculations of the track derivatives in order to simply (and reduce resources required for) any future derivative tabulation by reducing the number of variables that it would depend on.
+Following the validation of a floating point version of the algorithm, a version was developed using approximated expressions of the track derivatives in order to simply (and reduce resources required for) any future derivative tabulation by reducing the number of variables that it would depend on.
 
 Table\ref~{tab:chi2-exactVsApprox} shows how the tracking performance compares between the floating point maths and ``approximated'' maths versions of the algorithm compare against each other and from the raw track finding output from the \HT.
 Both versions produce comparable results for the mean tracking efficiency, the mean number of tracks reconstructed  and what proportion of them are with or fake and duplicate tracks, indicating that the approximations made are broadly acceptable.
@@ -468,7 +468,12 @@ The track finding efficiencies following each stage are given using the efficien
 \end{figure}
 
 \editComment{Write bit on why \KF was chosen and $\chi^{2}$ put on ice}
-Following these preliminary studies of a linearised $\chi^{2}$ track fit, a comparison was made between it and the \KF.
+In comparison to the linearised $\chi^{2}$ track fit, the \KF has a higher track finding efficiency with all incorrectly associated stubs removed, a lower duplicate track rate and ...  
+
+
+Additionally there were concerns over the potential feasibility of tabulating all (or the most frequently used) track derivatives in the endcap disks with currently
+As such it was decided not to pursue the $\chi^{2}$ fit further 
+
 
 %%% Old hardware discussion
 %% Matrix sizes
