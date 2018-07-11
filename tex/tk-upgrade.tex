@@ -9,7 +9,7 @@ This increase in instantaneous luminosity will provide the experiments the abili
 The instantaneous luminosity of the machine and the beam parameters are related by: the number of bunches $n_{b}$, the number of protons per bunch $N^{2}_{p}$, the beam beta value (focal length) at the collision point $\beta^{*}$, and a crossing angle dependent luminosity geometrical reduction factor $R$,
 
 \begin{equation}
-L \propto \frac{n_{b}N^{2}_{p}}{\beta^{*}} R  \;.
+L \propto \frac{n_{b}N^{2}_{p}}{\beta^{*}} R  \;
 \label{eq:machineLumi}
 \end{equation}
 
@@ -163,14 +163,14 @@ The Hough Transform algorithm is a widely used means of detecting geometric feat
 Within the tracking volume, permeated by a homogeneous 3.8T magnetic field ($B$), a radius of curvature ($R$) can be described as a function of its\pT and charge $q$:
 
 \begin{equation}
-R = \frac{\pt}{0.003\,qB} \;.
+R = \frac{\pt}{0.003\,qB} \;
 \label{eq:R}
 \end{equation}
 
 Assuming, to first order, that $R$ is constant, by neglecting energy losses such as through multiple scattering, and that only primary tracks from or near the primary interaction point are considered (other such tracks are not typically relevant to the L1 trigger), a stub with coordinates ($r$,$\varphi$) is related to $R$ by:
 
 \begin{equation}
-\frac r{2\,R} = \sin\left(\varphi-\phi\right) \;.
+\frac r{2\,R} = \sin\left(\varphi-\phi\right) \;
 \label{eq:stub_R}
 \end{equation}
 
@@ -178,7 +178,7 @@ where $\phi$ is the angle of the track in the transverse plane at the origin \ci
 For large \pT (> 3\GeV) and thus large $R$, the small angle approximation can be used. Combining Eq.~\ref{eq:R} and Eq.~\ref{eq:stub_R}, one produces the key formula showing the transformation from stub positions to straight lines in the track parameter plane (Hough-space):
 
 \begin{equation}
-\phi = \varphi - \frac{0.0015\,qB}{\pt}\cdot r \;.
+\phi = \varphi - \frac{0.0015\,qB}{\pt}\cdot r \;
 \label{eq:localHT}
 \end{equation}
 
@@ -327,7 +327,7 @@ Similarly the $\chi^{2}$ of the fit can also be expressed in a linear form:
          = \delta f^{T} (1- DM^{-1}D^{T}) (1- DM^{-1}D^{T}) \delta f \;
          = delta f^{T} (1- DM^{-1}D^{T}) \delta f \;
          = delta f^{T} \delta f - \delta f^{T} DM^{-1}D^{T} \delta f \;
-         = \chi^{2}_{seed} + \delta f^{T} D \delta \overrightarrow{h} \;.;
+         = \chi^{2}_{seed} + \delta f^{T} D \delta \overrightarrow{h} \;
 \label{eq:chi5}
 \end{equation}
 
