@@ -473,26 +473,6 @@ Following the parallel development of both the linearised $\chi^{2}$ track fit a
 The motivations behind this decision was that the \KF was capable of achieving a higher track finding efficiency with 100.0\% purity for matched tracks and considerable progress had been made with an implementation in firmware.
 In contrast, the linearised $\chi^{2}$ track was not competitive in terms of track reconstruction ability, especially with respect to the stricter tracking efficiency definition, and there were also concerns over the potential feasibility of tabulating all (or the most frequently used) track derivatives in the endcap disks for FPGAs which were commercially available at the time.
 
-%%% Old hardware discussion
-%% Matrix sizes
-%The resource constraints facing a L1 track finder rules out the use of floating-point calculations in firmware, given their resource intensive nature, necessitating the use of fixed-point arithmetic.
-%As the precision of the input track parameters will be limited by the number of bits the \HT uses to store each parameter, the algorithm at the very least needs to be capable of performing using the maximum information available from the \HT without any serious performance impact.
-%From this upper limit
-%
-%\editComment{min precision acceptable?}
-%\editComment{input already digitised/degraded}
-%
-%When considering the minimum parameter resolution which would not considerably impact on the track reconstruction efficiency or helix parameter resolutions, .... \editComment{Find out how many are required, what precision?}
-%As the first order approximation of the derivatives for the barrel hits only depend on the radial position of the hit (\ie one of the six possible barrel layer radial positions), their implementation would be trivial with only a small number of LUTs (\editComment{insert number and explain}) being required.
-%
-%The endcap regions however, are more complicated, with the derivatives having additional dependencies on $\tan$, $\lambda$, the radius of curvature of the track, and for the outer modules, a correction factor to obtain a measurement of $\phi$.
-%As shown above, the size of the LUTs required for the endcap regions considerably exceeds the resources of those present on currently available FPGAs, such as the $433 \times 10^{3}$ LUTs available on the Virtex 7 690 FPGAs used by the MP7s in the demonstrator.
-%Whilst a future FPGA could implement this track fitting algorithm, it would not be feasible to implement on a current generation chip.
-%Given that one of the motivating factors behind this TFP design was to be able to demonstrate a complete system with currently available technology, and at the time of development the \KF had demonstrated superior performance and been shown to be feasible to implement in firmware, it was determined that work on the linearised $chi^{2}$ fitter would not be continued for the immediate future.
-
-%Each CLB has 2 slices, 8 luts and 16 flip flops (8 storage element per slice). So multiply the number of slices in the data sheet by four and you get the number of luts
-
-
 \subsection{Tracking at low transverse momenta}\label{subsec:Tmtt2GeV}
 The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may be desirable if the trigger requirements demand it and the impact of this potential requirement on the proposed proposed track-finder system was studied.
 These studies were initially undertaken as part of the the robustness studies required for the December 2016 demonstrator review, focussing on recovering tracking efficiency below 3\GeV with the \HT, and were subsequently built upon with modifications to the \KF algorithm. 
