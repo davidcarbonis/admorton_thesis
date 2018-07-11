@@ -296,9 +296,9 @@ The $\chi^{2}$ of such a track is expressed as:
 
 \begin{equation}
 \begin{split}
-\chi^{2} & \sum_{ij} \big(f_{i}(\overrightarrow{h}) - s_{i} \big) V^{-1}_{ij}  \big(f_{j}(\overrightarrow{h}) - s_{j} \big)  \\
-         & \sum_{ij} \big( f_{i}(\overrightarrow{h})  - s_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( f_{j}(\overrightarrow{h})  - s_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)  \\
-         & \sum_{ij} \big( \delta f_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( \delta f_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)
+\chi^{2} &= \sum_{ij} \big(f_{i}(\overrightarrow{h}) - s_{i} \big) V^{-1}_{ij}  \big(f_{j}(\overrightarrow{h}) - s_{j} \big)  \\
+         &= \sum_{ij} \big( f_{i}(\overrightarrow{h})  - s_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( f_{j}(\overrightarrow{h})  - s_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)  \\
+         &= \sum_{ij} \big( \delta f_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( \delta f_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)
 \end{split}
 \label{eq:chi2}
 \end{equation}
@@ -325,12 +325,12 @@ Similarly the $\chi^{2}$ of the fit can also be expressed in a linear form:
 
 \begin{equation}
 \begin{split}
-\chi^{2} & (\delta f + D \delta h)^{T}(\delta f + D \delta h) \\
-         & (\delta f - DM^{-1}D^{T}\delta f)^{T} (\delta f - DM^{-1}D^{T}\delta f) \\
-         & \delta f^{T} (1- DM^{-1}D^{T}) (1- DM^{-1}D^{T}) \delta f \\
-         & \delta f^{T} (1- DM^{-1}D^{T}) \delta f \\
-         & \delta f^{T} \delta f - \delta f^{T} DM^{-1}D^{T} \delta f \\
-         & \chi^{2}_{seed} + \delta f^{T} D \delta \overrightarrow{h} 
+\chi^{2} &= (\delta f + D \delta h)^{T}(\delta f + D \delta h) \\
+         &= (\delta f - DM^{-1}D^{T}\delta f)^{T} (\delta f - DM^{-1}D^{T}\delta f) \\
+         &= \delta f^{T} (1- DM^{-1}D^{T}) (1- DM^{-1}D^{T}) \delta f \\
+         &= \delta f^{T} (1- DM^{-1}D^{T}) \delta f \\
+         &= \delta f^{T} \delta f - \delta f^{T} DM^{-1}D^{T} \delta f \\
+         &= \chi^{2}_{seed} + \delta f^{T} D \delta \overrightarrow{h} 
 \end{split}
 \label{eq:chi5}
 \end{equation}
