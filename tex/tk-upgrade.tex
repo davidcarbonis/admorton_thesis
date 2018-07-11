@@ -451,7 +451,8 @@ Table~\ref{tab:chi2-exactVsApprox} and figure~\ref{fig:chi2HelixParametersResIte
 \editComment{Comment on results once these are made - low stats runs aren't clear enough and the old buggy ones cannot be trusted!}
 Further fitting iterations were found to yield no further improvement in terms of increasing the matched track purity, reducing the fake rate and the resolution of the track parameters.
 By contrast, whilst a greater number of fake tracks survive the Kalman Filter's filtering, none of the matched tracks reconstructed contain any incorrect stubs. 
-\editComment{Comment why?}
+This suggests that if a more sophisticated method of removing bad quality stubs were used in the $\chi^{2} fit$, then  not many matched tracks would be discarded whilst their purity would be increased.
+Although such an improvement may come at the expense of a low fake rate, such tracks can be potentially cleaned further downstream but tracks which aren't reconstructed are lost forever.
 
 \begin{figure}[htb]
 \centering
