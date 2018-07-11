@@ -295,19 +295,13 @@ f_{i}(\overrightarrow{h} ) = f_{i}(\overrightarrow{h} + \delta \overrightarrow{h
 The $\chi^{2}$ of such a track is expressed as:
 
 \begin{equation}
-\chi^{2} = \sum_{ij} \big(f_{i}(\overrightarrow{h}) - s_{i} \big) V^{-1}_{ij}  \big(f_{j}(\overrightarrow{h}) - s_{j} \big)  \;
-\label{eq:chi2a}
+\begin{split}
+\chi^{2} & \sum_{ij} \big(f_{i}(\overrightarrow{h}) - s_{i} \big) V^{-1}_{ij}  \big(f_{j}(\overrightarrow{h}) - s_{j} \big)  \\
+         & \sum_{ij} \big( f_{i}(\overrightarrow{h})  - s_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( f_{j}(\overrightarrow{h})  - s_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)  \\
+         & \sum_{ij} \big( \delta f_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( \delta f_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)
+\end{split}
+\label{eq:chi2}
 \end{equation}
-
-\begin{equation}
-         = \sum_{ij} \big( f_{i}(\overrightarrow{h})  - s_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( f_{j}(\overrightarrow{h})  - s_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)  \;
-\label{eq:chi2b}
-\end{equation}
-
-\begin{equation}
-         = \sum_{ij} \big( \delta f_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( \delta f_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)  \;
-\end{equation}
-\label{eq:chi2c}
 
 where $\delta f_{i} \equiv f_{i}(\overline{h}) - s_{i}$ are the residuals between the expected position of the track (given by the seed helix parameters) and the position of the track given by the stub, and $V^{-1}_{ij} = diag(\sigma^{2}_{ii})$ is the variance matrix which describes the uncertainty associated to the measurement of the stubs.
 
@@ -330,31 +324,18 @@ Therefore equation~\ref{eq:chi4} provides a simple linear form for how the track
 Similarly the $\chi^{2}$ of the fit can also be expressed in a linear form:
 
 \begin{equation}
-\chi^{2} = (\delta f + D \delta h)^{T}(\delta f + D \delta h) \;
-\label{eq:chi5a}
-\end{equation}
-\begin{equation}
-         = (\delta f - DM^{-1}D^{T}\delta f)^{T} (\delta f - DM^{-1}D^{T}\delta f) \;
-\label{eq:chi5b}
-\end{equation}
-\begin{equation}
-         = \delta f^{T} (1- DM^{-1}D^{T}) (1- DM^{-1}D^{T}) \delta f \;
-\label{eq:chi5d}
-\end{equation}
-\begin{equation}
-         = \delta f^{T} (1- DM^{-1}D^{T}) \delta f \;
-\label{eq:chi5d}
-\end{equation}
-\begin{equation}
-         = \delta f^{T} \delta f - \delta f^{T} DM^{-1}D^{T} \delta f \;
-\label{eq:chi5e}
-\end{equation}
-\begin{equation}
-         = \chi^{2}_{seed} + \delta f^{T} D \delta \overrightarrow{h} \;
-\label{eq:chi5f}
+\begin{split}
+\chi^{2} & (\delta f + D \delta h)^{T}(\delta f + D \delta h) \\
+         & (\delta f - DM^{-1}D^{T}\delta f)^{T} (\delta f - DM^{-1}D^{T}\delta f) \\
+         & \delta f^{T} (1- DM^{-1}D^{T}) (1- DM^{-1}D^{T}) \delta f \\
+         & \delta f^{T} (1- DM^{-1}D^{T}) \delta f \\
+         & \delta f^{T} \delta f - \delta f^{T} DM^{-1}D^{T} \delta f \\
+         & \chi^{2}_{seed} + \delta f^{T} D \delta \overrightarrow{h} 
+\end{split}
+\label{eq:chi5}
 \end{equation}
 
-As the linear forms of equations~\ref{eq:chi4} and~\ref{eq:chi5f} consist of repeated addition and multiplication operations of the matrices involved, they are naturally suitable for implementation on an FPGA.
+As the linear forms of equations~\ref{eq:chi4} and~\ref{eq:chi5} consist of repeated addition and multiplication operations of the matrices involved, they are naturally suitable for implementation on an FPGA.
 
 For whilst FPGAs can easily perform such operations, potential complications arise when considering the calculation of the track derivatives that form the elements of $D$ which would not trivial given the presence of a large number divisions and trigonometric functions for the endcaps' derivatives.
 Therefore, any implementation in firmware for an FPGA will require the use of lookup tables containing the precomputed values of the derivatives in order to quickly update a track's helix parameters without exceeding latency budgets.
@@ -365,7 +346,7 @@ This is due to several bugs being discovered in the final version of the TMTT co
 As the bug had a LARGE impact on the results, a low stats run has been done in order to not to delay the completion of this chapter draft any longer than it already has been!
 The larger stats (~1000 to 5000 events) runs are currently in progress.}
 
-From equations~\ref{eq:chi4} and~\ref{eq:chi5f} and the track derivatives derived in Appendix~\ref{app:chi2}, a software implementation of the linearised $\chi^{2}$ track fit algorithm was developed.
+From equations~\ref{eq:chi4} and~\ref{eq:chi5} and the track derivatives derived in Appendix~\ref{app:chi2}, a software implementation of the linearised $\chi^{2}$ track fit algorithm was developed.
 Initially this implementation used exact floating point mathematics in order to validate the algorithm, before a version using approximated expressions of the track derivatives was developed.
 The motivation behind this was to reduce the number of variables that the matrix of derivatives would depend on in order to simplify (and reduce resources required for) any future tabulation of the matrix.
 
