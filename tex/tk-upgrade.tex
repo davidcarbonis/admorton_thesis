@@ -451,7 +451,7 @@ Table~\ref{tab:chi2-exactVsApprox} and figure~\ref{fig:chi2HelixParametersResIte
 \editComment{Comment on results once these are made}
 Further fitting iterations were found to yield no further improvement in terms of increasing the matched track purity, reducing the fake rate and the resolution of the track parameters.
 By contrast, whilst a greater number of fake tracks survive the Kalman Filter's filtering, none of the matched tracks reconstructed contain any incorrect stubs. 
-\editComment{Comment why}
+\editComment{Comment why?}
 
 \begin{figure}[htb]
 \centering
@@ -469,13 +469,9 @@ By contrast, whilst a greater number of fake tracks survive the Kalman Filter's 
 \label{fig:chi2HelixParametersResIterationsComparison}
 \end{figure}
 
-\editComment{Write bit on why \KF was chosen and $\chi^{2}$ put on ice}
-In comparison to the linearised $\chi^{2}$ track fit, the \KF has a higher track finding efficiency with all incorrectly associated stubs removed, a lower duplicate track rate and ...  
-
-
-Additionally there were concerns over the potential feasibility of tabulating all (or the most frequently used) track derivatives in the endcap disks with currently
-As such it was decided not to pursue the $\chi^{2}$ fit further 
-
+Following the parallel development of both the linearised $\chi^{2}$ track fit and the \KF, it was decided that development on the former would be discontinued in favour of focussing resources on the latter.
+The motivations behind this decision was that the \KF was capable of achieving a higher track finding efficiency with 100.0\% purity for matched tracks and considerable progress had been made with an implementation in firmware.
+In contrast, the linearised $\chi^{2}$ track was not competitive in terms of track reconstruction ability, especially with respect to the stricter tracking efficiency definition, and there were also concerns over the potential feasibility of tabulating all (or the most frequently used) track derivatives in the endcap disks for FPGAs which were commercially available at the time.
 
 %%% Old hardware discussion
 %% Matrix sizes
