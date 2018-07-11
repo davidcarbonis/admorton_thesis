@@ -432,7 +432,7 @@ The track finding efficiencies following each stage are given using the efficien
 % This right-aligns numbers in column, but centers them under column title.
   \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
    \hline
-   \bf{Track Fitting Algo} & # of iterations & \bf{Efficiency [\%]} & \bf{``Perfect'' Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean [\#] of tracks}} & \multicolumn{1}{r}{\bf{[\%] of fakes}} & \multicolumn{1}{r}{\bf{[\%] of duplicates}}  \\
+   \bf{Track Fitting Algo} & [\#] of iterations & \bf{Efficiency [\%]} & \bf{``Perfect'' Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean [\#] of tracks}} & \multicolumn{1}{r}{\bf{[\%] of fakes}} & \multicolumn{1}{r}{\bf{[\%] of duplicates}}  \\
    \hline
    $\chi^{2}$ & 1 & 94.9 & 83.8 & 88.2 & 16.4 & 10.7 \\  
    & 2 & 93.5 & 90.4 & 73.8 & 7.2 & 7.4 \\
@@ -447,7 +447,7 @@ The track finding efficiencies following each stage are given using the efficien
  \addtolength{\tabcolsep}{-1ex}
 \end{table}
 
-Table\ref~{tab:chi2-exactVsApprox} and figure~\ref{fig:chi2HelixParametersResIterationsComparison} illustrate how the tracking performance and helix parameter resolution changes between one and four fitting iterations, which allows for the removal of zero and up to three stubs respectively, 
+Table~\ref{tab:chi2-exactVsApprox} and figure~\ref{fig:chi2HelixParametersResIterationsComparison} illustrate how the tracking performance and helix parameter resolution changes between one and four fitting iterations, which allows for the removal of zero and up to three stubs respectively, 
 \editComment{Comment on results once these are made}
 Further fitting iterations were found to yield no further improvement in terms of increasing the matched track purity, reducing the fake rate and the resolution of the track parameters.
 By contrast, whilst a greater number of fake tracks survive the Kalman Filter's filtering, none of the matched tracks reconstructed contain any incorrect stubs. 
@@ -581,7 +581,7 @@ The resolutions are comparable for $\pT < 3\GeV$, with slight a degradation in t
 \caption{
 \pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200.
 \editComment{Make plots bigger!}
-\editComment{Best to express resolution in terms of $\pT$ or $\frac{1}{\pT}$?
+\editComment{Best to express resolution in terms of $\pT$ or $\frac{1}{\pT}$?}
 }
 \label{fig:htHelixParametersResVsInvPt}
 \end{figure}
