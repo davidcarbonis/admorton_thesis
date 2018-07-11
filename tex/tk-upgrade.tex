@@ -288,7 +288,7 @@ the position of its $i$ hits (\ie stubs) given at $s_{i}$, we initially linearly
 
 \begin{equation}
 f_{i}(\overrightarrow{h} ) = f_{i}(\overrightarrow{h} + \delta \overrightarrow{h}) \;
-                           = f_{i}(\overline{h} + \delta \overline{h} \frac{\partial f_{i}}{\partial \overline{h}} + \mathcal{O}(\delta \overline{h}^{2}) \;
+                           = f_{i}(\overline{h} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} + \mathcal{O}(\delta \overrightarrow{h}^{2}) \;
 \label{eq:chi1}
 \end{equation}
 
@@ -297,7 +297,7 @@ The $\chi^{2}$ of such a track is expressed as:
 \begin{equation}
 \begin{split}
 \chi^{2} &= \sum_{ij} \big(f_{i}(\overrightarrow{h}) - s_{i} \big) V^{-1}_{ij}  \big(f_{j}(\overrightarrow{h}) - s_{j} \big)  \\
-         &= \sum_{ij} \big( f_{i}(\overrightarrow{h})  - s_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( f_{j}(\overrightarrow{h})  - s_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)  \\
+         &= \sum_{ij} \big( f_{i}(\overline{h})  - s_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( f_{j}(\overline{h})  - s_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)  \\
          &= \sum_{ij} \big( \delta f_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( \delta f_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)
 \end{split}
 \label{eq:chi2}
