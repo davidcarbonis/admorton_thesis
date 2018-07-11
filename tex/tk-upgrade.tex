@@ -293,7 +293,6 @@ The $\chi^{2}$ of such a track is expressed as:
 
 \begin{equation}
 \chi^{2} = \sum_{ij} \big(f_{i}(\overrightarrow{h}) - s_{i} \big) V^{-1}_{ij}  \big(f_{j}(\overrightarrow{h}) - s_{j} \big)  \;.
-
          = \sum_{ij} \big( f_{i}(\overrightarrow{h})  - s_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( f_{j}(\overrightarrow{h})  - s_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)  \;.
          = \sum_{ij} \big( \delta f_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} \big) V^{-1}_{ij}  \big( \delta f_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} \big)  \;.
 \label{eq:chi2}
@@ -308,7 +307,7 @@ By is minimising $\chi^{2}$, $\delta h$ can be determined:
 \label{eq:chi3}
 \end{equation}
 
-By defining the matrices $D_{ij} = \frac{\partial f_{i}}{\partial h_{k}}$ and $M = D^{T} V^{-1} D$, Eqn.~\ref{eq:chi3} can be rewritten and solved for $\delta h$:
+By defining the matrices $D_{ij} = \frac{\partial f_{i}}{\partial h_{k}}$ and $M = D^{T} V^{-1} D$, equation~\ref{eq:chi3} can be rewritten and solved for $\delta h$:
 
 \begin{equation}
 0 = D^{T} V^{-1} \delta f + M \delta h \Rightarrow \delta h = - M^{-1} D^{T} \delta f \;.
@@ -403,7 +402,7 @@ As offline reconstruction is able to use more sophisticated reconstruction techn
 
 %Running multiple iterations of the fitting algorithm had been previously been considered in the context of improving upon the resolution of a fitted track's helix parameters, but had been shown to produce only marginal improvements.
 
-A significant proportion of the tracks reconstructed by the linearised $\chi^{2}$ fit, as shown in table~\ref{tab:chi2-exactVsApprox}, contain either at least one incorrect stub, resulting in the values for the two tracking efficiency definitions being not equal.
+As shown in table~\ref{tab:chi2-exactVsApprox, a significant proportion of the tracks reconstructed by the linearised $\chi^{2}$ fit contain either at least one incorrect stub, resulting in the values for the two tracking efficiency definitions being not equal.
 In order to filter out these incorrectly assigned stubs from matched tracks, and also remove fake tracks, the residuals calculated for each stub following the fit were considered.
 As such ``fake'' stubs are expected have large residuals compared to stubs correctly associated to genuine tracks or stubs belonging to a fake track.
 
@@ -416,7 +415,7 @@ Therefore, in order to increase the fake rate and matched track purity:
 \item and the process is repeated until the latency budget is exceeded/no further stubs are removed, with no further consideration of the remaining stubs' residuals following the final cut.
 \end{itemize}
 
-During the optimisation of this cut, it was found that a track could end up with having fewer than the minimum of four stubs required to be considered track candidate - thus potentially discarding a matched track by mistake!
+During the optimisation of the cut for this stub quality check, it was found that a track could end up with having fewer than the minimum of four stubs required to be considered track candidate - thus potentially discarding a matched track by mistake!
 To avoid this happening whilst retaining the improved matched track purity and reduced rate of fake tracks, a looser residual cut was applied for tracks only comprised of four stubs.
 
 \begin{table}[htbp]
@@ -448,15 +447,11 @@ The track finding efficiencies following each stage are given using the efficien
  \addtolength{\tabcolsep}{-1ex}
 \end{table}
 
-Table\ref~{tab:chi2-exactVsApprox} shows that whilst the tracking efficiency with no purity requirement
-
-losses considerably impacted as the stub removal does mistakenly 
-
-%%% discuss results
-\editComment{Comment on purity, resolution, fake rate, and duplicate rate}
-\editComment{Impact on killing genuine stubs assoc. with track?}
-\editComment{Note that additional fitting iterations did not further improve on eff, or res}
-\editComment{Better to show comparison between KF and it1 and it4? For the sake of clarity?}
+Table\ref~{tab:chi2-exactVsApprox} and figure~\ref{fig:chi2HelixParametersResIterationsComparison} illustrate how the tracking performance and helix parameter resolution changes between one and four fitting iterations, which allows for the removal of zero and up to three stubs respectively, 
+\editComment{Comment on results once these are made}
+Further fitting iterations were found to yield no further improvement in terms of increasing the matched track purity, reducing the fake rate and the resolution of the track parameters.
+By contrast, whilst a greater number of fake tracks survive the Kalman Filter's filtering, none of the matched tracks reconstructed contain any incorrect stubs. 
+\editComment{Comment why}
 
 \begin{figure}[htb]
 \centering
@@ -469,6 +464,7 @@ losses considerably impacted as the stub removal does mistakenly
 \pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200 for the approximated maths implementation of the linearised $\chi^{2}$ fit algorithm for one (green), two (purple), three (black) and four (blue) fitting iterations. The \KF (red) is also included for comparison.
 \editComment{Make plots bigger!}
 \editComment{Increase stats from 100!}
+\editComment{Too cluttered perhaps?}
 }
 \label{fig:chi2HelixParametersResIterationsComparison}
 \end{figure}
