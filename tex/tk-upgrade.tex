@@ -358,7 +358,7 @@ The track finding efficiencies following each stage are given using the efficien
 
 \label{tab:chi2-exactVsApprox}
   \centering
-\resizebox{\textwidth}{!}{
+  \resizebox{\textwidth}{!}{
 % This increases column spacing.
   \addtolength{\tabcolsep}{1ex}
 % This right-aligns numbers in column, but centers them under column title.
@@ -377,14 +377,14 @@ The track finding efficiencies following each stage are given using the efficien
 %   KF+DR & 94.1 & 94.1 & 82.1 & 21.1 & 4.5 \\
    \hline
    
- \end{tabular}}
- \addtolength{\tabcolsep}{-1ex}
+ \end{tabular}
+ \addtolength{\tabcolsep}{-1ex}}
 \end{table}
 
 Table~\ref{tab:chi2-exactVsApprox} shows how the tracking performance compares between the floating point maths and ``approximated'' maths versions of the algorithm compare against each other and from the raw track finding output from the \HT.
 It can be seen that whilst the \HT finds tracks with high efficiency, over half have at least one incorrectly associated stub and a significant number of the tracks found are fake or duplicated tracks.
 Both floating point and approximated maths implementations give comparable results, indicating that the approximations made are acceptable.
-The $chi^{2}$ track fit increases the purity of the reconstructed tracks by a factor of two and eliminating the majority of the fake tracks, whilst the \DR algorithm removes the majority of the duplicates.
+The $\chi^{2}$ track fit increases the purity of the reconstructed tracks by a factor of two and eliminating the majority of the fake tracks, whilst the \DR algorithm removes the majority of the duplicates.
 
 Figure~\ref{fig:chi2HelixParametersResVsEtaApproxVsExact} shows that resolutions of the four track parameters as a function of $\eta$ from primary tracks in \ttbar events at \PU of 200 for both maths implementations of the algorithm.
 The resolutions compare well not just between the two implementation of the algorithm's mathematics, but also with those obtained with offline track reconstruction~\cite{P2TrackerTDR}.
@@ -435,6 +435,7 @@ The track finding efficiencies following each stage are given using the efficien
 \label{tab:chi2_iterations}
   \centering
 % This increases column spacing.
+  \resizebox{\textwidth}{!}{
   \addtolength{\tabcolsep}{1ex}
 % This right-aligns numbers in column, but centers them under column title.
   \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
@@ -450,7 +451,7 @@ The track finding efficiencies following each stage are given using the efficien
    \hline
    
  \end{tabular}
- \addtolength{\tabcolsep}{-1ex}
+ \addtolength{\tabcolsep}{-1ex}}
 \end{table}
 
 Table~\ref{tab:chi2-exactVsApprox} and figure~\ref{fig:chi2HelixParametersResIterationsComparison} illustrate how the tracking performance and helix parameter resolution changes between one and four fitting iterations, which allows for the removal of zero and up to three stubs respectively, 
@@ -516,12 +517,13 @@ The duplicate removal algorithm however, remains effective at removing almost al
 \begin{table}[htbp]
 \topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain  for the configurations of only increasing the number of \qpt columns (\emph{Default}), additionally using \HT cell merging and the optimised \KF state cuts (\emph{Optimised}).
 The track finding efficiencies following each stage are given using the efficiency definitions given in Chapter~\ref{subsubsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
-\editComment{better to quote non-integer numbers and fractions of duplicates/fakes?}.
-\editComment{Ermm ... get table to fit onto page!}
+\editComment{Fix table size}
 }
 \label{tab:trackFindingPerformance2GeVHT}
   \centering
 % This increases column spacing.
+
+  \resizebox{\textwidth}{!}{
   \addtolength{\tabcolsep}{1ex}
 % This right-aligns numbers in column, but centers them under column title.
   \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
@@ -539,7 +541,7 @@ The track finding efficiencies following each stage are given using the efficien
    \hline
    
  \end{tabular}
- \addtolength{\tabcolsep}{-1ex}
+ \addtolength{\tabcolsep}{-1ex}}
 \end{table}
 
 The point made about \MS not being properly accounted for in the \KF is nicey illustrated by figure ~\ref{fig:2GeVFlatChi2Ndf} which shows the distributions of $\chi^{2} \div \text{number of degrees of freedom}$ ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ in figure~\ref{fig:2GeVFlatChi2Ndf} for genuine tracks produced by the \KF.
@@ -645,11 +647,11 @@ At the time of writing this chapter, it is not understood how incorporating \MS 
 \begin{table}[htbp]
 \topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain (\HT + \KF + \DR) for the three differing \KF configurations where \MS is not considered (\emph{no \MS}), a constant \MS coefficient (\emph{$k$}) is used and a layer depedent \MS coefficient (\emph{$k(layer)$})is used. 
 The track finding efficiencies following each stage are given using the efficiency definitions given in Chapter~\ref{subsubsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
-\editComment{better to quote non-integer numbers and fractions of duplicates/fakes?}.
-}
+\editComment{Fix table size!.}
 \label{tab:trackFindingPerformance2GeVKF}
   \centering
 % This increases column spacing.
+  \resizebox{\textwidth}{!}{
   \addtolength{\tabcolsep}{1ex}
 % This right-aligns numbers in column, but centers them under column title.
   \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
@@ -665,7 +667,7 @@ The track finding efficiencies following each stage are given using the efficien
    \hline
    
  \end{tabular}
- \addtolength{\tabcolsep}{-1ex}
+ \addtolength{\tabcolsep}{-1ex}}
 \end{table}
 
 Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of transverse momenta in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200 for both \MS coefficients considered and for when \MS is not accounted for at all.
