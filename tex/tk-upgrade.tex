@@ -354,7 +354,6 @@ The motivation behind this was to reduce the number of variables that the matrix
 \topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain for  both the exact floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
 The track finding efficiencies following each stage are given using the efficiency definitions given in Chapter~\ref{subsubsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
 \editComment{Ermm ... get table to fit onto page!}
-\editComment{Increase stats from 100}
 }
 \label{tab:chi2-exactVsApprox}
   \centering
@@ -365,15 +364,15 @@ The track finding efficiencies following each stage are given using the efficien
    \hline
    \bf{Stage} & \bf{Efficiency [\%]} & \bf{``Perfect'' Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{\% of fakes}} & \multicolumn{1}{r}{\bf{\% of duplicates}}  \\
         \hline
-   HT &  97.3 & 40.9 & 350.0 & 44.2 & 36.7 \\  
+   HT &  97.0 & 43.1 & 351.2 & 43.9 & 37.0 \\  
    \hline
-   $\chi^{2}$+DR & 95.1 & 84.2 & 82.3 & 16.5 & 9.5 \\
+   $\chi^{2}$+DR & 95.0 & 85.8 & 86.4 & 15.7 & 9.5 \\
    (floating point) & & & & & \\
    \hline
-   $\chi^{2}$+DR & 94.9 & 83.8 & 88.2 & 16.4 & 10.7 \\  
+   $\chi^{2}$+DR & 94.9 & 85.6 & 87.4 & 15.5 & 10.9 \\  
    (approximated) & & & & & \\   
 %   \hline
-%   KF+DR & 94.3 & 94.3 & 81.9 & 20.9 & 4.7 \\
+%   KF+DR & 94.1 & 94.1 & 82.1 & 21.1 & 4.5 \\
    \hline
    
  \end{tabular}
@@ -430,7 +429,6 @@ To avoid this happening whilst retaining the improved matched track purity and r
 The results of further fitting iterations are not shown as they no further improvement by any metric.
 The track finding efficiencies following each stage are given using the efficiency definitions given in Chapter~\ref{subsubsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
 \editComment{Ermm ... get table to fit onto page!}
-\editComment{Increase stats from 100}
 }
 \label{tab:chi2_iterations}
   \centering
@@ -441,13 +439,12 @@ The track finding efficiencies following each stage are given using the efficien
    \hline
    \bf{Track Fitting Algo} & [\#] of iterations & \bf{Efficiency [\%]} & \bf{``Perfect'' Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean [\#] of tracks}} & \multicolumn{1}{r}{\bf{[\%] of fakes}} & \multicolumn{1}{r}{\bf{[\%] of duplicates}}  \\
    \hline
-   $\chi^{2}$ & 1 & 94.9 & 83.8 & 88.2 & 16.4 & 10.7 \\  
-   & 2 & 93.5 & 90.4 & 73.8 & 7.2 & 7.4 \\
-   & 3 & 92.8 & 90.3 & 71.5 & 5.7 & 6.9 \\
-   & 4 & 92.8 & 90.4 & 71.3 & 5.6 & 6.8 \\
-%   & 5 & 92.8 & 90.4 & 71.3 & 565 & 6.8 \\
+   $\chi^{2}$ & 1 & 94.9 & 85.6 & 87.4 & 15.5 & 10.9 \\  
+   & 2 & 93.8 & 91.0 & 73.8 & 6.6 & 7.7 \\
+   & 3 & 93.1 & 91.0 & 71.4 & 5.3 & 6.9 \\
+   & 4 & 93.0 & 91.0 & 71.1 & 5.2 & 6.8 \\
    \hline
-   KF+DR & - & 94.3 & 94.3 & 81.9 & 20.9 & 4.7 \\
+   KF+DR & - & 94.1 & 94.1 & 82.1 & 21.1 & 4.5 \\
    \hline
    
  \end{tabular}
