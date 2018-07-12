@@ -445,7 +445,7 @@ The track finding efficiencies following each stage are given using the efficien
    \hline
    \bf{Track Fitter} & [\#] of iterations & \bf{Efficiency [\%]} & \bf{``Perfect'' Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean [\#] of tracks}} & \multicolumn{1}{r}{\bf{[\%] of fakes}} & \multicolumn{1}{r}{\bf{[\%] of duplicates}}  \\
    \hline
-   $\chi^{2}$ & 1 & 94.9 & 85.6 & 87.4 & 15.5 & 10.9 \\  
+   $\chi^{2}$+DR & 1 & 94.9 & 85.6 & 87.4 & 15.5 & 10.9 \\  
    & 2 & 93.8 & 91.0 & 73.8 & 6.6 & 7.7 \\
    & 3 & 93.1 & 91.0 & 71.4 & 5.3 & 6.9 \\
    & 4 & 93.0 & 91.0 & 71.1 & 5.2 & 6.8 \\
@@ -457,8 +457,10 @@ The track finding efficiencies following each stage are given using the efficien
  \addtolength{\tabcolsep}{-1ex}}
 \end{table}
 
-Table~\ref{tab:chi2-exactVsApprox} and figure~\ref{fig:chi2HelixParametersResIterationsComparison} illustrate how the tracking performance and helix parameter resolution changes between one and four fitting iterations, which allows for the removal of zero and up to three stubs respectively, 
-\editComment{Comment on results once these are made - low stats runs aren't clear enough and the old buggy ones cannot be trusted!}
+Table~\ref{tab:chi2-exactVsApprox} and figure~\ref{fig:chi2HelixParametersResIterationsComparison} illustrate how the tracking performance and helix parameter resolution changes between one and four fitting iterations, which allows for the removal of zero and up to three stubs respectively.
+
+\editComment{Comment on high stats results in table and resolution plots once these are remade - low stats runs aren't clear enough and the old buggy ones cannot be trusted!}
+
 Further fitting iterations were found to yield no further improvement in terms of increasing the matched track purity, reducing the fake rate and the resolution of the track parameters.
 By contrast, whilst a greater number of fake tracks survive the Kalman Filter's filtering, none of the matched tracks reconstructed contain any incorrect stubs. 
 This suggests that if a more sophisticated method of removing bad quality stubs were used in the $\chi^{2} fit$, then  not many matched tracks would be discarded whilst their purity would be increased.
@@ -472,10 +474,9 @@ Although such an improvement may come at the expense of a low fake rate, such tr
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_IterationComparison.pdf}
 \includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/etaResVsEta_IterationComparison.pdf}
 \caption{
-\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200 for the approximated maths implementation of the linearised $\chi^{2}$ fit algorithm for one (green), two (purple), three (black) and four (blue) fitting iterations. The \KF (red) is also included for comparison.
+\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200 for the approximated maths implementation of the linearised $\chi^{2}$ fit algorithm for one (green) and four (blue) fitting iterations. The \KF (red) is also included for comparison.
 \editComment{Make plots bigger!}
 \editComment{Increase stats from 100!}
-\editComment{Too cluttered perhaps?}
 }
 \label{fig:chi2HelixParametersResIterationsComparison}
 \end{figure}
