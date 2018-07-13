@@ -1,8 +1,12 @@
 \chapter{Analysis Strategy }\label{chapter:tzq-search}
-%Following from the ... next chapters of this thesis describe the search for a singly produced top quark in association with a Z boson using the reconstructed proton-proton collision data at $\sqrt{13}$ collected by the CMS detector during 2016.
-%Using the particles identified and reconstructed, as discussed in Chapter~\ref{chapter:data-mc}, 
+Following from the motivation given in Chapter~\ref{}, the next chapters of this thesis describe the search for a singly produced top quark in association with a Z boson (tZq) using the reconstructed proton-proton collision data at $\sqrt{13}$ collected by the CMS detector during 2016.
+The analysis 
 
-The first stage of a physics analysis is to determine an event selection based on the topology of the process in order to create a region which is enriched with signal events.
+%In contrast to previous searches which have focussed on the trilepton final state~\cite{Sirunyan:2017kkr,Sirunyan:2017nbr}, this ananlsysi 
+
+As 
+
+The first stage of a	 physics analysis is to determine an event selection based on the topology of the process in order to create a region which is enriched with signal events.
 This is 
 
 
@@ -11,29 +15,24 @@ At leading order, tZq consists single top quark, a radiated Z boson and a recoil
 Therefore, the final state contains two leptons from the Z boson decay and at least four jets, 
 , a b-jet originating from 
 
-The main challenge in defining a signal enriched region for the dilepton final state of tZq is that its topology is identical to final states of other processes with much larger cross sections, resulting in a background dominated
+The main challenge for searching for the dilepton final state of tZq events is that topology is identical to the final states of other processes with much larger cross sections.
 
 %%% Discuss signal/bkg processes
 
-\section{Event Selection}\label{sec:eventSelection}
-The signal enhanced 
+\section{Physics Objects}\label{sec:eventSelection}
+Using the physics objects identified and reconstructed, as described in Chapter~\ref{chapter:data-mc}, a 
+
 
 \subsection{Trigger Strategy}\label{subsec:triggerStrategy}
-As the presence of the exactly two leptons resulting from the Z boson decaying is 
- 
-, the trigger strategy consists of selecting events from datasets identified by the presence of either one or two leptons by the trigger system.
+As the search for the dilepton final state for tZq relies on the identification of the two leptons from the Z boson decay, the trigger strategy consists of selecting events from datasets identified by the presence of leptons.
+Given that the signal process being searched for is dominated by background processes and will likely be limited by statistics, it is essential to reconstruct and select as many signal events as possible.
+To this end both single and double lepton triggers with the lowest possible transverse momenta thresholds are considered 
+in order to ensure that the maximum possible statistics can be obtained over the largest possible phase space.
 
+In addition to the ee and $\mu\mu$ final state for tZq, the muon + electron (MuonEG) dataset, and single electron and muon datasets, are considered for a \ttbar enriched control region discussed in Chapter~\ref{subsec:ttbarCR}. 
+This control region uses the e$\mu$ final state to validate the modelling of the \ttbar MC sample used in a region topologically similar to the signal region.
 
-As mentioned at the start of this chapter, as the process being searched for is dominated by background processes and will likely be limited by statistics, it is essential to reconstruct and select as many signal events as possible.
-To this end, in order to ensure that the maximum possible statistics can be obtained
-
-contains two leptons (\ie two electrons or two muons)
-
-Whilst the Z boson can decay into a tau anti-tau pair, with these leptons being simulated and reconstructed in the MC, they are not considered in the event selection for this analysis due to the .. %%% hard to simulate due to their high mass
-
-The triggers selected have been chosen to retain as low a transverse momenta threshold as possible so as to maximise the maximum possible of phase space that can be covered ...
-
-The muon + electron (MuonEG) dataset, and single electron and muon datasets, is also considered for the \ttbar control region discussed in Chapter~\ref{subsec:ttbarCR} which uses the e$\mu$ final state to validate the modelling of the \ttbar MC sample used in a region topologically similar to the signal region.
+%Whilst the Z boson can decay into a tau anti-tau pair, despite these leptons being simulated and reconstructed in the MC, they are not considered in the event selection for this analysis due to the difficulty simulating them due to their high mass.
 
 \begin{table}[htbp]
 \topcaption {
@@ -48,15 +47,16 @@ Triggers and datasets used for each decay channel.
    \hline
    \bf{Final State} & \bf{Dataset} & \bf{HLT Paths}  \\
    \hline
-    ee & SingleElectron &  HLT\_Ele32\_eta2p1\_WPTight\_Gsf   \\
-    & DoubleElectron & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ \\
+    ee & DoubleElectron & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ \\
+    & SingleElectron &  HLT\_Ele32\_eta2p1\_WPTight\_Gsf   \\
    \hline
-    $\mu\mu$ & SingleMuon &  HLT\_Iso(Tk)Mu24  \\  
-        & DoubleMuon  & HLT\_Mu17\_TrkIsoVVL\_(Tk)Mu8\_TrkIsoVVL\_DZ \\  
-
+    $\mu\mu$ & DoubleMuon  & HLT\_Mu17\_TrkIsoVVL\_(Tk)Mu8\_TrkIsoVVL\_DZ \\  
+    & SingleMuon &  HLT\_Iso(Tk)Mu24  \\  
    \hline
    e$\mu$ & MuonEG &  HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL(\_DZ)   \\  
           &        &  HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL(\_DZ)  \\
+    & SingleElectron &  HLT\_Ele32\_eta2p1\_WPTight\_Gsf   \\
+    & SingleMuon &  HLT\_Iso(Tk)Mu24  \\  
    \hline
    
  \end{tabular}
@@ -92,16 +92,16 @@ All electrons: \pT > 35/15 \GeVc, $\eta < 2.50$, exclude electrons in the EB/EE 
 \subsubsection{Muons}
 PF muons 
 
-Tight 
-
+Tight  
+suppress hadronic punch-through into the muon system and non-prompt muons.
 \begin{itemize}
 \item is a PF Muon and is also both a tracker and global muon.
-\item the $\chi^{2}/ndf$ of the global muon track fit is less than ten to surpress hadronic punch-through into the muon system and non-prompt muons.
-\item at least one muon chamber is included in the global track fit - ditto above.
-\item that muon segments are found in at least two muon stations ...
-\item $d_{0} < 0.2\cm$ and $d_{z} < 0.5\cm$ - surpress cosmic muons and non-prompt leptons
-\item the muon must have at least one hit in the pixel detector to further suppress non-prompt muons.
-\item hits must be present in at least six tracker layers in order to achieve a good \pT measurement and to suppress non-prompt muons.
+\item the $\chi^{2}/ndf$ of the global muon track fit is less than ten. 
+\item at least one muon chamber is included in the global track fit.
+\item that muon segments are found in at least two muon stations.
+\item $d_{0} < 0.2\cm$ and $d_{z} < 0.5\cm$.
+\item the muon must have at least one hit in the pixel detector.
+\item hits must be present in at least six tracker layers in order to achieve a good \pT.
 \end{itemize}
 
 Loose muons are defined 
@@ -183,7 +183,7 @@ From the \emph{Loose}, \emph{Medium} and \emph{Tight} WPs defined by CMS~\ref{Si
 
 \subsubsection{W Boson Candidate Invariant Mass Requirements}
 In contrast to the previous tZq searches where the W boson decays into a lepton and its associated antineutrino, the W boson in the dilepton final state decays hadronically, allowing for the top quark to be fully reconstructed.
-The W boson candidate is constructed by considering each possible pair of jets, with the pair with a dijet invariant mass closest to the W boson mass of 80.4\GeVcc being chosen as the W candidate.
+The W boson candidate is constructed by considering each possible pair of jets, with the pair with a dijet invariant mass closest to the known W boson mass of 80.4\GeVcc being chosen as the W candidate.
 The leading b-jet however, is excluded from consideration as the hardest b-jet is assumed to be produced from the decay of the top quark. 
 
 \section{Data and MC Simulation Samples}\label{sec:samples}
@@ -312,19 +312,59 @@ The MC processes and their associated total number of events, cross sections and
  \addtolength{\tabcolsep}{-1ex}
 \end{table}
 
-\section{Background Estimation}\label{sec:bkgEst}
+\section{Signal Region}\label{signalRegion}
+The signal enriched region event selection is chosen to make full use of the 
+
+
+
+\section{Control Regions}\label{sec:controlRegions}
 In any high energy particle physics analysis, accurate modelling of the background processes is essential in order to be able to make a measurement 
 The main challenge in defining a signal enriched region for the dilepton final state of tZq is that its topology is identical to final states of other processes with much larger cross sections, resulting in a background dominated
 
 \subsection{Z+jets Background Control Region}\label{subsec:zPlusJetsCR}
-Z+jets constitute the largest component of the 
+Despite the majority of such events being rejected by the signal region criteria, given the large cross section for Z+jets, the remaining events form the largest background.
+Given the difficulties in accurately modelling 
+
+   
 
 \subsection{\ttbar Background Control Region}\label{subsec:ttbarCR}
-The selection criteria for the \ttbar control region differs from the signal region definition defined in Chapter~\ref{sec:eventSelection}, by requiring that the two leptons selected to have different flavours.
-In other words, 
-As the branching ratio the W bosons (produced by the top quark and anti-top quark decays) to decay into either an electron or muon is 
+The selection criteria for the \ttbar control region differs from the signal region definition defined in Chapter~\ref{sec:eventSelection}, by requiring that the two oppositely leptons selected to have different flavours, \ie one electron and one muon.
+As the branching ratio for a W boson (produced by the top quark and anti-top quark decays) to decay into either an electron or muon is the same, this produces an enriched background control region for \ttbar which is topologically similar to the signal region. 
 
-\subsection{Non-Prompt Leptons}\label{subsec:NPLs}
+\begin{table}[htbp]
+\topcaption {
+The event yields after the selection criteria have been applied for the \ttbar control region.
+}
+\label{tab:ttbarCR}
+  \centering
+% This increases column spacing.
+  \addtolength{\tabcolsep}{1ex}
+% This right-aligns numbers in column, but centers them under column title.
+  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}}
+   \hline
+   \bf{MC process} & \bf{$e\mu$}  \\
+   \hline
+   tZq & 1.709\\
+   \ttbar & 11778.461 \\
+   Z+jets & 80.9921\\
+   tW & 488.632\\
+   Other & 166.200\\
+   \hline   
+   Signal
+   Background
+   \hline
+   Data & 12509.0 \\
+   Total MC & 12515.995 \\
+   \hline
+ \end{tabular}
+ \addtolength{\tabcolsep}{-1ex}
+\end{table}
+
+
+
+\chapter{Background Estimation}\label{chapter:bkg}
+
+\section{Non-Prompt Leptons}\label{sec:NPLs}
 Backgrounds which involve decays into lepton + jets and where at least one jet is incorrectly reconstructed as a lepton (predominately electrons) or a lepton from the decay of heavy quarks (predominately muons), which pass the lepton selection and isolation criteria, are estimated with data.
 
 The estimation of this background uses the same methodology as when performing top quark pair production~\cite{CMS:2016syx} and same-sign SUSY searches~\cite{CMS:2015vqc}.
@@ -374,12 +414,11 @@ Non-prompt estimation: & a$\pm$b & c$\pm$d & e$\pm$f \\
 \label{tab:fakeLeptonYields}
 \end{table}
 
-\chapter{Background Estimation}\label{chapter:bkg}
-
 \section{Simulation Corrections}\label{sec:simCorrections}
 As 
 
 \subsection{Miscalibrated Tracker APV}
+During 2016, 
 \subsection{Lepton Reconstruction}
 \subsection{•}
 \subsection{\PU modelling}
@@ -387,3 +426,59 @@ As
 \section{Multivariate Analysis Techniques}\label{sec:mvas}
 Single top 
 \subsection{Boosted Decision Trees}\label{subsec:bdt}
+
+BDT implemented in XGBoost Library
+BDT features and hyperparameters chosen separately for ee and mumu channels
+Features chosen using recursive feature elimination
+Hyperparameters are selected by using a Gaussian process to optimise the classifier’s performance
+hyperparameters = learning rate, n-estimators, max tree depth
+feature = input variable
+
+\subsubsection{BDT input variables}
+Variables chosen
+\begin{table}[htbp]
+\topcaption {
+The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant 
+
+}
+\label{tab:bdtVariables}
+  \centering
+% This increases column spacing.
+\resizebox{\textwidth}{!}{
+  \addtolength{\tabcolsep}{1ex}
+% This right-aligns numbers in column, but centers them under column title.
+  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
+   \hline
+   \bf{Variable} & \bf{Description} & \bf{$ee$} & \bf{$\mu\mu$} \\
+   \hline
+    bTagDisc & b-tag discriminator of the leading b-tagged jet & $\checkmark$ & $\checkmark$ \\
+    fourthJetPt & \pt of the fourth jet & $\checkmark$ & $\checkmark$ \\
+    jetHt & Total \HT of every jet & $X$ & $\checkmark$ \\
+    jetMass & Total mass of every jet & $\checkmark$ & $\checkmark$ \\
+    jjDelR & $\Delta R$ between the leading jets & $\checkmark$ & $\checkmark$ \\
+    leadJetEta & $\eta$ of the leading jet & $\checkmark$ & $\checkmark$ \\
+    leadJetPt & \pt of the leading jet & $\checkmark$ & $\checkmark$ \\
+    met & \met & $\checkmark$ & $\checkmark$ \\
+    secJetPt & \pt of the second jet & $\checkmark$ & $\checkmark$ \\
+    thirdJetPt & \pt of the third jet & $\checkmark$ & $\checkmark$ \\
+    topMass & $m_{top}$ & $\checkmark$ & $\checkmark$ \\
+    totHtOverPt & Total \HT divided by total \pt & $\checkmark$ & $\checkmark$ \\
+    wPairMass & $m_{W}$ & $\checkmark$ & $\checkmark$ \\
+    wQuark2Eta & $\eta$ of the second W boson candidate jet & $X$ & $\checkmark$ \\
+    wwdelR & $\Delta R$ between the W boson candidate jets & $\checkmark$ & $X$ \\
+    zEta & $\eta$ of the Z boson & $X$$ & $\checkmark$ \\
+    zHt & \HT of the Z boson & $\checkmark$ & $\checkmark$ \\
+    zMass & $m_{Z}$ & $\checkmark$ & $\checkmark$ \\
+    zTopDelR & $\Delta R$ between the Z boson and top quark & $X$ & $\checkmark$ \\
+    zjminR & Minimum $\Delta R$ between the Z boson and a jet & $\checkmark$ & $\checkmark$ \\
+    zlb1DelR & $\Delta R$ between the Z boson and leading b-tagged jet & $\checkmark$ & $X$ \\
+   \hline
+   
+ \end{tabular}
+ \addtolength{\tabcolsep}{-1ex}}
+\end{table}
+
+\editComment{LOTS of PLOTS of the input variable distributions}
+
+\subsubsection{BDT Training and Output}
+Each sample of events for each process considered is split into a training and testing sample.
