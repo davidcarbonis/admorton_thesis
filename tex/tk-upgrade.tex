@@ -457,14 +457,19 @@ The track finding efficiencies following each stage are given using the efficien
  \addtolength{\tabcolsep}{-1ex}}
 \end{table}
 
-Table~\ref{tab:chi2-exactVsApprox} and figure~\ref{fig:chi2HelixParametersResIterationsComparison} illustrate how the tracking performance and helix parameter resolution changes between one and four fitting iterations, which allows for the removal of zero and up to three stubs respectively.
-
-\editComment{Comment on high stats results in table and resolution plots once these are remade - low stats runs aren't clear enough and the old buggy ones cannot be trusted!}
-
-Further fitting iterations were found to yield no further improvement in terms of increasing the matched track purity, reducing the fake rate and the resolution of the track parameters.
-By contrast, whilst a greater number of fake tracks survive the Kalman Filter's filtering, none of the matched tracks reconstructed contain any incorrect stubs. 
-This suggests that if a more sophisticated method of removing bad quality stubs were used in the $\chi^{2} fit$, then  not many matched tracks would be discarded whilst their purity would be increased.
+Table~\ref{tab:chi2-exactVsApprox} illustrates how the tracking performance of the linearised $\chi^{2}$ fitter improves with just an additional fitting iteration (removal of a stub), with the fake rate halving and matched track purity noticeably improving, albeit at the expense of the looser definition of the track finding efficiency.
+Further successive fitting iterations yield diminishing returns, with no further improvements seen following four fitting iterations given that the mean number of hits associated to a track is seven, the majority of tracks can only have up to three stubs removed.
+By contrast, whilst a greater number of fake tracks survive the \KF's filtering, the \KF achieves a similar tracking efficiency as two iterations of the $\chi^{2}$ fitter whilst none of the matched tracks found contain any incorrect stubs. 
+This suggests that if a more sophisticated method of removing bad quality stubs were used in the linearised $\chi^{2}$ fitter, then  not many matched tracks would be discarded whilst their purity would be increased.
 Although such an improvement may come at the expense of a low fake rate, such tracks can be potentially cleaned further downstream but tracks which aren't reconstructed are lost forever.
+
+Figure~\ref{fig:chi2HelixParametersResIterationsComparison} shows helix parameter resolution changes between one and four fitting iterations of the $\chi^{2}$ fitter, which allows for the removal of zero and up to three stubs respectively, and how this compares against the \KF's performance.
+The additional fitting iterations allow for noticeable improvements for the track parameter resolutions obtained in the endcap disks.
+\editComment{why? I'm sure I noted this down ...}
+
+In contrast however, despite the \qpt and $\phi_{0}$ resolutions achieved after four fitting iterations being competitive with those achieved by the \KF, the resolution of both $z_{0}$ and $\eta$ in the endcaps is considerably worse for the $\chi^{2}$ fitter.
+
+\editComment{Check on high stats results in table and resolution plots once these are remade - low stats runs aren't clear enough currently. Elaborate further than what has been currently said due the ability to only observe general trends until high stats are available}
 
 \begin{figure}[htb]
 \centering
