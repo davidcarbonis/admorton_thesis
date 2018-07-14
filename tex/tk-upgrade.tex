@@ -360,7 +360,7 @@ Initially this implementation used exact floating point mathematics in order to 
 The motivation behind this was to reduce the number of variables that the matrix of derivatives would depend on in order to simplify (and reduce resources required for) any future tabulation of the matrix.
 
 \begin{table}[htbp]
-\topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain for  both the exact floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
+\topcaption {Track finding performance on simulated \ttbar events at <PU> of 200, after the \HT and the full chain for  both the exact floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
 The track finding efficiencies following each stage are given using the efficiency definitions given in Chapter~\ref{subsubsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
 \editComment{Fix table size}
 }
@@ -392,7 +392,7 @@ It can be seen that whilst the \HT finds tracks with high efficiency, over half 
 Both floating point and approximated maths implementations give comparable results, indicating that the approximations made are acceptable.
 The $\chi^{2}$ track fit increases the purity of the reconstructed tracks by a factor of two and eliminates the majority of the fake tracks, whilst the \DR algorithm removes the majority of the duplicates.
 
-Figure~\ref{fig:chi2HelixParametersResVsEtaApproxVsExact} shows that resolutions of the four track parameters as a function of $\eta$ from primary tracks in \ttbar events at \PU of 200 for both mathematical implementations of the algorithm.
+Figure~\ref{fig:chi2HelixParametersResVsEtaApproxVsExact} shows that resolutions of the four track parameters as a function of $\eta$ from primary tracks in \ttbar events at <PU> of 200 for both mathematical implementations of the algorithm.
 The resolutions compare well not just between the two implementations of the algorithm's mathematics, but also with those obtained with offline track reconstruction~\cite{P2TrackerTDR}.
 As offline reconstruction is able to use more sophisticated reconstruction techniques using all information from the detector, this guarantees that the tracks found will be useful to the L1 trigger.
 
@@ -404,7 +404,7 @@ As offline reconstruction is able to use more sophisticated reconstruction techn
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_It_1_ApproxVsExact.pdf}
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/etaResVsEta_It_1_ApproxVsExact.pdf}
 \caption{
-\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200 for the floating point (red) and approximated maths (blue) implementations of the linearised $\chi^{2}$ fit algorithm for a single fitting iteration.
+\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at <PU> of 200 for the floating point (red) and approximated maths (blue) implementations of the linearised $\chi^{2}$ fit algorithm for a single fitting iteration.
 \editComment{Make plots bigger!}
 \editComment{Increase stats from 100!}
 }
@@ -430,7 +430,7 @@ During the optimisation of the cut for this stub quality check it was found that
 To avoid this happening while retaining the improved matched track purity and reduced rate of fake tracks, a looser residual cut was applied for tracks only containing four stubs.
 
 \begin{table}[htbp]
-\topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, for the $\chi^{2}$ track fit using approximated calculations of the track derivatives for when one to four fitting iterations are undertaken. 
+\topcaption {Track finding performance on simulated \ttbar events at a <PU> of 200, for the $\chi^{2}$ track fit using approximated calculations of the track derivatives for when one to four fitting iterations are undertaken. 
 The results of further fitting iterations are not shown as they show no further improvement by any metric.
 The track finding efficiencies following each stage are given using the efficiency definitions given in Chapter~\ref{subsubsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
 \editComment{Fix table size}
@@ -478,7 +478,7 @@ In contrast however, despite the \qpt and $\phi_{0}$ resolutions achieved after 
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_IterationComparison.pdf}
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/etaResVsEta_IterationComparison.pdf}
 \caption{
-\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200 for the approximated maths implementation of the linearised $\chi^{2}$ fit algorithm for one (green) and four (blue) fitting iterations. The \KF (red) is also included for comparison.
+\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at <PU> of 200 for the approximated maths implementation of the linearised $\chi^{2}$ fit algorithm for one (green) and four (blue) fitting iterations. The \KF (red) is also included for comparison.
 \editComment{Make plots bigger!}
 \editComment{Increase stats from 100!}
 }
@@ -509,7 +509,7 @@ Figure~\ref{fig:2GeVFlatEff} shows how the tracking efficiency improves followin
 \centering
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/htTrackingEffVsInvPtFlatGeometry_5000.pdf}
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
-\caption{Plots post-\HT (left) and post-\KF (right) showing tracking efficiency in low pT range with only the number of \qpt columns increased (red) and with the increased number of columns, HT cell merging and \KF state cuts optimisation(blue) for \ttbar events at \PU of 200.
+\caption{Plots post-\HT (left) and post-\KF (right) showing tracking efficiency in low pT range with only the number of \qpt columns increased (red) and with the increased number of columns, HT cell merging and \KF state cuts optimisation(blue) for \ttbar events at <PU> of 200.
 \editComment{Plots require legend and removal of black coloured data points!}
 }
 \label{fig:2GeVFlatEff}	
@@ -523,7 +523,7 @@ This shortcoming of the \KF also accounts for it not being as efficient at remov
 The duplicate removal algorithm however, remains effective at removing almost all the duplicates.
 
 \begin{table}[htbp]
-\topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the \HT and the full chain  for the configurations of only increasing the number of \qpt columns (\emph{Default}), additionally using \HT cell merging and the optimised \KF state cuts (\emph{Optimised}).
+\topcaption {Track finding performance on simulated \ttbar events at <PU> of 200, after the \HT and the full chain  for the configurations of only increasing the number of \qpt columns (\emph{Default}), additionally using \HT cell merging and the optimised \KF state cuts (\emph{Optimised}).
 The track finding efficiencies following each stage are given using the efficiency definitions given in Chapter~\ref{subsubsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
 \editComment{Fix table size}
 }
@@ -560,7 +560,7 @@ If all uncertainties were accounted for, the ideal distribution of $\frac{\chi^{
 \end{figure}
 
 %% Discuss the resolution plots here
-Figure~\ref{fig:htHelixParametersResVsInvPt} shows that the resolutions of the track parameters fitted by the \KF are comparable for $\pT < 3\GeV$ for both before and after the \HT optimisations for tracks originating from the primary interaction in \ttbar events at \PU of 200.
+Figure~\ref{fig:htHelixParametersResVsInvPt} shows that the resolutions of the track parameters fitted by the \KF are comparable for $\pT < 3\GeV$ for both before and after the \HT optimisations for tracks originating from the primary interaction in \ttbar events at <PU> of 200.
 The slight degradation in the $\phi_{0}$ resolution is a result of the decreased precision coordinates from the \HT.
 The small improvement observed in the $z_{0}$ resolution is due to the \KF being able to consider genuine stubs which were not previously found by the \HT.
 
@@ -572,7 +572,7 @@ The small improvement observed in the $z_{0}$ resolution is due to the \KF being
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtFlatGeometry_5000.pdf}
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/etaResVsInvPtFlatGeometry_5000.pdf}
 \caption{
-\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200.
+\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at <PU> of 200.
 \editComment{Make plots bigger!}
 \editComment{Best to express resolution in terms of $\pT$ or $\frac{1}{\pT}$?}
 }
@@ -636,7 +636,7 @@ The constant coefficient for the \MS contribution was used for these \KF results
 \centering
 %\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtTiltedGeometry_5000.pdf}
 \includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
-\caption{Plots showing tracking efficiency as a function of $\frac{1}{\pT}$ for \ttbar events at \PU of 200 after the full chain has been run, where the \KF has not been modified to take \MS into account (red), a constant coefficient for \MS is used (black) and a layer dependent coefficient for \MS is used (blue).
+\caption{Plots showing tracking efficiency as a function of $\frac{1}{\pT}$ for \ttbar events at <PU> of 200 after the full chain has been run, where the \KF has not been modified to take \MS into account (red), a constant coefficient for \MS is used (black) and a layer dependent coefficient for \MS is used (blue).
 \editComment{Figure needs updating.}
 }
 \label{fig:2GeVTiltEff}	
@@ -652,7 +652,7 @@ At the time of writing this chapter, it is not understood how incorporating \MS 
 %Tracks with \pt approaching the \pt threshold at which reduced precision of \HT cells are used are have the potential to be built out of both stubs from both the full and reduced precision \HT cells.
 
 \begin{table}[htbp]
-\topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the full demonstrator chain for the three differing \KF configurations where \MS is not considered ($k = 0$), a constant \MS coefficient (const $k$) is used and a layer dependent \MS coefficient ($k(layer)$)is used. 
+\topcaption {Track finding performance on simulated \ttbar events at <PU> of 200, after the full demonstrator chain for the three differing \KF configurations where \MS is not considered ($k = 0$), a constant \MS coefficient (const $k$) is used and a layer dependent \MS coefficient ($k(layer)$)is used. 
 The track finding efficiencies following each stage are given using the efficiency definitions given in Chapter~\ref{subsubsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
 \editComment{Fix table size!.}
 }
@@ -674,7 +674,7 @@ The track finding efficiencies following each stage are given using the efficien
 \end{tabular}}
 \end{table}
 
-Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of transverse momentum in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200 for both \MS coefficients considered as well as when \MS is not accounted for at all.
+Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of transverse momentum in simulation for tracks originating from the primary interaction in \ttbar events at <PU> of 200 for both \MS coefficients considered as well as when \MS is not accounted for at all.
 The resolutions of both \MS coefficients are superior across all \pt to when \MS is not considered at all, with the constant \MS coefficient typically providing more precise measurements than the layer dependent coefficient.  
 As expected, lower transverse momentum tracks experience the greatest improvements given that \MS dominates at lower transverse momenta.
 For both coefficients however, the \pt resolution in the range $ 3.8 \GeV < \pt < 5.5\GeVc$ is worse than when \MS is not considered.
@@ -687,6 +687,6 @@ At the time of writing, this observation is still being investigated, but is sus
 \\
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtTiltedGeometry_5000.pdf}
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/etaResVsInvPtTiltedGeometry_5000.pdf}
-\caption{\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200.}
+\caption{\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at <PU> of 200.}
 \label{fig:kfHelixParametersResVsInvPt}
 \end{figure}
