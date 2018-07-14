@@ -219,9 +219,7 @@ By understanding how the HT produces these duplicate tracks, a more elegant and 
 This approach is illustrated in Figure~\ref{fig:DR}, where five stubs (blue lines in Hough Space) produce three candidates (green and yellow cells).
 As all three candidates contain the same stubs, they will be fitted with identical helix parameters in the same cell (the yellow cell) regardless of the original HT cell.
 The algorithm accepts only tracks whose fitted parameters are consistent with the cell that the HT found them in initially. There is however, a small subtlety, given that the algorithm eliminates unique tracks whose fitted parameters were not consistent, which results in the loss of a few percent of efficiency. 
-By performing a second pass through the rejected tracks and rescuing those which are unique the lost efficiency can be recovered.
-
-\editComment{More detail - how are these rejected tracks recovered? During the pass, tracks whose fitted parameters do not correspond to the HT cell of a track from the first pass are probably not duplicates, so they are recovered}
+By performing a second pass through the rejected tracks, tracks which have fitted parameters that do not correspond to the HT cell of a track from the first pass are probably not duplicates, and so they are recovered.
 
 \begin{figure}[!h]
 \centering
@@ -494,6 +492,7 @@ In contrast, the linearised $\chi^{2}$ track was not competitive in terms of tra
 The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may be desirable if the trigger requirements demand it, so the impact of this potential requirement on the proposed proposed track-finder system was studied.
 These studies were initially undertaken as part of the the robustness studies required for the December 2016 demonstrator review, focussing on recovering tracking efficiency below 3\GeV with the \HT, and were subsequently built upon with modifications to the \KF algorithm after 2016.
 The results relating to \HT modifications were produced prior to the conclusion of the demonstrator review and were produced using the flat barrel geometry, and the results for the \KF improvements produced with the tilted barrel geometry.
+As the number and width of the \HT columns used 
 
 \subsubsection{Hough Transform Optimisation}\label{subsubsec:lowPtOptHT}
 Lowering the \HT \pT threshold from 3\GeVc to 2\GeVc required modifying the GP and HT configuration parameters to ensure adequate duplication in $\phi$ and increasing the number of the \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision.
