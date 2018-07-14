@@ -252,7 +252,7 @@ In the CMS they are:
 \item $\mathbf{\\pt}$ - the transverse momentum of the track.
 \item $\mathbf{\phi_{0}}$ - the track angle in the transverse plane.
 \item $\mathbf{z_{0}}$ - the \emph{longitudinal} impact parameter, \ie the distance in z from the point of closest approach to the interaction point.
-\item $\mathbf{\cot(\lambda)}$ - the cotangent of the \emph{dip} (polar) angle, related to $\eta$ by $\cot(\lambda) = \sinh (\eta)^{-1}$.
+\item $\mathbf{\cot(\theta)}$ - the cotangent of the \emph{dip} (polar) angle, related to $\eta$ by $\cot(\theta) = \sinh (\eta)^{-1}$.
 \item $\mathbf{d_{0}}$ - the \emph{transverse} impact parameter, \ie the distance of the track vertex from the interaction point in the $x-y$ plane. The \HT and track fitting algorithms discussed all assume that all tracks originate at the interaction point, \ie $d_{0} = 0$. As such, results involving this helix parameter are not given below.
 \end{itemize}
 
@@ -398,11 +398,11 @@ As offline reconstruction is able to use more sophisticated reconstruction techn
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/qOverPtResVsEta_It_1_ApproxVsExact.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/phi0ResVsEta_It_1_ApproxVsExact.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/qOverPtResVsEta_It_1_ApproxVsExact.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/phi0ResVsEta_It_1_ApproxVsExact.pdf}
 \\
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_It_1_ApproxVsExact.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/etaResVsEta_It_1_ApproxVsExact.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_It_1_ApproxVsExact.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/etaResVsEta_It_1_ApproxVsExact.pdf}
 \caption{
 \pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200 for the floating point (red) and approximated maths (blue) implementations of the linearised $\chi^{2}$ fit algorithm for a single fitting iteration.
 \editComment{Make plots bigger!}
@@ -473,11 +473,11 @@ In contrast however, despite the \qpt and $\phi_{0}$ resolutions achieved after 
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/qOverPtResVsEta_IterationComparison.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/phi0ResVsEta_IterationComparison.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/qOverPtResVsEta_IterationComparison.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/phi0ResVsEta_IterationComparison.pdf}
 \\
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_IterationComparison.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-chi2fitter/etaResVsEta_IterationComparison.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_IterationComparison.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/etaResVsEta_IterationComparison.pdf}
 \caption{
 \pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200 for the approximated maths implementation of the linearised $\chi^{2}$ fit algorithm for one (green) and four (blue) fitting iterations. The \KF (red) is also included for comparison.
 \editComment{Make plots bigger!}
@@ -508,8 +508,8 @@ Figure~\ref{fig:2GeVFlatEff} shows how the tracking efficiency improves followin
 
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/htTrackingEffVsInvPtFlatGeometry_5000.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/htTrackingEffVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
 \caption{Plots post-\HT (left) and post-\KF (right) showing tracking efficiency in low pT range with only the number of \qpt columns increased (red) and with the increased number of columns, HT cell merging and \KF state cuts optimisation(blue) for \ttbar events at \PU of 200.
 \editComment{Plots require legend and removal of black coloured data points!}
 }
@@ -570,11 +570,11 @@ The small improvement observed in the $z_{0}$ resolution is due to the \KF being
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/qOverPtResVsInvPtFlatGeometry_5000.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/phi0ResVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/qOverPtResVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/phi0ResVsInvPtFlatGeometry_5000.pdf}
 \\
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtFlatGeometry_5000.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/etaResVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/etaResVsInvPtFlatGeometry_5000.pdf}
 \caption{
 \pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200.
 \editComment{Make plots bigger!}
@@ -627,8 +627,8 @@ Consequently, this change was adopted by the project and all the results present
 
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/htFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/htFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
 \caption{The fraction of genuine tracks with duplicates as a function of $\frac{1}{\pT}$ following reconstruction by the \HT (left) and fitting and filtering by the \KF and \DR (right) for where the \HT cell merging \pT threshold is set to 2.7\GeV (red) and 3.5\GeV (blue). 
 The constant coefficient for the \MS contribution was used for these \KF results.
 \editComment{Resize plots!}
