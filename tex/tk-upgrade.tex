@@ -666,7 +666,8 @@ The track finding efficiencies following each stage are given using the efficien
   \resizebox{\textwidth}{!}{
   \addtolength{\tabcolsep}{1ex}
 % This right-aligns numbers in column, but centers them under column title.
-  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
+%  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
+\begin{tabular}{ccccc}
    \hline
    \bf{Scattering coefficient} & \bf{Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{\% of fakes}} & \multicolumn{1}{r}{\bf{\% of duplicates}}  \\
    \hline
@@ -678,7 +679,7 @@ The track finding efficiencies following each stage are given using the efficien
     $k(layer)$ & 94.2 & 222.1 & 10.8 & 12.3 \\  
    \hline
    
- \end{tabular}
+% \end{tabular}
  \addtolength{\tabcolsep}{-1ex}}
 \end{table}
 
@@ -690,11 +691,11 @@ At the time of writing, this observation is still being investigated, but is sus
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/qOverPtResVsInvPtTiltedGeometry_5000.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/phi0ResVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/qOverPtResVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/phi0ResVsInvPtTiltedGeometry_5000.pdf}
 \\
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtTiltedGeometry_5000.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tk-upgrade/results-lowPtTracking/etaResVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/etaResVsInvPtTiltedGeometry_5000.pdf}
 \caption{\pt resolution, $\phi$ resolution, $z_{0}$ resolution and $\eta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at \PU of 200.}
 \label{fig:kfHelixParametersResVsInvPt}
 \end{figure}
