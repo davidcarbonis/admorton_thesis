@@ -656,20 +656,16 @@ At the time of writing this chapter, it is not understood how incorporating \MS 
 %Tracks with \pt approaching the \pt threshold at which reduced precision of \HT cells are used are have the potential to be built out of both stubs from both the full and reduced precision \HT cells.
 
 \begin{table}[htbp]
-\topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the full demonstrator chain for the three differing \KF configurations where \MS is not considered (\emph{$k = 0$}), a constant \MS coefficient (\emph{$ const k$}) is used and a layer dependent \MS coefficient (\emph{$k(layer)$})is used. 
+\topcaption {Track finding performance on simulated \ttbar events at a \PU of 200, after the full demonstrator chain for the three differing \KF configurations where \MS is not considered ($k = 0$), a constant \MS coefficient (const $k$) is used and a layer dependent \MS coefficient ($k(layer)$)is used. 
 The track finding efficiencies following each stage are given using the efficiency definitions given in Chapter~\ref{subsubsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
 \editComment{Fix table size!.}
 }
 \label{tab:trackFindingPerformance2GeVKF}
-  \centering
-% This increases column spacing.
-  \resizebox{\textwidth}{!}{
-  \addtolength{\tabcolsep}{1ex}
-% This right-aligns numbers in column, but centers them under column title.
-%  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
+\centering
+ \resizebox{\textwidth}{!}{
 \begin{tabular}{ccccc}
    \hline
-   \bf{Scattering coefficient} & \bf{Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{\% of fakes}} & \multicolumn{1}{r}{\bf{\% of duplicates}}  \\
+   \bf{Scattering coefficient} & \bf{Efficiency [\%]} & \bf{Mean \# of tracks} & \bf{Fakes [\%]} & \bf{Duplicates [\%]}  \\
    \hline
 %     & \bf{HT}     &  96.2 & 752.0 & 28.2 & 47.3 \\  
    $k = 0$  & 93.6 & 216.0 & 13.3 & 9.4 \\      
@@ -679,8 +675,7 @@ The track finding efficiencies following each stage are given using the efficien
     $k(layer)$ & 94.2 & 222.1 & 10.8 & 12.3 \\  
    \hline
    
-% \end{tabular}
- \addtolength{\tabcolsep}{-1ex}}
+\end{tabular}}
 \end{table}
 
 Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of transverse momenta in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200 for both \MS coefficients considered and for when \MS is not accounted for at all.
