@@ -362,14 +362,12 @@ The track finding efficiencies following each stage are given using the efficien
 }
 
 \label{tab:chi2-exactVsApprox}
-  \centering
-  \resizebox{\textwidth}{!}{
-% This increases column spacing.
-  \addtolength{\tabcolsep}{1ex}
+ \centering
+ \resizebox{\textwidth}{!}{
 % This right-aligns numbers in column, but centers them under column title.
-  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
+ \begin{tabular}{cccccc}
    \hline
-   \bf{Stage} & \bf{Efficiency [\%]} & \bf{``Perfect'' Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{\% of fakes}} & \multicolumn{1}{r}{\bf{\% of duplicates}}  \\
+   \bf{Stage} & \bf{Efficiency [\%]} & \bf{``Perfect'' Efficiency [\%]} & \bf{Mean \# of tracks} & \\bf{Fakes [\%]} & \bf{Duplicates [\%]}  \\
         \hline
    HT &  97.0 & 43.1 & 351.2 & 43.9 & 37.0 \\  
    \hline
@@ -382,8 +380,7 @@ The track finding efficiencies following each stage are given using the efficien
 %   KF+DR & 94.1 & 94.1 & 82.1 & 21.1 & 4.5 \\
    \hline
    
- \end{tabular}
- \addtolength{\tabcolsep}{-1ex}}
+ \end{tabular}}
 \end{table}
 
 Table~\ref{tab:chi2-exactVsApprox} shows how the tracking performance compares between the floating point maths and ``approximated'' maths versions of the algorithm compare against each other and from the raw track finding output from the \HT.
@@ -439,11 +436,10 @@ The track finding efficiencies following each stage are given using the efficien
   \centering
 % This increases column spacing.
   \resizebox{\textwidth}{!}{
-  \addtolength{\tabcolsep}{1ex}
 % This right-aligns numbers in column, but centers them under column title.
-  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
+ \begin{tabular}{ccccccc}
    \hline
-   \bf{Track Fitter} & [\#] of iterations & \bf{Efficiency [\%]} & \bf{``Perfect'' Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean [\#] of tracks}} & \multicolumn{1}{r}{\bf{[\%] of fakes}} & \multicolumn{1}{r}{\bf{[\%] of duplicates}}  \\
+   \bf{Track Fitter} & [\#] of iterations & \bf{Efficiency [\%]} & \bf{``Perfect'' Efficiency [\%]} & \bf{Mean [\#] of tracks} & \bf{Fakes [\%]} & \bf{Duplicates [\%]}  \\
    \hline
    $\chi^{2}$+DR & 1 & 94.9 & 85.6 & 87.4 & 15.5 & 10.9 \\  
    & 2 & 93.8 & 91.0 & 73.8 & 6.6 & 7.7 \\
@@ -453,8 +449,7 @@ The track finding efficiencies following each stage are given using the efficien
    KF+DR & - & 94.1 & 94.1 & 82.1 & 21.1 & 4.5 \\
    \hline
    
- \end{tabular}
- \addtolength{\tabcolsep}{-1ex}}
+ \end{tabular}}
 \end{table}
 
 Table~\ref{tab:chi2-exactVsApprox} illustrates how the tracking performance of the linearised $\chi^{2}$ fitter improves with just an additional fitting iteration (removal of a stub), with the fake rate halving and matched track purity noticeably improving, albeit at the expense of the looser definition of the track finding efficiency.
@@ -531,13 +526,11 @@ The track finding efficiencies following each stage are given using the efficien
 \label{tab:trackFindingPerformance2GeVHT}
   \centering
 % This increases column spacing.
-
   \resizebox{\textwidth}{!}{
-  \addtolength{\tabcolsep}{1ex}
 % This right-aligns numbers in column, but centers them under column title.
-  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
+\begin{tabular}{cccccc}
    \hline
-   \bf{Configuration} & \bf{Stage} & \bf{Efficiency [\%]} & \multicolumn{1}{r}{\bf{Mean \# of tracks}} & \multicolumn{1}{r}{\bf{\% of fakes}} & \multicolumn{1}{r}{\bf{\% of duplicates}}  \\
+   \bf{Configuration} & \bf{Stage} & \bf{Efficiency [\%]} & \bf{Mean \# of tracks} & \bf{Fakes [\%]} & \bf{Duplicates [\%]}  \\
         \hline
     Default & \bf{HT}     & 93.6 & 713.2 & 34.0 & 44.5 \\  
     & \bf{Full chain}     & 89.2 & 193.9 & 21.1 & 5.1 \\      
@@ -549,8 +542,7 @@ The track finding efficiencies following each stage are given using the efficien
     & \bf{Full chain}     & 90.0 & 210.4 & 26.3 & 3.8 \\      
    \hline
    
- \end{tabular}
- \addtolength{\tabcolsep}{-1ex}}
+ \end{tabular}}
 \end{table}
 
 The point made about \MS not being properly accounted for in the \KF is illustrated by figure ~\ref{fig:2GeVFlatChi2Ndf} which shows the distributions of $\chi^{2} \div \text{number of degrees of freedom}$ ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ in figure~\ref{fig:2GeVFlatChi2Ndf} for genuine tracks produced by the \KF.
