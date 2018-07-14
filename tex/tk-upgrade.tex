@@ -582,7 +582,7 @@ The small improvement observed in the $z_{0}$ resolution is due to the \KF being
 \subsubsection{Kalman Filter Optimisation}\label{subsubsec:lowPtOptKF}
 \editComment{Plan to use these emph phrases in the revised KF section above}
 Incorporation of \MS into the \KF involved including a \emph{process noise} term, namely the variance of the multiple scattering angles, to the \emph{measurement noise} (\ie measurement error) term already present in the \KF covariance matrix.
-In this updated form, the \KF now can consider stubs which are compatible with those that have undergone \MS, allowing tracks with previously discarded stubs to be reconstructed and the resultant more accurate $\chi^{2}$ values that can be used to better discriminate against fake track states.
+In this updated form, the \KF now can consider stubs which are compatible with those that have undergone \MS, allowing tracks with previously discarded stubs to be reconstructed and the resultant more accurate $\chi^{2}$ values which can be used to better discriminate against fake track states.
 
 For small deflection angles and relativistic particles, $\sigma_{\theta}$ for a each layer is given by~\cite{Lynch:1990sq}~:
 
@@ -616,7 +616,7 @@ Similarly, the \KF state $\chi^{2}$ cuts for both approaches were also tuned in 
 During the comparative studies of these two approaches, as shown in fig~\ref{fig:2GeVfracDups} it was observed that following the \DR stage that the fraction of duplications present increases above circa $3\GeV$ in contrast to the trend of the fraction of duplicates decreasing as \pT decreases.
 As this feature is present following the \HT stage, without any further stage being run, this implies that the \HT produces more duplicates at low \pT in the full precision cells.
 As the fraction of duplicate tracks produced where decreased precision \HT cells are used is well controlled, the \pT threshold for the $2 \times 2$ merging of \HT cells was increased from $2.7\GeV$ to $3.5\GeV$.
-Whilst an increase in the duplicate rate is observed between $3.2\GeV$ and $5\GeV$ in Figure~\ref{fig:2GeVfracDups}, a decreased number of duplicates were produced below $3.5\GeV$ which lead to an overall reduction in the number of duplicates produced of circa 2.8\%.
+While an increase in the duplicate rate is observed between $3.2\GeV$ and $5\GeV$ in Figure~\ref{fig:2GeVfracDups}, a decreased number of duplicates were produced below $3.5\GeV$ which lead to an overall reduction in the number of duplicates produced of circa 2.8\%.
 
 The increased \pT threshold for \HT cell merging also had the additional benefit of recovering an additional 0.2\% of the tracks which were previously lost to \MS.
 Consequently, this change was adopted by the project and all the results presented below for the two \MS coefficient forms were produced using this increased threshold. 
@@ -643,7 +643,7 @@ The constant coefficient for the \MS contribution was used for these \KF results
 \end{figure}
 
 Figure~\ref{fig:2GeVTiltEff} shows how the tracking efficiency for the whole chain improves when \MS is accounted for in the \KF.
-The similar performance observed between the two coefficients in Figure~\ref{fig:2GeVTiltEff} and Table~\ref{tab:trackFindingPerformance2GeVKF} is due the amount of material traversed by a track not being constant for a single layer as the amount of material contributions in both the tracker and the prior contributions from the Inner Tracker, between the Inner and Outer Trackers and services varying as a function of $\eta$~\cite{P2TrackerTDR}.
+The similar performance observed between the two coefficients in Figure~\ref{fig:2GeVTiltEff} and Table~\ref{tab:trackFindingPerformance2GeVKF} is due the amount of material traversed by a track not being constant for a single layer as the amount of material contributions in both the tracker and the prior contributions from the Inner Tracker, between the Inner and Outer Trackers and services varies as a function of $\eta$~\cite{P2TrackerTDR}.
 
 Table~\ref{tab:trackFindingPerformance2GeVKF} also shows that compared to just the \HT optimisations alone, for both \MS coefficients, the \KF is more capable at rejecting incorrectly reconstructed tracks by up to an additional 3-4\%.
 In contrast, the duplicate increases for both coefficients by 3-5\% for the full chain, with the increase in duplicates occurring between $3.2\GeV$ and $5\GeV$, as shown in Figure~\ref{fig:2GeVfracDups}, near the $3.5\GeV$ threshold for merging adjacent \HT cells.
@@ -674,10 +674,10 @@ The track finding efficiencies following each stage are given using the efficien
 \end{tabular}}
 \end{table}
 
-Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of transverse momenta in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200 for both \MS coefficients considered and for when \MS is not accounted for at all.
+Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of transverse momentum in simulation for tracks originating from the primary interaction in \ttbar events at \PU of 200 for both \MS coefficients considered as well as when \MS is not accounted for at all.
 The resolutions of both \MS coefficients are superior across all \pt to when \MS is not considered at all, with the constant \MS coefficient typically providing more precise measurements than the layer dependent coefficient.  
-As expected, lower transverse momenta tracks experience the greatest improvements given that \MS dominates at lower transverse momenta.
-For both coefficients however, the \pt resolution resolution in the range $ 3.8 \GeV < \pt < 5.5\GeVc$ is worse than when \MS is not considered.
+As expected, lower transverse momentum tracks experience the greatest improvements given that \MS dominates at lower transverse momentum.
+For both coefficients however, the \pt resolution in the range $ 3.8 \GeV < \pt < 5.5\GeVc$ is worse than when \MS is not considered.
 At the time of writing, this observation is still being investigated, but is suspected, like the increased duplicate rate in the same \pT range, to be related to the reduced precision of \HT cells.
 
 \begin{figure}[htb]
