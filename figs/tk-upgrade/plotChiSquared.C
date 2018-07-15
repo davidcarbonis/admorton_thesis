@@ -25,9 +25,9 @@
 //  TH1F* prof;
 //  TEfficiency* teffi;
 
-  TFile fileKF("rootFiles-flatGeometry/Chi2Fitter/test_5000_chi2_kf.root")
-  TFile filechi2_it1("rootFiles-flatGeometry/Chi2Fitter/test_5000_chi2_it1.root")
-  TFile filechi2_it4("rootFiles-flatGeometry/Chi2Fitter/test_5000_chi2_it4.root")
+  TFile fileKF("rootFiles-flatGeometry/Chi2Fitter/test_5000_chi2_kf.root");
+  TFile filechi2_it1("rootFiles-flatGeometry/Chi2Fitter/test_5000_chi2_it1.root");
+  TFile filechi2_it4("rootFiles-flatGeometry/Chi2Fitter/test_5000_chi2_it4.root");
 
 //  fileSLR.GetObject("TMTrackProducer/Effi_KF4ParamsComb/AlgEffFitVsInvPt_KF4ParamsComb", teffi);
 //  fileSLR.GetObject("TMTrackProducer/KF4ParamsComb/PtRelResVsTrueEta_KF4ParamsComb", his)
@@ -35,10 +35,13 @@
 // ChiSquared4ParamsApprox
 // ChiSquared4ParamsTracklet
 
-  filechi2_it1.GetObject("TMTrackProducer/KF4ParamsComb/PtRelResVsTrueEta_ChiSquared4ParamsTracklet", ptResTrackletStyle;);
+  filechi2_it1.GetObject("TMTrackProducer/KF4ParamsComb/PtRelResVsTrueEta_ChiSquared4ParamsTracklet", ptResTrackletStyle);
   ptResTrackletStyle->Draw();
   d1.Draw(); d1.Update(); 
-  d1.Print("Plots/AlgEffFitVsInvPt_SLR.pdf");
+  d1.Print("test.pdf");
   cin.get(); 
 
+  fileKF.Close();
+  filechi2_it1.Close();
+  filechi2_it4.Close();
 }
