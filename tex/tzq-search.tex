@@ -1,8 +1,9 @@
-\chapter{Analysis Strategy }\label{chapter:tzq-search}
-Following from the motivation given in Chapter~\ref{}, the next chapters of this thesis describe the search for a singly produced top quark in association with a Z boson (tZq) using the reconstructed proton-proton collision data at $\sqrt{13}$ collected by the CMS detector during 2016.
-The analysis 
+\chapter{Analysis Strategy and Event Selection}\label{chapter:tzq-search}
+The next chapters of this thesis describe the search for the dilepton final state of a singly produced top quark in association with a Z boson (tZq) using the reconstructed proton-proton collision data at $\sqrt{13}$ collected by the CMS detector during 2016.
+In contrast to the previous searches for tZq which have focussed on the trilepton final state~\cite{Sirunyan:2017kkr,Sirunyan:2017nbr}, where both the Z and W bosons decay leptonically, the W boson in this search decays hadronically.
 
-%In contrast to previous searches which have focussed on the trilepton final state~\cite{Sirunyan:2017kkr,Sirunyan:2017nbr}, this ananlsysi 
+
+The main challenge for searching for the dilepton final state of tZq events is that topology is identical to the final states of other processes with much larger cross sections.
 
 As 
 
@@ -15,19 +16,17 @@ At leading order, tZq consists single top quark, a radiated Z boson and a recoil
 Therefore, the final state contains two leptons from the Z boson decay and at least four jets, 
 , a b-jet originating from 
 
-The main challenge for searching for the dilepton final state of tZq events is that topology is identical to the final states of other processes with much larger cross sections.
+As the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay, being able to identify isolated leptons with a low misidentification rate is essential.
 
 %%% Discuss signal/bkg processes
-
-\section{Physics Objects}\label{sec:eventSelection}
-Using the physics objects identified and reconstructed, as described in Chapter~\ref{chapter:data-mc}, a 
+Despite 
 
 
-\subsection{Trigger Strategy}\label{subsec:triggerStrategy}
+\section{Trigger Strategy}\label{sec:triggerStrategy}
 As the search for the dilepton final state for tZq relies on the identification of the two leptons from the Z boson decay, the trigger strategy consists of selecting events from datasets identified by the presence of leptons.
 Given that the signal process being searched for is dominated by background processes and will likely be limited by statistics, it is essential to reconstruct and select as many signal events as possible.
 To this end both single and double lepton triggers with the lowest possible transverse momenta thresholds are considered 
-in order to ensure that the maximum possible statistics can be obtained over the largest possible phase space.
+to ensure that the maximum possible statistics can be obtained over the largest possible phase space.
 
 In addition to the ee and $\mu\mu$ final state for tZq, the muon + electron (MuonEG) dataset, and single electron and muon datasets, are considered for a \ttbar enriched control region discussed in Chapter~\ref{subsec:ttbarCR}. 
 This control region uses the e$\mu$ final state to validate the modelling of the \ttbar MC sample used in a region topologically similar to the signal region.
@@ -63,7 +62,7 @@ Triggers and datasets used for each decay channel.
  \addtolength{\tabcolsep}{-1ex}
 \end{table}
 
-\subsection{Event Cleaning}\label{subsec:metFilters}
+\section{Event Cleaning}\label{sec:metFilters}
 Following the trigger requirements, a number of filters are applied in order to so that events with beam or detector anomalies which result in anomalous \MET are not considered for use in the analysis.
 
 \begin{itemize}
@@ -76,12 +75,19 @@ Following the trigger requirements, a number of filters are applied in order to 
 \item \textbf{Bad Muon Filter} - removes events where a muon is defined as a PF muon, but is still has too low a quality and large \pT to be considered.
 \end{itemize}
 
+\section{Physics Objects}\label{sec:eventSelection}
+The physics objects used in the analysis have been identified and reconstructed using the particle flow algorithm
+described in Chapter~\ref{chapter:data-mc}.
+
+
+
+
 \subsection{Lepton Selection}
 As the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay, being able to identify isolated leptons with a low misidentification rate is essential.
 
 
 \subsubsection{Electrons}
-Two types of selection are applied to the PF electrons 
+Given the need to identify isolated electrons produced from the signal process rather than 
 
 Tight ~ 70\% efficiency
 Veto ~ 95\% efficiency
@@ -113,13 +119,16 @@ Loose muons are defined
 
 
 \subsubsection{Lepton Isolation}
-In order to differentiate between leptons promptly produced at the primary vertex from those that result from hadronic decays, a relative isolation variable $I^{rel}$ is defined.
-This isolation variable is defined as the summed energy of all PF particles within a cone around the PF lepton, with the estimated neutral charged pileup contamination, $\rho$, removed, divided by the lepton \pT.
+\editComment{more detail}
+In order to differentiate between leptons promptly produced at the primary vertex from those that result from hadronic decay and to enable a precise momentum measurement by ensuring they are sufficiently separated from hadrons and photons, a relative isolation variable $I^{rel}$ is defined.
+The isolation variable is defined as the summed energy of all PF particles within a cone around the PF lepton, with the estimated neutral charged pileup contamination, $\rho$, removed, divided by the lepton \pT.
 
-Two different pileup contamination estimation methods are used in the work presented, one for electrons and the other for muons.
+Two different pileup contamination estimation methods are used in the analysis presented, one for electrons and the other for muons.
 
-For electrons, the $\rho$ * effective area pileup alleviation technique is used.
-This involves the estimating the expected energy within the isolation cone from the median energy density per area of pileup contamination ($\rho$), estimated for each event, with the effective area given as a function of the electron's pseudorapidity, which is expressed as: 
+For electrons, the $\rho$ * effective area ($rho * A_{eff}$) pileup alleviation technique is used.
+This method involves the estimating the expected energy within the isolation cone from the median energy density per area of pileup contamination, estimated for each event, with the effective area given as a function of the electron's pseudorapidity.
+
+This is given as: 
 
 \begin{equation}
 I^{rel}_{rho * A_{eff}} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\rm T}(Photon) -rho*A_{\rm eff} )/p_T \\
@@ -186,8 +195,11 @@ In contrast to the previous tZq searches where the W boson decays into a lepton 
 The W boson candidate is constructed by considering each possible pair of jets, with the pair with a dijet invariant mass closest to the known W boson mass of 80.4\GeVcc being chosen as the W candidate.
 The leading b-jet however, is excluded from consideration as the hardest b-jet is assumed to be produced from the decay of the top quark. 
 
+\subsection{\MET}\label{subsec:met}
+Whilst the signal region does not explicitly cut on \MET, it is used in one of the Z+jets control regions, described in Chatper~\ref{subsec:zPlusJetsCR}, and in the boosted decision tree, discussed in Chapter~\ref{subsec:bdt}, in order to discriminate against backgrounds such as \ttbar which do feature significant amounts of \MET.
+
 \section{Data and MC Simulation Samples}\label{sec:samples}
-The analysis uses proton-proton collision data at $\sqrt{13}$ in 2016, considering events in the double lepton and single lepton datasets where the double and single lepton triggers respectively have fired, using the strategy discussed in Chapter~\ref{subsec:triggerStrategy}.
+The analysis uses proton-proton collision data at $\sqrt{13}$ in 2016, considering events in the double lepton and single lepton datasets where the double and single lepton triggers respectively have fired, using the strategy described in Chapter~\ref{sec:triggerStrategy}.
 
 Table~\ref{tab:mcList} lists the MC samples used to simulate the signal and background processes that were considered.
  with the number of events generated, their cross sections and 
@@ -313,17 +325,22 @@ The MC processes and their associated total number of events, cross sections and
 \end{table}
 
 \section{Signal Region}\label{signalRegion}
-The signal enriched region event selection is chosen to make full use of the 
+The signal enriched region event selection is chosen to make full use of all of the physics objects available to 
 
+As shown in Figure~\ref{}, at leading order tZq consists of a top quark, a recoil quark and a radiated Z boson.
 
 
 \section{Control Regions}\label{sec:controlRegions}
-In any high energy particle physics analysis, accurate modelling of the background processes is essential in order to be able to make a measurement 
-The main challenge in defining a signal enriched region for the dilepton final state of tZq is that its topology is identical to final states of other processes with much larger cross sections, resulting in a background dominated
+In any high energy particle physics analysis, accurate modelling of the background processes is essential in order to be able to make a measurement.
+The main challenge in forming an analysis for the dilepton final state of tZq is that its topology is identical to final states of other processes with much larger cross sections, resulting in a background dominated signal region, making it especially important to ensure that the background processes are accurately modelled.
+
+In order to confirm whether these backgrounds are accurately modelled or not, and to use to perform data-driven estimations, control regions 
 
 \subsection{Z+jets Background Control Region}\label{subsec:zPlusJetsCR}
-Despite the majority of such events being rejected by the signal region criteria, given the large cross section for Z+jets, the remaining events form the largest background.
-Given the difficulties in accurately modelling 
+Despite the majority of such events being rejected by the signal region criteria, given the large cross section for Z+jets, the remaining events from this process form the single largest background.
+Given the difficulties in accurately modelling higher order contributions from QCD processes, 
+
+Initially 
 
    
 
@@ -363,6 +380,7 @@ The event yields after the selection criteria have been applied for the \ttbar c
 
 
 \chapter{Background Estimation}\label{chapter:bkg}
+Despite 
 
 \section{Non-Prompt Leptons}\label{sec:NPLs}
 Backgrounds which involve decays into lepton + jets and where at least one jet is incorrectly reconstructed as a lepton (predominately electrons) or a lepton from the decay of heavy quarks (predominately muons), which pass the lepton selection and isolation criteria, are estimated with data.
