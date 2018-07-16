@@ -100,6 +100,18 @@ Veto ~ 95\% efficiency
 
 All electrons: \pT > 35/15 \GeVc, $\eta < 2.50$, exclude electrons in the EB/EE gap $1.4442 \leq \eta_{SC} \leq 1.566$, EB $d_{0} < 0.05\cm$ and $d_{z} < 0.10\cm$ and EE $d_{0} < 0.10\cm$ and $d_{z} < 0.20\cm$
 
+TMVA trained: Full 5x5 sigma ietaieta
+delta eta seed
+delta phi in
+H/E
+|1/e - 1/p|
+rel iso
+
+Manually set: 
+Conversion veto
+expected missing hits
+recommended dxy and dz cuts
+
 \subsubsection{Muons}
 PF muons 
 
@@ -335,13 +347,24 @@ The MC processes and their associated total number of events, cross sections and
 As 
 
 \subsection{Miscalibrated Tracker APV}
-During 2016, 
-\subsection{Lepton Reconstruction}
+During the first half of data taking in 2016 the silicon strip detector suffered from instantaneous luminosity dependent  hit finding inefficiencies, particularly in high occupancy regions, due to saturation in the pre-amplifier in the front end electronics~\ref{Fiori:2016ebh}.
+This issue was resolved by changing the configuration of the electronics.
+While the affected part of the dataset has been reprocessed to mitigate the impact on the quality of the data taken, there is still a negative impact on the detector efficiency for objects that rely upon highly efficient tracking data.
+This is accounted for by the weighting of events appropriately when the scale factors are produced, either centrally by CMS or those derived for the analysis (\ie the trigger scale factors), so that a single scale factor is applied to a simulated event.
+
+%In most cases, centrally produced scale factors are derived for the whole of the 2016 dataset to account for this, but 
+%for muons they were provided for both the affected and unaffected parts of the dataset separately.
+%Consequently, the muon scale factors were weighted according to the luminosity they corresponded to before their application to simulation.
+%Similarly, the muon trigger scale factors that were derived were also produced 
+
+\subsection{Lepton Reconstruction}\label{subsec:leptonRecoSFs}
 \subsection{•}
 \subsection{\PU modelling}
 
 \section{Signal Region}\label{sec:signalRegion}
-The signal enriched region event selection was designed select signal events with a high efficiency whilst rejecting as much background from non-prompt leptons and the decay ... as possible.
+The signal enriched region event selection was designed select signal events with a high efficiency whilst rejecting as much of the background process as possible.
+
+non-prompt, Z+jets, ttZ
 
 As shown in Figure~\ref{}, at leading order tZq consists of a top quark, a recoil quark and a radiated Z boson.
 Therefore the 
