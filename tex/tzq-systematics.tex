@@ -69,6 +69,7 @@ feature = input variable
 
 \subsubsection{BDT input variables}
 Variables chosen
+
 \begin{table}[htbp]
 \topcaption {
 The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant 
@@ -78,9 +79,8 @@ The name and descriptions of the variables chosen by recursive feature eliminati
   \centering
 % This increases column spacing.
 \resizebox{\textwidth}{!}{
-  \addtolength{\tabcolsep}{1ex}
 % This right-aligns numbers in column, but centers them under column title.
-  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
+\begin{tabular}{cccc}
    \hline
    \bf{Variable} & \bf{Description} & \bf{$ee$} & \bf{$\mu\mu$} \\
    \hline
@@ -107,8 +107,7 @@ The name and descriptions of the variables chosen by recursive feature eliminati
     zlb1DelR & $\Delta R$ between the Z boson and leading b-tagged jet & $\checkmark$ & $X$ \\
    \hline
    
- \end{tabular}
- \addtolength{\tabcolsep}{-1ex}}
+ \end{tabular}}
 \end{table}
 
 \editComment{LOTS of PLOTS of the input variable distributions}
