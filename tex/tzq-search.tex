@@ -19,6 +19,8 @@ This is
 
 At leading order, tZq consists single top quark, a radiated Z boson and a recoil quark.
 
+As the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay, being able to identify these isolated prompt leptons with a high efficiency and a low misidentification rate is essential.
+
 Therefore, the final state contains two leptons from the Z boson decay and at least four jets, 
 , a b-jet originating from 
 
@@ -84,21 +86,23 @@ Following the trigger requirements, a number of filters are applied in order to 
 This section discusses the various selection criteria this analysis applies to the physics objects which have been identified and reconstructed using the particle flow algorithm described in Chapter~\ref{chapter:data-mc}.
 
 \subsection{Lepton Selection}
-As the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay, 
-being able to identify isolated prompt leptons with a high efficiency and a low misidentification rate is essential.
+All PF electrons and muons considered must pass a set of kinematic requirements and a set identification criteria defined by CMS.
+The kinematic requirements are applied to ensure that the leptons lie within detector acceptance and that their transverse momenta lies above a threshold such that the lepton triggers are highly efficient.
+The identification criteria have been designed to be efficient at selecting isolated prompt leptons and rejecting leptons which have been produced non-promptly from decays from within jets or taus or from "mismatched" tracks.
 
-
+For both electrons and muons, the identification criteria have different working points, where the efficiency of selecting isolated leptons is traded off against the purity o
+Both the ``tightest'' and ``loosest'' working points 
 
 \subsubsection{Electrons}
-Any PF electron candidate considered must meet the following kinematic requirements in order to ensure that :
+For any PF electron candidate to be considered it must meet the following general requirements:
 
 \begin{itemize}
-\item the leading electron must have a $\pt > 35\GeVc$
-\item the subleading electron 
-\item electrons must have $|\eta| \leq 2.50$
+\item the \pt of the leading and subleading electrons considered must be greater than the threshold where the electron triggers are well described in simulation.
+\item electrons must have $|\eta| \leq 2.50$ to ensure that the electrons are within the ECAL acceptance.
+\item the longitudinal impact parameter, $d_{z}$, of the electron must be less than 0.10\cm in the barrel and 0.20\cm in the endcap disks.
+\item the transverse impact parameter, $d_{0}$, of the electron must be less than 0.05\cm in the barrel and 0.10\cm in the endcap disks.
 \end{itemize}
 
-Identification criteria are applied to these electrons reconstructed in order to identify isolated electrons with a high efficiency and reject those which have been produced from decays from within jets or taus.
 
 The \emph{tight} and \emph{veto} working points of the  \emph{cut based} identification criteria defined by CMS 
 
@@ -122,7 +126,13 @@ expected missing hits
 recommended dxy and dz cuts
 
 \subsubsection{Muons}
-Similar to the electrons, PF muons must meet a general selection criteria 
+Similar to the electrons, PF muons are required to have their \pt exceed a threshold to ensure that 
+
+\begin{itemize}
+\item 
+\end{itemize}
+
+
 
 Tight  
 suppress hadronic punch-through into the muon system and non-prompt muons.
@@ -172,8 +182,8 @@ Where CH is the charged hadrons from the Primary Vertex (PV), NH is the neutral 
 \subsubsection{Z Boson Candidate Invariant Mass Requirements}
 The presence of a Z boson in the final state requires that two leptons selected must be consistent with a Z boson decay.
 Therefore, the leptons must have the same flavour and opposite charge and an invariant mass within 20\GeVcc of the known Z mass.
-This mass window was determined on the basis of ...
-including sufficient signal events 
+%This mass window was determined on the basis of 
+%including sufficient signal events 
 
 \subsection{Jet, b-tagging and W Boson Candidate Requirements}
 \subsubsection{Jet Requirements}
