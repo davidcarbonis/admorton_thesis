@@ -1,0 +1,14 @@
+maths resolution plots:
+
+0.2, 0.47, 0.4, 0.68
+option PEL for labels
+border size 0
+
+fitters resolution plots:
+
+0.2, 0.47, 0.4, 0.68
+option PEL for labels
+border size 0
+
+efficiency plots:
+0.2,0.27,0.4,0.48
