@@ -235,9 +235,6 @@ A more detailed description of the firmware implementation of the \DR for the de
 
 \section{Simulation Studies}\label{sec:TmttSimStudies}
 \editComment{Fix table sizing}
-\editComment{Update axis labels (units too) and use same resolution definitions as the JINST paper + TDR}
-\editComment{Update plots from using CMS definitions of the helix parameters rather than the internal TMTT ones}
-\editComment{Add legend to plots and reduce size of points on plots by half}
 
 During the development of the \emph{TMTT} demonstrator system both before and following the December 2016 review, the author was involved in a number of simulation studies, the more substantive of which are presented below.
 All of the results discussed use a common set of definitions, as defined in Chapter~\ref{subsubsec:helixParameter}, and the track fitters discussed use digitised output from the \HT.
@@ -507,7 +504,6 @@ Figure~\ref{fig:2GeVFlatEff} shows how the tracking efficiency improves followin
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/htTrackingEffVsInvPtFlatGeometry_5000.pdf}
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
 \caption{The post-\HT (left) and post-\KF (right) tracking efficiency for $\pt > 2\GeVc$ for \ttbar events at <PU> of 200, with only the number of \qpt columns increased (red) and with the increased number of columns, HT cell merging and \KF state cuts optimisation(blue).
-\editComment{Plots require legend!}
 }
 \label{fig:2GeVFlatEff}	
 \end{figure}
@@ -625,15 +621,14 @@ Consequently, this change was adopted by the project and all the results present
 \caption{The fraction of genuine tracks with duplicates as a function of $\frac{1}{\pT}$ following reconstruction by the \HT (left) and fitting and filtering by the \KF and \DR (right) for where the \HT cell merging \pT threshold is set to 2.7\GeV (red) and 3.5\GeV (blue). 
 The constant coefficient for the \MS contribution was used for these \KF results.
 \editComment{Resize plots!}
-\editComment{Legend!}
 }
 \label{fig:2GeVfracDups}
 \end{figure}
 
 \begin{figure}[tbp]
 \centering
-%\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtTiltedGeometry_5000.pdf}
-\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtTiltedGeometry_5000.pdf}
+%\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
 \caption{Plots showing tracking efficiency as a function of $\frac{1}{\pT}$ for \ttbar events at <PU> of 200 after the full chain has been run, where the \KF has not been modified to take \MS into account (red), a constant coefficient for \MS is used (black) and a layer dependent coefficient for \MS is used (blue).
 \editComment{Figure needs updating.}
 }
@@ -686,7 +681,6 @@ At the time of writing, this observation is still being investigated, but is sus
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtTiltedGeometry_5000.pdf}
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/etaResVsInvPtTiltedGeometry_5000.pdf}
 \caption{\pt relative resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at <PU> of 200 for when multiple scattering isn't considered by the \KF (red), when a constant \MS coefficient is used (black) and when a layer dependent coefficient is used (blue).
-\editComment{Fix legend!}
 }
 \label{fig:kfHelixParametersResVsInvPt}
 \end{figure}

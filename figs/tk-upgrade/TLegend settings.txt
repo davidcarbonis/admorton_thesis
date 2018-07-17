@@ -1,3 +1,4 @@
+chi2 plots
 maths resolution plots:
 
 0.2, 0.47, 0.4, 0.68
@@ -10,5 +11,9 @@ fitters resolution plots:
 option PEL for labels
 border size 0
 
+2 GeV plots
+
+DR plots
+
 efficiency plots:
-0.2,0.27,0.4,0.48
+0.2,0.27,0.37,0.48
