@@ -81,22 +81,31 @@ Following the trigger requirements, a number of filters are applied in order to 
 \end{itemize}
 
 \section{Physics Objects}\label{sec:eventSelection}
-The physics objects used in the analysis have been identified and reconstructed using the particle flow algorithm
-described in Chapter~\ref{chapter:data-mc}.
-
-
-
+This section discusses the various selection criteria this analysis applies to the physics objects which have been identified and reconstructed using the particle flow algorithm described in Chapter~\ref{chapter:data-mc}.
 
 \subsection{Lepton Selection}
-As the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay, being able to identify isolated leptons with a low misidentification rate is essential.
+As the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay, 
+being able to identify isolated prompt leptons with a high efficiency and a low misidentification rate is essential.
+
 
 
 \subsubsection{Electrons}
-Given the need to identify isolated electrons produced from the signal process rather than 
+Any PF electron candidate considered must meet the following kinematic requirements in order to ensure that :
+
+\begin{itemize}
+\item the leading electron must have a $\pt > 35\GeVc$
+\item the subleading electron 
+\item electrons must have $|\eta| \leq 2.50$
+\end{itemize}
+
+Identification criteria are applied to these electrons reconstructed in order to identify isolated electrons with a high efficiency and reject those which have been produced from decays from within jets or taus.
+
+The \emph{tight} and \emph{veto} working points of the  \emph{cut based} identification criteria defined by CMS 
 
 Tight ~ 70\% efficiency
 Veto ~ 95\% efficiency
 
+The ECAL crystal which contains the largest energy deposit is considered to be the \emph{seed crystal} for the purpose of these cuts.
 
 All electrons: \pT > 35/15 \GeVc, $\eta < 2.50$, exclude electrons in the EB/EE gap $1.4442 \leq \eta_{SC} \leq 1.566$, EB $d_{0} < 0.05\cm$ and $d_{z} < 0.10\cm$ and EE $d_{0} < 0.10\cm$ and $d_{z} < 0.20\cm$
 
@@ -113,7 +122,7 @@ expected missing hits
 recommended dxy and dz cuts
 
 \subsubsection{Muons}
-PF muons 
+Similar to the electrons, PF muons must meet a general selection criteria 
 
 Tight  
 suppress hadronic punch-through into the muon system and non-prompt muons.
