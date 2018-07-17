@@ -61,6 +61,7 @@ Triggers and datasets used for each decay channel.
    \hline
    e$\mu$ & MuonEG &  HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL(\_DZ)   \\  
           &        &  HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL(\_DZ)  \\
+          &        &  HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL(\_DZ) \\
     & SingleElectron &  HLT\_Ele32\_eta2p1\_WPTight\_Gsf   \\
     & SingleMuon &  HLT\_Iso(Tk)Mu24  \\  
    \hline
@@ -93,11 +94,11 @@ The identification criteria have been designed to be efficient at selecting isol
 Different working points are used by the identification criteria, where the lepton selection efficiency is traded off against the purity of the leptons selected.
 For both lepton flavours the ``tightest'' working point is used to select high purity collections of leptons, with the ``loosest'' working point used to veto events with any additional leptons.
 
-\subsubsection{Electrons}
+\subsubsection{Electrons}\label{subsubsec:electronSelection}
 For any PF electron candidate to be considered it must meet the following general requirements:
 
 \begin{itemize}
-\item the \pt of the leading and subleading electrons considered must be greater than the threshold where the electron triggers are well described in simulation.
+\item the \pt of the leading and subleading electrons considered must be greater than the 35\GeVc and 15\GeVc respectively.
 \item electrons must have $|\eta| \leq 2.50$ to ensure that the electrons are within the ECAL acceptance.
 \item the longitudinal impact parameter, $d_{z}$, of the electron must be less than 0.10\cm in the barrel and 0.20\cm in the endcap disks.
 \item the transverse impact parameter, $d_{0}$, of the electron must be less than 0.05\cm in the barrel and 0.10\cm in the endcap disks.
@@ -125,7 +126,7 @@ Conversion veto
 expected missing hits
 recommended dxy and dz cuts
 
-\subsubsection{Muons}
+\subsubsection{Muons}\label{subsubsec:muonSelection}
 Similar to the electrons, PF muons are required to have their \pt exceed a threshold to ensure that 
 
 \begin{itemize}
@@ -421,6 +422,8 @@ The application of both of these control regions is discussed in Chapter~\ref{se
 \subsection{\ttbar Background Control Region}\label{subsec:ttbarCR}
 \ttbar events form the second largest background process, where events with two leptons produced from W bosons decaying having an invariant mass which is compatible with the Z boson mass window in the being selected in the signal region.
 The selection criteria for the \ttbar control region differs from the signal region definition defined in Chapter~\ref{sec:signalRegion}, by requiring that the two oppositely leptons selected to have different flavours (\ie one is an electron and the other a muon).
+%The electron and muon \pt thresholds are modified from those given in Chapters~\ref{subsubsec:electronSelection} and~\ref{subsubsec:muonSelection} as the leading lepton \pt thresholds of the HLT paths considered for the e$\mu$ final state, as given in Chapter~\ref{sec:triggerStrategy}, differ from those for the same flavour final states.
+
 As the branching ratio for a W boson (produced by the top quark and anti-top quark decays) to decay into either an electron or muon is the same, this produces a \ttbar enriched background control region which is topologically similar to the \ttbar contributions in the signal region. 
 
 \begin{table}[htbp]
