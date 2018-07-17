@@ -95,7 +95,7 @@ Different working points are used by the identification criteria, where the lept
 For both lepton flavours the ``tightest'' working point is used to select high purity collections of leptons, with the ``loosest'' working point used to veto events with any additional leptons.
 
 \subsubsection{Electrons}\label{subsubsec:electronSelection}
-For any PF electron candidate to be considered it must meet the following general requirements:
+For any PF electron candidate to be considered it must meet the following kinematic requirements:
 
 \begin{itemize}
 \item the \pt of the leading and subleading electrons considered must be greater than the 35\GeVc and 15\GeVc respectively.
@@ -104,11 +104,12 @@ For any PF electron candidate to be considered it must meet the following genera
 \item the transverse impact parameter, $d_{0}$, of the electron must be less than 0.05\cm in the barrel and 0.10\cm in the endcap disks.
 \end{itemize}
 
-
-The \emph{tight} and \emph{veto} working points of the  \emph{cut based} identification criteria defined by CMS 
+The \emph{tight} and \emph{veto} working points of the \emph{cut based} identification criteria defined by CMS are used to select electrons and to veto any additional electrons respectively.
 
 Tight ~ 70\% efficiency
 Veto ~ 95\% efficiency
+
+
 
 The ECAL crystal which contains the largest energy deposit is considered to be the \emph{seed crystal} for the purpose of these cuts.
 
@@ -127,8 +128,9 @@ expected missing hits
 recommended dxy and dz cuts
 
 \subsubsection{Muons}\label{subsubsec:muonSelection}
-Similar to the electrons, PF muons are required to have their \pt exceed a threshold to ensure that 
+Similar to the electrons, PF muons are required to meet a set of kinematic requirements and identification criteria.
 
+In the case of the former set of requirements, muons candidates are required to have:
 \begin{itemize}
 \item 
 \end{itemize}
@@ -154,6 +156,8 @@ Loose muons are defined
 
 \cite{Chatrchyan:2012xi}
 
+tight rel iso = 0.95
+loose rel iso = 0.98
 
 \subsubsection{Lepton Isolation}
 \editComment{more detail}
