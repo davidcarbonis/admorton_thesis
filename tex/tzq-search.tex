@@ -112,7 +112,7 @@ The MVA tuned variables include:
 \item \textbf{Full $5\times5 \sigma_{i\eta i\eta}$} - the shower shape variable, which describes the shape of the shower in $\eta$.
 \iten \itembf{$\Delta \eta_{seed}$ and $\Delta \phi_{seed}$} - the distances in $\eta$ and $\phi$ between the ECAL supercluster and where the track has been extrapolated to from the primary vertex.
 \item \textbf{$\frac{h}{E}$} - the ratio of hadronic to electromagnetic energy deposited in the supercluster around the crystal with the largest energy deposit.
-\item \textbf{$I^{rel}_{EA}$} the relative isolation of the electron with effective area pileup alleviation, which is described further in Chapter~\ref{subsubsec:relIso}.
+\item \textbf{$I^{rel}_{EA}$} the relative isolation of the electron with effective area pileup alleviation for a cone size of 0.3, which is described further in Chapter~\ref{subsubsec:relIso}.
 \item \textbf{$1/E - 1/p$} - the difference in the inverse energy of the ECAL supercluster and inverse track momentum, which is used to describe the energy loss 
 
 The cuts used for the tight and veto WPs for these variables are given in Table~\ref{tab:electronCuts}.
@@ -167,40 +167,36 @@ These criteria are:
 \item hits must be present in at least six tracker layers in order to achieve a good \pT measurement.
 \end{itemize}
 
-The tight isolation cut applied to the resultant collection of tight muons is 95\% efficient, and rejects muons that have a relative isolation, with $\Delta\beta$ pileup corrections, greater than 0.15.
+The tight isolation cut applied to the resultant collection of tight muons is 95\% efficient, and rejects muons that have a relative isolation, with $\Delta\beta$ pileup corrections, greater than 0.15 for a cone size of 0.4.
+This pileup correction for the relative isolation is described further in Chapter~\ref{subsubsec:relIso}.
 
 Given that the loose cuts require the muon to be a particle flow muon and either a global muon or tracker muon, by definition all PF muons considered pass the loose identification cut.
 The loose isolation cut is 98\% efficient and rejects muons with a relative isolation which is greater than 0.25.
 
 \subsubsection{Lepton Isolation}\label{subsubsec:relIso}
-\editComment{more detail}
-A relative isolation variable $I^{rel}$ is defined in order to:
+A relative isolation variable $I^{rel}$ is used in order to:
 \begin{itemize}
 \item differentiate between leptons promptly produced at the primary vertex from those resulting from heavy jet or lepton decays.
 \item to ensure that leptons are sufficiently separated from hadrons and photons to enable a precise momentum measurement of the lepton 
 \end{itemize}
 
-The isolation variable is defined as the summed energy of all PF particles within a cone around the PF lepton, with the estimated neutral charged pileup contamination, $\rho$, removed, divided by the lepton \pT.
+$I^{rel}$e is defined as the summed energy of all PF particles within a fixed radius cone of $\Delta R$ around the PF lepton, with the estimated neutral charged pileup contamination, $\rho$, removed, divided by the lepton \pT.
 
-Two different methods of estimating the pileup contamination present are typically used.
+As only charged hadrons ($CH$) have associated tracks which can be used to determine if they are consistent with the primary vertex, the pileup contamination contribution from neutral hadrons ($NH$) and photons is typically estimated with one of two methods.
 
-In the analysis presented, electrons use the $\rho$ * effective area ($rho * A_{eff}$) technique.
-This method involves the estimating the expected energy within the isolation cone from the median energy density per area of pileup contamination, estimated for each event, with the effective area given as a function of the electron's pseudorapidity.
-
-This is given as: 
+In the analysis presented, electrons use the $\rho$ * effective area ($rho * A_{eff}$) technique using a $\Delta R$ of 0.3.
+This method estimates the neutral pileup contributions by subtracting the median energy density per area of pileup contamination, $\rho$, which has been multiplied by the effective area of the electron, A_{\rm eff}, which is characterised as a function of the supercluster's $\eta$:
 
 \begin{equation}
 I^{rel}_{rho * A_{eff}} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\rm T}(Photon) -rho*A_{\rm eff} )/p_T \\
 \end{equation}\label{eq:rhoEffA}
 
-Muons employ the $\Delta\beta$ pileup mitigation technique, where the average pileup energy inside the cone is estimated as half of that originating from charged hadrons.
-This is expressed as:
+The $\Delta\beta$ pileup mitigation method is used for muons using a $\Delta R$ of 0.4 in the analysis presented.
+Using the fact that the ratio of neutral to charged hadron production in the hadronisation of pileup interactions is approximately 0.5, half of the transverse energy of charged hadrons from pileup is subtracted from the neutral hadron and photon transverse energies~\cite{Chatrchyan:2012vp}:
 
 \begin{equation}
 I^{rel}_{\Delta\beta} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\rm T}(Photon) - 0.5 * \sum E_{\rm T}(PU))/p_T \\
 \end{equation}\label{eq:deltaBeta}
-
-Where CH is the charged hadrons from the Primary Vertex (PV), NH is the neutral hadrons and PU the charged hadrons from pileup.
 
 \subsubsection{Z Boson Candidate Invariant Mass Requirements}
 The presence of a Z boson in the final state requires that two leptons selected must be consistent with a Z boson decay.
@@ -214,7 +210,7 @@ Jets are considered from the PF jet collection which reconstructs jets using the
 Following identification, the jet energy corrections are applied as described in Chapter~\ref{subsubsec:JECs}.
 
 Jets are considered in the analysis if they have a $\pT > 30\GeVc$, are within $|\eta| < 4.7$ and meet the \emph{loose} working point jet identification criteria developed by CMS.
-Additionally, selected leptons (electron or muon) which lie within a cone of $\Delta R = 0.4$ of a selected jet are not considered to be a prompt leptons and instead part of the jet in question.
+In addition, selected leptons (electron or muon) which lie within a cone of $\Delta R = 0.4$ of a selected jet are not considered to be a prompt leptons and instead part of the jet in question.
 
 The loose jet ID was designed to reject the majority of the fake tracks produced from detector and/or electronics noise whilst maintaining a high selection efficiency for real jets by requiring all jets to have part of their energy deposited in both the ECAL and HCAL and be composed of more than one particle.
 
