@@ -88,10 +88,10 @@ This section discusses the various selection criteria this analysis applies to t
 
 \subsection{Lepton Selection}
 All PF electrons and muons considered must pass a set of kinematic requirements and a set identification criteria defined by CMS.
-The kinematic requirements are applied to ensure that the leptons lie within detector acceptance and that their transverse momenta lies above a threshold such that the lepton triggers are highly efficient.
+The kinematic requirements are applied to ensure that the leptons lie within detector acceptance and that their transverse momenta occupies the phase-space where the lepton trigger turn-on is well described.
 The identification criteria have been designed to be efficient at selecting isolated prompt leptons and rejecting leptons which have been produced non-promptly from decays from within jets or taus or from incorrectly reconstructed tracks.
 
-Different working points are used by the identification criteria, where the lepton selection efficiency is traded off against the purity of the leptons selected.
+Different working points are used by identification criteria defined by CMS, where the lepton selection efficiency is traded off against the purity of the leptons selected.
 For both lepton flavours the ``tightest'' working point is used to select high purity collections of leptons, with the ``loosest'' working point used to veto events with any additional leptons.
 
 \subsubsection{Electrons}\label{subsubsec:electronSelection}
@@ -100,20 +100,24 @@ For any PF electron candidate to be considered it must meet the following kinema
 \begin{itemize}
 \item the \pt of the leading and subleading electrons considered must be greater than the 35\GeVc and 15\GeVc respectively.
 \item electrons must have $|\eta| \leq 2.50$ to ensure that the electrons are within the ECAL acceptance.
+\item as accurate reconstruction cannot be undertaken in the transition region between the ECAL barrel and endcap, electrons with $1.4442 \leq \eta \leq 1.566$ are not considered.
 \item the longitudinal impact parameter, $d_{z}$, of the electron must be less than 0.10\cm in the barrel and 0.20\cm in the endcap disks.
 \item the transverse impact parameter, $d_{0}$, of the electron must be less than 0.05\cm in the barrel and 0.10\cm in the endcap disks.
 \end{itemize}
 
-The \emph{tight} and \emph{veto} working points of the \emph{cut based} identification criteria defined by CMS are used to select electrons and to veto any additional electrons respectively.
+The \emph{tight} and \emph{veto} working points of the \emph{cut based} identification criteria which are approximately  70\% and 95\% efficient respectively, are used to select electrons and to veto any additional electrons.
+The cut based identification uses a mixture of manually set and multivariate analysis (MVA) tuned variables for btoh the barrel and endcap disks.
 
-Tight ~ 70\% efficiency
-Veto ~ 95\% efficiency
+The manually set variables are:
+\item \textbf{the expected number of missing hits in the inner tracker} - as photons do not leave hits in the tracker, if 
+\item \textbf{a conversion veto} - is applied for all working points, where any electron which fails the electron conversion veto is rejected.
 
-
-
-The ECAL crystal which contains the largest energy deposit is considered to be the \emph{seed crystal} for the purpose of these cuts.
-
-All electrons: \pT > 35/15 \GeVc, $\eta < 2.50$, exclude electrons in the EB/EE gap $1.4442 \leq \eta_{SC} \leq 1.566$, EB $d_{0} < 0.05\cm$ and $d_{z} < 0.10\cm$ and EE $d_{0} < 0.10\cm$ and $d_{z} < 0.20\cm$
+The MVA tuned variables include:
+\item \textbf{} - the shower shape variable, which describes the shape of the shower in $\eta$.
+\iten \itembf{} - the distances in $\eta$ and $\phi$ between the ECAL supercluster and where the track has been extrapolated to from the primary vertex.
+\item \textbf{} - 
+\item the relative isolation of the electron, which is described further in Chapter~\ref{subsubsec:relIso}.
+\item 1/E - 1/p
 
 TMVA trained: Full 5x5 sigma ietaieta
 delta eta seed
@@ -121,11 +125,7 @@ delta phi in
 H/E = hadronicOverEm
 |1/e - 1/p|
 rel iso
-
-Manually set: 
-Conversion veto
-expected missing hits
-recommended dxy and dz cuts
+The ECAL crystal which contains the largest energy deposit is considered to be the \emph{seed crystal} for the purpose of these cuts.
 
 \subsubsection{Muons}\label{subsubsec:muonSelection}
 Similar to the electrons, PF muons are required to meet a set of kinematic requirements and identification criteria.
@@ -159,7 +159,7 @@ Loose muons are defined
 tight rel iso = 0.95
 loose rel iso = 0.98
 
-\subsubsection{Lepton Isolation}
+\subsubsection{Lepton Isolation}\label{subsubsec:relIso}
 \editComment{more detail}
 In order to differentiate between leptons promptly produced at the primary vertex from those that result from hadronic decay and to enable a precise momentum measurement by ensuring they are sufficiently separated from hadrons and photons, a relative isolation variable $I^{rel}$ is defined.
 The isolation variable is defined as the summed energy of all PF particles within a cone around the PF lepton, with the estimated neutral charged pileup contamination, $\rho$, removed, divided by the lepton \pT.
