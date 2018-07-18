@@ -115,17 +115,9 @@ The manually set variables are:
 The MVA tuned variables include:
 \item \textbf{} - the shower shape variable, which describes the shape of the shower in $\eta$.
 \iten \itembf{} - the distances in $\eta$ and $\phi$ between the ECAL supercluster and where the track has been extrapolated to from the primary vertex.
-\item \textbf{} - 
-\item the relative isolation of the electron, which is described further in Chapter~\ref{subsubsec:relIso}.
-\item 1/E - 1/p
-
-TMVA trained: Full 5x5 sigma ietaieta
-delta eta seed
-delta phi in
-H/E = hadronicOverEm
-|1/e - 1/p|
-rel iso
-The ECAL crystal which contains the largest energy deposit is considered to be the \emph{seed crystal} for the purpose of these cuts.
+\item \textbf{\frac{h}{E}} - the ratio of hadronic to electromagnetic energy deposited in the supercluster around the crystal with the largest energy deposit.
+\item \textbf{} the relative isolation of the electron, which is described further in Chapter~\ref{subsubsec:relIso}.
+\item \textbf{1/E - 1/p} - the difference in the inverse energy of the ECAL supercluster and inverse track momentum, which is used to describe the ...
 
 \subsubsection{Muons}\label{subsubsec:muonSelection}
 Similar to the electrons, PF muons are required to meet a set of kinematic requirements and identification criteria.
