@@ -554,8 +554,7 @@ If all uncertainties were accounted for, the ideal distribution of $\frac{\chi^{
 
 %% Discuss the resolution plots here
 Figure~\ref{fig:htHelixParametersResVsInvPt} shows that the resolutions of the track parameters fitted by the \KF are comparable for $\pT < 3\GeV$ for both the default configuration of the \HT where only the number of \qpt columns has been increased and after the \HT and associated \KF optimisations for tracks originating from the primary interaction in \ttbar events at <PU> of 200.
-The slight degradation in the $\phi_{0}$ resolution is a result of the decreased precision coordinates from the \HT.
-The small improvement observed in the $z_{0}$ resolution is due to the \KF being able to consider genuine stubs which were not previously found by the \HT.
+The slight degradation in the $\phi_{0}$ resolution is a result of the decreased precision coordinates from the \HT and the small improvement observed in the $z_{0}$ resolution is due to the \KF being able to consider genuine stubs which were not previously found by the \HT.
 
 \begin{figure}[htb]
 \centering
@@ -667,7 +666,7 @@ The track finding efficiencies following each stage are given using the efficien
 \end{table}
 
 Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of transverse momentum in simulation for tracks originating from the primary interaction in \ttbar events at <PU> of 200 for both \MS coefficients considered as well as when \MS is not accounted for at all.
-The resolutions of both \MS coefficients are superior across all \pt to when \MS is not considered at all, with the constant \MS coefficient typically providing more precise measurements than the layer dependent coefficient.  
+The resolutions of both \MS coefficients are superior across all \pt to when \MS is not considered at all, with the constant \MS coefficient typically providing more slightly more precise measurements than the layer dependent coefficient.  
 As expected, lower transverse momentum tracks experience the greatest improvements given that \MS dominates at lower transverse momenta.
 For both coefficients however, the \pt resolution in the range $ 3.8 \GeV < \pt < 5.5\GeVc$ is worse than when \MS is not considered.
 At the time of writing, this observation is still being investigated, but is suspected, like the increased duplicate rate in the same \pT range, to be related to the reduced precision of \HT cells.
@@ -685,7 +684,10 @@ At the time of writing, this observation is still being investigated, but is sus
 \label{fig:kfHelixParametersResVsInvPt}
 \end{figure}
 
-Overall, \editComment{summarise here}
+Both of \MS coefficients considered allow for the \KF to take into account the impact of \MS, as shown in Figure~\ref{fig:2GeVTiltChi2Ndf} where the $\frac{\chi^{2}}{ndf}$ of the matched tracks fitted has not only decreased at high \pT where \MS dominates, but also the smaller effects experienced at higher \pT.
+In both cases, this provides considerable improvement in the track reconstruction efficiency and helix parameter resolutions obtained.
+The lack of any noticeable improvement between using a constant \MS coefficient and one which is a function of the number of layers traversed, is a consequence of knowing which layer a hit belongs to not being a good descriptor of the total amount of material at that point.
+As the amount of material traversed will depend on the trajectory of the charged particle, such a coefficient would likely have to be a function of \pt and $\eta$.
 
 \begin{figure}[tbp]
 \centering
