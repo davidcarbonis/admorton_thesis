@@ -46,12 +46,10 @@ Triggers and datasets used for each decay channel.
 }
 \label{tab:triggersDatasets}
   \centering
-% This increases column spacing.
-  \addtolength{\tabcolsep}{1ex}
-% This right-aligns numbers in column, but centers them under column title.
-  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
+   \resizebox{\textwidth}{!}{
+   \begin{tabular}{ccc}
    \hline
-   \bf{Final State} & \bf{Dataset} & \bf{HLT Paths}  \\
+   \textbf{Final State} & \textbf{Dataset} & \textbf{HLT Paths}  \\
    \hline
     ee & DoubleElectron & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ \\
     & SingleElectron &  HLT\_Ele32\_eta2p1\_WPTight\_Gsf   \\
@@ -65,9 +63,7 @@ Triggers and datasets used for each decay channel.
     & SingleElectron &  HLT\_Ele32\_eta2p1\_WPTight\_Gsf   \\
     & SingleMuon &  HLT\_Iso(Tk)Mu24  \\  
    \hline
-   
- \end{tabular}
- \addtolength{\tabcolsep}{-1ex}
+ \end{tabular}}
 \end{table}
 
 \section{Event Cleaning}\label{sec:metFilters}
@@ -88,7 +84,7 @@ This section discusses the various selection criteria this analysis applies to t
 
 \subsection{Lepton Selection}
 All PF electrons and muons considered must pass a set of kinematic requirements and a set identification criteria defined by CMS.
-The kinematic requirements are applied to ensure that the leptons lie within detector acceptance and that their transverse momenta occupies the phase-space where the lepton trigger turn-on is well described.
+The kinematic requirements are applied to ensure that the leptons lie within detector acceptance and that their transverse momenta lies in the region where the trigger's turn-on is well described.
 The identification criteria have been designed to be efficient at selecting isolated prompt leptons and rejecting leptons which have been produced non-promptly from decays from within jets or taus or from incorrectly reconstructed tracks.
 
 Different working points are used by identification criteria defined by CMS, where the lepton selection efficiency is traded off against the purity of the leptons selected.
@@ -105,60 +101,90 @@ For any PF electron candidate to be considered it must meet the following kinema
 \item the transverse impact parameter, $d_{0}$, of the electron must be less than 0.05\cm in the barrel and 0.10\cm in the endcap disks.
 \end{itemize}
 
-The \emph{tight} and \emph{veto} working points of the \emph{cut based} identification criteria which are approximately  70\% and 95\% efficient respectively, are used to select electrons and to veto any additional electrons.
+The \emph{tight} and \emph{veto} working points (WPs) of the \emph{cut based} identification criteria which are approximately  70\% and 95\% efficient respectively, are used to select electrons and to veto any additional electrons.
 The cut based identification uses a mixture of manually set and multivariate analysis (MVA) tuned variables for btoh the barrel and endcap disks.
 
 The manually set variables are:
-\item \textbf{the expected number of missing hits in the inner tracker} - as photons do not leave hits in the tracker, if 
+\item \textbf{$N^{missing}_{inner hits}$} - as photons which subsequently convert do not leave hits in the innermost layers of the tracker, electrons are rejected if the expected number of missing hits is exceeded.
 \item \textbf{a conversion veto} - is applied for all working points, where any electron which fails the electron conversion veto is rejected.
 
 The MVA tuned variables include:
-\item \textbf{} - the shower shape variable, which describes the shape of the shower in $\eta$.
-\iten \itembf{} - the distances in $\eta$ and $\phi$ between the ECAL supercluster and where the track has been extrapolated to from the primary vertex.
-\item \textbf{\frac{h}{E}} - the ratio of hadronic to electromagnetic energy deposited in the supercluster around the crystal with the largest energy deposit.
-\item \textbf{} the relative isolation of the electron, which is described further in Chapter~\ref{subsubsec:relIso}.
-\item \textbf{1/E - 1/p} - the difference in the inverse energy of the ECAL supercluster and inverse track momentum, which is used to describe the ...
+\item \textbf{Full $5\times5 \sigma_{i\eta i\eta}$} - the shower shape variable, which describes the shape of the shower in $\eta$.
+\iten \itembf{$\Delta \eta_{seed}$ and $\Delta \phi_{seed}$} - the distances in $\eta$ and $\phi$ between the ECAL supercluster and where the track has been extrapolated to from the primary vertex.
+\item \textbf{$\frac{h}{E}$} - the ratio of hadronic to electromagnetic energy deposited in the supercluster around the crystal with the largest energy deposit.
+\item \textbf{$I^{rel}_{EA}$} the relative isolation of the electron with effective area pileup alleviation, which is described further in Chapter~\ref{subsubsec:relIso}.
+\item \textbf{$1/E - 1/p$} - the difference in the inverse energy of the ECAL supercluster and inverse track momentum, which is used to describe the energy loss 
+
+The cuts used for the tight and veto WPs for these variables are given in Table~\ref{tab:electronCuts}.
+
+\begin{table}[htbp]
+\topcaption {
+The cuts used for the tight and veto working points of the cut based identification criteria for electrons for the barrel and endcap disks.
+}
+\label{tab:electronCuts}
+  \centering
+  \resizebox{\textwidth}{!}{
+% This right-aligns numbers in column, but centers them under column title.
+ \begin{tabular}{ccccc}
+   \hline
+   \textbf{Variable} & \multicolumn{2}{c}{\textbf{Tight WP}} & \multicolumn{2}{c}{\textbf{Veto WP}}   \\
+    & Barrel & Endcap & Barrel & Endcap \\
+    \hline   
+    Full $5\times5 \sigma_{i\eta i\eta}$ & $< 0.00998$ & $< 0.0292$ & $< 0.0115$ & $< 0.037$ \\
+    $\Delta \eta_{seed}$ & $<0.00308$ & $<0.00605$ & $<0.00749$ & $<0.00895$ \\
+    $\Delta \phi_{seed}$ & $<0.0816$ & $<0.0394$ & $<0.228$ & $<0.213$ \\
+    $\frac{h}{E}$ & $<0.0414$ & $<0.0641$ & $<0.356$ & $<0.211$	\\
+    $I^{rel}_{EA}$ & $<0.0588$ & $<0.0571$ & $<0.175$ & $<0.159$ \\
+    $1/E - 1/p$ & $<0.0129$ & $<0.0129$ & $<0.299$ & $<0.15$ \\
+    $N^{missing}_{inner hits}$ & $\leq 1$ & $\leq 1$ & $\leq 2$ & $\leq 3$ \\
+    pass conversion veto & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+    \hline
+ \end{tabular}}
+\end{table}
+
 
 \subsubsection{Muons}\label{subsubsec:muonSelection}
-Similar to the electrons, PF muons are required to meet a set of kinematic requirements and identification criteria.
+Similar to the electrons, PF muons are required to meet a set of kinematic requirements and identification and isolation criteria.
 
-In the case of the former set of requirements, muons candidates are required to have:
+In the case of the kinematic requirements, PF muons candidates are required to:
 \begin{itemize}
-\item 
+\item the \pt of the leading and subleading electrons considered must be greater than the 26\GeVc and 20\GeVc respectively.
+\item muons must have $|\eta| \leq 2.50$ to ensure that the muon are within the acceptance of the muon systems.
 \end{itemize}
 
+The \emph{tight} and \emph{loose} identification and isolation criteria~\cite{Chatrchyan:2012xi} are used to select muons and veto any additional muons.
 
+The tight muon criteria suppresses hadronic punch-through into the muon system and non-prompt muons, creating a high purity collection of particle flow muons.
 
-Tight  
-suppress hadronic punch-through into the muon system and non-prompt muons.
+These criteria are:
 \begin{itemize}
-\item is a PF Muon and is also both a tracker and global muon.
-\item the $\chi^{2}/ndf$ of the global muon track fit is less than ten. 
+\item muon a PF Muon and is also both a tracker and global muon.
+\item $\chi^{2}/ndf$ of the global muon track fit is less than ten. 
 \item at least one muon chamber is included in the global track fit.
 \item that muon segments are found in at least two muon stations.
 \item $d_{0} < 0.2\cm$ and $d_{z} < 0.5\cm$.
 \item the muon must have at least one hit in the pixel detector.
-\item hits must be present in at least six tracker layers in order to achieve a good \pT.
+\item hits must be present in at least six tracker layers in order to achieve a good \pT measurement.
 \end{itemize}
 
-Loose muons are defined 
-\begin{itemize}
-\item is both a PF muon and is also either a tracker or global muon
-\end{itemize}
+The tight isolation cut applied to the resultant collection of tight muons is 95\% efficient, and rejects muons that have a relative isolation, with $\Delta\beta$ pileup corrections, greater than 0.15.
 
-\cite{Chatrchyan:2012xi}
-
-tight rel iso = 0.95
-loose rel iso = 0.98
+Given that the loose cuts require the muon to be a particle flow muon and either a global muon or tracker muon, by definition all PF muons considered pass the loose identification cut.
+The loose isolation cut is 98\% efficient and rejects muons with a relative isolation which is greater than 0.25.
 
 \subsubsection{Lepton Isolation}\label{subsubsec:relIso}
 \editComment{more detail}
-In order to differentiate between leptons promptly produced at the primary vertex from those that result from hadronic decay and to enable a precise momentum measurement by ensuring they are sufficiently separated from hadrons and photons, a relative isolation variable $I^{rel}$ is defined.
+A relative isolation variable $I^{rel}$ is defined in order to:
+\begin{itemize}
+\item differentiate between leptons promptly produced at the primary vertex from those resulting from heavy jet or lepton decays.
+\item to ensure that leptons are sufficiently separated from hadrons and photons to enable a precise momentum measurement of the lepton 
+\end{itemize}
+
 The isolation variable is defined as the summed energy of all PF particles within a cone around the PF lepton, with the estimated neutral charged pileup contamination, $\rho$, removed, divided by the lepton \pT.
 
-Two different pileup contamination estimation methods are used in the analysis presented, one for electrons and the other for muons.
+Two different methods of estimating the pileup contamination present are typically used.
 
-For electrons, the $\rho$ * effective area ($rho * A_{eff}$) pileup alleviation technique is used.
+In the analysis presented, electrons use the $\rho$ * effective area ($rho * A_{eff}$) technique.
 This method involves the estimating the expected energy within the isolation cone from the median energy density per area of pileup contamination, estimated for each event, with the effective area given as a function of the electron's pseudorapidity.
 
 This is given as: 
@@ -167,7 +193,7 @@ This is given as:
 I^{rel}_{rho * A_{eff}} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\rm T}(Photon) -rho*A_{\rm eff} )/p_T \\
 \end{equation}\label{eq:rhoEffA}
 
-Muons employ the $\Delta\beta$ pileup alleviation technique, where the average pileup energy inside the cone is estimated as half of that originating from charged hadrons.
+Muons employ the $\Delta\beta$ pileup mitigation technique, where the average pileup energy inside the cone is estimated as half of that originating from charged hadrons.
 This is expressed as:
 
 \begin{equation}
@@ -252,12 +278,10 @@ The MC processes and their associated total number of events, cross sections and
 \label{tab:mcList}
   \centering
   \resizebox{\textwidth}{!}{
-% This increases column spacing.
-  \addtolength{\tabcolsep}{1ex}
 % This right-aligns numbers in column, but centers them under column title.
-  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}}
+ \begin{tabular}{cccc}
    \hline
-   \bf{MC process} & \bf{Events} & \bf{Cross section (pb)} & \bf{Generator (Order)}   \\
+   \textbf{MC process} & \textbf{Events} & \textbf{Cross section (pb)} & \textbf{Generator (Order)}   \\
    \hline
    tZq  & 14.5M & 0.0758  & aMC@NLO (NLO) \\
    \hline
@@ -313,7 +337,6 @@ The MC processes and their associated total number of events, cross sections and
    \hline
    
  \end{tabular}}
- \addtolength{\tabcolsep}{-1ex}
 \end{table}
 
 
@@ -323,12 +346,10 @@ The MC processes and their associated total number of events, cross sections and
 }
 \label{tab:theorySampleList}
   \centering
-% This increases column spacing.
-  \addtolength{\tabcolsep}{1ex}
-% This right-aligns numbers in column, but centers them under column title.
-  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}r@{\hspace{4ex}}@{\hspace{4ex}}}
+ \resizebox{\textwidth}{!}{
+ \begin{tabular}{cccc}
    \hline
-   \bf{MC process} & \bf{Events} & \bf{Cross section (pb)} & \bf{Generator (Order)}   \\
+   \textbf{MC process} & \textbf{Events} & \textbf{Cross section (pb)} & \textbf{Generator (Order)}   \\
    \hline
    tZq scale up & 6.9M & 0.0758  & aMC@NLO (NLO) \\
    tZq scale down & 7.0M & 0.0758  & aMC@NLO (NLO) \\
@@ -354,9 +375,7 @@ The MC processes and their associated total number of events, cross sections and
    \ttbar matching up & 58.9M & 831.76 & POWHEG (NLO) \\
    \ttbar matching down & 58.2M & 831.76 & POWHEG (NLO) \\
    \hline   
-
- \end{tabular}
- \addtolength{\tabcolsep}{-1ex}
+ \end{tabular}}
 \end{table}
 
 \section{Simulation Corrections}\label{sec:simCorrections}
@@ -428,12 +447,10 @@ The event yields after the selection criteria have been applied for the \ttbar c
 }
 \label{tab:ttbarCR}
   \centering
-% This increases column spacing.
-  \addtolength{\tabcolsep}{1ex}
 % This right-aligns numbers in column, but centers them under column title.
-  \begin{tabular}{ccr@{\hspace{4ex}}r@{\hspace{4ex}}}
+ \begin{tabular}{cc}
    \hline
-   \bf{MC process} & \bf{$e\mu$}  \\
+   \textbf{MC process} & \textbf{$e\mu$}  \\
    \hline
    tZq & 1.709\\
    \ttbar & 11778.461 \\
@@ -445,5 +462,4 @@ The event yields after the selection criteria have been applied for the \ttbar c
    Total MC & 12515.995 \\
    \hline
  \end{tabular}
- \addtolength{\tabcolsep}{-1ex}
 \end{table}
