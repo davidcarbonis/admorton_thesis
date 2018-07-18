@@ -630,7 +630,6 @@ The constant coefficient for the \MS contribution was used for these \KF results
 \includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtTiltedGeometry_5000.pdf}
 %\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
 \caption{Plots showing tracking efficiency as a function of $\frac{1}{\pT}$ for \ttbar events at <PU> of 200 after the full chain has been run, where the \KF has not been modified to take \MS into account (red), a constant coefficient for \MS is used (black) and a layer dependent coefficient for \MS is used (blue).
-\editComment{Figure needs updating.}
 }
 \label{fig:2GeVTiltEff}	
 \end{figure}
@@ -675,12 +674,24 @@ At the time of writing, this observation is still being investigated, but is sus
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/qOverPtResVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/ptResVsInvPtTiltedGeometry_5000.pdf}
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/phi0ResVsInvPtTiltedGeometry_5000.pdf}
 \\
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtTiltedGeometry_5000.pdf}
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/etaResVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/cotThetaResVsInvPtTiltedGeometry_5000.pdf}
 \caption{\pt relative resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at <PU> of 200 for when multiple scattering isn't considered by the \KF (red), when a constant \MS coefficient is used (black) and when a layer dependent coefficient is used (blue).
+\editComment{best to use relative \pt resolution or \pt resolution?}
 }
 \label{fig:kfHelixParametersResVsInvPt}
+\end{figure}
+
+Overall, 
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfChi2NdfVsInvPtTiltedGeometry_5000.pdf}
+%\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
+\caption{$\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ for for \ttbar events at <PU> of 200 after the full chain has been run, where the \KF has not been modified to take \MS into account (red), a constant coefficient for \MS is used (black) and a layer dependent coefficient for \MS is used (blue).
+}
+\label{fig:2GeVTiltChi2Ndf}	
 \end{figure}
