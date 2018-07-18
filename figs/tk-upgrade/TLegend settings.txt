@@ -15,8 +15,8 @@ border size 0
 
 DR plots
 
-efficiency plots:
-0.2,0.27,0.37,0.48
+flat geometry efficiency plots:
+0.2,0.27,0.33,0.48
 
 MS plots:
 0.2,0.47,0.27,0.68
