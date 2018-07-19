@@ -1,18 +1,30 @@
 \chapter{Analysis Strategy and Event Selection}\label{chapter:tzq-search}
 The next chapters of this thesis describe the search for the dilepton final state of a singly produced top quark in association with a Z boson (tZq) using the reconstructed proton-proton collision data at $\sqrt{13}$ collected by the CMS detector during 2016.
+
 In contrast to previous analyses for tZq, which searched for the trilepton final state in which both the W and Z bosons decay leptonically~\cite{Sirunyan:2017kkr,Sirunyan:2017nbr}, the dilepton final state involves the W and Z bosons decaying hadronically and leptonically respectively.
 This event topology presents the the main challenge for this analysis, as it is identical to the topology a large number of background processes which have cross sections many order of magnitude larger than the signal process.
-Given that the signal region will be dominated by background, the search was designed to constrain and understand these backgrounds as much as possible.
+Given that the signal region will be dominated by irreducible backgrounds, the search was designed to constrain and understand these backgrounds as much as possible.
+	
+The trigger and event cleaning strategies common
 
-Will not be able to reduce backgrounds sufficiently like trilepton - limit and understand them
+
+The two largest irreducible 
+
+
+At leading order, the tZq contains a top quark, a radiated 
+Sources of non-prompt leptons, such as W+jets processes, 
+Talk about what needs constraining - ie need for low mis-id for Z leptons, need to balance purity/efficiency for b-jets, and use of W decay products to reco top mass.
+
 
 As 
 
 
 As the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay, being able to identify these isolated prompt leptons with a high efficiency and a low misidentification rate is essential.
 
+
+
 \section{Trigger Strategy}\label{sec:triggerStrategy}
-As the search for the dilepton final state for tZq relies on the identification of the two leptons from the Z boson decay, the trigger strategy consists of selecting events from datasets identified by the presence of leptons.
+As the search for the tZq dilepton final state relies on the identification of the two leptons from the Z boson decay, the trigger strategy consists of selecting events from datasets identified by the presence of leptons.
 Given that the signal process being searched for is dominated by background processes and will likely be limited by statistics, it is essential to reconstruct and select as many signal events as possible.
 To this end both single and double lepton triggers with the lowest possible transverse momenta thresholds are considered 
 to ensure that the maximum possible statistics can be obtained over the largest possible phase space.
@@ -357,7 +369,10 @@ The MC processes and their associated total number of events, cross sections and
 \end{table}
 
 \section{Simulation Corrections}\label{sec:simCorrections}
-As 
+Simulation is unable to fully recreate all the effects observed in data, either because certain parameters are not precisely known or cannot be be calculated.
+To account for these discrepancies, corrective scale factors are applied to t
+
+The uncertainties associated with these corrections to simulation are described in Chapter~\ref{chapter:systematics}.
 
 \subsection{Miscalibrated Tracker APV}
 During the first half of data taking in 2016 the silicon strip detector suffered from instantaneous luminosity dependent  hit finding inefficiencies, particularly in high occupancy regions, due to saturation in the pre-amplifier in the front end electronics~\cite{Fiori:2016ebh}.
@@ -371,8 +386,14 @@ This is accounted for by the weighting of events appropriately when the scale fa
 %Similarly, the muon trigger scale factors that were derived were also produced 
 
 \subsection{Lepton Reconstruction}\label{subsec:leptonRecoSFs}
-\subsection{•}
+
+\subsection{Jet Energy Corrections}
+The Jet Energy Corrections applied to simulation are detailed in Chapter~\ref{subsubsec:JECs}.
+\subsection{b-tag modelling}
 \subsection{\PU modelling}
+
+\subsection{Top quark p_{T}}
+A scale factor is applied to top quarks in \ttbar MC as a function of their generator level transverse momenta to account for the \pt spectra of top quarks in data being significantly softer than that predicted by LO and NLO precision MC simulation~\cite{Khachatryan:2015oqa}.
 
 \section{Signal Region}\label{sec:signalRegion}
 The signal enriched region event selection was designed select signal events with a high efficiency whilst rejecting as much of the background process as possible.
@@ -432,3 +453,5 @@ The event yields after the selection criteria have been applied for the \ttbar c
    \hline
  \end{tabular}
 \end{table}
+
+%\section{Blinding}\label{sec:blinding}
