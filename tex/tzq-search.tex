@@ -1,15 +1,9 @@
 \chapter{Analysis Strategy and Event Selection}\label{chapter:tzq-search}
 The next chapters of this thesis describe the search for the dilepton final state of a singly produced top quark in association with a Z boson (tZq) using the reconstructed proton-proton collision data at $\sqrt{13}$ collected by the CMS detector during 2016.
-The main challenge for searching for the dilepton final state is that topology is identical to the final states of other processes with much larger cross sections.
-In contrast to previous analyses for tZq, which have searched for the trilepton final state~\cite{Sirunyan:2017kkr,Sirunyan:2017nbr}, where backgrounds
-
-
-
-which have focussed on the , where both the Z and W bosons decay leptonically, only the Z boson decays leptonically, with the W boson decaying hadronically.
-
-
-The presence of only two leptons from a Z boson presents the the main challenge for this analysis - 
-
+In contrast to previous analyses for tZq, which have searched for the trilepton final state where both the W and Z bosons decay leptonically~\cite{Sirunyan:2017kkr,Sirunyan:2017nbr}, only the Z boson decays leptonically for the dilepton final state.
+The presence of only two leptons from a Z boson presents the the main challenge for this analysis, as it results in an event topology identical to a large number of background processes which have significantly larger cross sections.
+As it will not be possible to reduce the backgrounds
+Will not be able to reduce backgrounds sufficiently like trilepton - limit and understand them
 
 As 
 
@@ -17,7 +11,6 @@ The first stage of a	 physics analysis is to determine an event selection based 
 This is 
 
 
-At leading order, tZq consists single top quark, a radiated Z boson and a recoil quark.
 
 As the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay, being able to identify these isolated prompt leptons with a high efficiency and a low misidentification rate is essential.
 
@@ -394,16 +387,12 @@ This is accounted for by the weighting of events appropriately when the scale fa
 
 \section{Signal Region}\label{sec:signalRegion}
 The signal enriched region event selection was designed select signal events with a high efficiency whilst rejecting as much of the background process as possible.
-
-non-prompt, Z+jets, ttZ
-
 As shown in Figure~\ref{fig:feyn_tZq}, at leading order tZq consists of a top quark, a recoil quark and a radiated Z boson.
-Therefore the 
-
-The 
+To ensure a 
+Whilst additional jets could be produced by further gluon splitting, in practice 
 
 No \MET cut is applied in the signal region event selection despite there being no \MET directly produced by the signal process.
-This decision was taken as it was ...
+This decision was taken as \MET was anticipated to be a useful variable the multivariate analysis (discussed in Chapter~\ref{sec:mvas}) that could be used to discriminate against background processes such as \ttbar.
 
 \section{Control Regions}\label{sec:controlRegions}
 In any high energy particle physics analysis, accurate modelling of the background processes is essential in order to be able to make a measurement.
@@ -416,17 +405,12 @@ Where required, these control regions are extrapolated to provide a data-driven 
 Despite the majority of such events being rejected by the signal region criteria, given the large cross section for Z+jets, the remaining events from this process dominate the signal region to form the single largest background.
 Given the size of this background and the difficulties in accurately modelling higher order contributions from QCD processes, it is essential to ensure that both the normalisation and modelling of the jets for this background are well described.
 
-Initially a high statistics Z+jets enriched control region was defined by requiring that none of the jets present are b-tagged, in contrast to the one to two required for the signal region, in order to 
-Given that the
-large statistics 
+Initially a high statistics Z+jets enriched control region was defined by requiring that none of the jets present are b-tagged, in contrast to the one to two required for the signal region, as the majority of the jets 
+Given the large cross section and that the vast majority of the jets produced by the Z+jets process are light jets, whilst the top quarks in \ttbar, the second largest background, predominately decay into b quarks, this produces a high purity region with large statistics.
 
+Despite the good description of the jet multiplicity and jet \pT shapes in this control region, discussed in depth in Chapter~\ref{subsec:zPlusJetsEstimation}, as the kinematics of b-tagged jets differs from light jets, the topology may 
 
-Despite the good description of the jet multiplicity and jet \pT shapes in this control region, discussed in depth in Chapter~\ref{subsec:zPlusJetsEstimation}, the lack of b-tagged jets could 
-as differing kinematics of the final event selection 
-
-Therefore an alternative Z+jets enriched control region was defined by requiring same b-jet selection (one to two b-jets) as the signal region but with the W boson mass cut inverted in order to 
-
-To ensure that the leptons selected are produced from a Z boson decay, a \MET cut of 50\GeV is used to suppress \ttbar where significant quantities of \MET are expected from the leptonically decaying W bosons.
+Therefore an alternative Z+jets enriched control region was defined by requiring same b-jet selection (one to two b-jets) as the signal region and a \MET cut of 50\GeV is applied to suppress \ttbar where significant quantities of \MET are expected from the leptonically decaying W bosons.
 
 The application of both of these control regions is discussed in Chapter~\ref{sec:dataDrivenBackground}.
 
