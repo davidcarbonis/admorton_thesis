@@ -387,15 +387,21 @@ This is accounted for by the weighting of events appropriately when the scale fa
 %Consequently, the muon scale factors were weighted according to the luminosity they corresponded to before their application to simulation.
 %Similarly, the muon trigger scale factors that were derived were also produced 
 
-\subsection{Lepton Reconstruction}\label{subsec:leptonRecoSFs}
+\subsection{Lepton Effiiency}\label{subsec:leptonRecoSFs}
 
 \subsection{Jet Energy Corrections}
-The Jet Energy Corrections applied to simulation are detailed in Chapter~\ref{subsubsec:JECs}.
-\subsection{b-tag modelling}
-\subsection{\PU modelling}
+The Jet Energy Corrections applied to compensate for the differences between simulation and data are described in Chapter~\ref{subsubsec:JECs}.
+
+\subsection{b-tagging Efficiency}\label{subsec:btagEff}
+The B-Tag and Vertexing (BTV) Physics Object Group measures the b-tagging efficiency and misidentification rates for b and light flavoured jets in data and MC simulation (multijet and \ttbar) of the algorithms which they support~\cite{Sirunyan:2017ezt}.
+From these measurements b-tagging efficiency scale factors are produced and provided for analysts to apply to simulated events to correct differences observed between data and simulation.
+These scale factors, as functions of the jet flavour, \pT and $\eta$, to alter the weight of the selected MC events.
+This methodology was chosen as it involves only changing the weight of the selected MC events which, unlike other methods, avoids events migrating into different b-tag multiplicity bins and having events with potentially undefined variables such as the top mass.
+
+\subsection{\PU Modelling}
 
 \subsection{Top quark p_{T}}
-A scale factor is applied to top quarks in \ttbar MC as a function of their generator level transverse momenta to account for the \pt spectra of top quarks in data being significantly softer than that predicted by LO and NLO precision MC simulation~\cite{Khachatryan:2015oqa}.
+A scale factor is applied to \ttbar MC as a function of the top's and anti-top's generator level transverse momenta to account for the \pt spectra of top quarks in data being significantly softer than that predicted by LO and NLO precision MC simulation~\cite{Khachatryan:2015oqa}.
 
 \section{Signal Region}\label{sec:signalRegion}
 The signal enriched region event selection was designed select signal events with a high efficiency whilst rejecting as much of the background process as possible.
