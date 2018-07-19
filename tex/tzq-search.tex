@@ -392,6 +392,21 @@ This is accounted for by the weighting of events appropriately when the scale fa
 %Similarly, the muon trigger scale factors that were derived were also produced 
 
 \subsection{Lepton Effiiency}\label{subsec:leptonRecoSFs}
+The lepton selection efficiencies
+
+\subsection{Lepton Energy Corrections}\label{subsec:leptonEnergyCorrections}
+\subsubsection{Electron Regression and Energy Scale and Smearing Corrections}
+Two types of energy corrections which have been produced by the CMS EGM POG are applied to electrons and photons, energy regression and energy scale and smearing corrections.
+These corrections are applied to both MC simulation and data and are used to improve the electron resolution obtained and to resolve the observed discrepancies between them.
+
+Using simulation for tuning, energy regression obtains the best possible energy resolution by using the detector information to correct the reconstructed object energy.
+The disagreement between data and MC is resolved by scaling the data energy to the MC energy scale and smearing the MC so that it has the same energy resolution as data. 
+
+\subsubsection{Rochester Corrections}
+The muon momentum scale and resolution correction methods developed by the University of Rochester~\cite{rochester}, known as \emph{Rochester Corrections}, are used to remove any muon momentum bias from any detector misalignment, reconstruction or uncertainties in the magnetic field for both MC and data.
+These corrections are derived with high \pt ($> 20\GeVc$) muons from Z $ \rightarrow \mu\mu$ decays using a two step method.
+The first step requires the mean inverse transverse momenta of muons from data and the reconstructed MC to be the same as the corresponding values from 
+W
 
 \subsection{Jet Energy Corrections}
 The Jet Energy Corrections applied to compensate for the differences between simulation and data are described in Chapter~\ref{subsubsec:JECs}.
@@ -402,7 +417,10 @@ From these measurements b-tagging efficiency scale factors are produced and prov
 These scale factors, as functions of the jet flavour, \pT and $\eta$, to alter the weight of the selected MC events.
 This methodology was chosen as it involves only changing the weight of the selected MC events which, unlike other methods, avoids events migrating into different b-tag multiplicity bins and having events with potentially undefined variables such as the top mass.
 
-\subsection{\PU Modelling}
+\subsection{\PU Modelling}\label{subsec:puSF}
+While the number of \PU interactions is simulated in MC, the number of primary vertices in simulation is weighted 
+ data is dependent on the instantaneous luminosity 
+ \PU interactions included in simulation
 
 \subsection{Top quark \pt}
 A scale factor is applied to \ttbar MC as a function of the top's and anti-top's generator level transverse momenta to account for the \pt spectra of top quarks in data being significantly softer than that predicted by LO and NLO precision MC simulation~\cite{Khachatryan:2015oqa}.
