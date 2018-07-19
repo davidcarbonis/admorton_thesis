@@ -103,8 +103,8 @@ The manually set variables are:
 \item \textbf{a conversion veto} - is applied for all working points, where any electron which fails the electron conversion veto is rejected.
 
 The MVA tuned variables include:
-\item \textbf{Full $5\times5 \sigma_{i\eta i\eta}$} - the shower shape variable, which describes the shape of the shower in $\eta$.
-\iten \itembf{$\Delta \eta_{seed}$ and $\Delta \phi_{seed}$} - the distances in $\eta$ and $\phi$ between the ECAL supercluster and where the track has been extrapolated to from the primary vertex.
+\item \textbf{Full $5 \times 5 \sigma_{i\eta i\eta}$} - the shower shape variable, which describes the shape of the shower in $\eta$.
+\item \textbf{$\Delta \eta_{seed}$ and $\Delta \phi_{seed}$} - the distances in $\eta$ and $\phi$ between the ECAL supercluster and where the track has been extrapolated to from the primary vertex.
 \item \textbf{$\frac{h}{E}$} - the ratio of hadronic to electromagnetic energy deposited in the supercluster around the crystal with the largest energy deposit.
 \item \textbf{$I^{rel}_{EA}$} the relative isolation of the electron with effective area pileup alleviation for a cone size of 0.3, which is described further in Chapter~\ref{subsubsec:relIso}.
 \item \textbf{$1/E - 1/p$} - the difference in the inverse energy of the ECAL supercluster and inverse track momentum, which is used to describe the energy loss 
@@ -178,8 +178,8 @@ $I^{rel}$e is defined as the summed energy of all PF particles within a fixed ra
 
 As only charged hadrons ($CH$) have associated tracks which can be used to determine if they are consistent with the primary vertex, the pileup contamination contribution from neutral hadrons ($NH$) and photons is typically estimated with one of two methods.
 
-In the analysis presented, electrons use the $\rho$ * effective area ($rho * A_{eff}$) technique using a $\Delta R$ of 0.3.
-This method estimates the neutral pileup contributions by subtracting the median energy density per area of pileup contamination, $\rho$, which has been multiplied by the effective area of the electron, A_{\rm eff}, which is characterised as a function of the supercluster's $\eta$:
+In the analysis presented, electrons use the $\rho$ * effective area ($rho * A_{\rm eff}$) technique using a $\Delta R$ of 0.3.
+This method estimates the neutral pileup contributions by subtracting the median energy density per area of pileup contamination, $\rho$, which has been multiplied by the effective area of the electron, $A_{\rm eff}$, which is characterised as a function of the supercluster's $\eta$:
 
 \begin{equation}
 I^{rel}_{rho * A_{eff}} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\rm T}(Photon) -rho*A_{\rm eff} )/p_T \\
@@ -400,7 +400,7 @@ This methodology was chosen as it involves only changing the weight of the selec
 
 \subsection{\PU Modelling}
 
-\subsection{Top quark p_{T}}
+\subsection{Top quark \pt}
 A scale factor is applied to \ttbar MC as a function of the top's and anti-top's generator level transverse momenta to account for the \pt spectra of top quarks in data being significantly softer than that predicted by LO and NLO precision MC simulation~\cite{Khachatryan:2015oqa}.
 
 \section{Signal Region}\label{sec:signalRegion}
