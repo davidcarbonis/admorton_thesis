@@ -370,9 +370,11 @@ The MC processes and their associated total number of events, cross sections and
 
 \section{Simulation Corrections}\label{sec:simCorrections}
 Simulation is unable to fully recreate all the effects observed in data, either because certain parameters are not precisely known or cannot be be calculated.
-To account for these discrepancies, corrective scale factors are applied to t
+To account for these discrepancies, corrective scale factors are used to reweight MC on a per event basis.
+Such scale factors are usually derived as a function of \pt and $\eta$ so as to account for the variation of the detector response in both.
+These corrections are used to correct simulation for lepton identification, isolation and reconstruction efficiencies, b-tagging efficiencies, the poor modelling of pileup in simulation, and the detector resolutions observed in data.
 
-The uncertainties associated with these corrections to simulation are described in Chapter~\ref{chapter:systematics}.
+\editComment{add SF distributions in appendix? Noticed others do this...}
 
 \subsection{Miscalibrated Tracker APV}
 During the first half of data taking in 2016 the silicon strip detector suffered from instantaneous luminosity dependent  hit finding inefficiencies, particularly in high occupancy regions, due to saturation in the pre-amplifier in the front end electronics~\cite{Fiori:2016ebh}.
