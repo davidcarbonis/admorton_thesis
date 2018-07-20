@@ -434,9 +434,10 @@ These scale factors, as functions of the jet flavour, \pT and $\eta$, to alter t
 This methodology was chosen as it involves only changing the weight of the selected MC events which, unlike other methods, avoids events migrating into different b-tag multiplicity bins and having events with potentially undefined variables such as the top mass.
 
 \subsection{\PU Modelling}\label{subsec:puSF}
-While the number of \PU interactions is simulated in MC, the number of primary vertices in simulation is weighted 
- data is dependent on the instantaneous luminosity 
- \PU interactions included in simulation
+It is challenging to model variations in the number of \PU interactions that result from the changing LHC conditions.
+Therefore MC events are reweighted as a function of the number of primary vertices so that the PU interactions simulated are resembles what is observed in data.
+
+The \PU SF is determined as a function of the number of primary vertices, $n_{PV}$, present by comparing $n_{PV}$ in minimum bias data over the running period considered to $n_{PV}$ for simulated events.
 
 \subsection{Top quark \pt}
 A scale factor is applied to \ttbar MC as a function of the top's and anti-top's generator level transverse momenta to account for the \pt spectra of top quarks in data being significantly softer than that predicted by LO and NLO precision MC simulation~\cite{Khachatryan:2015oqa}.
