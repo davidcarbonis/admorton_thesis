@@ -122,25 +122,23 @@ These uncertainties, as well as the statistical uncertainties arising from the s
 
 \section{Experimental Uncertainties}
 \subsection{Jet Energy Corrections}
-As it has been observed that there are differences between simulated and jet energies , 
-corrections are
-https://arxiv.org/pdf/1607.03663.pdf
-JINST 12 (2017) P02014
+The Jet Energy Correction group also determines the uncertainties associated with the JECs, discussed in Chapter~\ref{subsubsec:JECs}, which they calculate. 
+Jet Energy Scale (JES) - SF moved up/down by one s.d.
+Jet Energy Resolution (JER) - s.d.  of Gaussian fitted to detector's jet response.
+Accounted for bysmearing the jet 4-vector as function of its true and reco \pt and $\eta$, with the variation of applied up/down 
 
-Smearing jets in MC simulation 
+Khachatryan:2016kdb
 
 \subsection{Pileup Reweighting}
-The \PU interactions included in the simulated samples used do not describe the number of primary interactions observed in data well, these interactions are estimated 
-As such, they are reweighted to 
+The uncertainty associated with the primary vertex distributions used in the \PU reweighting is determined by varying the expected minimum bias cross section used in simulation $\pm X%$ in order to ascertain the impact of greater or lesser amounts of \PU on the analysis.
 
 \subsection{b-tagging Uncertainties}
-The uncertainties of the scale factors described in Chapter~\ref{subsec:btagEff} are obtained by varying their value by $\pm 1\sigma$, as calculated by the BTV POG. 
-\editComment{Impact?}
+The uncertainties associated with the b-tagging scale factors described in Chapter~\ref{subsec:btagEff} are obtained by varying their value by $\pm 1\sigma$, as calculated by the BTV POG. 
 
 \subsection{Parton Distribution Functions}
 %%% ME_PS
 \subsection{Non-prompt Lepton Contributions}
-As this data-driven estimate of the instrumental backgrounds should have no dependence on either the lepton flavour or selection cuts, the variation of the ratio of opposite-sign over same-sign events as a function of the lepton flavour and the cut level should be well accounted for by a 30\% systematic uncertainty.
+As this data-driven estimate of the instrumental backgrounds should have no dependence on either the lepton flavour or selection cuts, the variation of the ratio of opposite-sign over same-sign events as a function of the lepton flavour and the cut level was considered to be well accounted for by a 30\% rate uncertainty.
 
 \subsection{Luminosity Uncertainties}
 CMS uses five detectors, the pixel detector, DTs, HF, the Fast Beam Conditions Monitor and Pixel Luminosity Telescope to monitor and measure the instantaneous and integrated luminosity, with absolute calibrations of the detectors made through conducting Van der Meer (VdM) scans during dedicated LHC runs.
@@ -149,7 +147,7 @@ Pixel Cluster Counting (PCC)
 
 The overall uncertainty \cite{CMS:2017_lumi} %2016 lumi
 \subsection{Lepton Efficiencies}
-The uncertainties associated with the lepton identification, isolation and reconstruction efficiencies discussed in Chapter~\ref{subsec:leptonRecoSFs} are provided along with their respective scale factors.
+The uncertainties associated with the lepton identification, isolation and reconstruction efficiency scale factors discussed in Chapter~\ref{subsec:leptonRecoSFs} are varied +/- 1 sigma.
 
 %The uncertainty associated with the lepton trigger efficiencies are calculated using 
 %The conservative method of Clopper-Pearson intervals~\cite{Cousins:2009kz} was used to determine the uncertainities associated with the trigger scale factors used.
@@ -192,8 +190,10 @@ In order to calculate the uncertainties on the PDFs used in the generation of th
 
 A number of MC samples however, do not store the PDF weights as part of the event's 
 \subsection{Factorisation and renormalisation scales}
-The factorisation and renormalisation scales at the Matrix Element 
-\subsection{Parton Shower Uncertainties}
+The factorisation and renormalisation scales used at the Matrix Element level are 
+\subsection{Parton Shower Matching Thresholds}
+As discussed in Chapter~\ref{subsec:eventGenerators}, all of the MC samples considered use model the hard scattering process through a dedicated Matrix Element generator, with PYTHIA 8 being used to perform the subsequent PS and hadronisation.
+The uncertainty 
 \section{Impact of the Uncertainties}
 The effect of each of the systematics considered on the event rate, in percentage, are shown in Table~\ref{tab:systImpact}.
 These rates, whilst providing a useful insight into which of the systematics are the most important, do not show how the shape of each fitted variable and the MVA discriminant is influenced by each uncertainty.
