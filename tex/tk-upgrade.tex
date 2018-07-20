@@ -478,7 +478,8 @@ In contrast however, despite the \qpt and $\phi_{0}$ resolutions achieved after 
 \label{fig:chi2HelixParametersResIterationsComparison}
 \end{figure}
 
-\subsubsection{Outlook}\label{subsubsec:chi2outlook}
+\subsubsection{Conclusions and Outlook}\label{subsubsec:chi2outlook}
+\editComment{Polish more}
 Following the parallel development of both the linearised $\chi^{2}$ track fit and the \KF, it was decided that development on the former would be discontinued in favour of focussing resources on the latter.
 The motivations behind this decision were that the \KF was capable of achieving a higher track finding efficiency with 100.0\% purity for matched tracks, and that considerable progress had been made with an implementation in firmware.
 In contrast, the linearised $\chi^{2}$ track was not competitive in terms of track reconstruction ability, especially with respect to the stricter tracking efficiency definition, and there were also concerns over the potential feasibility of tabulating all (or the most frequently used) track derivatives in the endcap disks for FPGAs which were commercially available at the time.
@@ -571,7 +572,6 @@ The \pt resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolu
 \end{figure}
 
 \subsubsection{Kalman Filter Optimisation}\label{subsubsec:lowPtOptKF}
-\editComment{Plan to use these emph phrases in the revised KF section above}
 Incorporation of \MS into the \KF involved including a \emph{process noise} term, namely the variance of the multiple scattering angles, to the \emph{measurement noise} (\ie measurement error) term already present in the \KF covariance matrix.
 In this updated form, the \KF now can consider stubs which are compatible with those that have undergone \MS, allowing tracks with previously discarded stubs to be reconstructed and the resultant more accurate $\chi^{2}$ values which can be used to better discriminate against fake track states.
 
@@ -682,8 +682,10 @@ At the time of writing, this observation is still being investigated, but is sus
 \label{fig:kfHelixParametersResVsInvPt}
 \end{figure}
 
-Both of \MS coefficients considered allow for the \KF to take into account the impact of \MS, as shown in Figure~\ref{fig:2GeVTiltChi2Ndf} where the $\frac{\chi^{2}}{ndf}$ of the matched tracks fitted has not only decreased at high \pT where \MS dominates, but also the smaller effects experienced at higher \pT.
-In both cases, this provides considerable improvement in the track reconstruction efficiency and helix parameter resolutions obtained.
+\subsubsection{Conclusions}\label{subsubsec:2GevConclusions}
+After investigating modifications to the \HT and \KF algorithms to improve upon the default performance obtained for track finding and fitting of low \pT ($< 3\GeV$) tracks.
+The decreased precision \HT cells enables the recovery of some of the tracks previously lost due to \MS, and the inclusion of a process noise term allows the \KF to take the impact of \MS into account, as shown in Figure~\ref{fig:2GeVTiltChi2Ndf} where the $\frac{\chi^{2}}{ndf}$ of the matched tracks fitted has not only decreased at high \pT where \MS dominates, but also the smaller effects experienced at higher \pT.
+Both formulations of the \MS term provide considerable improvement in the track reconstruction efficiency and helix parameter resolutions obtained.
 The lack of any noticeable improvement between using a constant \MS coefficient and one which is a function of the number of layers traversed, is a consequence of knowing which layer a hit belongs to not being a good descriptor of the total amount of material at that point.
 As the amount of material traversed will depend on the trajectory of the charged particle, such a coefficient would likely have to be a function of \pt and $\eta$.
 
