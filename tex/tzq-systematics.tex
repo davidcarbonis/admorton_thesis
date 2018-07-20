@@ -149,9 +149,40 @@ Pixel Cluster Counting (PCC)
 
 The overall uncertainty \cite{CMS:2017_lumi} %2016 lumi
 \subsection{Lepton Efficiencies}
-In order to account for the difference in performance for lepton trigger, identification, isolation and reconstruction efficiencies 
+The uncertainties associated with the lepton identification, isolation and reconstruction efficiencies discussed in Chapter~\ref{subsec:leptonRecoSFs} are provided along with their respective scale factors.
 
-The lepton trigger efficiencies for both channels are measured independently, 
+%The uncertainty associated with the lepton trigger efficiencies are calculated using 
+%The conservative method of Clopper-Pearson intervals~\cite{Cousins:2009kz} was used to determine the uncertainities associated with the trigger scale factors used.
+
+%The potential correlations between the cross triggers and lepton triggers used are one source of systematic uncertainty.
+%If both triggers are independent, then the efficiency of fulfilling both trigger selections can be expressed as:
+%\begin{equation}
+%\epsilon_{X + lepton triggers} = \epsilon_{X triggers} \times \epsilon_{lepton triggers}
+%\label{eq:triggerCorrelation}
+%\end{equation}
+%
+%and if both trigger selections are uncorrelated, then the ratio of the left and right hand sides ($\alpha$) of Equation~\ref{eq:triggerCorrelation} would be 1.
+%Table~\ref{tab:triggerAlpha} shows that the values of $\alpha$ determined for each channel only differ slightly from 1.
+%\begin{table}[htbp]
+%\topcaption {
+%The values of $\alpha$, expressing the strength of correlation between the lepton and cross triggers used to determine the trigger scale factors, for each channel.
+%}
+%\label{tab:triggerCorrelation}
+%  \centering
+%  \resizebox{\textwidth}{!}{
+%% This right-aligns numbers in column, but centers them under column title.
+% \begin{tabular}{cc}
+%   \hline
+%   \textbf{Channel} & \textbf{$\alpha$}   \\
+%   \hline   
+%   ee & 1.0 \\
+%   $\mumu$ & 1.0  \\
+%   e$\mu$ & 1.0  \\
+%   \hline
+% \end{tabular}}
+%\end{table}
+%
+%\editComment{Update values of alpha}
 
 \section{Theoretical Uncertainties}
 

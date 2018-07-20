@@ -29,9 +29,7 @@ Given that the signal process being searched for is dominated by background proc
 To this end both single and double lepton triggers with the lowest possible transverse momenta thresholds are considered 
 to ensure that the maximum possible statistics can be obtained over the largest possible phase space.
 
-In addition to the ee and $\mu\mu$ final state for tZq, the muon + electron (MuonEG) dataset, and single electron and muon datasets, are considered for a \ttbar enriched control region discussed in Chapter~\ref{subsec:ttbarCR}. 
-This control region uses the e$\mu$ final state to validate the modelling of the \ttbar MC sample used in a region topologically similar to the signal region.
-
+Table~\ref{tab:triggersDatasets} lists the triggers applied to data and MC events for each channel, including the e$mu$ final state which is considered for a \ttbar enriched control region discussed in Chapter~\ref{subsec:ttbarCR}.
 %Whilst the Z boson can decay into a tau anti-tau pair, despite these leptons being simulated and reconstructed in the MC, they are not considered in the event selection for this analysis due to the difficulty simulating them due to their high mass.
 
 \begin{table}[htbp]
@@ -139,7 +137,6 @@ The cuts used for the tight and veto working points of the cut based identificat
     \hline
  \end{tabular}}
 \end{table}
-
 
 \subsubsection{Muons}\label{subsubsec:muonSelection}
 Similar to the electrons, PF muons are required to meet a set of kinematic requirements and identification and isolation criteria.
@@ -391,8 +388,22 @@ This is accounted for by the weighting of events appropriately when the scale fa
 %Consequently, the muon scale factors were weighted according to the luminosity they corresponded to before their application to simulation.
 %Similarly, the muon trigger scale factors that were derived were also produced 
 
-\subsection{Lepton Effiiency}\label{subsec:leptonRecoSFs}
-The lepton selection efficiencies
+\subsection{Lepton Efficiency}\label{subsec:leptonRecoSFs}
+The identification, isolation and reconstruction efficiencies of leptons are calculated using measurements of $Z \rightarrow l^{+} l ^{-}$ events with the \emph{tag-and-probe} method~\cite{CMS:2008rxa}.
+From this high purity, large statistics lepton sample, the method 
+
+This methodology is used to create corrective scale factors for each component and these are multiplicatively applied to each leptons' event weight as functions of their \pt, $\eta$, and flavour.
+
+The trigger efficiency of electrons and muons is calculated using a method which considers events that pass the lepton selection criteria in the signal region~\ref{sec:signalRegion} and which are selected by triggers which are weakly correlated (also known as cross triggers) with the triggers used in the analysis~\ref{@article{Khachatryan:2016kzg}.
+From this collection of events, the number of events that pass and fail the analysis triggers are counted to produce the trigger efficiency:
+
+\begin{equation}
+\epsilon_{trigger} = \frac{N_{X triggers + lepton triggers}}{N_{X triggers}} \\
+\end{equation}
+
+where $N_{X trigger}$ is the number of events which have passed the lepton selection criteria and the cross triggers, and ${N_{X triggers + lepton triggers}$ is $N_{X trigger}$ and the number of events which have also passed the lepton triggers.
+
+As the triggers requirements are applied to both simulated and data events, a scale factor of the ratio of the trigger efficiency in data and in simulation is applied to the event weight in simulation.
 
 \subsection{Lepton Energy Corrections}\label{subsec:leptonEnergyCorrections}
 \subsubsection{Electron Regression and Energy Scale and Smearing Corrections}
