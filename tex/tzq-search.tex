@@ -413,11 +413,16 @@ These corrections are applied to both MC simulation and data and are used to imp
 Using simulation for tuning, energy regression obtains the best possible energy resolution by using the detector information to correct the reconstructed object energy.
 The disagreement between data and MC is resolved by scaling the data energy to the MC energy scale and smearing the MC so that it has the same energy resolution as data. 
 
+These corrections are pre-applied onto the PF electron collections used.
+
 \subsubsection{Rochester Corrections}
 The muon momentum scale and resolution correction methods developed by the University of Rochester~\cite{rochester}, known as \emph{Rochester Corrections}, are used to remove any muon momentum bias from any detector misalignment, reconstruction or uncertainties in the magnetic field for both MC and data.
-These corrections are derived with high \pt ($> 20\GeVc$) muons from Z $ \rightarrow \mu\mu$ decays using a two step method.
-The first step requires the mean inverse transverse momenta of muons from data and the reconstructed MC to be the same as the corresponding values from 
-W
+These corrections are derived with high \pt ($> 20\GeVc$) muons from Z $ \rightarrow \mu\mu$ decays using a two step method, where the muons are binned in charge, $\eta$ and $\phi$.
+The first step requires the mean inverse transverse momenta of the muons reconstructed from data and simulation to be the same as the corresponding values from a perfectly aligned detector.
+These corrections are tuned in the second step by using the $M_{\mu^{+1}\mu^{-1}}$ peak for a perfectly aligned detector to calibrate the corrections.
+This removes any sensitivity to detector efficiencies or physics modelling.
+
+The Rochester Corrections are applied to each muon an event weight that is a function of the muon's charge, \pt, $\eta$ and $phi$.
 
 \subsection{Jet Energy Corrections}
 The Jet Energy Corrections applied to compensate for the differences between simulation and data are described in Chapter~\ref{subsubsec:JECs}.
