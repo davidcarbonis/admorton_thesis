@@ -387,9 +387,7 @@ It can be seen that whilst the \HT finds tracks with high efficiency, over half 
 Both floating point and approximated maths implementations give comparable results, indicating that the approximations made are acceptable.
 The $\chi^{2}$ track fit increases the purity of the reconstructed tracks by a factor of two and eliminates the majority of the fake tracks, whilst the \DR algorithm removes the majority of the duplicates.
 
-Figure~\ref{fig:chi2HelixParametersResVsEtaApproxVsExact} shows that resolutions of the four track parameters as a function of $\eta$ from primary tracks in \ttbar events at <PU> of 200 for both mathematical implementations of the algorithm.
-The resolutions compare well not just between the two implementations of the algorithm's mathematics, but also with those obtained with offline track reconstruction~\cite{P2TrackerTDR}.
-As offline reconstruction is able to use more sophisticated reconstruction techniques using all information from the detector, this guarantees that the tracks found will be useful to the L1 trigger.
+
 
 \begin{figure}[htb]
 \centering
@@ -407,7 +405,10 @@ As offline reconstruction is able to use more sophisticated reconstruction techn
 
 %Running multiple iterations of the fitting algorithm had been previously been considered in the context of improving upon the resolution of a fitted track's helix parameters, but had been shown to produce only marginal improvements.
 
-As shown in Table~\ref{tab:chi2-exactVsApprox}, a significant proportion of the tracks reconstructed by the Linearised $\chi^{2}$ fit contain at least one incorrect stub, resulting in the values for the two tracking efficiency definitions being not equal.
+Figure~\ref{fig:chi2HelixParametersResVsEtaApproxVsExact} shows that resolutions of the four track parameters as a function of $\eta$ from primary tracks in \ttbar events at <PU> of 200 for both mathematical implementations of the algorithm.
+The resolutions compare well not just between the two implementations of the algorithm's mathematics, but also with those obtained for the barrel region with the offline track reconstruction which is able to use all information from the detector with more sophisticated reconstruction techniques ~\cite{P2TrackerTDR}.
+While this guarantees that the tracks found in the the barrel will be useful to the L1 trigger, the significant presence of at least one stub being incorrectly associated with a matched track in the forward regions, as shown in Table~\ref{tab:chi2-exactVsApprox}, significantly degrades the resolution obtained.
+
 In order to filter out these incorrectly assigned stubs from matched tracks, and also remove fake tracks, the residuals calculated for each stub following the fit were considered.
 These ``fake'' stubs are expected have large residuals compared to stubs correctly associated to genuine tracks or stubs belonging to a fake track.
 
@@ -457,12 +458,8 @@ This suggests that if a more sophisticated method of removing bad quality stubs 
 Although such an improvement may come at the expense of a low fake rate, such tracks can be potentially cleaned further downstream but tracks which aren't reconstructed are lost forever.
 
 Figure~\ref{fig:chi2HelixParametersResIterationsComparison} shows helix parameter resolution differences between one and four fitting iterations of the $\chi^{2}$ fitter, allowing for the removal of zero and up to three stubs respectively, and how this compares against the \KF's performance.
-The additional fitting iterations allow for noticeable improvements for the track parameter resolutions obtained in the endcap disks.
-\editComment{why? I'm sure I noted this down ...}
-
-In contrast however, despite the \qpt and $\phi_{0}$ resolutions achieved after four fitting iterations being competitive with those achieved by the \KF, the resolution of both $z_{0}$ and $\eta$ in the endcaps is considerably worse for the $\chi^{2}$ fitter.
-
-\editComment{Check on high stats results in table and resolution plots once these are remade - low stats runs aren't clear enough currently. Elaborate further than what has been currently said due the ability to only observe general trends until high stats are available}
+The additional fitting iterations allow for noticeable improvements for the track parameter resolutions obtained in the forward regions.
+While the \qpt and $\phi_{0}$ resolutions achieved after four fitting iterations is comparable to those achieved by the \KF, the $\chi^{2}$ fitter's resolution is considerably worse for both the $z_{0}$ and $cot(\theta)$ resolutions in the endcaps.
 
 \begin{figure}[htb]
 \centering
@@ -480,10 +477,10 @@ In contrast however, despite the \qpt and $\phi_{0}$ resolutions achieved after 
 
 \subsubsection{Conclusions and Outlook}\label{subsubsec:chi2outlook}
 \editComment{Polish more}
-
-Following the parallel development of both the linearised $\chi^{2}$ track fit and the \KF, it was decided that development on the former would be discontinued in favour of focussing resources on the latter.
-The motivations behind this decision were that the \KF was capable of achieving a higher track finding efficiency with 100.0\% purity for matched tracks, and that considerable progress had been made with an implementation in firmware.
-In contrast, the linearised $\chi^{2}$ track was not competitive in terms of track reconstruction ability, especially with respect to the stricter tracking efficiency definition, and there were also concerns over the potential feasibility of tabulating all (or the most frequently used) track derivatives in the endcap disks for FPGAs which were commercially available at the time.
+A linearised $\chi^{2}$ track fit has been implemented in software in an form using approximated mathematics to simplify any potential tabulation of its derivatives and a set of internal cuts which are iteratively applied to remove fake stubs from matched tracks and reject fake tracks.
+Following the parallel development of both the linearised $\chi^{2}$ track fit and the \KF however, it was decided that development on the former would be discontinued in favour of focussing resources on the latter.
+The motivations behind this decision were that the \KF was capable of achieving a higher track finding efficiency with 100.0\% purity for matched tracks, superior $z_{0}$ and $cot(\theta)$ resolutions in the endcaps which were comparable to the offline resolution and that considerable progress had been made with an implementation in firmware.
+In contrast, the linearised $\chi^{2}$ track was not competitive in terms of track resolution and reconstruction ability, especially with respect to the stricter tracking efficiency definition, and there were also concerns over the potential feasibility of tabulating all (or the most frequently used) track derivatives in the endcap disks for FPGAs which were commercially available at the time.
 
 \subsection{Tracking at low transverse momentum}\label{subsec:Tmtt2GeV}
 The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may be desirable if the trigger requirements demand it, so the impact of this potential requirement on the proposed proposed track-finder system was studied.
