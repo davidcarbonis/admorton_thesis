@@ -135,10 +135,8 @@ The impact of the uncertainties associated with both the JES and JER on the \MET
 The uncertainty associated with the primary vertex distributions used in the \PU reweighting is determined by varying the expected minimum bias cross section used in simulation $\pm X%$ in order to ascertain the impact of greater or lesser amounts of \PU on the analysis.
 
 \subsection{b-tagging Uncertainties}
-The uncertainties associated with the b-tagging scale factors described in Chapter~\ref{subsec:btagEff} are obtained by varying their value by $\pm 1\sigma$, as calculated by the BTV POG. 
+The uncertainties associated with the b-tagging scale factors described in Chapter~\ref{subsec:btagEff} are obtained by varying their value by $\pm 1\sigma$, as calculated by the BTV POG.
 
-\subsection{Parton Distribution Functions}
-%%% ME_PS
 \subsection{Non-prompt Lepton Contributions}
 As this data-driven estimate of the instrumental backgrounds should have no dependence on either the lepton flavour or selection cuts, the variation of the ratio of opposite-sign over same-sign events as a function of the lepton flavour and the cut level was considered to be well accounted for by a 30\% rate uncertainty.
 
@@ -184,17 +182,25 @@ The uncertainties associated with the lepton identification, isolation and recon
 %
 %\editComment{Update values of alpha}
 
-\section{Theoretical Uncertainties}
+\section{Theoretical Uncertainties}\label{sec:theorySysts}
 
 \subsection{Parton Density Functions}
 %%Discussion of what PDFs are, is given in an earlier chapter
 In order to calculate the uncertainties on the PDFs used in the generation of the MC samples considered, the 
 
-A number of MC samples however, do not store the PDF weights as part of the event's 
+A number of MC samples however, do not store the PDF weights as part of the event's LHE header	
+
 \subsection{Factorisation and renormalisation scales}
-The factorisation and renormalisation scales used at the Matrix Element level are 
+The factorisation and renormalisation scales used at the Matrix Element and Parton Shower levels are 
+
+ME - event level info
+PS - dedicated samples
+
 \subsection{Parton Shower Matching Thresholds}
 As discussed in Chapter~\ref{subsec:eventGenerators}, all of the MC samples considered use model the hard scattering process through a dedicated Matrix Element generator, with PYTHIA 8 being used to perform the subsequent PS and hadronisation.
+
+The uncertainty associated with the choice of the matching threshold used is evaluated by using the dedicated matching samples.
+Such samples have been generated for the \ttbar and single top t-channel backgrounds, listed in Table~\ref{tab:theorySampleList}, where the model's matching threshold parameter \emph{hdamp} is varied up and down by one standard deviation~\cite{CMS:2016kle}.
 
 The uncertainty 
 \section{Impact of the Uncertainties}
