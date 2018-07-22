@@ -122,12 +122,14 @@ These uncertainties, as well as the statistical uncertainties arising from the s
 
 \section{Experimental Uncertainties}
 \subsection{Jet Energy Corrections}
-The Jet Energy Correction group also determines the uncertainties associated with the JECs, discussed in Chapter~\ref{subsubsec:JECs}, which they calculate. 
-Jet Energy Scale (JES) - SF moved up/down by one s.d.
-Jet Energy Resolution (JER) - s.d.  of Gaussian fitted to detector's jet response.
-Accounted for bysmearing the jet 4-vector as function of its true and reco \pt and $\eta$, with the variation of applied up/down 
+The Jet Energy Corrections group also provides the uncertainties associated with the JES and JER they determine, discussed in Chapters~\ref{subsubsec:JECs} and~\ref{subsec:jesjer}, are determined by the Jet Energy Corrections group~\cite{Khachatryan:2016kdb}. 
 
-Khachatryan:2016kdb
+The impact that the JES has on the jet kinematics is evaluated by varying the corrective JES up and down by a standard deviation.
+The uncertainty associated with the JER smearing is accounted for by varying the smearing factor up and down by the associated statistical uncertainty.
+Recently the uncertainties associated with the JER have been updated during the reprocessing of the 2016 dataset to include the systematic uncertainties in addition to the statistical uncertainties.
+At the time of writing this thesis, these reprocessed samples and the impact of the revised total JER uncertainties has not been propagated through the analysis.
+
+The impact of the uncertainties associated with both the JES and JER on the \MET are accounted for by propagating the JEC uncertainties through to the \MET and evaluating the impact they have.
 
 \subsection{Pileup Reweighting}
 The uncertainty associated with the primary vertex distributions used in the \PU reweighting is determined by varying the expected minimum bias cross section used in simulation $\pm X%$ in order to ascertain the impact of greater or lesser amounts of \PU on the analysis.
@@ -193,6 +195,7 @@ A number of MC samples however, do not store the PDF weights as part of the even
 The factorisation and renormalisation scales used at the Matrix Element level are 
 \subsection{Parton Shower Matching Thresholds}
 As discussed in Chapter~\ref{subsec:eventGenerators}, all of the MC samples considered use model the hard scattering process through a dedicated Matrix Element generator, with PYTHIA 8 being used to perform the subsequent PS and hadronisation.
+
 The uncertainty 
 \section{Impact of the Uncertainties}
 The effect of each of the systematics considered on the event rate, in percentage, are shown in Table~\ref{tab:systImpact}.
