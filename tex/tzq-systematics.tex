@@ -113,12 +113,20 @@ Variables chosen
 Each sample of events for each process considered is split into a training and testing sample.
 \chapter{Systematic Uncertainties}\label{chapter:systematics}
 %%% Intro
-Understanding and minimising the impact of uncertainties in the resolution and efficiency of the detector and in the modelling of the simulation used to predict the signal and background processes is essential in order to make meaningful measurements.
+As the resolution and efficiency of the detector and the modelling of the simulated samples is not perfect, 
+
+
+ is essential in order to make meaningful measurements for any physics analysis.
+Given the low cross section and background dominated signal region of the signal process being searched, it is ...
 
 %%% Sources
-There are two 
+These sources of uncertainty either originate from experimental or theoretical uncertainties and typically influence the result in one of two ways:
+\begin{itemize}
+\item \textbf{Rate or normalisation uncertainties} impact the number of events present and originate from
+\item \textbf{Shape or scale factor uncertainties} ...
+\end{itemize}
 
-These uncertainties, as well as the statistical uncertainties arising from the size of the simulated samples available, have been treated as nuisance parameters in the statistical fit model, as discussed in~\ref{chapter:results}.
+These uncertainties, as well as the statistical uncertainties arising from the size of the simulated samples available, are treated as nuisance parameters in the statistical fit model which is discussed in~\ref{chapter:results}.
 
 \section{Experimental Uncertainties}
 \subsection{Jet Energy Corrections}
@@ -134,6 +142,22 @@ The impact of the uncertainties associated with both the JES and JER on the \MET
 \subsection{Pileup Reweighting}
 The uncertainty associated with the primary vertex distributions used in the \PU reweighting is determined by varying the expected minimum bias cross section used in simulation $\pm X%$ in order to ascertain the impact of greater or lesser amounts of \PU on the analysis.
 
+\subsection{Parton Density Functions}\label{subsec:pdfSysts}
+%%Discussion of what PDFs are, is given in an earlier chapter 
+As the PDFs are experimentally derived from various experiments, which requires the propagation of the uncertainties associated with each experiment, 
+
+the impact of the systematic uncertainties associated with the PDF measures are require the analysis evaluated.
+
+The NNPDF3.0 family of PDF sets is considered for all of the samples considered, with the LO and NLO and four and five flavour scheme sets used depending on whether the sample was produced at LO or NLO or using the four or five flavour schemes.
+For each PDF set, one hundred alternative event weights are stored as per-event weights in the LHE event header for almost all of the MC samples considered.
+An estimation of the of the PDF uncertainties are derived from these alternative event as the root mean square of the difference between the nominal and alternative event weights
+
+The exception to his are the single top tW-channel samples as it was not possible at the time the samples were produced  to generate per-event weights to account for both the matrix element factorisation and renormalisation scales and PDF variations for this particular process.
+In order to evaluate the impact of the uncertainties associated with the PDF measurements for the tW-channel samples, the LHAPDF (Les Houches Accord Parton Distribution Function) library is used to access both the nominal PDF weight and 
+50 eigenvalues from the NNPDF3.0 set to provide one hundred alternative event weights to be considered.
+Like the PDF variations stored in the LHE event header, the root mean square of the difference between the nominal and alternative event weights is used determine the appropriate systematic uncertainty.
+
+
 \subsection{b-tagging Uncertainties}
 The uncertainties associated with the b-tagging scale factors described in Chapter~\ref{subsec:btagEff} are obtained by varying their value by $\pm 1\sigma$, as calculated by the BTV POG.
 
@@ -141,11 +165,20 @@ The uncertainties associated with the b-tagging scale factors described in Chapt
 As this data-driven estimate of the instrumental backgrounds should have no dependence on either the lepton flavour or selection cuts, the variation of the ratio of opposite-sign over same-sign events as a function of the lepton flavour and the cut level was considered to be well accounted for by a 30\% rate uncertainty.
 
 \subsection{Luminosity Uncertainties}
-CMS uses five detectors, the pixel detector, DTs, HF, the Fast Beam Conditions Monitor and Pixel Luminosity Telescope to monitor and measure the instantaneous and integrated luminosity, with absolute calibrations of the detectors made through conducting Van der Meer (VdM) scans during dedicated LHC runs.
-The luminosity value and its associated uncertainty used was determined by the CMS Luminosity Group using 
-Pixel Cluster Counting (PCC) 
+CMS uses the pixel detector, DTs, HF, the Fast Beam Conditions Monitor and Pixel Luminosity Telescope to monitor and measure the instantaneous and integrated luminosity and Van der Meer (VdM) scans during dedicated LHC runs to calibrate the absolute luminosity scale calibrations of the detectors.
+
+The Pixel Cluster Counting (PCC) method, using the pixel detector, has been used throughout Run 2 of the LHC by the CMS Luminosity Group to measure the luminosity delivered and the uncertainty associated with it.
+The PCC method was chosen as 
 
 The overall uncertainty \cite{CMS:2017_lumi} %2016 lumi
+
+%The MC events produced are weighted by a scale factor in order to correctly normalise them with respect to the data they are compared against.
+%This normalisation scale factor is given by:
+%\begin{equation}
+%SF_{dataset} = \frac{\pazocal{L} \sigma}{N_{MC}^{Events}}
+%\end{equation}
+%where $\pazocal{L}$ is the amount of total integrated luminosity considered in the data used, $\sigma$ the cross section of the MC sample considered and $N_{MC}^{Events}$ is number of simulated events considered for the process.
+
 \subsection{Lepton Efficiencies}
 The uncertainties associated with the lepton identification, isolation and reconstruction efficiency scale factors discussed in Chapter~\ref{subsec:leptonRecoSFs} are varied +/- 1 sigma.
 
@@ -184,17 +217,20 @@ The uncertainties associated with the lepton identification, isolation and recon
 
 \section{Theoretical Uncertainties}\label{sec:theorySysts}
 
-\subsection{Parton Density Functions}
-%%Discussion of what PDFs are, is given in an earlier chapter
-In order to calculate the uncertainties on the PDFs used in the generation of the MC samples considered, the 
-
-A number of MC samples however, do not store the PDF weights as part of the event's LHE header	
-
 \subsection{Factorisation and renormalisation scales}
-The factorisation and renormalisation scales used at the Matrix Element and Parton Shower levels are 
+The factorisation and renormalisation scales ($\mu_{f}$,$\mu_{s}$) used at the Matrix Element and Parton Shower levels are parametrised as functions of $Q^{2}$.
+In order to consider the impact of the uncertainty associated with the choice of scales used, $Q^{2}$ is varied up and down by factors of 2 and 0.5 respectively.
 
-ME - event level info
-PS - dedicated samples
+For the majority of the MC samples considered, the variations in $\mu_{f}$ and $\mu_{s}$ are stored in the LHE event header as per-event weights.
+These weights are produced for where one scale is fixed as the other is varied or both are varied simultaneously.
+The event weights for the simultaneously varied scales were used to reweighting each event in order to evaluate the impact of the $\mu_{f}$ and $\mu_{s}$ uncertainties.
+
+In contrast to the ME level, the impact of the PS shower scale uncertainties was evaluated through the use of dedicated samples where the PS scale had been varied up and down.
+These centrally produced samples are listed in Table~\ref{tab:theorySampleList} as the ``scale up'' and ``scale down'' samples.
+In the case of \ttbar however, these samples are listed as ISR (initial-state radiation) and FSR (final-state radiation), as it includes the variations in the gluon emissions of the incoming and outgoing partons.
+
+As mentioned above in Chapter~\ref{subsec:pdfSysts}, it was not possible for the single top tW-channel MC samples to be produced with per-event weights to account for the matrix element factorisation and renormalisation scales.
+Dedicated samples for this process, listed in Table~\ref{tab:theorySampleList}, where the matrix element and parton shower scales are varied are used to evaluate these systematic uncertainties.
 
 \subsection{Parton Shower Matching Thresholds}
 As discussed in Chapter~\ref{subsec:eventGenerators}, all of the MC samples considered use model the hard scattering process through a dedicated Matrix Element generator, with PYTHIA 8 being used to perform the subsequent PS and hadronisation.
@@ -202,7 +238,6 @@ As discussed in Chapter~\ref{subsec:eventGenerators}, all of the MC samples cons
 The uncertainty associated with the choice of the matching threshold used is evaluated by using the dedicated matching samples.
 Such samples have been generated for the \ttbar and single top t-channel backgrounds, listed in Table~\ref{tab:theorySampleList}, where the model's matching threshold parameter \emph{hdamp} is varied up and down by one standard deviation~\cite{CMS:2016kle}.
 
-The uncertainty 
 \section{Impact of the Uncertainties}
 The effect of each of the systematics considered on the event rate, in percentage, are shown in Table~\ref{tab:systImpact}.
 These rates, whilst providing a useful insight into which of the systematics are the most important, do not show how the shape of each fitted variable and the MVA discriminant is influenced by each uncertainty.
