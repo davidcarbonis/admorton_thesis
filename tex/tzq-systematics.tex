@@ -56,6 +56,9 @@ Non-prompt estimation: & a$\pm$b & c$\pm$d & e$\pm$f \\
 Madgraph - normalises well but poor jet multiplicity
 aMC@NLO - bad normalisation, but good higher jet multiplicity description
 
+\subsection{\ttbar background}\label{subsec:ttbarEstimation}
+
+
 \section{Multivariate Analysis Techniques}\label{sec:mvas}
 Single top 
 \subsection{Boosted Decision Trees}\label{subsec:bdt}
@@ -113,18 +116,14 @@ Variables chosen
 Each sample of events for each process considered is split into a training and testing sample.
 \chapter{Systematic Uncertainties}\label{chapter:systematics}
 %%% Intro
-The 
-As the resolution and efficiency of the detector and the modelling of the simulated samples is not perfect, 
-
-
- is essential in order to make meaningful measurements for any physics analysis.
-Given the low cross section and background dominated signal region of the signal process being searched, it is ...
+In order to make a meaningful and robust measurement, it is vital to understand the and control the sources of systematic uncertainties associated with the physics analysis.
+This is particularly important for the search for tZq where the low cross section of the signal process against a background dominated signal region requires ... 
 
 %%% Sources
 These sources of uncertainty either originate from experimental or theoretical uncertainties and typically influence the result in one of two ways:
 \begin{itemize}
-\item \textbf{Rate or normalisation uncertainties} impact the number of events present and originate from
-\item \textbf{Shape or scale factor uncertainties} ...
+\item \textbf{Rate or normalisation uncertainties} impact the number of events present and thus influence the  normalisation of the distributions considered.
+\item \textbf{Shape or scale factor uncertainties} impact the shape of the distributions as they involve the scaling of individual events as a function of their kinematics in order to correct inconsistencies between simulation and data.
 \end{itemize}
 
 These uncertainties, as well as the statistical uncertainties arising from the size of the simulated samples available, are treated as nuisance parameters in the statistical fit model which is discussed in~\ref{chapter:results}.
@@ -161,9 +160,9 @@ As this data-driven estimate of the instrumental backgrounds should have no depe
 
 \subsection{Luminosity Uncertainties}
 CMS uses the pixel detector, DTs, HF, the Fast Beam Conditions Monitor and Pixel Luminosity Telescope to monitor and measure the instantaneous and integrated luminosity.
-During Run 2, the primary offline luminosity measurements made by the CMS Luminosity Group used the pixel detector using the Pixel Cluster Counting (PCC) method following the high precision results obtained during Run 1.
-The PCC algorithm achieves this excellent performance as the result of the very low occupancy of the pixel detector and its stability over time.
-
+During Run 2, the primary offline luminosity measurements made by the CMS Luminosity Group used the pixel detector using the Pixel Cluster Counting (PCC) method due its stability over time for up an average \PU of 150 and the high precision results obtained with it during Run I.
+The PCC algorithm is able to achieve such a precision by measuring the instantaneous luminosity through the number of pixels present. 
+This is possible as the probability of pixel hit belonging to multiple tracks is very small due to the very low occupancy of the detector, inferring that the number of pixel hits are linearly proportional to the number of interactions during a bunch crossing~\cite{CMS:2017_lumi}.
 
 Using Van der Meer (VdM) scans during dedicated LHC runs to calibrate the absolute luminosity scale calibrations of the detectors~\cite{vanderMeer:1968zz}.
 The overall uncertainty in the integrated luminosity collected by CMS in 2016 was estimated to be 2.5\%~\cite{CMS:2017_lumi}.
