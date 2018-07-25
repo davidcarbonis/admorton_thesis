@@ -2,6 +2,7 @@
 Despite 
 
 \section{Data-driven Background Esimation}\label{sec:dataDrivenBackground}
+
 \subsection{Non-Prompt Leptons}\label{sec:NPLs}
 Backgrounds which involve decays into lepton + jets and where at least one jet is incorrectly reconstructed as a lepton (predominately electrons) or a lepton from the decay of heavy quarks (predominately muons), which pass the lepton selection and isolation criteria, are estimated with data.
 
@@ -65,9 +66,12 @@ The \ttbar enriched control region defined in Chapter~\ref{subsec:ttbarCR} was d
 
 \section{Multivariate Analysis Techniques}\label{sec:mvas}
 
-Despite applying the event selection described in Chapter~\ref{} to reduce 
+Despite applying the event selection described in Chapter~\ref{} to reduce the backgroun 
+The \emph{Boosted Decision Tree}~(BDT) MVA technique is used for the search presented in this thesis as it a widely used and supported technique which those undertaking the analysis were familiar with.
 
 \subsection{Boosted Decision Trees}\label{subsec:bdt}
+
+
 
 BDT implemented in XGBoost Library
 BDT features and hyperparameters chosen separately for ee and mumu channels
@@ -120,6 +124,8 @@ Variables chosen
 
 \subsection{BDT Training and Output}
 Each sample of events for each process considered is split into a training and testing sample.
+
+
 \chapter{Systematic Uncertainties}\label{chapter:systematics}
 %%% Intro
 In order to make a meaningful and robust measurement, it is vital to understand the and control the sources of systematic uncertainties associated with the physics analysis.
