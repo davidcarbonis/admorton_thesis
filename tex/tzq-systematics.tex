@@ -149,9 +149,8 @@ The impact of the PDF uncertainties are evaluated according to the PDF4LHC recom
 For almost all of the MC samples considered, this is achieved by considering the nonimal event weight and one hundred alternative PDF weights which are stored as per-event weights in the LHE 
 event header for almost all of the MC samples considered.
 
-The single top tW-channel samples are the exception to this as at the time of their generation 
-it was not possible to generate per-event weights to account for both the matrix element factorisation and renormalisation scales and PDF variations for this process.
-Therefore, in order to estimate the PDF uncertainties for the tW-channel samples, the LHAPDF (Les Houches Accord Parton Distribution Function) library is used to access both the nominal PDF weight and 50 eigenvalues from the NNPDF3.0 set to provide one hundred alternative event weights to be evaluated.
+The single top tW-channel samples are the exception to this as at the time of their generation it was not possible to generate per-event weights to account for the PDF variations for this process.
+Therefore, the LHAPDF (Les Houches Accord Parton Distribution Function) library is used to access both the nominal PDF weight and 50 eigenvalues from the NNPDF3.0 set to provide one hundred alternative event weights to be evaluated.
 
 \subsection{b-tagging Uncertainties}
 The uncertainties associated with the b-tagging scale factors described in Chapter~\ref{subsec:btagEff} are obtained by varying their value by $\pm 1\sigma$, as calculated by the BTV POG.
@@ -161,13 +160,11 @@ As this data-driven estimate of the instrumental backgrounds should have no depe
 
 \subsection{Luminosity Uncertainties}
 CMS uses the pixel detector, DTs, HF, the Fast Beam Conditions Monitor and Pixel Luminosity Telescope to monitor and measure the instantaneous and integrated luminosity.
-Throughout Run 2 of the LHC, the CMS Luminosity Group has measured the luminosity delivered with the pixel detector using the Pixel Cluster Counting (PCC) method.
- and Van der Meer (VdM) scans during dedicated LHC runs to calibrate the absolute luminosity scale calibrations of the detectors.
+During Run 2, the primary offline luminosity measurements made by the CMS Luminosity Group used the pixel detector using the Pixel Cluster Counting (PCC) method following the high precision results obtained during Run 1.
+The PCC algorithm achieves this excellent performance as the result of the very low occupancy of the pixel detector and its stability over time.
 
-The Pixel Cluster Counting (PCC) method, using the pixel detector, has been used throughout Run 2 of the LHC by the CMS Luminosity Group to measure the luminosity delivered and the uncertainty associated with it.
-The PCC method was chosen as 
 
-The overall uncertainty \cite{CMS:2017_lumi} %2016 lumi
+Using Van der Meer (VdM) scans during dedicated LHC runs to calibrate the absolute luminosity scale calibrations of the detectors, the overall uncertainty in the integrated luminosity measured by CMS in 2016 was estimated to be 2.5\%~\cite{CMS:2017_lumi}.
 
 %The MC events produced are weighted by a scale factor in order to correctly normalise them with respect to the data they are compared against.
 %This normalisation scale factor is given by:

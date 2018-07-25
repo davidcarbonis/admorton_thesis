@@ -26,8 +26,9 @@ As
 \section{Trigger Strategy}\label{sec:triggerStrategy}
 As the search for the tZq dilepton final state relies on the identification of the two leptons from the Z boson decay, the trigger strategy consists of selecting events from datasets identified by the presence of leptons.
 Given that the signal process being searched for is dominated by background processes and will likely be limited by statistics, it is essential to reconstruct and select as many signal events as possible.
-To this end both single and double lepton triggers with the lowest possible transverse momenta thresholds are considered 
-to ensure that the maximum possible statistics can be obtained over the largest possible phase space.
+Ideally. the single and double lepton triggers with the lowest possible transverse momenta thresholds would be considered to ensure that the maximum possible statistics can be obtained over the largest possible phase space.
+The high instantaneous luminosity at the start of the most luminous data taking periods however, required a number of the L1 triggers to be prescaled to prevent the trigger bandwidth constraints being exceeded.
+As only the triggers considered for the ee channel were impacted by this, these triggers were chosen on the basis of largest amount data using unprescaled triggers with the lowest possible transverse momenta thresholds.
 
 Table~\ref{tab:triggersDatasets} lists the triggers applied to data and MC events for each channel, including the e$mu$ final state which is considered for a \ttbar enriched control region discussed in Chapter~\ref{subsec:ttbarCR}.
 %Whilst the Z boson can decay into a tau anti-tau pair, despite these leptons being simulated and reconstructed in the MC, they are not considered in the event selection for this analysis due to the difficulty simulating them due to their high mass.
@@ -251,9 +252,15 @@ The leading b-jet however, is excluded from consideration as the hardest b-jet i
 Whilst the signal region does not explicitly cut on \MET, it is used in one of the Z+jets control regions, described in Chatper~\ref{subsec:zPlusJetsCR}, and in the boosted decision tree, discussed in Chapter~\ref{subsec:bdt}, in order to discriminate against backgrounds such as \ttbar which do feature significant amounts of \MET.
 
 \section{Data and MC Simulation Samples}\label{sec:samples}
-The analysis uses proton-proton collision data at $\sqrt{13}$ in 2016, considering events in the double lepton and single lepton datasets where the double and single lepton triggers respectively have fired, using the strategy described in Chapter~\ref{sec:triggerStrategy}.
+Out of the 37.8\fbinv of the proton-proton collision data at $\sqrt{13}$ collected by CMS during 2016, 35.8\fbinv was certified by the collaboration as ``good'' to be used for physics analysis.
+The difference between the certified value and the total data recorded is the result of various factors such as the inavailability of a detector.
+Due to the prescaling of the electron triggers during the start of the most luminous runs, as discussed in Chapter~\ref{sec:triggerStrategy}, the ee channel uses a reduced dataset of 35.6\fbinv were none of the triggers considered were prescaled.
+
+Events in the double lepton and single lepton datasets from across these ``good'' data runs are considered where the double and single lepton triggers respectively have fired, using the strategy described in Chapter~\ref{sec:triggerStrategy}.
 
 The MC samples used to signal and background processes that were considered are listed in Table~\ref{tab:mcList}, which includes information on the number of events generated, their cross sections and the order in perturbative accuracy in QCD to which the generators calculated the processes.
+
+
 To determine the impact of a number of theoretical uncertainties for a number of processes, a several dedicated samples, listed in Table~\ref{tab:theorySampleList}, were used.
 These systematic uncertainties are discussed further in Chapter~\ref{sec:theorySysts}.
 
