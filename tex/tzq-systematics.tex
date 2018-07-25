@@ -144,19 +144,14 @@ The uncertainty associated with the primary vertex distributions used in the \PU
 
 \subsection{Parton Density Functions}\label{subsec:pdfSysts}
 %%Discussion of what PDFs are, is given in an earlier chapter 
-As PDFs are obtained by fitting observables to experimental data from multiple experiments, there are uncertainties associated 
+The impact of the PDF uncertainties are evaluated according to the PDF4LHC recommendations~\cite{Butterworth:2015oua}, where they are estimated as the standard deviation of the weights of the nominal and the variations of the PDF set.
 
-the impact of the systematic uncertainties associated with the PDF measures are require the analysis evaluated.
+For almost all of the MC samples considered, this is achieved by considering the nonimal event weight and one hundred alternative PDF weights which are stored as per-event weights in the LHE 
+event header for almost all of the MC samples considered.
 
-The NNPDF3.0 family of PDF sets is considered for all of the samples considered, with the LO and NLO and four and five flavour scheme sets used depending on whether the sample was produced at LO or NLO or using the four or five flavour schemes.
-For each PDF set, one hundred alternative event weights are stored as per-event weights in the LHE event header for almost all of the MC samples considered.
-An estimation of the of the PDF uncertainties are derived from these alternative event as the root mean square of the difference between the nominal and alternative event weights
-
-The exception to his are the single top tW-channel samples as it was not possible at the time the samples were produced  to generate per-event weights to account for both the matrix element factorisation and renormalisation scales and PDF variations for this particular process.
-In order to evaluate the impact of the uncertainties associated with the PDF measurements for the tW-channel samples, the LHAPDF (Les Houches Accord Parton Distribution Function) library is used to access both the nominal PDF weight and 
-50 eigenvalues from the NNPDF3.0 set to provide one hundred alternative event weights to be considered.
-Like the PDF variations stored in the LHE event header, the root mean square of the difference between the nominal and alternative event weights is used determine the appropriate systematic uncertainty.
-
+The single top tW-channel samples are the exception to this as at the time of their generation 
+it was not possible to generate per-event weights to account for both the matrix element factorisation and renormalisation scales and PDF variations for this process.
+Therefore, in order to estimate the PDF uncertainties for the tW-channel samples, the LHAPDF (Les Houches Accord Parton Distribution Function) library is used to access both the nominal PDF weight and 50 eigenvalues from the NNPDF3.0 set to provide one hundred alternative event weights to be evaluated.
 
 \subsection{b-tagging Uncertainties}
 The uncertainties associated with the b-tagging scale factors described in Chapter~\ref{subsec:btagEff} are obtained by varying their value by $\pm 1\sigma$, as calculated by the BTV POG.
@@ -165,7 +160,9 @@ The uncertainties associated with the b-tagging scale factors described in Chapt
 As this data-driven estimate of the instrumental backgrounds should have no dependence on either the lepton flavour or selection cuts, the variation of the ratio of opposite-sign over same-sign events as a function of the lepton flavour and the cut level was considered to be well accounted for by a 30\% rate uncertainty.
 
 \subsection{Luminosity Uncertainties}
-CMS uses the pixel detector, DTs, HF, the Fast Beam Conditions Monitor and Pixel Luminosity Telescope to monitor and measure the instantaneous and integrated luminosity and Van der Meer (VdM) scans during dedicated LHC runs to calibrate the absolute luminosity scale calibrations of the detectors.
+CMS uses the pixel detector, DTs, HF, the Fast Beam Conditions Monitor and Pixel Luminosity Telescope to monitor and measure the instantaneous and integrated luminosity.
+Throughout Run 2 of the LHC, the CMS Luminosity Group has measured the luminosity delivered with the pixel detector using the Pixel Cluster Counting (PCC) method.
+ and Van der Meer (VdM) scans during dedicated LHC runs to calibrate the absolute luminosity scale calibrations of the detectors.
 
 The Pixel Cluster Counting (PCC) method, using the pixel detector, has been used throughout Run 2 of the LHC by the CMS Luminosity Group to measure the luminosity delivered and the uncertainty associated with it.
 The PCC method was chosen as 

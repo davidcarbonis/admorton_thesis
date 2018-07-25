@@ -254,9 +254,11 @@ Whilst the signal region does not explicitly cut on \MET, it is used in one of t
 The analysis uses proton-proton collision data at $\sqrt{13}$ in 2016, considering events in the double lepton and single lepton datasets where the double and single lepton triggers respectively have fired, using the strategy described in Chapter~\ref{sec:triggerStrategy}.
 
 The MC samples used to signal and background processes that were considered are listed in Table~\ref{tab:mcList}, which includes information on the number of events generated, their cross sections and the order in perturbative accuracy in QCD to which the generators calculated the processes.
-For a number of processes, listed in Table~\ref{tab:theorySampleList}, additional dedicated simulated samples were used to determine the impact of a number of theoretical uncertainties, which are discussed further in Chapter~\ref{sec:theorySysts}.
+To determine the impact of a number of theoretical uncertainties for a number of processes, a several dedicated samples, listed in Table~\ref{tab:theorySampleList}, were used.
+These systematic uncertainties are discussed further in Chapter~\ref{sec:theorySysts}.
 
-The hadronisation of all the MC samples considered was done using PYTHIA 8.
+For all the MC samples considered, the hadronisation of all the MC samples considered was undertaken using PYTHIA 8.
+The NNPDF3.0 family of PDF sets was used as input for the generators of the MC samples, where the corresponding PDF sets were used depending on whether the sample was produced at LO or NLO and used either the four or five flavour scheme.
 
 \begin{table}[htbp]
 \topcaption {
