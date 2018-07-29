@@ -86,7 +86,6 @@ This exponential loss approach however, is its degraded performance in noisier e
 
 
 \emph{Gradient Boosting} on 
-The \emph{XGBoost} algorithm is similar to the Gradient Boost algorithm, 
 
 The number of nodes or \emph{depth} of the tree considered
 As each node's criteria are dependent on those which have preceded it, the decision tree is capable of separating signal 
@@ -95,7 +94,7 @@ As each node's criteria are dependent on those which have preceded it, the decis
 A training sample, consisting of a subset of the data to be classified, is used as the input 
 
 
-Following the evaluation of a number of different versions of various BDT algorithms, the XGBoost algorithm as implemented in the ``XGBoost Library'' was determined to provide the optimal performance for the search presented~\cite{xgboost}.
+Following the evaluation of a number of different versions of various BDT algorithms, the Gradient Boost algorithm as implemented in the ``XGBoost Library'' was determined to provide the optimal performance for the search presented~\cite{xgboost}.
 
 
 
@@ -154,11 +153,9 @@ Each sample of events for each process considered is split into a training and t
 
 \chapter{Systematic Uncertainties}\label{chapter:systematics}
 %%% Intro
-In order to make a meaningful and robust measurement, it is vital to understand the and control the sources of systematic uncertainties associated with the physics analysis.
-This is particularly important when searching for tZq given that whilst the event selections described in Chapter~\ref{} provide for large statistics regions, 
-
-the process has a comparatively small cross section compared to the considerably larger backgrounds present, resulting in the statistical and systematic uncertainties to be of a comparable scale.
-
+In order to make a meaningful and robust measurement for any physics analysis, it is vital to understand the and control the sources of systematic uncertainties associated with it.
+This is particularly important when searching for tZq dilepton final state given that the high statistics of the background processes result in their systematic uncertainties being of a comparable order to the statistical uncertainties of the signal process.
+Therefore without additional data to reduce the statistical uncertainty, the sensitivity of the search will be limited by the systematic uncertainties.
 
 %%% Sources
 These sources of uncertainty either originate from experimental or theoretical uncertainties and typically influence the result in one of two ways:
@@ -178,7 +175,14 @@ The uncertainty associated with the JER smearing is accounted for by varying the
 Recently the uncertainties associated with the JER have been updated during the reprocessing of the 2016 dataset to include the systematic uncertainties in addition to the statistical uncertainties.
 At the time of writing this thesis, these reprocessed samples and the impact of the revised total JER uncertainties has not been propagated through the analysis.
 
-The impact of the uncertainties associated with both the JES and JER on the \MET are accounted for by propagating the JEC uncertainties through to the \MET and evaluating the impact they have.
+\subsection{\MET Uncertainties}
+As \MET is calculated from the sum of the \pT of all the PF objects and the remaining unclustered energy deposits, the uncertainties associated from both have to be considered.
+
+The impact of the uncertainties associated with both the JES and JER on the PF \MET are accounted for by propagating the JEC uncertainties through to the \MET and evaluating the impact they have.
+As the unclustered energy remains uncorrected, the impact on the \MET uncertainty is evaluated by varying the difference between the \MET and total \pT of the PF objects up and down by 10\%, the default energy uncertainty.
+
+During the time of writing this thesis, the method of determining the uncertainty associated with the unclustered energy was in the process of being replaced with a more precise method, where each particle is varied by its resolution.
+Given the small impact of the \MET uncertainties, as discussed in Chapter~\ref{sec:uncertainitiesImpact}, it is anticipated that change will have a minimal impact on the final result.
 
 \subsection{Pileup Reweighting}
 The uncertainty associated with the primary vertex distributions used in the \PU reweighting is determined by varying the expected minimum bias cross section used in simulation $\pm X%$ in order to ascertain the impact of greater or lesser amounts of \PU on the analysis.
@@ -274,7 +278,7 @@ As discussed in Chapter~\ref{subsec:eventGenerators}, all of the MC samples cons
 The uncertainty associated with the choice of the matching threshold used is evaluated by using the dedicated matching samples.
 Such samples have been generated for the \ttbar and single top t-channel backgrounds, listed in Table~\ref{tab:theorySampleList}, where the model's matching threshold parameter \emph{hdamp} is varied up and down by one standard deviation~\cite{CMS:2016kle}.
 
-\section{Impact of the Uncertainties}
+\section{Impact of the Uncertainties}\label{sec:uncertainitiesImpact}
 The effect of each of the systematics considered on the event rate, in percentage, are shown in Table~\ref{tab:systImpact}.
 These rates, whilst providing a useful insight into which of the systematics are the most important, do not show how the shape of each fitted variable and the MVA discriminant is influenced by each uncertainty.
 \editComment{Make some comment on most important/impactful systematics and how better understanding them would improve the result}
