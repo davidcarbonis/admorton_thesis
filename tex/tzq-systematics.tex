@@ -1,31 +1,36 @@
 \chapter{Background Estimation}\label{chapter:bkg}
-Simulated samples however, 
+While simulated samples are an essential component of 
+
+the limited statistics and description of some processes of simulation in the signal region require the use of data-driven background estimates.
 
 Following the application of the selection criteria for the signal region, the purity of the enriched region is 
 
 \section{Data-driven Background Esimation}\label{sec:dataDrivenBackground}
 
 \subsection{Non-Prompt Leptons}\label{sec:NPLs}
-Backgrounds which involve decays into lepton + jets and where at least one jet is incorrectly reconstructed as a lepton (predominately electrons) or a lepton from the decay of heavy quarks (predominately muons), which pass the lepton selection and isolation criteria, are estimated with data.
+Backgrounds which involve decays into lepton + jets and where at least one jet is incorrectly reconstructed as a lepton (predominately electrons) or a lepton from the decay of heavy quarks (predominately muons), which pass the lepton selection and isolation criteria, are estimated ..
+Given the difficulty in accurately modelling QCD processes makes ... 
 
-The estimation of this background uses the same methodology as when performing top quark pair production~\cite{CMS:2016syx} and same-sign SUSY searches~\cite{CMS:2015vqc}.
-The vast majority of the same-sign event yields found are the result of non-lepton and charge misidentified leptons, with some contribution from prompt leptons.
+The vast majority of the same-sign event yields found are the result of non-prompt lepton and charge misidentified leptons, with some contribution from prompt leptons.
 As these backgrounds are independent of the charge of the lepton pairs, it is expected that the nominal (opposite-sign) sample would have a similar contribution \cite{CMS:2015vqc}.
 
-To estimate this contribution of opposite-sign non-prompt leptons in data, the same-sign event yields with the expected prompt-lepton contribution subtracted, is multiplied by a ratio of opposite-sign over same-sign non-prompt lepton events taken from MC.
+The estimation of the non-prompt lepton (NPL) background uses the same methodology as when performing top quark pair production~\cite{CMS:2016syx} and same-sign SUSY searches~\cite{CMS:2015vqc}.
 
-The method requires that the same-sign control region established uses the same selection criteria as the nominal signal region, albeit with same-sign lepton pairs instead of opposite-sign ones.
-This control region is dominated by non-lepton lepton events, but also contains contributions from prompt lepton events, charge misidentification and real same-sign pairs.
+Therefore using a same-sign control region which only differs from the nominal signal region region by requiring that the pair of selected leptons have the same charge, a data driven 
 
-This data driven estimate is obtained using the following equation:
+The contribution of opposite-sign NPLs in data is estimated using Equation~\ref{eq:NPL},
 
 \begin{equation}
  N_{data}^{OS non-prompt} = (N_{data}^{SS} - N^{SS}_{real + mis-ID}).\frac{N_{MC}^{OS non-prompt}}{N_{MC}^{SS non-prompt}}
-\end{equation}
+\end{equation}\label{eq:NPL}
 
-where $N_{data}^{SS}$ is the total number of same sign events observed in data, $N^{SS}_{real + mis-ID}$ is the expected number of real same-sign events and events with charge misidentification and $N_{MC}^{OS non-prompt}$ and $N_{MC}^{SS non-prompt}$ the number of opposite-sign and same-sign non-prompt leptons observed in MC used to appropriately scale the estimate.
+where $N_{data}^{SS}$ is the total number of same sign events observed in data, $N^{SS}_{real + mis-ID}$ is the expected number of real same-sign events and events with charge misidentification and $N_{MC}^{OS non-prompt}$ and $N_{MC}^{SS non-prompt}$ the number of opposite-sign and same-sign NPLs observed in MC used to appropriately scale the estimate.
 
-This ratio of MC opposite-sign over same-sign events is referred to as R, and is calculated using generator level information from reconstructed objects which have matched to a generator level particle. R is calculated from the W + jets, \ttZ and \ttW leptonic decaying, and single top MC samples with sufficient statistics given that these processes are expected to be the predominant source of non-prompt leptons for this analysis. 
+The method requires that the same-sign control region established uses the same selection criteria as the nominal signal region, albeit with same-sign lepton pairs instead of opposite-sign ones.
+This control region is dominated by NPL events, but also contains contributions from prompt lepton events, charge misidentification and real same-sign pairs.
+
+The ratio of MC opposite-sign over same-sign events is referred to as R, and is calculated using generator level information from reconstructed objects which have matched to a generator level particle. 
+R is calculated from the W + jets, \ttZ and \ttW leptonic decaying, and single top MC samples where there are sufficient statistics given that these processes are expected to be the predominant source of non-prompt leptons for this analysis. 
 
 \begin{table}[!htbp]
 \centering
@@ -55,14 +60,19 @@ Non-prompt estimation: & a$\pm$b & c$\pm$d & e$\pm$f \\
 \label{tab:fakeLeptonYields}
 \end{table}
 
+Using the Equation
+
 \subsection{Z+jets background}\label{subsec:zPlusJetsEstimation}
+
 Madgraph - normalises well but poor jet multiplicity
 aMC@NLO - bad normalisation, but good higher jet multiplicity description
 
 \subsection{\ttbar background}\label{subsec:ttbarEstimation}
 The \ttbar enriched control region defined in Chapter~\ref{subsec:ttbarCR} was designed to provide an orthogonal region which was topologically similar to the signal region in order to validate:
- whether or not the simulated \ttbar sample used accurately modelled the \ttbar process
- and if not, to be used to derive a data-driven estimate for \ttbar.
+\begin{itemize}
+\item whether or not the simulated \ttbar sample used accurately modelled the \ttbar process;
+\item and if not, to be used to derive a data-driven estimate for \ttbar.
+\end{itemize}
 
 
 
@@ -79,15 +89,21 @@ A decision tree in its simplest form is a series of sequential binary decisions 
 This involves training multiple trees in succession on the same training sample which has been reweighted based on the past trees' performance.
 At the end of the process all the trees are combined into a single classifier which is given by the weighted average of the trees, thus creating a strong learner out of an ensemble of weak learners.
 
-\emph{Bagging} is a similar concept to boosting, involving each tree being trained on a random subset of the training sample, where every element has an equal probability of being sampled.
-As 
+\emph{Bagging} is a similar concept to boosting, but involves each tree being trained on a random subset of the training sample, where every element has an equal probability of being sampled, rather than the whole training sample.
 
-The \emph{Adaptive Boost} (AdaBoost) algorithm is a popular 
+Following the evaluation of a number of Boosting and Bagging algorithms for decision trees, it was determined that the Gradient Boost algorithm as implemented in the ``XGBoost Library'' provided the optimal performance for the search presented~\cite{xgboost}.
+
+\emph{Gradient Boosting} models the shortcomings of the model 
+
+
+The 
+
+
+The \emph{Adaptive Boost} (AdaBoost) and \emph{Gradient Boosting} algorithms are two of the most popular boosting algorithms used.
+
+Adaboost
 
 This exponential loss approach however, is its degraded performance in noisier environments as it is not robust in 	
-
-
-\emph{Gradient Boosting} on 
 
 The number of nodes or \emph{depth} of the tree considered
 As each node's criteria are dependent on those which have preceded it, the decision tree is capable of separating signal 
@@ -96,7 +112,6 @@ As each node's criteria are dependent on those which have preceded it, the decis
 A training sample, consisting of a subset of the data to be classified, is used as the input 
 
 
-Following the evaluation of a number of different versions of various BDT algorithms, the Gradient Boost algorithm as implemented in the ``XGBoost Library'' was determined to provide the optimal performance for the search presented~\cite{xgboost}.
 
 
 
