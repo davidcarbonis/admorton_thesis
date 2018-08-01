@@ -1,9 +1,211 @@
 \chapter{Background Estimation}\label{chapter:bkg}
+
 While simulated samples are an essential component of 
 
 the limited statistics and description of some processes of simulation in the signal region require the use of data-driven background estimates.
 
-Following the application of the selection criteria for the signal region, the purity of the enriched region is 
+\section{Data and MC Simulation Samples}\label{sec:samples}
+Out of the 37.8\fbinv of the proton-proton collision data at $\sqrt{13}$ collected by CMS during 2016, 35.8\fbinv was certified by the collaboration as ``good'' to be used for physics analysis.
+
+The difference between the certified value and the total data recorded is the result of various factors such as the unavailability of a detector.
+Due to the prescaling of the electron triggers during the start of the most luminous runs, as discussed in Chapter~\ref{sec:triggerStrategy}, the ee channel uses a reduced dataset of 35.6\fbinv were none of the triggers considered were prescaled.
+
+Events in the double lepton and single lepton datasets from across these ``good'' data runs are considered where the double and single lepton triggers respectively have fired, using the strategy described in Chapter~\ref{sec:triggerStrategy}.
+
+The MC samples used to signal and background processes that were considered are listed in Table~\ref{tab:mcList}, which includes information on the number of events generated, their cross sections and the order in perturbative accuracy in QCD to which the generators calculated the processes.
+
+
+To determine the impact of a number of theoretical uncertainties for a number of processes, a several dedicated samples, listed in Table~\ref{tab:theorySampleList}, were used.
+These systematic uncertainties are discussed further in Chapter~\ref{sec:theorySysts}.
+
+For all the MC samples considered, the hadronisation of all the MC samples considered was undertaken using PYTHIA 8.
+The NNPDF3.0 family of PDF sets was used as input for the generators of the MC samples, where the corresponding PDF sets were used depending on whether the sample was produced at LO or NLO and used either the four or five flavour scheme.
+
+\begin{table}[htbp]
+\topcaption {
+The MC processes and their associated total number of events, cross sections and generators (and order in perturbative QCD accuracy they are calculated to), considered for the search for tZq in the dilepton final state. Both generators considered for the Z+jet background are also listed below.
+}
+\label{tab:mcList}
+  \centering
+  \resizebox{\textwidth}{!}{
+% This right-aligns numbers in column, but centers them under column title.
+ \begin{tabular}{cccc}
+   \hline
+   \textbf{MC process} & \textbf{Events} & \textbf{Cross section (pb)} & \textbf{Generator (Order)}   \\
+   \hline
+   tZq  & 14.5M & 0.0758  & aMC@NLO (NLO) \\
+   \hline
+   tHq  & 3.5M & 0.07462  & Madgraph (LO) \\
+   \hline
+   tWZ/tWll  & 50K & 0.01104  & Madgraph (LO) \\
+   \hline
+   t tW-channel & 7M & 35.85 & POWHEG (NLO) \\
+   $\overline{\text{t}}$ tW-channel & 6.9M & 35.85 & POWHEG (NLO) \\
+   \hline
+   t s-channel & 2.9M & 10.32 & aMC@NLO (NLO) \\
+   \hline
+   t t-channel & 67.2M & 136.02 & POWHEG (NLO) \\
+   $\overline{\text{t}}$ t-channel & 38.8M & 80.95 & POWHEG (NLO) \\
+   \hline
+   \ttbar & 77.1M & 831.76 & POWHEG (NLO) \\
+   \hline
+   \ttbarZ $\rightarrow$ ll$\nu\nu$ & 13.9M & 0.2529   & aMC@NLO (NLO) \\
+   \ttbarZ $\rightarrow$ qq & 749K & 0.5297   & aMC@NLO (NLO) \\
+   \hline
+   \ttbarW $\rightarrow$ l$\nu$ & 5.3M & 0.2001   & aMC@NLO (NLO) \\
+   \ttbarW $\rightarrow$ qq & 833K & 0.405  & aMC@NLO (NLO) \\
+   \hline
+   \ttbarH $\rightarrow$ bb & 3.8M & 0.2942 & POWHEG (NLO) \\
+           $\rightarrow$ non bb & 4.0M & 0.2123 & POWHEG (NLO) \\
+   \hline
+   W+jets & 24.1M & 61526.7 & aMC@NLO (NLO) \\
+   \hline
+   Z+jets ($m_{Z} \geq 50\GeVcc $ & 146M & 5765.4 & Madgraph (LO) \\
+   Z+jets ($10 \GeVcc \leq m_{Z} < 50\GeVcc$ & 35.3M & 18610.0 & Madgraph (LO) \\
+   \hline
+   Z+jets ($m_{Z} \geq 50\GeVcc $ & 151M & 5765.4 & aMC@NLO (NLO) \\
+   Z+jets ($10 \GeVcc \leq m_{Z} < 50\GeVcc$ & 106M & 18610.0 & aMC@NLO (NLO) \\
+   \hline
+   WW $\rightarrow$ l$\nu$qq & 9.0M & 49.997  & POWHEG (NLO) \\
+      $\rightarrow$ ll$nu\nu$ & 2.0M & 12.178 & POWHEG (NLO) \\
+   \hline
+   WZ $\rightarrow$ l$\nu$qq & 24.2M & 10.73 & aMC@NLO (NLO) \\
+      $\rightarrow$ llqq & 26.5M & 5.606 & aMC@NLO (NLO) \\
+      $\rightarrow$ lll$\nu$ 1.9M & 5.26 & aMC@NLO (NLO) \\
+   \hline
+   ZZ $\rightarrow$ ll$\nu\nu$ & 8.8M & 0.5644 & POWHEG (NLO) \\
+      $\rightarrow$ llqq & 15.3M & 3.222 & aMC@NLO (NLO) \\
+      $\rightarrow$ llll & 10.7M & 1.204 & aMC@NLO (NLO) \\
+   \hline
+   WWW & 240K & 0.2086 & aMC@NLO (NLO) \\
+   \hline
+   WWZ & 250K & 0.1651 & aMC@NLO (NLO) \\
+   \hline
+   WZZ & 247K & 0.05565 & aMC@NLO (NLO) \\
+   \hline
+   ZZZ & 249K & 0.01398 & aMC@NLO (NLO) \\
+   \hline
+   
+ \end{tabular}}
+\end{table}
+
+\begin{table}[htbp]
+\topcaption {
+The dedicated MC samples used to determine the impact of theoretical uncertainties, including the associated total number of events, cross sections and generators (and order in perturbative QCD accuracy they are calculated to), considered for the search for tZq in the dilepton final state.
+}
+\label{tab:theorySampleList}
+  \centering
+ \resizebox{\textwidth}{!}{
+ \begin{tabular}{cccc}
+   \hline
+   \textbf{MC process} & \textbf{Events} & \textbf{Cross section (pb)} & \textbf{Generator (Order)}   \\
+   \hline
+   tZq scale up & 6.9M & 0.0758  & aMC@NLO (NLO) \\
+   tZq scale down & 7.0M & 0.0758  & aMC@NLO (NLO) \\
+   \hline
+   t tW-channel scale up & 998K & 35.85 & POWHEG (NLO) \\
+   t tW-channel scale down & 994K & 35.85 & POWHEG (NLO) \\
+   $\overline{\text{t}}$ tW-channel scale down & 1.0M & 35.85 & POWHEG (NLO) \\
+   $\overline{\text{t}}$ tW-channel scale down & 999K & 35.85 & POWHEG (NLO) \\
+   \hline
+   t t-channel scale up & 5.7M & 136.02 & POWHEG (NLO) \\
+   t t-channel scale down & 5.9M & 136.02 & POWHEG (NLO) \\
+   t t-channel matching up & 6.0M & 136.02 & POWHEG (NLO) \\
+   t t-channel matching down & 6.0M & 136.02 & POWHEG (NLO) \\
+   $\overline{\text{t}}$ t-channel scale up & 4.0M & 80.95 & POWHEG (NLO) \\
+   $\overline{\text{t}}$ t-channel scale down & 3.9M & 80.95 & POWHEG (NLO) \\
+   $\overline{\text{t}}$ t-channel matching up & 4.0M & 80.95 & POWHEG (NLO) \\
+   $\overline{\text{t}}$ t-channel matching down & 4.0M & 80.95 & POWHEG (NLO) \\
+   \hline
+   \ttbar ISR up & 156.5M & 831.76 & POWHEG (NLO) \\
+   \ttbar ISR down & 149.8M & 831.76 & POWHEG (NLO) \\
+   \ttbar FSR up & 152.6M & 831.76 & POWHEG (NLO) \\
+   \ttbar FSR down & 156.0M & 831.76 & POWHEG (NLO) \\
+   \ttbar matching up & 58.9M & 831.76 & POWHEG (NLO) \\
+   \ttbar matching down & 58.2M & 831.76 & POWHEG (NLO) \\
+   \hline   
+ \end{tabular}}
+\end{table}
+
+\section{Simulation Corrections}\label{sec:simCorrections}
+Simulation is unable to fully recreate all the effects observed in data, either because certain parameters are not precisely known or cannot be be calculated.
+To account for these discrepancies, corrective scale factors are used to reweight MC on a per event basis.
+Such scale factors are usually derived as a function of \pt and $\eta$ so as to account for the variation of the detector response in both.
+These corrections are used to correct simulation for lepton identification, isolation and reconstruction efficiencies, b-tagging efficiencies, the poor modelling of pileup in simulation, and the detector resolutions observed in data.
+
+\editComment{add SF distributions in appendix? Noticed others do this...}
+
+\subsection{Miscalibrated Tracker APV}\label{subsec:hipEffect}
+During the first half of data taking in 2016 the silicon strip detector suffered from instantaneous luminosity dependent  hit finding inefficiencies, particularly in high occupancy regions, due to saturation in the pre-amplifier in the front end electronics~\cite{Fiori:2016ebh}.
+This issue was resolved by changing the configuration of the electronics.
+While the affected part of the dataset has been reprocessed to mitigate the impact on the quality of the data taken, there is still a negative impact on the detector efficiency for objects that rely upon highly efficient tracking data.
+This is accounted for by the weighting of events appropriately when the scale factors are produced, either centrally by CMS or those derived for the analysis (\ie the trigger scale factors), so that a single scale factor is applied to a simulated event.
+
+%In most cases, centrally produced scale factors are derived for the whole of the 2016 dataset to account for this, but 
+%for muons they were provided for both the affected and unaffected parts of the dataset separately.
+%Consequently, the muon scale factors were weighted according to the luminosity they corresponded to before their application to simulation.
+%Similarly, the muon trigger scale factors that were derived were also produced 
+
+\subsection{Lepton Efficiency}\label{subsec:leptonRecoSFs}
+The identification, isolation and reconstruction efficiencies of leptons are calculated using measurements of $Z \rightarrow l^{+} l ^{-}$ events with the \emph{tag-and-probe} method~\cite{CMS:2008rxa}.
+Using events within a dilepton invariant mass window to ensure a high purity, from this large statistics lepton sample, the method ``tags'' and ``probes'' the leptons where one has passed a tight and the other a loose selection criteria.
+For source of each efficiency and lepton flavour, the efficiency is given as the fraction of events where the probe leptons passed the relevant selection criteria.
+This methodology is used to create corrective scale factors for each component and these are multiplicatively applied to each leptons' event weight as functions of their \pt, $\eta$, and flavour.
+
+The trigger efficiency of electrons and muons is calculated using a method which considers events that pass the lepton selection criteria in the signal region~\ref{sec:signalRegion} and which are selected by triggers which are weakly correlated (also known as cross triggers) with the triggers used in the analysis~\cite{Khachatryan:2016kzg}.
+From this collection of events, the number of events that pass and fail the analysis triggers are counted to produce the trigger efficiency:
+
+\begin{equation}
+\epsilon_{trigger} = \frac{N_{X triggers + lepton triggers}}{N_{X triggers}} \\
+\end{equation}
+
+where $N_{X trigger}$ is the number of events which have passed the lepton selection criteria and the cross triggers, and $N_{X triggers + lepton triggers}$ is $N_{X trigger}$ and the number of events which have also passed the lepton triggers.
+
+As the triggers requirements are applied to both simulated and data events, a scale factor of the ratio of the trigger efficiency in data and in simulation is applied to the event weight in simulation.
+
+%For the scale factors derived for the ee and e$\mu$ channels, a constant scale factor was found to be sufficient to account for the differences between data and siulation.
+%In the case of the $\mu\mu$ channel however, the scale factor was produced as a function of both \pt and $\eta$ due to the trigger turn-on curve in data being impacted by the miscalibrated tracker APV (as discussed in Chapter~\ref{subsec:hipEffect}.
+
+\subsection{Lepton Energy Corrections}\label{subsec:leptonEnergyCorrections}
+\subsubsection{Electron Regression and Energy Scale and Smearing Corrections}
+Two types of energy corrections which have been produced by the CMS EGM POG are applied to electrons and photons, energy regression and energy scale and smearing corrections.
+These corrections are applied to both MC simulation and data and are used to improve the electron resolution obtained and to resolve the observed discrepancies between them.
+
+Using simulation for tuning, energy regression obtains the best possible energy resolution by using the detector information to correct the reconstructed object energy.
+The disagreement between data and MC is resolved by scaling the data energy to the MC energy scale and smearing the MC so that it has the same energy resolution as data. 
+
+These corrections are pre-applied onto the PF electron collections used.
+
+\subsubsection{Rochester Corrections}
+The muon momentum scale and resolution correction methods developed by the University of Rochester~\cite{rochester}, known as \emph{Rochester Corrections}, are used to remove any muon momentum bias from any detector misalignment, reconstruction or uncertainties in the magnetic field for both MC and data.
+These corrections are derived with high \pt ($> 20\GeVc$) muons from Z $ \rightarrow \mu\mu$ decays using a two step method, where the muons are binned in charge, $\eta$ and $\phi$.
+The first step requires the mean inverse transverse momenta of the muons reconstructed from data and simulation to be the same as the corresponding values from a perfectly aligned detector.
+These corrections are tuned in the second step by using the $M_{\mu^{+1}\mu^{-1}}$ peak for a perfectly aligned detector to calibrate the corrections.
+This removes any sensitivity to detector efficiencies or physics modelling.
+
+The Rochester Corrections are applied to each muon an event weight that is a function of the muon's charge, \pt, $\eta$ and $phi$.
+
+\subsection{Jet Energy Corrections}\label{subsec:jesjer}
+As described in Chapter~\ref{subsubsec:JECs}, the JECs are applied to account for the non-uniform response in \pT and $eta$ of the detector by comparing the differences between the generator level and detector level responses.
+
+In addition to these corrections, as the Jet Energy Resolution (JER) observed in data is approximately 10\% poorer than that in observed simulation, the 4-vectors of simulated jets are smeared as functions of generator level and reconstructed \pt and $\eta$ to account for this~\cite{Khachatryan:2016kdb}.
+
+\subsection{b-tagging Efficiency}\label{subsec:btagEff}
+The B-Tag and Vertexing (BTV) Physics Object Group measures the b-tagging efficiency and misidentification rates for b and light flavoured jets in data and MC simulation (multijet and \ttbar) of the algorithms which they support~\cite{Sirunyan:2017ezt}.
+From these measurements b-tagging efficiency scale factors are produced and provided for analysts to apply to simulated events to correct differences observed between data and simulation.
+These scale factors, as functions of the jet flavour, \pT and $\eta$, to alter the weight of the selected MC events.
+This methodology was chosen as it involves only changing the weight of the selected MC events which, unlike other methods, avoids events migrating into different b-tag multiplicity bins and having events with potentially undefined variables such as the top mass.
+
+\subsection{\PU Modelling}\label{subsec:puSF}
+It is challenging to model variations in the number of \PU interactions that result from the changing LHC conditions.
+Therefore MC events are reweighted as a function of the number of primary vertices so that the PU interactions simulated are resembles what is observed in data.
+
+The \PU SF is determined as a function of the number of primary vertices, $n_{PV}$, present by comparing $n_{PV}$ in minimum bias data over the running period considered to $n_{PV}$ for simulated events.
+
+\subsection{Top quark \pt}
+A scale factor is applied to \ttbar MC as a function of the top's and anti-top's generator level transverse momenta to account for the \pt spectra of top quarks in data being significantly softer than that predicted by LO and NLO precision MC simulation~\cite{Khachatryan:2015oqa}.
+
+
 
 \section{Data-driven Background Esimation}\label{sec:dataDrivenBackground}
 
