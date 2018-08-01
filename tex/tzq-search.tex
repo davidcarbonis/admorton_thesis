@@ -3,23 +3,25 @@ The next chapters of this thesis describe the search for the dilepton final stat
 
 At leading order tZq consists of a top quark, a recoil quark and a radiated Z boson, as illustrated in Figure~\ref{fig:feyn_tZq}.
 In contrast to the previous searches for tZq which focussed on the trilepton final state~\cite{Sirunyan:2017kkr,Sirunyan:2017nbr}, the W boson in the dilepton final state decays hadronically.
-This means that final state contains at least four jets, one from the top quark decay, two from the W boson, and the recoil jet and two leptons from the Z boson.
+This means that final state is composed of two leptons from the Z boson decay and at least four jets, one from the top quark decay, two from the W boson, and the recoil jet and two leptons from the Z boson.
 
 While this topology allowing for the full reconstruction of all the particles involved, including the top quark, it also presents the the main challenge for this analysis.
 The presence of exactly two leptons and multiple jets is identical to the topologies of the large number of multi-jet background processes which have cross sections many order of magnitude larger than tZq.
 Given that regardless of the selection requirements applied to the leptons and jets in the final state, the signal region will inevitably be dominated by such backgrounds.
 Therefore, the analysis is designed to ensure that the backgrounds are understood and constrained as far as possible and to have the highest possible acceptance of the signal in order to maximise the ease in measuring the expected tZq contribution.
 
-\section{Background Processes}\label{sec:backgroundProcesses}
-
-Events with large multi-jet components, such as the two largest irreducible processes of Z+jets and \ttbar, form the majority of the background contributions.
-
-
-ttZ
-
-Sources of non-prompt leptons, such as W+jets processes, 
-
-Talk about what needs constraining - ie need for low mis-id for Z leptons, need to balance purity/efficiency for b-jets, and use of W decay products to reco top mass.
+%\section{Background Processes}\label{sec:backgroundProcesses}
+%Events with large multi-jet components, such as Z+jets and \ttbar, form the majority of the background contributions.
+%Sources of non-prompt leptons, such as W+jets processes, 
+%
+%Talk about what needs constraining - ie need for low mis-id for Z leptons, need to balance purity/efficiency for b-jets, and use of W decay products to reco top mass.
+%
+%\subsection{Vector Boson + Jets backgrounds}
+%
+%\subsection{\ttbar background}
+%The second largest background process
+%\subsection{Other backgrounds}
+%ttZ
 
 
 \section{Trigger Strategy}\label{sec:triggerStrategy}
@@ -71,8 +73,8 @@ Following the trigger requirements, a number of filters are applied in order to 
 \item \textbf{Bad Muon Filter} - removes events where a muon is defined as a PF muon, but is still has too low a quality and large \pT to be considered.
 \end{itemize}
 
-\section{Physics Objects}\label{sec:eventSelection}
-This section discusses the various selection criteria this analysis applies to the physics objects which have been identified and reconstructed using the particle flow algorithm described in Chapter~\ref{chapter:data-mc}.
+\section{Physics Objects}\label{sec:physicsObjects}
+In order to meet the analysis strategy's criteria for a signal enriched region and background enriched control regions, a number of event selection criteria are applied to the physics objects that have been identified and reconstructed using the particle flow algorithm described in Chapter~\ref{chapter:data-mc}.
 
 \subsection{Lepton Selection}
 All PF electrons and muons considered must pass a set of kinematic requirements and a set identification criteria defined by CMS.
@@ -250,11 +252,8 @@ The leading b-jet however, is excluded from consideration as the hardest b-jet i
 \subsection{\MET}\label{subsec:met}
 Whilst the signal region does not explicitly cut on \MET, it is used in one of the Z+jets control regions, described in Chatper~\ref{subsec:zPlusJetsCR}, and in the boosted decision tree, discussed in Chapter~\ref{subsec:bdt}, in order to discriminate against backgrounds such as \ttbar which do feature significant amounts of \MET.
 
-\section{Event Selection}
-Following the application of the trigger and event cleaning requirements described in Chapters~\ref{sec:triggerStrategy} and~\ref{sec:metFilters}, a series of requirements 
 
-
-\subsection{Signal Region}\label{sec:signalRegion}
+\section{Signal Region}\label{sec:signalRegion}
 As the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay,
 the signal enriched region event selection was desgined to 
  being able to identify these isolated prompt leptons with a high efficiency and a low misidentification rate is essential.
@@ -285,7 +284,7 @@ Z decays and W decays
 No \MET cut is applied in the signal region event selection despite there being no \MET directly produced by the signal process.
 This decision was taken as \MET was anticipated to be a useful variable the multivariate analysis (discussed in Chapter~\ref{sec:mvas}) that could be used to discriminate against background processes such as \ttbar.
 
-\subsection{Control Regions}\label{sec:controlRegions}
+\section{Control Regions}\label{sec:controlRegions}
 In any high energy particle physics analysis, accurate modelling of the background processes is essential in order to be able to make a measurement.
 As the main challenge in searching for the dilepton final state of tZq is that the signal region is dominated by background processes, if any meaningful measurement is to be made it especially important to ensure that the background processes are accurately modelled in simulation.
 
