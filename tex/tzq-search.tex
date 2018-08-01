@@ -10,18 +10,18 @@ The presence of exactly two leptons and multiple jets is identical to the topolo
 Given that regardless of the selection requirements applied to the leptons and jets in the final state, the signal region will inevitably be dominated by such backgrounds.
 Therefore, the analysis is designed to ensure that the backgrounds are understood and constrained as far as possible and to have the highest possible acceptance of the signal in order to maximise the ease in measuring the expected tZq contribution.
 
-%\section{Background Processes}\label{sec:backgroundProcesses}
-%Events with large multi-jet components, such as Z+jets and \ttbar, form the majority of the background contributions.
-%Sources of non-prompt leptons, such as W+jets processes, 
-%
-%Talk about what needs constraining - ie need for low mis-id for Z leptons, need to balance purity/efficiency for b-jets, and use of W decay products to reco top mass.
-%
-%\subsection{Vector Boson + Jets backgrounds}
-%
-%\subsection{\ttbar background}
-%The second largest background process
-%\subsection{Other backgrounds}
-%ttZ
+\section{Background Processes}\label{sec:backgroundProcesses}
+Events with large multi-jet components, such as Z+jets and \ttbar, form the majority of the background contributions.
+Sources of non-prompt leptons, such as W+jets processes, 
+
+Talk about what needs constraining - ie need for low mis-id for Z leptons, need to balance purity/efficiency for b-jets, and use of W decay products to reco top mass.
+
+\subsection{Vector Boson + Jets backgrounds}
+
+\subsection{\ttbar background}
+The second largest background process
+\subsection{Other backgrounds}
+ttZ
 
 
 \section{Trigger Strategy}\label{sec:triggerStrategy}
@@ -75,6 +75,7 @@ Following the trigger requirements, a number of filters are applied in order to 
 
 \section{Physics Objects}\label{sec:physicsObjects}
 In order to meet the analysis strategy's criteria for a signal enriched region and background enriched control regions, a number of event selection criteria are applied to the physics objects that have been identified and reconstructed using the particle flow algorithm described in Chapter~\ref{chapter:data-mc}.
+The following section describes the selection criteria used in this analysis and how the final state products are used to reconstruct their mother particles.
 
 \subsection{Lepton Selection}
 All PF electrons and muons considered must pass a set of kinematic requirements and a set identification criteria defined by CMS.
@@ -195,13 +196,14 @@ Using the fact that the ratio of neutral to charged hadron production in the had
 I^{rel}_{\Delta\beta} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\rm T}(Photon) - 0.5 * \sum E_{\rm T}(PU))/p_T \\
 \end{equation}\label{eq:deltaBeta}
 
-\subsubsection{Z Boson Candidate Invariant Mass Requirements}
+\subsubsection{Z Boson Candidate}
 The presence of a Z boson in the final state requires that two leptons selected must be consistent with a Z boson decay.
-Therefore, the leptons must have the same flavour and opposite charge and an invariant mass within 20\GeVcc of the known Z mass.
+Therefore, the leptons must have the same flavour and opposite charge and an invariant mass which within with $\20\GeVcc$ of the known Z boson mass.
+%It was determined that the invariant mass of the two leptons had to be within $\20\GeVcc$ of the known Z boson mass on the basis of ensuring sufficient signal events and sufficient backgrounds for the MVA (discussed in 
 %This mass window was determined on the basis of 
 %including sufficient signal events 
 
-\subsection{Jet, b-tagging and W Boson Candidate Requirements}
+\subsection{Jet, b-tagging, W Boson and Top Quark Candidate Requirements}
 \subsubsection{Jet Requirements}
 Jets are considered from the PF jet collection which reconstructs jets using the \emph{anti-\kt} algorithm with R = 0.4 with charged hadrons originating from \PU vertices excluded from clustering.
 Following identification, the jet energy corrections are applied as described in Chapter~\ref{subsubsec:JECs}.
@@ -211,7 +213,6 @@ In addition, selected leptons (electron or muon) which lie within a cone of $\De
 
 The loose jet ID was designed to reject the majority of the fake tracks produced from detector and/or electronics noise whilst maintaining a high selection efficiency for real jets by requiring all jets to have part of their energy deposited in both the ECAL and HCAL and be composed of more than one particle.
 
-\editComment{Necessary to spell this out? Or comment out ...}
 The loose jet identification criteria are as follows:
 
 for jets with $\eta \leq 2.70$ the loose ID criteria are:
@@ -244,18 +245,23 @@ The CSVv2 tagging algorithm described in Chapter~\ref{subsec:objReco-bJets} is u
 If the value of a jet's discriminator exceeds that of the Medium WP and has $|\eta| < 2.40$, the jet is considered to be a b-jet.
 From the \emph{Loose}, \emph{Medium} and \emph{Tight} WPs defined by CMS~\cite{Sirunyan:2017ezt}, as given in Table~\ref{tab:bTagWPs} in Chapter~\ref{subsec:objReco-bJets}, the Medium WP was chosen as it provided the optimum performance in terms of providing as large statistics as possible for the signal process without too great a compromise on the purity of the selection.
 
-\subsubsection{W Boson Candidate Invariant Mass Requirements}
+\subsubsection{W Boson Candidate}
 In contrast to the previous tZq searches where the W boson decays into a lepton and its associated antineutrino, the W boson in the dilepton final state decays hadronically, allowing for the top quark to be fully reconstructed.
 The W boson candidate is constructed by considering each possible pair of jets, with the pair with a dijet invariant mass closest to the known W boson mass of 80.4\GeVcc being chosen as the W candidate.
-The leading b-jet however, is excluded from consideration as the hardest b-jet is assumed to be produced from the decay of the top quark. 
+Additionally, the invariant mass of the two selected jets was required to be within $\20\GeVcc$ of the known W boson mass.
+
+The leading b-jet however, is not considered to have been produced by the W boson decay as the hardest b-jet is assumed to be produced from the decay of the top quark.
+
+\subsubsection{Top Quark Candidate}
+As there is no \MET present in the dilepton final state it is possible to fully reconstruct the top quark from the leading b-jet and the W boson candidate.
+While no additional event selection cuts are applied to the top quark candidate, the various quantities which could be constructed from it, such as its invariant mass or the difference in $\phi$ between it and the Z boson candidate, were used by the multivariate analysis discussed in Chapter~\ref{sec:mvas}
 
 \subsection{\MET}\label{subsec:met}
 Whilst the signal region does not explicitly cut on \MET, it is used in one of the Z+jets control regions, described in Chatper~\ref{subsec:zPlusJetsCR}, and in the boosted decision tree, discussed in Chapter~\ref{subsec:bdt}, in order to discriminate against backgrounds such as \ttbar which do feature significant amounts of \MET.
 
-
 \section{Signal Region}\label{sec:signalRegion}
-As the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay,
-the signal enriched region event selection was desgined to 
+As the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay, two quarks from the W boson decay, one recoil quark
+
  being able to identify these isolated prompt leptons with a high efficiency and a low misidentification rate is essential.
 
 The following event selection criteria were designed for the enriched signal region in order to select events with a high efficiency while reducing the background contamination as much as possible:
