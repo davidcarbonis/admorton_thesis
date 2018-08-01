@@ -1,25 +1,25 @@
 \chapter{Analysis Strategy and Event Selection}\label{chapter:tzq-search}
 The next chapters of this thesis describe the search for the dilepton final state of a singly produced top quark in association with a Z boson (tZq) using the reconstructed proton-proton collision data at $\sqrt{13}$ collected by the CMS detector during 2016.
 
-In contrast to previous searches for tZq, which focussed on the trilepton final state where both the W and Z bosons decay leptonically~\cite{Sirunyan:2017kkr,Sirunyan:2017nbr}, the search for the dilepton final state involves the W and Z bosons decaying hadronically and leptonically respectively.
-The dilepton final state's topology presents the the main challenge for this analysis as it is identical to the topology a large number of background processes which have cross sections many order of magnitude larger than the signal process.
+At leading order tZq consists of a top quark, a recoil quark and a radiated Z boson, as illustrated in Figure~\ref{fig:feyn_tZq}.
+In contrast to the previous searches for tZq which focussed on the trilepton final state~\cite{Sirunyan:2017kkr,Sirunyan:2017nbr}, the W boson in the dilepton final state decays hadronically.
+This means that final state contains at least four jets, one from the top quark decay, two from the W boson, and the recoil jet and two leptons from the Z boson.
+
+While this topology allowing for the full reconstruction of all the particles involved, including the top quark, it also presents the the main challenge for this analysis.
+The presence of exactly two leptons and multiple jets is identical to the topologies of the large number of multi-jet background processes which have cross sections many order of magnitude larger than tZq.
+Given that regardless of the selection requirements applied to the leptons and jets in the final state, the signal region will inevitably be dominated by such backgrounds.
+
+
+Therefore, it is essential that the analysis strategy for selecting tZq events involves both understanding and constrain these 
+
+understand and constrain of backgrounds as much as possible.
 
 Therefore the strategy for selecting tZq events 
-
-Given that the signal region will inevitably be dominated by such backgrounds, it was vital that the search was designed to understand and suppress these backgrounds as much as possible.
-Z+jets form the dominant background contribution
-
-As shown in Figure~\ref{fig:feyn_tZq}, at leading order tZq consists of a top quark, a recoil quark and a radiated Z boson.
-Top -> W+b
-Top comes from b quark (sea quark or from gluon splitting)
-Z decays and W decays
 
 The trigger and event cleaning strategies common
 
 
-The two largest irreducible background processes
-
-Events with large multi-jet components, such as Z+jets and \ttbar, form the majority of the background contributions
+Events with large multi-jet components, such as the two largest irreducible processes of Z+jets and \ttbar, form the majority of the background contributions
 Enriched control regions
 
 Sources of non-prompt leptons, such as W+jets processes, 
@@ -458,21 +458,39 @@ The \PU SF is determined as a function of the number of primary vertices, $n_{PV
 A scale factor is applied to \ttbar MC as a function of the top's and anti-top's generator level transverse momenta to account for the \pt spectra of top quarks in data being significantly softer than that predicted by LO and NLO precision MC simulation~\cite{Khachatryan:2015oqa}.
 
 \section{Signal Region}\label{sec:signalRegion}
-The signal enriched region event selection was designed select signal events with a high efficiency whilst rejecting as much of the background process as possible.
-To ensure that the leptons selected are promptly produced and are of a high purity, exactly two leptons of the same flavour which pass the tight identification and isolation criteria, wi
+As the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay,
+the signal enriched region event selection was desgined to 
+ being able to identify these isolated prompt leptons with a high efficiency and a low misidentification rate is essential.
+
+The following event selection criteria were designed for the enriched signal region in order to select events with a high efficiency while reducing the background contamination as much as possible:
+
+\begin{itemize}
+\item \textbf{Exactly two tight leptons with no additional veto leptons} - as the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay, the tight electron and muon identification and isolation criteria are applied.
+\end{itemize}
+
+To ensure that the leptons selected are promptly produced and are of a high purity, exactly two leptons of the same flavour which pass the tight identification and isolation criteria
+Those leptons which pass this criteria are then
+
+At least four jets will be present, one being the recoil quark, one from the top quark's decay and two from the decay of the W boson produced by the decaying top quark.
+While additional jets could be produced by further gluon splitting, given the decreasing probabilty of and the increasing difficulty in accurately simulating these higher order contributions, the maximum number of jets considered 
+
+Given the top quark having a near 100\% probability of decaying
+
+As a second 
+In this 
 
 
-As the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay, being able to identify these isolated prompt leptons with a high efficiency and a low misidentification rate is essential.
-
-To ensure a 
-Whilst additional jets could be produced by further gluon splitting, in practice 
+Top -> W+b
+Therefore, 
+Top comes from b quark (sea quark or from gluon splitting)
+Z decays and W decays
 
 No \MET cut is applied in the signal region event selection despite there being no \MET directly produced by the signal process.
 This decision was taken as \MET was anticipated to be a useful variable the multivariate analysis (discussed in Chapter~\ref{sec:mvas}) that could be used to discriminate against background processes such as \ttbar.
 
 \section{Control Regions}\label{sec:controlRegions}
 In any high energy particle physics analysis, accurate modelling of the background processes is essential in order to be able to make a measurement.
-As the main challenge in searching for the dilepton final state of tZq is that the signal region is dominated by background processes, it particularly important to ensure that the background processes are accurately modelled in simulation.
+As the main challenge in searching for the dilepton final state of tZq is that the signal region is dominated by background processes, if any meaningful measurement is to be made it especially important to ensure that the background processes are accurately modelled in simulation.
 
 In order to confirm whether or not simulation adequately describes the data and thus if data-driven estimations are required instead, background enriched control regions which are topologically similar and orthogonal to the signal region are used for the two largest background processes are defined.
 The same trigger, event cleaning, number of oppositely charged leptons, number of jets required and W and Z boson mass selection criteria are applied to the control regions so that they occupy a topologically similar phase space to the signal region.
@@ -532,6 +550,7 @@ To this end a $\chi^{2}$-like variable in the two dimensional space of the recon
 \end{equation}
 
 where $m_{\rm jj}$ is the W boson mass reconstructed from the two candidate jets, $m_\{rm W}$ is the known W boson mass, $m_{\mathrm{jj+b}}$ is the top quark mass reconstructed from the leading b-jet and two jets associated with the W boson decay, $m_{\mathrm{t}}$ is the known top mass, and $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}}}\right)$ are the reconstruction resolution terms for the top quark and W boson masses.
+Both $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}}}\right)$ were determined ...
 
 Using the simulated samples, cut on this $\chi^{2}$-like variable were chosen to define a blinded signal region which balanced containing the majority of the signal process while minimising background contamination and a \emph{side band} region which contains signal-like events and rejects any extreme outliers.
 
