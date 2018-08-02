@@ -208,6 +208,8 @@ A scale factor is applied to \ttbar MC as a function of the top's and anti-top's
 
 \section{Signal Region Simulated Backgrounds}\label{sec:simBackgrounds}
 The impact of the application of the full event selection and simulation corrections in the signal region on the simulated samples is shown in Table~\ref{tab:signalYields}.
+
+The jet cleaning and tight isolation criteria for leptons 
 It is clear that despite the high purity selection criteria used to reject the majority of the Z+jets, it remains the dominant background
 
 The 
@@ -376,7 +378,7 @@ The event yields after the selection criteria have been applied for the \ttbar c
 \end{table}
 
 \section{Multivariate Analysis Techniques}\label{sec:mvas}
-Multivariate Analysis (MVA) techniques are commonly used to further discriminate between signal and background processes given the difficulty in identifying rare or background dominated processes through the sole use of individual cuts.
+Multivariate Analysis (MVA) techniques are commonly used to further enhance the separation between signal and background processes given the difficulty in identifying rare or background dominated processes through the sole use of individual cuts.
 
 Therefore, given the small cross section and topology of the dilepton final state of tZq, a MVA method was used to enhance the separation between the signal and background following the application of the selection cuts described in Chapter~\ref{chapter:tzq-search}.
 The \emph{Boosted Decision Tree}~(BDT) MVA technique was used as it a widely used and supported technique which those undertaking this analysis were familiar with.
@@ -391,19 +393,10 @@ At the end of the process all the trees are combined into a single classifier wh
 \emph{Bagging} is a similar concept to boosting, but involves each tree being trained on a random subset of the training sample, where every element has an equal probability of being sampled, rather than the whole training sample.
 
 Following the evaluation of a number of Boosting and Bagging algorithms for decision trees, it was determined that the
-\emph{eXtreme Gradient Boosting} (XGBoost) implementation of the grandiant boosting alogorithm provided the optimal performance for the search presented~\cite{xgboost}.
+\emph{eXtreme Gradient Boosting} (XGBoost) implementation of the Gradiant Boost alogorithm provided the optimal performance for the search presented~\cite{xgboost}.
 
-\emph{Gradient Boosting} models the shortcomings of the model 
+The \emph{Gradient Boost} algorithm~\cite{Friedman:GradientBoosting} models the shortcomings of the model 
 
-\edtComment{explain GradBoost}
-
-
-The 
-
-
-The \emph{Adaptive Boost} (AdaBoost) and \emph{Gradient Boosting} algorithms are two of the most popular boosting algorithms used.
-
-Adaboost
 
 This exponential loss approach however, is its degraded performance in noisier environments as it is not robust in 	
 
@@ -416,18 +409,23 @@ A training sample, consisting of a subset of the data to be classified, is used 
 
 
 
+The methods used for selecting the input variables (features) and model hyperparameters are described in the following subsections.
+Both the features and model hyperparameters were chosen separately for ee and mumu channels.
 
-BDT features and hyperparameters chosen separately for ee and mumu channels
-Features chosen using recursive feature elimination
+\subsection{BDT Input Features}
+From the selected reconstructed physics objects, a large number of input variables or \emph{features} were constructed and considered as potential inputs for the BDT.
 
-\subsection{BDT Features}
-From the selected reconstructed physics objects, a large number of input variables can be 
-feature = input variable
+In order to determine which of set of features was optimal, recursive feature elimination was used to select those which had the greatest discriminating power between the signal and background process.
+This process iteratively removes the least important feature and re-trains the BDT until every feature has been ranked in order of their removal.
+Following each removal of a feature, the area under the Receiver Operating Characteristic (ROC) curve is recorded.
+The features found above the point at which the area under the ROC curve experiences a significant decline are determined to be an optimal correlated set of features.
+ 
+The features chosen by recursive feature elimination for the $ee$ and $\mu\mu$ channels are given in Table~\ref{tab:selectedBdtVariables}, with the full list of features considered, and their ability to separate between signal and background, being given in full in Table~\ref{tab:fullBdtVariables}
 
 \begin{table}[htbp]
-\topcaption { The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant.
+\topcaption {The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
 }
-\label{tab:bdtVariables}
+\label{tab:selectedBdtVariables}
   \centering
 % This increases column spacing.
 \resizebox{\textwidth}{!}{
@@ -463,8 +461,10 @@ feature = input variable
 
 \editComment{LOTS of PLOTS of the input variable distributions}
 
-\subsection{BDT Hyperparameters}
-Using the 
+\subsection{BDT Model Hyperparameters}
+The model hyperparameters are the set of parameters which are set before the BDT training begins, such the maximum depth trees can be grown to or the number of training iterations to be run. 
+Rather than tune the hyperparmeter selection by hand or run a computationally expensive and time consuming grid search of all the possible hyperparameters to optimise the classifier's performance, the optimal hyperparameters were selected using a Gaussian process.
+
 
 Hyperparameters are selected by using a Gaussian process to optimise the classifier’s performance
 hyperparameters = learning rate, n-estimators, max tree depth
@@ -479,9 +479,6 @@ hyperparameters = learning rate, n-estimators, max tree depth
     reg_lambda: 0.0006395600995084355
     reg_alpha: 0.00037293584840804463
 
-
-
 \subsection{BDT Output}
-Following the optimisation of both the BDT features and hyperparameters, the optimal BDT is trained and used to produce a ... for the data and each of the background samples.
-
-The resultant distributions of the BDT output discriminator are used to perform a measurement of the signal strength and to attempt an extraction of the signal's cross section.
+Following the optimisation of both the BDT features and hyperparameters for both the ee and $\mu\mu$ channels independently, the optimal BDT is trained and used to produce an output distribution of the BDT discriminator for each of the data and background samples considered.
+The resultant BDT discriminator distributions are used to perform a measurement of the signal strength and to attempt an extraction of the signal's cross section.
