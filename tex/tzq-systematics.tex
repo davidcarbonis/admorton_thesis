@@ -469,15 +469,15 @@ Rather than tune the hyperparmeter selection by hand or run a computationally ex
 Hyperparameters are selected by using a Gaussian process to optimise the classifier’s performance
 hyperparameters = learning rate, n-estimators, max tree depth
 
-    n_jobs: 20 - number of training iterations
-    n_estimators: 4818 - 
-    subsample: 0.6794502469027806
-    learning_rate: 0.004457105002157622
-    max_depth: 4
-    min_child_weight: 0.016143380898361325 - Minimum sum of instance weight (hessian) needed in a child
-    gamma: 7.588559443997618 - minimum loss function used to make a further partition on a leaf node of the tree
-    reg_lambda: 0.0006395600995084355
-    reg_alpha: 0.00037293584840804463
+%    n_jobs: 20 - number of training iterations
+%    n_estimators: 4818 - 
+%    subsample: 0.6794502469027806
+%    learning_rate: 0.004457105002157622
+%    max_depth: 4
+%    min_child_weight: 0.016143380898361325 - Minimum sum of instance weight (hessian) needed in a child
+%    gamma: 7.588559443997618 - minimum loss function used to make a further partition on a leaf node of the tree
+%    reg_lambda: 0.0006395600995084355
+%    reg_alpha: 0.00037293584840804463
 
 \subsection{BDT Output}
 Following the optimisation of both the BDT features and hyperparameters for both the ee and $\mu\mu$ channels independently, the optimal BDT is trained and used to produce an output distribution of the BDT discriminator for each of the data and background samples considered.
