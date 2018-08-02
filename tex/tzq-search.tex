@@ -6,28 +6,39 @@ In contrast to the previous searches for tZq which focussed on the trilepton fin
 Therefore the event selection for the final state must consist of two leptons from the Z boson decay and at least four jets, one from the top quark decay, two from the W boson, and the recoil jet and two leptons from the Z boson.
 
 While this topology allowing for the full reconstruction of all the particles involved, including the top quark, it also presents the the main challenge for this analysis.
-The presence of exactly two leptons and multiple jets is identical to the topologies of the large number of multi-jet background processes which have cross sections many order of magnitude larger than tZq.
+The presence of two leptons and multiple jets is identical to the topologies of the large number of multi-jet background processes which have cross sections many order of magnitude larger than tZq.
 Given that regardless of the selection requirements applied to the leptons and jets in the final state, the signal region will inevitably be dominated by such backgrounds.
 Therefore, the analysis is designed to ensure that the backgrounds are understood and constrained as far as possible and to have the highest possible acceptance of the signal in order to maximise the ease in measuring the expected tZq contribution.
 
 \section{Background Processes}\label{sec:backgroundProcesses}
-Events with large multi-jet components, such as Z+jets and \ttbar, form the majority of the background contributions.
-Sources of non-prompt leptons, such as W+jets processes, 
-
-Talk about what needs constraining - ie need for low mis-id for Z leptons, need to balance purity/efficiency for b-jets, and use of W decay products to reco top mass.
-
 \subsection{Vector Boson + Jets backgrounds}
+QCD multijet events in associated with a vector boson (V+jets) have the largest cross sections of any process which produces prompt leptons at the LHC, as illustrated in Figure~\ref{fig:crossSections}.
+As only one promptly produced lepton from the W boson decay is expected for W+jets, the presence of any additional leptons would have to be the result of a heavy quark decay or incorrectly reconstructed jet. 
+The suppressing of these leptons should be achievable by requiring them to be sufficiently isolated from jets and heavy leptons.
 
-\subsection{\ttbar background}
-The second largest background process
-\subsection{Other backgrounds}
-ttZ
+In contrast, while the Z+jets cross section is an order of magnitude smaller than W+jets cross section, the two prompt leptons from the Z boson decay makes it much more difficult to distinguish between this background and the signal.
+While the requirement of the presence of at least four jets, with one being a b-jet, will reject the majority of the Z+jets events, the size of the Z+jets cross section ensures that the process will dominate any signal region defined.
 
+\subsection{Top physics backgrounds}
+\ttbar has the next largest production cross section following the V+jets.
+The dilepton final state, where the leptons from the decay of the W bosons produced from the top quarks' decays 
+
+While the final states of singly produced top quarks in the s- and t-channels are not expected to significantly contribute to the background due to their dissimilarity to the tZq final state, the same cannot be said for the tW-channel which re
+
+Despite the smaller cross sections of even rarer top processes
+
+\ttZ
+\subsection{Multi-boson backgrounds}
+The electroweak production of multiple vector bosons form the remainder of the background processes to be considered.
+	
+The very small cross sections of the triboson backgrounds
 
 \section{Trigger Strategy}\label{sec:triggerStrategy}
 As the search for the tZq dilepton final state relies on the identification of the two leptons from the Z boson decay, the trigger strategy consists of selecting events from datasets identified by the presence of leptons.
+
+
 Given that the signal process being searched for is dominated by background processes and will likely be limited by statistics, it is essential to reconstruct and select as many signal events as possible.
-Ideally. the single and double lepton triggers with the lowest possible transverse momenta thresholds would be considered to ensure that the maximum possible statistics can be obtained over the largest possible phase space.
+Ideally the single and double lepton triggers with the lowest possible transverse momenta thresholds would be considered to ensure that the maximum possible statistics can be obtained over the largest possible phase space.
 The high instantaneous luminosity at the start of the most luminous data taking periods however, required a number of the L1 triggers to be prescaled to prevent the trigger bandwidth constraints being exceeded.
 As only the triggers considered for the ee channel were impacted by this, these triggers were chosen on the basis of largest amount data using unprescaled triggers with the lowest possible transverse momenta thresholds.
 
@@ -211,7 +222,7 @@ Following identification, the jet energy corrections are applied as described in
 Jets are considered in the analysis if they have a $\pT > 30\GeVc$, are within $|\eta| < 4.7$ and meet the \emph{loose} working point jet identification criteria developed by CMS.
 In addition, selected leptons (electron or muon) which lie within a cone of $\Delta R = 0.4$ of a selected jet are not considered to be a prompt leptons and instead part of the jet in question.
 
-The loose jet ID was designed to reject the majority of the fake tracks produced from detector and/or electronics noise whilst maintaining a high selection efficiency for real jets by requiring all jets to have part of their energy deposited in both the ECAL and HCAL and be composed of more than one particle.
+The loose jet ID was designed to reject the majority of the fake tracks produced from detector and/or electronics noise while maintaining a high selection efficiency for real jets by requiring all jets to have part of their energy deposited in both the ECAL and HCAL and be composed of more than one particle.
 
 The loose jet identification criteria are as follows:
 
@@ -221,26 +232,25 @@ for jets with $\eta \leq 2.70$ the loose ID criteria are:
 \item at least two constituent particles are present.
 \end{itemize}
 
-with these applying in addition for $\eta \leq 2.40$:
+With these additional criteria applying for jets for $\eta \leq 2.40$:
 \begin{itemize}
 \item the fraction of the jet energy from charged electromagnetic particles in the ECAL is less than $0.99$ and greater than 0.0 for charged hadronic particles in the HCAL.
 \item at least one charged particle is present.
 \end{itemize}
 
-
-for jets with $ 2.70 \leq \eta \leq 3.0$ the loose ID criteria are:
+For jets with $ 2.70 \leq \eta \leq 3.0$ the loose ID criteria are:
 \begin{itemize}
 \item the fraction of the jet energy from neutral electromagnetic particles in the ECAL is greater than than $0.01$ and less than $0.98$ for neutral hadronic particles in the HCAL.
 \item at least three neutral particles are present.
 \end{itemize}
 
-and for jets with $\eta > 3.0$ the loose ID criteria are:
+And for jets with $\eta > 3.0$ the loose ID criteria are:
 \begin{itemize}
 \item the fraction of the jet energy in the ECAL that is from neutral electromagnetic particles is less than $0.90$.
 \item at least eleven neutral particles are present.
 \end{itemize}
 
-\subsubsection{b-tagging}
+\subsubsection{b-tagging Requirements}
 The CSVv2 tagging algorithm described in Chapter~\ref{subsec:objReco-bJets} is used to tag jets, with a working point (WP) cut applied to the b-tag discriminator.
 If the value of a jet's discriminator exceeds that of the Medium WP and has $|\eta| < 2.40$, the jet is considered to be a b-jet.
 From the \emph{Loose}, \emph{Medium} and \emph{Tight} WPs defined by CMS~\cite{Sirunyan:2017ezt}, as given in Table~\ref{tab:bTagWPs} in Chapter~\ref{subsec:objReco-bJets}, the Medium WP was chosen as it provided the optimum performance in terms of providing as large statistics as possible for the signal process without too great a compromise on the purity of the selection.
@@ -254,53 +264,78 @@ The leading b-jet however, is not considered to have been produced by the W boso
 
 \subsubsection{Top Quark Candidate}
 As there is no \MET present in the dilepton final state it is possible to fully reconstruct the top quark from the leading b-jet and the W boson candidate.
-While no additional event selection cuts are applied to the top quark candidate, the various quantities that could be constructed from it were used by the multivariate analysis discussed in Chapter~\ref{sec:mvas}
+While no additional event selection cuts are applied to the top quark candidate, the various quantities that could be constructed from it were used by the multivariate analysis discussed in Chapter~\ref{sec:mvas}.
 
 \subsection{\MET}\label{subsec:met}
-Whilst the signal region does not explicitly cut on \MET, it is used in one of the Z+jets control regions, described in Chatper~\ref{subsec:zPlusJetsCR}, and in the boosted decision tree, discussed in Chapter~\ref{subsec:bdt}, in order to discriminate against backgrounds such as \ttbar which do feature significant amounts of \MET.
+Whilst the signal region does not explicitly cut on \MET, it is used in one of the Z+jets control regions, described in Chapter~\ref{subsec:zPlusJetsCR}, and by the multivariate analysis discussed in Chapter~\ref{sec:mvas}, in order to discriminate against backgrounds such as \ttbar which do feature significant amounts of \MET.
 
 \section{Signal Region}\label{sec:signalRegion}
-As the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay, two jets from the W boson decay, one jet from the recoil quark, a b-jet from the top quark decay, the 
+The event selection criteria signal region were chosen to balance the needs of suppressing the background processes against maximising the selection efficiency of the rare signal process.
 
- being able to identify these isolated prompt leptons with a high efficiency and a low misidentification rate is essential.
+%Talk about what needs constraining - ie need for low mis-id for Z leptons, need to balance purity/efficiency for b-jets, and use of W decay products to reconstruct top mass.
+
+%maximise lepton phase space
+%minimise non-prompt leptons
+As the tZq dilepton final state involves the presence of exactly two leptons and at least four jets, the selection criteria applied to these physics objects on the  
+
+Ideally, in order to cover as much phase space as possible, the lowest possible transverse momenta cuts would be applied to the leptons.
+As the trigger strategy involves the use datasets where lepton triggers have fired, the \pT thresholds have  
+
+In order to ensure that the two same flavour and opposite sign leptons pr
+To meet the challenge of suppressing the background contamination as much as possible while 
+ signal region event selection has to 
+
+
+As the 
+In order to suppress the backgrounds discussed in Chapter~\ref{sec:backgroundProcesses}, the event selection applied to those events which pass the trigger and event cleaning criteria was chosen to 
+
+
+To reduce the background
+Given the size of the background
+As the presence of a Z boson is a key ...
+
+to identify these isolated prompt leptons with a high efficiency and a low misidentification rate is essential.
 
 The following event selection criteria were designed for the enriched signal region in order to select events with a high efficiency while reducing the background contamination as much as possible:
 
-\begin{itemize}
-\item \textbf{Exactly two tight leptons with no additional veto leptons} - as the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay, the tight electron and muon identification and isolation criteria are applied.
-\end{itemize}
+two leptons - as the tZq dilepton final state is distinguished by the presence of exactly two leptons from the Z boson decay, the tight electron and muon identification and isolation criteria are applied.
 
 To ensure that the leptons selected are promptly produced and are of a high purity, exactly two leptons of the same flavour which pass the tight identification and isolation criteria
 Those leptons which pass this criteria are then
 
 At least four jets will be present, one being the recoil quark, one from the top quark's decay and two from the decay of the W boson produced by the decaying top quark.
-While additional jets could be produced by further gluon splitting, given the decreasing probabilty of and the increasing difficulty in accurately simulating these higher order contributions, the maximum number of jets considered 
+Additional jets can be produced by further ISR or FSR gluon splitting, but with the decreasing probability of these higher order contributions occurring and the increasing difficulty in accurately simulating them, the maximum number of jets considered is limited to six.
 
-Given the top quark having a near 100\% probability of decaying
+Given the top quark having a near 100\% probability of decaying into a bottom quark, the event selection requires at least one of the selected jets to be b-tagged.
+As the top quark is initially produced by a bottom quark which can either be a sea quark or originate from gluon splitting ... and 
 
-As a second 
-In this 
-
-
-Top -> W+b
-Therefore, 
 Top comes from b quark (sea quark or from gluon splitting)
-Z decays and W decays
+ 
+Therefore the event selection for the signal region chosen to be:
 
-No \MET cut is applied in the signal region event selection despite there being no \MET directly produced by the signal process.
+\begin{itemize}
+\item Exactly two same flavour and opposite sign electrons or muons which pass the tight identification and isolation cuts. The leading and sub-leading electron (muon) must have a $\pT > 35\GeVc (26\GeVc)$ and $\pT > 15\GeVc (20\GeVc)$ respectively, and both must be within $|\eta| < 2.50 (2.40)$.
+\item No additional electrons or muons which pass the same kinematic cuts and the veto or loose identification and isolation cuts respectively. 
+\item The invariant mass of the two selected leptons must be within $\20\GeVcc$ of the known Z boson mass.
+\item Four to six jets which pass the loose jet ID requirements and have a $\pt > 30\GeVc$ and are within $|\eta| < 4.7$.
+\item One or two of the selected jets are considered to be b-tagged by the CSVv2 tagging algorithm at the medium WP.
+\item The invariant mass of the two jets which are closest to the known W boson mass must be within $20\GeVcc$..
+\end{itemize}
+
+No \MET cut was applied in the signal region event selection despite there being no \MET directly produced by the signal process.
 This decision was taken as \MET was anticipated to be a useful variable the multivariate analysis (discussed in Chapter~\ref{sec:mvas}) that could be used to discriminate against background processes such as \ttbar.
 
 \section{Control Regions}\label{sec:controlRegions}
 In any high energy particle physics analysis, accurate modelling of the background processes is essential in order to be able to make a measurement.
-As the main challenge in searching for the dilepton final state of tZq is that the signal region is dominated by background processes, if any meaningful measurement is to be made it especially important to ensure that the background processes are accurately modelled in simulation.
+Given that the main challenge in the search for the dilepton final state of tZq is that the signal region will be dominated by background processes, is is especially important to ensure that the background processes are accurately modelled in simulation if any meaningful measurement is to be made.
 
 In order to confirm whether or not simulation adequately describes the data and thus if data-driven estimations are required instead, background enriched control regions which are topologically similar and orthogonal to the signal region are used for the two largest background processes are defined.
 The same trigger, event cleaning, and baseline event selection of two oppositely charged leptons, number of jets required and W and Z boson mass selection criteria are applied to the control regions so that they occupy a topologically similar phase space to the signal region.
 Where required, these control regions would be extrapolated to provide a data-driven estimation of the background in the signal region as discussed in Chapter~\ref{sec:dataDrivenBackground}.
 
 \subsubsection{Z+jets Background Control Regions}\label{subsec:zPlusJetsCR}
-Despite the majority of such events being rejected by the signal region criteria, given the large cross section for Z+jets, the remaining events from this process dominate the signal region to form the single largest background.
-Given the size of this background and the difficulties in accurately modelling higher order contributions from QCD processes, it is essential to ensure that both the normalisation and modelling of the jets for this background are well described.
+Despite the majority of the Z+jet contribution being rejected by the signal region's jet and b-jet criteria, due to the large cross section of the process the surviving events dominate the signal region to form the single largest background.
+Given the scale of this background and the difficulties in accurately modelling higher order contributions from QCD processes, it is essential to ensure that both the normalisation and modelling of the jets for this background are well described.
 
 Initially a high statistics Z+jets enriched control region was defined by requiring that none of the jets present are b-tagged, in contrast to the one to two required for the signal region, as the majority of the jets 
 Given the large cross section and that the vast majority of the jets produced by the Z+jets process are light jets, whilst the top quarks in \ttbar, the second largest background, predominately decay into b quarks, this produces a high purity region with large statistics.
@@ -311,33 +346,13 @@ Therefore an alternative Z+jets enriched control region was defined by requiring
 
 \subsubsection{\ttbar Background Control Region}\label{subsec:ttbarCR}
 \ttbar events form the second largest background process, where events with two leptons produced from W bosons decaying having an invariant mass which is compatible with the Z boson mass window in the being selected in the signal region.
-The selection criteria for the \ttbar control region differs from the signal region definition defined in Chapter~\ref{sec:signalRegion}, by requiring that the two oppositely leptons selected to have different flavours (\ie one is an electron and the other a muon).
-%The electron and muon \pt thresholds are modified from those given in Chapters~\ref{subsubsec:electronSelection} and~\ref{subsubsec:muonSelection} as the leading lepton \pt thresholds of the HLT paths considered for the e$\mu$ final state, as given in Chapter~\ref{sec:triggerStrategy}, differ from those for the same flavour final states.
+The selection criteria for the \ttbar control region differs from the signal region definition defined in Chapter~\ref{sec:signalRegion}, by requiring that:
+\begin{itemize}
+\item the two oppositely leptons selected to have different flavours (\ie one is an electron and the other a muon).
+\item a \pt cut of x and y is used for the electron and muon respectively, as the leading lepton \pt thresholds of the HLT paths considered for the e$\mu$ final state differ from those for the same flavour final states, as as given in Chapter~\ref{sec:triggerStrategy}. 
+\end{itemize} 
 
 As the branching ratio for a W boson (produced by the top quark and anti-top quark decays) to decay into either an electron or muon is the same, this produces a \ttbar enriched background control region which is topologically similar to the \ttbar contributions in the signal region. 
-
-\begin{table}[htbp]
-\topcaption {
-The event yields after the selection criteria have been applied for the \ttbar control region.
-}
-\label{tab:ttbarCR}
-  \centering
-% This right-aligns numbers in column, but centers them under column title.
- \begin{tabular}{cc}
-   \hline
-   \textbf{MC process} & \textbf{$e\mu$}  \\
-   \hline
-   tZq & 1.709\\
-   \ttbar & 11778.461 \\
-   Z+jets & 80.9921\\
-   tW & 488.632\\
-   Other & 166.200\\
-   \hline
-   Data & 12509.0 \\
-   Total MC & 12515.995 \\
-   \hline
- \end{tabular}
-\end{table}
 
 \section{Experimental Blinding}\label{sec:blinding}
 Despite even the best intentions, there is the potential for an experiment to be inadvertently optimised based on previous observations~\cite{Roodman:2003rw}.
