@@ -14,7 +14,7 @@ Therefore, the analysis is designed to ensure that the backgrounds are understoo
 \subsection{Vector Boson + Jets backgrounds}
 QCD multijet events in associated with a vector boson (V+jets) have the largest cross sections of any process which produces prompt leptons at the LHC, as illustrated in Figure~\ref{fig:crossSections}.
 As only one promptly produced lepton from the W boson decay is expected for W+jets, the presence of any additional leptons would have to be the result of a heavy quark decay or incorrectly reconstructed jet. 
-The suppressing of these leptons should be achievable by requiring them to be sufficiently isolated from jets and heavy leptons.
+Requiring any selected lepton to be sufficiently isolated from jets and heavy leptons s suppressing of these leptons should be achievable by requiring them to be 
 
 In contrast, while the Z+jets cross section is an order of magnitude smaller than W+jets cross section, the two prompt leptons from the Z boson decay makes it much more difficult to distinguish between this background and the signal.
 While the requirement of the presence of at least four jets, with one being a b-jet, will reject the majority of the Z+jets events, the size of the Z+jets cross section ensures that the process will dominate any signal region defined.
@@ -273,13 +273,14 @@ Whilst the signal region does not explicitly cut on \MET, it is used in one of t
 The event selection criteria signal region were chosen to balance the needs of suppressing the background processes against maximising the selection efficiency of the rare signal process.
 
 %Talk about what needs constraining - ie need for low mis-id for Z leptons, need to balance purity/efficiency for b-jets, and use of W decay products to reconstruct top mass.
-
+As the trigger strategy involved the use of datasets where lepton triggers have fired, any selected lepton must have
+the \pT thresholds have
 %maximise lepton phase space
 %minimise non-prompt leptons
 As the tZq dilepton final state involves the presence of exactly two leptons and at least four jets, the selection criteria applied to these physics objects on the  
 
 Ideally, in order to cover as much phase space as possible, the lowest possible transverse momenta cuts would be applied to the leptons.
-As the trigger strategy involves the use datasets where lepton triggers have fired, the \pT thresholds have  
+As the   
 
 In order to ensure that the two same flavour and opposite sign leptons pr
 To meet the challenge of suppressing the background contamination as much as possible while 
@@ -305,8 +306,14 @@ Those leptons which pass this criteria are then
 
 At least four jets will be present, one being the recoil quark, one from the top quark's decay and two from the decay of the W boson produced by the decaying top quark.
 Additional jets can be produced by further ISR or FSR gluon splitting, but with the decreasing probability of these higher order contributions occurring and the increasing difficulty in accurately simulating them, the maximum number of jets considered is limited to six.
+These jets are required to have a $\pT > 30\GeVc$ and $|\eta| < 4.7$ and pass the loose jet ID.
+%loose jet ID = reject the majority of the fake tracks + high selection efficiency
 
-Given the top quark having a near 100\% probability of decaying into a bottom quark, the event selection requires at least one of the selected jets to be b-tagged.
+
+Given the top quark having a near 100\% probability of decaying into a bottom quark, 
+
+
+the event selection requires at least one of the selected jets to be b-tagged.
 As the top quark is initially produced by a bottom quark which can either be a sea quark or originate from gluon splitting ... and 
 
 Top comes from b quark (sea quark or from gluon splitting)
