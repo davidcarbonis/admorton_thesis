@@ -209,7 +209,7 @@ A scale factor is applied to \ttbar MC as a function of the top's and anti-top's
 \section{Signal Region Simulated Backgrounds}\label{sec:simBackgrounds}
 The impact of the application of the full event selection and simulation corrections in the signal region on the simulated samples is shown in Table~\ref{tab:signalYields}.
 
-The jet cleaning and tight isolation criteria for leptons 
+The jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process,
 It is clear that despite the high purity selection criteria used to reject the majority of the Z+jets, it remains the dominant background
 
 The 
@@ -307,9 +307,9 @@ NPL estimation: & a & c & e \\
 \end{table}
 
 \subsection{Z+jets background}\label{subsec:zPlusJetsEstimation}
-Following the application of the full event selection in the signal region, it was observed that while the Z+jets sample produced using Madgraph 
-Madgraph - normalises well but poor jet multiplicity
-aMC@NLO - bad normalisation, but good higher jet multiplicity description
+Following the application of the full event selection in the signal region, it was observed that while the Z+jets sample produced using Madgraph is correctly normalised but poorly describes higher jet multiplicities, the sample produced using aMC@NLO better describes the shape of the higher jet multiplicities but ...
+
+
 
 \begin{table}[!htbp]
 \topcaption{The number of observed events in data and the number of expected events in simulation in the signal region fllowing the full event selection for each of the separate channels and with both channels combined.}\label{tab:zPlusControlYields}
@@ -348,15 +348,17 @@ Total MC + NPLs & 5322.654 & 10098.641 & 15361.377    \\
 \end{table}
 
 \subsection{\ttbar background}\label{subsec:ttbarEstimation}
-The \ttbar enriched control region defined in Chapter~\ref{subsec:ttbarCR} was designed to provide an orthogonal region which was topologically similar to the signal region in order to validate:
+The \ttbar enriched control region, as defined in Chapter~\ref{subsec:ttbarCR}, was designed to provide an orthogonal region which was topologically similar to the signal region in order to validate:
 \begin{itemize}
 \item whether or not the simulated \ttbar sample used accurately modelled the \ttbar process;
 \item and if not, to be used to derive a data-driven estimate for \ttbar.
 \end{itemize}
 
+Table~\ref{tab:ttbarCR} lists the 
+
 \begin{table}[htbp]
 \topcaption {
-The event yields after the selection criteria have been applied for the \ttbar control region.
+The event yields after the application of the selection criteria for the \ttbar control region.
 }
 \label{tab:ttbarCR}
   \centering
@@ -420,7 +422,7 @@ This process iteratively removes the least important feature and re-trains the B
 Following each removal of a feature, the area under the Receiver Operating Characteristic (ROC) curve is recorded.
 The features found above the point at which the area under the ROC curve experiences a significant decline are determined to be an optimal correlated set of features.
  
-The features chosen by recursive feature elimination for the $ee$ and $\mu\mu$ channels are given in Table~\ref{tab:selectedBdtVariables}, with the full list of features considered, and their ability to separate between signal and background, being given in full in Table~\ref{tab:fullBdtVariables}
+The features chosen by recursive feature elimination for the $ee$ and $\mu\mu$ channels are given in Table~\ref{tab:selectedBdtVariables}, with the full list of features considered, and their ability to separate between signal and background, being given in full in Table~\ref{tab:allBdtVariables}
 
 \begin{table}[htbp]
 \topcaption {The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
@@ -434,24 +436,24 @@ The features chosen by recursive feature elimination for the $ee$ and $\mu\mu$ c
    \hline
    \textbf{Variable} & \textbf{Description} & \textbf{$ee$} & \textbf{$\mu\mu$} \\
    \hline
-    bTagDisc & b-tag discriminator of the leading b-tagged jet & $\checkmark$ & $\checkmark$ \\
+    bTagDisc & Leading b-tagged jet b-tag discriminator & $\checkmark$ & $\checkmark$ \\
     fourthJetPt & \pt of the fourth jet & $\checkmark$ & $\checkmark$ \\
     jetHt & Total \HT of every jet & $X$ & $\checkmark$ \\
     jetMass & Total mass of every jet & $\checkmark$ & $\checkmark$ \\
     jjDelR & $\Delta R$ between the leading jets & $\checkmark$ & $\checkmark$ \\
-    leadJetEta & $\eta$ of the leading jet & $\checkmark$ & $\checkmark$ \\
-    leadJetPt & \pt of the leading jet & $\checkmark$ & $\checkmark$ \\
+    leadJetEta & Leading jet $\eta$ & $\checkmark$ & $\checkmark$ \\
+    leadJetPt & Leading jet \pt & $\checkmark$ & $\checkmark$ \\
     met & \met & $\checkmark$ & $\checkmark$ \\
-    secJetPt & \pt of the second jet & $\checkmark$ & $\checkmark$ \\
-    thirdJetPt & \pt of the third jet & $\checkmark$ & $\checkmark$ \\
-    topMass & $m_{top}$ & $\checkmark$ & $\checkmark$ \\
+    secJetPt & Second jet \pt & $\checkmark$ & $\checkmark$ \\
+    thirdJetPt & Third jet \pt & $\checkmark$ & $\checkmark$ \\
+    topMass & Top quark mass & $\checkmark$ & $\checkmark$ \\
     totHtOverPt & Total \HT divided by total \pt & $\checkmark$ & $\checkmark$ \\
-    wPairMass & $m_{W}$ & $\checkmark$ & $\checkmark$ \\
+    wPairMass & W boson mass & $\checkmark$ & $\checkmark$ \\
     wQuark2Eta & $\eta$ of the second W boson candidate jet & $X$ & $\checkmark$ \\
     wwdelR & $\Delta R$ between the W boson candidate jets & $\checkmark$ & $X$ \\
-    zEta & $\eta$ of the Z boson & $X$$ & $\checkmark$ \\
+    zEta & $\eta$ of the Z boson & $X$ & $\checkmark$ \\
     zHt & \HT of the Z boson & $\checkmark$ & $\checkmark$ \\
-    zMass & $m_{Z}$ & $\checkmark$ & $\checkmark$ \\
+    zMass & $Z boson mass$ & $\checkmark$ & $\checkmark$ \\
     zTopDelR & $\Delta R$ between the Z boson and top quark & $X$ & $\checkmark$ \\
     zjminR & Minimum $\Delta R$ between the Z boson and a jet & $\checkmark$ & $\checkmark$ \\
     zlb1DelR & $\Delta R$ between the Z boson and leading b-tagged jet & $\checkmark$ & $X$ \\
@@ -461,13 +463,129 @@ The features chosen by recursive feature elimination for the $ee$ and $\mu\mu$ c
 
 \editComment{LOTS of PLOTS of the input variable distributions}
 
+\begin{table}[htbp]
+\topcaption {The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
+}
+\label{tab:allBdtVariables}
+  \centering
+% This increases column spacing.
+\resizebox{\textwidth}{!}{
+% This right-aligns numbers in column, but centers them under column title.
+\begin{tabular}{cccc}
+   \hline
+   \textbf{Variable} & \textbf{Description} & \textbf{Separation Power} \\
+   \hline
+    wQuark1Pt & Leading W boson candidate jet \pt & $\checkmark$ \\
+    wQuark1Eta & Leading W boson candidate jet $\eta$ & $X$ \\
+    wQuark1Phi &  Leading W boson candidate jet $\phi$ & $\checkmark$ \\
+    wQuark2Pt & Subleading W boson candidate jet \pt & $\checkmark$ \\
+    wQuark2Eta & Subleading W boson candidate jet $\eta$ & $X$ \\
+    wQuark2Phi & Subleading W boson candidate jet $\phi$ & $\checkmark$ \\
+    wPairMass & W boson mass & $\checkmark$ \\
+    wPairPt & W boson \pt & $\checkmark$ \\
+    wPairEta & W boson $\eta$ & $\checkmark$ \\
+    wPairPhi & W boson $\phi$ & $\checkmark$ \\
+    mTW & W boson $m_{T}$ & $\checkmark$ \\
+    met & \met & $\checkmark$ \\
+    nJets & Number of jets & $\checkmark$ \\
+    leadJetPt & Leading jet \pt $\checkmark$ \\
+    leadJetPhi & Leading jet $\phi$ & $\checkmark$ \\
+    leadJetEta & Leading jet $\eta$ & $\checkmark$ \\
+    leadJetbTag & Leading jet b-tag discriminator & $\checkmark$ \\
+    secJetPt & Subleading jet \pt & $X$ \\
+    secJetPhi & Subleading jet $\phi$ & $\checkmark$ \\
+    secJetEta & Subleading jet $\eta$ & $X$ \\
+    secJetbTag & Subleading jet b-tag discriminator & $\checkmark$ \\
+    thirdJetPt & $\eta$ of the second W boson candidate jet & $X$ \\
+    thirdJetPhi & $\Delta R$ between the W boson candidate jets & $\checkmark$ \\
+    thirdJetEta & $\eta$ of the Z boson & $X$ \\
+    thirdJetbTag & \HT of the Z boson & $\checkmark$ \\
+    fourthJetPt & $\eta$ of the second W boson candidate jet & $X$ \\
+    fourthJetPhi & $\Delta R$ between the W boson candidate jets & $\checkmark$ \\
+    fourthJetEta & $\eta$ of the Z boson & $X$ \\
+    fourthJetbTag & \HT of the Z boson & $\checkmark$ \\
+    nBjets & Number of b-tagged jets & \\
+    bTagDisc & Leading b-tagged jet b-tag discriminator & \\
+    lep1Pt & Leading lepton \pt & \\
+    lep1Eta & Leading lepton $\eta$ & \\
+    lep1Phi & & \\
+    lep1RelIso & & \\
+    lep1D0 & & \\
+    lep2Pt & & \\
+    lep2Eta & & & & \\ \\
+    lep2Phi & & \\
+    lep2RelIso & & \\
+    lep2D0 & & \\
+    zMass & $m_{Z}$ & $\checkmark$ \\
+    zPt & & \\
+    zEta & & \\
+    zPhi & & \\
+    topMass & $m_{top}$ & \\
+    topPt & & \\
+    topEta & & \\
+    topPhi & & \\
+    j1j2delR & & \\
+    j1j2delPhi & & \\
+    w1w2delR & & \\
+    w1w2delPhi & & \\
+    zLepdelR & & \\
+    zLepdelPhi & & \\
+    zl1Quark1DelR & & \\
+    zl1Quark1DelPhi & & \\
+    zl1Quark2DelR & & \\
+    zl1Quark2DelPhi & & \\
+    zl2Quark1DelR & & \\
+    zl2Quark1DelPhi & & \\
+    zl2Quark2DelR & & \\
+    zl2Quark2DelPhi & & \\
+    zlb1DelR & $\Delta R$ between the Z boson and leading b-tagged jet & $\checkmark$\\
+    zlb1DelPhi & $\Delta \phi$ between the Z boson and leading b-tagged jet & \\
+    zlb2DelR & $\Delta R$ between the Z boson and subleading b-tagged jet& \\
+    zlb2DelPhi & $\Delta \phi$ between the Z boson and subleading b-tagged jet & \\
+    lepHt & & \\
+    wQuarkHt & & \\
+    totPt & & \\
+    totEta & & \\
+    totPhi & & \\
+    totPtVec & & \\
+    totVecM & & \\
+    totPt2Jet & & \\
+    wZdelR & & \\
+    wZdelPhi & & \\
+    zQuark1DelR & & \\
+    zQuark1DelPhi & & \\
+    zQuark2DelR & & \\
+    zQuark2DelPhi & & \\
+    zTopDelR & $\Delta R$ between the Z boson and top quark & \\
+    zTopDelPhi & & \\
+    zl1TopDelR & & \\
+    zl1TopDelPhi & & \\
+    zl2TopDelR & & \\
+    zl2TopDelPhi & & \\
+    wTopDelR & & \\
+    wTopDelPhi & & \\
+    w1TopDelR & & \\
+    w1TopDelPhi & & \\
+    w2TopDelR & & \\
+    w2TopDelPhi & & \\
+    zjminR & Minimum $\Delta R$ between the Z boson and a jet & $\checkmark$ \\
+    minZJetPhi & Minimum $\phi R$ between the Z boson and a jet & \\
+    totHt & & \\
+    jetHt & & \\
+    jetMass & & \\
+    jetPt & & \\
+    jetEta & & \\
+    jetPhi & & \\
+    jetMass3 & & \\
+    totHtOverPt & & \\
+   \hline
+ \end{tabular}}
+\end{table}
+
 \subsection{BDT Model Hyperparameters}
 The model hyperparameters are the set of parameters which are set before the BDT training begins, such the maximum depth trees can be grown to or the number of training iterations to be run. 
 Rather than tune the hyperparmeter selection by hand or run a computationally expensive and time consuming grid search of all the possible hyperparameters to optimise the classifier's performance, the optimal hyperparameters were selected using a Gaussian process.
 
-
-Hyperparameters are selected by using a Gaussian process to optimise the classifier’s performance
-hyperparameters = learning rate, n-estimators, max tree depth
 
 %    n_jobs: 20 - number of training iterations
 %    n_estimators: 4818 - 
