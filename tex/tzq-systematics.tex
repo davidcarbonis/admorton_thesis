@@ -307,7 +307,8 @@ NPL estimation: & a & c & e \\
 \end{table}
 
 \subsection{Z+jets background}\label{subsec:zPlusJetsEstimation}
-Following the application of the full event selection in the signal region, it was observed that while the Z+jets sample produced using Madgraph is correctly normalised but poorly describes higher jet multiplicities, the sample produced using aMC@NLO better describes the shape of the higher jet multiplicities but ...
+Following the application of the full event selection in the signal region both the LO and NLO Z+jets samples were compared.
+The Madgraph sample was observed to poorly describes higher jet multiplicities but the overall sample normalises correctly, whilst the aMC@NLO better describes the shape of higher jet multiplicities but experiences an offset scale.
 
 
 
@@ -378,6 +379,10 @@ The event yields after the application of the selection criteria for the \ttbar 
    \hline
  \end{tabular}
 \end{table}
+
+\editComment{ADD PLOTS}
+
+Given the good agreement observed between data and MC simulation, it was determined that a data-driven estimate of the \ttbar contribution was not required.
 
 \section{Multivariate Analysis Techniques}\label{sec:mvas}
 Multivariate Analysis (MVA) techniques are commonly used to further enhance the separation between signal and background processes given the difficulty in identifying rare or background dominated processes through the sole use of individual cuts.
@@ -584,15 +589,13 @@ The features chosen by recursive feature elimination for the $ee$ and $\mu\mu$ c
 
 \subsection{BDT Model Hyperparameters}
 %The model hyperparameters are the set of parameters which are set before the BDT training begins, such the maximum depth trees can be grown to or the number of training iterations to be run. 
-Rather than tuning the hyperparmeters for optimal classification performance by hand or a computationally expensive and time consuming grid search, a function describing classifier performance as a function of the set of hyperparameters, $f(\theta)$, was considered.
+Instead of tuning the hyperparmeters, $(\theta)$ for optimal classification performance by hand or through a time and computationally expensive grid search, the minima of a function that described the classifier performance, $f(\theta)$, were found.
 
-the minima of a function describing classifier performance as a function of the set of hyperparameters, $f(\theta)$, is determined.
+To find the minima of such a black box function, the \emph{Scikit-Optimize} library was used to constract a regression model based on a Gaussian process with the Mat\'{e}rn kernel~\cite{scikit-optimise}.
+This process initially 
 
-As such a function is a black box, the minima cannot be directly calculated, but they can however, but can be approximated through regression. 
 
-The \emph{Scikit-Optimize} library was used to evaluate $f(\theta)$ using a regression model 
-
-Minima found from this 
+In order to validate the quality of the classifiers found 
 %    n_jobs: 20 - number of training iterations
 %    n_estimators: 4818 - 
 %    subsample: 0.6794502469027806
@@ -602,6 +605,8 @@ Minima found from this
 %    gamma: 7.588559443997618 - minimum loss function used to make a further partition on a leaf node of the tree
 %    reg_lambda: 0.0006395600995084355
 %    reg_alpha: 0.00037293584840804463
+
+A more in depth discussion regarding the nature of the Gaussian process is provided in Appendix~\ref{}.
 
 \subsection{BDT Output}
 Following the optimisation of both the BDT features and hyperparameters for both the ee and $\mu\mu$ channels independently, the optimal BDT is trained and used to produce an output distribution of the BDT discriminator for each of the data and background samples considered.
