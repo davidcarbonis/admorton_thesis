@@ -583,11 +583,16 @@ The features chosen by recursive feature elimination for the $ee$ and $\mu\mu$ c
 \end{table}
 
 \subsection{BDT Model Hyperparameters}
-The model hyperparameters are the set of parameters which are set before the BDT training begins, such the maximum depth trees can be grown to or the number of training iterations to be run. 
-Rather than tune the hyperparmeter selection by hand or run a computationally expensive and time consuming grid search of all the possible hyperparameters to optimise the classifier's performance, the optimal hyperparameters were selected using a Gaussian process.
+%The model hyperparameters are the set of parameters which are set before the BDT training begins, such the maximum depth trees can be grown to or the number of training iterations to be run. 
+Rather than tuning the hyperparmeters for optimal classification performance by hand or a computationally expensive and time consuming grid search, a function describing classifier performance as a function of the set of hyperparameters, $f(\theta)$, was considered.
 
-By considering a metric, $f$, which is a function of the set of hyperparameters, $\theta$, 
+the minima of a function describing classifier performance as a function of the set of hyperparameters, $f(\theta)$, is determined.
 
+As such a function is a black box, the minima cannot be directly calculated, but they can however, but can be approximated through regression. 
+
+The \emph{Scikit-Optimize} library was used to evaluate $f(\theta)$ using a regression model 
+
+Minima found from this 
 %    n_jobs: 20 - number of training iterations
 %    n_estimators: 4818 - 
 %    subsample: 0.6794502469027806
