@@ -12,16 +12,10 @@
 Out of the 37.8\fbinv of the proton-proton collision data at $\sqrt{13}$ collected by CMS during 2016, 35.8\fbinv was certified by the collaboration as ``good'' to be used for physics analysis.
 
 The difference between the certified value and the total data recorded is the result of various factors such as the unavailability of a detector.
-Due to the prescaling of the electron triggers during the start of the most luminous runs, as discussed in Chapter~\ref{sec:triggerStrategy}, the ee channel uses a reduced dataset of 35.6\fbinv were none of the triggers considered were prescaled.
+Due to the prescaling of the electron triggers during the start of the most luminous runs, as discussed in Chapter~\ref{sec:triggerStrategy}, the ee channel uses a reduced dataset of 35.6\fbinv where none of the triggers considered were prescaled.
 Events in the double lepton and single lepton datasets from across these ``good'' data runs are considered where the double and single lepton triggers respectively have fired, using the strategy described in Chapter~\ref{sec:triggerStrategy}.
 
 The MC samples used to model signal and background processes that were considered are listed in Table~\ref{tab:mcList}, which includes information on the number of events generated, their cross sections and the order in perturbative accuracy in QCD to which the generators calculated the processes.
-
-To determine the impact of a number of theoretical uncertainties for a number of processes, a several dedicated samples, listed in Table~\ref{tab:theorySampleList}, were used.
-These systematic uncertainties are discussed further in Chapter~\ref{sec:theorySysts}.
-
-For all the MC samples considered, the hadronisation of all the MC samples considered was undertaken using PYTHIA 8.
-The NNPDF3.0 family of PDF sets was used as input for the generators of the MC samples, where the corresponding PDF sets were used depending on whether the sample was produced at LO or NLO and used either the four or five flavour scheme.
 
 \begin{table}[htbp]
 \topcaption {
@@ -90,6 +84,12 @@ The MC processes and their associated total number of events, cross sections and
    
  \end{tabular}}
 \end{table}
+
+To determine the impact of a number of theoretical uncertainties for a number of processes, a several dedicated samples, listed in Table~\ref{tab:theorySampleList}, were used.
+These systematic uncertainties are discussed further in Chapter~\ref{sec:theorySysts}.
+
+For all the MC samples considered, the hadronisation of all the MC samples considered was undertaken using PYTHIA 8.
+The NNPDF3.0 family of PDF sets was used as input for the generators of the MC samples, where the corresponding PDF sets were used depending on whether the sample was produced at LO or NLO and used either the four or five flavour scheme.
 
 \begin{table}[htbp]
 \topcaption {
@@ -198,7 +198,7 @@ This methodology was chosen as it involves only changing the weight of the selec
 
 \subsection{\PU Modelling}\label{subsec:puSF}
 It is challenging to model variations in the number of \PU interactions that result from the changing LHC conditions.
-Therefore MC events are reweighted as a function of the number of primary vertices so that the PU interactions simulated are resembles what is observed in data.
+Therefore MC events are reweighted as a function of the number of primary vertices so that the simulated PU interactions resemble what is observed in data.
 
 The \PU SF is determined as a function of the number of primary vertices, $n_{PV}$, present by comparing $n_{PV}$ in minimum bias data over the running period considered to $n_{PV}$ for simulated events.
 
@@ -257,17 +257,17 @@ Total MC + NPLs & 5322.654 & 10098.641 & 15361.377    \\
 Leptons which are produced from events where at least one jet is incorrectly reconstructed as a lepton (predominately electrons) or a lepton from the decay of heavy quarks (predominately muons) are known as \emph{non-prompt leptons} (NPLs).
 Given the difficulty in accurately modelling QCD processes and the very low statistics of such processes passing the lepton selection and isolation criteria, the NPL contribution is estimated with data.
 
-The data-driven background estimation of background NPL background uses the same methodology as top quark pair production~\cite{CMS:2016syx} and same charge SUSY searches~\cite{CMS:2015vqc}.
-This approach takes advantage of the fact that the vast majority of the event yields for same charge lepton pairs are result from non-prompt and charge misidentified leptons, with some contribution from prompt leptons.
+The data-driven background estimation of the NPL contribution uses the same methodology as top quark pair production~\cite{CMS:2016syx} and same charge SUSY searches~\cite{CMS:2015vqc}.
+This approach takes advantage of the fact that the vast majority of the event yields for same charge lepton pairs result from non-prompt and charge misidentified leptons, with some contribution from prompt leptons.
 As these backgrounds are independent of the charge of the lepton pairs, it is expected that the nominal opposite charge event selection would have a similar contribution.
 
 Therefore by inverting the signal region's oppositely charged lepton requirement (\ie the leptons must have the same charge), a same charge control region can be defined which is dominated by NPL events while containing some contributions from prompt lepton events, charge misidentification and real same charge pairs.
 
 Using this control region, a data-driven estimate of the contribution of opposite charge NPLs can be derived using Equation~\ref{eq:NPL}:
 
-\begin{equation}
+\begin{equation}\label{eq:NPL}
  N_{data}^{OS non-prompt} = (N_{data}^{SS} - N^{SS}_{real + mis-ID}).\frac{N_{MC}^{OS non-prompt}}{N_{MC}^{SS non-prompt}}
-\end{equation}\label{eq:NPL}
+\end{equation}
 
 where $N_{data}^{SS}$ is the total number of same charge events observed in data and $N^{SS}_{real + mis-ID}$ is the expected number of real same charge events and events with charge misidentification.
 
@@ -308,9 +308,9 @@ NPL estimation: & a & c & e \\
 
 \subsection{Z+jets background}\label{subsec:zPlusJetsEstimation}
 Following the application of the full event selection in the signal region both the LO and NLO Z+jets samples were compared.
-The Madgraph sample was observed to poorly describes higher jet multiplicities but the overall sample normalises correctly, whilst the aMC@NLO better describes the shape of higher jet multiplicities but experiences an offset scale.
 
-
+The Madgraph sample was observed in the signal region to poorly describe higher jet multiplicities but the overall sample normalises correctly, whilst the aMC@NLO better describes the shape of higher jet multiplicities but experiences an offset scale.
+Using both of the Z+jets control regions defined in Chapter~\ref{subsec:zPlusJetsCR},
 
 \begin{table}[!htbp]
 \topcaption{The number of observed events in data and the number of expected events in simulation in the signal region fllowing the full event selection for each of the separate channels and with both channels combined.}\label{tab:zPlusControlYields}
@@ -591,11 +591,10 @@ The features chosen by recursive feature elimination for the $ee$ and $\mu\mu$ c
 %The model hyperparameters are the set of parameters which are set before the BDT training begins, such the maximum depth trees can be grown to or the number of training iterations to be run. 
 Instead of tuning the hyperparmeters, $(\theta)$ for optimal classification performance by hand or through a time and computationally expensive grid search, the minima of a function that described the classifier performance, $f(\theta)$, were found.
 
-To find the minima of such a black box function, the \emph{Scikit-Optimize} library was used to constract a regression model based on a Gaussian process with the Mat\'{e}rn kernel~\cite{scikit-optimise}.
-This process initially 
+To find the minima of such a black box function, the \emph{Scikit-Optimize} library~\cite{scikit-optimise} was used to constract a regression model based on a Gaussian process with the Mat\'{e}rn $\nu =\frac{5}{2}$ kernel.
 
+\editComment{Confirm with Corin how this process is run - I know the intial values are chosen at random prior to intelligent application of theta based on the regression model, but unsure how/when/details?}
 
-In order to validate the quality of the classifiers found 
 %    n_jobs: 20 - number of training iterations
 %    n_estimators: 4818 - 
 %    subsample: 0.6794502469027806
@@ -609,5 +608,6 @@ In order to validate the quality of the classifiers found
 A more in depth discussion regarding the nature of the Gaussian process is provided in Appendix~\ref{}.
 
 \subsection{BDT Output}
-Following the optimisation of both the BDT features and hyperparameters for both the ee and $\mu\mu$ channels independently, the optimal BDT is trained and used to produce an output distribution of the BDT discriminator for each of the data and background samples considered.
+Following the optimisation of both the BDT features and hyperparameters for both the ee and $\mu\mu$ channels independently, the optimal BDT is trained.
+The resultant BDT is used to produce the output distribution of the BDT discriminator for each of the data and background samples considered.
 The resultant BDT discriminator distributions are used to perform a measurement of the signal strength and to attempt an extraction of the signal's cross section.
