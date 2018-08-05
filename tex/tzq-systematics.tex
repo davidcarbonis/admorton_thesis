@@ -207,18 +207,15 @@ A scale factor is applied to \ttbar MC as a function of the top's and anti-top's
 
 
 \section{Signal Region Simulated Backgrounds}\label{sec:simBackgrounds}
-The impact of the application of the full event selection and simulation corrections in the signal region on the simulated samples is shown in Table~\ref{tab:signalYields}.
+The impact of the application of the full event selection and simulation corrections in the signal region on the simulated samples, including non-prompt lepton contribution estimated from data, compared to data is shown in Table~\ref{tab:signalYields}.
 
-The 
-
-While jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process,
-
-It is clear that while the high purity selection criteria rejects the majority of the Z+jets events, it remains the dominant background. 
-Dilepton \ttbar events consistent with a Z
-The 
+While jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process, the signal region is still dominated by a number of background processes.
+The two dominant background processes are Z+jets and \ttbar, with contributions of a similar order to tZq from the single top tW-channel, \ttbarZ, WZ and ZZ processes.
+The remaining single top (tHq, tWZ, s-channel, t-channel), \ttbarW, \ttbarH, WW and triboson backgrounds produce contributions smaller than the signal process.
 
 \begin{table}[htbp]
-\topcaption{The number of observed events in data and the number of expected events in simulation in the signal region fllowing the full event selection for each of the separate channels and with both channels combined.}\label{tab:signalYields}
+\topcaption{The number of observed events in data, the data-driven estimate of the non-prompt leptons and the number of expected events in simulation in the signal region fllowing the full event selection for each of the separate channels and with both channels combined. The aMC@NLO sample is used for the Z+jets contriubtion given 
+}\label{tab:signalYields}
 \centering
 \begin{tabular}{lccccc}
 \hline
@@ -314,10 +311,11 @@ Following the application of the full event selection in the signal region both 
 In the signal region, the Madgraph sample was observed to poorly describe higher jet multiplicities but 
 The Madgraph sample was observed in the signal region to poorly describe higher jet multiplicities but the overall sample normalises correctly, whilst the aMC@NLO better describes the shape of higher jet multiplicities but experiences an offset scale.
 
-Both of the Z+jets control regions defined in Chapter~\ref{subsec:zPlusJetsCR} were used to validate whether 
+Both of the Z+jets control regions defined in Chapter~\ref{subsec:zPlusJetsCR} were used to confirm that these observations were consistent
 
-Given that the aMC@NLO sample better describes the higher order contributions for this process, the 
+Given that the aMC@NLO sample better describes the shapes of the higher order contributions for this process, 
 
+A description of how the events selected by these control regions were used to normalise the aMC@NLO Z+jets sample is given in Chapter~\ref{subsec:combineNormalisation}.
 
 \begin{table}[htbp]
 \topcaption{The number of observed events in data and the number of expected events in simulation in the signal region fllowing the full event selection for each of the separate channels and with both channels combined.}\label{tab:zPlusControlYields}
@@ -362,7 +360,10 @@ The \ttbar enriched control region, as defined in Chapter~\ref{subsec:ttbarCR}, 
 \item and if not, to be used to derive a data-driven estimate for \ttbar.
 \end{itemize}
 
-Following the full control region event selection, both the overall yields given in Table~\ref{tab:ttbarCR}, and the kinematics of the two leptons and the four leading jets given in Figures~\ref{}, show consistently good agreement between simulation and data.
+Table~\ref{tab:ttbarCR} gives  the full control region event selection, 
+94\% \ttbar, 4\% tW-channel, remainder other backgrounds
+
+both the overall yields given in Table~\ref{tab:ttbarCR}, and the kinematics of the two leptons and the four leading jets given in Figures~\ref{}, show consistently good agreement between simulation and data.
 
 Given this good agreement between data and MC simulation, a data-driven estimate of the \ttbar contribution was considered unnecessary.
 
@@ -377,14 +378,28 @@ The event yields after the application of the selection criteria for the \ttbar 
    \hline
    \textbf{MC process} & \textbf{$e\mu$}  \\
    \hline
-   tZq & 1.709\\
-   \ttbar & 11778.461 \\
-   Z+jets & 80.9921\\
-   tW & 488.632\\
-   Other & 166.200\\
-   \hline
-   Data & 12509.0 \\
-   Total MC & 12515.995 \\
+	tZq & 1.709  \\
+	tWZ\@: & 0.879  \\
+	tHq: & 1.169  \\
+	ttW\@: & 50.098   \\
+	ttZ\@: & 45.425   \\
+	ttH\@: & 34.135  \\
+	\ttbar: & 11778.461   \\
+	tW\@: & 488.632    \\
+	s-channel: &  0.036 \\
+	t-channel: & 1.776 \\
+	WW\@: & 10.529  \\
+	WZ\@: & 3.898 \\
+	ZZ\@: & 0.704 \\
+	WWW\@: & 0.844     \\
+	WWZ\@: & 0.793     \\
+	WZZ\@: & 0.065     \\
+	ZZZ\@: & 0.012     \\
+	W + jets: & 15.834     \\
+	Z + jets: & 86.547     \\
+	\hline
+	Data & 12509.0    \\
+	Total MC & 12521.246     \\
    \hline
  \end{tabular}
 \end{table}
