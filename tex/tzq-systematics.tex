@@ -255,9 +255,9 @@ Total MC + NPLs & 5322.654 & 10098.641 & 15361.377    \\
 
 \subsection{Non-Prompt Leptons}\label{sec:NPLs}
 Leptons which are produced from events where at least one jet is incorrectly reconstructed as a lepton (predominately electrons) or a lepton from the decay of heavy quarks (predominately muons) are known as \emph{non-prompt leptons} (NPLs).
-Given the difficulty in accurately modelling QCD processes and the very low statistics of such processes passing the lepton selection and isolation criteria, the NPL contribution is estimated with data.
+Given the difficulty in accurately modelling QCD processes and the very low statistics of such processes passing the lepton selection and isolation criteria could result in an inaccurate estimate of such processes from simulation alone, the NPL contribution is estimated with data.
 
-The data-driven background estimation of the NPL contribution uses the same methodology as top quark pair production~\cite{CMS:2016syx} and same charge SUSY searches~\cite{CMS:2015vqc}.
+The data-driven background estimation of NPL contributions is based off the methodology used in top quark pair production~\cite{CMS:2016syx} and same charge SUSY searches~\cite{CMS:2015vqc}.
 This approach takes advantage of the fact that the vast majority of the event yields for same charge lepton pairs result from non-prompt and charge misidentified leptons, with some contribution from prompt leptons.
 As these backgrounds are independent of the charge of the lepton pairs, it is expected that the nominal opposite charge event selection would have a similar contribution.
 
@@ -275,10 +275,12 @@ The ratio of opposite charge and same charge NPLs in simulation, $N_{MC}^{OS non
 is used to appropriately normalise this estimate and uses the generator level information to correctly identify how the leptons were produced.
 The W+jets, \ttZ, \ttW, and single top simulated samples which have sufficient statistics in the control region are used to calculate this ratio as these processes are expected to be the predominant source of non-prompt leptons for this analysis.
 
-The event yields of the simulated samples and data following the full event selection in the same lepton charge control region, ratio of same charge to opposite charge event yields and the estimated NPL contribution are given in Table~\ref{tab:fakeLeptonYields}.
+The event yields of the simulated samples and data following the full event selection in the same lepton charge control region, ratio of same charge to opposite charge event yields and the data-driven NPL contribution estimate are given in Table~\ref{tab:fakeLeptonYields}.
 
 \begin{table}[htbp]
-\topcaption{The same charge event yields, ratio of same to opposite charge lepton events and the estimated non-prompt lepton contribution following all selection cuts.}
+\topcaption{The same charge event yields, ratio of same to opposite charge lepton events and the estimated non-prompt lepton contribution following all selection cuts.
+\editComment{Update values with optimised ones!}
+}
 \centering
 \begin{tabular}{lccccc}
 \hline
@@ -306,12 +308,19 @@ NPL estimation: & a & c & e \\
 \end{table}
 
 \subsection{Z+jets background}\label{subsec:zPlusJetsEstimation}
-Following the application of the full event selection in the signal region both the LO and NLO Z+jets samples were compared.
+Following the application of the full event selection and simulation corrections in the signal region both the Madgraph (LO) and aMC@NLO (NLO) Z+jets samples were compared.
 
-In the signal region, the Madgraph sample was observed to poorly describe higher jet multiplicities but 
+It was observed that while the event yields in the signal region were correctly described when the Madgraph sample was used, with there aMC@NLO sample there was a dramatic normalisation offset.
+Despite this scaling issue however, it was apparent that the aMC@NLO Z+jets sample did better describe the higher jet multiplicities and the kinematics of ...
+
+This behaviour 
+
+tab:zPlusControlYields
 The Madgraph sample was observed in the signal region to poorly describe higher jet multiplicities but the overall sample normalises correctly, whilst the aMC@NLO better describes the shape of higher jet multiplicities but experiences an offset scale.
 
 Both of the Z+jets control regions defined in Chapter~\ref{subsec:zPlusJetsCR} were used to confirm that these observations were consistent
+
+
 
 Given that the aMC@NLO sample better describes the shapes of the higher order contributions for this process, 
 
@@ -360,12 +369,20 @@ The \ttbar enriched control region, as defined in Chapter~\ref{subsec:ttbarCR}, 
 \item and if not, to be used to derive a data-driven estimate for \ttbar.
 \end{itemize}
 
-Table~\ref{tab:ttbarCR} gives  the full control region event selection, 
+Using the 
+Table~\ref{tab:ttbarCR} gives the event yields following the full \ttbar control region event selection and simulation corrections.
+ 
+The resultant control region is 94\% pure, with 4\% of the background 
+The
+It is clear that this 
 94\% \ttbar, 4\% tW-channel, remainder other backgrounds
 
 both the overall yields given in Table~\ref{tab:ttbarCR}, and the kinematics of the two leptons and the four leading jets given in Figures~\ref{}, show consistently good agreement between simulation and data.
 
-Given this good agreement between data and MC simulation, a data-driven estimate of the \ttbar contribution was considered unnecessary.
+The distributions of the simulated samples against data for the number of jets, number of b-tagged jets, jet \pT for the leading four jets, invariant mass of the W boson ``candidate'', the leptons' \pt and invariant mass and \pt  are shown in Figures~\ref{ttbarCR_nJets},.
+For these variables, it is clear that simulation is consistent with data within systematic and statistical uncertainties.
+
+Given this good agreement between data and MC simulation for these distributions and the overall event yields, a data-driven estimate of the \ttbar contribution was considered unnecessary.
 
 \begin{table}[htbp]
 \topcaption {
@@ -404,8 +421,61 @@ The event yields after the application of the selection criteria for the \ttbar 
  \end{tabular}
 \end{table}
 
-\editComment{ADD PLOTS}
+\editComment{ADD PLOTS - script works for ee and mumu but is displaying plots with 0 events for emu ...}
 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\caption{
+The distributions of the number of jets and the number b-tagged jets for the \ttbar control region following the application of the full control region event selection and simulation corrections.
+}
+\label{fig:ttbarCR_nJets}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\\
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\\
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\\
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\caption{
+The distribution of the \pt of the four leading jets for the \ttbar control region following the application of the full control region event selection and simulation corrections.
+}
+\label{fig:ttbarCR_jetPt}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\\
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\\
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\\
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\caption{
+The distributions of the \pt of the four leading jets for the \ttbar control region following the application of the full control region event selection and simulation corrections.
+}
+\label{fig:ttbarCR_jetPt}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\\
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\\
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\\
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\caption{
+The distribution of the selected electron and muon and their combined invariant mass and \pt for the \ttbar control region following the application of the full control region event selection and simulation corrections.
+}
+\label{fig:ttbarCR_leptons}
+\end{figure}
 
 \section{Multivariate Analysis Techniques}\label{sec:mvas}
 Multivariate Analysis (MVA) techniques are commonly used to further enhance the separation between signal and background processes given the difficulty in identifying rare or background dominated processes through the sole use of individual cuts.
