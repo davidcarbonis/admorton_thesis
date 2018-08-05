@@ -209,15 +209,18 @@ A scale factor is applied to \ttbar MC as a function of the top's and anti-top's
 \section{Signal Region Simulated Backgrounds}\label{sec:simBackgrounds}
 The impact of the application of the full event selection and simulation corrections in the signal region on the simulated samples is shown in Table~\ref{tab:signalYields}.
 
-The jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process,
-It is clear that despite the high purity selection criteria used to reject the majority of the Z+jets, it remains the dominant background
-
 The 
 
-\begin{table}[!htbp]
+While jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process,
+
+It is clear that while the high purity selection criteria rejects the majority of the Z+jets events, it remains the dominant background. 
+Dilepton \ttbar events consistent with a Z
+The 
+
+\begin{table}[htbp]
 \topcaption{The number of observed events in data and the number of expected events in simulation in the signal region fllowing the full event selection for each of the separate channels and with both channels combined.}\label{tab:signalYields}
 \centering
-\begin{tabular}{|l|c|c|c|c|c|}
+\begin{tabular}{lccccc}
 \hline
 Channel &  $ee$ & $\mu\mu$ & Combined \\
 \hline
@@ -276,12 +279,11 @@ is used to appropriately normalise this estimate and uses the generator level in
 The W+jets, \ttZ, \ttW, and single top simulated samples which have sufficient statistics in the control region are used to calculate this ratio as these processes are expected to be the predominant source of non-prompt leptons for this analysis.
 
 The event yields of the simulated samples and data following the full event selection in the same lepton charge control region, ratio of same charge to opposite charge event yields and the estimated NPL contribution are given in Table~\ref{tab:fakeLeptonYields}.
-It is found that ...
 
-\begin{table}[!htbp]
+\begin{table}[htbp]
 \topcaption{The same charge event yields, ratio of same to opposite charge lepton events and the estimated non-prompt lepton contribution following all selection cuts.}
 \centering
-\begin{tabular}{| l |  c |  c |  c |  c |  c |}
+\begin{tabular}{lccccc}
 \hline
 Source &  $ee$ & $\mu\mu$ & Combined \\ 
 \hline
@@ -309,13 +311,18 @@ NPL estimation: & a & c & e \\
 \subsection{Z+jets background}\label{subsec:zPlusJetsEstimation}
 Following the application of the full event selection in the signal region both the LO and NLO Z+jets samples were compared.
 
+In the signal region, the Madgraph sample was observed to poorly describe higher jet multiplicities but 
 The Madgraph sample was observed in the signal region to poorly describe higher jet multiplicities but the overall sample normalises correctly, whilst the aMC@NLO better describes the shape of higher jet multiplicities but experiences an offset scale.
-Using both of the Z+jets control regions defined in Chapter~\ref{subsec:zPlusJetsCR},
 
-\begin{table}[!htbp]
+Both of the Z+jets control regions defined in Chapter~\ref{subsec:zPlusJetsCR} were used to validate whether 
+
+Given that the aMC@NLO sample better describes the higher order contributions for this process, the 
+
+
+\begin{table}[htbp]
 \topcaption{The number of observed events in data and the number of expected events in simulation in the signal region fllowing the full event selection for each of the separate channels and with both channels combined.}\label{tab:zPlusControlYields}
 \centering
-\begin{tabular}{|l|c|c|c|c|c|}
+\begin{tabular}{lccccc}
 \hline
 Channel &  $ee$ & $\mu\mu$ & Combined \\
 \hline
@@ -355,7 +362,9 @@ The \ttbar enriched control region, as defined in Chapter~\ref{subsec:ttbarCR}, 
 \item and if not, to be used to derive a data-driven estimate for \ttbar.
 \end{itemize}
 
-Table~\ref{tab:ttbarCR} lists the 
+Following the full control region event selection, both the overall yields given in Table~\ref{tab:ttbarCR}, and the kinematics of the two leptons and the four leading jets given in Figures~\ref{}, show consistently good agreement between simulation and data.
+
+Given this good agreement between data and MC simulation, a data-driven estimate of the \ttbar contribution was considered unnecessary.
 
 \begin{table}[htbp]
 \topcaption {
@@ -382,7 +391,6 @@ The event yields after the application of the selection criteria for the \ttbar 
 
 \editComment{ADD PLOTS}
 
-Given the good agreement observed between data and MC simulation, it was determined that a data-driven estimate of the \ttbar contribution was not required.
 
 \section{Multivariate Analysis Techniques}\label{sec:mvas}
 Multivariate Analysis (MVA) techniques are commonly used to further enhance the separation between signal and background processes given the difficulty in identifying rare or background dominated processes through the sole use of individual cuts.
@@ -402,8 +410,11 @@ At the end of the process all the trees are combined into a single classifier wh
 Following the evaluation of a number of Boosting and Bagging algorithms for decision trees, it was determined that the
 \emph{eXtreme Gradient Boosting} (XGBoost) implementation of the Gradiant Boost alogorithm provided the optimal performance for the search presented~\cite{xgboost}.
 
-The \emph{Gradient Boost} algorithm~\cite{Friedman:GradientBoosting} models the shortcomings of the model 
+The \emph{Gradient Boost} algorithm~\cite{Friedman:GradientBoosting} models the shortcomings of the model by estimating the regression function 
 
+This approach differs from the popular Adaptive Boost (Adaboost) algorithm which 
+
+Both adaboost and gradboost sequentially add predictors to an esmeble to correct predesccsors, adaboost tweaks event weights and gradboost tries to fit the new predictor to the errors made by the previous predictor.
 
 This exponential loss approach however, is its degraded performance in noisier environments as it is not robust in 	
 
