@@ -29,11 +29,15 @@ In contrast, very small numbers of events to zero are expected for the t-channel
 where no prompt leptons are produced for their final state.
 
 
-While the \ttbar in association with a vector boson processes have cross sections many orders of magnitude smaller than \ttbar and single top production, only \ttbarZ is expected to be a significant background.
+While the \ttbar in association with a vector boson processes have cross sections many orders of magnitude smaller than \ttbar and single top production, only \ttbarZ where the Z boson decays leptonically is expected to be a significant background.
+The \ttbarZ (Z$\rightarrow$ll) final state results in an identical topology which is particularly difficult to discriminate against as, like the signal process,  b-jet  
+%%%EXPLAIN
+%%% ttZ ->2l2nu is for Z->ll or nunu
+%%% ttZ -> 2q  is for Z->qq
+%%% 2b's + 4q
+
 Only \ttbarW events where two leptons are produced which are consistent with a Z boson decay will pass the event selection criteria and the Z boson mass cut window will reject the vast majority of events produced by 
 \ttbarH (and tHq).
-%%%EXPLAIN
-The fully hadronic decay of the top-anti-top pair and leptonic Z boson decay for \ttbarZ results in an identical topology to 
 
 While the dilepton final state of a single top produced in association with both a W and Z boson, tWZ, will be indistinguishable from the tZq final state.
 As the tWZ cross section is an order of magnitude smaller than the tZq cross section, this will be one of the minor backgrounds.
@@ -361,10 +365,16 @@ To this end a $\chi^{2}$-like variable in the two dimensional space of the recon
 \end{equation}
 
 where $m_{\rm jj}$ is the W boson mass reconstructed from the two candidate jets, $m_{\rm W}$ is the known W boson mass, $m_{\mathrm{jj+b}}$ is the top quark mass reconstructed from the leading b-jet and two jets associated with the W boson decay, $m_{\mathrm{t}}$ is the known top mass, and $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}})$ are the reconstruction resolution terms for the top quark and W boson masses.
-Both $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}}$ were determined by taking the standard deviation of the Gaussian fitted to the top quark and W boson mass peaks respectively.
-\editComment{recall a more precise/sophisticated method was suggested?}
+Both $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}}$ were determined by taking the standard deviation of the Gaussian fitted to the top quark and W boson mass peaks respectively and found to be $A$ and $B$ respectively.
+\editComment{recall a more precise/sophisticated method was suggested? Add updated values}
+\editComment{Once updated values are added, add plots}
 
-Using the simulated samples, cuts on this $\chi^{2}$-like variable were chosen to define a blinded signal region and and a \emph{side band} region containing signal-like events.
+Using the simulated samples, the blinded signal region and the \emph{side band} region were defined as the regions enclosed by $\chi^{2} < C$ and $D < \chi^{2} <E $ respectively.
+The choice of these cuts had to balance the need for:
+\begin{itemize}
+\item the blinded signal region was required contain the majority of the signal process with minimal background contamination.
+\item the \emph{side band} region to contain sufficient statistics of signal-like events while rejecting any extreme outliers.
+\end{itemize}
 
-In order to balance the need for the blinded signal region to contain the majority of the signal process while minimising background contamination and a \emph{side band} region which contains signal-like events and rejects any extreme outliers.
-These cut values or 
+By choosing the cuts between the two regions whereby 80\% of the signal events were contained within the blinded signal region, these goals were met.
+
