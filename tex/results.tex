@@ -3,15 +3,12 @@ Following the application of the event selection criteria, the training of the B
 
 
 \section{Statistical Model}\label{sec:statisticalModel}
-
+The calculation of 
 Calculation of the observed signal strength, observed significance, and expected significance was performed  using the Higgs Analysis Combined Limit (\combine) tool~\cite{Combine}. 
 
-The \combine tool is based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}
+The \combine tool is based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb} and determines the signal strength using a Maximum Binned Likelihood Fit (MLF) and the significances using using an asymptotic approximation~\cite{AsymptoticFormulae}, using the Asimov dataset.
 
-The Higgs 
 
-The signal strength was determined using a maximum likelihood fit.  
-The significances were calculated using an asymptotic approximation~\cite{AsymptoticFormulae}, using the Asimov dataset.
 
 All systematic uncertainties were incorporated into the fit as nuisance parameters, with luminosity and fake rate taken as rate uncertainties and the remainder as shape uncertainties.
  
@@ -20,9 +17,11 @@ Most systematics were assumed to be 100\% correlated between channels.
 
 \subsection{Data-driven background normalisation}\label{subsec:combineNormalisation}
 
+floating in the fit
+
+
 \section{Systematic Uncertainties}\label{chapter:systematics}
 %%% Intro
-
 For any meaningful and robust measurement to be made in any physics analysis, it is vital that the sources of systematic uncertainties associated with it are both understood and controlled.
 This is particularly important when searching for tZq dilepton final state given that the high statistics of the background processes result in their systematic uncertainties being of a comparable order to the statistical uncertainties of the signal process.
 Therefore without additional data to reduce the statistical uncertainty, the sensitivity of the search will be limited by the systematic uncertainties.
@@ -34,7 +33,9 @@ These sources of uncertainty either originate from experimental or theoretical u
 \item \textbf{Shape or scale factor uncertainties} impact the shape of the distributions as they involve the scaling of individual events as a function of their kinematics in order to correct inconsistencies between simulation and data.
 \end{itemize}
 
-These uncertainties, as well as the statistical uncertainties arising from the size of the simulated samples available, are treated as nuisance parameters in the statistical fit model which is discussed, along with their impact, in Chapter~\ref{sec:statisticalModel}.
+The statistical uncertainties arising from the size of the simulated samples available are also considered.
+
+These uncertainties are treated as nuisance parameters in the statistical fit model which is described, along with the impact of the uncertainties on the result, in Chapter~\ref{sec:statisticalModel}.
 
 \subsection{Experimental Uncertainties}
 \subsubsection{Jet Energy Corrections}
@@ -71,8 +72,12 @@ Therefore, the LHAPDF (Les Houches Accord Parton Distribution Function) library 
 The uncertainties associated with the b-tagging scale factors described in Chapter~\ref{subsec:btagEff} are obtained by varying their value by $\pm 1\sigma$, as calculated by the BTV POG.
 
 \subsubsection{Non-prompt Lepton Contributions}
-Tis data-driven estimate of the instrumental backgrounds should have no dependence on either the lepton flavour or selection cuts.
+The data-driven estimate of the instrumental backgrounds should have no dependence on either the lepton flavour or selection cuts.
 Therefore the variation of the ratio of opposite-sign over same-sign events as a function of the lepton flavour and the cut level was considered to be well accounted for by a 30\% rate uncertainty.
+
+\subsubsection{Z+jets Background}
+As the aMC@NLO Z+jets sample is left to float in the fit, this accounts for the experimental normalisation systematic uncertainties.
+The theoretical systematic uncertainties are accounted for as described in Chapter~\ref{sec:theorySysts}.
 
 \subsubsection{Luminosity Uncertainties}
 CMS uses the pixel detector, DTs, HF, the Fast Beam Conditions Monitor and Pixel Luminosity Telescope to monitor and measure the instantaneous and integrated luminosity.
@@ -94,41 +99,37 @@ The overall uncertainty in the integrated luminosity collected by CMS in 2016 wa
 The uncertainties associated with the lepton identification, isolation and reconstruction efficiency scale factors discussed in Chapter~\ref{subsec:leptonRecoSFs} are varied +/- 1 sigma.
 
 Several systematic studies were performed to estimate the systematic uncertainty for the trigger scale factors.
-The comparison of the trigger efficiencies in simulation for \ttbar and Z+jets, the impacts of the \MET trigger selection and the further event selection
+These studies included the comparison of the trigger efficiencies in simulation for \ttbar and Z+jets, the impacts of the \MET trigger selection and the further event selection in the analysis performed. 
+
+\editComment{Elaborate once the impact of the potential changes to the trigger SFs are known}.
 
 
- systematic studies were performed to estimate the systematic uncertainty associated with the lepton trigger scale factors. 
-%The conservative method of Clopper-Pearson intervals~\cite{Cousins:2009kz} was used to determine the uncertainities associated with the trigger scale factors used.
+If both triggers are independent, then the efficiency of fulfilling both trigger selections can be expressed as:
+\begin{equation}
+\epsilon_{X + lepton triggers} = \epsilon_{X triggers} \times \epsilon_{lepton triggers}
+\label{eq:triggerCorrelation}
+\end{equation}
 
-%The potential correlations between the cross triggers and lepton triggers used are one source of systematic uncertainty.
-%If both triggers are independent, then the efficiency of fulfilling both trigger selections can be expressed as:
-%\begin{equation}
-%\epsilon_{X + lepton triggers} = \epsilon_{X triggers} \times \epsilon_{lepton triggers}
-%\label{eq:triggerCorrelation}
-%\end{equation}
-%
-%and if both trigger selections are uncorrelated, then the ratio of the left and right hand sides ($\alpha$) of Equation~\ref{eq:triggerCorrelation} would be 1.
-%Table~\ref{tab:triggerAlpha} shows that the values of $\alpha$ determined for each channel only differ slightly from 1.
-%\begin{table}[htbp]
-%\topcaption {
-%The values of $\alpha$, expressing the strength of correlation between the lepton and cross triggers used to determine the trigger scale factors, for each channel.
-%}
-%\label{tab:triggerCorrelation}
-%  \centering
-%  \resizebox{\textwidth}{!}{
-%% This right-aligns numbers in column, but centers them under column title.
-% \begin{tabular}{cc}
-%   \hline
-%   \textbf{Channel} & \textbf{$\alpha$}   \\
-%   \hline   
-%   ee & 1.0 \\
-%   $\mumu$ & 1.0  \\
-%   e$\mu$ & 1.0  \\
-%   \hline
-% \end{tabular}}
-%\end{table}
-%
-%\editComment{Update values of alpha}
+and if both trigger selections are uncorrelated, then the ratio of the left and right hand sides ($\alpha$) of Equation~\ref{eq:triggerCorrelation} would be 1.
+Table~\ref{tab:triggerAlpha} shows that the values of $\alpha$ determined for each channel only differ slightly from 1.
+\begin{table}[htbp]
+\topcaption {
+The values of $\alpha$, expressing the strength of correlation between the lepton and cross triggers used to determine the trigger scale factors, for each channel.
+}
+\label{tab:triggerCorrelation}
+  \centering
+  \resizebox{\textwidth}{!}{
+% This right-aligns numbers in column, but centers them under column title.
+ \begin{tabular}{cc}
+   \hline
+   \textbf{Channel} & \textbf{$\alpha$}   \\
+   \hline   
+   ee & 1.0 \\
+   $\mumu$ & 1.0  \\
+   e$\mu$ & 1.0  \\
+   \hline
+ \end{tabular}}
+\end{table}
 
 \subsection{Theoretical Uncertainties}\label{sec:theorySysts}
 
@@ -227,6 +228,7 @@ These are [IN AGREEMENT / NOT IN AGREEMENT] with the SM cross section of  $X^{+Y
 
 
 \section{Interpretation of the results}
+
 \section{Other results from the Large Hadron Collider}
 The search for a singly produced top in association with a Z boson in the dilepton final state presented is the first one made at the LHC and follows in the footsteps of the searches for the trilepton final state at $\sqrt{8}$ and $\sqrt{13}$ using data collected by the CMS experiment in 2012 and 2016 respectively.
 Despite the dilepton final state having a larger cross section than the trilepton final state, the different final state topology makes it much more difficult to isolate the signal process.

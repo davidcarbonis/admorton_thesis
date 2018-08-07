@@ -166,7 +166,8 @@ As the triggers requirements are applied to both simulated and data events, a sc
 \editComment{The following below is to be updated ASAP. Muon POG has found that the muon tracking SFs are no longer necessary - were the result of buggy derivation. Initial tests reveal that \pT and $\eta$ binned SFs for $\mu\mu$ may not be required...}
 
 For the scale factors derived for the ee and e$\mu$ channels, a constant scale factor was found to be sufficient to account for the differences between data and siulation.
-In the case of the $\mu\mu$ channel however, the scale factor was produced as a function of both \pt and $\eta$ due to the trigger turn-on curve in data being impacted by the miscalibrated tracker APV (as discussed in Chapter~\ref{subsec:hipEffect}.
+In the case of the $\mu\mu$ channel however, the scale factor was produced as a function of both \pt and $\eta$ due to the inefficiencies observed for the double muon triggers with $d_{Z}$ cuts caused by the miscalibrated tracker APV (discussed in Chapter~\ref{subsec:hipEffect}.
+As the equivalent double muon triggers without the $d_{Z}$ cuts were pre-scaled during runs with high instantaneous luminosity, these triggers were not considered.
 
 \subsection{Lepton Energy Corrections}\label{subsec:leptonEnergyCorrections}
 \subsubsection{Electron Regression and Energy Scale and Smearing Corrections}
@@ -309,62 +310,58 @@ NPL estimation: & a & c & e \\
 \label{tab:fakeLeptonYields}
 \end{table}
 
-\subsection{Z+jets background}\label{subsec:zPlusJetsEstimation}
+\subsection{Z+jets Background}\label{subsec:zPlusJetsEstimation}
 Following the application of the full event selection and simulation corrections in the signal region both the Madgraph (LO) and aMC@NLO (NLO) Z+jets samples were compared.
 
-It was observed that while the event yields in the signal region were correctly described when the Madgraph sample was used, with there aMC@NLO sample there was a dramatic normalisation offset.
-Despite this scaling issue however, it was apparent that the aMC@NLO Z+jets sample did better describe the higher jet multiplicities and the kinematics of ...
+As it was observed that while the event yields in the signal region were correctly described when the Madgraph sample was used, with there aMC@NLO sample there was a dramatic normalisation offset.
+Figures~\ref{} show that that despite this scaling issue, the aMC@NLO Z+jets sample does better describe the higher jet multiplicities and the kinematics of the jets present in the signal region.
 
-This behaviour 
+Figures~\ref{} show that the jet multiplicities and jet kinematics distributions exhibited consistent behaviour 
 
-tab:zPlusControlYields
-The Madgraph sample was observed in the signal region to poorly describe higher jet multiplicities but the overall sample normalises correctly, whilst the aMC@NLO better describes the shape of higher jet multiplicities but experiences an offset scale.
-
-Both of the Z+jets control regions defined in Chapter~\ref{subsec:zPlusJetsCR} were used to confirm that these observations were consistent
+in  consistent behaviour was observed in both of the Z+jets control regions for the jet 
+that were defined in Chapter~\ref{subsec:zPlusJetsCR} 
 
 
-
-Given that the aMC@NLO sample better describes the shapes of the higher order contributions for this process, 
 
 A description of how the events selected by these control regions were used to normalise the aMC@NLO Z+jets sample is given in Chapter~\ref{subsec:combineNormalisation}.
 
-\begin{table}[htbp]
-\topcaption{The number of observed events in data and the number of expected events in simulation in the signal region fllowing the full event selection for each of the separate channels and with both channels combined.}\label{tab:zPlusControlYields}
-\centering
-\begin{tabular}{lccccc}
-\hline
-Channel &  $ee$ & $\mu\mu$ & Combined \\
-\hline
-tZq & 30.242 &  54.508 & 84.750     \\
-tWZ\@: & 6.439 & 10.779 & 17.218    \\
-tHq: & 0.173 & 0.372 & 0.545    \\
-ttW\@: & 7.249 & 10.681 & 17.930    \\
-ttZ\@: & 61.882 & 110.471 & 172.353    \\
-ttH\@: & 4.916 & 9.554 & 14.470    \\
-\ttbar: & 1653.457 & 3219.360 & 482.817    \\
-tW\@: & 95.989 & 177.527 & 273.516    \\
-s-channel: & 0.000 & 0.000 & 0.000    \\
-t-channel: & 0.612 & 0.995 & 1.607    \\
-WW\@: & 1.339 & 2.4475 & 3.786    \\
-WZ\@: & 73.466 & 126.656 & 200.122    \\
-ZZ\@: & 51.827 & 92.980 & 144.807    \\
-WWW\@: & 0.114 & 0.305 & 0.419    \\
-WWZ\@: & 1.327 & 2.207 & 3.534    \\
-WZZ\@: & 1.540 & 2.470 & 4.010    \\
-ZZZ\@: & 0.661 & 1.087 & 1.748    \\
-W + jets: & 0.000 & 0.000 & 0.000    \\
-Z + jets: & 3293.634 & 6245.353 & 9538.987    \\
-\hline
-NPLs: & 37.787 & 30.889 & 68.676   \\
-\hline
-Data & 5284 & 9665 & 14949    \\
-Total MC & 5284.867 & 10067.752 & 15352.619    \\
-Total MC + NPLs & 5322.654 & 10098.641 & 15361.377    \\
-\hline
-\end{tabular}
-\end{table}
+%\begin{table}[htbp]
+%\topcaption{The number of observed events in data and the number of expected events in simulation in the signal region fllowing the full event selection for each of the separate channels and with both channels combined.}\label{tab:zPlusControlYields}
+%\centering
+%\begin{tabular}{lccccc}
+%\hline
+%Channel &  $ee$ & $\mu\mu$ & Combined \\
+%\hline
+%tZq & 30.242 &  54.508 & 84.750     \\
+%tWZ\@: & 6.439 & 10.779 & 17.218    \\
+%tHq: & 0.173 & 0.372 & 0.545    \\
+%ttW\@: & 7.249 & 10.681 & 17.930    \\
+%ttZ\@: & 61.882 & 110.471 & 172.353    \\
+%ttH\@: & 4.916 & 9.554 & 14.470    \\
+%\ttbar: & 1653.457 & 3219.360 & 482.817    \\
+%tW\@: & 95.989 & 177.527 & 273.516    \\
+%s-channel: & 0.000 & 0.000 & 0.000    \\
+%t-channel: & 0.612 & 0.995 & 1.607    \\
+%WW\@: & 1.339 & 2.4475 & 3.786    \\
+%WZ\@: & 73.466 & 126.656 & 200.122    \\
+%ZZ\@: & 51.827 & 92.980 & 144.807    \\
+%WWW\@: & 0.114 & 0.305 & 0.419    \\
+%WWZ\@: & 1.327 & 2.207 & 3.534    \\
+%WZZ\@: & 1.540 & 2.470 & 4.010    \\
+%ZZZ\@: & 0.661 & 1.087 & 1.748    \\
+%W + jets: & 0.000 & 0.000 & 0.000    \\
+%Z + jets: & 3293.634 & 6245.353 & 9538.987    \\
+%\hline
+%NPLs: & 37.787 & 30.889 & 68.676   \\
+%\hline
+%Data & 5284 & 9665 & 14949    \\
+%Total MC & 5284.867 & 10067.752 & 15352.619    \\
+%Total MC + NPLs & 5322.654 & 10098.641 & 15361.377    \\
+%\hline
+%\end{tabular}
+%\end{table}
 
-\subsection{\ttbar background}\label{subsec:ttbarEstimation}
+\subsection{\ttbar Background}\label{subsec:ttbarEstimation}
 The \ttbar enriched control region, as defined in Chapter~\ref{subsec:ttbarCR}, was designed to provide an orthogonal region which was topologically similar to the signal region in order to validate:
 \begin{itemize}
 \item whether or not the simulated \ttbar sample used accurately modelled the \ttbar process;
@@ -523,10 +520,11 @@ From the selected reconstructed physics objects, a large number of input variabl
 
 In order to determine which of set of features was optimal, recursive feature elimination was used to select those which had the greatest discriminating power between the signal and background process.
 This process iteratively removes the least important feature and re-trains the BDT until every feature has been ranked in order of their removal.
-Following each removal of a feature, the area under the Receiver Operating Characteristic (ROC) curve is recorded.
+Following each removal of a feature, the Area Under the Characteristic Receiver Operating curve (AUCROC)  is recorded.
 The features found above the point at which the area under the ROC curve experiences a significant decline are determined to be an optimal correlated set of features.
  
-The features chosen by recursive feature elimination for the $ee$ and $\mu\mu$ channels are given in Table~\ref{tab:selectedBdtVariables}, with the full list of features considered, and their ability to separate between signal and background, being given in full in Table~\ref{tab:allBdtVariables}
+The features chosen by recursive feature elimination for the $ee$ and $\mu\mu$ channels are given in Table~\ref{tab:selectedBdtVariables}.
+A list of all of the features considered are given in full in Table~\ref{tab:allBdtVariables}.
 
 \begin{table}[htbp]
 \topcaption {The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
@@ -565,7 +563,7 @@ The features chosen by recursive feature elimination for the $ee$ and $\mu\mu$ c
  \end{tabular}}
 \end{table}
 
-\editComment{LOTS of PLOTS of the input variable distributions}
+\editComment{LOTS of PLOTS of the selected input variable distributions}
 
 \begin{table}[htbp]
 \topcaption {The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
@@ -577,134 +575,150 @@ The features chosen by recursive feature elimination for the $ee$ and $\mu\mu$ c
 % This right-aligns numbers in column, but centers them under column title.
 \begin{tabular}{cccc}
    \hline
-   \textbf{Variable} & \textbf{Description} & \textbf{Separation Power} \\
+   \textbf{Variable} & \textbf{Description} \\
    \hline
-    wQuark1Pt & Leading W boson candidate jet \pt & $\checkmark$ \\
-    wQuark1Eta & Leading W boson candidate jet $\eta$ & $X$ \\
-    wQuark1Phi &  Leading W boson candidate jet $\phi$ & $\checkmark$ \\
-    wQuark2Pt & Subleading W boson candidate jet \pt & $\checkmark$ \\
-    wQuark2Eta & Subleading W boson candidate jet $\eta$ & $X$ \\
-    wQuark2Phi & Subleading W boson candidate jet $\phi$ & $\checkmark$ \\
-    wPairMass & W boson mass & $\checkmark$ \\
-    wPairPt & W boson \pt & $\checkmark$ \\
-    wPairEta & W boson $\eta$ & $\checkmark$ \\
-    wPairPhi & W boson $\phi$ & $\checkmark$ \\
-    mTW & W boson $m_{T}$ & $\checkmark$ \\
-    met & \met & $\checkmark$ \\
-    nJets & Number of jets & $\checkmark$ \\
+    wQuark1Pt & Leading W boson candidate jet \pt \\
+    wQuark1Eta & Leading W boson candidate jet $\eta$ \\
+    wQuark1Phi &  Leading W boson candidate jet $\phi$ \\
+    wQuark2Pt & Subleading W boson candidate jet \pt \\
+    wQuark2Eta & Subleading W boson candidate jet $\eta$ \\
+    wQuark2Phi & Subleading W boson candidate jet $\phi$  \\
+    wPairMass & W boson mass  \\
+    wPairPt & W boson \pt  \\
+    wPairEta & W boson $\eta$  \\
+    wPairPhi & W boson $\phi$  \\
+    mTW & W boson $m_{T}$  \\
+    met & \met  \\
+    nJets & Number of jets  \\
     leadJetPt & Leading jet \pt $\checkmark$ \\
-    leadJetPhi & Leading jet $\phi$ & $\checkmark$ \\
-    leadJetEta & Leading jet $\eta$ & $\checkmark$ \\
-    leadJetbTag & Leading jet b-tag discriminator & $\checkmark$ \\
-    secJetPt & Subleading jet \pt & $X$ \\
-    secJetPhi & Subleading jet $\phi$ & $\checkmark$ \\
-    secJetEta & Subleading jet $\eta$ & $X$ \\
-    secJetbTag & Subleading jet b-tag discriminator & $\checkmark$ \\
-    thirdJetPt & Third jet \pt & $X$ \\
-    thirdJetPhi & Third jet $\phi$ & $\checkmark$ \\
-    thirdJetEta & Third jet $\eta$ & $X$ \\
-    thirdJetbTag & Third jet b-tag discriminator & $\checkmark$ \\
-    fourthJetPt & Fourth jet \pt & $X$ \\
-    fourthJetPhi & Fourth jet $\phi$ & $\checkmark$ \\
-    fourthJetEta & Fourth jet $\eta$ & $X$ \\
-    fourthJetbTag & Fourth jet b-tag discriminator & $\checkmark$ \\
-    nBjets & Number of b-tagged jets & \\
-    bTagDisc & Leading b-tagged jet b-tag discriminator & \\
-    lep1Pt & Leading lepton \pt & \\
-    lep1Eta & Leading lepton $\eta$ & \\
-    lep1Phi & Leading lepton $\phi$ & \\
-    lep1RelIso & Leading lepton $I^{rel}$ & \\
-    lep1D0 & Leading lepton $d_{0}$ & \\
-    lep2Pt & Subleading lepton \pt & \\
-    lep2Eta & Subleading lepton $\eta$ & \\
-    lep2Phi & Subleading lepton $\phi$ & \\
-    lep2RelIso & Subleading lepton $I^{rel}$ & \\
-    lep2D0 & Subleading lepton $d_{0}$ & \\
-    zMass & Z boson mass & $\checkmark$ \\
-    zPt & Z boson \pt & \\
-    zEta & Z boson $\eta$ & \\
-    zPhi & Z boson $\phi$ & \\
-    topMass & Top quark mass & \\
-    topPt & Top quark \pt & \\
-    topEta & Top quark $\eta$ & \\
-    topPhi & Top quark $\phi$ & \\
-    j1j2delR & $\Delta R$ between the leading and subleading jets & \\
-    j1j2delPhi & $\Delta \phi$ between the leading and subleading jets & \\
-    w1w2delR & $\Delta R$ between the W boson jets & \\
-    w1w2delPhi & $\Delta \phi$ between the W boson jets & \\
-    zLepdelR & $\Delta R$ between the Z boson leptons & \\
-    zLepdelPhi & $\Delta \phi$ between the Z boson leptons & \\
-    zl1Quark1DelR & $\Delta R$ between the leading lepton and leading W boson jet & \\
-    zl1Quark1DelPhi & $\Delta \phi$ between the leading lepton and leading W boson jet & \\
-    zl1Quark2DelR & $\Delta R$ between the leading lepton and subleading W boson jet & \\
-    zl1Quark2DelPhi & $\Delta \phi$ between the leading lepton and subleading W boson jet & \\
-    zl2Quark1DelR & $\Delta R$ between the subleading lepton and leading W boson jet & \\
-    zl2Quark1DelPhi & $\Delta \phi$ between the subleading lepton and leading W boson jet & \\
-    zl2Quark2DelR & $\Delta R$ between the subleading lepton and subleading W boson jet & \\
-    zl2Quark2DelPhi & $\Delta \phi$ between the subleading lepton and leading W boson jet & \\
-    zlb1DelR & $\Delta R$ between the Z boson and leading b-tagged jet & $\checkmark$\\
-    zlb1DelPhi & $\Delta \phi$ between the Z boson and leading b-tagged jet & \\
-    zlb2DelR & $\Delta R$ between the Z boson and subleading b-tagged jet& \\
-    zlb2DelPhi & $\Delta \phi$ between the Z boson and subleading b-tagged jet & \\
-    lepHt & \HT of the Z boson leptons & \\
-    wQuarkHt & \HT of the W boson quarks & \\
-    totPtVec & \pt of the system & \\
-    totEta & $\eta$ of the system & \\
-    totPhi & $\phi$ of the system & \\
-    totVecM & Invariant mass of the system & \\
-    totPt2Jet & Square of the sum of the two leading jets' \pT & \\
-    totJetPt & Sum of all the jets' \pT  & \\
-    wZdelR & $\Delta R$ between the W and Z bosons & \\
-    wZdelPhi & $\Delta \phi$ between the W and Z bosons & \\
-    zQuark1DelR & $\Delta R$ between the Z boson and leading W boson jet & \\
-    zQuark1DelPhi & $\Delta \phi$ between the Z boson and leading W boson jet & \\
-    zQuark2DelR & $\Delta R$ between the Z boson and subleading W boson jet & \\
-    zQuark2DelPhi & $\Delta \phi$ between the Z boson and subleading W boson jet & \\
-    zTopDelR & $\Delta R$ between the Z boson and top quark & \\
-    zTopDelPhi & $\Delta \phi$ between the Z boson and top quark& \\
-    zl1TopDelR & $\Delta R$ between the leading lepton and top quark & \\
-    zl1TopDelPhi & $\Delta \phi$ between the leading lepton and top quark & \\
-    zl2TopDelR & $\Delta R$ between the subleading lepton and top quark & \\
-    zl2TopDelPhi & $\Delta \phi$ between the subleading lepton and top quark & \\
-    wTopDelR & $\Delta R$ between the W boson and top quark & \\
-    wTopDelPhi & $\Delta \phi$ between the W boson and top quark & \\
-    w1TopDelR & $\Delta R$ between the leading W boson jet and top quark & \\
-    w1TopDelPhi & $\Delta \phi$ between the leading W boson jet and top quark & \\
-    w2TopDelR & $\Delta R$ between the subleading W boson jet and top quark & \\
-    w2TopDelPhi & $\Delta \phi$ between the subleading W boson jet and top quark & \\
-    zjminR & Minimum $\Delta R$ between the Z boson and a jet & $\checkmark$ \\
-    minZJetPhi & Minimum $\phi R$ between the Z boson and a jet & \\
-    totHt & Total \HT of the system & \\
-    jetHt & \HT of all the jets present & \\
-    jetMass & Invariant mass of all the jets present & \\
-    jetPt & \pT of all the jets present & \\
-    jetEta & $\eta$ of all the jets present & \\
-    jetPhi & $\phi$ of all the jets present & \\
-    jetMass3 & Invariant mass of the leading three jets& \\
-    totHtOverPt & Total \HT divided by the system's \pT & \\
+    leadJetPhi & Leading jet $\phi$  \\
+    leadJetEta & Leading jet $\eta$  \\
+    leadJetbTag & Leading jet b-tag discriminator  \\
+    secJetPt & Subleading jet \pt \\
+    secJetPhi & Subleading jet $\phi$  \\
+    secJetEta & Subleading jet $\eta$ \\
+    secJetbTag & Subleading jet b-tag discriminator  \\
+    thirdJetPt & Third jet \pt \\
+    thirdJetPhi & Third jet $\phi$  \\
+    thirdJetEta & Third jet $\eta$ \\
+    thirdJetbTag & Third jet b-tag discriminator  \\
+    fourthJetPt & Fourth jet \pt \\
+    fourthJetPhi & Fourth jet $\phi$  \\
+    fourthJetEta & Fourth jet $\eta$ \\
+    fourthJetbTag & Fourth jet b-tag discriminator  \\
+    nBjets & Number of b-tagged jets \\
+    bTagDisc & Leading b-tagged jet b-tag discriminator \\
+    lep1Pt & Leading lepton \pt \\
+    lep1Eta & Leading lepton $\eta$ \\
+    lep1Phi & Leading lepton $\phi$ \\
+    lep1RelIso & Leading lepton $I^{rel}$ \\
+    lep1D0 & Leading lepton $d_{0}$ \\
+    lep2Pt & Subleading lepton \pt \\
+    lep2Eta & Subleading lepton $\eta$ \\
+    lep2Phi & Subleading lepton $\phi$ \\
+    lep2RelIso & Subleading lepton $I^{rel}$ \\
+    lep2D0 & Subleading lepton $d_{0}$ \\
+    zMass & Z boson mass  \\
+    zPt & Z boson \pt \\
+    zEta & Z boson $\eta$ \\
+    zPhi & Z boson $\phi$ \\
+    topMass & Top quark mass \\
+    topPt & Top quark \pt \\
+    topEta & Top quark $\eta$ \\
+    topPhi & Top quark $\phi$ \\
+    j1j2delR & $\Delta R$ between the leading and subleading jets \\
+    j1j2delPhi & $\Delta \phi$ between the leading and subleading jets \\
+    w1w2delR & $\Delta R$ between the W boson jets \\
+    w1w2delPhi & $\Delta \phi$ between the W boson jets \\
+    zLepdelR & $\Delta R$ between the Z boson leptons \\
+    zLepdelPhi & $\Delta \phi$ between the Z boson leptons \\
+    zl1Quark1DelR & $\Delta R$ between the leading lepton and leading W boson jet \\
+    zl1Quark1DelPhi & $\Delta \phi$ between the leading lepton and leading W boson jet \\
+    zl1Quark2DelR & $\Delta R$ between the leading lepton and subleading W boson jet \\
+    zl1Quark2DelPhi & $\Delta \phi$ between the leading lepton and subleading W boson jet \\
+    zl2Quark1DelR & $\Delta R$ between the subleading lepton and leading W boson jet \\
+    zl2Quark1DelPhi & $\Delta \phi$ between the subleading lepton and leading W boson jet \\
+    zl2Quark2DelR & $\Delta R$ between the subleading lepton and subleading W boson jet \\
+    zl2Quark2DelPhi & $\Delta \phi$ between the subleading lepton and leading W boson jet \\
+    zlb1DelR & $\Delta R$ between the Z boson and leading b-tagged jet \\
+    zlb1DelPhi & $\Delta \phi$ between the Z boson and leading b-tagged jet \\
+    zlb2DelR & $\Delta R$ between the Z boson and subleading b-tagged jet\\
+    zlb2DelPhi & $\Delta \phi$ between the Z boson and subleading b-tagged jet \\
+    lepHt & \HT of the Z boson leptons \\
+    wQuarkHt & \HT of the W boson quarks \\
+    totPtVec & \pt of the system \\
+    totEta & $\eta$ of the system \\
+    totPhi & $\phi$ of the system \\
+    totVecM & Invariant mass of the system \\
+    totPt2Jet & Square of the sum of the two leading jets' \pT \\
+    totJetPt & Sum of all the jets' \pT  \\
+    wZdelR & $\Delta R$ between the W and Z bosons \\
+    wZdelPhi & $\Delta \phi$ between the W and Z bosons \\
+    zQuark1DelR & $\Delta R$ between the Z boson and leading W boson jet \\
+    zQuark1DelPhi & $\Delta \phi$ between the Z boson and leading W boson jet \\
+    zQuark2DelR & $\Delta R$ between the Z boson and subleading W boson jet \\
+    zQuark2DelPhi & $\Delta \phi$ between the Z boson and subleading W boson jet \\
+    zTopDelR & $\Delta R$ between the Z boson and top quark \\
+    zTopDelPhi & $\Delta \phi$ between the Z boson and top quark\\
+    zl1TopDelR & $\Delta R$ between the leading lepton and top quark \\
+    zl1TopDelPhi & $\Delta \phi$ between the leading lepton and top quark \\
+    zl2TopDelR & $\Delta R$ between the subleading lepton and top quark \\
+    zl2TopDelPhi & $\Delta \phi$ between the subleading lepton and top quark \\
+    wTopDelR & $\Delta R$ between the W boson and top quark \\
+    wTopDelPhi & $\Delta \phi$ between the W boson and top quark \\
+    w1TopDelR & $\Delta R$ between the leading W boson jet and top quark \\
+    w1TopDelPhi & $\Delta \phi$ between the leading W boson jet and top quark \\
+    w2TopDelR & $\Delta R$ between the subleading W boson jet and top quark \\
+    w2TopDelPhi & $\Delta \phi$ between the subleading W boson jet and top quark \\
+    zjminR & Minimum $\Delta R$ between the Z boson and a jet  \\
+    minZJetPhi & Minimum $\phi R$ between the Z boson and a jet \\
+    totHt & Total \HT of the system \\
+    jetHt & \HT of all the jets present \\
+    jetMass & Invariant mass of all the jets present \\
+    jetPt & \pT of all the jets present \\
+    jetEta & $\eta$ of all the jets present \\
+    jetPhi & $\phi$ of all the jets present \\
+    jetMass3 & Invariant mass of the leading three jets\\
+    totHtOverPt & Total \HT divided by the system's \pT \\
    \hline
  \end{tabular}}
 \end{table}
 
 \subsection{BDT Model Hyperparameters}
 %The model hyperparameters are the set of parameters which are set before the BDT training begins, such the maximum depth trees can be grown to or the number of training iterations to be run. 
-Instead of tuning the hyperparmeters, $(\theta)$ for optimal classification performance by hand or through a time and computationally expensive grid search, the minima of a function that described the classifier performance, $f(\theta)$, were found.
+Instead of tuning the choice hyperparmeters for optimal classification performance either by hand or a time and computationally expensive grid search, the minima of a classification quality metric based on the AUCROC, $f(\theta)$, were found.
 
-To find the minima of such a black box function, the \emph{Scikit-Optimize} library~\cite{scikit-optimise} was used to constract a regression model based on a Gaussian process with the Mat\'{e}rn $\nu =\frac{5}{2}$ kernel.
+This minima was evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise} to construct a regression model based on a Gaussian process with the Mat\'{e}rn $\nu =\frac{5}{2}$ kernel.
+Initially this model evaluates $f$ using random values of $\theta$ for fifteen iterations before values of $\theta$ are chosen based on the regression model.
 
-\editComment{Confirm with Corin how this process is run - I know the intial values are chosen at random prior to intelligent application of theta based on the regression model, but unsure how/when/details?}
+For each of the 150 iterations considered, $f(\theta)$ is evaluated across four subsets of 80\% of the training data using the the k-fold cross-validation scheme.
+Following evaluating $f$ four times, where a different fold was withheld each time, the resultant average $f$ was taken as the final metric.
+Out of these averaged final metrics, the classifier with the best $(\theta)$ was retrained on all the training data and used to produce the optimal BDT.
 
-%    n_jobs: 20 - number of training iterations
-%    n_estimators: 4818 - 
-%    subsample: 0.6794502469027806
-%    learning_rate: 0.004457105002157622
-%    max_depth: 4
-%    min_child_weight: 0.016143380898361325 - Minimum sum of instance weight (hessian) needed in a child
-%    gamma: 7.588559443997618 - minimum loss function used to make a further partition on a leaf node of the tree
-%    reg_lambda: 0.0006395600995084355
-%    reg_alpha: 0.00037293584840804463
-
-A more in depth discussion regarding the nature of the Gaussian process is provided in Appendix~\ref{}.
+%
+%\begin{table}[htbp]
+%\topcaption {The optimal hyperparameters for the ee and $\mu\mu$ channels for XGBoost that were found by \emph{Scikit-Optimize} and the maximum and minimum values that they can take.
+%}
+%\label{tab:hyperparameters}
+%  \centering
+%% This increases column spacing.
+%\resizebox{\textwidth}{!}{
+%% This right-aligns numbers in column, but centers them under column title.
+%\begin{tabular}{lccccc}
+%   \hline
+%   \textbf{Option} &  \textbf{Min} & \textbf{Max} & \textbf{$ee$} & \textbf{$\mu\mu$}\\
+%   \hline
+%    gamma & $10^{-5}$ & 100 & 9.79 \\
+%    learning_rate & $10^{-5}$ & 10 & $5.70 \times 10^{-2}$ \\
+%    max_depth & 2 & 10 & 5 & 3\\
+%    min_child_weight & $10^{-5}$ & 100 & 30.6 & 3.40 \\
+%    n_estimator & 25 & 7500 & 2338 & 6280 \\
+%    reg_alpha & $10^{-5}$ & 1000 & $2.31 \times 10^{-3}$ & $1.33 \times 10^{-2}$ \\
+%    reg_lambda & $10^{-5}$ & 1000 & 71.5 & $1.96 \times 10^{-4}$ \\
+%    subsample & 0.5 & 1 & 0.504 & 0.801 \\
+%   \hline
+% \end{tabular}}
+%\end{table}
 
 \subsection{BDT Output}
 Following the optimisation of both the BDT features and hyperparameters for both the ee and $\mu\mu$ channels independently, the optimal BDT is trained.
