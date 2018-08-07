@@ -381,10 +381,24 @@ Therefore, given the small cross section and topology of the dilepton final stat
 The \emph{Boosted Decision Tree}~(BDT) MVA technique was used as it a widely used and supported technique which those undertaking this analysis were familiar with.
 
 \subsection{Boosted Decision Trees}\label{subsec:bdt}
-A decision tree in its simplest form is a series of sequential binary decisions (nodes) on a single variable at a time in order classify an event as signal or background.
+A decision tree in its simplest form is a series of sequential binary decisions (nodes) on a single input variable or \emph{feature} at a time in order classify an event as signal or background.
+Given that the decision criteria for each node is dependent on the decisions of the preceding notes, decision trees have the potential to obtain better separation between signal and background processes through individual cuts on isolated variables.
 
-\emph{Boosting} extends the concept of a decision tree from a single tree to a forest of trees with the aim of both stabilising the decision trees' response and enhancing their performance.
-This involves training multiple trees in succession on the same training sample, where each new tree takes the performance of the past trees into account.
+Despite such an single isolated tree being unlikely to be an efficient classifier, this tree still contains some knowledge about the underlying structure of the classification problem.
+\emph{Boosting} aims to take advantage of this knowledge by iteratively training trees but following each iteration the data trained on is reweighted so .
+
+
+create a strong learner from this weak learner by iteratively training 
+
+improve the performance of this weak learner by iteratively training trees, 
+This process, known as \emph{boosting}, 
+
+
+
+\emph{Boosting} extends the concept of a decision tree from a single tree to a forest of trees with the aim of both stabilising the response and enhancing the performance of the decision trees.
+This process involves training multiple trees in succession on the same training sample
+
+.
 At the end of this process all the trees are combined into a single classifier given by the weighted average of the trees, thus creating a strong learner from an ensemble of weak learners
 This classifier produces a discriminant value used to classify an event, which typically ranges from -1 to +1 in order to denote how background or signal-like the event is.
 
@@ -392,15 +406,11 @@ This classifier produces a discriminant value used to classify an event, which t
 
 
 
-Following the evaluation of a number of Boosting and Bagging algorithms for decision trees, it was determined that the \emph{eXtreme Gradient Boosting} (XGBoost) implementation of the Gradiant Boost alogorithm provided the optimal performance for the search presented~\cite{xgboost}.
 
-The \emph{Gradient Boost} algorithm~\cite{Friedman:GradientBoosting}  
+The \emph{Gradient Boost} algorithm~\cite{Friedman:GradientBoosting} aims to improve its classification performance by identifying 
 
 
-Adaboost adds higher weights to misclassified events to modify the performance of subsequent trees to obtain a better separation.
-The } models the shortcomings of the model by estimating the regression function 
-
-This approach differs from the popular Adaptive Boost (Adaboost) algorithm which 
+This approach differs from the popular Adaptive Boost (Adaboost) algorithm which assigns higher weights to misclassified events in order for the subsequent trees to obtain a better separation.
 
 Both adaboost and gradboost sequentially add predictors to an esmeble to correct predesccsors, adaboost tweaks event weights and gradboost tries to fit the new predictor to the errors made by the previous predictor.
 
@@ -415,8 +425,10 @@ A training sample, consisting of a subset of the data to be classified, is used 
 
 
 
+Following a series of studies into evaluating of a number of Boosting and Bagging algorithms for decision trees, which simulated background processes should be included in the training processes, and the use of multiple BDTs for different backgrounds, it was determined that the \emph{eXtreme Gradient Boosting} (XGBoost) implementation of the Gradiant Boost alogorithm for a single BDT trained on all the MC simulation samples gave the optimal performance for this search~\cite{xgboost}.
+
 The methods used for selecting the input variables (features) and model hyperparameters are described in the following subsections.
-Both the features and model hyperparameters were chosen separately for ee and mumu channels.
+Both the features and model hyperparameters were chosen separately for ee and mumu channels and all the simulated MC samples were considered 
 
 \subsection{BDT Input Features}
 From the selected reconstructed physics objects, a large number of input variables or \emph{features} were constructed and considered as potential inputs for the BDT.
