@@ -408,12 +408,8 @@ Typically the resultant classifier for BDTs takes the form of a single discrimin
 
 
 Two of the most common boosting algorithms used with decision trees are the Adaptive Boosting (\emph{AdaBoost})~\cite{Friedman:additivelogistic} and \emph{Gradient Boosting}~\cite{Friedman:greedyfunction,Friedman:GradientBoosting} algorithms.
-Adaboost adjusts the weighting assigned to both misclassified objects and the weak learner following each iteration so that the best performing classifiers are trained to classify the most difficult to classify objects.
-In contrast gradient 
-
-boosting identifies hard to classify objects by their large residuals  
- to fit the weak learners not to the reweighted events but to 
-
+Adaboost adjusts the weighting assigned to both  misclassified objects and the best performing weak learners after each iteration so that the best learners are trained to correctly identify the most difficult objects.
+In contrast, gradient boosting uses gradient descent following each iteration to determine the residuals of the objects in order to focus on correctly classifying the objects with the largest residuals.
 
 Despite their effectiveness however, BDTs are potentially sensitive to the effects of \emph{overtraining}.
 This phenomena occurs when BDT is overly optimised on correctly classifying the training dataset and results in the poor classification of unseen data.
