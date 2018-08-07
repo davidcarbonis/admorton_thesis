@@ -406,17 +406,13 @@ For BDTs, the resultant classifier typically takes the form of a single discrimi
 
 %\emph{Bagging} is a similar concept to boosting, but involves each weak learner being trained on a random subset of the training sample, where every element has an equal probability of being sampled, rather than the whole training sample.
 
-The Adaptive Boost (\emph{AdaBoost}) and \emph{Gradient Boost} algorithms. 
+Of the many boosting algorithms, Adaptive Boost (\emph{AdaBoost})~\cite{Friedman:additivelogistic} and  {Gradient Boosting}~\cite{Friedman:greedyfunction,Friedman:GradientBoosting} algorithms are the most commonly used to boost decision trees.
+While both algorithms attempt to improve 
 
-The \emph{Gradient Boost} algorithm~\cite{Friedman:greedyfunction,Friedman:GradientBoosting} aims to improve its classification performance by identifying objects which are difficult to classify by the large residuals between the classification assigned and the actual ...
+aims to improve its classification performance by identifying objects which are difficult to classify by the large residuals between the classification assigned and the actual ...
 
 
 While 
-
-The Adaptive Boost (\emph{AdaBoost}) algorithm~\cite{Friedman:additivelogistic} is one of the most popular boosting algorithms
-
-The initial settings or \emph{hyperparameters} of the BDT algorithm used determines how the tree is constructed, 
-
 
 This approach differs from the popular Adaptive Boost (Adaboost) algorithm which assigns higher weights to misclassified events in order for the subsequent trees to obtain a better separation.
 
