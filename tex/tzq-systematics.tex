@@ -395,31 +395,27 @@ Figure~\ref{fig:decisionTree} illustrates a simple decision tree, where a series
 
 As the decision criteria for each node is dependent on the decisions of the preceding notes, decision trees have the potential to obtain better separation between signal and background processes through individual cuts on isolated variables.
 
-
 Without any prior knowledge of the system however, a single isolated tree is not expected to be an efficient classifier.
 Despite this however, such a weak learner will still contain some knowledge about the underlying structure of the classification problem.
 \emph{Boosting} aims to exploit this knowledge by using ensemble of repeatedly trained weak learners to produce a more effective classifier.
-Following each training iteration the dataset is reweighted based on the success of the previous classifiers in order to force the weak learners to attempt to classify the most misclassified objects.
+Following each training iteration the dataset is reweighted based on the success of the previous classifiers in order to force the weak learners to attempt to classify harder to identify objects.
 At the end of this process a weighted average (based) of all the weak learners are combined to produce a single strong learner.
 
 \emph{Bagging} is a similar concept to boosting, but involves each weak learner being trained on a random subset of the training sample, where every element has an equal probability of being sampled, rather than the whole training sample.
 
-Therefore by extending boosting or bagging to decision trees, the resultant forest of \emph{Boosted Decision Trees} provides not a much more effective classifier than a single tree, but also more resilient to fluctuations in the training sample.
-For BDTs, the resultant classifier typically takes the form of a single discriminator whose response ranges between -1 to +1, denoting completely background-like and signal-like objects respectively.
+Therefore by extending boosting (or bagging) to decision trees, the resultant forest of \emph{Boosted Decision Trees} produces much more effective classifier than a single tree which is also more resilient to fluctuations in the training sample.
+Typically the resultant classifier for BDTs takes the form of a single discriminator whose response ranges between -1 to +1, denoting completely background-like and signal-like objects respectively.
 
-Of the many boosting algorithms, Adaptive Boost (\emph{AdaBoost})~\cite{Friedman:additivelogistic} and  {Gradient Boosting}~\cite{Friedman:greedyfunction,Friedman:GradientBoosting} algorithms are the most commonly used to boost decision trees.
-While both algorithms attempt to improve 
 
-aims to improve its classification performance by identifying objects which are difficult to classify by the large residuals between the classification assigned and the actual ...
+Two of the most common boosting algorithms used with decision trees are the Adaptive Boosting (\emph{AdaBoost})~\cite{Friedman:additivelogistic} and \emph{Gradient Boosting}~\cite{Friedman:greedyfunction,Friedman:GradientBoosting} algorithms.
+Adaboost adjusts the weighting assigned to both misclassified objects and the weak learner following each iteration so that the best performing classifiers are trained to classify the most difficult to classify objects.
+In contrast gradient 
 
-grad - adds weak learners in area of largest residuals
-While 
+boosting identifies hard to classify objects by their large residuals  
+ to fit the weak learners not to the reweighted events but to 
 
-This approach differs from the popular Adaptive Boost (Adaboost) algorithm which assigns higher weights to misclassified events in order for the subsequent trees to obtain a better separation.
 
-Both adaboost and gradboost sequentially add predictors to an esmeble to correct predesccsors, adaboost tweaks event weights and gradboost tries to fit the new predictor to the errors made by the previous predictor.
-
-BDTs however, are potentially sensitive to the effects of \emph{overtraining}.
+Despite their effectiveness however, BDTs are potentially sensitive to the effects of \emph{overtraining}.
 This phenomena occurs when BDT is overly optimised on correctly classifying the training dataset and results in the poor classification of unseen data.
 To minimise the impact of any potential overtraining, the signal and background process samples are split into training and testing samples, where the latter samples are used to check the validity of the BDT trained with the former.
 A description of the training and testing method used to validate both the optimisation of the selection of the hyperparameters and whether or not they were overtrained is given in Chapter~\ref{subsec:hyperparameters}.
