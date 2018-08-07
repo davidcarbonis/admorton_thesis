@@ -406,19 +406,16 @@ For BDTs, the resultant classifier typically takes the form of a single discrimi
 
 %\emph{Bagging} is a similar concept to boosting, but involves each weak learner being trained on a random subset of the training sample, where every element has an equal probability of being sampled, rather than the whole training sample.
 
-The main weakness of BDTs however, is their potential sensitivity to \emph{overtraining} or \emph{overfitting}.
-This phenomena occurs when BDT is overly optimised on correctly classifying the training dataset and results in the poor classification of unseen data.
-A description of the training and testing method used to validate both the optimisation of the selection of the hyperparameters and whether or not they were overtrained is given in Chapter~\ref{subsec:hyperparameters}.
+The Adaptive Boost (\emph{AdaBoost}) and \emph{Gradient Boost} algorithms. 
+
+The \emph{Gradient Boost} algorithm~\cite{Friedman:greedyfunction,Friedman:GradientBoosting} aims to improve its classification performance by identifying objects which are difficult to classify by the large residuals between the classification assigned and the actual ...
 
 
 While 
 
-The Adaptive Boost (\emph{AdaBoost}) algorithm is one of the most popular boosting algorithms
+The Adaptive Boost (\emph{AdaBoost}) algorithm~\cite{Friedman:additivelogistic} is one of the most popular boosting algorithms
 
 The initial settings or \emph{hyperparameters} of the BDT algorithm used determines how the tree is constructed, 
-
-
-The \emph{Gradient Boost} algorithm~\cite{Friedman:GradientBoosting} aims to improve its classification performance by identifying 
 
 
 This approach differs from the popular Adaptive Boost (Adaboost) algorithm which assigns higher weights to misclassified events in order for the subsequent trees to obtain a better separation.
@@ -426,9 +423,13 @@ This approach differs from the popular Adaptive Boost (Adaboost) algorithm which
 Both adaboost and gradboost sequentially add predictors to an esmeble to correct predesccsors, adaboost tweaks event weights and gradboost tries to fit the new predictor to the errors made by the previous predictor.
 
 
+BDTs however, are potentially sensitive to the effects of \emph{overtraining}.
+This phenomena occurs when BDT is overly optimised on correctly classifying the training dataset and results in the poor classification of unseen data.
+To minimise the impact of any potential overtraining, the signal and background process samples are split into training and testing samples, where the latter samples are used to check the validity of the BDT trained with the former.
+A description of the training and testing method used to validate both the optimisation of the selection of the hyperparameters and whether or not they were overtrained is given in Chapter~\ref{subsec:hyperparameters}.
 
 
-Following a series of studies into evaluating:
+With these considerations in mind, following a series of studies evaluating:
 
 \begin{itemize}
 \item a number of boosting algorithms for decision trees;
