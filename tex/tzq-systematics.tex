@@ -401,10 +401,11 @@ Despite this however, such a weak learner will still contain some knowledge abou
 \emph{Boosting} aims to exploit this knowledge by using ensemble of repeatedly trained weak learners to produce a more effective classifier.
 Following each training iteration the dataset is reweighted based on the success of the previous classifiers in order to force the weak learners to attempt to classify the most misclassified objects.
 At the end of this process a weighted average (based) of all the weak learners are combined to produce a single strong learner.
-Therefore by extending boosting to decision trees, the resultant forest of \emph{Boosted Decision Trees} provides not a much more effective classifier than a single tree, but also more resilient to fluctuations in the training sample.
-For BDTs, the resultant classifier typically takes the form of a single discriminator whose response ranges between -1 to +1, denoting completely background-like and signal-like objects respectively.
 
-%\emph{Bagging} is a similar concept to boosting, but involves each weak learner being trained on a random subset of the training sample, where every element has an equal probability of being sampled, rather than the whole training sample.
+\emph{Bagging} is a similar concept to boosting, but involves each weak learner being trained on a random subset of the training sample, where every element has an equal probability of being sampled, rather than the whole training sample.
+
+Therefore by extending boosting or bagging to decision trees, the resultant forest of \emph{Boosted Decision Trees} provides not a much more effective classifier than a single tree, but also more resilient to fluctuations in the training sample.
+For BDTs, the resultant classifier typically takes the form of a single discriminator whose response ranges between -1 to +1, denoting completely background-like and signal-like objects respectively.
 
 Of the many boosting algorithms, Adaptive Boost (\emph{AdaBoost})~\cite{Friedman:additivelogistic} and  {Gradient Boosting}~\cite{Friedman:greedyfunction,Friedman:GradientBoosting} algorithms are the most commonly used to boost decision trees.
 While both algorithms attempt to improve 
