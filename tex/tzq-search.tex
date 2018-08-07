@@ -11,7 +11,7 @@ To further enhance the separation of the signal against the background processes
 
 \section{Background Processes}\label{sec:backgroundProcesses}
 \subsection{Vector Boson + Jets backgrounds}
-QCD multijet events in association with a vector boson (V+jets) have the largest cross sections of any process which produces prompt leptons at the LHC, as illustrated in Figure~\ref{fig:crossSections}.
+QCD multijet events in association with a vector boson (V+jets) have the largest cross sections of any process which produces prompt leptons at the LHC, as illustrated in figure~\ref{fig:crossSections}.
 As only one promptly produced lepton from the W boson decay is expected for W+jets, the presence of any additional leptons would have to be the result of a heavy quark decay or incorrectly reconstructed jet. 
 Requiring any selected lepton to be sufficiently isolated from jets and heavy leptons will suppress the presence of these leptons.
 
@@ -136,7 +136,7 @@ The MVA tuned variables include:
 \item \textbf{$1/E - 1/p$} - the difference in the inverse energy of the ECAL supercluster and inverse track momentum, which is used to describe the energy loss 
 \end{itemize}
 
-The cuts used for the tight and veto WPs for these variables are given in Table~\ref{tab:electronCuts}.
+The cuts used for the tight and veto WPs for these variables are given in table~\ref{tab:electronCuts}.
 
 \begin{table}[htbp]
 \topcaption {
@@ -264,7 +264,7 @@ And for jets with $\eta > 3.0$ the loose ID criteria are:
 \subsubsection{b-tagging Requirements}
 The CSVv2 tagging algorithm described in Chapter~\ref{subsec:objReco-bJets} is used to tag jets, with a working point (WP) cut applied to the b-tag discriminator.
 If the value of a jet's discriminator exceeds that of the Medium WP and has $|\eta| < 2.40$, the jet is considered to be a b-jet.
-From the \emph{Loose}, \emph{Medium} and \emph{Tight} WPs defined by CMS~\cite{Sirunyan:2017ezt}, as given in Table~\ref{tab:bTagWPs} in Chapter~\ref{subsec:objReco-bJets}, the Medium WP was chosen as it provided the optimum performance in terms of providing as large statistics as possible for the signal process without too great a compromise on the purity of the selection.
+From the \emph{Loose}, \emph{Medium} and \emph{Tight} WPs defined by CMS~\cite{Sirunyan:2017ezt}, as given in table~\ref{tab:bTagWPs} in Chapter~\ref{subsec:objReco-bJets}, the Medium WP was chosen as it provided the optimum performance in terms of providing as large statistics as possible for the signal process without too great a compromise on the purity of the selection.
 
 \subsubsection{W Boson Candidate}
 In contrast to the previous tZq searches where the W boson decays into a lepton and its associated antineutrino, the W boson in the dilepton final state decays hadronically, allowing for the top quark to be fully reconstructed.
@@ -281,7 +281,7 @@ While no additional event selection cuts are applied to the top quark candidate,
 Whilst the signal region does not explicitly cut on \MET, it is used in one of the Z+jets control regions, described in Chapter~\ref{subsec:zPlusJetsCR}, and by the multivariate analysis discussed in Chapter~\ref{sec:mvas}, in order to discriminate against backgrounds such as \ttbar which do feature significant amounts of \MET.
 
 \section{Signal Region}\label{sec:signalRegion}
-At leading order tZq consists of a top quark, a recoil quark and a radiated Z boson, as illustrated in Figure~\ref{fig:feyn_tZq}.
+At leading order tZq consists of a top quark, a recoil quark and a radiated Z boson, as illustrated in figure~\ref{fig:feyn_tZq}.
 Therefore the event selection for the final state must consist of two leptons compatible with a Z boson decay and at least four jets, one from the top quark decay, two from the W boson, and the recoil jet.
 
 For any lepton to be considered for selection, it must be produced within the ECAL's acceptance of $|\eta| < 2.5$ and have a transverse momenta in a region where the lepton triggers are well described in simulation.
@@ -337,65 +337,63 @@ Despite this however, as the kinematics of b-tagged jets differs from light jets
 This alternative Z+jet control region required the same b-jet selection (one to two b-jets) as the signal region, but with an inverted W boson mass cut and a \MET cut of 50\GeV.
 The inverted W boson mass cut rejects events containing a hadronically decaying W boson and the \MET cut suppresses \ttbar which contains significant quantities of \MET from the leptonically decaying W bosons.
 
-Both the zero b-tagged jets and \MET and inverted W boson mass cut selection criteria produce highly enriched Z+jets control regions, xx\% and yy\% as given in Tables~\ref{tab:zPlusControlYieldsOld} and~\ref{tab:zPlusControlYieldsNew} respectively.
-As the control region defined by the \MET and inverted W boson mass cut selection criteria was expected to more closely resemble the signal region's topology, it was decided that this control region would be used for the analysis.
+As shown in tables~\ref{tab:zPlusControlYieldsOld} and~\ref{tab:zPlusControlYieldsNew} both the zero b-tagged jets and \MET and inverted W boson mass cut selection criteria produce highly enriched Z+jets control regions, 90.7\% and yy\% respectively.
+Despite the control region defined by the \MET and inverted W boson mass cut selection criteria having lower statistics than the other, as it was expected to more closely resemble the signal region's topology, it was decided that this control region would be used for the analysis.
 
 \begin{table}[htbp]
-\topcaption{The number of observed events in data and the number of expected events in simulation in the signal region fllowing the full event selection and simulation corrections for each of the separate channels and with both channels combined for the Z+jets control region requring zero b-tagged jets.
+\topcaption{The number of observed events in data and the number of expected events in simulation, including the uncertainties associated with them, following the full event selection and simulation corrections for each of the separate channels and with both channels combined for the Z+jets control region requiring zero b-tagged jets.
 }\label{tab:zPlusControlYieldsOld}
 \centering
 \begin{tabular}{lccccc}
 \hline
 Channel &  $ee$ & $\mu\mu$ & Combined \\
 \hline
-tZq & 30.242 &  54.508 & 84.750     \\
-tWZ\@: & 6.439 & 10.779 & 17.218    \\
-tHq: & 0.173 & 0.372 & 0.545    \\
-ttW\@: & 7.249 & 10.681 & 17.930    \\
-ttZ\@: & 61.882 & 110.471 & 172.353    \\
-ttH\@: & 4.916 & 9.554 & 14.470    \\
-\ttbar: & 1653.457 & 3219.360 & 482.817    \\
-tW\@: & 95.989 & 177.527 & 273.516    \\
-s-channel: & 0.000 & 0.000 & 0.000    \\
-t-channel: & 0.612 & 0.995 & 1.607    \\
-WW\@: & 1.339 & 2.4475 & 3.786    \\
-WZ\@: & 73.466 & 126.656 & 200.122    \\
-ZZ\@: & 51.827 & 92.980 & 144.807    \\
-WWW\@: & 0.114 & 0.305 & 0.419    \\
-WWZ\@: & 1.327 & 2.207 & 3.534    \\
-WZZ\@: & 1.540 & 2.470 & 4.010    \\
-ZZZ\@: & 0.661 & 1.087 & 1.748    \\
-W + jets: & 0.000 & 0.000 & 0.000    \\
-Z + jets (LO) : & 3293.634 & 6245.353 & 9538.987    \\
+tZq & 10.620$\pm$0.946 & 18.854$\pm$1.682 & 29.474 $\pm$2.628    \\
+tWZ\@: & 2.863$\pm$0.207 & 4.489$\pm$0.312 & 7.352$\pm$0.519    \\
+tHq: & 0.032$\pm$0.004 & 0.051$\pm$0.007 & 0.083$\pm$0.011    \\
+ttW\@: & 1.133$\pm$0.119 & 2.739$\pm$0.326 & 3.872$\pm$0.445    \\
+ttZ\@: & 21.605$\pm$1.344 & 35.623$\pm$2.122 & 57.228$\pm$3.467    \\
+ttH\@: & 0.838$\pm$0.052 & 1.590$\pm$0.104 & 2.428$\pm$0.156    \\
+\ttbar: & 214.125$\pm$14.997 & 440.791$\pm$34.994 & 654.915$\pm$44.991    \\
+tW\@: & 8.386$\pm$0.508 & 16.385$\pm$0.547 & 24.771$\pm$1.055    \\
+s-channel: & 0.000$\pm$0.000 & 0.000$\pm$0.000 & 0.000$\pm$0.000    \\
+t-channel: & 0.000$\pm$0.000 & 0.324$\pm$0.024 & 0.324$\pm$0.024    \\
+WW\@: & 5.119$\pm$0.522 & 9.270$\pm$0.343 & 14.389$\pm$0.865    \\
+WZ\@: & 307.095$\pm$19.408 & 504.989$\pm$33.462 & 812.084$\pm$52.870    \\
+ZZ\@: & 87.244$\pm$6.068 & 147.823$\pm$10.095 & 235.067$\pm$16.163    \\
+WWW\@: & 0.428$\pm$0.030 & 0.595$\pm$0.053 & 14.989$\pm$0.083    \\
+WWZ\@: & 5.427$\pm$0.239 & 9.562$\pm$0.477 & 3.534$\pm$0.716    \\
+WZZ\@: & 3.499$\pm$0.183 & 5.715$\pm$0.321 & 9.214$\pm$0.504    \\
+ZZZ\@: & 0.749$\pm$0.032 & 1.244$\pm$0.064 & 1.993$\pm$0.096    \\
+W + jets: & 0.000$\pm$ & 0.000$\pm$ & 0.000$\pm$    \\
+Z + jets: & 6810.385$\pm$630.170 & 12035.257$\pm$1179.788 & 18845.642$\pm$1809.958    \\
 \hline
-NPLs: & 37.787 & 30.889 & 68.676   \\
+Data & 7530.0$\pm$188.250 & 13243$\pm$331.075 & 20773$\pm$519.325    \\
 \hline
-Data & 5284 & 9665 & 14949    \\
-\hline
-Total MC (LO Z+jets) & 5284.867 & 10067.752 & 15352.619    \\
-Total MC (LO Z+jets) + NPLs & 5322.654 & 10098.641 & 15361.377    \\
+Total MC & 7479.548$\pm$674.829 & 13235.298$\pm$1264.724 & 20714.846$\pm$1939.553    \\
 \hline
 \end{tabular}
 \end{table}
 
 \begin{table}[htbp]
-\topcaption{The number of observed events in data and the number of expected events in simulation in the signal region fllowing the full event selection and simulation corrections for each of the separate channels and with both channels combined for the Z+jets control region with the \MET and inverted W boson mass cuts.
+\topcaption{The number of observed events in data and the number of expected events in simulation, including the uncertainties associated with them, following the full event selection and simulation corrections for each of the separate channels and with both channels combined for the Z+jets control region with the \MET and inverted W boson mass cuts.
+\editComment{Update table entries}
 }\label{tab:zPlusControlYieldsNew}
 \centering
 \begin{tabular}{lccccc}
 \hline
 Channel &  $ee$ & $\mu\mu$ & Combined \\
 \hline
-tZq & 30.242 &  54.508 & 84.750     \\
+tZq\@: & 30.242 &  54.508 & 84.750     \\
 tWZ\@: & 6.439 & 10.779 & 17.218    \\
-tHq: & 0.173 & 0.372 & 0.545    \\
+tHq\@: & 0.173 & 0.372 & 0.545    \\
 ttW\@: & 7.249 & 10.681 & 17.930    \\
 ttZ\@: & 61.882 & 110.471 & 172.353    \\
 ttH\@: & 4.916 & 9.554 & 14.470    \\
-\ttbar: & 1653.457 & 3219.360 & 482.817    \\
+\ttbar\@: & 1653.457 & 3219.360 & 482.817    \\
 tW\@: & 95.989 & 177.527 & 273.516    \\
-s-channel: & 0.000 & 0.000 & 0.000    \\
-t-channel: & 0.612 & 0.995 & 1.607    \\
+s-channel\@: & 0.000 & 0.000 & 0.000    \\
+t-channel\@: & 0.612 & 0.995 & 1.607    \\
 WW\@: & 1.339 & 2.4475 & 3.786    \\
 WZ\@: & 73.466 & 126.656 & 200.122    \\
 ZZ\@: & 51.827 & 92.980 & 144.807    \\
@@ -403,15 +401,12 @@ WWW\@: & 0.114 & 0.305 & 0.419    \\
 WWZ\@: & 1.327 & 2.207 & 3.534    \\
 WZZ\@: & 1.540 & 2.470 & 4.010    \\
 ZZZ\@: & 0.661 & 1.087 & 1.748    \\
-W + jets: & 0.000 & 0.000 & 0.000    \\
-Z + jets (LO) : & 3293.634 & 6245.353 & 9538.987    \\
+W + jets\@: & 0.000 & 0.000 & 0.000    \\
+Z + jets\@: & 2665.877$\pm$253.418 & 4972.402$\pm$492.167 & 7638.279$\pm$745.858   \\
 \hline
-NPLs: & 37.787 & 30.889 & 68.676   \\
+Data\@: & 3205.0$\pm$80.125 & 5895.0$\pm$147.375 & 9100.0$\pm$227.500    \\
 \hline
-Data & 5284 & 9665 & 14949    \\
-\hline
-Total MC (LO Z+jets) & 5284.867 & 10067.752 & 15352.619    \\
-Total MC (LO Z+jets) + NPLs & 5322.654 & 10098.641 & 15361.377    \\
+Total MC\@: & 5284.867 & 10067.752 & 15352.619    \\
 \hline
 \end{tabular}
 \end{table}
@@ -422,16 +417,16 @@ Total MC (LO Z+jets) + NPLs & 5322.654 & 10098.641 & 15361.377    \\
 The selection criteria for the \ttbar control region differs from the signal region definition defined in Chapter~\ref{sec:signalRegion}, by requiring that:
 \begin{itemize}
 \item the two oppositely charged leptons selected to have different flavours (\ie one is an electron and the other a muon).
-\item a \pt cut of x and y is used for the electron and muon respectively, as the leading lepton \pt thresholds of the HLT paths considered for the e$\mu$ final state differ from those for the same flavour final states, as as given in Chapter~\ref{sec:triggerStrategy}. 
+\item \pt cuts of 35\GeV and 26\GeV are used for the electron and muon respectively, as the leading lepton \pt thresholds of the HLT paths considered for the e$\mu$ final state differ from those for the same flavour final states, as as given in Chapter~\ref{sec:triggerStrategy}. 
 \end{itemize} 
 
 As the branching ratio for a W boson (produced by the top quark and anti-top quark decays) to decay into either an electron or muon is the same, this produces a \ttbar enriched background control region which is topologically similar to the \ttbar contributions in the signal region. 
 
-Table~\ref{ttbarCR} shows that following the following these selection criteria and the application of all of the simulation corrections discussed in Chapter~\ref{sec:simCorrections}, that the resultant control region at 94\% purity is sufficiently enriched.
+Table~\ref{ttbarCR} shows that following the following these selection criteria and the application of all of the simulation corrections discussed in Chapter~\ref{sec:simCorrections}, that the resultant control has a 94.8\% purity and that half of the backgrounds result from single top in the tW-channel.
 
 \begin{table}[htbp]
 \topcaption {
-The event yields after the application of following the full \ttbar control region event selection and simulation corrections for the \ttbar control region.
+The event yields, and the uncertainties associated with them, following the full event selection and simulation corrections for the \ttbar control region.
 }
 \label{tab:ttbarCR}
   \centering
@@ -440,27 +435,29 @@ The event yields after the application of following the full \ttbar control regi
    \hline
    \textbf{MC process} & \textbf{$e\mu$}  \\
    \hline
-	tZq & 1.709  \\
-	tWZ\@: & 0.879  \\
-	tHq: & 1.169  \\
-	ttW\@: & 50.098   \\
-	ttZ\@: & 45.425   \\
-	ttH\@: & 34.135  \\
-	\ttbar: & 11778.461   \\
-	tW\@: & 488.632    \\
-	s-channel: &  0.036 \\
-	t-channel: & 1.776 \\
-	WW\@: & 10.529  \\
-	WZ\@: & 3.898 \\
-	ZZ\@: & 0.704 \\
-	WWW\@: & 0.844     \\
-	WWZ\@: & 0.793     \\
-	WZZ\@: & 0.065     \\
-	ZZZ\@: & 0.012     \\
-	W + jets: & 15.834     \\
-	Z + jets: & 86.547     \\
+	tZq\@: & 1.729$\pm$0.123  \\
+	tWZ\@: & 0.857$\pm$0.079  \\
+	tHq\@: & 1.161$\pm$0.126  \\
+	ttW\@: & 49.925$\pm$3.532   \\
+	ttZ\@: & 45.586$\pm$2.578   \\
+	ttH\@: & 34.295$\pm$1.240  \\
+	\ttbar: & 11814.144$\pm$865.935   \\
+	tW\@: & 491.563$\pm$15.160   \\
+	s-channel\@: &  0.000$\pm$0.000 \\
+	t-channel\@: & 1.915$\pm$0.056 \\
+	WW\@: & 10.853$\pm$1.615  \\
+	WZ\@: & 4.087$\pm$0.310 \\
+	ZZ\@: & 0.756$\pm$0.038 \\
+	WWW\@: & 0.848$\pm$0.107     \\
+	WWZ\@: & 0.768$\pm$0.138     \\
+	WZZ\@: & 0.065$\pm$0.004     \\
+	ZZZ\@: & 0.012$\pm$0.002     \\
+	W + jets\@: & 15.966$\pm$2.872     \\
+	Z + jets\@: & 86.907$\pm$5.741     \\
 	\hline
-	Total MC & 12521.246     \\
+	Data\@: & 12463.0$\pm$311.575
+	\hline
+	Total MC\@: & 12561.437$\pm$1037.518     \\
    \hline
  \end{tabular}
 \end{table}
@@ -477,6 +474,7 @@ To this end a $\chi^{2}$-like variable in the two dimensional space of the recon
 
 where $m_{\rm jj}$ is the W boson mass reconstructed from the two candidate jets, $m_{\rm W}$ is the known W boson mass, $m_{\mathrm{jj+b}}$ is the top quark mass reconstructed from the leading b-jet and two jets associated with the W boson decay, $m_{\mathrm{t}}$ is the known top mass, and $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}})$ are the reconstruction resolution terms for the top quark and W boson masses.
 Both $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}}$ were determined by taking the standard deviation of the Gaussian fitted to the top quark and W boson mass peaks respectively and found to be $A$ and $B$ respectively.
+
 \editComment{recall a more precise/sophisticated method was suggested? Add updated values}
 \editComment{Once updated values are added, add plots}
 
