@@ -422,25 +422,26 @@ This approach differs from the popular Adaptive Boost (Adaboost) algorithm which
 
 Both adaboost and gradboost sequentially add predictors to an esmeble to correct predesccsors, adaboost tweaks event weights and gradboost tries to fit the new predictor to the errors made by the previous predictor.
 
-
 BDTs however, are potentially sensitive to the effects of \emph{overtraining}.
 This phenomena occurs when BDT is overly optimised on correctly classifying the training dataset and results in the poor classification of unseen data.
 To minimise the impact of any potential overtraining, the signal and background process samples are split into training and testing samples, where the latter samples are used to check the validity of the BDT trained with the former.
 A description of the training and testing method used to validate both the optimisation of the selection of the hyperparameters and whether or not they were overtrained is given in Chapter~\ref{subsec:hyperparameters}.
 
 
-With these considerations in mind, following a series of studies evaluating:
+Following a number of studies evaluating:
 
 \begin{itemize}
 \item a number of boosting algorithms for decision trees;
 \item which simulated background processes should be included in the training processes;
 \item whether or not multiple BDTs trained on separate backgrounds would be more effective than a single BDT;
+\item how to determine which features possessed the greater discriminating power;
+\item and which \emph{hyperparameters}, the set of options used to determine how a BDT grows, and their values gave the optimal classification performance;
 \end{itemize}
 
 it was determined that the \emph{eXtreme Gradient Boosting} (XGBoost) implementation of the Gradiant Boost alogorithm for a single BDT trained on all the MC simulation samples gave the optimal performance for this search~\cite{xgboost}.
 
 The methods used for selecting the features and model hyperparameters are described in the following subsections.
-Both the features and model hyperparameters were chosen separately for ee and mumu channels and all the simulated MC samples were considered.
+Both the input features and model hyperparameters were chosen separately for ee and mumu channels and all the simulated MC samples were considered.
 
 \subsection{BDT Input Features}
 From the selected reconstructed physics objects, a large number of input variables or \emph{features} were constructed and considered as potential inputs for the BDT.
