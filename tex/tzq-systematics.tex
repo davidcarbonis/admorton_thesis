@@ -338,6 +338,8 @@ Examples of this good agreement between simulation and data for the number of je
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\\
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
 \caption{
 The distributions of the number of jets and the number b-tagged jets for the \ttbar control region following the application of the full control region event selection and simulation corrections.
 }
@@ -378,13 +380,25 @@ The distribution of the selected electron and muon and their combined invariant 
 Multivariate Analysis (MVA) techniques are commonly used to further enhance the separation between signal and background processes given the difficulty in identifying rare or background dominated processes through the sole use of individual cuts.
 
 Therefore, given the small cross section and topology of the dilepton final state of tZq, a MVA method was used to enhance the separation between the signal and background following the application of the selection cuts described in Chapter~\ref{chapter:tzq-search}.
-The \emph{Boosted Decision Tree}~(BDT) MVA technique was used as it a widely used and supported technique which those undertaking this analysis were familiar with.
+The \emph{Boosted Decision Tree}~(BDT) MVA technique was chosen as it a widely used and supported technique which those undertaking this analysis were familiar with.
 
 \subsection{Boosted Decision Trees}\label{subsec:bdt}
-A decision tree in its simplest form is a series of sequential binary decisions (nodes) on a single input variable or \emph{feature} at a time in order classify an event as signal or background.
-Given that the decision criteria for each node is dependent on the decisions of the preceding notes, decision trees have the potential to obtain better separation between signal and background processes through individual cuts on isolated variables.
+Figure~\ref{fig:decisionTree} illustrates a simple decision tree, where a series of sequential binary decisions (nodes) are made on a single input variable (\emph{feature}), $x_{i}$, until a leaf node is reached and the object is classified as either signal or background.
+
+As the decision criteria for each node is dependent on the decisions of the preceding notes, decision trees have the potential to obtain better separation between signal and background processes through individual cuts on isolated variables.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.97\textwidth]{figs/background-estimation/decisionTree.pdf}
+\caption{A simple decision tree where repeated cuts on the variables $x_{i}$ are perfomed until a leaf node is reached and the object is classified as either signal or background~\cite{Hocker:2007ht}.
+}
+\label{fig:decisionTree}
+\end{figure}
+
+Typically 
 
 Without any prior knowledge of the system however, a single isolated tree is not expected to be an efficient classifier.
+
 Despite this however, such a weak learner will still contain some knowledge about the underlying structure of the classification problem.
 \emph{Boosting} aims to exploit this knowledge by using ensemble of repeatedly trained weak learners to produce a more effective classifier.
 Following each training iteration the dataset is reweighted based on the success of the previous classifiers in order to force the weak learners to attempt to classify the most misclassified objects.
@@ -393,6 +407,8 @@ Therefore by extending boosting to decision trees, the resultant forest of \emph
 
 \emph{Bagging} is a similar concept to boosting, but involves each weak learner being trained on a random subset of the training sample, where every element has an equal probability of being sampled, rather than the whole training sample.
 
+
+The initial settings or \emph{hyperparameters} of the BDT algorithm used determines how the tree is constructed, 
 
 
 The Adaptive Boost (\emph{AdaBoost}) algorithm is one of the most popular boosting algorithms used 
@@ -409,7 +425,8 @@ This exponential loss approach however, is its degraded performance in noisier e
 The number of nodes or \emph{depth} of the tree considered
 As each node's criteria are dependent on those which have preceded it, the decision tree is capable of separating signal 
 
-\emph{Overtraining}
+\emph{Overtraining} or overfitting = over optimisations on the training data set resulting in poor classification of unseen data.
+
 A training sample, consisting of a subset of the data to be classified, is used as the input 
 
 
@@ -606,7 +623,7 @@ Initially this model evaluates $f$ using random values of $\theta$ for fifteen i
 
 For each of the 150 iterations considered, $f(\theta)$ is evaluated across four subsets of 80\% of the training data using the the k-fold cross-validation scheme.
 Following evaluating $f$ four times, where a different fold was withheld each time, the resultant average $f$ was taken as the final metric.
-Out of these averaged final metrics, the classifier with the best $(\theta)$ was retrained on all the training data and used to produce the optimal BDT.
+Out of these averaged final metrics, the classifier with the best $(\theta)$ was retrained on all the training data, checked against the training data, and if satisfactory, used to produce the optimal BDT.
 
 %
 %\begin{table}[htbp]
