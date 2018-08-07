@@ -333,13 +333,92 @@ Given the scale of this background and the difficulties in accurately modelling 
 Initially a high statistics Z+jets enriched control region was defined by requiring that none of the jets present are b-tagged, in contrast to the one to two required for the signal region.
 Given the large cross section and that the vast majority of the jets produced by the Z+jets process are light jets, whilst the top quarks in \ttbar, the second largest background, predominately decay into b quarks, this produces a high purity region with large statistics.
 
-Despite the good description of the jet multiplicity and jet \pT shapes in this control region, discussed in depth in Chapter~\ref{subsec:zPlusJetsEstimation}, as the kinematics of b-tagged jets differs from light jets, this control region's topology may not be similar 
-
-Therefore an alternative Z+jets enriched control region was defined by requiring same b-jet selection (one to two b-jets) as the signal region, but requiring an inverted W boson mass cut and a \MET cut of 50\GeV.
+Despite this however, as the kinematics of b-tagged jets differs from light jets, this control region's topology may not be sufficiently similar to the signal region an alternative Z+jets enriched control region was defined.
+This alternative Z+jet control region required the same b-jet selection (one to two b-jets) as the signal region, but with an inverted W boson mass cut and a \MET cut of 50\GeV.
 The inverted W boson mass cut rejects events containing a hadronically decaying W boson and the \MET cut suppresses \ttbar which contains significant quantities of \MET from the leptonically decaying W bosons.
+
+Both the zero b-tagged jets and \MET and inverted W boson mass cut selection criteria produce highly enriched Z+jets control regions, xx\% and yy\% as given in Tables~\ref{tab:zPlusControlYieldsOld} and~\ref{tab:zPlusControlYieldsNew} respectively.
+As the control region defined by the \MET and inverted W boson mass cut selection criteria was expected to more closely resemble the signal region's topology, it was decided that this control region would be used for the analysis.
+
+\begin{table}[htbp]
+\topcaption{The number of observed events in data and the number of expected events in simulation in the signal region fllowing the full event selection and simulation corrections for each of the separate channels and with both channels combined for the Z+jets control region requring zero b-tagged jets.
+}\label{tab:zPlusControlYieldsOld}
+\centering
+\begin{tabular}{lccccc}
+\hline
+Channel &  $ee$ & $\mu\mu$ & Combined \\
+\hline
+tZq & 30.242 &  54.508 & 84.750     \\
+tWZ\@: & 6.439 & 10.779 & 17.218    \\
+tHq: & 0.173 & 0.372 & 0.545    \\
+ttW\@: & 7.249 & 10.681 & 17.930    \\
+ttZ\@: & 61.882 & 110.471 & 172.353    \\
+ttH\@: & 4.916 & 9.554 & 14.470    \\
+\ttbar: & 1653.457 & 3219.360 & 482.817    \\
+tW\@: & 95.989 & 177.527 & 273.516    \\
+s-channel: & 0.000 & 0.000 & 0.000    \\
+t-channel: & 0.612 & 0.995 & 1.607    \\
+WW\@: & 1.339 & 2.4475 & 3.786    \\
+WZ\@: & 73.466 & 126.656 & 200.122    \\
+ZZ\@: & 51.827 & 92.980 & 144.807    \\
+WWW\@: & 0.114 & 0.305 & 0.419    \\
+WWZ\@: & 1.327 & 2.207 & 3.534    \\
+WZZ\@: & 1.540 & 2.470 & 4.010    \\
+ZZZ\@: & 0.661 & 1.087 & 1.748    \\
+W + jets: & 0.000 & 0.000 & 0.000    \\
+Z + jets (LO) : & 3293.634 & 6245.353 & 9538.987    \\
+\hline
+NPLs: & 37.787 & 30.889 & 68.676   \\
+\hline
+Data & 5284 & 9665 & 14949    \\
+\hline
+Total MC (LO Z+jets) & 5284.867 & 10067.752 & 15352.619    \\
+Total MC (LO Z+jets) + NPLs & 5322.654 & 10098.641 & 15361.377    \\
+\hline
+\end{tabular}
+\end{table}
+
+%\begin{table}[htbp]
+\topcaption{The number of observed events in data and the number of expected events in simulation in the signal region fllowing the full event selection and simulation corrections for each of the separate channels and with both channels combined for the Z+jets control region with the \MET and inverted W boson mass cuts.
+}\label{tab:zPlusControlYieldsNew}
+\centering
+\begin{tabular}{lccccc}
+\hline
+Channel &  $ee$ & $\mu\mu$ & Combined \\
+\hline
+tZq & 30.242 &  54.508 & 84.750     \\
+tWZ\@: & 6.439 & 10.779 & 17.218    \\
+tHq: & 0.173 & 0.372 & 0.545    \\
+ttW\@: & 7.249 & 10.681 & 17.930    \\
+ttZ\@: & 61.882 & 110.471 & 172.353    \\
+ttH\@: & 4.916 & 9.554 & 14.470    \\
+\ttbar: & 1653.457 & 3219.360 & 482.817    \\
+tW\@: & 95.989 & 177.527 & 273.516    \\
+s-channel: & 0.000 & 0.000 & 0.000    \\
+t-channel: & 0.612 & 0.995 & 1.607    \\
+WW\@: & 1.339 & 2.4475 & 3.786    \\
+WZ\@: & 73.466 & 126.656 & 200.122    \\
+ZZ\@: & 51.827 & 92.980 & 144.807    \\
+WWW\@: & 0.114 & 0.305 & 0.419    \\
+WWZ\@: & 1.327 & 2.207 & 3.534    \\
+WZZ\@: & 1.540 & 2.470 & 4.010    \\
+ZZZ\@: & 0.661 & 1.087 & 1.748    \\
+W + jets: & 0.000 & 0.000 & 0.000    \\
+Z + jets (LO) : & 3293.634 & 6245.353 & 9538.987    \\
+\hline
+NPLs: & 37.787 & 30.889 & 68.676   \\
+\hline
+Data & 5284 & 9665 & 14949    \\
+\hline
+Total MC (LO Z+jets) & 5284.867 & 10067.752 & 15352.619    \\
+Total MC (LO Z+jets) + NPLs & 5322.654 & 10098.641 & 15361.377    \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsubsection{\ttbar Background Control Region}\label{subsec:ttbarCR}
 \ttbar events form the second largest background process, where events with two leptons produced from W bosons decaying having an invariant mass which is compatible with the Z boson mass window in the being selected in the signal region.
+
 The selection criteria for the \ttbar control region differs from the signal region definition defined in Chapter~\ref{sec:signalRegion}, by requiring that:
 \begin{itemize}
 \item the two oppositely charged leptons selected to have different flavours (\ie one is an electron and the other a muon).
@@ -347,6 +426,44 @@ The selection criteria for the \ttbar control region differs from the signal reg
 \end{itemize} 
 
 As the branching ratio for a W boson (produced by the top quark and anti-top quark decays) to decay into either an electron or muon is the same, this produces a \ttbar enriched background control region which is topologically similar to the \ttbar contributions in the signal region. 
+
+Table~\ref{ttbarCR} shows that following the following these selection criteria and the application of all of the simulation corrections discussed in Chapter~\ref{sec:simCorrections}, that the resultant control region at 94\% purity is sufficiently enriched.
+
+\begin{table}[htbp]
+\topcaption {
+The event yields after the application of following the full \ttbar control region event selection and simulation corrections for the \ttbar control region.
+}
+\label{tab:ttbarCR}
+  \centering
+% This right-aligns numbers in column, but centers them under column title.
+ \begin{tabular}{cc}
+   \hline
+   \textbf{MC process} & \textbf{$e\mu$}  \\
+   \hline
+	tZq & 1.709  \\
+	tWZ\@: & 0.879  \\
+	tHq: & 1.169  \\
+	ttW\@: & 50.098   \\
+	ttZ\@: & 45.425   \\
+	ttH\@: & 34.135  \\
+	\ttbar: & 11778.461   \\
+	tW\@: & 488.632    \\
+	s-channel: &  0.036 \\
+	t-channel: & 1.776 \\
+	WW\@: & 10.529  \\
+	WZ\@: & 3.898 \\
+	ZZ\@: & 0.704 \\
+	WWW\@: & 0.844     \\
+	WWZ\@: & 0.793     \\
+	WZZ\@: & 0.065     \\
+	ZZZ\@: & 0.012     \\
+	W + jets: & 15.834     \\
+	Z + jets: & 86.547     \\
+	\hline
+	Total MC & 12521.246     \\
+   \hline
+ \end{tabular}
+\end{table}
 
 \section{Experimental Blinding}\label{sec:blinding}
 Despite even the best intentions, there is the potential for an experiment to be inadvertently optimised based on previous observations~\cite{Roodman:2003rw}.
