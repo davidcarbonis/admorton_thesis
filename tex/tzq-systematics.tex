@@ -385,8 +385,6 @@ The \emph{Boosted Decision Tree}~(BDT) MVA technique was chosen as it a widely u
 \subsection{Boosted Decision Trees}\label{subsec:bdt}
 Figure~\ref{fig:decisionTree} illustrates a simple decision tree, where a series of sequential binary decisions (nodes) are made on a single input variable (\emph{feature}), $x_{i}$, until a leaf node is reached and the object is classified as either signal or background.
 
-As the decision criteria for each node is dependent on the decisions of the preceding notes, decision trees have the potential to obtain better separation between signal and background processes through individual cuts on isolated variables.
-
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.97\textwidth]{figs/background-estimation/decisionTree.pdf}
@@ -395,24 +393,31 @@ As the decision criteria for each node is dependent on the decisions of the prec
 \label{fig:decisionTree}
 \end{figure}
 
-Typically 
+As the decision criteria for each node is dependent on the decisions of the preceding notes, decision trees have the potential to obtain better separation between signal and background processes through individual cuts on isolated variables.
+
 
 Without any prior knowledge of the system however, a single isolated tree is not expected to be an efficient classifier.
-
 Despite this however, such a weak learner will still contain some knowledge about the underlying structure of the classification problem.
 \emph{Boosting} aims to exploit this knowledge by using ensemble of repeatedly trained weak learners to produce a more effective classifier.
 Following each training iteration the dataset is reweighted based on the success of the previous classifiers in order to force the weak learners to attempt to classify the most misclassified objects.
 At the end of this process a weighted average (based) of all the weak learners are combined to produce a single strong learner.
-Therefore by extending boosting to decision trees, the resultant forest of \emph{Boosted Decision Trees} provides much more effective classifier than a single tree.
+Therefore by extending boosting to decision trees, the resultant forest of \emph{Boosted Decision Trees} provides not a much more effective classifier than a single tree, but also more resilient to fluctuations in the training sample.
+For BDTs, the resultant classifier typically takes the form of a single discriminator whose response ranges between -1 to +1, denoting completely background-like and signal-like objects respectively.
 
-\emph{Bagging} is a similar concept to boosting, but involves each weak learner being trained on a random subset of the training sample, where every element has an equal probability of being sampled, rather than the whole training sample.
+%\emph{Bagging} is a similar concept to boosting, but involves each weak learner being trained on a random subset of the training sample, where every element has an equal probability of being sampled, rather than the whole training sample.
 
+The main weakness of BDTs however, is their potential sensitivity to \emph{overtraining} or \emph{overfitting}.
+This phenomena occurs when BDT is overly optimised on correctly classifying the training dataset and results in the poor classification of unseen data.
+A description of the training and testing method used to validate both the optimisation of the selection of the hyperparameters and whether or not they were overtrained is given in Chapter~\ref{subsec:hyperparameters}.
+
+
+While 
+
+The Adaptive Boost (\emph{AdaBoost}) algorithm is one of the most popular boosting algorithms
 
 The initial settings or \emph{hyperparameters} of the BDT algorithm used determines how the tree is constructed, 
 
 
-The Adaptive Boost (\emph{AdaBoost}) algorithm is one of the most popular boosting algorithms used 
- 
 The \emph{Gradient Boost} algorithm~\cite{Friedman:GradientBoosting} aims to improve its classification performance by identifying 
 
 
@@ -420,22 +425,13 @@ This approach differs from the popular Adaptive Boost (Adaboost) algorithm which
 
 Both adaboost and gradboost sequentially add predictors to an esmeble to correct predesccsors, adaboost tweaks event weights and gradboost tries to fit the new predictor to the errors made by the previous predictor.
 
-This exponential loss approach however, is its degraded performance in noisier environments as it is not robust in 	
-
-The number of nodes or \emph{depth} of the tree considered
-As each node's criteria are dependent on those which have preceded it, the decision tree is capable of separating signal 
-
-\emph{Overtraining} or overfitting = over optimisations on the training data set resulting in poor classification of unseen data.
-
-A training sample, consisting of a subset of the data to be classified, is used as the input 
-
 
 
 
 Following a series of studies into evaluating:
 
 \begin{itemize}
-\item a number of Boosting and Bagging algorithms for decision trees;
+\item a number of boosting algorithms for decision trees;
 \item which simulated background processes should be included in the training processes;
 \item whether or not multiple BDTs trained on separate backgrounds would be more effective than a single BDT;
 \end{itemize}
@@ -443,7 +439,7 @@ Following a series of studies into evaluating:
 it was determined that the \emph{eXtreme Gradient Boosting} (XGBoost) implementation of the Gradiant Boost alogorithm for a single BDT trained on all the MC simulation samples gave the optimal performance for this search~\cite{xgboost}.
 
 The methods used for selecting the features and model hyperparameters are described in the following subsections.
-Both the features and model hyperparameters were chosen separately for ee and mumu channels and all the simulated MC samples were considered 
+Both the features and model hyperparameters were chosen separately for ee and mumu channels and all the simulated MC samples were considered.
 
 \subsection{BDT Input Features}
 From the selected reconstructed physics objects, a large number of input variables or \emph{features} were constructed and considered as potential inputs for the BDT.
@@ -614,16 +610,17 @@ A list of all of the features considered are given in full in Table~\ref{tab:all
  \end{tabular}}
 \end{table}
 
-\subsection{BDT Model Hyperparameters}
+\subsection{BDT Model Hyperparameters}\label{subsec:hyperparameters}
 %The model hyperparameters are the set of parameters which are set before the BDT training begins, such the maximum depth trees can be grown to or the number of training iterations to be run. 
 Instead of tuning the choice hyperparmeters for optimal classification performance either by hand or a time and computationally expensive grid search, the minima of a classification quality metric based on the AUCROC, $f(\theta)$, were found.
 
 This minima was evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise} to construct a regression model based on a Gaussian process with the Mat\'{e}rn $\nu =\frac{5}{2}$ kernel.
 Initially this model evaluates $f$ using random values of $\theta$ for fifteen iterations before values of $\theta$ are chosen based on the regression model.
 
-For each of the 150 iterations considered, $f(\theta)$ is evaluated across four subsets of 80\% of the training data using the the k-fold cross-validation scheme.
+In order to robustly train the classifier, for each of the 150 training iterations performed $f(\theta)$ was evaluated across four subsets of the training data using the the k-fold cross-validation scheme.
+These subsets were formed of 80\% of the total data which was randomly split between the four folds, with the remaining 20\% of the data being reserved for later testing.
 Following evaluating $f$ four times, where a different fold was withheld each time, the resultant average $f$ was taken as the final metric.
-Out of these averaged final metrics, the classifier with the best $(\theta)$ was retrained on all the training data, checked against the training data, and if satisfactory, used to produce the optimal BDT.
+Out of the 150 averaged final metrics, the classifier with the best $(\theta)$ was retrained on all of the training data, checked against the reserved test data, and if satisfactory, used to produce the optimal BDT.
 
 %
 %\begin{table}[htbp]
