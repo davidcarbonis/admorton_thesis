@@ -346,13 +346,13 @@ In contrast to the correct normalisation of Madgraph Z+jets samples that was see
 Figures~\ref{},~\ref{},~\ref{},~\ref{} and ~\ref{} show that that despite this scaling issue, the aMC@NLO Z+jets samples did better describe the higher jet multiplicities and the kinematics of the four leading jets in the nominal Z+jets control region defined in Chapter~\ref{subsec:zPlusJetsCR}.
 
 \editComment{Update plots so that the colour used, labels, and legend are clearer. Consider using log plots for more detail?}
+\editComment{Also cmbine plots for both channels - currently only have separate channels to hand}
 
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/nJets.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_mumu_zPlus/nJets.pdf}
 \caption{
-The distributions of the number of jets in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the ee (left) and $\mu\mu$ (right) channels.
+The distributions of the number of jets in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the combination of both channels.
 }
 \label{fig:zPlusCR_nJets}
 \end{figure}
@@ -360,9 +360,8 @@ The distributions of the number of jets in the nominal Z+jets control region fol
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/leadJetPt.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_mumu_zPlus/leadJetPt.pdf}
 \caption{
-The distributions of the leading jet \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the ee (left) and $\mu\mu$ (right) channels.
+The distributions of the leading jet \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the combination of both channels.
 }
 \label{fig:zPlusCR_leadJetPt}
 \end{figure}
@@ -370,9 +369,8 @@ The distributions of the leading jet \pt in the nominal Z+jets control region fo
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/secJetPt.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_mumu_zPlus/secJetPt.pdf}
 \caption{
-The distributions of the subleading jet \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the ee (left) and $\mu\mu$ (right) channels.
+The distributions of the subleading jet \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the combination of both channels.
 }
 \label{fig:zPlusCR_secJetPt}
 \end{figure}
@@ -380,9 +378,8 @@ The distributions of the subleading jet \pt in the nominal Z+jets control region
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/thirdJetPt.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_mumu_zPlus/thirdJetPt.pdf}
 \caption{
-The distributions of the third jet \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the ee (left) and $\mu\mu$ (right) channels.
+The distributions of the third jet \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the combination of both channels.
 }
 \label{fig:zPlusCR_thirdJetPt}
 \end{figure}
@@ -390,9 +387,8 @@ The distributions of the third jet \pt in the nominal Z+jets control region foll
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/fourthJetPt.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_mumu_zPlus/fourthJetPt.pdf}
 \caption{
-The distributions of the fourth jet \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the ee (left) and $\mu\mu$ (right) channels.
+The distributions of the fourth jet \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the combination of both channels.
 }
 \label{fig:zPlusCR_fourthJetPt}
 \end{figure}
@@ -519,7 +515,9 @@ Following each removal of a feature, the Area Under the Characteristic Receiver 
 The features found above the point at which the area under the ROC curve experiences a significant decline are determined to be an optimal correlated set of features.
  
 The features chosen by recursive feature elimination for the $ee$ and $\mu\mu$ channels are given in table~\ref{tab:selectedBdtVariables}.
-A list of all of the features considered are given in full in table~\ref{tab:allBdtVariables}.
+Figure~\ref{fig:inputFeaturesDistributions} shows the distributions of the selected features in the signal and background samples.
+Figures~\ref{fig:inputFeaturesDataSimAgreement}
+Table~\ref{tab:allBdtVariables} provides a list of all the features that were considered.
 
 \begin{table}[htbp]
 \topcaption {The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
@@ -558,7 +556,21 @@ A list of all of the features considered are given in full in table~\ref{tab:all
  \end{tabular}}
 \end{table}
 
-\editComment{LOTS of PLOTS of the selected input variable distributions}
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\caption{
+Distributions of the features chosen for use with the BDT for the signal and background samples.}
+\label{fig:inputFeaturesDistributions}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\caption{
+Distributions of the ... for the combination of the ee and $\mu\mu$ channel}
+\label{fig:inputFeaturesDataSimAgreement}
+\end{figure}
 
 \begin{table}[htbp]
 \topcaption {The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
