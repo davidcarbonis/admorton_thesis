@@ -9,7 +9,7 @@
 %Where a particular process is poorly described and/or lacking sufficient statistics in the signal region, data-driven estimates of the background are used to model ...
 
 \section{Data and Simulation Samples}\label{sec:samples}
-Out of the 37.8\fbinv of the proton-proton collision data at $\sqrt{13}$ collected by CMS during 2016, 35.8\fbinv was certified by the collaboration as ``good'' to be used for physics analysis.
+Out of the 37.8\fbinv of the proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by CMS during 2016, 35.8\fbinv was certified by the collaboration as ``good'' to be used for physics analysis.
 
 The difference between the certified value and the total data recorded is the result of various factors such as the unavailability of a detector.
 Due to the prescaling of the electron triggers during the start of the most luminous runs, as discussed in Chapter~\ref{sec:triggerStrategy}, the ee channel uses a reduced dataset of 35.6\fbinv where none of the triggers considered were prescaled.
@@ -343,7 +343,59 @@ Following the application of the full event selection and simulation corrections
 
 In contrast to the correct normalisation of Madgraph Z+jets samples that was seen in the signal region and both of the Z+jets control regions, it was observed that there was a dramatic normalisation offset for the aMC@NLO Z+jets samples.
 
-Figures~\ref{},~\ref{},~\ref{},~\ref{} and ~\ref{} show that that despite this scaling issue, the aMC@NLO Z+jets samples did better describe the higher jet multiplicities and the kinematics of the four leading jets in both of the Z+jets control regions defined in Chapter~\ref{subsec:zPlusJetsCR}.
+Figures~\ref{},~\ref{},~\ref{},~\ref{} and ~\ref{} show that that despite this scaling issue, the aMC@NLO Z+jets samples did better describe the higher jet multiplicities and the kinematics of the four leading jets in the nominal Z+jets control region defined in Chapter~\ref{subsec:zPlusJetsCR}.
+
+\editComment{Update plots so that the colour used, labels, and legend are clearer. Consider using log plots for more detail?}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/nJets.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_mumu_zPlus/nJets.pdf}
+\caption{
+The distributions of the number of jets in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the ee (left) and $\mu\mu$ (right) channels.
+}
+\label{fig:zPlusCR_nJets}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/leadJetPt.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_mumu_zPlus/leadJetPt.pdf}
+\caption{
+The distributions of the leading jet \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the ee (left) and $\mu\mu$ (right) channels.
+}
+\label{fig:zPlusCR_leadJetPt}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/secJetPt.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_mumu_zPlus/secJetPt.pdf}
+\caption{
+The distributions of the subleading jet \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the ee (left) and $\mu\mu$ (right) channels.
+}
+\label{fig:zPlusCR_secJetPt}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/thirdJetPt.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_mumu_zPlus/thirdJetPt.pdf}
+\caption{
+The distributions of the third jet \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the ee (left) and $\mu\mu$ (right) channels.
+}
+\label{fig:zPlusCR_thirdJetPt}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/fourthJetPt.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_mumu_zPlus/fourthJetPt.pdf}
+\caption{
+The distributions of the fourth jet \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the ee (left) and $\mu\mu$ (right) channels.
+}
+\label{fig:zPlusCR_fourthJetPt}
+\end{figure}
 
 Following observing this normalisation offset, a number of alternative Z+jets samples which were binned as a function of the Z boson's \pT and the number of jets produced by the hard process were also considered.
 In contrast to the nominal Z boson mass binned samples, the alternative Z+jets samples generated by Madgraph and aMC@NLO were found to poorly describe the shapes of Z boson and jet distributions.
@@ -361,7 +413,7 @@ The \ttbar enriched control region, as defined in Chapter~\ref{subsec:ttbarCR}, 
 
 As good agreement was observed between data and MC simulation for both the overall normalisation and the shapes of individual variables, it was determined that a data-driven estimate of the \ttbar contribution was unnecessary.
 
-Examples of this good agreement between simulation and data for the number of jets, number of b-tagged jets, jet \pT for the leading four jets, invariant mass of the W boson ``candidate'', the leptons' \pt and invariant mass and \pt are given in figures~\ref{ttbarCR_nJets},~\ref{ttbarCR_jetPt}, and~\ref{ttbarCR_leptons}.
+Examples of this good agreement between simulation and data for the number of jets, number of b-tagged jets, jet \pT for the leading four jets, invariant mass of the W boson ``candidate'', the leptons' \pt and invariant mass and \pt are given in figures~\ref{fig:ttbarCR_nJets},~\ref{fig:ttbarCR_jetPt}, and~\ref{fig:ttbarCR_leptons}.
 
 \editComment{Update plots so that the colour used, labels, and legend are clearer. Consider using log plots for more detail?}
 
@@ -510,6 +562,7 @@ A list of all of the features considered are given in full in table~\ref{tab:all
 
 \begin{table}[htbp]
 \topcaption {The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
+\editComment{Aware that table does not fit onto a single page. Also considering moving this list to teh appendix}
 }
 \label{tab:allBdtVariables}
   \centering
