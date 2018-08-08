@@ -16,6 +16,8 @@ Due to the prescaling of the electron triggers during the start of the most lumi
 Events in the double lepton and single lepton datasets from across these ``good'' data runs are considered where the double and single lepton triggers respectively have fired, using the strategy described in Chapter~\ref{sec:triggerStrategy}.
 
 The MC samples used to model signal and background processes that were considered are listed in table~\ref{tab:mcList}, which includes information on the number of events generated, their cross sections and the order in perturbative accuracy in QCD to which the generators calculated the processes.
+For all the MC samples considered, the hadronisation of all the MC samples considered was undertaken using PYTHIA 8.
+The NNPDF3.0 family of PDF sets was used as input for the generators of the MC samples, where the corresponding PDF sets were used depending on whether the sample was produced at LO or NLO and used either the four or five flavour scheme.
 
 \begin{table}[htbp]
 \topcaption {
@@ -88,9 +90,6 @@ The MC processes and their associated total number of events, cross sections and
 To determine the impact of a number of theoretical uncertainties for a number of processes, a several dedicated samples, listed in table~\ref{tab:theorySampleList}, were used.
 These systematic uncertainties are discussed further in Chapter~\ref{sec:theorySysts}.
 
-For all the MC samples considered, the hadronisation of all the MC samples considered was undertaken using PYTHIA 8.
-The NNPDF3.0 family of PDF sets was used as input for the generators of the MC samples, where the corresponding PDF sets were used depending on whether the sample was produced at LO or NLO and used either the four or five flavour scheme.
-
 \begin{table}[htbp]
 \topcaption {
 The dedicated MC samples used to determine the impact of theoretical uncertainties, including the associated total number of events, cross sections and generators (and order in perturbative QCD accuracy they are calculated to), considered for the search for tZq in the dilepton final state.
@@ -129,8 +128,50 @@ The dedicated MC samples used to determine the impact of theoretical uncertainti
  \end{tabular}}
 \end{table}
 
+%%% Alt Z+jets 
+To determine the impact of a number of theoretical uncertainties for a number of processes, a several dedicated samples, listed in table~\ref{tab:zPlusSamples}, were used.
+These systematic uncertainties are discussed further in Chapter~\ref{sec:subsec:zPlusJetsEstimation}.
+
+\begin{table}[htbp]
+\topcaption {
+The dedicated MC samples used to determine the impact of theoretical uncertainties, including the associated total number of events, cross sections and generators (and order in perturbative QCD accuracy they are calculated to), considered for the search for tZq in the dilepton final state.
+}
+\label{tab:zPlusSamples}
+  \centering
+ \resizebox{\textwidth}{!}{
+ \begin{tabular}{cccc}
+   \hline
+   \textbf{MC process} & \textbf{Events} & \textbf{Cross section (pb)} & \textbf{Generator (Order)}   \\
+   \hline
+   tZq scale up & 6.9M & 0.0758  & aMC@NLO (NLO) \\
+   tZq scale down & 7.0M & 0.0758  & aMC@NLO (NLO) \\
+   \hline
+   t tW-channel scale up & 998K & 35.85 & POWHEG (NLO) \\
+   t tW-channel scale down & 994K & 35.85 & POWHEG (NLO) \\
+   $\overline{\text{t}}$ tW-channel scale down & 1.0M & 35.85 & POWHEG (NLO) \\
+   $\overline{\text{t}}$ tW-channel scale down & 999K & 35.85 & POWHEG (NLO) \\
+   \hline
+   t t-channel scale up & 5.7M & 136.02 & POWHEG (NLO) \\
+   t t-channel scale down & 5.9M & 136.02 & POWHEG (NLO) \\
+   t t-channel matching up & 6.0M & 136.02 & POWHEG (NLO) \\
+   t t-channel matching down & 6.0M & 136.02 & POWHEG (NLO) \\
+   $\overline{\text{t}}$ t-channel scale up & 4.0M & 80.95 & POWHEG (NLO) \\
+   $\overline{\text{t}}$ t-channel scale down & 3.9M & 80.95 & POWHEG (NLO) \\
+   $\overline{\text{t}}$ t-channel matching up & 4.0M & 80.95 & POWHEG (NLO) \\
+   $\overline{\text{t}}$ t-channel matching down & 4.0M & 80.95 & POWHEG (NLO) \\
+   \hline
+   \ttbar ISR up & 156.5M & 831.76 & POWHEG (NLO) \\
+   \ttbar ISR down & 149.8M & 831.76 & POWHEG (NLO) \\
+   \ttbar FSR up & 152.6M & 831.76 & POWHEG (NLO) \\
+   \ttbar FSR down & 156.0M & 831.76 & POWHEG (NLO) \\
+   \ttbar matching up & 58.9M & 831.76 & POWHEG (NLO) \\
+   \ttbar matching down & 58.2M & 831.76 & POWHEG (NLO) \\
+   \hline   
+ \end{tabular}}
+\end{table}
+
 \section{Simulation Corrections}\label{sec:simCorrections}
-Simulation is unable to fully recreate all the effects observed in data, either because certain parameters are not precisely known or cannot be be calculated.
+Simulation is unable to fully recreate all the effects observed in data, either because certain parameters are not precisely known or cannot be calculated.
 To account for these discrepancies, corrective scale factors are used to reweight MC on a per event basis.
 Such scale factors are usually derived as a function of \pt and $\eta$ so as to account for the variation of the detector response in both.
 These corrections are used to correct simulation for lepton identification, isolation and reconstruction efficiencies, b-tagging efficiencies, the poor modelling of pileup in simulation, and the detector resolutions observed in data.
@@ -152,8 +193,9 @@ Using events within a dilepton invariant mass window to ensure a high purity, fr
 For source of each efficiency and lepton flavour, the efficiency is given as the fraction of events where the probe leptons passed the relevant selection criteria.
 This methodology is used to create corrective scale factors for each component and these are multiplicatively applied to each leptons' event weight as functions of their \pt, $\eta$, and flavour.
 
-The trigger efficiency of electrons and muons is calculated using a method which considers events that pass the lepton selection criteria in the signal region~\ref{sec:signalRegion} and which are selected by triggers which are weakly correlated (also known as cross triggers) with the triggers used in the analysis~\cite{Khachatryan:2016kzg}.
-From this collection of events, the number of events that pass and fail the analysis triggers are counted to produce the trigger efficiency:
+
+The efficiencies for the triggers used were calculated by considering events that pass triggers which are weakly correlated with the lepton triggers.
+By counting these events and whether or not they pass or fail the analysis triggers, the trigger efficiency is estimated as follows:
 
 \begin{equation}
 \epsilon_{trigger} = \frac{N_{X triggers + lepton triggers}}{N_{X triggers}} \\
@@ -161,11 +203,14 @@ From this collection of events, the number of events that pass and fail the anal
 
 where $N_{X trigger}$ is the number of events which have passed the lepton selection criteria and the cross triggers, and $N_{X triggers + lepton triggers}$ is $N_{X trigger}$ and the number of events which have also passed the lepton triggers.
 
-As the triggers requirements are applied to both simulated and data events, a scale factor of the ratio of the trigger efficiency in data and in simulation is applied to the event weight in simulation.
+As the trigger requirements are applied to both simulated and data events, a scale factor of the ratio of the trigger efficiency in data and in simulation is applied to the event weight in simulation.
 
-\editComment{The following below is to be updated ASAP. Muon POG has found that the muon tracking SFs are no longer necessary - were the result of buggy derivation. Initial tests reveal that \pT and $\eta$ binned SFs for $\mu\mu$ may not be required...}
+\editComment{The following below is to be updated ASAP. Muon POG has found that the muon tracking SFs are no longer necessary - were the result of buggy derivation. Also, the dimuon trigger DZ leg is known to be heavily impacted by the HIP issue, but the non-DZ leg (available Runs B-G) was fine but not mentioned in the TOP Trigger twiki despite others using it and maintaining a high dimuon trigger efficiency.
+Initial tests reveal that \pT and $\eta$ binned SFs for $\mu\mu$ may not be required... Will result in smaller statistical uncerts.
+Unlikely to have time to resolve before submission -> something for Corin and Kate to look at!
+}
 
-For the scale factors derived for the ee and e$\mu$ channels, a constant scale factor was found to be sufficient to account for the differences between data and siulation.
+For the scale factors derived for the ee and e$\mu$ channels, a constant scale factor was found to be sufficient to account for the differences between data and simulation.
 In the case of the $\mu\mu$ channel however, the scale factor was produced as a function of both \pt and $\eta$ due to the inefficiencies observed for the double muon triggers with $d_{Z}$ cuts caused by the miscalibrated tracker APV (discussed in Chapter~\ref{subsec:hipEffect}.
 As the equivalent double muon triggers without the $d_{Z}$ cuts were pre-scaled during runs with high instantaneous luminosity, these triggers were not considered.
 
@@ -196,7 +241,7 @@ In addition to these corrections, as the Jet Energy Resolution (JER) observed in
 \subsection{b-tagging Efficiency}\label{subsec:btagEff}
 The B-Tag and Vertexing (BTV) Physics Object Group measures the b-tagging efficiency and misidentification rates for b and light flavoured jets in data and MC simulation (multijet and \ttbar) of the algorithms which they support~\cite{Sirunyan:2017ezt}.
 From these measurements b-tagging efficiency scale factors are produced and provided for analysts to apply to simulated events to correct differences observed between data and simulation.
-These scale factors, as functions of the jet flavour, \pT and $\eta$, to alter the weight of the selected MC events.
+These scale factors, as functions of the jet flavour, \pT and $\eta$, are used to alter the weight of the selected MC events.
 This methodology was chosen as it involves only changing the weight of the selected MC events which, unlike other methods, avoids events migrating into different b-tag multiplicity bins and having events with potentially undefined variables such as the top mass.
 
 \subsection{\PU Modelling}\label{subsec:puSF}
@@ -313,7 +358,10 @@ NPL estimation: & a & c & e \\
 \subsection{Z+jets Background}\label{subsec:zPlusJetsEstimation}
 Following the application of the full event selection and simulation corrections in the signal region both the Madgraph (LO) and aMC@NLO (NLO) Z+jets samples were compared.
 
-As it was observed that while the event yields in the signal region were correctly described when the Madgraph sample was used, with there aMC@NLO sample there was a dramatic normalisation offset.
+\editComment{Clunky - rephrase}
+In contrast to when the Madgraph sample ...
+While it was observed that the Madgraph sample correctly normalised in the signal region ... the aMC@NLO sample there was a dramatic normalisation offset.
+
 Figures~\ref{} show that that despite this scaling issue, the aMC@NLO Z+jets sample does better describe the higher jet multiplicities and the kinematics of the jets present in the signal region.
 
 \editComment{Add figures}
@@ -336,7 +384,7 @@ The \ttbar enriched control region, as defined in Chapter~\ref{subsec:ttbarCR}, 
 \item and if not, to be used to derive a data-driven estimate for \ttbar.
 \end{itemize}
 
-As good agreement observed between data and MC simulation for both the overall normalisation and the shapes of individual variables, it was determined that the \ttbar MC sample adequately described data and  a data-driven estimate was unnecessary.
+As good agreement was observed between data and MC simulation for both the overall normalisation and the shapes of individual variables, it was determined that a data-driven estimate of the \ttbar contribution was unnecessary.
 
 Examples of this good agreement between simulation and data for the number of jets, number of b-tagged jets, jet \pT for the leading four jets, invariant mass of the W boson ``candidate'', the leptons' \pt and invariant mass and \pt are given in figures~\ref{ttbarCR_nJets},~\ref{ttbarCR_jetPt}, and~\ref{ttbarCR_leptons}.
 
@@ -404,13 +452,15 @@ As the decision criteria for each node is dependent on the decisions of the prec
 
 Without any prior knowledge of the system however, a single isolated tree is not expected to be an efficient classifier.
 Despite this however, such a weak learner will still contain some knowledge about the underlying structure of the classification problem.
-\emph{Boosting} aims to exploit this knowledge by using ensemble of repeatedly trained weak learners to produce a more effective classifier.
+\emph{Boosting} aims to exploit this knowledge by using an ensemble of repeatedly trained weak learners to produce a more effective classifier.
 Following each training iteration the dataset is reweighted based on the success of the previous classifiers in order to force the weak learners to attempt to classify harder to identify objects.
 At the end of this process a weighted average (based) of all the weak learners are combined to produce a single strong learner.
 
 \emph{Bagging} is a similar concept to boosting, but involves each weak learner being trained on a random subset of the training sample, where every element has an equal probability of being sampled, rather than the whole training sample.
 
+\editComment{Typo/rephrase}
 Therefore by extending boosting (or bagging) to decision trees, the resultant forest of \emph{Boosted Decision Trees} produces much more effective classifier than a single tree which is also more resilient to fluctuations in the training sample.
+
 Typically the resultant classifier for BDTs takes the form of a single discriminator whose response ranges between -1 to +1, denoting completely background-like and signal-like objects respectively.
 
 
@@ -442,7 +492,7 @@ Both the input features and model hyperparameters were chosen separately for ee 
 \subsection{BDT Input Features}
 From the selected reconstructed physics objects, a large number of input variables or \emph{features} were constructed and considered as potential inputs for the BDT.
 
-In order to determine which of set of features was optimal, recursive feature elimination was used to select those which had the greatest discriminating power between the signal and background process.
+In order to determine which of set of features was optimal, recursive feature elimination was used to select the features which had the greatest discriminating power between the signal and background process.
 This process iteratively removes the least important feature and re-trains the BDT until every feature has been ranked in order of their removal.
 Following each removal of a feature, the Area Under the Characteristic Receiver Operating curve (AUCROC) is recorded.
 The features found above the point at which the area under the ROC curve experiences a significant decline are determined to be an optimal correlated set of features.
@@ -612,7 +662,7 @@ A list of all of the features considered are given in full in table~\ref{tab:all
 %The model hyperparameters are the set of parameters which are set before the BDT training begins, such the maximum depth trees can be grown to or the number of training iterations to be run. 
 Instead of tuning the choice hyperparmeters for optimal classification performance either by hand or a time and computationally expensive grid search, the minima of a classification quality metric based on the AUCROC, $f(\theta)$, were found.
 
-This minima was evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise} to construct a regression model based on a Gaussian process with the Mat\'{e}rn $\nu =\frac{5}{2}$ kernel.
+These minima were evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise} to construct a regression model based on a Gaussian process with the Mat\'{e}rn $\nu =\frac{5}{2}$ kernel.
 Initially this model evaluates $f$ using random values of $\theta$ for fifteen iterations before values of $\theta$ are chosen based on the regression model.
 
 In order to robustly train the classifier, for each of the 150 training iterations performed $f(\theta)$ was evaluated across four subsets of the training data using the the k-fold cross-validation scheme.
