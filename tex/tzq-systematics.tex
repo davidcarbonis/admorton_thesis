@@ -129,47 +129,26 @@ The dedicated MC samples used to determine the impact of theoretical uncertainti
 \end{table}
 
 %%% Alt Z+jets 
-To determine the impact of a number of theoretical uncertainties for a number of processes, a several dedicated samples, listed in table~\ref{tab:zPlusSamples}, were used.
-These systematic uncertainties are discussed further in Chapter~\ref{sec:subsec:zPlusJetsEstimation}.
-
-\begin{table}[htbp]
-\topcaption {
-The dedicated MC samples used to determine the impact of theoretical uncertainties, including the associated total number of events, cross sections and generators (and order in perturbative QCD accuracy they are calculated to), considered for the search for tZq in the dilepton final state.
-}
-\label{tab:zPlusSamples}
-  \centering
- \resizebox{\textwidth}{!}{
- \begin{tabular}{cccc}
-   \hline
-   \textbf{MC process} & \textbf{Events} & \textbf{Cross section (pb)} & \textbf{Generator (Order)}   \\
-   \hline
-   tZq scale up & 6.9M & 0.0758  & aMC@NLO (NLO) \\
-   tZq scale down & 7.0M & 0.0758  & aMC@NLO (NLO) \\
-   \hline
-   t tW-channel scale up & 998K & 35.85 & POWHEG (NLO) \\
-   t tW-channel scale down & 994K & 35.85 & POWHEG (NLO) \\
-   $\overline{\text{t}}$ tW-channel scale down & 1.0M & 35.85 & POWHEG (NLO) \\
-   $\overline{\text{t}}$ tW-channel scale down & 999K & 35.85 & POWHEG (NLO) \\
-   \hline
-   t t-channel scale up & 5.7M & 136.02 & POWHEG (NLO) \\
-   t t-channel scale down & 5.9M & 136.02 & POWHEG (NLO) \\
-   t t-channel matching up & 6.0M & 136.02 & POWHEG (NLO) \\
-   t t-channel matching down & 6.0M & 136.02 & POWHEG (NLO) \\
-   $\overline{\text{t}}$ t-channel scale up & 4.0M & 80.95 & POWHEG (NLO) \\
-   $\overline{\text{t}}$ t-channel scale down & 3.9M & 80.95 & POWHEG (NLO) \\
-   $\overline{\text{t}}$ t-channel matching up & 4.0M & 80.95 & POWHEG (NLO) \\
-   $\overline{\text{t}}$ t-channel matching down & 4.0M & 80.95 & POWHEG (NLO) \\
-   \hline
-   \ttbar ISR up & 156.5M & 831.76 & POWHEG (NLO) \\
-   \ttbar ISR down & 149.8M & 831.76 & POWHEG (NLO) \\
-   \ttbar FSR up & 152.6M & 831.76 & POWHEG (NLO) \\
-   \ttbar FSR down & 156.0M & 831.76 & POWHEG (NLO) \\
-   \ttbar matching up & 58.9M & 831.76 & POWHEG (NLO) \\
-   \ttbar matching down & 58.2M & 831.76 & POWHEG (NLO) \\
-   \hline   
- \end{tabular}}
-\end{table}
-
+%During the study of the poor agreement between simulation and data for the aMC@NLO Z+jets samples considered, a number of alternative 
+%To determine the impact of a number of theoretical uncertainties for a number of processes, a several dedicated samples, listed in table~\ref{tab:zPlusSamples}, were used.
+%These systematic uncertainties are discussed further in Chapter~\ref{sec:subsec:zPlusJetsEstimation}.
+%
+%\begin{table}[htbp]
+%\topcaption {
+%The dedicated MC samples used to determine the impact of theoretical uncertainties, including the associated total number of events, cross sections and generators (and order in perturbative QCD accuracy they are calculated to), considered for the search for tZq in the dilepton final state.
+%}
+%\label{tab:zPlusSamples}
+%  \centering
+% \resizebox{\textwidth}{!}{
+% \begin{tabular}{cccc}
+%   \hline
+%   \textbf{MC process} & \textbf{Events} & \textbf{Cross section (pb)} & \textbf{Generator (Order)}   \\
+%   \hline
+%   tZq scale up & 6.9M & 0.0758  & aMC@NLO (NLO) \\
+%   \hline   
+% \end{tabular}}
+%\end{table}
+%
 \section{Simulation Corrections}\label{sec:simCorrections}
 Simulation is unable to fully recreate all the effects observed in data, either because certain parameters are not precisely known or cannot be calculated.
 To account for these discrepancies, corrective scale factors are used to reweight MC on a per event basis.
@@ -332,24 +311,24 @@ The event yields of the simulated samples and data following the full event sele
 \centering
 \begin{tabular}{lccccc}
 \hline
-Source &  $ee$ & $\mu\mu$ & Combined \\ 
+Source &  $ee$ & $\mu\mu$ \\ 
 \hline
-\ttbar (SS): & a &  c  & e    \\
-Z + jets (SS): & a &  c & e$\pm$r    \\
-Single Top (SS): & a & c & e$\pm$r    \\
-VV (SS): & a & c & e    \\
-ttV (SS): & a &  c & e    \\ 
+\ttbar (SS): & a &  c    \\
+Z + jets (SS): & a &  c    \\
+Single Top (SS): & a & c    \\
+VV (SS): & a & c   \\
+ttV (SS): & a &  c    \\ 
 \hline
-Total background (SS): & a & c & e   \\ 
-Data: & a & c & e    \\ 
+Total background (SS): & a & c   \\ 
+Data: & a & c    \\ 
 \hline
-SS data (bkg): & a & c & e \\
+SS data (bkg): & a & c \\
 \hline
-Non-prompt (SS): & a & c & e \\
-Non-prompt (OS): & a & c & e \\
-R (OS/SS): & a & c & e \\
+Non-prompt (SS): & a & c \\
+Non-prompt (OS): & a & c \\
+R (OS/SS): & a & c \\
 \hline
-NPL estimation: & a & c & e \\
+NPL estimation: & a & c \\
 \hline
 \end{tabular}
 \label{tab:fakeLeptonYields}
@@ -358,24 +337,21 @@ NPL estimation: & a & c & e \\
 \subsection{Z+jets Background}\label{subsec:zPlusJetsEstimation}
 Following the application of the full event selection and simulation corrections in the signal region both the Madgraph (LO) and aMC@NLO (NLO) Z+jets samples were compared.
 
-\editComment{Clunky - rephrase}
-In contrast to when the Madgraph sample ...
-While it was observed that the Madgraph sample correctly normalised in the signal region ... the aMC@NLO sample there was a dramatic normalisation offset.
+In contrast to the correct normalisation of Madgraph Z+jets samples seen in both the signal region and both definitions considered for the Z+jets control region, it was observed that there was a dramatic normalisation offset for the aMC@NLO Z+jets samples.
 
-Figures~\ref{} show that that despite this scaling issue, the aMC@NLO Z+jets sample does better describe the higher jet multiplicities and the kinematics of the jets present in the signal region.
+Figures~\ref{} show that that despite this scaling issue, the aMC@NLO Z+jets samples does better describe the higher jet multiplicities and the kinematics of the jets present in both of the Z+jets control regions defined in Chapter~\ref{subsec:zPlusJetsCR}.
 
-\editComment{Add figures}
+Given the poor description provided by these aMC@NLO Z+jets samples and the desirability of using a NLO description given the large number of jets in the final state, a number of alternative Z+jets samples that were binned by the Z boson \pT or number of jets instead of the Z boson invariant mass, were considered.
+It was found however, that 
 
-As shown in figures~\ref{}, consistent behaviour was observed for the jet multiplicities and jet kinematics distributions in both of the Z+jets control regions defined in Chapter~\ref{subsec:zPlusJetsCR}.
-
-\editComment{Add figures}
-
-As it was desirable to use
+As the event selection requires at least four jets, it was desirable to use a NLO Z+jets sample 
 \editComment{Discuss alternative samples used}
 
-Given that despite the normalisation offset the aMC@NLO Z+jets sample better described the jet distributions in both the signal and control regions, the control region defined by the \MET and inverted W boson mass cut was used to correctly normalise the process in the signal region.
+Despite the normalisation offset, as the Z boson mass binned aMC@NLO Z+jets samples best described the jet distributions in the Z+jets control regions, it was decided to use this 
 
-The details of how the statistical analysis tool used correctly normalised the aMC@NLO Z+jets sample using the Z+jets control region is described in Chapter~\ref{subsec:combineNormalisation}.
+the control region defined by the \MET and inverted W boson mass cut was used to correctly normalise the process in the signal region.
+
+The details of how the statistical analysis tool used correctly normalised the aMC@NLO Z+jets samples using the nominal Z+jets control region is described in Chapter~\ref{subsec:combineNormalisation}.
 
 \subsection{\ttbar Background}\label{subsec:ttbarEstimation}
 The \ttbar enriched control region, as defined in Chapter~\ref{subsec:ttbarCR}, was designed to provide an orthogonal region which was topologically similar to the signal region in order to validate:
@@ -458,8 +434,7 @@ At the end of this process a weighted average (based) of all the weak learners a
 
 \emph{Bagging} is a similar concept to boosting, but involves each weak learner being trained on a random subset of the training sample, where every element has an equal probability of being sampled, rather than the whole training sample.
 
-\editComment{Typo/rephrase}
-Therefore by extending boosting (or bagging) to decision trees, the resultant forest of \emph{Boosted Decision Trees} produces much more effective classifier than a single tree which is also more resilient to fluctuations in the training sample.
+Therefore by extending boosting (or bagging) to decision trees, the resultant forest of \emph{Boosted Decision Trees} produces a classier that is both much more effective and resilient to fluctuations in the training sample than one created by a single tree.
 
 Typically the resultant classifier for BDTs takes the form of a single discriminator whose response ranges between -1 to +1, denoting completely background-like and signal-like objects respectively.
 
