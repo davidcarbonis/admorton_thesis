@@ -302,14 +302,14 @@ The ratio of opposite charge and same charge NPLs in simulation, $N_{MC}^{OS non
 is used to appropriately normalise this estimate and uses the generator level information to correctly identify how the leptons were produced.
 The W+jets, \ttZ, \ttW, and single top simulated samples which have sufficient statistics in the control region are used to calculate this ratio as these processes are expected to be the predominant source of non-prompt leptons for this analysis.
 
-The event yields of the simulated samples and data following the full event selection in the same lepton charge control region, ratio of same charge to opposite charge event yields and the data-driven NPL contribution estimate are given in table~\ref{tab:fakeLeptonYields}.
+The event yields of the simulated samples and data following the full event selection in the same lepton charge control region, the same sign background contributions not accounted for by simulation, ratio of same charge to opposite charge event yields and the data-driven NPL contribution estimate are given in table~\ref{tab:fakeLeptonYields}.
 
 \begin{table}[htbp]
-\topcaption{The same charge event yields, ratio of same to opposite charge lepton events and the estimated non-prompt lepton contribution following all selection cuts.
-\editComment{Update values with optimised ones!}
+\topcaption{The event yields following the full event selection ratio of same to opposite charge lepton events, the same sign background contributions not accounted for by simulation, ratio of same charge to opposite charge event yields and the estimated non-prompt lepton contribution following all selection cuts.
+\editComment{TODO: Add uncerts and e$mu$ values}
 }
 \centering
-\begin{tabular}{lccccc}
+\begin{tabular}{l | ccccc}
 \hline
 Source &  $ee$ & $\mu\mu$ \\ 
 \hline
@@ -324,8 +324,8 @@ Data: & a & c    \\
 \hline
 SS data (bkg): & a & c \\
 \hline
-Non-prompt (SS): & a & c \\
-Non-prompt (OS): & a & c \\
+Non W/Z (SS): & 1.681 & 2.613 \\
+Non W/Z (OS): & 1.579 & 2.337 \\
 R (OS/SS): & 0.939 & 0.894 \\
 \hline
 NPL estimation: & a & c \\
