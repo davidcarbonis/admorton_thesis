@@ -282,10 +282,11 @@ Total MC + NPLs & 5322.654 & 10098.641 & 15361.377    \\
 
 \subsection{Non-Prompt Leptons}\label{sec:NPLs}
 Leptons which are produced from events where at least one jet is incorrectly reconstructed as a lepton (predominately electrons) or a lepton from the decay of heavy quarks (predominately muons) are known as \emph{non-prompt leptons} (NPLs).
+The majority of these events are produced by \ttbar decaying semi-leptonically and W+jets, with smaller contributions from QCD and single top production.
 Given the difficulty in accurately modelling QCD processes and the very low statistics of such processes passing the lepton selection and isolation criteria could result in an inaccurate estimate of such processes from simulation alone, the NPL contribution is estimated with data.
 
-The data-driven background estimation of NPL contributions is based off the methodology used in top quark pair production~\cite{CMS:2016syx} and same charge SUSY searches~\cite{CMS:2015vqc}.
-This approach takes advantage of the fact that the vast majority of the event yields for same charge lepton pairs result from non-prompt and charge misidentified leptons, with some contribution from prompt leptons.
+This data-driven estimation is based off the methodology used in top quark pair production~\cite{CMS:2016syx} and same charge SUSY searches~\cite{CMS:2015vqc}.
+This approach takes advantage of the fact that the vast majority of the event yields for same charge lepton pairs result from non-prompt and charge misidentified leptons, with some contributions from prompt leptons (such as \ttV).
 As these backgrounds are independent of the charge of the lepton pairs, it is expected that the nominal opposite charge event selection would have a similar contribution.
 
 Therefore by inverting the signal region's oppositely charged lepton requirement (\ie the leptons must have the same charge), a same charge control region can be defined which is dominated by NPL events while containing some contributions from prompt lepton events, charge misidentification and real same charge pairs.
@@ -298,13 +299,12 @@ Using this control region, a data-driven estimate of the contribution of opposit
 
 where $N_{data}^{SS}$ is the total number of same charge events observed in data and $N^{SS}_{real + mis-ID}$ is the expected number of real same charge events and events with charge misidentification.
 
-The ratio of opposite charge and same charge NPLs in simulation, $N_{MC}^{OS non-prompt}$ and $N_{MC}^{SS non-prompt}$,
-is used to appropriately normalise this estimate and uses the generator level information to correctly identify how the leptons were produced.
+The ratio of opposite charge and same charge NPLs in simulation, $N_{MC}^{OS non-prompt}$ and $N_{MC}^{SS non-prompt}$, is used to appropriately normalise this estimate and uses the generator level information to correctly identify how the leptons were produced.
 The W+jets, \ttZ, \ttW, and single top simulated samples which have sufficient statistics in the control region are used to calculate this ratio as these processes are expected to be the predominant source of non-prompt leptons for this analysis.
 
 The event yields of the simulated samples and data following the full event selection in the same lepton charge control region, the same sign background contributions not accounted for by simulation, ratio of same charge to opposite charge event yields and the data-driven NPL contribution estimate are given in table~\ref{tab:fakeLeptonYields}.
 
-\editComment{Add bit about study into number of expected SS events with no fakes from DY mis-ID. Found to be negligible for mumu and < 1\% for ee - should be well covered by syst}
+%\editComment{Add bit about study into number of expected SS events with no fakes from DY mis-ID. Found to be negligible for mumu and < 1\% for ee - should be well covered by syst}
 
 \begin{table}[htbp]
 \topcaption{The event yields following the full event selection ratio of same to opposite charge lepton events, the same sign background contributions not accounted for by simulation, ratio of same charge to opposite charge event yields and the estimated non-prompt lepton contribution following all selection cuts.
@@ -363,45 +363,40 @@ As good agreement was observed between data and MC simulation for both the overa
 
 Examples of this good agreement between simulation and data for the number of jets, number of b-tagged jets, jet \pT for the leading four jets, invariant mass of the W boson ``candidate'', the leptons' \pt and invariant mass and \pt are given in figures~\ref{ttbarCR_nJets},~\ref{ttbarCR_jetPt}, and~\ref{ttbarCR_leptons}.
 
-\editComment{Update plots so that the colour used, labels, and legend are clearer}
+\editComment{Update plots so that the colour used, labels, and legend are clearer. Consider using log plots for more detail?}
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 \centering
-\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
-\\
-\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/nJets.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/nBjets.pdf}
 \caption{
 The distributions of the number of jets and the number b-tagged jets for the \ttbar control region following the application of the full control region event selection and simulation corrections.
 }
 \label{fig:ttbarCR_nJets}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 \centering
-\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/leadJetPt.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/secJetPt.pdf}
 \\
-\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
-\\
-\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
-\\
-\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/thirdJetPt.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/fourthJetPt.pdf}
 \caption{
 The distribution of the \pt of the four leading jets for the \ttbar control region following the application of the full control region event selection and simulation corrections.
 }
 \label{fig:ttbarCR_jetPt}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[tbp]
 \centering
-\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/lep1Pt.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/lep2Pt.pdf}
 \\
-\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
-\\
-\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
-\\
-\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/zMass.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/zPt.pdf}
 \caption{
-The distribution of the selected electron and muon and their combined invariant mass and \pt for the \ttbar control region following the application of the full control region event selection and simulation corrections.
+The distribution of the selected electron and muon \pT and their combined invariant mass and \pt for the \ttbar control region following the application of the full control region event selection and simulation corrections.
 }
 \label{fig:ttbarCR_leptons}
 \end{figure}
