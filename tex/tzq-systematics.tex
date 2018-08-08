@@ -304,6 +304,8 @@ The W+jets, \ttZ, \ttW, and single top simulated samples which have sufficient s
 
 The event yields of the simulated samples and data following the full event selection in the same lepton charge control region, the same sign background contributions not accounted for by simulation, ratio of same charge to opposite charge event yields and the data-driven NPL contribution estimate are given in table~\ref{tab:fakeLeptonYields}.
 
+\editComment{Add bit about study into number of expected SS events with no fakes from DY mis-ID. Found to be negligible for mumu and < 1\% for ee - should be well covered by syst}
+
 \begin{table}[htbp]
 \topcaption{The event yields following the full event selection ratio of same to opposite charge lepton events, the same sign background contributions not accounted for by simulation, ratio of same charge to opposite charge event yields and the estimated non-prompt lepton contribution following all selection cuts.
 \editComment{TODO: Add uncerts and e$mu$ values}
@@ -311,24 +313,26 @@ The event yields of the simulated samples and data following the full event sele
 \centering
 \begin{tabular}{l | ccccc}
 \hline
-Source &  $ee$ & $\mu\mu$ \\ 
+Source &  $ee$ & $\mu\mu$ & $e\mu$ \\ 
 \hline
-\ttbar (SS): & a &  c    \\
-Z + jets (SS): & a &  c    \\
-Single Top (SS): & a & c    \\
-VV (SS): & a & c   \\
-ttV (SS): & a &  c    \\ 
+\ttbar (SS): & 30.971 & 71.539 & e  \\
+\ttV (SS): & 6.729 & c & e  \\ 
+Single Top (SS): & 1.764 & c & e  \\
+W + jets (SS): & 0.0 & c & e  \\
+Z + jets (SS): & 44.400 & 0.0 & e  \\
+VV (SS): & 2.148 & c & e \\
+VVV (SS): & -0.024 & c & e \\
 \hline
-Total background (SS): & a & c   \\ 
-Data: & a & c    \\ 
+Total background (SS): & 85.988 & c & e \\ 
+Data: & a & c & e  \\ 
 \hline
-SS data (bkg): & a & c \\
+SS data (bkg): & a & c & e\\
 \hline
-Non W/Z (SS): & 1.681 & 2.613 \\
-Non W/Z (OS): & 1.579 & 2.337 \\
-R (OS/SS): & 0.939 & 0.894 \\
+Non W/Z (SS): & 1.681 & 2.613 & e\\
+Non W/Z (OS): & 1.579 & 2.337 & e\\
+R (OS/SS): & 0.939 & 0.894 & e\\
 \hline
-NPL estimation: & a & c \\
+NPL estimate: & a & c & e\\
 \hline
 \end{tabular}
 \label{tab:fakeLeptonYields}
