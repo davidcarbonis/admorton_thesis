@@ -15,23 +15,46 @@ The Standard Model fermions and their properties.
   \centering
   \resizebox{\textwidth}{!}{
 % This right-aligns numbers in column, but centers them under column title.
- \begin{tabular}{llllccc}
+ \begin{tabular}{llcllccc}
    \hline
-   & \textbf{Generation} & \textbf{Particle} & \textbf{Mass \MeV} & \textbf{Electric Charge} & \textbf{Colour Charge} & \textbf{Weak Isospin}\\
+   & \textbf{Generation} & \textbf{Particle} & & \textbf{Mass \MeV} & \textbf{Electric Charge} & \textbf{Colour Charge} & \textbf{Weak Isospin}\\
    \hline
    \multirow{3}{*}{Quarks}  & \multirow{2}{*}{I} & up \textit{$u$}  & 2.3 & $+ \frac{2}{3}$ & 0 & $+ \frac{1}{2}$ \\
-   & & down \textit{$d$}  & $4.8$ & $- \frac{1}{3}$ & $0$ & $- \frac{1}{2}$ \\
-   & \multirow{2}{*}{II} & charm \textit{$c$}  & $2.3$ & $+ \frac{2}{3}$ & 0 & $+ \frac{1}{2}$ \\
-   & & strange \textit{$s$}  & $4.8$ & $- \frac{1}{3}$ & $0$ & $- \frac{1}{2}$ \\
-   & \multirow{2}{*}{II} & top \textit{$t$}  & $2.3$ & $+ \frac{2}{3}$ & $0$ & $+ \frac{1}{2}$ \\
-   & & bottom \textit{$b$}  & $4.8$ & $- \frac{1}{3}$ & $0$ & $- \frac{1}{2}$ \\
+   & & down & \textit{$d$} & $4.8$ & $- \frac{1}{3}$ & $0$ & $- \frac{1}{2}$ \\
+   & \multirow{2}{*}{II} & charm & \textit{$c$}  & $2.3$ & $+ \frac{2}{3}$ & 0 & $+ \frac{1}{2}$ \\
+   & & strange & \textit{$s$}  & $4.8$ & $- \frac{1}{3}$ & $0$ & $- \frac{1}{2}$ \\
+   & \multirow{2}{*}{II} & top & \textit{$t$}  & $2.3$ & $+ \frac{2}{3}$ & $0$ & $+ \frac{1}{2}$ \\
+   & & bottom &\textit{$b$}  & $4.8$ & $- \frac{1}{3}$ & $0$ & $- \frac{1}{2}$ \\
    \hline
    \multirow{3}{*}{Leptons}  & \multirow{2}{*}{I} & electron \textit{$e$}  & $0.511$ & $-1$ & $0$ & $- \frac{1}{2}$ \\
-   & & electron neutrino \textit{$\nu_{e}$}  & $< 2 \times 10^{-6}$ & $0$ & $0$ & $+ \frac{1}{2}$ \\
-   & \multirow{2}{*}{II} & muon \textit{$\mu$}  & $106$ & $-1$ & $0$ & $-\frac{1}{2}$ \\
-   & & muon neutrino \textit{u}  & $< 0.19$ & $0$ & $0$ & $+ \frac{1}{2}$ \\
-   & \multirow{2}{*}{II} & tau \textit{$\tau$}  & $1777$ & $0$ & $0$ & $- \frac{1}{2}$ \\
-   & & tau neutrino \textit{u}  & $<18.2$ & $0$ & $0$ & $+ \frac{1}{2}$ \\   
+   & & electron neutrino & \textit{$\nu_{e}$}  & $< 2 \times 10^{-6}$ & $0$ & $0$ & $+ \frac{1}{2}$ \\
+   & \multirow{2}{*}{II} & muon & \textit{$\mu$}  & $106$ & $-1$ & $0$ & $-\frac{1}{2}$ \\
+   & & muon neutrino & \textit{$\nu_{\mu}$}  & $< 0.19$ & $0$ & $0$ & $+ \frac{1}{2}$ \\
+   & \multirow{2}{*}{II} & tau & \textit{$\tau$}  & $1777$ & $0$ & $0$ & $- \frac{1}{2}$ \\
+   & & tau neutrino & \textit{$\nu_{\tau}$}  & $<18.2$ & $0$ & $0$ & $+ \frac{1}{2}$ \\   
+   \hline   
+ \end{tabular}}
+\end{table}
+
+\begin{table}[htbp]
+\topcaption {
+The fundamental forces of nature and the SM gauge bosons which mediate them.
+}
+\label{tab:bosons}
+  \centering
+  \resizebox{\textwidth}{!}{
+% This right-aligns numbers in column, but centers them under column title.
+ \begin{tabular}{lccccc}
+   \hline
+   \textbf{Gauge Boson} & & \textbf{Mass (\GeV)} & \textbf{Electrical Charge} & \textbf{Colour Charge} & \textbf{Weak Isospin}\\
+   \hline
+   photon & ($\gamma$) & $0$ & $0$ & $0$ & $0$ \\
+   \hline
+   W & $\text{W}^{\pm}$ & $80.385 \pm 0.015$ & $\pm 1$ & $0$ & $\pm 1$ \\
+   Z & $\text{Z}^{0}$ & $91.1876 \pm 0.0021$ & $0$ & $0$ & 0 \\
+   Higgs & $\text{h}^{0}$ & $125 \pm 0.24$ & $0$ & $0$ & $- \frac{1}{2}$ \\
+   \hline
+   Strong & $g$ & $0$ & $0$ & $r \overline{g}, r \overline{b}, g \overline{r}, g \overline{b}, b \overline{r}, b \overline{g} , \frac{1}{\sqrt{2}(r \overline{r} - g \overline{g}), \frac{1}{\sqrt{6}(r \overline{r} + g \overline{g} - 2 b \overline{b})} $ & $0$ \\
    \hline   
  \end{tabular}}
 \end{table}
@@ -72,26 +95,6 @@ The photon ($\gamma$), a massless particle, mediates the electromagnetic force, 
 The Standard Model consists of 
 
 
-\begin{table}[htbp]
-\topcaption {
-The fundamental forces of nature and the SM gauge bosons which mediate them.
-}
-\label{tab:bosons}
-  \centering
-  \resizebox{\textwidth}{!}{
-% This right-aligns numbers in column, but centers them under column title.
- \begin{tabular}{lllll}
-   \hline
-   \textbf{Force} & \textbf{Gauge Boson} & \textbf{Mass (\GeV)} & \textbf{Electrical Charge} & \textbf{Range (m)}  \\
-   \hline
-   Electromagnetic & photon ($\gamma$) & $0$ & $0$ & $\infty$ \\
-   \multirow{3}{*}{Weak} & $\text{W}^{\pm}$ & $80.385 \pm 0.015$ & $\pm 1$ & $10^{-18)$ \\
-   & $\text{Z}^{0}$ & $91.1876 \pm 0.0021$ & $0$ & $10^{-18)$ \\
-   Strong & 
-   Gravity & ? & ? & ? & $\infty$ \\
-   \hline   
- \end{tabular}}
-\end{table}
 
 \subsection{Gauge Symmetries}\label{subsec:gaugeSymmetries}
 The Standard Model is a which describes the interactions of the fundamental particles through the electromagnetic, weak and strong forces through.
