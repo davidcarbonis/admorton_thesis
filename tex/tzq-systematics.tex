@@ -12,7 +12,7 @@
 Out of the 37.8\fbinv of the proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by CMS during 2016, 35.8\fbinv was certified by the collaboration as ``good'' to be used for physics analysis.
 
 The difference between the certified value and the total data recorded is the result of various factors such as the unavailability of a detector.
-Due to the prescaling of the electron triggers during the start of the most luminous runs, as discussed in Chapter~\ref{sec:triggerStrategy}, the ee channel uses a reduced dataset of 35.6\fbinv where none of the triggers considered were prescaled.
+Due to the prescaling of the electron triggers during the start of the most luminous runs, as discussed in Chapter~\ref{sec:triggerStrategy}, the $ee$ channel uses a reduced dataset of 35.6\fbinv where none of the triggers considered were prescaled.
 Events in the double lepton and single lepton datasets from across these ``good'' data runs are considered where the double and single lepton triggers respectively have fired, using the strategy described in Chapter~\ref{sec:triggerStrategy}.
 
 The MC samples used to model signal and background processes that were considered are listed in table~\ref{tab:mcList}, which includes information on the number of events generated, their cross sections and the order in perturbative accuracy in QCD to which the generators calculated the processes.
@@ -189,7 +189,7 @@ Initial tests reveal that \pT and $\eta$ binned SFs for $\mu\mu$ may not be requ
 Unlikely to have time to resolve before submission -> something for Corin and Kate to look at!
 }
 
-For the scale factors derived for the ee and e$\mu$ channels, a constant scale factor was found to be sufficient to account for the differences between data and simulation.
+For the scale factors derived for the $ee$ and $e \mu$ channels, a constant scale factor was found to be sufficient to account for the differences between data and simulation.
 In the case of the $\mu\mu$ channel however, the scale factor was produced as a function of both \pt and $\eta$ due to the inefficiencies observed for the double muon triggers with $d_{Z}$ cuts caused by the miscalibrated tracker APV (discussed in Chapter~\ref{subsec:hipEffect}.
 As the equivalent double muon triggers without the $d_{Z}$ cuts were pre-scaled during runs with high instantaneous luminosity, these triggers were not considered.
 
@@ -504,7 +504,7 @@ Following a number of studies evaluating:
 it was determined that the \emph{eXtreme Gradient Boosting} (XGBoost) implementation of the Gradiant Boost alogorithm for a single BDT trained on all the MC simulation samples gave the optimal performance for this search~\cite{xgboost}.
 
 The methods used for selecting the features and model hyperparameters are described in the following subsections.
-Both the input features and model hyperparameters were chosen separately for ee and mumu channels and all the simulated MC samples were considered.
+Both the input features and model hyperparameters were chosen separately for $ee$ and $\mu\mu$ channels and all the simulated MC samples were considered.
 
 \subsection{BDT Input Features}
 From the selected reconstructed physics objects, a large number of input variables or \emph{features} were constructed and considered as potential inputs for the BDT.
@@ -515,7 +515,7 @@ From this ranked list, the top $n$ features are selected for when fewer than $n$
  
 The features chosen by recursive feature elimination for the $ee$ and $\mu\mu$ channels are given in table~\ref{tab:selectedBdtVariables}.
 Figure~\ref{fig:inputFeaturesDistributions} shows the distributions of the selected features in the signal and background samples.
-Figures~\ref{fig:inputFeaturesDataSimAgreement} show the good agreement observed between simulation and data for the combination of the ee and $\mu\mu$ channels for the features selected, validating their validity as reliable features.
+Figures~\ref{fig:inputFeaturesDataSimAgreement} show the good agreement observed between simulation and data for the combination of the $ee$ and $\mu\mu$ channels for the features selected, validating their validity as reliable features.
 Table~\ref{tab:allBdtVariables} provides a list of all the features that were considered.
 
 \begin{table}[htbp]
@@ -567,7 +567,7 @@ Distributions of the features chosen for use with the BDT for the signal and bac
 \centering
 \includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
 \caption{
-Distributions of the ... for the combination of the ee and $\mu\mu$ channel}
+Distributions of the ... for the combination of the $ee$ and $\mu\mu$ channel}
 \label{fig:inputFeaturesDataSimAgreement}
 \end{figure}
 
@@ -705,7 +705,7 @@ Out of the 150 averaged final metrics, the classifier with the best $(\theta)$ w
 
 %
 %\begin{table}[htbp]
-%\topcaption {The optimal hyperparameters for the ee and $\mu\mu$ channels for XGBoost that were found by \emph{Scikit-Optimize} and the maximum and minimum values that they can take.
+%\topcaption {The optimal hyperparameters for the $ee$ and $\mu\mu$ channels for XGBoost that were found by \emph{Scikit-Optimize} and the maximum and minimum values that they can take.
 %}
 %\label{tab:hyperparameters}
 %  \centering
