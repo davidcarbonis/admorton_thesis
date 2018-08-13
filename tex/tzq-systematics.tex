@@ -161,17 +161,12 @@ This issue was resolved by changing the configuration of the electronics.
 While the affected part of the dataset has been reprocessed to mitigate the impact on the quality of the data taken, there is still a negative impact on the detector efficiency for objects that rely upon highly efficient tracking data.
 This is accounted for by the weighting of events appropriately when the scale factors are produced, either centrally by CMS or those derived for the analysis (\ie the trigger scale factors), so that a single scale factor is applied to a simulated event.
 
-%In most cases, centrally produced scale factors are derived for the whole of the 2016 dataset to account for this, but 
-%for muons they were provided for both the affected and unaffected parts of the dataset separately.
-%Consequently, the muon scale factors were weighted according to the luminosity they corresponded to before their application to simulation.
-%Similarly, the muon trigger scale factors that were derived were also produced 
 
 \subsection{Lepton Efficiency}\label{subsec:leptonRecoSFs}
 The identification, isolation and reconstruction efficiencies of leptons are calculated using measurements of $Z \rightarrow l^{+} l ^{-}$ events with the \emph{tag-and-probe} method~\cite{CMS:2008rxa}.
 Using events within a dilepton invariant mass window to ensure a high purity, from this large statistics lepton sample, the method ``tags'' and ``probes'' the leptons where one has passed a tight and the other a loose selection criteria.
 For source of each efficiency and lepton flavour, the efficiency is given as the fraction of events where the probe leptons passed the relevant selection criteria.
 This methodology is used to create corrective scale factors for each component and these are multiplicatively applied to each leptons' event weight as functions of their \pt, $\eta$, and flavour.
-
 
 The efficiencies for the triggers used were calculated by considering events that pass triggers which are weakly correlated with the lepton triggers.
 By counting these events and whether or not they pass or fail the analysis triggers, the trigger efficiency is estimated as follows:
@@ -183,15 +178,12 @@ By counting these events and whether or not they pass or fail the analysis trigg
 where $N_{X trigger}$ is the number of events which have passed the lepton selection criteria and the cross triggers, and $N_{X triggers + lepton triggers}$ is $N_{X trigger}$ and the number of events which have also passed the lepton triggers.
 
 As the trigger requirements are applied to both simulated and data events, a scale factor of the ratio of the trigger efficiency in data and in simulation is applied to the event weight in simulation.
+For both the $ee$ and $\mu\mu$ channels in the signal region and the $e \mu$ channel for the \ttbar control region, a constant scale factor was found to be sufficient to account for the differences between data and simulation.
 
-\editComment{The following below is to be updated ASAP. Muon POG has found that the muon tracking SFs are no longer necessary - were the result of buggy derivation. Also, the dimuon trigger DZ leg is known to be heavily impacted by the HIP issue, but the non-DZ leg (available Runs B-G) was fine but not mentioned in the TOP Trigger twiki despite others using it and maintaining a high dimuon trigger efficiency.
-Initial tests reveal that \pT and $\eta$ binned SFs for $\mu\mu$ may not be required... Will result in smaller statistical uncerts.
-Unlikely to have time to resolve before submission -> something for Corin and Kate to look at!
-}
-
-For the scale factors derived for the $ee$ and $e \mu$ channels, a constant scale factor was found to be sufficient to account for the differences between data and simulation.
-In the case of the $\mu\mu$ channel however, the scale factor was produced as a function of both \pt and $\eta$ due to the inefficiencies observed for the double muon triggers with $d_{Z}$ cuts caused by the miscalibrated tracker APV (discussed in Chapter~\ref{subsec:hipEffect}.
-As the equivalent double muon triggers without the $d_{Z}$ cuts were pre-scaled during runs with high instantaneous luminosity, these triggers were not considered.
+Initially for the $\mu\mu$ channel however, the scale factor was produced as a function of both \pt and $\eta$.
+These were found to be necessary in order to account for the inefficiencies observed in data prior to applying the jet-lepton cleaning selection criteria resulting in the miscalibrated tracker APV negatively impacting the efficiency of the double muon triggers with $d_{Z}$ cuts .
+Originally the equivalent double muon triggers without the $d_{Z}$ cuts were not considered so as to simplify the trigger logic as these triggers were pre-scaled during runs with high instantaneous luminosity.
+Including these triggers for the runs affected by the miscalibrated tracker APV however, restored the efficiency lost from solely using the double muon triggers with the $d_{Z}$ cuts.
 
 \subsection{Lepton Energy Corrections}\label{subsec:leptonEnergyCorrections}
 \subsubsection{Electron Regression and Energy Scale and Smearing Corrections}

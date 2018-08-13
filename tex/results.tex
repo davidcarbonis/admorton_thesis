@@ -2,18 +2,19 @@
 
 
 \section{Statistical Methodology}\label{sec:statisticalModel}
-The calculation of cross section and statistical significances were made using Higgs Analysis Combined Limit (\combine) tool~\cite{Combine}.
+The calculation of cross section and statistical significances were made using Higgs Analysis Combined Limit (\combine) tool~\cite{Combine}, which is based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}.
+The \combine tool is used to determine the signal strength using a binned Maximum Likelihood Fit (MLF) and the significances using using an asymptotic approximation~\cite{AsymptoticFormulae}, using the Asimov dataset.
 
-The \combine tool is based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb} and is 
-
-and determines the signal strength using a binned Maximum Likelihood Fit (MLF) and the significances using using an asymptotic approximation~\cite{AsymptoticFormulae}, using the Asimov dataset.
-
-
+In the following section the signal and background yields are referred to as $s$ and $b$ respectively, where both represent event counts in the probability distribution function bins.
+The uncertainties for the simulated 
 
 All systematic uncertainties were incorporated into the fit as nuisance parameters, with luminosity and fake rate taken as rate uncertainties and the remainder as shape uncertainties.
  
 The fit was performed on the two channels simultaneously. 
 Most systematics were assumed to be 100\% correlated between channels.
+
+\subsection{Confidence Levels Method}\label{subsec:CLs}
+
 
 \subsection{Data-driven background normalisation}\label{subsec:combineNormalisation}
 floating in the fit
