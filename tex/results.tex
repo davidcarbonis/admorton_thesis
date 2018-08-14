@@ -4,7 +4,7 @@
 The calculation of cross section and statistical significances were made using Higgs Analysis Combined Limit (\combine) tool~\cite{Combine}, which is based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}.
 The \combine tool is used to determine the signal strength using a binned Maximum Likelihood Fit (MLF) and the significances using using an asymptotic approximation~\cite{AsymptoticFormulae}, using the Asimov dataset.
 
-The 
+The likelihood function is the product of the Pois
 
 
 \begin{equation}
@@ -13,7 +13,7 @@ L = \prod\limits_{i=1}^{\N} _{i} \frac{•}{•} \;
 \end{equation}
 
 \begin{equation}
-\mathcal{L} = - L = \sum\limits_{i=1}^{\N} _{i} \frac{•}{•} \;
+\mathcal{L} = - L = \sum\limits_{i=1}^{\N} _{i} \frac{\mu_{i}}{•} \;
 \label{eq:minLogLikelihood}
 \end{equation}
 
@@ -32,7 +32,14 @@ The fit was performed on the two channels simultaneously.
 Most systematics were assumed to be 100\% correlated between channels.
 
 \subsection{Confidence Levels Method}\label{subsec:CLs}
-The modified classical frequentist methods are  
+The 
+
+confidence levels are determined on modified classical frequentist methods 
+
+As there were sufficient statistics , the \emph{Asymptotic} CL$_{s}$ method.
+This method uses one representive dataset, known as the \emph{Asimov dataset}, in lieu of an ensemble of toy MC samples.
+The Asimov dataset is constructed such that ...
+A full description of this methodology is given in~\cite{Cowan:2010js}.
 
 \subsection{Data-driven background normalisation}\label{subsec:combineNormalisation}
 floating in the fit

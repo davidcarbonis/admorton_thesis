@@ -179,11 +179,33 @@ where $N_{X trigger}$ is the number of events which have passed the lepton selec
 
 As the trigger requirements are applied to both simulated and data events, a scale factor of the ratio of the trigger efficiency in data and in simulation is applied to the event weight in simulation.
 For both the $ee$ and $\mu\mu$ channels in the signal region and the $e \mu$ channel for the \ttbar control region, a constant scale factor was found to be sufficient to account for the differences between data and simulation.
+The efficiencies calculated for data, MC simulation and the resultant corrective scale factors applied to simulation are given in table~\ref{tab:triggerSFs} with their associated statistical uncertainties.
+The value determined for the systematic uncertainties is discussed in chapter~\ref{sec:systematics}.
 
 Initially for the $\mu\mu$ channel however, the scale factor was produced as a function of both \pt and $\eta$.
 These were found to be necessary in order to account for the inefficiencies observed in data prior to applying the jet-lepton cleaning selection criteria resulting in the miscalibrated tracker APV negatively impacting the efficiency of the double muon triggers with $d_{Z}$ cuts .
 Originally the equivalent double muon triggers without the $d_{Z}$ cuts were not considered so as to simplify the trigger logic as these triggers were pre-scaled during runs with high instantaneous luminosity.
 Including these triggers for the runs affected by the miscalibrated tracker APV however, restored the efficiency lost from solely using the double muon triggers with the $d_{Z}$ cuts.
+
+\begin{table}[htbp]
+\topcaption {
+The trigger efficiencies for the lepton selection criteria for data and simulation and the resultant corrective scale factors applied to simulation.
+The uncertainties given only include the statistical uncertainty associated with each value. 
+The determination of the systematic uncertainties is given in chapter~\ref{sec:systematics}.
+}\label{tab:triggerSFs}
+  \centering
+  \resizebox{\textwidth}{!}{
+% This right-aligns numbers in column, but centers them under column title.
+ \begin{tabular}{lccc}
+   \hline
+   \textbf{Channel} & \textbf{$\epsilon _{data}$} & \textbf{$\epsilon _{MC}$} & \textbf{SF}\\
+   \hline   
+   ee & 0.97554 $\pm$ 0.00138 & 0.98823 $\pm$ 0.00086 & 0.98715 $\pm$ 0.00063\\
+   $\mu\mu$ & 1.0 $\pm$ & 0.99192 $\pm$ 0.00074 & 0 $\pm$ 0  \\
+   e$\mu$ & 0.87477 $\pm$ 0.01358 & 0.88228 $\pm$ 0.01877 & 0.99148 $\pm$ 0.00722\\
+   \hline
+ \end{tabular}}
+\end{table}
 
 \subsection{Lepton Energy Corrections}\label{subsec:leptonEnergyCorrections}
 \subsubsection{Electron Regression and Energy Scale and Smearing Corrections}
@@ -725,7 +747,7 @@ Following the optimisation of both the BDT features and the choice of hyperparam
 The resultant BDT is used to produce the output distribution of the BDT discriminator for each of the data and simulation samples considered, including the systematic shape uncertainties.
 The resultant BDT discriminator distributions are used to perform a measurement of the signal strength and to attempt an extraction of the signal's cross section.
 
-\section{Systematic Uncertainties}\label{chapter:systematics}
+\section{Systematic Uncertainties}\label{sec:systematics}
 %%% Intro
 For any meaningful and robust measurement to be made in any physics analysis, it is vital that the sources of systematic uncertainties associated with it are both understood and controlled.
 This is particularly important when searching for tZq dilepton final state given that the high statistics of the background processes result in their systematic uncertainties being of a comparable order to the statistical uncertainties of the signal process.
@@ -833,9 +855,9 @@ The values of $\alpha$, expressing the strength of correlation between the lepto
    \hline
    \textbf{Channel} & \textbf{$\alpha$}   \\
    \hline   
-   ee & 1.0 \\
-   $\mu\mu$ & 1.0  \\
-   e$\mu$ & 1.0  \\
+   ee & 0.99890 \\
+   $\mu\mu$ & 1.00151  \\
+   e$\mu$ & 0.97883  \\
    \hline
  \end{tabular}}
 \end{table}
