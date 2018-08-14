@@ -806,20 +806,20 @@ The overall uncertainty in the integrated luminosity collected by CMS in 2016 wa
 The uncertainties associated with the lepton identification, isolation and reconstruction efficiency scale factors discussed in Chapter~\ref{subsec:leptonRecoSFs} are varied +/- 1 sigma.
 
 Several systematic studies were performed to estimate the systematic uncertainty for the trigger scale factors.
-These studies included the comparison of the trigger efficiencies in simulation for \ttbar and Z+jets, the impacts of the \MET trigger selection and the further event selection in the analysis performed. 
+These studies included the comparison of the trigger efficiencies in simulation for \ttbar and Z+jets, the independence of the \MET trigger selection and the impact of applying the later stages event selection in the analysis performed. 
 
-\editComment{Elaborate once the impact of the potential changes to the trigger SFs are known}.
+\editComment{Add bit about \ttbar and Z+jets following revised trigger SFs}
 
-Impact of \MET trigger selection:
+In order to evaluate the independence between the \MET and lepton triggers used, one first considers the efficiency of each set of triggers independently.
+If both sets triggers are independent, then the efficiency of fulfilling both trigger selections can be expressed as:
 
-If both triggers are independent, then the efficiency of fulfilling both trigger selections can be expressed as:
 \begin{equation}
 \epsilon_{X + lepton triggers} = \epsilon_{X triggers} \times \epsilon_{lepton triggers}
 \label{eq:triggerCorrelation}
 \end{equation}
 
-and if both trigger selections are uncorrelated, then the ratio of the left and right hand sides ($\alpha$) of Equation~\ref{eq:triggerCorrelation} would be 1.
-Table~\ref{tab:triggerCorrelation} shows that the values of $\alpha$ determined for each channel only differ slightly from 1.
+If the \MET and lepton trigger selections are uncorrelated, then the ratio of the left and right hand sides ($\alpha$) of equation~\ref{eq:triggerCorrelation} will be 1.
+Table~\ref{tab:triggerCorrelation} shows that the value of found $\alpha$ for each channel only exhibits small differences from unity.
 
 
 \begin{table}[htbp]
@@ -839,6 +839,10 @@ The values of $\alpha$, expressing the strength of correlation between the lepto
    \hline
  \end{tabular}}
 \end{table}
+
+\editComment{Add table with trigger efficiencies post jet and b-jet cuts following revised trigger SFs}
+
+Given the statistical uncertainties involved and the results of the studies briefly described above, it was determined that a systematic uncertainty of 1.5\%/1.5\%/2\% for the $ee$, $\mu\mu$, and $e \mu$ channels respectively would be sufficient.
 
 \subsection{Theoretical Uncertainties}\label{sec:theorySysts}
 
