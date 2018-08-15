@@ -29,44 +29,32 @@ Assuming that the number of observed events, $n_{i}$, in any given bin will be d
 \label{eq:poissonProb}
 \end{equation}
 
+A probability density function, $\rho ( \theta | \tilde{\theta} )$ with a nominal value of $\tilde{\theta}$ for the best estimate of the nuisance, is used to describe all the sources of uncertainty for the nuisance parameters~\cite{CMS-NOTE-2011-005}
+For the search presented in this thesis, it is assumed that each source of systematic uncertainty is either 100\% correlated or uncorrelated, thus allowing each systematic uncertainty to be incorporated into $\rho ( \theta | \tilde{\theta} )$ in a clean factorised form.
+Normalisation uncertainties take the form of log-normal nuisance parameters, which avoid 
+Shape uncertainties are modelled by vertically morphing the nominal shape template between between its up and down variations~\cite{Baak:2014fta}.
+\editComment{Add bit on how the Z+jets normalisation uncert was incorporated}
 
-All of the nuisance parameters are described by a probability density function (pdf)~\footnote{Not to be confused with Parton Distribution Functions (PDFs)}.
-
-The normalisation uncertainties are incorporated into the fit as log-normal nuisance parameters
-
-Each of the 
-
-The shape uncertainties
-The shape uncertainties are incorporated into the fit by vertically morphing ~\cite{Baak:2014fta} the nominal shape template up and down 
-Normalisation uncertainties are 
-In the case of the floating ...
-
-
-Therefore, the likelihood for the entire dataset is the product of the Poisson probabilities, $\mathcal{P}$, for all bins and the nuisance parameters' probability density function, as given by equation~\ref{eq:poissonLikelihood}.
+Therefore, the likelihood for the entire dataset can be expressed the product of the Poisson probabilities, $\mathcal{P}$, for all bins and the nuisance parameters' probability density function, as given by equation~\ref{eq:poissonLikelihood}.
 
 \begin{equation}
 \mathcal{L} ( n_{i} | \mu , \theta ) = 
-\prod\limits_{i=1}^{\N} _{i} \mathcal{P} \big( n_{i} | \mu s_{i}(\theta) + b_{i}(\theta) \big) \;
+\prod\limits_{i=1}^{\N} _{i} \mathcal{P} \big( n_{i} | \mu s_{i}(\theta) + b_{i}(\theta) \big) \rho ( \theta | \tilde{\theta} ) \;
 \label{eq:poissonLikelihood}
 \end{equation}
 
+\subsection{$CL_{s}$ method}
+The modified classical frequentist method known as the $CL_{s}$ method was used to test the hypothesised value of the signal strength modifier~\cite{Cowan:2010js}.
 
-
-In order to determine the signal strength 
-
-To compare the compatibility of the data against the signal+background and background only
-
-The modified classical frequentist method known as the CL$_{s}$ was used to set limits on the strength of the signal process.
-
-In order to evaluate the 
-A test statistic, $q_{\mu}$, is defined to discriminate between the signal and background and background only hypotheses.
-
-The test statistic most commonly used by the ATLAS and CMS collaborations is defined in equation~\ref{eq:testStatistic} as:
+This involves defining a test statistic, $q_{\mu}$ in order to discriminate between the signal+background (S+b) and background only (b only) hypotheses.
+The test statistic used at the LHC by the ATLAS and CMS collaborations is the log likelihood ratio defined in equation~\ref{eq:testStatistic}, where 
 
 \begin{equation}
 \q_{\mu} =  -2 \ln \frac{ \mathcal{L}(data | \mu s , \hat{\theta_{\mu}}}{ \mathcal{L}(data | \hat{\mu} s \hat{\theta_{\mu}},  } \;
 \label{eq:testStatistic}
 \end{equation}
+
+
 
 where the
 $\hat{\mu}$ 
@@ -74,19 +62,20 @@ cannot take negative values as physics defines the signal rate as positive.
 In addition, 
 A measured signal strength of 0.0 would correspond to an observation of the background-only hypothesis alone, whilst 1.0 is the SM expectation for tZq sproduction.
 
-%%%%
+%%% Toys used for expected
 
-The \emph{Asymptotic} CL$_{s}$ method is typically used 
-This method uses one representive dataset, known as the \emph{Asimov dataset}, in lieu of an ensemble of toy MC samples.
-The Asimov dataset is constructed such that ...
+Toy MC is used to generate \emph{pseudodata} which for both the background only and signal+background hypotheses 
+
+%%%%
+As the number of expected events is sufficiently large, the \emph{Asymptotic} CL$_{s}$ method was used in order to reduce computing time.
+This method uses one representative dataset, known as the \emph{Asimov dataset}, in lieu of an ensemble of toy MC samples.
+The Asimov dataset is defined as being constructed such that all observable quantities are equal to their expectation values.
 A full description of this methodology is given in~\cite{Cowan:2010js}.
 
-
 \section{Impact of the Systematic Uncertainties}\label{sec:uncertainitiesImpact}
-The effect of each of the sources of systematic uncertainty considered in terms of the pull ($\frac{ \hat{\theta} - \theta_{0} }{\Delta \theta}$) on 
+The effect of each of the sources of systematic uncertainty considered in terms of the pull ($\frac{ \hat{\theta} - \theta_{0} }{\Delta \theta}$) and the postfit impact of varying the sources of uncertainty by $\pm 1 \sigma$ are shown in figure~\ref{fig:systematicsPull}.
 
-and the postfit impact of varying the sources of uncertainty by $\pm 1 \sigma$ are shown in figure~\ref{fig:systematicsPull}.
-
+\editComment{Update shortly}
 \editComment{Remark on the lumi, jer are the largest uncerts and how the rest of the experimental uncerts are considerably smaller}
 
 \begin{figure}[htbp]
