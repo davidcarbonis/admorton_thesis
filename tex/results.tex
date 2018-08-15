@@ -8,7 +8,7 @@ calculate the observed signal strength and observed and expected significances.
 For the signal and background processes considered in the search, the expected event yield $\lambda$ in the bin $i$ is given by equation~\ref{eq:yields1}:
 
 \begin{equation}
-\lambda_{i} = \mu s_{i} + \sum_{j} b_{j} \;
+\lambda_{i} = \mu s_{i} + \sum\limits_{j} b_{j} \;
 \label{eq:yields1}
 \end{equation}
 
@@ -16,7 +16,7 @@ where $s$ and $b$ are the expected number of signal and background events and $\
 $\mu$, as given in equation~\ref{eq:signalModifier} where $\sigma_{obs}$ is the cross section observed, is used typically to parametrise the expected signal yield in lieu of the expected cross section.
 
 \begin{equation}
-\mu = \frac{\sigma_{obs}}{\sigma_{s}}  \;
+\mu = \frac{\sigma_{obs}}{\sigma_{s}  \;
 \label{eq:signalModifier}
 \end{equation}
 
@@ -31,15 +31,14 @@ Assuming that the number of observed events, $n_{i}$, in any given bin will be d
 
 A probability density function, $\rho ( \theta | \tilde{\theta} )$ with a nominal value of $\tilde{\theta}$ for the best estimate of the nuisance, is used to describe all the sources of uncertainty for the nuisance parameters~\cite{CMS-NOTE-2011-005}
 For the search presented in this thesis, it is assumed that each source of systematic uncertainty is either 100\% correlated or uncorrelated, thus allowing each systematic uncertainty to be incorporated into $\rho ( \theta | \tilde{\theta} )$ in a clean factorised form.
-%Shape uncertainties are modelled by vertically morphing the nominal shape template between between its up and down variations~\cite{Baak:2014fta}.
-%The flat rate uncertainty associated with the non-prompt lepton shapes is incorporated as a log-uniform nuisance parameter and the uncertainty associated with the luminosity treated as a log-normal nuisance parameter.
-%As the normalisation of the aMC@NLO Z+jets sample was left to float in a simultaneous fit of the Z+jets control region and the signal region, \combine includes the statistical uncertainty from the control region fit as the uncertainty on a nuisance parameter that controls the Z+jets normalisation in the signal fit.
+Shape uncertainties are modelled by vertically morphing the nominal shape template between between its up and down variations while the the non-prompt lepton normalisation and luminosity flat rate uncertainties are treated as log-uniform and log-normal nuisance parameters respectively~\cite{Baak:2014fta,AsymptoticFormulae}.
+\combine includes the impact of the statistical uncertainty on the the aMC@NLO Z+jets sample normalisation determined in the Z+jets control region obtained as a log-normal nuisance parameter.
 
 Therefore, the likelihood for the entire dataset can be expressed the product of the Poisson probabilities, $\mathcal{P}$, for all bins and the nuisance parameters' probability density function, as given by equation~\ref{eq:poissonLikelihood}.
 
 \begin{equation}
 \mathcal{L} ( n_{i} | \mu , \theta ) = 
-\prod_{i=1}^{N} \mathcal{P} \big( n_{i} | \mu s_{i} (\theta) + b_{i}(\theta) \big) \rho ( \theta | \tilde{\theta} ) \;
+\prod\limits_{i=1}^{\N} _{i} \mathcal{P} \big( n_{i} | \mu s_{i}(\theta) + b_{i}(\theta) \big) \rho ( \theta | \tilde{\theta} ) \;
 \label{eq:poissonLikelihood}
 \end{equation}
 
@@ -47,13 +46,14 @@ Therefore, the likelihood for the entire dataset can be expressed the product of
 The modified classical frequentist method known as the $CL_{s}$ method was used to test the hypothesised value of the signal strength modifier~\cite{Cowan:2010js}.
 
 This involves defining a test statistic, $q_{\mu}$ in order to discriminate between the signal+background (S+b) and background only (b only) hypotheses.
-The test statistic used at the LHC by the ATLAS and CMS collaborations is the log likelihood ratio defined in equation~\ref{eq:testStatistic}, where the global maximum likelihood estimators for the signal strength and the nuisance parameters are given by $\hat{\mu}$ and 
+The test statistic used at the LHC by the ATLAS and CMS collaborations is the log likelihood ratio defined in equation~\ref{eq:testStatistic}:
 
 \begin{equation}
- q_{\mu} =  -2 \ln \frac{ \mathcal{L}(data | \mu s , \hat{\theta_{\mu}}}{ \mathcal{L}(data | \hat{\mu} s \hat{\theta_{\mu}},  } \;
+\q_{\mu} =  -2 \ln \frac{ \mathcal{L}(data | \mu s , \hat{\theta_{\mu}}}{ \mathcal{L}(data | \hat{\mu} s \hat{\theta_{\mu}},  } \;
 \label{eq:testStatistic}
 \end{equation}
 
+where the global maximum likelihood estimators for the signal strength and the nuisance parameters are given by $\hat{\mu}$ and 
 
 
 where the
@@ -72,10 +72,13 @@ This method uses one representative dataset, known as the \emph{Asimov dataset},
 The Asimov dataset is defined as being constructed such that all observable quantities are equal to their expectation values.
 A full description of this methodology is given in~\cite{Cowan:2010js}.
 
-\section{Impact of the Systematic Uncertainties}\label{sec:uncertainitiesImpact}
-The effect of each of the sources of systematic uncertainty considered in terms of the pull ($\frac{ \hat{\theta} - \theta_{0} }{\Delta \theta}$) and the postfit impact of varying the sources of uncertainty by $\pm 1 \sigma$ are shown in figure~\ref{fig:systematicsPull}.
+\section{Post-Fit Impact of the Systematic Uncertainties}\label{sec:uncertainitiesImpact}
+The effect of each of the sources of systematic uncertainty following the fit is considered in terms of the pull ($\frac{ \hat{\theta} - \theta_{0} }{\Delta \theta}$) and the postfit impact of varying the sources of uncertainty by $\pm 1 \sigma$ are shown in figure~\ref{fig:systematicsPull}.
 
-The largest source of 
+The uncertainty associated with the value of the luminosity used has the greatest impact on the 
+While the JER 
+The rest of the experimental uncertainities 
+ 
 \editComment{Update shortly}
 \editComment{Remark on the lumi, jer are the largest uncerts and how the rest of the experimental uncerts are considerably smaller}
 
@@ -116,10 +119,10 @@ As such, while the result presented here is not a final result, an updated resul
 
 \section{Discussion of other searches for tZq at the Large Hadron Collider}
 The search for the dilepton final state of a singly produced top in association with a Z boson presented in this thesis is the first one that has been undertaken at the LHC.
-As such while these results cannot be compared against any previous or competing results, searches for tZq have been made for the trilepton final state at $\sqrt{s} =  8 \TeV$ and $13 \TeV$.
+As such while these results cannot be compared against any previous or competing results, searches for tZq have been made for the trilepton final state at $\sqrt{s} = 8 \TeV and 13 \Tev$.
 
 Following the trilepton tZq search at $\sqrt{s} = 8 \TeV$ by the CMS collaboration which reported a significance of 2.9 standard deviations ~\cite{Sirunyan:2017kkr}, at $\sqrt{s} = 13 \TeV$ both the ATLAS and CMS collaborations  have reported significances in excess of 3.0 standard deviations, 4.2 and 3.7 respectively~\cite{Aaboud:2017ylb,Sirunyan:2017nbr}.
-Despite the dilepton final state having a larger production cross section than the fully leptonic final state, the topology of the dilepton final state  
+Despite the dilepton final state having a larger production cross section than the fully leptonic final state, the similarity of the final state topology to those of significantly larger backgrounds limits the ability to observe it.
 
-Given that the search for the dilepton final state is currently statistically limited, it is anticipated that including data collected by the CMS experiment during 2017 could allow for a significance close to or in excess of 3.0 standard deviations to be observed.
-Even if additional statistics isn't sufficient for an observation to be made of the dilepton final state, when combined with the trilepton final state result, it is expected that the discovery of tZq should be possible.
+Therefore, as the search  is currently statistically limited, it is anticipated that including data collected by the CMS experiment during 2017 could allow for a significance close to or in excess of 3.0 standard deviations to be observed.
+Even if additional statistics isn't sufficient for an observation to be made of the dilepton final state, when combined with the trilepton final state result it should be possible to measure the process with a 5.0 standard deviations significance.
