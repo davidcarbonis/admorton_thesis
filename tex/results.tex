@@ -2,55 +2,62 @@
 Following the production of the BDT discriminator shapes for data and the simulated samples and their shape systematic uncertainties, a simultaneous fit of these shapes was performed and evaluated to determine the observed signal strength and measure the cross section.
 
 \section{Statistical Methodology}\label{sec:statisticalModel}
-The statistical methodology used for the search presented used the Higgs Analysis Combined Limit (\combine) tool~\cite{Combine} tool, a framework based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}.
+The Higgs Analysis Combined Limit (\combine) tool~\cite{Combine} tool, a framework based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}, is used to perform a binned Maximum Likelihood Fit (MLF) to 
+calculate the observed signal strength and observed and expected significances.
 
-The \combine tool 
-These statistical significances were determined using a binned Maximum Likelihood Fit (MLF)
-
-
-
- using Higgs Analysis Combined Limit (\combine) tool~\cite{Combine},
-
-The \combine tool was used to determine the signal strength through a binned Maximum Likelihood Fit (MLF) and the significances using using an asymptotic approximation~\cite{AsymptoticFormulae}, using the Asimov dataset.
-
-As it is assumed that the number of events in any given bin will be distributed according to Poisson statistics, the 
-
-
-The likelihood function is the product of the Pois
-
-Poisson = known constant rate and independently of the time since the last event
+For the signal and background processes considered in the search, the expected event yield $\lambda$ in the bin $i$ is given by equation~\ref{eq:yields1}:
 
 \begin{equation}
-L = \prod\limits_{i=1}^{\N} _{i} \frac{•}{•} \;
+\lambda_{i} = \mu s_{i} + \sum\limits_{j} b_{j} \;
+\label{eq:yields1}
+\end{equation}
+
+where $s$ and $b$ are the expected number of signal and background events and $\mu$ is the signal strength modifier.
+$\mu$, as given in equation~\ref{eq:signalModifier} where $\sigma_{obs}$ is the cross section observe, is used typically instead of the expected cross section to parametrise the expected signal yield.
+
+\begin{equation}
+\mu = \frac{\sigma_{obs}}{\sigma_{s}  \;
+\label{eq:signalModifier}
+\end{equation}
+
+the expected event yields have uncertainties associated with them, which are accounted for  
+
+The uncertainties associated with the simulated predictions of the signal and background processes are accounted for by the inclusion of nuisance parameters $\theta$, such that $s_{i} = s_{i} (\theta)$ and $b_{i} = b_{i} (\theta)$.
+
+
+Assuming that the number of observed events, $n_{i}$, in any given bin will be distributed according to Poisson statistics, the probability of observing $n_{i}$ is given by equation~\ref{eq:poissonProb}.
+
+\begin{equation}
+\mathcal{P} ( n_{i} | \lambda_{i} ) = \frac{\lambda_{i}}{n_{i}!} e^{- \lambda_{i}} = \frac{ \big( \mu s_{i}(\theta) + b_{i}(\theta) \big)^{n_{i}}}{n_{i} !} e^{- \mu s_{i}(\theta) - b_{i}(\theta)}  \;
+\label{eq:poissonProb}
+\end{equation}
+
+Therefore, the likelihood for the entire dataset is the product of the Poisson probabilities for all bins as given by equation~\ref{eq:poissonLikelihood}.
+
+\begin{equation}
+\mathcal{L} (\mu,  = \prod\limits_{i=1}^{\N} _{i}  \mathcal{P} \big( n_{i} | \mu s_{i}(\theta) + b_{i}(\theta) \big) = \frac{ \big( \mu s_{i}(\theta) + b_{i}(\theta) \big)^{n_{i}}}{n_{i} !} e^{- \mu s_{i}(\theta) - b_{i}(\theta)}\;
 \label{eq:poissonLikelihood}
 \end{equation}
 
-\begin{equation}
-\mathcal{L} = - L = \sum\limits_{i=1}^{\N} _{i} \frac{\mu_{i}}{•} \;
-\label{eq:minLogLikelihood}
-\end{equation}
+Each of the 
 
-In the following section the signal and background yields are referred to as $s$ and $b$ respectively, where both represent event counts in the probability distribution function bins.
-The uncertainties for the simulated 
-
-All the systematic uncertainties were incorporated into the fit as nuisance parameters.
+In order to take the impact of the systematic uncertainties on the event yields into account, the systematic uncertainties were incorporated into the fit as nuisance parameters.
+The shape uncertainties
 The normalisation uncertainties are incorporated into the fit as log-normal nuisance parameters
-
-All the source of systematic uncertainty was incorporated into the fit as nuisance parameters, represented by $\theta$.
 The shape uncertainties are incorporated into the fit by vertically morphing ~\cite{Baak:2014fta} the nominal shape template up and down 
 Normalisation uncertainties are 
+In the case of the floating ...
 
 All sources of uncertainties have been assumed to be either 100\% correlated or uncorrelated.
 Uncertainties which are partially correlated have been broken down into subcomponents so that they can be declared either 100\% correlated or uncorrelated.
 This allows all constraints to be included in the likelihood functions in a clean factorised form. 
 
-Gross:2007zz - LHC stats for pedestraians
+To compare the compatibility of the data against the signal+background and background only
 
-\subsection{Confidence Levels Method}\label{subsec:CLs}
 The modified classical frequentist method known as the CL$_{s}$ was used to set limits on the strength of the signal process.
-A test statistic, $q_{\mu}$, is defined to discriminate between 
-confidence levels are determined on modified classical frequentist methods 
 
+In order to evaluate the 
+A test statistic, $q_{\mu}$, is defined to discriminate between the signal and background and background only hypotheses.
 
 The test statistic most commonly used by the ATLAS and CMS collaborations is defined in equation~\ref{eq:testStatistic} as:
 
@@ -63,20 +70,20 @@ where the
 $\hat{\mu}$ 
 cannot take negative values as physics defines the signal rate as positive.
 In addition, 
+A measured signal strength of 0.0 would correspond to an observation of the background-only hypothesis alone, whilst 1.0 is the SM expectation for tZq sproduction.
 
+%%%%
 
 The \emph{Asymptotic} CL$_{s}$ method is typically used 
 This method uses one representive dataset, known as the \emph{Asimov dataset}, in lieu of an ensemble of toy MC samples.
 The Asimov dataset is constructed such that ...
 A full description of this methodology is given in~\cite{Cowan:2010js}.
 
-\subsection{Data-driven background normalisation}\label{subsec:combineNormalisation}
-floating in the fit
-
-
 
 \section{Impact of the Systematic Uncertainties}\label{sec:uncertainitiesImpact}
-The effect of each of the sources of systematic uncertainty considered in terms of the pull ($\frac{ \hat{\theta} - \theta_{0} }{\Delta \theta}$) and the postfit impact of varying the sources of uncertainty by $\pm 1 \sigma$ are shown in figure~\ref{fig:systematicsPull}.
+The effect of each of the sources of systematic uncertainty considered in terms of the pull ($\frac{ \hat{\theta} - \theta_{0} }{\Delta \theta}$) on 
+
+and the postfit impact of varying the sources of uncertainty by $\pm 1 \sigma$ are shown in figure~\ref{fig:systematicsPull}.
 
 \editComment{Remark on the lumi, jer are the largest uncerts and how the rest of the experimental uncerts are considerably smaller}
 
@@ -87,15 +94,6 @@ The effect of each of the sources of systematic uncertainty considered in terms 
 \label{fig:systematicsPull}
 \end{center}
 \end{figure}
-
-\section{Cross section extraction}
-The cross section is 
-
-By performing a simultaneous fit of the BDT discriminant distribution for the background-enriched sample and the BDT discriminant in the signal sample, any events in excess of the background-only hypothesis will be determined.
-
-This excess can then be compared to the SM expectation for tZq production in order to calculate the observed signal strength and measure the cross section.
-
-A measured signal strength of 0.0 would correspond to an observation of the background-only hypothesis alone, whilst 1.0 is the SM expectation for tZq sproduction.
 
 \section{Statistical Analysis Results}
 \editComment{UPDATE BEFORE SUBMISSION}
@@ -132,8 +130,7 @@ As such while these results cannot be compared against any previous or competing
 
 Following the trilepton tZq search at $\sqrt{s} = 8 \TeV$ by the CMS collaboration which reported a significance of 2.9 standard deviations ~\cite{Sirunyan:2017kkr}, at $\sqrt{s} = 13 \TeV$ both the ATLAS and CMS collaborations  have reported significances in excess of 3.0 standard deviations, 4.2 and 3.7 respectively~\cite{Aaboud:2017ylb,Sirunyan:2017nbr}.
 
-Despite the dilepton final state having a larger production cross section than the fully leptonic final state, given that the topology of the dilepton final state results in an increased difficulty in rejecting background processes, 
-
+Despite the dilepton final state having a larger production cross section than the fully leptonic final state, given that the topology of the dilepton final state results in the presence of large backgrounds which are difficult to discriminate against, 
 
 Given that the search for the dilepton final state is currently statistically limited, it is anticipated that including data collected by the CMS experiment during 2017 could allow for a significance close to or in excess of 3.0 standard deviations to be observed.
 Even if additional statistics isn't sufficient for an observation to be made of the dilepton final state, when combined with the trilepton final state result, it is expected that the discovery of tZq should be possible.
