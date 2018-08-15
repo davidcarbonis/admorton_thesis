@@ -207,14 +207,14 @@ In the analysis presented, electrons use the $\rho$ * effective area ($rho * A_{
 This method estimates the neutral pileup contributions by subtracting the median energy density per area of pileup contamination, $\rho$, which has been multiplied by the effective area of the electron, $A_{\rm eff}$, which is characterised as a function of the supercluster's $\eta$:
 
 \begin{equation}
-I^{rel}_{rho * A_{eff}} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\rm T}(Photon) -rho*A_{\rm eff} )/p_T \\
+I^{rel}_{rho * A_{eff}} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\rm T}(Photon) -rho*A_{\rm eff} )/p_T \;
 \end{equation}\label{eq:rhoEffA}
 
 The $\Delta\beta$ pileup mitigation method is used for muons using a $\Delta R$ of 0.4 in the analysis presented.
 Using the fact that the ratio of neutral to charged hadron production in the hadronisation of pileup interactions is approximately 0.5, half of the transverse energy of charged hadrons from pileup is subtracted from the neutral hadron and photon transverse energies~\cite{Chatrchyan:2012vp}:
 
 \begin{equation}
-I^{rel}_{\Delta\beta} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\rm T}(Photon) - 0.5 * \sum E_{\rm T}(PU))/p_T \\
+I^{rel}_{\Delta\beta} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\rm T}(Photon) - 0.5 * \sum E_{\rm T}(PU))/p_T \;
 \end{equation}\label{eq:deltaBeta}
 
 \subsubsection{Z Boson Candidate}
