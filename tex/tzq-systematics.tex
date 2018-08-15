@@ -424,7 +424,7 @@ In contrast to the nominal Z boson mass binned samples, the alternative Z+jets s
 Consequently, these alternative samples were not considered as viable replacements of the Z boson mass binned Z+jets samples.
 
 As having a NLO description of this large multi-jet background was highly desirable in light of the event selection requirements, it was decided to use nominal Z+jets control region to determine the correct normalisation of the aMC@NLO Z+jets samples.
-The details of how this normalisation was achieved using the statistical analysis tool that was used to produce the analysis' results is described in Chapter~\ref{subsec:combineNormalisation}.
+This was achieved by simultaneously fitting this background in the control region at the same time as the signal region fit was performed.
 
 \subsection{\ttbar Background}\label{subsec:ttbarEstimation}
 The \ttbar enriched control region, as defined in Chapter~\ref{subsec:ttbarCR}, was designed to provide an orthogonal region which was topologically similar to the signal region in order to validate:
@@ -815,8 +815,8 @@ The data-driven estimate of the instrumental backgrounds should have no dependen
 Therefore the variation of the ratio of opposite-sign over same-sign events as a function of the lepton flavour and the cut level was considered to be well accounted for by a 30\% rate uncertainty.
 
 \subsubsection{Z+jets Background}
-As the aMC@NLO Z+jets sample is left to float in the fit, this accounts for the experimental normalisation systematic uncertainties.
-The theoretical systematic uncertainties are accounted for as described in Chapter~\ref{sec:theorySysts}.
+The uncertainty associated with the normalisation of the aMC@NLO Z+jets background sample was evaluated by the \combine tool used to calculate the results discussed in Chapter~\ref{chapter:results}.
+As \combine performs a simultaneous fit of the Z+jets background enriched control region and the signal region, it incorporates the statistical uncertainty from the fit of the Z+jets control region as a nuisance parameter that controls the normalisation in the final signal region fit.
 
 \subsubsection{Luminosity Uncertainties}
 CMS uses the pixel detector, DTs, HF, the Fast Beam Conditions Monitor and Pixel Luminosity Telescope to monitor and measure the instantaneous and integrated luminosity.
