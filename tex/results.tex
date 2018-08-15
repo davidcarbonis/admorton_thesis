@@ -13,17 +13,14 @@ For the signal and background processes considered in the search, the expected e
 \end{equation}
 
 where $s$ and $b$ are the expected number of signal and background events and $\mu$ is the signal strength modifier.
-$\mu$, as given in equation~\ref{eq:signalModifier} where $\sigma_{obs}$ is the cross section observe, is used typically instead of the expected cross section to parametrise the expected signal yield.
+$\mu$, as given in equation~\ref{eq:signalModifier} where $\sigma_{obs}$ is the cross section observed, is used typically to parametrise the expected signal yield in lieu of the expected cross section.
 
 \begin{equation}
 \mu = \frac{\sigma_{obs}}{\sigma_{s}  \;
 \label{eq:signalModifier}
 \end{equation}
 
-the expected event yields have uncertainties associated with them, which are accounted for  
-
 The uncertainties associated with the simulated predictions of the signal and background processes are accounted for by the inclusion of nuisance parameters $\theta$, such that $s_{i} = s_{i} (\theta)$ and $b_{i} = b_{i} (\theta)$.
-
 
 Assuming that the number of observed events, $n_{i}$, in any given bin will be distributed according to Poisson statistics, the probability of observing $n_{i}$ is given by equation~\ref{eq:poissonProb}.
 
@@ -32,25 +29,30 @@ Assuming that the number of observed events, $n_{i}$, in any given bin will be d
 \label{eq:poissonProb}
 \end{equation}
 
-Therefore, the likelihood for the entire dataset is the product of the Poisson probabilities for all bins as given by equation~\ref{eq:poissonLikelihood}.
 
-\begin{equation}
-\mathcal{L} (\mu,  = \prod\limits_{i=1}^{\N} _{i}  \mathcal{P} \big( n_{i} | \mu s_{i}(\theta) + b_{i}(\theta) \big) = \frac{ \big( \mu s_{i}(\theta) + b_{i}(\theta) \big)^{n_{i}}}{n_{i} !} e^{- \mu s_{i}(\theta) - b_{i}(\theta)}\;
-\label{eq:poissonLikelihood}
-\end{equation}
+All of the nuisance parameters are described by a probability density function (pdf)~\footnote{Not to be confused with Parton Distribution Functions (PDFs)}.
+
+The normalisation uncertainties are incorporated into the fit as log-normal nuisance parameters
 
 Each of the 
 
-In order to take the impact of the systematic uncertainties on the event yields into account, the systematic uncertainties were incorporated into the fit as nuisance parameters.
 The shape uncertainties
-The normalisation uncertainties are incorporated into the fit as log-normal nuisance parameters
 The shape uncertainties are incorporated into the fit by vertically morphing ~\cite{Baak:2014fta} the nominal shape template up and down 
 Normalisation uncertainties are 
 In the case of the floating ...
 
-All sources of uncertainties have been assumed to be either 100\% correlated or uncorrelated.
-Uncertainties which are partially correlated have been broken down into subcomponents so that they can be declared either 100\% correlated or uncorrelated.
-This allows all constraints to be included in the likelihood functions in a clean factorised form. 
+
+Therefore, the likelihood for the entire dataset is the product of the Poisson probabilities, $\mathcal{P}$, for all bins and the nuisance parameters' probability density function, as given by equation~\ref{eq:poissonLikelihood}.
+
+\begin{equation}
+\mathcal{L} ( n_{i} | \mu , \theta ) = 
+\prod\limits_{i=1}^{\N} _{i} \mathcal{P} \big( n_{i} | \mu s_{i}(\theta) + b_{i}(\theta) \big) \;
+\label{eq:poissonLikelihood}
+\end{equation}
+
+
+
+In order to determine the signal strength 
 
 To compare the compatibility of the data against the signal+background and background only
 
