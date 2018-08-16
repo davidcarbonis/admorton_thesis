@@ -1,5 +1,6 @@
 \chapter{Calculation of the track derivatives used in Linearised $\chi^{2}$ Track Fitter}\label{app:chi2}
-\textit{The calculation of the track residuals described below was originally described in a CMS Detector Note~\cite{CMS_DN-14-043}, and is reproduced and expanded upon here for completeness.}
+\textit{The calculation of the track residuals described below was originally described in an internal CMS Detector Note~\cite{CMS_DN-14-043}.
+The  and is reproduced and expanded upon here for completeness.}
 
 The track residuals which form the elements of the matrices \emph{D} and \emph{M} in Eqns.~\ref{eq:chi1}~--~\ref{eq:chi4}, from~\ref{subsubsec:chi2maths}, require tabulating into a lookup table in order to avoid the need to repeatedly calculating them when required.
 
@@ -14,6 +15,7 @@ z_{i} = z_{i} = z_{0} + 2 \rho t \arcsin (\frac{r_{i}}{2 \rho}) \;.
 the residuals for both the barrel layer and endcap disk hits can be arrived at and approximated to first order.
 
 \section{Barrel Layer Hits}
+Considering that  
 
 \begin{equation}
 s_{i}(\rho^{-1},\phi_{0}) = r_{i} \phi_{i} = r_{i} \phi_{0} - r_{i} \arcsin ( \frac{r_{i} \rho^{-1}}{2} ) \;.
