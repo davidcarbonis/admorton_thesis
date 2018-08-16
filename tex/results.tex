@@ -57,7 +57,8 @@ where $\hat{\theta_{\mu}}$ refers to the maximum likelihood estimators of $\thet
 $\hat{\mu}$ and $\hat{\theta}$ correspond to the global maximum of the likelihood. 
 By definition $\hat{\mu}$ cannot take negative values as physics defines the signal rate as positive, and the constraint $\hat{\mu} < \mu$ is applied to ensure a one-sided confidence interval.
 
-Using $q_{\mu}$, the the probability distribution functions for the \emph{s+b} and \emph{b-only} hypotheses for a given signal strength can be constructed using \emph{pseudodata} generated using toy MC.
+Using $q_{\mu}$, the the probability distribution functions for the \emph{s+b} and \emph{b-only} hypotheses for a given signal strength can be constructed using \emph{pseudodata} generated using toy MC for the expected outcomes of the measurement made.
+For the observed outcome of the measurement, the pseudodata used for the \emph{s+b} probability distribution functions is replaced with the actual data.
 From these probability distribution functions, the probability values for the s+b and b-only hypotheses can be defined as equations~\ref{eq:pmu} and~\ref{eq:1-pb}.
 
 \begin{equation}
@@ -77,12 +78,8 @@ CL_{S} (\mu) = \frac{ p_{\mu} }{ 1 - p_{b} }\;
 \label{eq:CLs}
 \end{equation}
 
-If for a given $\mu$, $CL_{S} < \alpha$, 
-Therefore, using the upper limit for a given Confidence Limit (CL) $(1 - \alpha)$ can be given 
-The  
-Therefore for the 95\% CL upper limit for $\mu$ is given when $CL_{S} < 0.05$.
-
-Therefore 
+If for a given $\mu$, $CL_{S} < \alpha$, then it is said that the signal process in question is excluded with a $(1 - \alpha)$ Confidence Level (CL).
+Therefore, as the 95\% CL upper limit is used in this search, the limit is determined by altering $\mu$  until $CL_{S} = 0.05$.
 
 %%%%
 The \emph{Asymptotic} CL$_{s}$ method was used in order to reduce computing time as the number of expected events was sufficiently large.
