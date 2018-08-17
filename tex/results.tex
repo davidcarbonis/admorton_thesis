@@ -1,6 +1,8 @@
 \chapter{Results}\label{chapter:results}
-\editComment{Do intro}
-Following the production of the BDT discriminator shapes for data and the simulated samples and their shape systematic uncertainties described in Chapter~\refchapter:bkg}, a simultaneous fit of these shapes was performed and evaluated to measure the cross section of the signal process and its upper limit and the significance of the result.
+Following providing the multivariate analysis technique described in Chapter~\ref{sec:mvas} with the simulated samples, and their systematic variations, and data, the resultant set of BDT discriminator distributions can be used to perform a measurement.
+
+The following chapter describes the statistical methodology used to evaluate these distributions and produce a measurement of the cross section and the upper limit for the signal process and the both the expected and observed significances of this measurement.
+Following a discussion of the impact that the systematic uncertainties have on the fitted results, the result presented is compared with the results made for the fully leptonic final state of tZq.
 
 \section{Statistical Methodology}\label{sec:statisticalModel}
 The Higgs Analysis Combined Limit (\combine) tool~\cite{Combine} tool, a framework based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}, was used to perform a binned Maximum Likelihood Fit (MLF) to evaluate measurement made using the $CL_{S}$ method~\cite{CMS-NOTE-2011-005,Khachatryan:2014jba,Cowan:2010js}.
@@ -81,29 +83,11 @@ CL_{S} (\mu) = \frac{ p_{\mu} }{ 1 - p_{b} }\;
 If for a given $\mu$, $CL_{S} < \alpha$, then it is said that the signal process in question is excluded with a $(1 - \alpha)$ Confidence Level (CL).
 Therefore, as the 95\% CL upper limit is used in this search, the limit is determined by altering $\mu$  until $CL_{S} = 0.05$.
 
-%%%%
-The \emph{Asymptotic} CL$_{s}$ method was used in order to reduce computing time as the number of expected events was sufficiently large.
-This method uses one representative dataset, known as the \emph{Asimov dataset}, in lieu of an ensemble of toy MC samples.
+\subsection{Asymptotic CL$_{s}$ method}\label{subsec:asymptoticCLS}
+Instead of using an ensemble of toy MC samples to generate the pseudodata, one representative dataset, known as the \emph{Asimov dataset}, was used.
+This method, known as the \emph{asymptotic} CL$_{s}$ method, can be used was the number of expected events is sufficiently large and typically reduces the amount of computing time required.
 The Asimov dataset is defined as being constructed such that all observable quantities are equal to their expectation values.
-A full description of this methodology is given in~\cite{Cowan:2010js}.
-
-\section{Post-Fit Impact of the Systematic Uncertainties}\label{sec:uncertainitiesImpact}
-The effect of each of the sources of systematic uncertainty following the fit is considered in terms of the pull ($\frac{ \hat{\theta} - \theta_{0} }{\Delta \theta}$) and the postfit impact of varying the sources of uncertainty by $\pm 1 \sigma$ are shown in figure~\ref{fig:systematicsPull}.
-
-The uncertainty associated with the value of the luminosity used has the greatest impact on the 
-While the JER 
-The rest of the experimental uncertainties 
- 
-\editComment{Update shortly}
-\editComment{Remark on the lumi, jer are the largest uncerts and how the rest of the experimental uncerts are considerably smaller}
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.97\textwidth]{figs/results/systematicsImpact.pdf}
-\caption{The impact of each of the systematic uncertainties considered on the measurement made.}
-\label{fig:systematicsPull}
-\end{center}
-\end{figure}
+A full description of the asymptotic approximation to the CL$_{s}$ method is given in~\cite{Cowan:2010js}.
 
 \section{Statistical Analysis Results}
 \editComment{UPDATE BEFORE SUBMISSION}
@@ -129,15 +113,35 @@ The observed signal strengths, measured cross sections, and corresponding signif
 \end{table}
 
 At the time of writing this thesis, discussions were being undertaken on how best to take this search forward.
-The two options under consideration were presenting it as a standalone search or a combination with the trilepton search following the inclusion of data collected by the CMS detector during 2017.
-As such, while the result presented here is not a final result, an updated result is intended presented in a future CMS publication in the near future.
+Given that the search is currently statistically limited, as discussed in Chapter~\ref{sec:uncertainitiesImpact}, the two options under consideration involve the including the 2017 dataset and either presenting the search as a combination result with the trilepton search or on its own.
+Therefore, while the result presented here is not a final result, it is intended to form part of a result to be presented in a future CMS publication.
+
+\section{Post-Fit Impact of the Systematic Uncertainties}\label{sec:uncertainitiesImpact}
+The impact of each of the sources of systematic uncertainty on the signal strength modifier $\mu$ is shown shown in figure~\ref{fig:systematicsPull}, where the left hand side of the plot illustrates the nuisance parameter residuals and the right hand side the impact of varying a nuisance parameter to its $\pm \sigma$ post-fit values has on the $\mu$.
+
+Given the background dominated nature of this search, it is not too surprising that the uncertainty on the luminosity has the single largest impact on $\mu$.
+
+Requiring variables constructed from the multiple jets in the final state, such as $m_{top}$, increases the sensitivity of these parameters to the resolution of the HCAL.
+
+The impact of the other experimental uncertainties are either smaller than or of the same scale as the least impactful theoretical uncertainties.
+The uncertainties in the matching of the ME and PS 
+ 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.97\textwidth]{figs/results/systematicsImpact.pdf}
+\caption{The impact of each of the systematic uncertainties considered for the measurement made. The left hand side of the plot shows the residuals of the nuisance parameters, where $\theta$ and $\theta_{0}$ are the post-fit and pre-fit values of the nuisance parameter and $\Delta_{\theta}$ is the pre-fit uncertainty. The right hand side of the plot illustrates the shift in the signal strength parameter induced as a nuisance parameter is fixed and brought to its $\pm \sigma$ post-fit values (with the other parameters profiled as normal).}
+\label{fig:systematicsPull}
+\end{center}
+\end{figure}
+
 
 \section{Discussion of other searches for tZq at the Large Hadron Collider}
 The search for the dilepton final state of a singly produced top in association with a Z boson presented in this thesis is the first one that has been undertaken at the LHC.
 As such while these results cannot be compared against any previous or competing results, searches for tZq have been made for the trilepton final state at $\sqrt{s} = 8 \TeV and 13 \Tev$.
 
 Following the trilepton tZq search at $\sqrt{s} = 8 \TeV$ by the CMS collaboration which reported a significance of 2.9 standard deviations ~\cite{Sirunyan:2017kkr}, at $\sqrt{s} = 13 \TeV$ both the ATLAS and CMS collaborations  have reported significances in excess of 3.0 standard deviations, 4.2 and 3.7 respectively~\cite{Aaboud:2017ylb,Sirunyan:2017nbr}.
-Despite the dilepton final state having a larger production cross section than the fully leptonic final state, the similarity of the final state topology to those of significantly larger backgrounds limits the ability to observe it.
+Despite the dilepton final state having a larger production cross section than the fully leptonic final state, the background dominated nature of the final state's topology significantly limits the ability to observe the process.
 
-Therefore, as the search  is currently statistically limited, it is anticipated that including data collected by the CMS experiment during 2017 could allow for a significance close to or in excess of 3.0 standard deviations to be observed.
+Therefore, as the search is currently statistically limited, it is anticipated that including data collected by the CMS experiment during 2017 could allow for a significance close to or in excess of 3.0 standard deviations to be observed.
 Even if additional statistics isn't sufficient for an observation to be made of the dilepton final state, when combined with the trilepton final state result it should be possible to measure the process with a 5.0 standard deviations significance.
