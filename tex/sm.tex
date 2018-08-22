@@ -1,39 +1,29 @@
 \chapter{Theory}\label{chapter:theory}
 \section{The Standard Model}\label{sec:sm}
-The Standard Model (SM) of particle physics is a theory which describes all the known elementary particles and their interactions with the weak, strong, and electromagnetic forces through a renormalisable Quantum Field Theory (QFT).
+The Standard Model (SM) of particle physics is a theory which describes all the known elementary particles and their interactions with the weak, strong, and electromagnetic forces.
 While the SM is not a complete description of nature, the theory has made incredibly accurate predictions with only a handful of small deviations from it being observed.
 
 This chapter introduces and briefly describes the theoretical framework of the SM and the physics of top quark.
 Throughout this thesis \emph{natural units} where the fundamental constants $c$, $\hbar$ and $k_{B}$ are equal to unity, and Einstein's summation convention are used.
 
 \subsection{Fundamental Particles}\label{subsec:particles}
-
-All matter is described as spin-$\frac{1}{2}$ particles known as fermions and the fundamental forces are mediated by spin-$1$ gauge bosons.
-The spin-$0$ Higgs boson arises as a consequence of the electroweak symmetry breaking as a means to imbue the fermions and Weak gauge bosons with mass.
+The SM describes all matter as spin-$\frac{1}{2}$ particles known as fermions and the fundamental forces are mediated by spin-$1$ gauge bosons.
+The spin-$0$ Higgs boson arises as a consequence of the electroweak symmetry breaking as a means to imbue the fermions and weak force gauge bosons with mass.
 
 Matter consists of six quarks, particles which interact through the strong, electromagnetic and weak forces, and six leptons, particles which experience the electromagnetic and weak forces~\cite{LagrangiansSM}.
-Each fermion has an associated anti-matter equivalent which has an identical mass but is oppositely charge.
+Each fermion has an associated anti-matter equivalent which has an identical mass but opposite charge.
 Both types of fermion are subdivided into three ``generations'' of particles where each subsequent generation of particles is identical, except for their quantum number and mass~\cite{ElectroweakStrong}.
+Table~\ref{tab:fermions} lists the charges, weak isospins and masses of the quarks and leptons for each of the three generations.
 
+The ``up-type'' and ``down-type'' quarks of each generation have both an electrical charge of $\frac{+2}{3}$ and $\frac{-1}{3}$  respectively and a \emph{colour charge} (or anti-colour charge) of red, blue or green.
+As the phenomena of \emph{colour confinement} only allows for colourless states, quarks form composite particles called hadrons.
+Typically hadrons are composed of a quark anti-quark pair, collectively termed mesons, or of three quarks , referred to as baryons.
+Exotic hadrons formed of larger groupings of quarks can be also formed, with both tetraquark and pentaquark states being observed and discovered, respectively, by the LHCb detector~\cite{Aaij:2014jqa,Aaij:2015tga}.
 
-The ``up-type'' and ``down-type'' quarks of each generation have both an electrical charge of $\frac{+2}{3}$ and $\frac{-1}{3}$  respectively and a colour charge
-
-
-The first generation of quarks is comprised of the up and down quarks, which form the protons and neutrons that are found in conventional atomic matter. 
-
-
-
-Quarks are the fundamental particles of which hadrons, composite particles formed of quarks, are formed. 
-Hadrons are either mesons which are formed of two quarks or baryons which are formed of three quarks. 
-Exotic hadrons formed of larger groupings (four or more) of quarks have been hypothesised, but only one resonance, namely a tetraquark candidate whose quark content still has to be confirmed, has been observed\cite{PhysRevLett.112.222002}. 
-The second and third generations are each subsequently more massive than the first generation and comprise of the strange and charm quarks and top and bottom quarks respectively. 
-
-
-
-Each charged lepton has an associated neutral, near massless, lepton known as a neutrino. 
-As neutrinos have no associated electrical charge, their only interaction with other particles in the SM is through the weak force. 
-As with the quarks, each subsequent generation's particles are more massive than the last. 
-
+Each generation of leptons consist of a charged lepton which interacts through the electromagnetic and weak forces, and a corresponding neutral near massless lepton, known as a neutrino, which interacts solely through the weak force.
+As with the quarks, the charged lepton of each subsequent generation is more massive than the last.
+Initially the SM assumed that neutrinos were massless, but the discovery of neutrino flavour oscillation implies that they have a non-zero mass. 
+It is currently unknown whether the hierarchy of the neutrino mass eigenstates is analogous to that of the charged lepton or otherwise~\cite{Nath:2018rqn}.
 
 \begin{table}[htbp]
 \topcaption {
@@ -64,12 +54,11 @@ The Standard Model fermions and their properties.
  \end{tabular}}
 \end{table}
 
-In the SM there are five gauge bosons, each of which is an integer spin particle that mediate the weak, strong and electromagnetic forces. 
-The massless photon,$\gamma$) and the massive neutral $Z^0$ boson mediate the neutral electroweak 
-
- mediates the electromagnetic force, the charged $W^\pm$ and neutral $Z^0$ boson mediates the weak force and eight types of gluon mediate the Strong Force\cite{LagrangiansSM}. 
-
-
+The SM contains five integer spin gauge bosons, shown in table~\ref{tab:bosons} along with their corresponding masses, charge, and weak isospins.
+The four spin-$1$ vector bosons mediate the electromagnetic, weak and strong forces.
+The massless photon, $\gamma$, mediates the electromagnetic force and the massive neutral $Z^0$ and charged  $W^\pm$ bosons mediate the weak force.
+Massless gluons mediate the strong force and have one of eight colour states~\cite{LagrangiansSM}. 
+The spin-$0$ Higgs boson arises from the breaking of the electroweak symmetry and accounts for fundamental particles acquire mass.
 
 \begin{table}[htbp]
 \topcaption {
@@ -92,25 +81,37 @@ The fundamental forces of nature and the SM gauge bosons which mediate them.
    Gluon & $g$ & $0$ & $0$ & $r \overline{g}$, $r \overline{b}, g \overline{r}, g \overline{b}, b \overline{r}, b \overline{g} , \frac{1}{\sqrt{2}}(r \overline{r} - g \overline{g}), \frac{1}{\sqrt{6}}(r \overline{r} + g \overline{g} - 2 b \overline{b})$ & $0$ \\
    \hline   
  \end{tabular}}
-\end{table}
-
-
-
-
-
+\end{table}	
 
 \subsection{Gauge Symmetries}\label{subsec:gaugeSymmetries}
+The SM is a Quantum Field Theory (QFT) where 
+
+
+based on the $SU(3)_{C} \times SU(2)_{L} \times U(1)_{Y}$ symmetry group where the interactions of the fermonic fields 
+Lagrangian formalism
+
+
 Symmetries are a fundamental component of any physical theory.
 
-The idea 
+The SM Lagrangian density is constructed of four terms:
+
+\begin{equation}
+\mathcal{L}_{SM} = \mathcal{L}_{Gauge} + \mathcal{Fermion} + \mathcal{Higgs} + \mathcal{Yukawa}
+\end{equation}
+
+where $\mathcal{L}_{Gauge}$ describes the spin-$1$ gauge boson fields that arise from imposing 
+
+required to keep the Lagrangian invariant
+
+
+, $\mathcal{Fermion}$ describes the fermion fields, $\mathcal{Higgs}$ describes the scalar Higgs field and $\mathcal{Yukawa}$ describes the interactions between the Higgs field and fermions and gauge bosons.
 
 NOETHER
 
 Impact of QM
 
-The SM is a renormalisable Quantum Field Theory (QFT) based on the $SU(3)\times SU(2) \times U(1)$ symmetry group~\cite{LagrangiansSM}.
+The SM is a renormalisable Quantum Field Theory (QFT) based on the $SU(3)\times SU(2)_{L} \times U(1)$ symmetry group~\cite{LagrangiansSM}.
 
-QFTs treat matter as the excitation of fermionic fields
 
  which permeate the Universe. 
 The Lagrangian formalisation, used in QFTs to describe the dynamics of a system, has the Lagrangian ``$L$'' described as the difference between the kinetic and potential energy of the system\cite{LagrangiansSM}. 
@@ -125,6 +126,10 @@ With the general form of the Lagrangian Density being defined as:
 \begin{equation}
 \mathcal{L} = \mathcal{L} ( \varphi_{i}, \partial _{\mu} \varphi_{i} )
 \end{equation}
+
+
+where 
+
 
 Where $\partial _{\mu}\varphi_{i} \equiv \partial \varphi / (\partial x^{\mu} )$ is the four-gradient of the field $\phi$ and where the i's are implicitly summed according to Einstein's summation convention\cite{ElectroweakStrong}.
 
@@ -203,6 +208,8 @@ The range and strength of the Weak force is considerably less than that of the E
 
 CP VIOLATION!	
 
+CKM
+
 \subsection{Electroweak Unification}\label{subsec:electroweak}
 
 Both the Electromagnetic and Weak interactions can be described as a single interaction: the Electroweak interaction. 
@@ -221,10 +228,16 @@ Searches to determine whether this is the SM Higgs or not (several theories incl
 %%%Spontaneous symmetry breaking
 
 Originally, in order to ensure that the SM Lagrangian remained invariant under weak isospin rotations, the weak force's gauge bosons were required to be massless.
-The lack of evidence for such massless gauge bosons and the subsequent 
+The lack of evidence for such massless gauge bosons and the subsequent discovery of massive weak gauge bosons however, 
 
 \subsection{Quantum Chromodynamics}\label{subsec:QED}
-Quantum Chromodynamics (QCD) is the theory which describes the strong force interactions between quarks and the eight massless gluons.
+The strong force and its interactions with quarks is described by the gauge theory known as Quantum Chromodynamics (QCD).
+QCD describes these interactions through eight massless spin-$1$ gluons 
+
+
+As QCD is based on the $SU(3)_{colour}$ group, it is non-Abelian, allowing
+Quantum Chromodynamics (QCD) is the gauge theory which describes the strong force interactions between quarks and the eight massless gluons.
+These interactions are 
 
  with the non-Abelian 
 
@@ -239,6 +252,10 @@ A phenomena unique to the strong interaction is that the effective strong intera
 In other words, the constant $\alpha_{s}$ increases as the separation between colour charged particles increases. 
 This ``asymptotic freedom'' is caused by the virtual quark-anti quark sea containing virtual gluons which increases the force between quarks for greater separations, in contrast to the screening effect of virtual electrically neutral photons in electromagnetic interactions. 
 The increase in $\alpha_{s}$ with the separation between colour charged particles means all particles must be ``colourless'', with the consequence that quarks are confined to exist in bound states\cite{ElectroweakStrong}. 
+
+
+
+
 If enough energy is put into a bound state, with the intent of breaking ``colour confinement'', the energy of the colour fields between the coloured particles will increase until it is more energetically favourable for quark pair production to occur than to increase the separation between the original two quarks\cite{Griffiths}. 
 
 
