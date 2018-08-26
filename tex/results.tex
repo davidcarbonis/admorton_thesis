@@ -20,7 +20,7 @@ $\mu$, as given in equation~\ref{eq:signalModifier} where $\sigma_{obs}$ is the 
 The uncertainties associated with the simulated predictions of the signal and background processes are accounted for by the inclusion of nuisance parameters $\theta$, such that $s_{i} = s_{i} (\theta)$ and $b_{i} = b_{i} (\theta)$.
 
 \begin{equation}
-\mu = \frac{\sigma_{obs}}{\sigma_{s}  \;
+\mu = \frac{\sigma_{obs}}{\sigma_{s}}  \;
 \label{eq:signalModifier}
 \end{equation}
 
@@ -40,7 +40,7 @@ Therefore, the likelihood for the entire dataset can be expressed the product of
 
 \begin{equation}
 \mathcal{L} ( n_{i} | \mu , \theta ) = 
-\prod\limits_{i=1}^{\N} _{i} \mathcal{P} \big( n_{i} | \mu s_{i}(\theta) + b_{i}(\theta) \big) \rho ( \theta | \tilde{\theta} ) \;
+\prod_{i=1}^{N} \mathcal{P} \big( n_{i} | \mu s_{i}(\theta) + b_{i}(\theta) \big) \rho ( \theta | \tilde{\theta} ) \;
 \label{eq:poissonLikelihood}
 \end{equation}
 
@@ -144,11 +144,10 @@ Despite the large conservative rate uncertainty ascribed to the non-prompt lepto
 
 \section{Discussion of other searches for tZq at the Large Hadron Collider}
 The search for the dilepton final state of a singly produced top in association with a Z boson presented in this thesis is the first one that has been undertaken at the LHC.
-Therefore, while this result cannot be directly compared against any previous or competing results, its ability to observe this process can be compared against the searches performed for the fully leptonic	final state at $\sqrt{s} = 8 \TeV and 13 \Tev$.
+Therefore, while this result cannot be directly compared against any previous or competing results, its ability to observe this process can be compared against the searches performed for the fully leptonic	final state at $\sqrt{s} = 8 \TeV$ and $13 \TeV$.
 
-Following the first search made for the tZq trilepton final state at $\sqrt{s} = 8 \TeV$ by the CMS collaboration reporting a significance of 2.9 standard deviations~\cite{Sirunyan:2017kkr}, both the ATLAS and CMS collaborations have performed searches at $\sqrt{s} = 13 \TeV$.
-Both the ATLAS and CMS searches at at $\sqrt{s} = 13 \TeV$ have observed this process with reported signifiances of 4.2 and 3.7 standard deviations respectively~\cite{Aaboud:2017ylb,Sirunyan:2017nbr}.
-
+The first search made for the tZq trilepton final state at $\sqrt{s} = 8 \TeV$ was made by the CMS collaboration which reported a significance of 2.9 standard deviations~\cite{Sirunyan:2017kkr}.
+Following this, both the ATLAS and CMS collaborations have performed searches at $\sqrt{s} = 13 \TeV$, observing the process with reported signifiances of 4.2 and 3.7 standard deviations respectively~\cite{Aaboud:2017ylb,Sirunyan:2017nbr}.
 
 While all of the 
 While both of the $\sqrt{s} = 13 \TeV$ trilepton final state analyses and the dilepton final state analysis presented all use a binned maximum likelihood fit of a multivariate discriminant, the analysis strategies they all employ differ.
