@@ -270,11 +270,9 @@ While the discovery of the tau lepton in 1975 and the bottom quark in 1977~\cite
 In 1995 the top quark was observed at the Tevatron at the Fermi National Accelerator Laboratory by the CDF and D\O experiments~\cite{Abe:1995hr,D0:1995jca}.
 
 The top quark's mass, $m_{top}$, of $173.44 \pm 0.51 \pm 0.71 \GeV$ makes it the most massive known fundamental particle and is responsible for imbuing it with properties which have no equivalent for the other five quarks~\cite{Patrignani:2016xqp}.
-$m_{top}$ is greater than the mass of a W boson, making it capable of decaying into an on-shell W boson and a down-type quark and giving it a much short lifetime than the other quarks.
-
-The probability of the top decaying into a bottom quark and W boson has been measured to be ... ~\cite{}.
-
-This lifespan of $5 \times 10^{-25}$ seconds is several orders of magnitude smaller than the characteristic timescale of the strong interaction, which results in the top quark decaying before it can hadronise. 
+$m_{top}$ is greater than the mass of a W boson, making it capable of decaying into an on-shell W boson and a down-type quark (almost exclusive a bottom quark) and giving it a much short lifetime than the other quarks.
+The top quark's lifespan of $5 \times 10^{-25}$ seconds is several orders of magnitude smaller than the characteristic timescale of the strong interaction.
+This results in the top quark being the only quark which decays before it can hadronise. 
 As such, the top quark provides a unique probe into the nature of a ``bare'' quark, such as its spin and polarisation, through studying the angular distributions of its decay products~\cite{Khachatryan:2015dzz}.
 This also makes it possible to determine the helicity of the W boson involved in the decay.
 
@@ -298,6 +296,8 @@ These differences in production rates result from the nature of the particles be
 \label{fig:feyn_ttbar}
 \end{center}
 \end{figure}
+
+\editComment{Cross sections table} 
 
 Top quark pair production can also occur in association with a vector boson, albeit at relatively small cross sections compared to both \ttbar and singly produced top quarks.
 Despite their cross sections, these channels are important backgrounds which require detailed understanding in order to be able to probe for new physics with similar or smaller cross sections, such as \ttH or tZq~\cite{Khachatryan:2014ewa}.
@@ -325,6 +325,8 @@ As each of these production channels have differing initial and final states the
 \label{fig:singleTopDiagrams}
 \end{figure}
 
+\editComment{Cross sections table} 
+
 s-channel production, as shown in figure~\ref{fig:singleTopDiagrams}(a), is the quark anti-quark annihilation into an off-shell W boson which decays into a top and anti-bottom quark.
 This process has the lowest single top production cross section at the LHC given the virtuality of the W boson required to produce the top quark and need for the anti-quark to originate from a sea quark.
 Given its low cross section and a final state topology similar to larger background processes, the s-channel has yet to be observed at the LHC~\cite{Khachatryan:2016ewo}.
@@ -340,25 +342,38 @@ The discovery of the tW-channel was particularly anticipated as the presence of 
 \subsection{Single top production in association with a Z boson}\label{subsec:tZqTheory}
 With the high centre-of-mass energies and integrated luminosities available at the LHC, it has become possible to not only undertake precision studies of singly and pair produced top quarks, but also to probe the top quark and electroweak sector.
 Such measurements provide not only the ability to perform precision tests of SM predictions, but are also sensitive to new physics such as new electroweak bosons, new fermions, and Flavour Changing Neutral Currents (FCNC).
-At first glance, given the large \ttbar production cross section,
 
-the natural starting point to probe the top-electroweak sector might involve the study of pair produced top quarks in association with an electroweak boson, given the .
-When considering the topologies of the final states for both pair and singly produced top quarks in association with an electroweak boson however, things are not as straightforward.
+One may initially assume that given the larger production cross section for \ttbar compared to single top processes, that it would be considerably more difficult to probe the top-electroweak sector through single top quark production processes.
+The top quark and W boson coupling however, can only be probed through the single top tW-channel given that the W boson couples to the initial state quarks for \ttW, as illustrated in figure~\ref{fig:feyn_ttV}.
+While tH is much more difficult to access than \ttH due to the destructive interference between the tH and HW vertices~\cite{Maltoni:2001hu}, this is not the case for the \ttZ and tZ.
+Despite the relative strength of the strong coupling, the large number of particles present in the \ttZ final state suppresses its production to the extent that \ttZ has a lower production cross section than the combined tZ and \overline{\text{t}}Z cross section~\cite{Campbell:2013yla}.
 
-Probing the top quark and W boson coupling can only be done with single produced top quarks, given that for \ttW the W boson couples to the initial state quarks, as illustrated in figure~\ref{fig:feyn_ttV}.
- the top quark couplings to the photon, Higgs and Z bosons can be accessed through singly and pair produced top quarks.
+\begin{figure}[h]
+\centering
+\includegraphics{figs/top-physics/TplusZtot.png}
+\caption{The next-to-leading order cross section for single top and top pair prodcution with and without an associated Z boson as a function of the centre-of-energy for proton-proton collisions at the LHC~\cite{Campbell:2013yla}.
+}
+\label{fig:topCrossSections}
+\end{figure}
+
+CMS has made measurements in excess of five standard deviations for \ttH, \ttW, and \ttZ~\cite{Sirunyan:2017uzs,Sirunyan:2018hoz}, all of which were consistent with the SM.
+Only the tW-channel has been discovered by CMS to date, 
+discovery
+tH - CMS:2018jsz
+
+Given that CMS was capable of observing \ttZ was using Run-I data~\cite{Khachatryan:2014ewa}, a search for tZq was undertaken by CMS which made a measurement with a siginifiance of 2.9 standard deviations~\cite{Sirunyan:2017kkr}. 
+
 
 \begin{figure}[p]
 \centering
-\includegraphics[width=0.48\textwidth]{figs/top-physics/tZq_feyn1.jpg}
-\includegraphics[width=0.48\textwidth]{figs/top-physics/tZq_feyn2.jpg}
-\caption{Leading order \ttZ (left) and \ttW (right) production diagrams~\cite{Khachatryan:2014ewa}. Unlike \ttZ and \ttH processes, the gauge boson in \ttW is not radiated from the top quark, but from the initial state quarks.}
+\includegraphics[width=\textwidth]{figs/top-physics/CMS-TOP-17-005_Figure_001.pdf}
+\caption{Leading order \ttW (left) and \ttZ (right) production diagrams~\cite{Sirunyan:2017uzs}. Unlike for \ttZ and \ttH, the gauge boson in \ttW is not radiated from the top quark, but from the initial state quarks.}
 \label{fig:deyn_ttV}
 \end{figure}
 
-With the high centre-of-mass proton-proton collision energies accessible at the LHC,
-The production of a single top quark in association with a $\text{Z}^0$ boson with an additional jet, known as \emph{tZq}, is a unique probe of the SM. 
+The analysis presented in this thesis is the search for the a single top quark produced in association with a $\text{Z}^0$ boson with an additional jet, known as \emph{tZq}.
 
+tZq 
 
 Of these processes, the analysis presented in this thesis is the search for a single top quark produced in the t-channel in association 
 tZq is a single top production in the t-channel, where a $\text{Z}^0$ boson is radiated off one of the quark legs, as shown in figures~\ref{fig:feyn_tZq}(a)-(e), or from the exchanged W boson, as shown in figure~\ref{fig:feyn_tZq}(f).
@@ -387,51 +402,7 @@ Sirunyan:2017nbr
 The presence of both the top quark coupling to the Z boson and the WWZ coupling makes this process a unique precision probe of the top quark and the electroweak sector.
 Additionally, tZq is not only a background other rare SM processes (such as tH), but also one to BSM physics with similar signatures such as Flavour Changing Neutral Currents (FCNC) where the top decays directly into a Z boson~\cite{AguilarSaavedra:2004wm}.	
 
-In contrast, the \ttH production cross section is of a similar order of magnitude to \ttZ while tH is  suppressed due to the destructive interference between the tH and HW vertices~\cite{Maltoni:2001hu}.
 
-
-
-
-At the LHC, for proton-proton collisions at $\sqrt{s} = 13 \TeV$, the 
-
-%At the LHC, for proton-proton collisions at 8 TeV the predicted cross-section at next-to-leading order (NLO) for SM tZ production is~\cite{Campbell:2013yla}:
-%
-%\begin{equation}
-%\sigma(tZ)= 160_{-2}^{+7} (scale)_{-11}^{+11} (PDF) fb \;.
-%\sigma(\bar{t}Z)= 76_{-1}^{+4} (scale)_{-5}^{+5} (PDF) fb \;.
-%\end{equation}
-%
-%This leads to an overall cross-section of $236_{-16}^{+19}$ fb. 
-%These cross-sections were determined using the CTEQ6M set of Parton Distribution Functions (PDF)~\cite{Pumplin:2002vw}. 
-%The CMS collaboration have measured the $\ttbar$Z cross-section to be\cite{Khachatryan:2014ewa}
-%
-%\begin{equation}
-%\sigma (\ttbar Z)= 200_{-70}^{+80} (statistics)_{-30}^{+40} (systematics) fb \;.
-%\end{equation}
-
-How does xc change with CoM?
-
-\begin{figure}[h]
-\centering
-\includegraphics{figs/sm/tzq/TplusZtot.png}
-\caption{The next-to-leading order cross section for single top and top pair prodcution with and without an associated Z boson.~\cite{Campbell:2013yla}.
-}
-\label{fig:topCrossSections}
-\end{figure}
-
-%\begin{figure}[h]
-%\centering
-%\includegraphics{figs/sm/tzq/TplusZtot.pdf}
-%\caption{The next-to-leading order cross section for single top and top pair prodcution with and without an associated Z boson.~\cite{Campbell:2013yla}.
-%}
-%\label{fig:topCrossSections}
-%\end{figure}
-
-
-The $\bar{t}$Z cross-section is roughly half that of the tZ cross-section due to the ratio of the up quark PDF to the down quark PDF is circa 0.5 in the x range typical for these processes\cite{Campbell:2013yla}. 
-The cross-section between $\ttbar$Z and the sum of the tZ and $\bar{t}$Z cross-sections is comparable as whilst single top + Z processes are electroweak interactions (in contrast to the QCD-induced top quark pair production) they have fewer daughters in the final state and the Z boson condition for $\ttbar$Z considerably reduces the rate~\cite{Campbell:2013yla}.
-
-As such, a search for tZ processes should be achievable during CMS Run-1 data. This is supported by CMS’ Run-I results for $\ttbar$Z~\cite{Khachatryan:2014ewa}. 
 
 
 
