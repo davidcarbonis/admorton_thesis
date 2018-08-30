@@ -1,25 +1,27 @@
 \chapter{Calculation of the track derivatives used in Linearised $\chi^{2}$ Track Fitter}\label{app:chi2}
-\textit{The calculation of the track residuals described below was originally described in an internal CMS Detector Note~\cite{CMS_DN-14-043}.
-The  and is reproduced and expanded upon here for completeness.}
+\textit{The derivation of the track derivatives that form the matrix elements of \emph{D} and \emph{M} in equations~\ref{eq:chi1}~--~\ref{eq:chi4} for the linearised $\chi^{2}$ track fit described in Chapter~\ref{tk-upgrade} was originally described in an internal CMS Detector Note~\cite{CMS_DN-14-043}.
+This appendix describes how these track derivatives were calculated.
+}
 
-The track residuals which form the elements of the matrices \emph{D} and \emph{M} in Eqns.~\ref{eq:chi1}~--~\ref{eq:chi4}, from~\ref{subsubsec:chi2maths}, require tabulating into a lookup table in order to avoid the need to repeatedly calculating them when required.
-
-By considering the $\phi$ and $z$ coordinates of a track's trajectory, as a function of r, 
-
-\begin{equation}
-\phi_{i} =  \phi_{0} - \arcsin ( \frac{r_{i} \rho^{-1}}{2} ) \;.
-z_{i} = z_{i} = z_{0} + 2 \rho t \arcsin (\frac{r_{i}}{2 \rho}) \;.
-\label{eq:projections}
-\end{equation}
-
-the residuals for both the barrel layer and endcap disk hits can be arrived at and approximated to first order.
+%
+%By considering the $\phi$ and $z$ coordinates of a track's trajectory, as a function of r, 
+%
+%\begin{equation}
+%\phi_{i} =  \phi_{0} - \arcsin ( \frac{r_{i} \rho^{-1}}{2} ) \;.
+%z_{i} = z_{i} = z_{0} + 2 \rho t \arcsin (\frac{r_{i}}{2 \rho}) \;.
+%\label{eq:projections}
+%\end{equation}
+%
+%the residuals for both the barrel layer and endcap disk hits can be arrived at and approximated to first order.
 
 \section{Barrel Layer Hits}
 Considering that  
 
+Wtuh 
+
 \begin{equation}
-s_{i}(\rho^{-1},\phi_{0}) = r_{i} \phi_{i} = r_{i} \phi_{0} - r_{i} \arcsin ( \frac{r_{i} \rho^{-1}}{2} ) \;.
-s_{i}(t,z_{0}) = z_{i} = z_{0} + 2 \rho t \arcsin (\frac{r_{i}}{2 \rho}) \;.
+f_{i}(\rho^{-1},\phi_{0}) = r_{i} \phi_{i} = r_{i} \phi_{0} - r_{i} \arcsin ( \frac{r_{i} \rho^{-1}}{2} ) \;
+f_{i}(t,z_{0}) = z_{i} = z_{0} + 2 \rho t \arcsin (\frac{r_{i}}{2 \rho}) \;
 \end{equation}
 
 \begin{equation}
@@ -45,6 +47,7 @@ s_{i}(t,z_{0}) = z_{i} = z_{0} + 2 \rho t \arcsin (\frac{r_{i}}{2 \rho}) \;.
 As these first order approximation of these residuals depend solely on the position of barrel layers, making the task of tabulating the possible values straightforward.
 
 \section{Endcap Disk Hits}
+The hits in the endcap disks are not 
 
 \begin{equation}
 \frac{\partial r}{\partial \rho^{-1}} = - 2 \rho^{2} sin \Big( \frac{\rho^{-1}}{2t} (z_{disk} - z_{0}) \Big) + \frac{z_{disk} - z_{0}}{\rho^{-1} t} cos \Big( \frac{\rho^{-1}}{2t} (z_{disk} - z_{0}) \Big) \;.

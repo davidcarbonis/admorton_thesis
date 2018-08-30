@@ -464,22 +464,23 @@ The event yields, and the uncertainties associated with them, following the full
 \end{table}
 
 \section{Experimental Blinding}\label{sec:blinding}
-Despite even the best intentions, there is the potential for an experiment to be inadvertently optimised based on previous observations~\cite{Roodman:2003rw}.
-In order to prevent any such unintentional biasing of the result, experiments are ``blinded'' so that the result is not known until optimisation based off simulation or data outside of the signal region has been completed.
+Despite even the best intentions, there is the potential experimental procedure to be inadvertently biased by previous observations~\cite{Roodman:2003rw}.
+In order to prevent this from happening, experiments are ``blinded'' so that the result is not known until the analysis has been optimised using simulation and/or data outside of the signal region.
 
-To this end a $\chi^{2}$-like variable in the two dimensional space of the reconstructed top quark and W boson masses was constructed, as defined in Equation~\ref{eq:blindingChi2}:
+For this analysis a $\chi^{2}$-like variable that depends on both the reconstructed top quark mass and the W boson mass is constructed, as follows:
 
 \begin{equation}\label{eq:blindingChi2}
    \chi^{2} = {\left(\frac{m_{\mathrm{jj+b}}-m_{\mathrm{t}}}{\sigma_{\mathrm{t}}}\right)}^{2} + {\left(\frac{m_{\rm jj}-m_{\rm W}}{\sigma_{\mathrm{W}}}\right)}^{2}
 \end{equation}
 
-where $m_{\rm jj}$ is the W boson mass reconstructed from the two candidate jets, $m_{\rm W}$ is the known W boson mass, $m_{\mathrm{jj+b}}$ is the top quark mass reconstructed from the leading b-jet and two jets associated with the W boson decay, $m_{\mathrm{t}}$ is the known top mass, and $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}})$ are the reconstruction resolution terms for the top quark and W boson masses.
-Both $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}}$ were determined by taking the standard deviation of the Gaussian fitted to the top quark and W boson mass peaks respectively and found to be $A$ and $B$ respectively.
+where $m_{\rm jj}$ is the W boson mass reconstructed from the two candidate jets, $m_{\rm W}$ is the known W boson mass, $m_{\mathrm{jj+b}}$ is the top quark mass reconstructed from the leading b-jet thus the two two jets associated with the W boson decay, $m_{\mathrm{t}}$ is the known top mass, and $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}})$ represent the mass resolution for the top quark and W boson respectively.
+Both $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}}$ were determined by taking the standard deviation of a Gaussian fitted to the corresponding reconstructed peaks respectively.
+They were found to be $A$ and $B$ respectively.
 
 \editComment{recall a more precise/sophisticated method was suggested? Add updated values}
 \editComment{Once updated values are added, add plots}
 
-Using the simulated samples, the blinded signal region and the \emph{side band} region were defined as the regions enclosed by $\chi^{2} < C$ and $D < \chi^{2} <E $ respectively.
+Using the simulated samples, the signal region and the \emph{side band} region were defined as the regions enclosed by $\chi^{2} < C$ and $D < \chi^{2} <E $ respectively.
 The choice of these cuts had to balance the need for:
 \begin{itemize}
 \item the blinded signal region was required contain the majority of the signal process with minimal background contamination.

@@ -1,6 +1,6 @@
 \chapter{Theory}\label{chapter:theory}
 \section{The Standard Model}\label{sec:sm}
-The Standard Model (SM) of particle physics is a theory which describes all the known elementary particles and their interactions with the weak, strong, and electromagnetic forces.
+The Standard Model (SM) of particle physics is a Quantum Field Theory (QFT) which describes all the known elementary particles and their interactions with the weak, strong, and electromagnetic forces.
 While the SM is not a complete description of nature, the theory has made incredibly accurate predictions with only a handful of small deviations from it being observed.
 
 This chapter introduces and briefly describes the theoretical framework of the SM, the physics of top quark and the shortcomings of the SM.
@@ -9,7 +9,7 @@ The second section of the chapter discusses the motivations and context of the s
 Throughout this thesis \emph{natural units} where the fundamental constants $c$, $\hbar$ and $k_{B}$ are equal to unity, and Einstein's summation convention are used.
 
 \subsection{Fundamental Particles}\label{subsec:particles}
-The SM describes all matter as spin-$\frac{1}{2}$ particles known as fermions and the fundamental forces are mediated by spin-$1$ gauge bosons.
+The SM describes all matter as spin-$\frac{1}{2}$ particles known as fermions which interact through the fundamental forces which are mediated by spin-$1$ gauge bosons.
 The spin-$0$ Higgs boson arises as a consequence of the electroweak symmetry breaking as a means to imbue the fermions and weak force gauge bosons with mass.
 
 Matter consists of six quarks, particles which interact through the strong, electromagnetic and weak forces, and six leptons, particles which experience the electromagnetic and weak forces~\cite{LagrangiansSM}.
@@ -18,8 +18,8 @@ Both types of fermion are subdivided into three ``generations'' of particles whe
 Table~\ref{tab:fermions} lists the charges, weak isospins and masses of the quarks and leptons for each of the three generations.
 
 The ``up-type'' and ``down-type'' quarks of each generation have both an electrical charge of $\frac{+2}{3}$ and $\frac{-1}{3}$  respectively and a \emph{colour charge} (or anti-colour charge) of red, blue or green.
-As the phenomena of \emph{colour confinement} only allows for colourless states, quarks form composite particles called hadrons.
-Typically hadrons are composed of a quark anti-quark pair, collectively termed mesons, or of three quarks , referred to as baryons.
+As the phenomena of \emph{colour confinement} (as described below in Chapter~\ref{subsec:QCD}) only allows for colourless states, quarks form composite particles called hadrons.
+Typically hadrons are composed of a quark anti-quark pair, collectively termed mesons, or of three quarks, referred to as baryons.
 Exotic hadrons formed of larger groupings of quarks can be also formed, with both tetraquark and pentaquark states being observed and discovered, respectively, by the LHCb detector~\cite{Aaij:2014jqa,Aaij:2015tga}.
 
 Each generation of leptons consist of a charged lepton which interacts through the electromagnetic and weak forces, and a corresponding neutral near massless lepton, known as a neutrino, which interacts solely through the weak force.
@@ -85,23 +85,14 @@ The fundamental forces of nature and the SM gauge bosons which mediate them.
  \end{tabular}}
 \end{table}	
 
-\subsection{Gauge Symmetries}\label{subsec:gaugeSymmetries}
-The SM is a renormalisable Quantum Field Theory (QFT) based on the $SU(3)\times SU(2)_{L} \times U(1)$ symmetry group~\cite{LagrangiansSM}.
+\subsection{The Standard Model Lagrangian and Gauge Symmetries}\label{subsec:gaugeSymmetries}
+As a QFT, the SM describes particles as excitations of fields whose interactions arise
 
-As a renormalisable Quantum Field Theory (QFT), the SM is ... expressed using the Lagrangian formalism~\cite{LagrangiansSM}.
-
-
-that is based on the $SU(3)_{C} \times SU(2)_{L} \times U(1)_{Y}$ symmetry group.
+dynamics typically described using the Lagrangian formalism~\cite{LagrangiansSM}. 
 
 
 
- where the interactions of the fermonic fields 
-Lagrangian formalism
-
-
-Symmetries are a fundamental component of any physical theory.
-
-The SM Lagrangian density is constructed of four terms:
+The SM Lagrangian Field Density is constructed of four terms:
 
 \begin{equation}
 \mathcal{L}_{SM} = \mathcal{L}_{Gauge} + \mathcal{Fermion} + \mathcal{Higgs} + \mathcal{Yukawa}
@@ -114,40 +105,54 @@ required to keep the Lagrangian invariant
 
 , $\mathcal{Fermion}$ describes the fermion fields, $\mathcal{Higgs}$ describes the scalar Higgs field and $\mathcal{Yukawa}$ describes the interactions between the Higgs field and fermions and gauge bosons.
 
-NOETHER
+that is based on the $SU(3)_{C} \times SU(2)_{L} \times U(1)_{Y}$ symmetry group.
 
-Impact of QM
+%The Lagrangian formalisation, used in QFTs to describe the dynamics of a system, has the Lagrangian ``$L$'' described as the difference between the kinetic and potential energy of the system\cite{LagrangiansSM}. 
+%QFTs usually make use of the Lagrangian Density ``$\mathcal{L}$'', defined as\cite{QFT}:
+%
+%\begin{equation}
+%L = \int \mathrm{d^{3}}x \mathcal{L}
+%\end{equation}
+%
+%With the general form of the Lagrangian Density being defined as:
+%
+%\begin{equation}
+%\mathcal{L} = \mathcal{L} ( \varphi_{i}, \partial _{\mu} \varphi_{i} )
+%\end{equation}
+%
+%
+%where 
+%
+%
+%Where $\partial _{\mu}\varphi_{i} \equiv \partial \varphi / (\partial x^{\mu} )$ is the four-gradient of the field $\phi$~\cite{ElectroweakStrong}.
+%
+%The Lagrangian acts upon a system, with all information pertaining to the system's quantum state being described by a wave function. 
+%The amplitude of the wave function can be interpreted as the probability amplitude from which a measurement of an observable physical quantity can be obtained\cite{Isham}. 
+
+%%% Symmetries
+The concept that the laws of physics are consistent for all observers, even if the measurements differ between observers, is a fundamental component of all modern physical theories. 
+Through  
+
+For every transformation which a system is invariant to, it is 
+invariance 
+The invariance of a theory  symmetries 
+If a theory is invariant to a specific transformation 
 
 
-
- which permeate the Universe. 
-The Lagrangian formalisation, used in QFTs to describe the dynamics of a system, has the Lagrangian ``$L$'' described as the difference between the kinetic and potential energy of the system\cite{LagrangiansSM}. 
-QFTs usually make use of the Lagrangian Density ``$\mathcal{L}$'', defined as\cite{QFT}:
-
-\begin{equation}
-L = \int \mathrm{d^{3}}x \mathcal{L}
-\end{equation}
-
-With the general form of the Lagrangian Density being defined as:
-
-\begin{equation}
-\mathcal{L} = \mathcal{L} ( \varphi_{i}, \partial _{\mu} \varphi_{i} )
-\end{equation}
-
-
-where 
-
-
-Where $\partial _{\mu}\varphi_{i} \equiv \partial \varphi / (\partial x^{\mu} )$ is the four-gradient of the field $\phi$ and where the i's are implicitly summed according to Einstein's summation convention\cite{ElectroweakStrong}.
-
-The Lagrangian acts upon a system, with all information pertaining to the system's quantum state being described by a wave function. 
-The amplitude of the wave function can be interpreted as the probability amplitude from which a measurement of an observable physical quantity can be obtained\cite{Isham}. 
-
-An important feature of modern physical theories is that the laws of physics pertaining to a system do not vary under observation –- they are `invariant''. 
-Examples of such invariant or conserved quantities include electrical charge from the $U(1)$ group’s symmetry in electromagnetism, energy-momentum from space-time symmetry and angular momentum from rotational symmetry\cite{Haywood}. 
 These equivalent descriptions of the same system are related by groups of transformations, which if invariant when applied to the wave function, relate to observable properties\cite{QFT}. 
-If the transformations on the system have no space-time dependence, the transformation is said to be ``global'', and if the transformations do have a space-time dependence then the transformation is said to be ''local''. 
-A Lagrangian which has continuous local symmetry is said to be gauge invariant\cite{Haywood}. 
+
+
+
+which is constructed from the $SU(3)_{C} \times SU(2)_{L} \times U(1)_{Y}$ gauge group~\cite{LagrangiansSM}.
+
+
+One of the most powerful Emmy Noether
+
+Examples of such invariant or conserved quantities include electrical charge from the $U(1)$ group’s symmetry in electromagnetism, energy-momentum from space-time symmetry and angular momentum from rotational symmetry\cite{Haywood}. 
+If the transformations on the system have no space-time dependence, the transformation is said to be ``global'', and if the transformations do have a space-time dependence then the transformation is said to be ``local''. 
+
+
+A Lagrangian which has continuous local symmetry is said to be gauge invariant~\cite{Haywood}. 
 
 As defined above however, the Lagrangian Density $\mathcal{L}$ is not gauge invariant due to its dependence on the derivative $\partial _{\mu}$. To illustrate this, the Lagrangian which describes free-field fermions\cite{QFT}, 
 
@@ -201,14 +206,18 @@ As such, the Fermi Exclusion Principle, where two fermions are unable to exist i
 \end{equation}
 
 \subsection{Quantum Electrodynamics}\label{subsec:QED}
-Quantum Electrodynamics (QED) is the theory which describes the Electromagnetic force between all electrically charged particles within with the SM. 
+Quantum Electrodynamics (QED) the an Abelian gauge theory based on the U(1) gauge group which describes the electromagnetic force.
+The electromagnetic force is mediated by the massless photon and conserves electrical charge, \emph{q}.
+Due to the Abelian nature of QED, the photon is neutrally charged
+
+
 It has a single gauge boson, the neutrally charged photon. 
 Because of the photon's lack of mass, the Electromagnetic force has an infinite range. 
 As mentioned above, the Electromagnetic interaction conserves electrical charge, which is described by the $U(1)_{hypercharge}$ group symmetry in QFT\cite{QFT}. 
 
 \subsection{Weak Interactions}\label{subsec:weakForce}
-The Weak force is responsible for weak isospin processes. 
-It has three massive gauge bosons, the electrically charged $W^{\pm}$ and neutral $Z^{0}$ bosons. 
+The weak force is mediated by the massive electrically charged $W^{\pm}$ and neutral $Z^{0}$ gauge bosons which act upon weak isospin, \emph{T}.
+
 The projection of the weak isospin along the z-axis is the conserved quantity of the Weak interaction, which in QFT is described by the $SU(2)_{weak isospin}$ group symmetry. 
 The range and strength of the Weak force is considerably less than that of the Electromagnetic force due to the short lifespan of the massive gauge bosons\cite{ElectroweakStrong}. 
 
@@ -218,8 +227,15 @@ CP VIOLATION!
 CKM
 
 \subsection{Electroweak Unification}\label{subsec:electroweak}
+The idea 
 
+
+Despite the  the electromagnetic and weak forces 
+The concept that the electromangetic and weak 
+unification of the electromagnetic and weak interactions was Abdus Salam and Steven Weinberg, 
 Both the Electromagnetic and Weak interactions can be described as a single interaction: the Electroweak interaction. 
+
+
 The conserved quantity of this force, the weak hypercharge, is related to the conserved quantities of electrical charge and the z-projection of weak isospin, of its two constituent interactions. 
 At sufficiently high energies, the two separate manifestations of the electroweak force unify into a single force. 
 However, the $SU(2)_{weak isospin} \times U(1)_{hypercharge}$ symmetry of the electroweak interaction is not exact as whilst local invariance requires that the gauge boson fields be massless in order for the QFT to be renormalisable, the $W^{\pm}$ and $Z^{0}$ bosons are relatively massive. 
@@ -233,41 +249,31 @@ Both the CMS and ATLAS experiments at CERN have independently confirmed the exis
 Searches to determine whether this is the SM Higgs or not (several theories including SUSY propose multiple Higgs~\cite{Khalil:2003vd,Gianotti:2002xx}) will take place after the phase-0 upgrades of the LHC. 
 
 %%%Spontaneous symmetry breaking
-
 Originally, in order to ensure that the SM Lagrangian remained invariant under weak isospin rotations, the weak force's gauge bosons were required to be massless.
 The lack of evidence for such massless gauge bosons and the subsequent discovery of massive weak gauge bosons however, 
 
-\subsection{Quantum Chromodynamics}\label{subsec:QED}
-The strong force and its interactions with quarks is described by the gauge theory known as Quantum Chromodynamics (QCD).
-QCD describes these interactions through eight massless spin-$1$ gluons 
+\subsection{Quantum Chromodynamics}\label{subsec:QCD}
+The strong force and its interactions with quarks is described by the theory known as Quantum Chromodynamics (QCD).
+QCD is based on the non-Abelian $SU(3)_{colour}$ gauge group, which describes strong interactions through eight massless spin-$1$ gauge bosons called \emph{gluons} that act upon the \emph{colour} charge, \emph{C}, carried by quarks~\cite{ElectroweakStrong}.
+Quarks carry either a red, green or blue colour charge, with anti-quarks possessing anti-colour charges.
+Given the non-Abelian nature of QCD, gluons can self-couple as they carry both a colour and anti-colour charge.
 
+The ability of gluons to self-couple results in a phenomena unique to the strong force known as \emph{asymptotic freedom}~\cite{ElectroweakStrong,coughlan2006ideas,devenish2004deep}.
+Similar to QED where the vacuum is considered to be a sea of virtual pairs of electrons and anti-electrons, QCD considers the vacuum to be occupied by a sea of virtual gluons and pairs of quarks and anti-quarks.
+While the virtual quark pairs screen valence quarks, the virtual gluons have a greater and opposite effect. This leads to the strong interaction coupling constant $\alpha_{s}$ decreasing as the separation between colour charged particles decreases, such that quarks within hadrons effectively behave as if they were free particles.
 
-As QCD is based on the $SU(3)_{colour}$ group, it is non-Abelian, allowing
-Quantum Chromodynamics (QCD) is the gauge theory which describes the strong force interactions between quarks and the eight massless gluons.
-These interactions are 
-
- with the non-Abelian 
-
-The Strong Force is mediated by eight massless spin-1 gluons, which acts upon the conserved Strong Force charge: colour\cite{ElectroweakStrong}. 
-The conservation of colour is described by the $SU(3)_{colour}$ group and the symmetry is exact. 
-Colour charge is unrelated to the visual perception of colour, but stems from the fact that unlike the electroweak interaction which has positive and negative charges, there are three colour charges. 
-An important difference between the gauge bosons of the electromagnetic and Strong Force is that whilst the photon is chargeless, gluons are not. 
-Gluons carry both a colour and anti-colour charge and only interact with coloured particles (quarks and other gluons)~\cite{ElectroweakStrong}. 
-
-
-A phenomena unique to the strong interaction is that the effective strong interaction coupling constant $\alpha_{s}$ tends to zero as the energy scales increase, despite the gluon being massless. 
-In other words, the constant $\alpha_{s}$ increases as the separation between colour charged particles increases. 
-This ``asymptotic freedom'' is caused by the virtual quark-anti quark sea containing virtual gluons which increases the force between quarks for greater separations, in contrast to the screening effect of virtual electrically neutral photons in electromagnetic interactions. 
-The increase in $\alpha_{s}$ with the separation between colour charged particles means all particles must be ``colourless'', with the consequence that quarks are confined to exist in bound states\cite{ElectroweakStrong}. 
+A consequence of asymptotic freedom is the phenomenon of \emph{colour confinement} which confines quarks to exist in colour-singlet states~\cite{ElectroweakStrong,Griffiths,devenish2004deep}.
+Such ``colourless states'' are created by the combination of quarks possessing the equivalent colour and anti-colour or all three colours.
+Confinement arises as asymptotic freedom results in increasingly large amounts of energy being required to further any separation between quarks.
+Eventually it becomes more energetically favourable for \emph{hadronisation}, the creation of a quark anti-quark pair to be produced, to occur and form new hadrons.
+In high energy particle collisions, such as those at the Large Hadron Collider, hadronisation
 
 
 
+~\cite{evenish2004deep} - DIS
 
-If enough energy is put into a bound state, with the intent of breaking ``colour confinement'', the energy of the colour fields between the coloured particles will increase until it is more energetically favourable for quark pair production to occur than to increase the separation between the original two quarks\cite{Griffiths}. 
-
-
-As hadrons are composite particles, whose constituent partons cannot be directly measured in isolation,  the
-
+As a hadron's constituent \emph{partons} are colour confined, 
+When probed at low energies, 
 
 \section{Top Physics}\label{sec:top-physics}
 The existence of a third generation of quarks was first hypothesised in 1973 by Makoto Kobayashi and Toshihide Maskawa in order to account for the CP violation observed in kaon decays~\cite{Kobayashi:1973fv}.
