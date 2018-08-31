@@ -553,7 +553,7 @@ Table~\ref{tab:allBdtVariables} provides a list of all the features that were co
    \hline
     bTagDisc & Leading b-tagged jet b-tag discriminator & $\checkmark$ & $\checkmark$ \\
     fourthJetPt & \pt of the fourth jet & $\checkmark$ & $\checkmark$ \\
-    jetHt & Total \HT of every jet & $X$ & $\checkmark$ \\
+    jetHt & Total ${\ensuremath{H_{\mathrm{T}}}$ of every jet & $X$ & $\checkmark$ \\
     jetMass & Total mass of every jet & $\checkmark$ & $\checkmark$ \\
     jjDelR & $\Delta R$ between the leading jets & $\checkmark$ & $\checkmark$ \\
     leadJetEta & Leading jet $\eta$ & $\checkmark$ & $\checkmark$ \\
@@ -562,12 +562,12 @@ Table~\ref{tab:allBdtVariables} provides a list of all the features that were co
     secJetPt & Second jet \pt & $\checkmark$ & $\checkmark$ \\
     thirdJetPt & Third jet \pt & $\checkmark$ & $\checkmark$ \\
     topMass & Top quark mass & $\checkmark$ & $\checkmark$ \\
-    totHtOverPt & Total \HT divided by total \pt & $\checkmark$ & $\checkmark$ \\
+    totHtOverPt & Total ${\ensuremath{H_{\mathrm{T}}}$ divided by total \pt & $\checkmark$ & $\checkmark$ \\
     wPairMass & W boson mass & $\checkmark$ & $\checkmark$ \\
     wQuark2Eta & $\eta$ of the second W boson candidate jet & $X$ & $\checkmark$ \\
     wwdelR & $\Delta R$ between the W boson candidate jets & $\checkmark$ & $X$ \\
     zEta & $\eta$ of the Z boson & $X$ & $\checkmark$ \\
-    zHt & \HT of the Z boson & $\checkmark$ & $\checkmark$ \\
+    zHt & ${\ensuremath{H_{\mathrm{T}}}$ of the Z boson & $\checkmark$ & $\checkmark$ \\
     zMass & $Z boson mass$ & $\checkmark$ & $\checkmark$ \\
     zTopDelR & $\Delta R$ between the Z boson and top quark & $X$ & $\checkmark$ \\
     zjminR & Minimum $\Delta R$ between the Z boson and a jet & $\checkmark$ & $\checkmark$ \\
@@ -591,126 +591,6 @@ Distributions of the features chosen for use with the BDT for the signal and bac
 Distributions of the ... for the combination of the $ee$ and $\mu\mu$ channel}
 \label{fig:inputFeaturesDataSimAgreement}
 \end{figure}
-
-\begin{table}[htbp]
-\topcaption {The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
-\editComment{Aware that table does not fit onto a single page. Also considering moving this list to the appendix}
-}
-\label{tab:allBdtVariables}
-  \centering
-% This increases column spacing.
-\resizebox{\textwidth}{!}{
-% This right-aligns numbers in column, but centers them under column title.
-\begin{tabular}{cccc}
-   \hline
-   \textbf{Variable} & \textbf{Description} \\
-   \hline
-    wQuark1Pt & Leading W boson candidate jet \pt \\
-    wQuark1Eta & Leading W boson candidate jet $\eta$ \\
-    wQuark1Phi &  Leading W boson candidate jet $\phi$ \\
-    wQuark2Pt & Subleading W boson candidate jet \pt \\
-    wQuark2Eta & Subleading W boson candidate jet $\eta$ \\
-    wQuark2Phi & Subleading W boson candidate jet $\phi$  \\
-    wPairMass & W boson mass  \\
-    wPairPt & W boson \pt  \\
-    wPairEta & W boson $\eta$  \\
-    wPairPhi & W boson $\phi$  \\
-    mTW & W boson $m_{T}$  \\
-    met & \met  \\
-    nJets & Number of jets  \\
-    leadJetPt & Leading jet \pt $\checkmark$ \\
-    leadJetPhi & Leading jet $\phi$  \\
-    leadJetEta & Leading jet $\eta$  \\
-    leadJetbTag & Leading jet b-tag discriminator  \\
-    secJetPt & Subleading jet \pt \\
-    secJetPhi & Subleading jet $\phi$  \\
-    secJetEta & Subleading jet $\eta$ \\
-    secJetbTag & Subleading jet b-tag discriminator  \\
-    thirdJetPt & Third jet \pt \\
-    thirdJetPhi & Third jet $\phi$  \\
-    thirdJetEta & Third jet $\eta$ \\
-    thirdJetbTag & Third jet b-tag discriminator  \\
-    fourthJetPt & Fourth jet \pt \\
-    fourthJetPhi & Fourth jet $\phi$  \\
-    fourthJetEta & Fourth jet $\eta$ \\
-    fourthJetbTag & Fourth jet b-tag discriminator  \\
-    nBjets & Number of b-tagged jets \\
-    bTagDisc & Leading b-tagged jet b-tag discriminator \\
-    lep1Pt & Leading lepton \pt \\
-    lep1Eta & Leading lepton $\eta$ \\
-    lep1Phi & Leading lepton $\phi$ \\
-    lep1RelIso & Leading lepton $I^{rel}$ \\
-    lep1D0 & Leading lepton $d_{0}$ \\
-    lep2Pt & Subleading lepton \pt \\
-    lep2Eta & Subleading lepton $\eta$ \\
-    lep2Phi & Subleading lepton $\phi$ \\
-    lep2RelIso & Subleading lepton $I^{rel}$ \\
-    lep2D0 & Subleading lepton $d_{0}$ \\
-    zMass & Z boson mass  \\
-    zPt & Z boson \pt \\
-    zEta & Z boson $\eta$ \\
-    zPhi & Z boson $\phi$ \\
-    topMass & Top quark mass \\
-    topPt & Top quark \pt \\
-    topEta & Top quark $\eta$ \\
-    topPhi & Top quark $\phi$ \\
-    j1j2delR & $\Delta R$ between the leading and subleading jets \\
-    j1j2delPhi & $\Delta \phi$ between the leading and subleading jets \\
-    w1w2delR & $\Delta R$ between the W boson jets \\
-    w1w2delPhi & $\Delta \phi$ between the W boson jets \\
-    zLepdelR & $\Delta R$ between the Z boson leptons \\
-    zLepdelPhi & $\Delta \phi$ between the Z boson leptons \\
-    zl1Quark1DelR & $\Delta R$ between the leading lepton and leading W boson jet \\
-    zl1Quark1DelPhi & $\Delta \phi$ between the leading lepton and leading W boson jet \\
-    zl1Quark2DelR & $\Delta R$ between the leading lepton and subleading W boson jet \\
-    zl1Quark2DelPhi & $\Delta \phi$ between the leading lepton and subleading W boson jet \\
-    zl2Quark1DelR & $\Delta R$ between the subleading lepton and leading W boson jet \\
-    zl2Quark1DelPhi & $\Delta \phi$ between the subleading lepton and leading W boson jet \\
-    zl2Quark2DelR & $\Delta R$ between the subleading lepton and subleading W boson jet \\
-    zl2Quark2DelPhi & $\Delta \phi$ between the subleading lepton and leading W boson jet \\
-    zlb1DelR & $\Delta R$ between the Z boson and leading b-tagged jet \\
-    zlb1DelPhi & $\Delta \phi$ between the Z boson and leading b-tagged jet \\
-    zlb2DelR & $\Delta R$ between the Z boson and subleading b-tagged jet\\
-    zlb2DelPhi & $\Delta \phi$ between the Z boson and subleading b-tagged jet \\
-    lepHt & \HT of the Z boson leptons \\
-    wQuarkHt & \HT of the W boson quarks \\
-    totPtVec & \pt of the system \\
-    totEta & $\eta$ of the system \\
-    totPhi & $\phi$ of the system \\
-    totVecM & Invariant mass of the system \\
-    totPt2Jet & Square of the sum of the two leading jets' \pT \\
-    totJetPt & Sum of all the jets' \pT  \\
-    wZdelR & $\Delta R$ between the W and Z bosons \\
-    wZdelPhi & $\Delta \phi$ between the W and Z bosons \\
-    zQuark1DelR & $\Delta R$ between the Z boson and leading W boson jet \\
-    zQuark1DelPhi & $\Delta \phi$ between the Z boson and leading W boson jet \\
-    zQuark2DelR & $\Delta R$ between the Z boson and subleading W boson jet \\
-    zQuark2DelPhi & $\Delta \phi$ between the Z boson and subleading W boson jet \\
-    zTopDelR & $\Delta R$ between the Z boson and top quark \\
-    zTopDelPhi & $\Delta \phi$ between the Z boson and top quark\\
-    zl1TopDelR & $\Delta R$ between the leading lepton and top quark \\
-    zl1TopDelPhi & $\Delta \phi$ between the leading lepton and top quark \\
-    zl2TopDelR & $\Delta R$ between the subleading lepton and top quark \\
-    zl2TopDelPhi & $\Delta \phi$ between the subleading lepton and top quark \\
-    wTopDelR & $\Delta R$ between the W boson and top quark \\
-    wTopDelPhi & $\Delta \phi$ between the W boson and top quark \\
-    w1TopDelR & $\Delta R$ between the leading W boson jet and top quark \\
-    w1TopDelPhi & $\Delta \phi$ between the leading W boson jet and top quark \\
-    w2TopDelR & $\Delta R$ between the subleading W boson jet and top quark \\
-    w2TopDelPhi & $\Delta \phi$ between the subleading W boson jet and top quark \\
-    zjminR & Minimum $\Delta R$ between the Z boson and a jet  \\
-    minZJetPhi & Minimum $\phi R$ between the Z boson and a jet \\
-    totHt & Total \HT of the system \\
-    jetHt & \HT of all the jets present \\
-    jetMass & Invariant mass of all the jets present \\
-    jetPt & \pT of all the jets present \\
-    jetEta & $\eta$ of all the jets present \\
-    jetPhi & $\phi$ of all the jets present \\
-    jetMass3 & Invariant mass of the leading three jets\\
-    totHtOverPt & Total \HT divided by the system's \pT \\
-   \hline
- \end{tabular}}
-\end{table}
 
 \subsection{BDT Model Hyperparameters}\label{subsec:hyperparameters}
 %The model hyperparameters are the set of parameters which are set before the BDT training begins, such the maximum depth trees can be grown to or the number of training iterations to be run. 
@@ -780,14 +660,11 @@ The uncertainty associated with the JER smearing is accounted for by varying the
 Recently the uncertainties associated with the JER have been updated during the reprocessing of the 2016 dataset to include the systematic uncertainties in addition to the statistical uncertainties.
 At the time of writing this thesis, these reprocessed samples and the impact of the revised total JER uncertainties has not been propagated through the analysis.
 
-\subsubsection{\MET Uncertainties}
-As \MET is calculated from the sum of the \pT of all the PF objects and the remaining unclustered energy deposits, the uncertainties associated from both have to be considered.
+\subsubsection{Missing Transverse Energy Uncertainties}
+As missing transverse energy is calculated from the sum of the \pT of all the PF objects and the remaining unclustered energy deposits, the uncertainties associated from both have to be considered.
 
 The impact of the uncertainties associated with both the JES and JER on the PF \MET are accounted for by propagating the JEC uncertainties through to the \MET and evaluating the impact they have.
-As the unclustered energy remains uncorrected, the impact on the \MET uncertainty is evaluated by varying the difference between the \MET and total \pT of the PF objects up and down by 10\%, the default energy uncertainty.
-
-During the time of writing this thesis, the method of determining the uncertainty associated with the unclustered energy was in the process of being replaced with a more precise method, where each particle is varied by its resolution.
-Given the small impact of the \MET uncertainties, as discussed in Section~\ref{sec:uncertainitiesImpact}, it is anticipated that change will have a minimal impact on the final result.
+As the unclustered energy remains uncorrected, the impact on the \MET uncertainty is evaluated by varying the contribution from each particle by its associated resolution.
 
 \subsubsection{Pileup Reweighting}
 The uncertainty associated with the primary vertex distributions used in the \PU reweighting is determined by varying the expected minimum bias cross section used in simulation $\pm X\%$ in order to ascertain the impact of greater or lesser amounts of \PU on the analysis.
