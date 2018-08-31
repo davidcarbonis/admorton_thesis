@@ -88,11 +88,16 @@ The fundamental forces of nature and the SM gauge bosons which mediate them.
 \subsection{Gauge Symmetries and The Standard Model Lagrangian}\label{subsec:gaugeSymmetries}
 The idea that the laws of physics are consistent for all observers, even if the measurements differ between observers, is a fundamental component of all modern physical theories~\cite{Haywood}.
 Systems which are unchanged or \emph{invariant} to a transformation are considered to possess a corresponding \emph{symmetry}.
-As shown by Emmy Noether's theorm, any such symmetry has a corresponding conserved quantity~\cite{Noether:1918zz}.
+As shown by Emmy Noether's theorem, any such symmetry has a corresponding conserved quantity~\cite{Noether:1918zz}, such as the conservation of energy-momentum from space-time symmetry or electrical charge from the $U(1)$ symmetry in electromagnetism.
+This powerful concept is a key component 
+
+%If a transformation on the system has no space-time dependence it is said to be \emph{global} and conversely, if the transformation is space-time dependent it is said to be ``local''. 
 
 
 
-Examples of such invariant or conserved quantities include electrical charge from the $U(1)$ gauge group’s symmetry in electromagnetism, energy-momentum from space-time symmetry and angular momentum from rotational symmetry. 
+This powerful concept is at the heart of the SM, where 
+
+
 
 
 This powerful concept was instrumental in the formulation 
@@ -102,34 +107,10 @@ is at the heart of the formulation of the SM
 which is constructed from the $SU(3)_{C} \times SU(2)_{L} \times U(1)_{Y}$ gauge group~\cite{LagrangiansSM}.
 
 
-Examples of such invariant or conserved quantities include electrical charge from the $U(1)$ group’s symmetry in electromagnetism, energy-momentum from space-time symmetry and angular momentum from rotational symmetry. 
-If the transformations on the system have no space-time dependence, the transformation is said to be ``global'', and if the transformations do have a space-time dependence then the transformation is said to be ``local''. 
 
 
 %A Lagrangian which has continuous local symmetry is said to be gauge invariant~\cite{Haywood}. 
 
-
-
-As a QFT, the SM describes particles as excitations of fields whose interactions arise
-
-dynamics typically described using the Lagrangian formalism~\cite{LagrangiansSM}. 
-
-
-
-The SM Lagrangian Field Density is constructed of four terms:
-
-\begin{equation}
-\mathcal{L}_{SM} = \mathcal{L}_{Gauge} + \mathcal{Fermion} + \mathcal{Higgs} + \mathcal{Yukawa}
-\end{equation}
-
-where $\mathcal{L}_{Gauge}$ describes the spin-$1$ gauge boson fields that arise from imposing 
-
-required to keep the Lagrangian invariant
-
-
-, $\mathcal{Fermion}$ describes the fermion fields, $\mathcal{Higgs}$ describes the scalar Higgs field and $\mathcal{Yukawa}$ describes the interactions between the Higgs field and fermions and gauge bosons.
-
-that is based on the $SU(3)_{C} \times SU(2)_{L} \times U(1)_{Y}$ symmetry group.
 
 %The Lagrangian formalisation, used in QFTs to describe the dynamics of a system, has the Lagrangian ``$L$'' described as the difference between the kinetic and potential energy of the system\cite{LagrangiansSM}. 
 %QFTs usually make use of the Lagrangian Density ``$\mathcal{L}$'', defined as\cite{QFT}:
@@ -206,6 +187,28 @@ As such, the Fermi Exclusion Principle, where two fermions are unable to exist i
 \psi_{anti-symmetric}(x_{a},x_{a}) = 0 \qquad \forall \quad a
 \end{equation}
 
+%%%
+As a QFT, the SM describes particles as excitations of fields whose interactions arise
+
+dynamics typically described using the Lagrangian formalism~\cite{LagrangiansSM}. 
+
+
+
+The SM Lagrangian Field Density is constructed of four terms:
+
+\begin{equation}
+\mathcal{L}_{SM} = \mathcal{L}_{Gauge} + \mathcal{Fermion} + \mathcal{Higgs} + \mathcal{Yukawa}
+\end{equation}
+
+where $\mathcal{L}_{Gauge}$ describes the spin-$1$ gauge boson fields that arise from imposing 
+
+required to keep the Lagrangian invariant
+
+
+, $\mathcal{Fermion}$ describes the fermion fields, $\mathcal{Higgs}$ describes the scalar Higgs field and $\mathcal{Yukawa}$ describes the interactions between the Higgs field and fermions and gauge bosons.
+
+that is based on the $SU(3)_{C} \times SU(2)_{L} \times U(1)_{Y}$ symmetry group.
+
 \subsection{Quantum Electrodynamics}\label{subsec:QED}
 Quantum Electrodynamics (QED) the an Abelian gauge theory based on the U(1) gauge group which describes the electromagnetic force.
 The electromagnetic force is mediated by the massless photon and conserves electrical charge, \emph{q}.
@@ -227,6 +230,9 @@ The weak force is mediated by the massive electrically charged $W^{\pm}$ and neu
 The projection of the weak isospin along the z-axis is the conserved quantity of the Weak interaction, which in QFT is described by the $SU(2)_{weak isospin}$ group symmetry. 
 The range and strength of the Weak force is considerably less than that of the Electromagnetic force due to the short lifespan of the massive gauge bosons\cite{ElectroweakStrong}. 
 
+
+Unlike the U(1) group used to describe QED, the SU(2) group is non-Abelian, allowing the weak gauge bosons to self-couple.
+
 The Cabibbo-Kobayashi-Maskawa (CKM) matrix 
 
 CP VIOLATION!	
@@ -234,10 +240,12 @@ CP VIOLATION!
 CKM
 
 \subsection{Electroweak Unification}\label{subsec:electroweak}
-The idea 
+Despite their seemingly disparate natures, the unification of the electromagnetic and weak forces into a single \emph{electroweak} interaction was developed by Abdus Salam and Steven Weinberg ...
 
 
-Despite the  the electromagnetic and weak forces 
+described by the $SU(2)_{weak isospin} \times U(1)_{hypercharge}$ gauge group
+The unification of QED and the weak force into a single \emph{electroweak} interaction  
+
 The concept that the electromangetic and weak 
 unification of the electromagnetic and weak interactions was Abdus Salam and Steven Weinberg, 
 Both the Electromagnetic and Weak interactions can be described as a single interaction: the Electroweak interaction. 
@@ -256,6 +264,9 @@ Both the CMS and ATLAS experiments at CERN have independently confirmed the exis
 Searches to determine whether this is the SM Higgs or not (several theories including SUSY propose multiple Higgs~\cite{Khalil:2003vd,Gianotti:2002xx}) will take place after the phase-0 upgrades of the LHC. 
 
 %%%Spontaneous symmetry breaking
+Despite being manifestations of the same force, there is an obvious asymmetry between the masses of the gauge bosons 
+ at lower energies the photon and weak gauge bosons
+
 Originally, in order to ensure that the SM Lagrangian remained invariant under weak isospin rotations, the weak force's gauge bosons were required to be massless.
 The lack of evidence for such massless gauge bosons and the subsequent discovery of massive weak gauge bosons however, 
 
@@ -266,8 +277,9 @@ Quarks carry either a red, green or blue colour charge, with anti-quarks possess
 Given the non-Abelian nature of QCD, gluons can self-couple as they carry both a colour and anti-colour charge.
 
 The ability of gluons to self-couple results in a phenomena unique to the strong force known as \emph{asymptotic freedom}~\cite{ElectroweakStrong,coughlan2006ideas,devenish2004deep}.
-Similar to QED where the vacuum is considered to be a sea of virtual pairs of electrons and anti-electrons, QCD considers the vacuum to be occupied by a sea of virtual gluons and pairs of quarks and anti-quarks.
-While the virtual quark pairs screen valence quarks, the virtual gluons have a greater and opposite effect. This leads to the strong interaction coupling constant $\alpha_{s}$ decreasing as the separation between colour charged particles decreases, such that quarks within hadrons effectively behave as if they were free particles.
+In a manner similar to QED where the vacuum is considered to be a sea of virtual pairs of electrons and anti-electrons, QCD considers the vacuum to be occupied by virtual \emph{sea} quarks and gluon gluons .
+While the virtual quark pairs screen a hadron's constituent or \emph{valence} quarks, the virtual gluons have a greater and opposite effect. 
+This results in the strong interaction coupling constant $\alpha_{s}$ decreasing as the separation between colour charged particles decreases, such that quarks within hadrons effectively behave as if they were free particles.
 
 A consequence of asymptotic freedom is the phenomenon of \emph{colour confinement} which confines quarks to exist in colour-singlet states~\cite{ElectroweakStrong,Griffiths,devenish2004deep}.
 Such ``colourless states'' are created by the combination of quarks possessing the equivalent colour and anti-colour or all three colours.
@@ -275,12 +287,20 @@ Confinement arises as asymptotic freedom results in increasingly large amounts o
 Eventually it becomes more energetically favourable for \emph{hadronisation}, the creation of a quark anti-quark pair to be produced, to occur and form new hadrons.
 In high energy particle collisions, such as those at the Large Hadron Collider, these hadronising quarks produce collimated showers of hadrons called \emph{jets}.
 
-
+Given that individual quarks are colour confined within hadrons, 	
+As individual quarks are colour confined, the 
+As $\alpha_{s}$ 
+The nature of asymptotic freedom makes it 
+A further implication of $\alpha_{s}$ decreasing 
 Given that hadrons are bound states of their constituent \emph{valence quarks}, there is a constant sea of 
+
+Part
 
 ~\cite{evenish2004deep} - DIS
 
 When probed at low energies, 
+
+Given the inability 
 
 \section{Top Physics}\label{sec:top-physics}
 The existence of a third generation of quarks was first hypothesised in 1973 by Makoto Kobayashi and Toshihide Maskawa in order to account for the CP violation observed in kaon decays~\cite{Kobayashi:1973fv}.

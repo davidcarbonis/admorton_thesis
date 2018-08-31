@@ -59,8 +59,8 @@ where $\hat{\theta_{\mu}}$ refers to the maximum likelihood estimators of $\thet
 $\hat{\mu}$ and $\hat{\theta}$ correspond to the global maximum of the likelihood. 
 By definition $\hat{\mu}$ cannot take negative values as physics defines the signal rate as positive, and the constraint $\hat{\mu} < \mu$ is applied to ensure a one-sided confidence interval.
 
-Using $q_{\mu}$, the the probability distribution functions for the \emph{s+b} and \emph{b-only} hypotheses for a given signal strength can be constructed using \emph{pseudodata} generated using toy MC for the expected outcomes of the measurement made.
-For the observed outcome of the measurement, the pseudodata used for the \emph{s+b} probability distribution functions is replaced with the actual data.
+As the analysis is initially conducted blind, \emph{pseudodata} is generated using toy MC for the \emph{expected} outcomes in order to construct probability distribution functions for the \emph{s+b} and \emph{b-only} hypotheses for a given signal strength.
+After the unblinding of the analysis, the \emph{observed} measurement is made by replacing the pseudodata used for the \emph{s+b} probability distribution functions with the actual data.
 From these probability distribution functions, the probability values for the s+b and b-only hypotheses can be defined as equations~\ref{eq:pmu} and~\ref{eq:1-pb}.
 
 \begin{equation}
@@ -91,6 +91,7 @@ A full description of the asymptotic approximation to the CL$_{s}$ method is giv
 
 \section{Statistical Analysis Results}
 \editComment{UPDATE BEFORE SUBMISSION AND ADD PLOTS - SPEAK TO CORIN ABOUT THIS}
+
 For the combination of both of the final states, at the 95\% CL, the cross section for tZq production was measured to be $X^{+Y}_{-Z}$, which is within the uncertainties of the SM prediction.
 This result corresponds to an observed significance of $X_{-Z}^{+Y} \sigma$ against an expected significance of $X_{-Z}^{+Y} \sigma$, which is in agreement with the SM cross section of  $0.0758^{+Y}_{-Z} \pb$.
 
@@ -118,7 +119,7 @@ Therefore, it is intended that a measurement on the data collected by the CMS de
 \section{Post-Fit Impact of the Systematic Uncertainties}\label{sec:uncertainitiesImpact}
 The impact of each of the sources of systematic uncertainty on the signal strength modifier $\mu$ is shown shown in figure~\ref{fig:systematicsPull}, where the left hand side of the plot illustrates the nuisance parameter residuals and the right hand side the impact of varying a nuisance parameter to its $\pm \sigma$ post-fit values has on the $\mu$.
 
-\editComment{Discuss impact of lumi once results are in and understood}
+\editComment{Discuss these impacts once the large pull on the signal strength modifier by the lumi is understood as the cause could impact upon the other parameters.}
 
 %Given the background dominated nature of this search, it is not too surprising that the uncertainty on the luminosity %has the single largest impact on $\mu$.
 %As figure~\ref{fig:systematicsPull} shows, while the maximum likelihood fit does constrain the impact of this uncertainty on the 
@@ -128,21 +129,22 @@ The impact of each of the sources of systematic uncertainty on the signal streng
 %
 %The impact of the other experimental uncertainties are either smaller than or of the same scale as the least impactful theoretical uncertainties.
 %The uncertainties in the matching of the ME and PS 
-The theoretical uncertainties, while being well constrained during the 
-While the impact of the theoretical uncertainties were further constrained during the MLF, each source has a an impact on the measured signal strength equal to or greater than each of the experimental uncertainties do individually (except that of the luminosity measurement).
 
-As the  .... ISR+FSR+PS
-
-
-The uncertainties associated with the Jet Energy Resolutions and Parton Distribution 
-JER + PDF biggest experimental  
- 
-MET = small 
- 
-Despite the large conservative rate uncertainty ascribed to the non-prompt lepton fake shapes, 
-their
-
-given their relatively small contribution compared to other background processes and the effectiveness of the BDT in separating si, the impact 
+%The theoretical uncertainties, while being well constrained during the 
+%While the impact of the theoretical uncertainties were further constrained during the MLF, each source has a an impact on the measured signal strength equal to or greater than each of the experimental uncertainties do individually (except that of the luminosity measurement).
+%
+%As the  .... ISR+FSR+PS
+%
+%
+%The uncertainties associated with the Jet Energy Resolutions and Parton Distribution 
+%JER + PDF biggest experimental  
+% 
+%MET = small 
+% 
+%Despite the large conservative rate uncertainty ascribed to the non-prompt lepton fake shapes, 
+%their
+%
+%given their relatively small contribution compared to other background processes and the effectiveness of the BDT in separating , the impact 
 
 \begin{figure}[htbp]
 \begin{center}
