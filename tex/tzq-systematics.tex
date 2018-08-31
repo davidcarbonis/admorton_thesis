@@ -12,8 +12,8 @@
 Out of the 37.8\fbinv of the proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by CMS during 2016, 35.8\fbinv was certified by the collaboration as ``good'' to be used for physics analysis.
 
 The difference between the certified value and the total data recorded is the result of various factors such as the unavailability of a detector.
-Due to the prescaling of the electron triggers during the start of the most luminous runs, as discussed in Chapter~\ref{sec:triggerStrategy}, the $ee$ channel uses a reduced dataset of 35.6\fbinv where none of the triggers considered were prescaled.
-Events in the double lepton and single lepton datasets from across these ``good'' data runs are considered where the double and single lepton triggers respectively have fired, using the strategy described in Chapter~\ref{sec:triggerStrategy}.
+Due to the prescaling of the electron triggers during the start of the most luminous runs, as discussed in Section~\ref{sec:triggerStrategy}, the $ee$ channel uses a reduced dataset of 35.6\fbinv where none of the triggers considered were prescaled.
+Events in the double lepton and single lepton datasets from across these ``good'' data runs are considered where the double and single lepton triggers respectively have fired, using the strategy described in Section~\ref{sec:triggerStrategy}.
 
 The MC samples used to model signal and background processes that were considered are listed in table~\ref{tab:mcList}, which includes information on the number of events generated, their cross sections and the order in perturbative accuracy in QCD to which the generators calculated the processes.
 For all the MC samples considered, the hadronisation of all the MC samples considered was undertaken using PYTHIA 8.
@@ -88,7 +88,7 @@ The MC processes and their associated total number of events, cross sections and
 \end{table}
 
 To determine the impact of a number of theoretical uncertainties for a number of processes, a several dedicated samples, listed in table~\ref{tab:theorySampleList}, were used.
-These systematic uncertainties are discussed further in Chapter~\ref{sec:theorySysts}.
+These systematic uncertainties are discussed further in Section~\ref{sec:theorySysts}.
 
 \begin{table}[htbp]
 \topcaption {
@@ -131,7 +131,7 @@ The dedicated MC samples used to determine the impact of theoretical uncertainti
 %%% Alt Z+jets 
 %During the study of the poor agreement between simulation and data for the aMC@NLO Z+jets samples considered, a number of alternative 
 %To determine the impact of a number of theoretical uncertainties for a number of processes, a several dedicated samples, listed in table~\ref{tab:zPlusSamples}, were used.
-%These systematic uncertainties are discussed further in Chapter~\ref{sec:subsec:zPlusJetsEstimation}.
+%These systematic uncertainties are discussed further in Section~\ref{sec:subsec:zPlusJetsEstimation}.
 %
 %\begin{table}[htbp]
 %\topcaption {
@@ -181,18 +181,13 @@ As the trigger requirements are applied to both simulated and data events, a sca
 For both the $ee$ and $\mu\mu$ channels in the signal region and the $e \mu$ channel for the \ttbar control region, a constant scale factor was found to be sufficient to account for the differences between data and simulation.
 
 The efficiencies were calculated for data, \ttbar MC simulation and the resultant corrective scale factors applied to simulation are given in table~\ref{tab:triggerSFs} with their associated statistical uncertainties.
-The value determined for the systematic uncertainties is discussed in chapter~\ref{sec:systematics}.
-
-Initially for the $\mu\mu$ channel however, the scale factor was produced as a function of both \pt and $\eta$.
-These were found to be necessary in order to account for the inefficiencies observed in data prior to applying the jet-lepton cleaning selection criteria resulting in the miscalibrated tracker APV negatively impacting the efficiency of the double muon triggers with $d_{Z}$ cuts .
-Originally the equivalent double muon triggers without the $d_{Z}$ cuts were not considered so as to simplify the trigger logic as these triggers were pre-scaled during runs with high instantaneous luminosity.
-Including these triggers for the runs affected by the miscalibrated tracker APV however, restored the efficiency lost from solely using the double muon triggers with the $d_{Z}$ cuts.
+The value determined for the systematic uncertainties is discussed in Section~\ref{sec:systematics}.
 
 \begin{table}[htbp]
 \topcaption {
 The trigger efficiencies for the lepton selection criteria for data and simulation and the resultant corrective scale factors applied to simulation.
 The uncertainties given only include the statistical uncertainty associated with each value. 
-The determination of the systematic uncertainties is given in chapter~\ref{sec:systematics}.
+The determination of the systematic uncertainties is given in Section~\ref{sec:systematics}.
 }\label{tab:triggerSFs}
   \centering
   \resizebox{\textwidth}{!}{
@@ -239,7 +234,7 @@ This removes any sensitivity to detector efficiencies or physics modelling.
 The Rochester Corrections are applied to each muon an event weight that is a function of the muon's charge, \pt, $\eta$ and $phi$.
 
 \subsection{Jet Energy Corrections}\label{subsec:jesjer}
-As described in Chapter~\ref{subsubsec:JECs}, the JECs are applied to account for the non-uniform response in \pT and $eta$ of the detector by comparing the differences between the generator level and detector level responses.
+As described in Section~\ref{subsubsec:JECs}, the JECs are applied to account for the non-uniform response in \pT and $eta$ of the detector by comparing the differences between the generator level and detector level responses.
 
 In addition to these corrections, as the Jet Energy Resolution (JER) observed in data is approximately 10\% poorer than that in observed simulation, the 4-vectors of simulated jets are smeared as functions of generator level and reconstructed \pt and $\eta$ to account for this~\cite{Khachatryan:2016kdb}.
 
@@ -369,7 +364,7 @@ Following the application of the full event selection and simulation corrections
 
 In contrast to the correct normalisation of Madgraph Z+jets samples that was seen in the signal region and both of the Z+jets control regions, it was observed that there was a dramatic normalisation offset for the aMC@NLO Z+jets samples.
 
-Figures~\ref{fig:zPlusCR_nJets},~\ref{fig:zPlusCR_leadJetPt},~\ref{fig:zPlusCR_secJetPt},~\ref{fig:zPlusCR_thirdJetPt} and ~\ref{fig:zPlusCR_fourthJetPt} show that that despite this scaling issue, the aMC@NLO Z+jets samples did better describe the higher jet multiplicities and the kinematics of the four leading jets in the nominal Z+jets control region defined in Chapter~\ref{subsec:zPlusJetsCR}.
+Figures~\ref{fig:zPlusCR_nJets},~\ref{fig:zPlusCR_leadJetPt},~\ref{fig:zPlusCR_secJetPt},~\ref{fig:zPlusCR_thirdJetPt} and ~\ref{fig:zPlusCR_fourthJetPt} show that that despite this scaling issue, the aMC@NLO Z+jets samples did better describe the higher jet multiplicities and the kinematics of the four leading jets in the nominal Z+jets control region defined in Section~\ref{subsec:zPlusJetsCR}.
 
 \editComment{Update plots so that the colour used, labels, and legend are clearer. Consider using log plots for more detail?}
 \editComment{Also combine plots for both channels - currently only have separate channels to hand}
@@ -427,7 +422,7 @@ As having a NLO description of this large multi-jet background was highly desira
 This was achieved by simultaneously fitting this background in the control region at the same time as the signal region fit was performed.
 
 \subsection{\ttbar Background}\label{subsec:ttbarEstimation}
-The \ttbar enriched control region, as defined in Chapter~\ref{subsec:ttbarCR}, was designed to provide an orthogonal region which was topologically similar to the signal region in order to validate:
+The \ttbar enriched control region, as defined in Section~\ref{subsec:ttbarCR}, was designed to provide an orthogonal region which was topologically similar to the signal region in order to validate:
 \begin{itemize}
 \item whether or not the simulated \ttbar sample used accurately modelled the \ttbar process;
 \item and if not, to be used to derive a data-driven estimate for \ttbar.
@@ -514,7 +509,7 @@ In contrast, gradient boosting uses gradient descent following each iteration to
 Despite their effectiveness however, BDTs are potentially sensitive to the effects of \emph{overtraining}.
 This phenomena occurs when BDT is overly optimised on correctly classifying the training dataset and results in the poor classification of unseen data.
 To minimise the impact of any potential overtraining, the signal and background process samples are split into training and testing samples, where the latter samples are used to check the validity of the BDT trained with the former.
-A description of the training and testing method used to validate both the optimisation of the selection of the hyperparameters and whether or not they were overtrained is given in Chapter~\ref{subsec:hyperparameters}.
+A description of the training and testing method used to validate both the optimisation of the selection of the hyperparameters and whether or not they were overtrained is given in Section~\ref{subsec:hyperparameters}.
 
 
 Following a number of studies evaluating:
@@ -774,11 +769,11 @@ These sources of uncertainty either originate from experimental or theoretical u
 
 The statistical uncertainties arising from the size of the simulated samples available are also considered.
 
-These uncertainties are treated as nuisance parameters in the statistical fit model which is described, along with the impact of the uncertainties on the result, in Chapter~\ref{sec:results}.
+These uncertainties are treated as nuisance parameters in the statistical fit model which is described, along with the impact of the uncertainties on the result, in Section~\ref{sec:results}.
 
 \subsection{Experimental Uncertainties}
 \subsubsection{Jet Energy Corrections}
-The Jet Energy Corrections group also provides the uncertainties associated with the JES and JER they determine, discussed in Chapters~\ref{subsubsec:JECs} and~\ref{subsec:jesjer}, are determined by the Jet Energy Corrections group~\cite{Khachatryan:2016kdb}. 
+The Jet Energy Corrections group also provides the uncertainties associated with the JES and JER they determine, discussed in Sections~\ref{subsubsec:JECs} and~\ref{subsec:jesjer}, are determined by the Jet Energy Corrections group~\cite{Khachatryan:2016kdb}. 
 
 The impact that the JES has on the jet kinematics is evaluated by varying the corrective JES up and down by a standard deviation.
 The uncertainty associated with the JER smearing is accounted for by varying the smearing factor up and down by the associated statistical uncertainty.
@@ -792,7 +787,7 @@ The impact of the uncertainties associated with both the JES and JER on the PF \
 As the unclustered energy remains uncorrected, the impact on the \MET uncertainty is evaluated by varying the difference between the \MET and total \pT of the PF objects up and down by 10\%, the default energy uncertainty.
 
 During the time of writing this thesis, the method of determining the uncertainty associated with the unclustered energy was in the process of being replaced with a more precise method, where each particle is varied by its resolution.
-Given the small impact of the \MET uncertainties, as discussed in Chapter~\ref{sec:uncertainitiesImpact}, it is anticipated that change will have a minimal impact on the final result.
+Given the small impact of the \MET uncertainties, as discussed in Section~\ref{sec:uncertainitiesImpact}, it is anticipated that change will have a minimal impact on the final result.
 
 \subsubsection{Pileup Reweighting}
 The uncertainty associated with the primary vertex distributions used in the \PU reweighting is determined by varying the expected minimum bias cross section used in simulation $\pm X\%$ in order to ascertain the impact of greater or lesser amounts of \PU on the analysis.
@@ -808,7 +803,7 @@ The single top tW-channel samples are the exception to this as at the time of th
 Therefore, the LHAPDF (Les Houches Accord Parton Distribution Function) library is used to access both the nominal PDF weight and 50 eigenvalues from the NNPDF3.0 set to provide one hundred alternative event weights to be evaluated.
 
 \subsubsection{b-tagging Uncertainties}
-The uncertainties associated with the b-tagging scale factors described in Chapter~\ref{subsec:btagEff} are obtained by varying their value by $\pm 1\sigma$, as calculated by the BTV POG.
+The uncertainties associated with the b-tagging scale factors described in Section~\ref{subsec:btagEff} are obtained by varying their value by $\pm 1\sigma$, as calculated by the BTV POG.
 
 \subsubsection{Non-prompt Lepton Contributions}
 The data-driven estimate of the instrumental backgrounds should have no dependence on either the lepton flavour or selection cuts.
@@ -837,7 +832,7 @@ The overall uncertainty in the integrated luminosity collected by CMS in 2016 wa
 %where $\pazocal{L}$ is the amount of total integrated luminosity considered in the data used, $\sigma$ the cross section of the MC sample considered and $N_{MC}^{Events}$ is number of simulated events considered for the process.
 
 \subsubsection{Lepton Efficiencies}
-The uncertainties associated with the lepton identification, isolation and reconstruction efficiency scale factors discussed in Chapter~\ref{subsec:leptonRecoSFs} are varied +/- 1 sigma.
+The uncertainties associated with the lepton identification, isolation and reconstruction efficiency scale factors discussed in Section~\ref{subsec:leptonRecoSFs} are varied +/- 1 sigma.
 
 Several systematic studies were performed to estimate the systematic uncertainty for the trigger scale factors.
 These studies included the comparison of the trigger efficiencies in simulation for \ttbar and Z+jets amd the independence of the \MET trigger selection.
@@ -952,11 +947,11 @@ These centrally produced samples are listed in Table~\ref{tab:theorySampleList} 
 \editComment{What is ISR/FSR? What does varying it do?}
 In the case of \ttbar however, these samples are listed as ISR (initial-state radiation) and FSR (final-state radiation), as it includes the variations in the gluon emissions of the incoming and outgoing partons.
 
-As mentioned above in Chapter~\ref{subsec:pdfSysts}, it was not possible for the single top tW-channel MC samples to be produced with per-event weights to account for the matrix element factorisation and renormalisation scales.
+As mentioned above in Section~\ref{subsec:pdfSysts}, it was not possible for the single top tW-channel MC samples to be produced with per-event weights to account for the matrix element factorisation and renormalisation scales.
 Dedicated samples for this process, listed in Table~\ref{tab:theorySampleList}, where the matrix element and parton shower scales are varied are used to evaluate these systematic uncertainties.
 
 \subsubsection{Parton Shower Matching Thresholds}
-As discussed in Chapter~\ref{subsec:eventGenerators}, all of the MC samples considered use model the hard scattering process through a dedicated Matrix Element generator, with PYTHIA 8 being used to perform the subsequent PS and hadronisation.
+As discussed in Section~\ref{subsec:eventGenerators}, all of the MC samples considered use model the hard scattering process through a dedicated Matrix Element generator, with PYTHIA 8 being used to perform the subsequent PS and hadronisation.
 Dedicated samples evaluate the impact of the uncertainty associated with the choice of the matching threshold for the \ttbar and single top t-channel backgrounds generated with POWHEG, listed in table~\ref{tab:theorySampleList}.
 For these samples, the model's matching threshold parameter \emph{hdamp} is varied up and down by one standard deviation, effectively 
 
