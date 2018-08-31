@@ -1,17 +1,19 @@
 \chapter{Further information regarding Boosted Decision Trees}\label{app:bdt}
 
 \section{BDT Input Features}\label{appsec:bdtFeatures}
-The variables listed in table~\ref{allBdtVariables}
+Following the application of the event selection criteria, as described in Chapter~\ref{tzq-search}, a large number of input variables which were considered for use in the boosted decision trees used were constructed from the selected reconstructed physics objects.
+
+The complete list of variables and their descriptions are listed in table~\ref{allBdtVariables}
 
 \begin{table}[htbp]
-\topcaption {The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
+\topcaption {The name and descriptions of all of variables considered by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
 }
 \label{tab:allBdtVariables}
   \centering
 % This increases column spacing.
 \resizebox{\textwidth}{!}{
 % This right-aligns numbers in column, but centers them under column title.
-\begin{tabular}{cccc}
+\begin{tabular}{cc}
    \hline
    \textbf{Variable} & \textbf{Description} \\
    \hline
@@ -21,103 +23,129 @@ The variables listed in table~\ref{allBdtVariables}
     wQuark2Pt & Subleading W boson candidate jet \pt \\
     wQuark2Eta & Subleading W boson candidate jet $\eta$ \\
     wQuark2Phi & Subleading W boson candidate jet $\phi$  \\
-    wPairMass & W boson mass  \\
-    wPairPt & W boson \pt  \\
-    wPairEta & W boson $\eta$  \\
-    wPairPhi & W boson $\phi$  \\
-    mTW & W boson $m_{T}$  \\
-    met & \met  \\
+    wPairMass & Reconstructed W boson mass  \\
+    wPairPt & Reconstructed W boson \pt  \\
+    wPairEta & Reconstructed W boson $\eta$  \\
+    wPairPhi & Reconstructed W boson $\phi$  \\
+    mTW & W boson transverse mass  \\
+    met & Missing transverse energy   \\
     nJets & Number of jets  \\
-    leadJetPt & Leading jet \pt $\checkmark$ \\
+    leadJetPt & Leading jet \pt \\
     leadJetPhi & Leading jet $\phi$  \\
     leadJetEta & Leading jet $\eta$  \\
-    leadJetbTag & Leading jet b-tag discriminator  \\
+    leadJetbTag & Leading jet b-tag output discriminant  \\
     secJetPt & Subleading jet \pt \\
     secJetPhi & Subleading jet $\phi$  \\
     secJetEta & Subleading jet $\eta$ \\
-    secJetbTag & Subleading jet b-tag discriminator  \\
+    secJetbTag & Subleading jet b-tag output discriminant  \\
     thirdJetPt & Third jet \pt \\
     thirdJetPhi & Third jet $\phi$  \\
     thirdJetEta & Third jet $\eta$ \\
-    thirdJetbTag & Third jet b-tag discriminator  \\
+    thirdJetbTag & Third jet b-tag output discriminant  \\
     fourthJetPt & Fourth jet \pt \\
     fourthJetPhi & Fourth jet $\phi$  \\
     fourthJetEta & Fourth jet $\eta$ \\
-    fourthJetbTag & Fourth jet b-tag discriminator  \\
+    fourthJetbTag & Fourth jet b-tag output discriminant  \\
     nBjets & Number of b-tagged jets \\
-    bTagDisc & Leading b-tagged jet b-tag discriminator \\
+    bTagDisc & Leading b-tagged jet b-tag output discriminant \\
     lep1Pt & Leading lepton \pt \\
     lep1Eta & Leading lepton $\eta$ \\
     lep1Phi & Leading lepton $\phi$ \\
     lep1RelIso & Leading lepton $I^{rel}$ \\
     lep1D0 & Leading lepton $d_{0}$ \\
+   \hline
+ \end{tabular}}
+\end{table}
+
+\begin{table}[htbp]
+\label{tab:allBdtVariables2}
+  \centering
+% This increases column spacing.
+\resizebox{\textwidth}{!}{
+% This right-aligns numbers in column, but centers them under column title.
+\begin{tabular}{cc}
+   \hline
+   \textbf{Variable} & \textbf{Description} \\
+   \hline
     lep2Pt & Subleading lepton \pt \\
     lep2Eta & Subleading lepton $\eta$ \\
     lep2Phi & Subleading lepton $\phi$ \\
     lep2RelIso & Subleading lepton $I^{rel}$ \\
     lep2D0 & Subleading lepton $d_{0}$ \\
     zMass & Z boson mass  \\
-    zPt & Z boson \pt \\
-    zEta & Z boson $\eta$ \\
-    zPhi & Z boson $\phi$ \\
-    topMass & Top quark mass \\
-    topPt & Top quark \pt \\
-    topEta & Top quark $\eta$ \\
-    topPhi & Top quark $\phi$ \\
+    zPt & Reconstructed Z boson \pt \\
+    zEta & Reconstructed Z boson $\eta$ \\
+    zPhi & Reconstructed Z boson $\phi$ \\
+    topMass & Reconstructed top quark mass \\
+    topPt & Reconstructed top quark \pt \\
+    topEta & Reconstructed top quark $\eta$ \\
+    topPhi & Reconstructed top quark $\phi$ \\
     j1j2delR & $\Delta R$ between the leading and subleading jets \\
     j1j2delPhi & $\Delta \phi$ between the leading and subleading jets \\
-    w1w2delR & $\Delta R$ between the W boson jets \\
-    w1w2delPhi & $\Delta \phi$ between the W boson jets \\
-    zLepdelR & $\Delta R$ between the Z boson leptons \\
-    zLepdelPhi & $\Delta \phi$ between the Z boson leptons \\
-    zl1Quark1DelR & $\Delta R$ between the leading lepton and leading W boson jet \\
-    zl1Quark1DelPhi & $\Delta \phi$ between the leading lepton and leading W boson jet \\
-    zl1Quark2DelR & $\Delta R$ between the leading lepton and subleading W boson jet \\
-    zl1Quark2DelPhi & $\Delta \phi$ between the leading lepton and subleading W boson jet \\
-    zl2Quark1DelR & $\Delta R$ between the subleading lepton and leading W boson jet \\
-    zl2Quark1DelPhi & $\Delta \phi$ between the subleading lepton and leading W boson jet \\
-    zl2Quark2DelR & $\Delta R$ between the subleading lepton and subleading W boson jet \\
-    zl2Quark2DelPhi & $\Delta \phi$ between the subleading lepton and leading W boson jet \\
-    zlb1DelR & $\Delta R$ between the Z boson and leading b-tagged jet \\
-    zlb1DelPhi & $\Delta \phi$ between the Z boson and leading b-tagged jet \\
-    zlb2DelR & $\Delta R$ between the Z boson and subleading b-tagged jet\\
-    zlb2DelPhi & $\Delta \phi$ between the Z boson and subleading b-tagged jet \\
-    lepHt & ${\ensuremath{H_{\mathrm{T}}}$ of the Z boson leptons \\
-    wQuarkHt & ${\ensuremath{H_{\mathrm{T}}}$ of the W boson quarks \\
+    w1w2delR & $\Delta R$ between the W boson candidate's jets \\
+    w1w2delPhi & $\Delta \phi$ between the W boson candidate's jets \\
+    zLepdelR & $\Delta R$ between the Z boson candidate leptons \\
+    zLepdelPhi & $\Delta \phi$ between the Z boson candidates leptons \\
+    zl1Quark1DelR & $\Delta R$ between the leading lepton and W boson candidate's leading jet \\
+    zl1Quark1DelPhi & $\Delta \phi$ between the leading lepton and W boson candidate's leading jet \\
+    zl1Quark2DelR & $\Delta R$ between the leading lepton and W boson candidate's subleading jet \\
+    zl1Quark2DelPhi & $\Delta \phi$ between the leading lepton and W boson candidate's subleading jet \\
+    zl2Quark1DelR & $\Delta R$ between the subleading lepton and W boson candidate's leading jet \\
+    zl2Quark1DelPhi & $\Delta \phi$ between the subleading lepton and W boson candidate's leading jet \\
+    zl2Quark2DelR & $\Delta R$ between the subleading lepton and W boson candidate's subleading jet \\
+    zl2Quark2DelPhi & $\Delta \phi$ between the subleading lepton and W boson candidate's subleading jet \\
+    zlb1DelR & $\Delta R$ between the Z boson candidate and leading b-tagged jet \\
+    zlb1DelPhi & $\Delta \phi$ between the Z boson candidate and leading b-tagged jet \\
+    zlb2DelR & $\Delta R$ between the Z boson candidate and subleading b-tagged jet\\
+    zlb2DelPhi & $\Delta \phi$ between the Z boson candidate and subleading b-tagged jet \\
+    lepHt & ${\ensuremath{H_{\mathrm{T}}}$ of the Z boson candidate's leptons \\
+    wQuarkHt & ${\ensuremath{H_{\mathrm{T}}}$ of the W boson candidate's jets \\
+   \hline
+ \end{tabular}}
+\end{table}
+
+\begin{table}[htbp]
+\label{tab:allBdtVariables3}
+  \centering
+% This increases column spacing.
+\resizebox{\textwidth}{!}{
+% This right-aligns numbers in column, but centers them under column title.
+\begin{tabular}{cc}
     totPtVec & \pt of the system \\
     totEta & $\eta$ of the system \\
     totPhi & $\phi$ of the system \\
     totVecM & Invariant mass of the system \\
     totPt2Jet & Square of the sum of the two leading jets' \pT \\
     totJetPt & Sum of all the jets' \pT  \\
-    wZdelR & $\Delta R$ between the W and Z bosons \\
-    wZdelPhi & $\Delta \phi$ between the W and Z bosons \\
-    zQuark1DelR & $\Delta R$ between the Z boson and leading W boson jet \\
-    zQuark1DelPhi & $\Delta \phi$ between the Z boson and leading W boson jet \\
-    zQuark2DelR & $\Delta R$ between the Z boson and subleading W boson jet \\
-    zQuark2DelPhi & $\Delta \phi$ between the Z boson and subleading W boson jet \\
-    zTopDelR & $\Delta R$ between the Z boson and top quark \\
-    zTopDelPhi & $\Delta \phi$ between the Z boson and top quark\\
-    zl1TopDelR & $\Delta R$ between the leading lepton and top quark \\
-    zl1TopDelPhi & $\Delta \phi$ between the leading lepton and top quark \\
-    zl2TopDelR & $\Delta R$ between the subleading lepton and top quark \\
-    zl2TopDelPhi & $\Delta \phi$ between the subleading lepton and top quark \\
-    wTopDelR & $\Delta R$ between the W boson and top quark \\
-    wTopDelPhi & $\Delta \phi$ between the W boson and top quark \\
-    w1TopDelR & $\Delta R$ between the leading W boson jet and top quark \\
-    w1TopDelPhi & $\Delta \phi$ between the leading W boson jet and top quark \\
-    w2TopDelR & $\Delta R$ between the subleading W boson jet and top quark \\
-    w2TopDelPhi & $\Delta \phi$ between the subleading W boson jet and top quark \\
-    zjminR & Minimum $\Delta R$ between the Z boson and a jet  \\
-    minZJetPhi & Minimum $\phi R$ between the Z boson and a jet \\
+    wZdelR & $\Delta R$ between the W and Z boson candidates \\
+    wZdelPhi & $\Delta \phi$ between the W and Z bosons candidates \\
+    zQuark1DelR & $\Delta R$ between the Z boson candidate and W boson candidate's leading jet \\
+    zQuark1DelPhi & $\Delta \phi$ between the Z boson candidate and W boson candidate's leading jet \\
+    zQuark2DelR & $\Delta R$ between the Z boson candidate and W boson candidate's subleading jet \\
+    zQuark2DelPhi & $\Delta \phi$ between the Z boson candidate and W boson candidate's subleading jet \\
+    zTopDelR & $\Delta R$ between the Z boson and top quark candidates \\
+    zTopDelPhi & $\Delta \phi$ between the Z boson and top quark candidates\\
+    zl1TopDelR & $\Delta R$ between the leading lepton and top quark candidates \\
+    zl1TopDelPhi & $\Delta \phi$ between the leading lepton and top quark candidates \\
+    zl2TopDelR & $\Delta R$ between the subleading lepton and top quark candidate \\
+    zl2TopDelPhi & $\Delta \phi$ between the subleading lepton and top quark candidate \\
+    wTopDelR & $\Delta R$ between the W boson and top quark candidates \\
+    wTopDelPhi & $\Delta \phi$ between the W boson and top quark candidates \\
+    w1TopDelR & $\Delta R$ between the W boson candidates's leading jet and the top quark candidate\\
+    w1TopDelPhi & $\Delta \phi$ between the W boson candidates's leading jet and the top quark candidate \\
+    w2TopDelR & $\Delta R$ between the W boson candidates's subleading jet and the top quark candidate \\
+    w2TopDelPhi & $\Delta \phi$ between the W boson candidates's subleading jet and the top quark candidate \\
+    zjminR & Minimum $\Delta R$ between the Z boson candidate and any jet  \\
+    minZJetPhi & Minimum $\phi R$ between the Z boson candidate and any jet \\
     totHt & Total ${\ensuremath{H_{\mathrm{T}}}$ of the system \\
-    jetHt & ${\ensuremath{H_{\mathrm{T}}}$ of all the jets present \\
-    jetMass & Invariant mass of all the jets present \\
-    jetPt & \pT of all the jets present \\
-    jetEta & $\eta$ of all the jets present \\
-    jetPhi & $\phi$ of all the jets present \\
-    jetMass3 & Invariant mass of the leading three jets\\
+    jetHt & ${\ensuremath{H_{\mathrm{T}}}$ of all the jets in an event \\
+    jetMass & Invariant mass of all the jets in an event \\
+    jetPt & \pT of all the jets in an event \\
+    jetEta & $\eta$ of all the jets in an event \\
+    jetPhi & $\phi$ of all the jets in an event \\
+    jetMass3 & Invariant mass of the leading three jets in an event\\
     totHtOverPt & Total ${\ensuremath{H_{\mathrm{T}}}$ divided by the system's \pT \\
    \hline
  \end{tabular}}
 \end{table}
+

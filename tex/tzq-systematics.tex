@@ -531,13 +531,13 @@ Both the input features and model hyperparameters were chosen separately for $ee
 From the selected reconstructed physics objects, a large number of input variables or \emph{features} were constructed and considered as potential inputs for the BDT.
 
 In order to determine which of set of features was optimal, recursive feature elimination was used to select the features which had the greatest discriminating power between the signal and background process.
-This process iteratively removes the least important feature, recording the Area Under Receiver Operating Characteristic curve (AUROC) each time, and re-trains the BDT until every feature has been ranked in order of their removal.
+This process iteratively removes the least important feature and re-trains the BDT until every feature has been ranked in order of their removal.
 From this ranked list, the top $n$ features are selected for when fewer than $n$ features results in the AUROC experiencing a significant decline.
  
 The features chosen by recursive feature elimination for the $ee$ and $\mu\mu$ channels are given in table~\ref{tab:selectedBdtVariables}.
 Figure~\ref{fig:inputFeaturesDistributions} shows the distributions of the selected features in the signal and background samples.
 Figures~\ref{fig:inputFeaturesDataSimAgreement} show the good agreement observed between simulation and data for the combination of the $ee$ and $\mu\mu$ channels for the features selected, validating their validity as reliable features.
-Table~\ref{tab:allBdtVariables} provides a list of all the features that were considered.
+Table~\ref{tab:allBdtVariables} in Appendix~\ref{app:bdt} provides a list of all the features that were considered.
 
 \begin{table}[htbp]
 \topcaption {The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
@@ -551,27 +551,27 @@ Table~\ref{tab:allBdtVariables} provides a list of all the features that were co
    \hline
    \textbf{Variable} & \textbf{Description} & \textbf{$ee$} & \textbf{$\mu\mu$} \\
    \hline
-    bTagDisc & Leading b-tagged jet b-tag discriminator & $\checkmark$ & $\checkmark$ \\
-    fourthJetPt & \pt of the fourth jet & $\checkmark$ & $\checkmark$ \\
-    jetHt & Total ${\ensuremath{H_{\mathrm{T}}}$ of every jet & $X$ & $\checkmark$ \\
-    jetMass & Total mass of every jet & $\checkmark$ & $\checkmark$ \\
-    jjDelR & $\Delta R$ between the leading jets & $\checkmark$ & $\checkmark$ \\
-    leadJetEta & Leading jet $\eta$ & $\checkmark$ & $\checkmark$ \\
-    leadJetPt & Leading jet \pt & $\checkmark$ & $\checkmark$ \\
-    met & \met & $\checkmark$ & $\checkmark$ \\
-    secJetPt & Second jet \pt & $\checkmark$ & $\checkmark$ \\
-    thirdJetPt & Third jet \pt & $\checkmark$ & $\checkmark$ \\
-    topMass & Top quark mass & $\checkmark$ & $\checkmark$ \\
-    totHtOverPt & Total ${\ensuremath{H_{\mathrm{T}}}$ divided by total \pt & $\checkmark$ & $\checkmark$ \\
-    wPairMass & W boson mass & $\checkmark$ & $\checkmark$ \\
-    wQuark2Eta & $\eta$ of the second W boson candidate jet & $X$ & $\checkmark$ \\
-    wwdelR & $\Delta R$ between the W boson candidate jets & $\checkmark$ & $X$ \\
-    zEta & $\eta$ of the Z boson & $X$ & $\checkmark$ \\
-    zHt & ${\ensuremath{H_{\mathrm{T}}}$ of the Z boson & $\checkmark$ & $\checkmark$ \\
-    zMass & $Z boson mass$ & $\checkmark$ & $\checkmark$ \\
-    zTopDelR & $\Delta R$ between the Z boson and top quark & $X$ & $\checkmark$ \\
-    zjminR & Minimum $\Delta R$ between the Z boson and a jet & $\checkmark$ & $\checkmark$ \\
-    zlb1DelR & $\Delta R$ between the Z boson and leading b-tagged jet & $\checkmark$ & $X$ \\
+    bTagDisc & Leading b-tagged jet b-tag output discriminant & $\cmark$ & $\cmark$ \\
+    fourthJetPt & \pt of the fourth jet & $\cmark$ & $\cmark$ \\
+    jetHt & Total ${\ensuremath{H_{\mathrm{T}}}$ of every jet & $X$ & $\cmark$ \\
+    jetMass & Total mass of every jet in an event & $\cmark$ & $\cmark$ \\
+    jjDelR & $\Delta R$ between the leading jets & $\cmark$ & $\cmark$ \\
+    leadJetEta & Leading jet $\eta$ & $\cmark$ & $\cmark$ \\
+    leadJetPt & Leading jet \pt & $\cmark$ & $\cmark$ \\
+    met & Missing transverse energy & $\cmark$ & $\cmark$ \\
+    secJetPt & Second jet \pt & $\cmark$ & $\cmark$ \\
+    thirdJetPt & Third jet \pt & $\cmark$ & $\cmark$ \\
+    topMass & Reconstructed top quark mass & $\cmark$ & $\cmark$ \\
+    totHtOverPt & Total ${\ensuremath{H_{\mathrm{T}}}$ divided by total \pt & $\cmark$ & $\cmark$ \\
+    wPairMass & Reconstructed W boson mass & $\cmark$ & $\cmark$ \\
+    wQuark2Eta & $\eta$ of the second W boson candidate jet & $\xmark$ & $\cmark$ \\
+    wwdelR & $\Delta R$ between the W boson candidate jets & $\cmark$ & $\xmark$ \\
+    zEta & $\eta$ of the Z boson & $\xmark$ & $\cmark$ \\
+    zHt & ${\ensuremath{H_{\mathrm{T}}}$ of the Z boson & $\cmark$ & $\cmark$ \\
+    zMass & Reconstructed Z boson mass & $\cmark$ & $\cmark$ \\
+    zTopDelR & $\Delta R$ between the Z boson and top quark candidates & $\xmark$ & $\cmark$ \\
+    zjminR & Minimum $\Delta R$ between the Z boson candidate and any jet & $\cmark$ & $\cmark$ \\
+    zlb1DelR & $\Delta R$ between the Z boson candidate and the leading b-tagged jet & $\cmark$ & $\xmark$ \\
    \hline
  \end{tabular}}
 \end{table}
