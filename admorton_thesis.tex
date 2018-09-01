@@ -22,6 +22,10 @@
 \usepackage{longtable}
 \usepackage{appendix}
 \usepackage{multirow}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
 
 % Local definitions.
 \newcommand{\editComment}[1]{{\color{Red} #1}} % Indicates who is organising each section.
@@ -92,7 +96,6 @@ The Search for the Standard Model Production of a Single Top Quark in associatio
 \maketitle
 
 \abstract{
-%The Compact Muon Solenoid (CMS) experiment at the Large Hadron Collider (LHC) at CERN 
 A search for the production of a single top quark in association with a Z boson and an additional jet using  data from proton-proton collisions collected by the Compact Muon Solenoid detector at $\sqrt{s} = 13\TeV$ during 2016 is presented.
 This search focussed on identifying the final state containing two leptons from the Z boson decay and between four to six jets, with one to two originating from the decay of a b quark.
 As this final state for the process is dominated by background events, predominantly a Z boson with additional jets and pair produced top quarks, a multivariate analysis was used to further enhance the separation between the signal and background processes in addition to an event selection designed to suppress these background processes.
@@ -104,7 +107,7 @@ During the development of this track finding system a number of different algori
 Studies into the suitability of a linearised $\chi^{2}$ track fitting algorithm for fitting track parameters were undertaken and it was found that its performance was inferior to that of the proposed combinatorial \KF fitter.
 The impact of reducing the minimum track transverse momentum from 3\GeV to 2\GeV on the proposed system are discussed was evaluated.
 The significant decreases observed in the tracking efficiency and number of incorrectly reconstructed tracks was found to be recoverable through taking into account in both the \HT and \KF the increased effect of multiple scattering at lower transverse momentum.
-%
+}
 
 \section*{Acknowledgements} \label{sec:acknowledgments}
 This thesis would not have been possible without the time, help, thoughts, and advice of many people.
@@ -154,7 +157,7 @@ The algorithm
 \input{tex/conclusion.tex}
 
 \begin{appendices}
-\input{tex/appendix_chi2.tex}
+%\input{tex/appendix_chi2.tex}
 \input{tex/appendix_bdt.tex}
 \end{appendices}
 
