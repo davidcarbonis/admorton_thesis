@@ -47,7 +47,8 @@ Extensions of the SM, such as SUSY theories, additional dimensions or new fundam
 
 In order to explore and permit the discovery of physics above the \TeV level, the total centre of mass energy has to be greater than the energy region being explored as, due to the composite nature of the proton, only a fraction of the collision centre-of-mass energy is available.
 Access to physics beyond the \TeV level is not excluded	however, as some signals would be ``unmissable'', but the majority of physics would be limited by statistics.
-Compared to the total inelastic cross section, the production cross section of the Higgs boson and hypothesised SUSY particles, if they have \TeV masses (and exist), are predicted to be many orders of magnitude smaller, as shown in figure~\ref{fig:crossSections}.
+
+As shown in figure~\ref{fig:crossSections}, the production cross section of the Higgs boson and hypothesised SUSY particles, if they have \TeV masses (and exist), are predicted to be many orders of magnitude smaller than both their associated backgrounds and  the total inelastic cross section.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -57,10 +58,12 @@ Compared to the total inelastic cross section, the production cross section of t
 \end{center}
 \end{figure}
 
-Measurements of such processes, as well as precision measurements of SM parameters, require a high interaction rate, and consequently the LHC has a high beam luminosity to achieve this.
-At 2808 bunches per beam and a bunch spacing of 25ns
+Consequently, in order to perform measurements of such processes, as well as precision measurements of SM parameters, the LHC was designed to be capable of achieving an instantaneous beam luminosity of up to $10^{34}\percms$.
+The LHC Achieving such a high instantaneous luminosity was achieved by 
 
-Protons are delivered in 2808 bunches per beam, as opposed to a continuous beam, which at design luminosity will separated by 25ns, resulting in an event rate of 40\MHz and an average of 25 inelastic proton-proton interactions, named pile-up (\PU) for each bunch crossing~\cite{Bruning:782076,Ball:2007zza}. 
+Protons are delivered in 2808 bunches per beam, as opposed to a continuous beam, which at design luminosity will separated by 25ns, resulting in an bunch collision rate of up to 40\MHz.
+To further increase the instantaneous luminosity, the protons bunches are squeezed in order to enhance the number of simultaneous inelastic proton-proton interactions during each bunch crossing.
+ and an average of 25 inelastic proton-proton interactions, named pile-up (\PU) for each bunch crossing~\cite{Bruning:782076,Ball:2007zza}. 
 
 This high event rate presents the experiments the data acquisition and readout challenges, whilst retaining excellent signal-to-background resolution and sufficient radiation hardness in order to withstand the expected fluence.
 %% No need to mention HI mode
@@ -84,10 +87,11 @@ There is also a pair of very-forward calorimeters (HF) in the forward rapidity r
 
 These detectors were designed to investigate the wide range of physics phenomena in the LHC's physics program, resulting in the accurate and precise identification and measurement of electrons, photons, jets and muons over both a large energy and momenta range.
 Full detector resolution is achieved across $|\eta| < 3.0$, with the hadronic calorimetry having an extended coverage up to $|\eta| < 5.0$ in order to ensure good dijet mass and \MET resolutions.
-Sufficient radiation hardness for the expected high fluence and data acquisition and trigger systems required to handle to event rate of the LHC environment had to be considered in the design of the various detectors.
+%% Explained above
+%Sufficient radiation hardness for the expected high fluence and data acquisition and trigger systems required to handle to event rate of the LHC environment had to be considered in the design of the various detectors.
 
 The coordinate system adopted by the CMS experiment has its origin at the nominal interaction point at the centre of the detector. 
-The z-axis is parallel to the anti-clockwise proton beam (i.e. towards the Jura mountains from the detector), the x-axis points towards the centre of the LHC, and the y-axis points vertically upwards.
+The z-axis is parallel to the anti-clockwise proton beam, the x-axis points towards the centre of the LHC, and the y-axis points vertically upwards.
 The azimuthal angle, $\phi$, is the angle measured from the x-axis in the x-y plane and the polar angle, $\theta$, is the angle measured from the z-axis.
 Pseudorapidity, defined as $\eta \equiv -ln\tan(\theta/2)$, is usually used in lieu of $\theta$ as when the mass considered is negligible $\eta$ converges towards rapidity, defined as $y \equiv 1/2 ln(E+p_{z}/E-p_{Z})$, which is Lorentz invariant along the z-axis.
 As such, variables transverse to the z-axis (i.e. the beam line), such as the transverse energy (\ET), momentum (\pT), and missing energy (\MET), depend only on their x and y components.
@@ -196,10 +200,12 @@ for the HB and HE ~\cite{Abdullin:2008zzb}, and,
 for the HF~\cite{Bayatian:2006jz}.
 
 \subsection{The Superconducting Solenoid}\label{subsec:magnet}
-One of the defining features of the CMS detector is the superconducting solenoid which encompasses the silicon tracker and calorimetry~\cite{Acquistapace:1997fm,Herve:2000}.
-The 220T cylindrical coil measures 13m long, has a 5.9m inner diameter, is situated inside a vacuum tank where it is cooled to its operation temperature by liquid helium to 4.5K, and operates at magnetic field of 3.8 Tesla\footnote{Whilst the solenoid was designed to operate at 4T, the CMS collaboration chose to operate it at 3.8T in order maximise the lifetime of the apparatus}.
+One of the defining features of the CMS detector is the superconducting solenoid that encompasses the silicon tracker and calorimetry~\cite{Acquistapace:1997fm,Herve:2000}.
+The 220T cylindrical coil measures 13m long, has a 5.9m inner diameter, is situated inside a vacuum tank where it is cooled to its operating temperature of 4.5K using liquid helium, and operates at magnetic field of 3.8 Tesla.
+While the solenoid was designed to operate at 4T, the CMS Collaboration chose to operate it at 3.8T in order maximise the lifetime of the apparatus.
+
 The large bending power within the solenoid not only provides excellent momentum resolution for charged particles within the tracking detector, but it also prevents low transverse momentum charged particles from reaching the calorimetry and negatively impacting on energy resolution and isolation efficiency.
-An iron return yoke guides and contains the return magnet field, which is sufficiently strong ($\approx$ 1.7T in the barrel and outermost endcap disk) enough to enable accurate momentum resolution for tracking and charge identification of high momentum ($\approx$ 1\TeVc) muons.
+An iron return yoke guides and contains the return magnetic field, which is strong ($\approx$ 1.7~T in the barrel and outermost endcap disk) enough to enable accurate momentum resolution for tracking and charge identification of high momentum ($\approx$ 1\TeVc) muons.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -210,7 +216,7 @@ An iron return yoke guides and contains the return magnet field, which is suffic
 \end{figure}
 
 \subsection{Muon Detectors}\label{subsec:muon chambers}
-Detecting muons is incredibly important for CMS (as implied by the experiment’s name), given many of the signatures of interesting events involve them, including those from SUSY models and the so called “gold-plated” SM Higgs decay into a pair of $Z^{0}$ bosons, which in turn decay into four muons. 
+Detecting muons is incredibly important for CMS (as implied by the experiment’s name), given many of the signatures of interesting events involve them, including the so-called “gold-plated” SM Higgs decay into a pair of $Z^{0}$ bosons, which in turn can decay into four muons. 
 Being Minimum Ionising Particles (MIPs), muons pass through the detector and the magnet with minimal interaction.
 Consequently, the muon chambers~\cite{CMS:1997iti} are placed outside the solenoid and provide a strong clean signals which can be triggered upon.
 
