@@ -1,10 +1,12 @@
 \chapter{Monte Carlo studies for a Track Finding Processor at the High Luminosity-LHC}\label{chapter:tk-upgrade}
  
 \section{The High-Luminosity Large Hadron Collider} \label{sec:hl-lhc}
-The High-Luminosity Large Hadron Collider (HL-HLC) upgrade is expected to be installed during Long Shutdown 3 (2023-2025), with the instantaneous luminosity of the LHC increasing up to $5-7.5 \times {10}^{34}$\percms, corresponding to an average number of proton-proton interactions per 40\MHz bunch crossing of 140 to 200, and a total integrated luminosity of 3000\fbinv to the ATLAS and CMS experiments.
+The High-Luminosity Large Hadron Collider (HL-HLC) upgrade is expected to be installed during Long Shutdown 3 which is expected to occur during 2023-2025~\cite{ApollinariG.:2017ojx}.
+Following its installation, the HL-LHC will be capable of delivering an instantaneous luminosity of the LHC increasing up to $5-7.5 \times {10}^{34}$\percms, which corresponds to an average number of proton-proton interactions per 40\MHz bunch crossing of 140 to 200.
+This will allow both the ATLAS and CMS experiments to record a total integrated luminosity of up to of 3000\fbinv during the 10 year planned lifetime of the HL-LHC.
 
 Increasing the LHC's instantaneous luminosity is motivated by the need to replace the inner triplet quadrupole magnets which focus the beams at the ATLAS and CMS collision regions, which are expected to be near end-of-life due to radiation exposure by 2023~\cite{hl-lhc-prelim-design-report,CMSCollaboration:2015zni}.
-This increase in instantaneous luminosity will provide the experiments the ability to overcome the diminishing statistical gains that occur the longer an experiment is operated for at constant luminosity, and so enable greater precision SM and Higgs measurements, searches for rare processes and their potential deviations from the SM, and the discovery reach for multi-\text{Te\hspace{-.08em}V} massive particles.
+This increase in instantaneous luminosity will provide the experiments the ability to overcome the diminishing statistical gains that occur the longer an experiment is operated zat constant luminosity, and so enable greater precision SM and Higgs measurements, searches for rare processes and their potential deviations from the SM, and the discovery reach for multi-\text{Te\hspace{-.08em}V} massive particles.
 
 The instantaneous luminosity of the machine and the beam parameters are related by: the number of bunches $n_{b}$, the number of protons per bunch $N^{2}_{p}$, the beam beta value (focal length) at the collision point $\beta^{*}$, and a crossing angle dependent luminosity geometrical reduction factor $R$,
 
@@ -18,10 +20,9 @@ Replacing Linac2 with the new Linear accelerator 4 (Linac4) during the Long Shut
 The new more radiation tolerant quadrupole magnets to be installed during LS3 will provide the higher magnetic field strength and aperture required to provide the lower $\beta^{*}$ required to increase the instantaneous luminosity. 
 
 \section{The Phase-II Outer Tracker Upgrade}\label{sec:tk-upgrade}
-To meet the significant challenges of, and exploit, the increased instantaneous luminosity environment of the HL-LHC,
-the ``Phase-II Upgrade'' of the CMS detector has been proposed.
-This upgrade will take place during the LS3 and will deliver the required improved radiation hardness for the increase in radiation and to manage the high \PU HL-LHC environment with greater detector granularity to reduce occupancy, and enhanced bandwidth and triggering capabilities to avoid compromising physics potential~\cite{CMSCollaboration:2015zni,P2TrackerTDR}.
+To meet the significant challenges of, and exploit, the increased instantaneous luminosity environment of the HL-LHC, the CMS detector will be substantially upgraded.
 
+This upgrade will take place during the LS3 and will not only deliver the improved radiation hardness to cope with the increase in radiation from the high \PU HL-LHC environment but also greater detector granularity to reduce occupancy and enhanced bandwidth and triggering capabilities to avoid compromising physics potential~\cite{CMSCollaboration:2015zni,P2TrackerTDR}.
 The Phase-II upgrade will see the entire silicon tracking detector being replaced with one comprised of a pixel Inner Tracker and pixel and strip Outer Tracker
 These new tracking detectors will have:
 \begin{itemize}
@@ -35,13 +36,17 @@ As raising the upgraded calorimeters' and muon chambers' trigger thresholds woul
 \item \textbf{extended tracking acceptance} - the overall physics capabilities of the CMS experiment would greatly benefit from extended coverage of the tracker and calorimeters up to $|\eta| = 4$ in the forward region.
 \end{itemize}
 
-With the above requirements in mind, the pixel Inner Tracker is designed to cover up to $|\eta| = 4$ with $100-150\mum$ thick planar silicon pixel sensors, measuring either $25\times100\mum^{2}$ or $50\times50\mum^{2}$, which provide the low (per mille) occupancy and track separation with the negligible inefficiencies required in the harsh radiation environment\footnote{These sensors are a factor of $\approx 6$ smaller than the Phase-0 and Phase-I pixel detectors}.
+With the above requirements in mind, the pixel Inner Tracker is designed to cover up to $|\eta| = 4$ with $100-150\mum$ thick planar silicon pixel sensors, measuring either $25\times100\mum^{2}$ or $50\times50\mum^{2}$.
+These sensors provide the low (per mille) occupancy and track separation with the negligible inefficiencies required in the harsh radiation environment.
+
 Akin to the previous pixel detectors, the Phase-II pixel is also designed for easy installation and removal to facilitate the replacement of degraded parts.
 Further discussion of the Inner Tracker is detailed in the Phase-II Technical Design Report~\cite{P2TrackerTDR}.
 
 As tracking information is required to make L1 decisions at the HL-LHC, the design of the Outer Tracker has been driven by the need to provide tracking information to the L1 trigger.
-Given the implications for reading out every hit for the L1 trigger at the LHC bunch crossing rate of 40\MHz, a novel design of a pair of closely spaced silicon sensors, capable of rejecting hits generated by low \pT particles, has been proposed, where the ``\pT modules''~\cite{jjonespixel,markthesis} discriminate on charged particle \pT based on the local bend of the track within the magnetic field, as shown in Figure.~\ref{fig:stubs}.
-Pairs of clusters which are consistent with a track \pT above a configurable threshold (typically 2-3\GeV) will be correlated on-detector, and the resultant \emph{stubs} transferred to the L1 trigger, providing an effective data rate reduction of approximately a factor of 10~\cite{mpessimperf,2dptmoduleconcept}.
+Given the implications for reading out every hit for the L1 trigger at the LHC bunch crossing rate of 40\MHz, a novel design of a pair of closely spaced silicon sensors, capable of rejecting hits generated by low \pT particles, has been proposed.
+These sensors, known as the ``\pT modules''~\cite{jjonespixel,markthesis}, discriminate on a charged particle's \pT based on the local bend of the track within the magnetic field.
+As shown in figure.~\ref{fig:stubs}, these modules determine whether or not pairs of clusters are consistent with a track \pT above a configurable threshold (typically 2-3\GeV).
+By correlating pairs of clusters on-detector, an effective data rate reduction of approximately a factor of 10 is achieved before the resultant \emph{stubs} are transferred to the L1 trigger~\cite{mpessimperf,2dptmoduleconcept}.
 
 \begin{figure}[!t]
 \centering
@@ -218,7 +223,8 @@ At the input to the DR, over half of the track candidates are unwanted duplicate
 By understanding how the HT produces these duplicate tracks, a more elegant and subtle DR algorithm can be used instead of having to compare pairs of tracks to see if they are the same as each other.
 This approach is illustrated in Figure~\ref{fig:DR}, where five stubs (blue lines in Hough Space) produce three candidates (green and yellow cells).
 As all three candidates contain the same stubs, they will be fitted with identical helix parameters in the same cell (the yellow cell) regardless of the original HT cell.
-The algorithm accepts only tracks whose fitted parameters are consistent with the cell that the HT found them in initially. There is however, a small subtlety, given that the algorithm eliminates unique tracks whose fitted parameters were not consistent, which results in the loss of a few percent of efficiency. 
+The algorithm accepts only tracks whose fitted parameters are consistent with the cell that the HT found them in initially. 
+There is however, a small subtlety, given that the algorithm eliminates unique tracks whose fitted parameters were not consistent, which results in the loss of a few percent of efficiency. 
 By performing a second pass through the rejected tracks, tracks which have fitted parameters that do not correspond to the HT cell of a track from the first pass are probably not duplicates, and so they are recovered.
 
 \begin{figure}[!h]
@@ -347,17 +353,16 @@ While FPGAs can easily perform such operations, potential complications arise wh
 Therefore, any implementation in firmware for an FPGA will require the use of lookup tables containing the precomputed values of the derivatives in order to quickly update a track's helix parameters without exceeding latency budgets.
 
 \subsubsection{Software Results}\label{subsubsec:chi2software}
-\editComment{Results in this subsub section have been made with 100 ttbar+pu200 events. 
 This is due to several bugs being discovered in the final version of the TMTT code for the flat geometry used to produce these results, which was not present during the development of this algo.
 As the bug had a LARGE impact on the results, a low stats run has been done in order to not to delay the completion of this chapter draft any longer than it already has been!
 The larger stats (~1000 to 5000 events) runs are currently in progress.}
 
-From Equations~\ref{eq:chi4} and~\ref{eq:chi5} and the track derivatives derived in Appendix~\ref{app:chi2}, a software implementation of the linearised $\chi^{2}$ track fit algorithm was developed.
+From equations~\ref{eq:chi4}--~\ref{eq:chi5} and the track derivatives derived in Appendix~\ref{app:chi2}, a software implementation of the linearised $\chi^{2}$ track fit algorithm was developed.
 Initially this implementation used exact floating point mathematics in order to validate the algorithm, before a version using approximated expressions of the track derivatives was developed.
 The motivation behind this was to reduce the number of variables that the matrix of derivatives would depend on in order to simplify (and reduce resources required for) any future tabulation of the matrix.
 
 \begin{table}[htbp]
-\topcaption {Track finding performance on simulated \ttbar events at <PU> of 200, after the \HT and the full chain for  both the exact floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
+\topcaption {Track finding performance on simulated \ttbar events at a <PU> of 200, after the \HT and the full chain for  both the exact floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
 The track finding efficiencies following each stage are given using the efficiency definitions given in Section~\ref{subsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
 \editComment{Fix table size}
 }
@@ -399,7 +404,7 @@ The $\chi^{2}$ track fit increases the purity of the reconstructed tracks by a f
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_It_1_ApproxVsExact.pdf}
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/cotThetaResVsEta_It_1_ApproxVsExact.pdf}
 \caption{
-\pt relative resolution, $\phi$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events at <PU> of 200 for the floating point (red) and approximated maths (blue) implementations of the linearised $\chi^{2}$ fit algorithm for a single fitting iteration.
+\pt relative resolution, $\phi$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events at a <PU> of 200 for the floating point (red) and approximated maths (blue) implementations of the linearised $\chi^{2}$ fit algorithm for a single fitting iteration.
 \editComment{Make plots bigger!}
 }
 \label{fig:chi2HelixParametersResVsEtaApproxVsExact}
@@ -407,7 +412,7 @@ The $\chi^{2}$ track fit increases the purity of the reconstructed tracks by a f
 
 %Running multiple iterations of the fitting algorithm had been previously been considered in the context of improving upon the resolution of a fitted track's helix parameters, but had been shown to produce only marginal improvements.
 
-Figure~\ref{fig:chi2HelixParametersResVsEtaApproxVsExact} shows that resolutions of the four track parameters as a function of $\eta$ from primary tracks in \ttbar events at <PU> of 200 for both mathematical implementations of the algorithm.
+Figure~\ref{fig:chi2HelixParametersResVsEtaApproxVsExact} shows that resolutions of the four track parameters as a function of $\eta$ from primary tracks in \ttbar events at a <PU> of 200 for both mathematical implementations of the algorithm.
 The resolutions compare well not just between the two implementations of the algorithm's mathematics, but also with those obtained for the barrel region with the offline track reconstruction which is able to use all information from the detector with more sophisticated reconstruction techniques ~\cite{P2TrackerTDR}.
 While this guarantees that the tracks found in the the barrel will be useful to the L1 trigger, the significant presence of at least one stub being incorrectly associated with a matched track in the forward regions, as shown in Table~\ref{tab:chi2-exactVsApprox}, significantly degrades the resolution obtained.
 
@@ -471,7 +476,7 @@ While the \qpt and $\phi_{0}$ resolutions achieved after four fitting iterations
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_IterationComparison.pdf}
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/cotThetaResVsEta_IterationComparison.pdf}
 \caption{
-\pt relative resolution, $\phi$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events at <PU> of 200 for the approximated maths implementation of the linearised $\chi^{2}$ fit algorithm for one (black) and four (blue) fitting iterations. The \KF (red) is also included for comparison.
+\pt relative resolution, $\phi$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events at a <PU> of 200 for the approximated maths implementation of the linearised $\chi^{2}$ fit algorithm for one (black) and four (blue) fitting iterations. The \KF (red) is also included for comparison.
 \editComment{Make plots bigger!}
 }
 \label{fig:chi2HelixParametersResIterationsComparison}
@@ -504,7 +509,7 @@ Figure~\ref{fig:2GeVFlatEff} shows how the tracking efficiency improves followin
 \centering
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/htTrackingEffVsInvPtFlatGeometry_5000.pdf}
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
-\caption{The post-\HT (left) and post-\KF (right) tracking efficiency for $\pt > 2\GeVc$ for \ttbar events at <PU> of 200, with the default configuration where only the number of \qpt columns are increased (red) and with the increased number of columns, HT cell merging and \KF state cuts optimisation(blue).
+\caption{The post-\HT (left) and post-\KF (right) tracking efficiency for $\pt > 2\GeVc$ for \ttbar events at a <PU> of 200, with the default configuration where only the number of \qpt columns are increased (red) and with the increased number of columns, HT cell merging and \KF state cuts optimisation(blue).
 }
 \label{fig:2GeVFlatEff}	
 \end{figure}
@@ -517,7 +522,7 @@ This shortcoming of the \KF also accounts for it not being as efficient at remov
 The duplicate removal algorithm however, remains effective at removing almost all the duplicates.
 
 \begin{table}[htbp]
-\topcaption {Track finding performance on simulated \ttbar events at <PU> of 200, after the \HT and the full chain  for the configurations of only increasing the number of \qpt columns (\emph{Default}), additionally using \HT cell merging and the optimised \KF state cuts (\emph{Optimised}).
+\topcaption {Track finding performance on simulated \ttbar events at a <PU> of 200, after the \HT and the full chain  for the configurations of only increasing the number of \qpt columns (\emph{Default}), additionally using \HT cell merging and the optimised \KF state cuts (\emph{Optimised}).
 The track finding efficiencies following each stage are given using the efficiency definitions given in Section~\ref{subsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
 \editComment{Fix table size}
 }
@@ -554,7 +559,7 @@ If all uncertainties were accounted for, the ideal distribution of $\frac{\chi^{
 \end{figure}
 
 %% Discuss the resolution plots here
-Figure~\ref{fig:htHelixParametersResVsInvPt} shows that the resolutions of the track parameters fitted by the \KF are comparable for $\pT < 3\GeV$ for both the default configuration of the \HT where only the number of \qpt columns has been increased and after the \HT and associated \KF optimisations for tracks originating from the primary interaction in \ttbar events at <PU> of 200.
+Figure~\ref{fig:htHelixParametersResVsInvPt} shows that the resolutions of the track parameters fitted by the \KF are comparable for $\pT < 3\GeV$ for both the default configuration of the \HT where only the number of \qpt columns has been increased and after the \HT and associated \KF optimisations for tracks originating from the primary interaction in \ttbar events at a <PU> of 200.
 The slight degradation in the $\phi_{0}$ resolution is a result of the decreased precision coordinates from the \HT and the small improvement observed in the $z_{0}$ resolution is due to the \KF being able to consider genuine stubs which were not previously found by the \HT.
 
 \begin{figure}[htb]
@@ -565,7 +570,7 @@ The slight degradation in the $\phi_{0}$ resolution is a result of the decreased
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtFlatGeometry_5000.pdf}
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/cotThetaResVsInvPtFlatGeometry_5000.pdf}
 \caption{
-The \pt resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolution measured for both the default configuration where only the number of \HT \qpt columns have been increased (red) and after the \HT and \KF optimisations have been applied (blue) for primary reconstructed tracks in simulated \ttbar events at <PU> of 200 for tracks with $\pt > 2\GeVc$.
+The \pt resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolution measured for both the default configuration where only the number of \HT \qpt columns have been increased (red) and after the \HT and \KF optimisations have been applied (blue) for primary reconstructed tracks in simulated \ttbar events at a <PU> of 200 for tracks with $\pt > 2\GeVc$.
 \editComment{Make plots bigger!}
 }
 \label{fig:htHelixParametersResVsInvPt}
@@ -627,7 +632,7 @@ The constant coefficient for the \MS contribution was used for these \KF results
 \centering
 \includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtTiltedGeometry_5000.pdf}
 %\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
-\caption{Plots showing tracking efficiency as a function of $\frac{1}{\pT}$ for \ttbar events at <PU> of 200 after the full chain has been run, where the \KF has not been modified to take \MS into account (red), a constant coefficient for \MS is used (black) and a layer dependent coefficient for \MS is used (blue).
+\caption{Plots showing tracking efficiency as a function of $\frac{1}{\pT}$ for \ttbar events at a <PU> of 200 after the full chain has been run, where the \KF has not been modified to take \MS into account (red), a constant coefficient for \MS is used (black) and a layer dependent coefficient for \MS is used (blue).
 }
 \label{fig:2GeVTiltEff}	
 \end{figure}
@@ -642,7 +647,7 @@ At the time of writing this chapter, it is not understood how incorporating \MS 
 %Tracks with \pt approaching the \pt threshold at which reduced precision of \HT cells are used are have the potential to be built out of both stubs from both the full and reduced precision \HT cells.
 
 \begin{table}[htbp]
-\topcaption {Track finding performance on simulated \ttbar events at <PU> of 200, after the full demonstrator chain for the three differing \KF configurations where \MS is not considered ($k = 0$), a constant \MS coefficient (const $k$) is used and a layer dependent \MS coefficient ($k(layer)$)is used. 
+\topcaption {Track finding performance on simulated \ttbar events at a <PU> of 200, after the full demonstrator chain for the three differing \KF configurations where \MS is not considered ($k = 0$), a constant \MS coefficient (const $k$) is used and a layer dependent \MS coefficient ($k(layer)$)is used. 
 The track finding efficiencies following each stage are given using the efficiency definitions given in Section~\ref{subsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
 \editComment{Fix table size!.}
 }
@@ -664,7 +669,7 @@ The track finding efficiencies following each stage are given using the efficien
 \end{tabular}}
 \end{table}
 
-Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of transverse momentum in simulation for tracks originating from the primary interaction in \ttbar events at <PU> of 200 for both \MS coefficients considered as well as when \MS is not accounted for at all.
+Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of transverse momentum in simulation for tracks originating from the primary interaction in \ttbar events at a <PU> of 200 for both \MS coefficients considered as well as when \MS is not accounted for at all.
 The resolutions of both \MS coefficients are superior across all \pt to when \MS is not considered at all, with the constant \MS coefficient typically providing more slightly more precise measurements than the layer dependent coefficient.  
 As expected, lower transverse momentum tracks experience the greatest improvements given that \MS dominates at lower transverse momenta.
 For both coefficients however, the \pt resolution in the range $ 3.8 \GeV < \pt < 5.5\GeVc$ is worse than when \MS is not considered.
@@ -677,7 +682,7 @@ At the time of writing, this observation is still being investigated, but is sus
 \\
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtTiltedGeometry_5000.pdf}
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/cotThetaResVsInvPtTiltedGeometry_5000.pdf}
-\caption{\pt resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at <PU> of 200 for when multiple scattering isn't considered by the \KF (red), when a constant \MS coefficient is used (black) and when a layer dependent coefficient is used (blue).
+\caption{\pt resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at a <PU> of 200 for when multiple scattering isn't considered by the \KF (red), when a constant \MS coefficient is used (black) and when a layer dependent coefficient is used (blue).
 }
 \label{fig:kfHelixParametersResVsInvPt}
 \end{figure}
@@ -692,7 +697,7 @@ As the amount of material traversed will depend on the trajectory of the charged
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfChi2NdfVsInvPtTiltedGeometry_5000.pdf}
-\caption{Plot showing $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ for for \ttbar events at <PU> of 200 after the full chain has been run, where the \KF has not been modified to take \MS into account (red), a constant coefficient for \MS is used (black) and a layer dependent coefficient for \MS is used (blue).
+\caption{Plot showing $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ for for \ttbar events at a <PU> of 200 after the full chain has been run, where the \KF has not been modified to take \MS into account (red), a constant coefficient for \MS is used (black) and a layer dependent coefficient for \MS is used (blue).
 }
 \label{fig:2GeVTiltChi2Ndf}	
 \end{figure}

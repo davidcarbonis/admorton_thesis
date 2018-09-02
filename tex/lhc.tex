@@ -11,7 +11,9 @@ Three smaller experiments are situated close to one of the four main experiments
 Both the TOTal Elastic and diffractive cross section Measurement (TOTEM)~\cite{Anelli:2008zza} and LHC-forward (LHCf)~\cite{Adriani:2008zz} experiments study diffractive physics in the very-forward regions of collisions at the CMS and ATLAS experiments' collision points, respectively.
 Monopole and Exotics Detector At the LHC (MoEDAL)~\cite{Pinfold:2009oia} shares the LHCb experiment's cavern and performs direct searches for magnetic monopoles and highly ionising stable and pseudo-stable massive particles.
 
-Currently there are three planned phases of operation for the LHC~\ref{fig:lhc-planning}: ``Phase-0'' will see the preparations for 14\TeV operations; ``Phase-I'' will see the accelerator prepared for high luminosity operations; and ``Phase-II'' will see modifications for very high luminosity operations~\cite{ECFA}. Any proposed upgrades of the detectors will naturally have to coincide with the shutdowns of the LHC.
+Currently there are three planned phases of operation for the LHC: ``Phase-0'' will see the preparations for 14\TeV operations; ``Phase-I'' will see the accelerator prepared for high luminosity operations; and ``Phase-II'' will see modifications for very high luminosity operations~\cite{ECFA}. 
+An overview of the LHC's planned timescalesis illusrated in figure~\ref{fig:lhc-planning}.
+Any proposed upgrades of the detectors will naturally have to coincide with the shutdowns of the LHC.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -38,6 +40,7 @@ In the PS, the protons are accelerated to 26\GeV and are injected into the Super
 
 Sixteen Radio Frequency (RF) cavities (eight per beam), each operating at frequency of 400\MHz, at a temperature of 4.5K, and delivering a maximum of 2 MV, are used to accelerate the two beams up to their designed operational energies of 7\TeV over the course of about twenty minutes.
 Each of the two beams are accelerated in separate beam pipes, circulating in opposite directions.
+
 The beams requires 1232 dipole magnets to bend them along their circular path and 392 quadrupole magnets to focus them, with each magnet producing a 8.3T field whilst operating at 1.9K.
 A more detailed description of the LHC accelerator chain at CERN can be found in~\cite{Schindl:397574}. 
 
@@ -59,13 +62,9 @@ As shown in figure~\ref{fig:crossSections}, the production cross section of the 
 \end{figure}
 
 Consequently, in order to perform measurements of such processes, as well as precision measurements of SM parameters, the LHC was designed to be capable of achieving an instantaneous beam luminosity of up to $10^{34}\percms$.
-The LHC Achieving such a high instantaneous luminosity was achieved by 
-
-Protons are delivered in 2808 bunches per beam, as opposed to a continuous beam, which at design luminosity will separated by 25ns, resulting in an bunch collision rate of up to 40\MHz.
-
-To further increase the instantaneous luminosity, the protons bunches are squeezed in order to enhance the number of simultaneous inelastic proton-proton interactions during each bunch crossing.
-
- and an average of 25 inelastic proton-proton interactions, named pile-up (\PU) for each bunch crossing~\cite{Bruning:782076,Ball:2007zza}. 
+Such a high instantaneous luminosity was achieved by delivering protons in 2808 bunches per beam, which at design luminosity will separated by 25ns, to provide a bunch collision rate of up to 40\MHz.
+The instantaneous luminosity is further increased by squeezing the proton bunches to enhance the number of simultaneous inelastic proton-proton interactions during each bunch crossing.
+These multiple simultaneous collisions that occur for each bunch crossing are named pile-up (\PU) interactions~\cite{Bruning:782076,Ball:2007zza}
 
 This high event rate presents the experiments the data acquisition and readout challenges, whilst retaining excellent signal-to-background resolution and sufficient radiation hardness in order to withstand the expected fluence.
 %% No need to mention HI mode
@@ -77,7 +76,7 @@ The Compact Muon Solenoid (CMS)~\cite{oldcms} is a large, general purpose, herme
 Figure~\ref{fig:cms-cutaway} illustrates how the experiment and its sub-detectors are divided into a central cylindrical barrel section and two endcap disk sections at each end of the barrel.
 A superconducting solenoid encompasses, moving from the interaction point at the centre of the detector outwards, an all-silicon tracking detector, a homogeneous lead tungstate ($PbWO_{4}$) electromagnetic calorimeter (ECAL) and a hadronic calorimeter (HCAL) comprised of plastic scintillating tiles interspaced with brass absorbers.
 Beyond the solenoid there is an outer hadronic calorimeter (HO) and interspaced between the iron return yoke are three different types of Muon Detectors.
-There is also a pair of very-forward calorimeters (HF) in the forward rapidity region.
+There is also a pair of very-forward calorimeters (HF) to further extend the hadronic calorimetry coverage to ensure good dijet mass and \MET resolutions.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -88,20 +87,19 @@ There is also a pair of very-forward calorimeters (HF) in the forward rapidity r
 \end{figure}
 
 These detectors were designed to investigate the wide range of physics phenomena in the LHC's physics program, resulting in the accurate and precise identification and measurement of electrons, photons, jets and muons over both a large energy and momenta range.
-Full detector resolution is achieved across $|\eta| < 3.0$, with the hadronic calorimetry having an extended coverage up to $|\eta| < 5.0$ in order to ensure good dijet mass and \MET resolutions.
 %% Explained above
 %Sufficient radiation hardness for the expected high fluence and data acquisition and trigger systems required to handle to event rate of the LHC environment had to be considered in the design of the various detectors.
 
 The coordinate system adopted by the CMS experiment has its origin at the nominal interaction point at the centre of the detector. 
 The z-axis is parallel to the anti-clockwise proton beam, the x-axis points towards the centre of the LHC, and the y-axis points vertically upwards.
-The azimuthal angle, $\phi$, is the angle measured from the x-axis in the x-y plane and the polar angle, $\theta$, is the angle measured from the z-axis.
-Pseudorapidity, defined as $\eta \equiv -ln\tan(\theta/2)$, is usually used in lieu of $\theta$ as when the mass considered is negligible $\eta$ converges towards rapidity, defined as $y \equiv 1/2 ln(E+p_{z}/E-p_{Z})$, which is Lorentz invariant along the z-axis.
-As such, variables transverse to the z-axis (i.e. the beam line), such as the transverse energy (\ET), momentum (\pT), and missing energy (\MET), depend only on their x and y components.
+The azimuthal angle, $\phi$, is the angle measured from the x-axis in the x-y plane and the polar angle, $\theta$, is the angle measured clockwise relative to the positive z-axis.
+Pseudorapidity, defined as $\eta \equiv -ln\tan(\theta/2)$, is usually used in lieu of $\theta$.
+This due to $\eta$, defined as $y \equiv 1/2 ln(E+p_{z}/E-p_{Z})$, converges towards rapidity when the mass considered is negligible and is Lorentz invariant along the z-axis.
 
 \subsection{Tracker}\label{subsec:tracker}
-The tracker, measuring 5.8m with a 2.5m radius over $|\eta| < 2.5$, surrounds the interaction point, and is designed to provide efficient precision trajectory measurements of charged particles emerging from collisions and precise reconstruction of vertices, whilst operating in a harsh radiation environment (max flux $\approx 10^{7}/s$) and minimising the number charged particles interacting with the tracker (i.e. scattering, producing Bremsstrahlung).
-Silicon fulfils these requirements and is used in the inner pixel detector, surrounding the interaction point, and microstrip detector, which encloses the pixel detector, as shown in Fig.~\ref{fig:tracker}.
-The high fluence expected closest to the interaction point requires the high granularity pixels provide in order to ensure a low channel occupancy (< 1\%), but the particle flux from $r < 20\cm$ is sufficiently low enough that microstrips can be used without compromising reconstruction efficiency.
+The tracker, measuring 5.8m with a 2.5m radius over a pseudorapidity range of $|\eta| < 2.5$, surrounds the interaction point, and is designed to provide efficient precision trajectory measurements of charged particles emerging from collisions and precise reconstruction of vertices, whilst operating in a harsh radiation environment (maximum flux $\approx 10^{7}/s$) and minimising the number charged particles interacting with the tracker (i.e. scattering, producing Bremsstrahlung).
+Silicon fulfils these requirements and is used in the inner pixel detector, surrounding the interaction point, and microstrip detector, which encloses the pixel detector, as shown in figure~\ref{fig:tracker}.
+The high particle multiplicity expected closest to the interaction point requires the high granularity pixels provide in order to ensure a low channel occupancy (< 1\%), but the particle flux from $r < 20\cm$ is sufficiently low enough that microstrips can be used without compromising reconstruction efficiency.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -112,6 +110,19 @@ The high fluence expected closest to the interaction point requires the high gra
 \end{figure}
 
 The tracker system is capable of reconstructing tracks for charged particles of $\pT > 1\GeV$ with an efficiency greater than 99\%, and achieving an impact parameter ($d_{0}$) resolution of $\approx 10\mum$ for $\pT \sim 100\GeV$ charged particles and momentum resolutions between $\sim 1.5\%$ and $\sim 3.0\%$ for $1 < \pT < 100\GeV$ charged particles~\cite{Khachatryan:2010pw,Chatrchyan:2014fea}.
+
+\subsubsection{Silicon Pixel Tracker}
+The original ``Phase-0'' silicon pixel detector was comprised of three 53.3\cm long barrel layers at mean radii of 4.4, 7.3 and 10.2\cm and two endcap disks either side of the barrel at $|z| = 34.5$ and 46.5\cm that extend from $r = 6.0$ to 15\cm.
+The pixel sensors consist of n+-type implants  on n-type silicon which are connected by indium bump-bonds to highly integrated ROCs.
+Each of the 66 million pixels measures $100 \times 150\mum^{2}$, covering a total surface area of 1.06 m$^{2}$, with point resolutions of 10\mum in $r-\phi$ and 20\mum in z, which provides the granularity required to have a high track reconstruction efficiency and to be able to precisely calculate the track impact parameters and vertex position.
+
+\editComment{Check rewording of this long sentence to make two shorter ones after receiving Jo's feedback}
+The original pixel detector was designed to operate a nominal instantaneous luminosity of $1 \times 10^{34}\percms$, however, with the ``Phase-I'' LHC conditions of increased \PU from running at a higher instantaneous luminosity with the same 25\ns bunch spacing, the detector will suffer track reconstruction efficiency degradation due to radiation damage.
+Therefore during the End of Year Technical Stop that took place between data taking in 2016 and 2017, the pixel detector was completely replaced.
+A more detailed description of the Phase-I Pixel detector can be found in~\cite{CMS:2012sda}, given that none of the results discussed in~\ref{sec:results} involve data collected after 2016.
+%%Like the original pixel detector, the Phase-I detector's 124 million pixels also measure $100 \times 150\mum^{2}$ (covering a total surface area of 1.95 $m^{2}$) and the sensors are also n+-type implants on n-type silicon.
+%%The Phase-I Pixel detector is comprised of four 54.9\cm long barrel layers at mean radii of 3.0, 6.8, 10.9 and 16.0\cm and three endcap disks at each end of the barrel at $|z| = 29.1, 39.6 and 51.6\cm$ that extend from $r = 4.5 to 16.1\cm$.
+
 
 \subsubsection{Silicon Microstrip Tracker}
 The silicon microstrip detector is comprised of four parts: the Tracker Inner Barrel (TIB) and Tracker Inner Disks (TID) from $20 < r < 55\cm$, and the Tracker Outer Barrel (TOB) and Tracker EndCaps (TEC) from $55 < r < 116\cm$.
@@ -128,18 +139,6 @@ The TEC's nine disks per endcap extend coverage from $|z| = 120\cm$ to $|z| = 28
 The thickness of the sensors in the TEC are 320\mum and 500\mum in the three innermost rings and the rest respectively.
 A number of ``stereo'' modules of two back to back sensors are used in the inner two layers of the TIB and TOB, the inner two rings of the TID and the inner two and the fifth rings of the TEC.
 These sensors are aligned at an angle of 100 mrad to each other, allowing measurements of both the $r-\phi$ and r-z coordinates, to a point resolution of 23-34\mum $r-\phi$ and 23\mum in z and 35–52\mum r-phi and 52\mum in z in the TIB and TOB respectively.
-
-\subsubsection{Silicon Pixel Tracker}
-The original ``Phase-0'' silicon pixel detector was comprised of three 53.3\cm long barrel layers at mean radii of 4.4, 7.3 and 10.2\cm and two endcap disks either side of the barrel at $|z| = 34.5$ and 46.5\cm that extend from $r = 6.0$ to 15\cm.
-The pixel sensors consist of n+-type implants  on n-type silicon which are connected by indium bump-bonds to highly integrated ROCs.
-Each of the 66 million pixels measures $100 \times 150\mum^{2}$, covering a total surface area of 1.06 m$^{2}$, with point resolutions of 10\mum in $r-\phi$ and 20\mum in z, which provides the granularity required to have a high track reconstruction efficiency and to be able to precisely calculate the track impact parameters and vertex position.
-
-\editComment{Check rewording of this long sentence to make two shorter ones after receiving Jo's feedback}
-The original pixel detector was designed to operate a nominal instantaneous luminosity of $1 \times 10^{34}\percms$, however, with the ``Phase-I'' LHC conditions of increased \PU from running at a higher instantaneous luminosity with the same 25\ns bunch spacing, the detector will suffer track reconstruction efficiency degradation due to radiation damage.
-Therefore during the End of Year Technical Stop that took place between data taking in 2016 and 2017, the pixel detector was completely replaced.
-A more detailed description of the Phase-I Pixel detector can be found in~\cite{CMS:2012sda}, given that none of the results discussed in~\ref{sec:results} involve data collected after 2016.
-%%Like the original pixel detector, the Phase-I detector's 124 million pixels also measure $100 \times 150\mum^{2}$ (covering a total surface area of 1.95 $m^{2}$) and the sensors are also n+-type implants on n-type silicon.
-%%The Phase-I Pixel detector is comprised of four 54.9\cm long barrel layers at mean radii of 3.0, 6.8, 10.9 and 16.0\cm and three endcap disks at each end of the barrel at $|z| = 29.1, 39.6 and 51.6\cm$ that extend from $r = 4.5 to 16.1\cm$.
 
 \subsection{Electromagnetic Calorimeter}\label{subsec:ECAL}
 Beyond the tracker, the ECAL~\cite{CMS:1997ysd,CMS:2002xia}, a homogeneous calorimeter, measures the energies of electrons and photons using lead tungstate scintillating crystals. 
@@ -238,7 +237,7 @@ The DT chambers are organised into four stations of cylindrical layers and for e
 Each SL is comprised of four layers of DTs, where the outer SLs measure coordinates in the $r-\phi$ plane and the inner SL measures in the r-z plane (which the outermost station lacks), which provides point resolutions of $\approx 200\mum$ and a $\phi$ directional precision of $\approx 1$ mrad.
 
 CSCs are employed in the endcaps across $0.9 < \eta < 2.4$ , where the mangetic field is non-uniform and there is a higher rate of muons than in the barrel, and are organised into four stations of concentric disks.
-Initially only the inner ring of the outermost (fourth ) disk was installed, with the outer ring (ME4/2, see Fig.~\ref{fig:muonChambers}) being installed in the Long Shutdown 1 (LS1) of the LHC during 2013-2015~\cite{Battilana:2017mrm}.
+Initially only the inner ring of the outermost (fourth ) disk was installed, with the outer ring (ME4/2, see figure~\ref{fig:muonChambers}) being installed in the Long Shutdown 1 (LS1) of the LHC during 2013-2015~\cite{Battilana:2017mrm}.
 Each CSC is composed of six gas gaps, with six planes of anode wires running almost perpendicularly to six planes of cathode strips, and thus provides six position measurements per chamber with a precision in the $r-\phi$ plane of 75\mum for the first station and 150\mum for the other stations\cite{CMS:1997iti}.
 
 RPCs provide coverage over $|\eta| < 1.8$, which originally only extended to $|\eta| < 1.6$, instead of the planned $|\eta| < 2.1$, for financial reasons. 
@@ -269,7 +268,7 @@ Given that following LS1 it was planned that both the instantaneous luminosity a
 
 The Phase-I Calorimeter Trigger Upgrade is based on a \emph{time-multiplexed} architecture which uses large FPGAs on a small number of general-purpose boards with fast optical links that allow for full granularity data to be used.
 This \emph{time-multiplexed} trigger concept differs from the previous traditional regional reconstruction data reduction architecture, which forwards the best candidates at each regional level to the next stage which covers a larger region of the detector, by processing all data for every \emph{n}th bunch crossing on one of \emph{n} identical processors.
-Such a system requires at least two layers, linked by a switching network which buffers and transmits data from the multiple sources to a single processor, as illustrated in Fig.~\ref{fig:TMT}.
+Such a system requires at least two layers, linked by a switching network which buffers and transmits data from the multiple sources to a single processor, as illustrated in figure~\ref{fig:TMT}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -289,7 +288,7 @@ Advantages of a time-multiplexed architecture include:
 \item the use of spare processors to test new algorithms online in parallel with the nominal trigger without affecting the current system and as backup processors in case of the failure of another.
 \end{itemize} 
 
-The electronics of the Phase-I Trigger were installed during LS1 and ran using the legacy trigger system during 2015 with the new trigger system (Fig.~\ref{fig:trigger}) running in parallel for validation prior to commissioning and usage during 2016~\cite{Zabi:2017lya}.
+The electronics of the Phase-I Trigger were installed during LS1 and ran using the legacy trigger system during 2015 with the new trigger system (figure.~\ref{fig:trigger}) running in parallel for validation prior to commissioning and usage during 2016~\cite{Zabi:2017lya}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -302,7 +301,7 @@ The electronics of the Phase-I Trigger were installed during LS1 and ran using t
 The success of this architecture has motivated a similar time-multiplexed approach for a potential track finding system for the Phase-II Outer Tracker, as discussed in~\ref{sec:TMTT}.
 
 \subsubsection{High Level Trigger and Data Acquisiation}\label{paragraph:HLT}
-Upon receipt of a L-1 trigger, the Data Acquisition (DAQ) system (Fig.~\ref{fig:DAQ}) reads out the buffered data from the detector Front-End Drivers, buffers it in the Readout Systems until the Builder Network (controlled by the Event Manager) can transfer data to the Filter Systems where the event fragments are collated into a complete event and processed through the HLT algorithms~\cite{Sphicas:2002gg}. 
+Upon receipt of a L-1 trigger, the Data Acquisition (DAQ) system (figure~\ref{fig:DAQ}) reads out the buffered data from the detector Front-End Drivers, buffers it in the Readout Systems until the Builder Network (controlled by the Event Manager) can transfer data to the Filter Systems where the event fragments are collated into a complete event and processed through the HLT algorithms~\cite{Sphicas:2002gg}. 
 
 \begin{figure}[htbp]
 \begin{center}
