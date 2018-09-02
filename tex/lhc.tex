@@ -99,7 +99,7 @@ This due to $\eta$, defined as $y \equiv 1/2 ln(E+p_{z}/E-p_{Z})$, converges tow
 \subsection{Tracker}\label{subsec:tracker}
 The tracker, measuring 5.8m with a 2.5m radius over a pseudorapidity range of $|\eta| < 2.5$, surrounds the interaction point, and is designed to provide efficient precision trajectory measurements of charged particles emerging from collisions and precise reconstruction of vertices, whilst operating in a harsh radiation environment (maximum flux $\approx 10^{7}/s$) and minimising the number charged particles interacting with the tracker (i.e. scattering, producing Bremsstrahlung).
 Silicon fulfils these requirements and is used in the inner pixel detector, surrounding the interaction point, and microstrip detector, which encloses the pixel detector, as shown in figure~\ref{fig:tracker}.
-The high particle multiplicity expected closest to the interaction point requires the high granularity pixels provide in order to ensure a low channel occupancy (< 1\%), but the particle flux from $r < 20\cm$ is sufficiently low enough that microstrips can be used without compromising reconstruction efficiency.
+The high particle multiplicity expected closest to the interaction point requires the high granularity pixels provide in order to ensure a low channel occupancy ($< 1\%$), but the particle flux from $r < 20\cm$ is sufficiently low enough that microstrips can be used without compromising reconstruction efficiency.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -109,7 +109,7 @@ The high particle multiplicity expected closest to the interaction point require
 \end{center}
 \end{figure}
 
-The tracker system is capable of reconstructing tracks for charged particles of $\pT > 1\GeV$ with an efficiency greater than 99\%, and achieving an impact parameter ($d_{0}$) resolution of $\approx 10\mum$ for $\pT \sim 100\GeV$ charged particles and momentum resolutions between $\sim 1.5\%$ and $\sim 3.0\%$ for $1 < \pT < 100\GeV$ charged particles~\cite{Khachatryan:2010pw,Chatrchyan:2014fea}.
+The tracker system is capable of reconstructing tracks for charged particles of with transverse momenta greater than at an efficiency greater than 99\% and an impact parameter, $d_{0}$, resolution of approximately $10\mum$ for charged particles with transverse momenta of $100\GeV$ and momentum resolutions between $1.5\%$ and $3.0\%$ for charged particles with $1 < \pT < 100\GeV$~\cite{Khachatryan:2010pw,Chatrchyan:2014fea}.
 
 \subsubsection{Silicon Pixel Tracker}
 The original ``Phase-0'' silicon pixel detector was comprised of three 53.3\cm long barrel layers at mean radii of 4.4, 7.3 and 10.2\cm and two endcap disks either side of the barrel at $|z| = 34.5$ and 46.5\cm that extend from $r = 6.0$ to 15\cm.
@@ -119,7 +119,7 @@ Each of the 66 million pixels measures $100 \times 150\mum^{2}$, covering a tota
 \editComment{Check rewording of this long sentence to make two shorter ones after receiving Jo's feedback}
 The original pixel detector was designed to operate a nominal instantaneous luminosity of $1 \times 10^{34}\percms$, however, with the ``Phase-I'' LHC conditions of increased \PU from running at a higher instantaneous luminosity with the same 25\ns bunch spacing, the detector will suffer track reconstruction efficiency degradation due to radiation damage.
 Therefore during the End of Year Technical Stop that took place between data taking in 2016 and 2017, the pixel detector was completely replaced.
-A more detailed description of the Phase-I Pixel detector can be found in~\cite{CMS:2012sda}, given that none of the results discussed in~\ref{sec:results} involve data collected after 2016.
+A more detailed description of the Phase-I Pixel detector can be found in~\cite{CMS:2012sda}, given that none of the results discussed in Section~\ref{sec:results} involve data collected after 2016.
 %%Like the original pixel detector, the Phase-I detector's 124 million pixels also measure $100 \times 150\mum^{2}$ (covering a total surface area of 1.95 $m^{2}$) and the sensors are also n+-type implants on n-type silicon.
 %%The Phase-I Pixel detector is comprised of four 54.9\cm long barrel layers at mean radii of 3.0, 6.8, 10.9 and 16.0\cm and three endcap disks at each end of the barrel at $|z| = 29.1, 39.6 and 51.6\cm$ that extend from $r = 4.5 to 16.1\cm$.
 
@@ -138,7 +138,7 @@ The pitch of the strips vary from 183\mum for the inner four layers to 122\mum f
 The TEC's nine disks per endcap extend coverage from $|z| = 120\cm$ to $|z| = 280\cm$, with the number of rings per disk varing from four to seven depending on the disk's position in z.
 The thickness of the sensors in the TEC are 320\mum and 500\mum in the three innermost rings and the rest respectively.
 A number of ``stereo'' modules of two back to back sensors are used in the inner two layers of the TIB and TOB, the inner two rings of the TID and the inner two and the fifth rings of the TEC.
-These sensors are aligned at an angle of 100 mrad to each other, allowing measurements of both the $r-\phi$ and r-z coordinates, to a point resolution of 23-34\mum $r-\phi$ and 23\mum in z and 35–52\mum r-phi and 52\mum in z in the TIB and TOB respectively.
+These sensors are aligned at an angle of 100 mrad to each other, allowing measurements of both the $r-\phi$ and r-z coordinates, to a resolution of 23-34\mum in $r-\phi$ and 23\mum in z and 35–52\mum in $r-\phi$ and 52\mum in z in the TIB and TOB respectively.
 
 \subsection{Electromagnetic Calorimeter}\label{subsec:ECAL}
 Beyond the tracker, the ECAL~\cite{CMS:1997ysd,CMS:2002xia}, a homogeneous calorimeter, measures the energies of electrons and photons using lead tungstate scintillating crystals. 
@@ -161,14 +161,15 @@ The thickness of the radiators was chosen to ensure ~95\% of incident photons sh
 \end{center}
 \end{figure}
 
-Electron test beam measurements without a magnetic field and without material between the test beam and ECAL have determined the energy resolution, $\sigma_{E}$, to be,
+ECAL test beam measurements~\cite{Adzic:2007mi} have determined the energy resolution, $\sigma_{E}$, to be,
 
 \begin{equation}
 (\frac{\sigma_{E}}{E})^{2} = (\frac{2.8\%}{\sqrt{E}})^{2} + (\frac{12\%}{E})^{2} + (0.3\%)^{2} \;.
 \label{eq:ecalResolution}
 \end{equation}
 
-where E is the energy of the incident particle in \GeV, the first term representing the statistical fluctuations in the amount of photo-electrons produced, the second denoting noise from the electronics ad digitisation, and the third term covering any non-uniform longitudinal response and shower containment losses~\cite{Adzic:2007mi}.
+where E is the energy of the incident electron in \GeV. 
+The first term is the stochastic term representing the statistical fluctuations in the amount of photo-electrons produced, the second term is the nosie term which represents the noise from the electronics and digitisation, and the third term is the constant term which covers any non-uniform longitudinal response and shower containment losses~\cite{Adzic:2007mi}.
 
 \subsection{Hadronic Calorimeter}\label{subsec:HCAL}
 Hadronic particles penetrate through the ECAL into the HCAL~\cite{CMS:1997xji}, where hadronic jets have their energies measured and are contained for determination of the missing transverse energy and protection of the muon detectors~\cite{HCAL:tdr}.
@@ -185,13 +186,14 @@ As the forward region experiences the most severe radiation environment, the tec
 Interspaced between steel absorbers, quartz fibres are used produce Cherenkov light due to their radiation hardness, fast response time, production of Cherenkov radiation above a certain energy threshold (thus ignoring low energy particles), and ability to give directional information due to the light being strongly correlated with the showers' trajectories.
 The Cherenkov light produced is transmitted down the fibres to individually shielded photomultiplier tubes contained in readout boxes.
 
-Using test beams of electrons, muons and pions, the combined energy resolution of the ECAL and HCAL together was determined to be, 
+Using test beam measurements using electrons, muons and pions, the combined energy resolution of the ECAL and HCAL together, in terms of the stochastic and constant terms, was determined to be
 
 \begin{equation}
 (\frac{\sigma_{E}}{E})^{2} = (\frac{84.4 \pm 1.6\%}{\sqrt{E}})^{2} + (7.4 \pm 0.8\%)^{2} \;.
 \label{eq:hcalResolution}
 \end{equation}
-for the HB and HE ~\cite{Abdullin:2008zzb}, and,
+
+for the HB and HE~\cite{Abdullin:2008zzb}, and
 
 \begin{equation}
 (\frac{\sigma_{E}}{E})^{2} = (\frac{198\%}{\sqrt{E}})^{2} + (9\%)^{2} \;.
@@ -206,7 +208,7 @@ The 220T cylindrical coil measures 13m long, has a 5.9m inner diameter, is situa
 While the solenoid was designed to operate at 4T, the CMS Collaboration chose to operate it at 3.8T in order maximise the lifetime of the apparatus.
 
 The large bending power within the solenoid not only provides excellent momentum resolution for charged particles within the tracking detector, but it also prevents low transverse momentum charged particles from reaching the calorimetry and negatively impacting on energy resolution and isolation efficiency.
-An iron return yoke guides and contains the return magnetic field, which is strong ($\approx$ 1.7~T in the barrel and outermost endcap disk) enough to enable accurate momentum resolution for tracking and charge identification of high momentum ($\approx$ 1\TeVc) muons.
+An iron return yoke guides and contains the return magnetic field, which is strong enough at approximately 1.7~T in the barrel and outermost endcap disks to enable accurate momentum resolution for tracking and charge identification of high momentum, \ie $\geq 1\TeV$, muons.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -247,17 +249,18 @@ As such, RPCs provide additional but complimentary input to trigger decisions.
 A RPC is formed of two parallel resistive plates, separated by a few millimetres, with a large electric field applied across the gas filled gap.
 The barrel contains six layers of RPCs, two layers in the first two stations and one in each of the outer stations, and the endcaps have 4 RPC disks each, one for each CSC station.
 
-Collectively with information from the tracking system to improve performance (as described in Chapter~\ref{chapter:data-mc}), these systems provide a momentum resolution of $1.3\% to 2.0\%$ and up to $\approx 6\%$ in the barrels and endcaps respectively and a charge misidentification rate of $< 0.1\%$ for muons with $\pT < 100 \GeV$~\cite{Chatrchyan:2012xi,Chatrchyan:2013sba}.
+Collectively, with information from the tracking system to improve performance (as described in Chapter~\ref{chapter:data-mc}), these systems provide a momentum resolution of $1.3\%$ to $2.0\%$ and up to $6\%$ in the barrels and endcaps, respectively, and a charge misidentification rate of less than $0.1\%$ for muons for $\pT < 100 \GeV$~\cite{Chatrchyan:2012xi,Chatrchyan:2013sba}.
 
 \subsection{Trigger and Data Acquisition Systems}\label{subsec:trigger}
-At design luminosity, the LHC has a bunch crossing (BX) rate of $40\MHz$, i.e. $\approx~10^{9}$ inelastic events per second, with each proton-proton collision event having a size of $\approx 1.5MB$~\cite{Bayatian:2006nff}.
-Since is is not possible to store every event or to have sufficient bandwidth to read all events off the detector, the CMS trigger system~\cite{Dasu:2000ge,Sphicas:2002gg} has to drastically reduce the data rate to the manageable level of $\approx 1\kHz$\footnote{Since initial operations, the original event storage rate of 100\Hz has been increased to 0.5 to 1\kHz}~\cite{Dasu:2000ge,phase1L1TDR}.
+At design luminosity, the LHC has a bunch crossing (BX) rate of $40\MHz$, i.e. of the order of $10^{9}$ inelastic events per second, with each proton-proton collision event having a size of approximately $1.5$MB~\cite{Bayatian:2006nff}.
+Since is is not possible to store every event or to have sufficient bandwidth to read all events off the detector, the CMS trigger system~\cite{Dasu:2000ge,Sphicas:2002gg} has to drastically reduce the data rate to the manageable level of $\approx 1\kHz$.
+Since initial operations, the original event storage rate of 100\Hz has been increased to 0.5 to 1\kHz~\cite{Dasu:2000ge,phase1L1TDR}.
 
-The vast majority of events are uninteresting from a physics perspective, with the cross sections of interesting processes being at least $\approx 10^{7}$ smaller than the total proton-proton cross section of $110.6 \pm 3.4$ mb~\cite{Antchev:2017dia}.
+The vast majority of events are uninteresting from a physics perspective, with the cross sections of interesting processes being at least $10^{7}$ times smaller than the total proton-proton cross section of $110.6 \pm 3.4$ mb~\cite{Antchev:2017dia}.
 Therefore the CMS trigger system is designed to reject these background events and select events in a manner that allows all possible new physics signatures to be detected whilst keeping acceptance thresholds sufficiently as low as reasonably possible, within the constraints of the design readout and storage capacity.
-The CMS trigger system is comprised of two stages, The Level-1 (L1) Trigger and the High Level Trigger (HLT), as it not feasible to reduce the data rate in a single processing stage without compromising on physics performance.
+The CMS trigger system is comprised of two stages, The Level-1 (L-1) Trigger and the High Level Trigger (HLT), as it not feasible to reduce the data rate in a single processing stage without compromising on physics performance.
 
-\subsubsection{L-1 Trigger}\label{paragraph:L1}
+\subsubsection{Level-1 Trigger}\label{paragraph:L1}
 The Level-1 Trigger reduces the raw $40\MHz$ rate to $\approx100\kHz$ and consists of FPGAs (Field Programmable Gate Arrays) and ASICs (Application Specific Integrated Circuits), which have to identify hard scattering physics signals at a high efficiency with acceptance thresholds as low as possible, within constraint of the system having to analyse every bunch crossing (BX).
 The strict time limitations on how long it takes for the data can be collected and read out, precludes both the reading out of events in full and of the use of iterative reconstruction algorithms.
 As the selection cannot be done before the subsequent BX, given the above constraints, the L1 Trigger uses a pipelined approach which provides a total system latency of $\approx$ 3.8\mus, during which the detector data is buffered (the Tracker and ES buffers being the limiting factor of the system latency) prior to either being read out or discarded.
@@ -301,7 +304,7 @@ The electronics of the Phase-I Trigger were installed during LS1 and ran using t
 The success of this architecture has motivated a similar time-multiplexed approach for a potential track finding system for the Phase-II Outer Tracker, as discussed in~\ref{sec:TMTT}.
 
 \subsubsection{High Level Trigger and Data Acquisiation}\label{paragraph:HLT}
-Upon receipt of a L-1 trigger, the Data Acquisition (DAQ) system (figure~\ref{fig:DAQ}) reads out the buffered data from the detector Front-End Drivers, buffers it in the Readout Systems until the Builder Network (controlled by the Event Manager) can transfer data to the Filter Systems where the event fragments are collated into a complete event and processed through the HLT algorithms~\cite{Sphicas:2002gg}. 
+Upon receipt of a L1 trigger, the Data Acquisition (DAQ) system (figure~\ref{fig:DAQ}) reads out the buffered data from the detector Front-End Drivers, buffers it in the Readout Systems until the Builder Network (controlled by the Event Manager) can transfer data to the Filter Systems where the event fragments are collated into a complete event and processed through the HLT algorithms~\cite{Sphicas:2002gg}. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -311,7 +314,7 @@ Upon receipt of a L-1 trigger, the Data Acquisition (DAQ) system (figure~\ref{fi
 \end{center}
 \end{figure}
 
-The HLT reduces the L1 rate of $\approx 100\kHz$ to the output rate of $\approx 1\kHz$.
+The HLT reduces the L1 rate of $100\kHz$ to the output rate of approximately $1\kHz$.
 In contrast to the L1 trigger, the HLT algorithms are performed by commercially available processors by the CMS Software (\CMSSW), which allows for great flexibility of alogirthms and the use of the full detector readout (including the Tracker and ES) to reconstruct the event and select events.
 Given that the the time limitations on the HLT are not as strict as the L1 Trigger, with events requiring an average of $\approx 40\ms$, more sophisticated reconstruction and selection algorithms are used.
 This however, does not mean that the full event is reconstructed, as such a task is too CPU intensive to be done online within the latency constraints.
