@@ -1,7 +1,7 @@
 \chapter{Theory}\label{chapter:theory}
 \section{The Standard Model}\label{sec:sm}
-The Standard Model (SM) of particle physics is a Quantum Field Theory (QFT) which describes all the known elementary particles and their interactions with the weak, strong, and electromagnetic forces.
-While the SM is not a complete description of nature, the theory has made incredibly accurate predictions with only a handful of small deviations from it being observed.
+The Standard Model (SM) of particle physics is a Quantum Field Theory (QFT) which describes all the known elementary matter particles and their interactions with the weak, strong, and electromagnetic forces.
+As a QFT, particles are described as excitations of quantum fields whose dynamics are typically described using the Lagrangian formalism~\cite{LagrangiansSM}.
 
 This chapter introduces and briefly describes the theoretical framework of the SM, the physics of top quark and the shortcomings of the SM.
 The second section of the chapter discusses the motivations and context of the search for a single top quark produced in association with a Z boson presented in this thesis.
@@ -85,72 +85,78 @@ The fundamental forces of nature and the SM gauge bosons which mediate them.
  \end{tabular}}
 \end{table}	
 
-\subsection{Gauge Symmetries and The Standard Model Lagrangian}\label{subsec:gaugeSymmetries}
+\subsection{Gauge Symmetries}\label{subsec:gaugeSymmetries}
 The idea that the laws of physics are consistent for all observers, even if the measurements differ between observers, is a fundamental component of all modern physical theories~\cite{Haywood}.
 Systems which are unchanged or \emph{invariant} to a transformation are considered to possess a corresponding \emph{symmetry}.
 As shown by Emmy Noether's theorem, any such symmetry has a corresponding conserved quantity~\cite{Noether:1918zz}, such as the conservation of energy-momentum from space-time symmetry or electrical charge from the $U(1)$ symmetry in electromagnetism.
-If a symmetry does not possess a space-time dependence it is said to be \emph{global} and conversely, if the symmetry has a space-time dependence it is said to be \emph{local}.
+If a symmetry has no space-time dependence it is said to be \emph{global} and conversely, if the symmetry does have a space-time dependence it is said to be \emph{local}.
 
-As a QFT, the SM describes particles as excitations of fields whose dynamics are typically described using the Lagrangian formalism~\cite{LagrangiansSM}.
-For the SM to describe the natural symmetries, and their associated conserved quantities, observed in nature, the SM Lagrangian must remain invariant to their transformations.
-
-The impact of requiring the Lagrangian's invariance can be illustrated by considering the effect of applying the $U(1)$ transformations on the Lagrangian of a spin-$\frac{1}{2}$ fermion field,
+These concepts can be demonstrated by considering applying the $U(1)$ local symmetry of Quantum Electrodyanmics (QED), the theory of electromagnetism, on the Lagrangian of a relativistic spin-$\frac{1}{2}$ free-fermion field, for a wavefunction $\psi(x)$ and particles of mass $m$~\ref{eq:diracLagrangian,QFT}:
 
 \begin{equation}
-\mathcal{L} = \bar{\psi} (i {\gamma}^{\mu} \partial_{\mu} - m) \psi \;
+\mathcal{L} = \bar{\psi}(x) (i {\gamma}^{\mu} \partial_{\mu} - m) \psi(x) \;
 \label{eq:diracLagrangian}
 \end{equation}
 
-where $\psi$ represents a relativistic spin-$\frac{1}{2}$ field, ${\gamma}^{\mu}$ are the Dirac matrices, and $m$ is the mass of the particle~\cite{QFT}.
-
-If $U(1)$ is a global transformation, then $\psi$ transforms as 
+If we consider this Lagrangian to have a global $U(1)$ symmetry, then $\psi$ transforms as:
 
 \begin{equation}
-\psi(x) \rightarrow \psi'(x) = e^{-i e \alpha}\psi(x)
+\psi(x) \rightarrow \psi'(x) = e^{-i q \alpha} \psi(x) \\
 \label{eq:globalTransformation}
 \end{equation}
 
-where $\alpha$ is an arbitrary phase, which leaves the Lagrangian in equation~\ref{eq:diracLagrangian} unchanged.
-If however, $U(1)$ is a local transformation, then $\psi$ transforms as
+where $\alpha$ is an arbitrary phase and $q$ the \emph{coupling constant} which leaves the Lagrangian in equation~\ref{eq:diracLagrangian} unchanged.
+
+If however, equation~\ref{eq:diracLagrangian} has a local $U(1)$ symmetry, then $\psi$ transforms according to equation~\ref{eq:localTransformation}:
 
 \begin{equation}
-\psi(x) \rightarrow \psi'(x) = \psi(x)e^{-i e \alpha (x) }
+\psi(x) \rightarrow \psi'(x) = \psi(x) e^{-i q \alpha (x) } \;
 \label{eq:localTransformation}
 \end{equation}
 
-which results in the Lagrangian no longer being invariant, now transforming as  
+As a local transformation involves $\alpha$ being dependent on $x$, the derivative term in equation~\ref{eq:diracLagrangian} now transforms as:
 
 \begin{equation}
-\mathcal{L} \rightarrow \mathcal{L}' = \mathcal{L} + e \bar{psi}(x) \gamma^{\mu} \psi(x) \partial_{\mu}f(x)
+\begin{aligned}
+\bar{\psi}(x) \partial_{\mu} \psi(x) \rightarrow \bar{\psi}'(x) \partial_{\mu} \psi'(x) = \bar{\psi} (x) e^{i q \alpha (x) } \partial_{\mu} \big(e^{-i q \alpha (x) } \psi(x) \big)\\
+= \bar{\psi} (x) \partial_{\mu} \psi(x) - i \bar{\psi} (x) \partial_{\mu} \alpha (x) \psi(x) \;
+\end{aligned}
+\label{eq:derivativeLocalTransformation}
+\end{equation}
+
+which consequently results in the Lagrangian no longer being invariant:
+
+\begin{equation}
+\mathcal{L} \rightarrow \mathcal{L}' = \mathcal{L} + \bar{psi}(x) \big( i {\gamma}^{\mu} \partial_{\mu} \alpha(x) \big) \psi(x) \;
 \label{eq:localLagrangian}
 \end{equation}
 
-In order for 
-A vector field, $A_{\mu}(x)$, associated with the $\psi(x)$ field can be introduced
-
-
-Invariance can be restored by introducing a gauge field $A_{\mu}(x)$, associated with the $\psi(x)$ field, which transforms according to the gauge transformation. 
-
-The minimal substitution in $\mathcal{L}$ which achieves this is the replacement of the derivative $\partial_{\mu}$  with the so-called ``covariant derivative''~\cite{QFT}
+For the Lagrangian to remain invariant under local transformations, a vector or \emph{gauge} field, $A_{\mu}(x)$, associated with the $\psi(x)$ field can be introduced which transforms as follows:
 
 \begin{equation}
-\partial_{\mu} \rightarrow D_{\mu} = [ \partial_{\mu} - icA_{\mu}(x) ]
+A_{\mu}(x) \rightarrow A_{\mu}(x)' + \frac{1}{q} \partial_{\mu} \alpha\;
+\label{eq:vectorField}
 \end{equation}
 
-Which transforms as in the same way as the $\psi(x)$ field:
+This field can be simply introduced by replacing the derivative $\partial_{\mu}$ with the \emph{gauge covariant derivative}~\cite{QFT) $D_{\mu} = \partial_{\mu} - i A_{\mu}(x)$.
+As $D_{\mu}$ transforms as 
 
 \begin{equation}
-D_{\mu}\psi(x) \rightarrow e^{-icf(x)}D_{\mu}\psi(x)
+D_{\mu}\psi(x) \rightarrow e^{-i q \alpha (x) }D_{\mu}\psi(x)
 \end{equation}
 
-Thus the Lagrangian which describes the system in the QFT, remains invariant. 
+the non-invariant term in equation~\ref{eq:localLagrangian} cancels out and ensures that the Lagrangian remains invariant under the local $U(1)$ gauge transformations.
 
-The interaction between the vector gauge field $A_{\mu}(x)$ and the $\psi(x)$ can be interpreted as excitations in the vector field interacting with the particles described by $\psi(x)$, such as photons interacting with electrons in Quantum Electrodynamics. 
+Therefore, the QED Lagrangian is given by equation~\ref{eq:qedLagrangian}:
 
-The constant c is the coupling constant for the vector field, which differs between different gauge fields. 
-In the case of Quantum Electrodynamics, $c = q$, where q is the charge of an electron~\cite{QFT}.
+\begin{equation}
+\mathcal{L}_{QED} = \bar{\psi} (i {\gamma}^{\mu} D_{\mu} - m) \psi - \frac{1}{4} F_{\mu \nu} F^{\mu \nu} \;
+\label{eq:qedLagrangian}
+\end{equation}
 
-By applying the $SU(3)_{C} \times SU(2)_{L} \times U(1)_{Y}$ gauge symmetry to the SM Lagrangian, the gauge fields for the strong and electroweak forces, and their associated bosons, naturally emerge.
+where $F^{a}_{\mu \nu}$ is an invariant field strength tensor $F^{a}_{\mu \nu}$ that describes the geometry of the photon gauge field $A_{\mu}(x)$, $\psi(x)$ is the wavefunction of all electrons in the system and $q$ is the charge of an electron~\cite{QFT,LagrangiansSM}.
+
+Similarly, by requiring the SM Lagrangian to gauge invariant to the $SU(3)_{C}$ gauge symmetry of the strong force and the $SU(2)_{L} \times U(1)_{Y}$ gauge symmetry of the electroweak force, the gauge fields and their associated gauge bosons for the electromagnetic, weak and strong forces naturally emerge.
 
 The resultant SM Lagrangian is constructed of four terms:
 
@@ -160,7 +166,6 @@ The resultant SM Lagrangian is constructed of four terms:
 
 where $\mathcal{L}_{Gauge}$ describes the spin-$1$ gauge boson fields that arise from requiring that the Lagrangian is invariant under local transformations of the symmetry group, $\mathcal{Fermion}$ describes the fermion fields.
 $\mathcal{Higgs}$ and $\mathcal{Yukawa}$ arise as a consequence of the breaking of the electroweak symmetry and respectively describe the scalar spin-0 Higgs field and the interactions between the Higgs field and fermions and gauge bosons.
-
 
 \subsection{Electroweak Theory}\label{subsec:QED}
 \subsubsection{Quantum Electrodynamics}\label{subsec:QED}
@@ -235,44 +240,34 @@ In a manner similar to QED where the vacuum is considered to be a sea of virtual
 While the virtual quark pairs screen a hadron's constituent or \emph{valence} quarks, the virtual gluons have a greater and opposite effect. 
 This results in the strong interaction coupling constant $\alpha_{s}$ decreasing as the separation between colour charged particles decreases, such that quarks within hadrons effectively behave as if they were free particles.
 
-A consequence of asymptotic freedom is the phenomenon of \emph{colour confinement} which confines quarks to exist in colour-singlet states~\cite{ElectroweakStrong,Griffiths,devenish2004deep}.
+The nature of asymptotic freedom makes performing theoretical QCD calculations extremely challenging as, in contrast with QED and its relatively small coupling constant, the strength of $\alpha_{s}$ can rapidly change and be greater than one.
+This making higher order terms increasingly important.
+
+
+A direct consequence of asymptotic freedom is the phenomenon of \emph{colour confinement} whereby quarks can only exist in colour-singlet states~\cite{ElectroweakStrong,Griffiths,devenish2004deep}.
 Such ``colourless states'' are created by the combination of quarks possessing the equivalent colour and anti-colour or all three colours.
 Confinement arises as asymptotic freedom results in increasingly large amounts of energy being required to further any separation between quarks.
 Eventually it becomes more energetically favourable for \emph{hadronisation}, the creation of a quark anti-quark pair to be produced, to occur and form new hadrons.
 In high energy particle collisions, such as those at the Large Hadron Collider, these hadronising quarks produce collimated showers of hadrons called \emph{jets}.
 
 
-The remarkable nature of asymptotic freedom makes performing theoretical calculations and experimental tests  of QCD extremely challenging.
-In contrast to QED, where its relatively small coupling constant results in increasingly higher order processes having decreasing importance, higher order terms can become increasingly important in QCD as the strength of $\alpha_{s}$ can rapidly change and be greater than one.
-As such, when QCD calculation
+If the valence quarks confined within a proton were free particles, then each quark would be expected to carry one third of the proton's momentum.
 
+As the valence quarks confined within a hadron are surrounded by a sea of virtual quarks and gluons, 
+
+colour confinement prevents  structure of the partons that make up a hadron 
+
+The remarkable nature of asymptotic freedom makes performing theoretical calculations extremely challenging as while particles  strong interactions 
+
+While strong interaction perturbation theory can be used when at high energies 
 
 While increasingly higher order contributions in QED
 
  makes probing and understanding the structure of hadrons in order to test our understanding of QCD extremely challenging.
 
 
-performing QCD calculations and 
-
-
-Additionally 
-When a low momentum probe, such as a photon, is used, only 
-
-Understanding the nature of quarks and strong interactions is 
-Our knowledge 
-Given that individual quarks are colour confined within hadrons, 	
-As individual quarks are colour confined, the 
-As $\alpha_{s}$ 
-The nature of asymptotic freedom makes it 
-Given that hadrons are bound states of their constituent \emph{valence quarks}, there is a constant sea of 
-
-Part
-
 ~\cite{evenish2004deep} - DIS
 
-When probed at low energies, 
-
-Given the inability 
 
 \section{Top Physics}\label{sec:top-physics}
 The existence of a third generation of quarks was first hypothesised in 1973 by Makoto Kobayashi and Toshihide Maskawa in order to account for the CP violation observed in kaon decays~\cite{Kobayashi:1973fv}.
