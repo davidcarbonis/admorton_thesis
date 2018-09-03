@@ -89,74 +89,49 @@ The fundamental forces of nature and the SM gauge bosons which mediate them.
 The idea that the laws of physics are consistent for all observers, even if the measurements differ between observers, is a fundamental component of all modern physical theories~\cite{Haywood}.
 Systems which are unchanged or \emph{invariant} to a transformation are considered to possess a corresponding \emph{symmetry}.
 As shown by Emmy Noether's theorem, any such symmetry has a corresponding conserved quantity~\cite{Noether:1918zz}, such as the conservation of energy-momentum from space-time symmetry or electrical charge from the $U(1)$ symmetry in electromagnetism.
-This powerful concept is a key component 
+If a symmetry does not possess a space-time dependence it is said to be \emph{global} and conversely, if the symmetry has a space-time dependence it is said to be \emph{local}.
 
-%If a transformation on the system has no space-time dependence it is said to be \emph{global} and conversely, if the transformation is space-time dependent it is said to be ``local''. 
+As a QFT, the SM describes particles as excitations of fields whose dynamics are typically described using the Lagrangian formalism~\cite{LagrangiansSM}.
+For the SM to describe the natural symmetries, and their associated conserved quantities, observed in nature, the SM Lagrangian must remain invariant to their transformations.
 
-
-
-This powerful concept is at the heart of the SM, where 
-
-
-
-
-This powerful concept was instrumental in the formulation 
-is at the heart of the formulation of the SM 
-
-
-which is constructed from the $SU(3)_{C} \times SU(2)_{L} \times U(1)_{Y}$ gauge group~\cite{LagrangiansSM}.
-
-
-
-
-%A Lagrangian which has continuous local symmetry is said to be gauge invariant~\cite{Haywood}. 
-
-
-%The Lagrangian formalisation, used in QFTs to describe the dynamics of a system, has the Lagrangian ``$L$'' described as the difference between the kinetic and potential energy of the system\cite{LagrangiansSM}. 
-%QFTs usually make use of the Lagrangian Density ``$\mathcal{L}$'', defined as\cite{QFT}:
-%
-%\begin{equation}
-%L = \int \mathrm{d^{3}}x \mathcal{L}
-%\end{equation}
-%
-%With the general form of the Lagrangian Density being defined as:
-%
-%\begin{equation}
-%\mathcal{L} = \mathcal{L} ( \varphi_{i}, \partial _{\mu} \varphi_{i} )
-%\end{equation}
-%
-%
-%where 
-%
-%
-%Where $\partial _{\mu}\varphi_{i} \equiv \partial \varphi / (\partial x^{\mu} )$ is the four-gradient of the field $\phi$~\cite{ElectroweakStrong}.
-%
-%The Lagrangian acts upon a system, with all information pertaining to the system's quantum state being described by a wave function. 
-%The amplitude of the wave function can be interpreted as the probability amplitude from which a measurement of an observable physical quantity can be obtained\cite{Isham}. 
-
-%%% Symmetries
-
-As defined above however, the Lagrangian Density $\mathcal{L}$ is not gauge invariant due to its dependence on the derivative $\partial _{\mu}$. To illustrate this, the Lagrangian which describes free-field fermions\cite{QFT}, 
+The impact of requiring the Lagrangian's invariance can be illustrated by considering the effect of applying the $U(1)$ transformations on the Lagrangian of a spin-$\frac{1}{2}$ fermion field,
 
 \begin{equation}
-\mathcal{L}_{0} = \bar{\psi}(i\gamma^{\mu}\partial_{\mu} - m)\psi
+\mathcal{L} = \bar{\psi} (i {\gamma}^{\mu} \partial_{\mu} - m) \psi \;
+\label{eq:diracLagrangian}
 \end{equation}
 
-Which when undergoing a local phase transformation,
+where $\psi$ represents a relativistic spin-$\frac{1}{2}$ field, ${\gamma}^{\mu}$ are the Dirac matrices, and $m$ is the mass of the particle~\cite{QFT}.
+
+If $U(1)$ is a global transformation, then $\psi$ transforms as 
 
 \begin{equation}
-\psi(x) \rightarrow \psi'(x) = \psi(x)e^{-ixf(x)}
-\bar{\psi(x)} \rightarrow \bar{\psi'}(x) = \psi(x)e^{+ixf(x)}
+\psi(x) \rightarrow \psi'(x) = e^{-i e \alpha}\psi(x)
+\label{eq:globalTransformation}
 \end{equation}
 
-Transforms as:
+where $\alpha$ is an arbitrary phase, which leaves the Lagrangian in equation~\ref{eq:diracLagrangian} unchanged.
+If however, $U(1)$ is a local transformation, then $\psi$ transforms as
 
 \begin{equation}
-\mathcal{L}_{0} \rightarrow \mathcal{L}_{0}' = \mathcal{L}_{0} + q \bar{psi}(x)\gamma^{\mu}\psi(x)\partial_{\mu}f(x)
+\psi(x) \rightarrow \psi'(x) = \psi(x)e^{-i e \alpha (x) }
+\label{eq:localTransformation}
 \end{equation}
 
-This transformation is clearly not invariant. Invariance can be restored by introducing a gauge field $A_{\mu}(x)$, associated with the $\psi(x)$ field, which transforms according to the gauge transformation. 
-The minimal substitution in $\mathcal{L}_{0}$ which achieves this is the replacement of the derivative $\partial_{\mu}$  with the so-called ``covariant derivative''\cite{QFT}:
+which results in the Lagrangian no longer being invariant, now transforming as  
+
+\begin{equation}
+\mathcal{L} \rightarrow \mathcal{L}' = \mathcal{L} + e \bar{psi}(x) \gamma^{\mu} \psi(x) \partial_{\mu}f(x)
+\label{eq:localLagrangian}
+\end{equation}
+
+In order for 
+A vector field, $A_{\mu}(x)$, associated with the $\psi(x)$ field can be introduced
+
+
+Invariance can be restored by introducing a gauge field $A_{\mu}(x)$, associated with the $\psi(x)$ field, which transforms according to the gauge transformation. 
+
+The minimal substitution in $\mathcal{L}$ which achieves this is the replacement of the derivative $\partial_{\mu}$  with the so-called ``covariant derivative''~\cite{QFT}
 
 \begin{equation}
 \partial_{\mu} \rightarrow D_{\mu} = [ \partial_{\mu} - icA_{\mu}(x) ]
@@ -169,47 +144,26 @@ D_{\mu}\psi(x) \rightarrow e^{-icf(x)}D_{\mu}\psi(x)
 \end{equation}
 
 Thus the Lagrangian which describes the system in the QFT, remains invariant. 
+
 The interaction between the vector gauge field $A_{\mu}(x)$ and the $\psi(x)$ can be interpreted as excitations in the vector field interacting with the particles described by $\psi(x)$, such as photons interacting with electrons in Quantum Electrodynamics. 
+
 The constant c is the coupling constant for the vector field, which differs between different gauge fields. 
-In the case of Quantum Electrodynamics, $c = q$, where q is the charge of an electron\cite{QFT}.
+In the case of Quantum Electrodynamics, $c = q$, where q is the charge of an electron~\cite{QFT}.
 
-The differences between bosonic and fermionic particles can now be considered in the context of how they are affected by considering the individual particles within a system and how they are ordered. 
-As particles with integer-spin must be quantised according to Bose-Einstein statistics and half-integer spin particles by Fermi-Dirac statistics, their wave functions must be symmetrical and anti-symmetrical respectively\cite{QM}:
+By applying the $SU(3)_{C} \times SU(2)_{L} \times U(1)_{Y}$ gauge symmetry to the SM Lagrangian, the gauge fields for the strong and electroweak forces, and their associated bosons, naturally emerge.
 
-\begin{equation}
-\psi_{symmetric}(x_{a},x_{b}) = \psi_{symmetric}(x_{b},x_{a})
-\psi_{anti-symmetric}(x_{a},x_{b}) = -\psi_{anti-symmetric}(x_{b},x_{a})
-\end{equation}
-
-As such, the Fermi Exclusion Principle, where two fermions are unable to exist in the same quantum state, can be formalised as\cite{QM}:
-
-\begin{equation}
-\psi_{anti-symmetric}(x_{a},x_{a}) = 0 \qquad \forall \quad a
-\end{equation}
-
-%%%
-As a QFT, the SM describes particles as excitations of fields whose interactions arise
-
-dynamics typically described using the Lagrangian formalism~\cite{LagrangiansSM}. 
-
-
-
-The SM Lagrangian Field Density is constructed of four terms:
+The resultant SM Lagrangian is constructed of four terms:
 
 \begin{equation}
 \mathcal{L}_{SM} = \mathcal{L}_{Gauge} + \mathcal{Fermion} + \mathcal{Higgs} + \mathcal{Yukawa}
 \end{equation}
 
-where $\mathcal{L}_{Gauge}$ describes the spin-$1$ gauge boson fields that arise from imposing 
+where $\mathcal{L}_{Gauge}$ describes the spin-$1$ gauge boson fields that arise from requiring that the Lagrangian is invariant under local transformations of the symmetry group, $\mathcal{Fermion}$ describes the fermion fields.
+$\mathcal{Higgs}$ and $\mathcal{Yukawa}$ arise as a consequence of the breaking of the electroweak symmetry and respectively describe the scalar spin-0 Higgs field and the interactions between the Higgs field and fermions and gauge bosons.
 
-required to keep the Lagrangian invariant
 
-
-, $\mathcal{Fermion}$ describes the fermion fields, $\mathcal{Higgs}$ describes the scalar Higgs field and $\mathcal{Yukawa}$ describes the interactions between the Higgs field and fermions and gauge bosons.
-
-that is based on the $SU(3)_{C} \times SU(2)_{L} \times U(1)_{Y}$ symmetry group.
-
-\subsection{Quantum Electrodynamics}\label{subsec:QED}
+\subsection{Electroweak Theory}\label{subsec:QED}
+\subsubsection{Quantum Electrodynamics}\label{subsec:QED}
 Quantum Electrodynamics (QED) the an Abelian gauge theory based on the U(1) gauge group which describes the electromagnetic force.
 The electromagnetic force is mediated by the massless photon and conserves electrical charge, \emph{q}.
 Due to the Abelian nature of QED, the photon is neutrally charged and only interacts fermions with an electrical charge.
@@ -224,14 +178,14 @@ that are continually produced and annihilated in the QED vacuum,  ~\cite{coughla
 
 %As mentioned above, the Electromagnetic interaction conserves electrical charge, which is described by the $U(1)_{hypercharge}$ group symmetry in QFT\cite{QFT}. 
 
-\subsection{Weak Interactions}\label{subsec:weakForce}
-The weak force is mediated by the massive electrically charged $W^{\pm}$ and neutral $Z^{0}$ gauge bosons which act upon weak isospin, \emph{T}.
+\subsubsection{Weak Interactions}\label{subsec:weakForce}
+The weak force is mediated by the massive charged $W^{\pm}$ and neutral $Z^{0}$ gauge bosons which act upon weak isospin, \emph{T}.
 
 The projection of the weak isospin along the z-axis is the conserved quantity of the Weak interaction, which in QFT is described by the $SU(2)_{weak isospin}$ group symmetry. 
+
 The range and strength of the Weak force is considerably less than that of the Electromagnetic force due to the short lifespan of the massive gauge bosons\cite{ElectroweakStrong}. 
 
 
-Unlike the U(1) group used to describe QED, the SU(2) group is non-Abelian, allowing the weak gauge bosons to self-couple.
 
 The Cabibbo-Kobayashi-Maskawa (CKM) matrix 
 
@@ -239,8 +193,8 @@ CP VIOLATION!
 
 CKM
 
-\subsection{Electroweak Unification}\label{subsec:electroweak}
-Despite their seemingly disparate natures, the unification of the electromagnetic and weak forces into a single \emph{electroweak} interaction was developed by Abdus Salam and Steven Weinberg ...
+\subsubsection{Electroweak Unification}\label{subsec:electroweak}
+Despite the apparently disparate natures of the electromagnetic and weak forces, their unification into a single \emph{electroweak} interaction was independently developed by Abdus Salam and Steven Weinberg based 
 
 
 described by the $SU(2)_{weak isospin} \times U(1)_{hypercharge}$ gauge group
@@ -287,7 +241,21 @@ Confinement arises as asymptotic freedom results in increasingly large amounts o
 Eventually it becomes more energetically favourable for \emph{hadronisation}, the creation of a quark anti-quark pair to be produced, to occur and form new hadrons.
 In high energy particle collisions, such as those at the Large Hadron Collider, these hadronising quarks produce collimated showers of hadrons called \emph{jets}.
 
-The nature of asymptotic freedom makes probing the structure of hadrons extremely challenging.
+
+The remarkable nature of asymptotic freedom makes performing theoretical calculations and experimental tests  of QCD extremely challenging.
+In contrast to QED, where its relatively small coupling constant results in increasingly higher order processes having decreasing importance, higher order terms can become increasingly important in QCD as the strength of $\alpha_{s}$ can rapidly change and be greater than one.
+As such, when QCD calculation
+
+
+While increasingly higher order contributions in QED
+
+ makes probing and understanding the structure of hadrons in order to test our understanding of QCD extremely challenging.
+
+
+performing QCD calculations and 
+
+
+Additionally 
 When a low momentum probe, such as a photon, is used, only 
 
 Understanding the nature of quarks and strong interactions is 
@@ -296,7 +264,6 @@ Given that individual quarks are colour confined within hadrons,
 As individual quarks are colour confined, the 
 As $\alpha_{s}$ 
 The nature of asymptotic freedom makes it 
-A further implication of $\alpha_{s}$ decreasing 
 Given that hadrons are bound states of their constituent \emph{valence quarks}, there is a constant sea of 
 
 Part

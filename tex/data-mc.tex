@@ -10,7 +10,8 @@ The simulation of events is a four stage process: generation (GEN), simulation (
 
 The initial GEN stage involves the use \emph{event generators} to simulate the proton-proton interactions and the resultant physics processes~\cite{Buckley:2011ms,Hoche:2014rga}.
 The first stage of this is the modelling of the colliding protons and the hard scattering of their constituent partons, which involves the use Parton Distribution Functions (PDFs) to assign fractions of the proton's momentum to the partons and perturbation theory to compute the Matrix Elements (ME) of the Feynman diagrams for the QCD and electroweak processes involved.
-The second stage models resultant Parton Showers (PS) through an iterative process until the infrared cutoff scale for the shower is reached, with the remaining particles undergoing hadronisation.
+The second stage models resultant Parton Showers (PS) through an iterative process until the infrared cutoff scale for the shower is reached and perturbation theory no longer applies.
+The remaining particles undergo hadronisation using non-perturbative modelling process.
 The various event generators used in the production of MC samples used in this thesis are discussed in Section~\ref{subsec:eventGenerators}.
 
 Following the GEN stage, the SIM stage involves passing the GEN output through a complete simulation of the CMS detector that has been with the GEANT4 program~\cite{geant4,Lefebure:1999wja}.
