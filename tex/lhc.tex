@@ -99,13 +99,16 @@ This due to $\eta$, defined as $y \equiv 1/2 ln(E+p_{z}/E-p_{Z})$, converges tow
 \subsection{Tracker}\label{subsec:tracker}
 The tracker, measuring 5.8m with a 2.5m radius over a pseudorapidity range of $|\eta| < 2.5$, surrounds the interaction point.
 The tracker is designed to provide efficient precision trajectory measurements of charged particles emerging from collisions and precise reconstruction of vertices, whilst operating in a harsh radiation environment (maximum flux $\approx 10^{7}/s$) and minimising the number charged particles interacting with the tracker.
-Silicon fulfils these requirements and is used in the inner pixel detector, surrounding the interaction point, and microstrip detector, which encloses the pixel detector, as shown in figure~\ref{fig:tracker}.
-The high particle multiplicity expected closest to the interaction point requires the high granularity pixels provide in order to ensure a low channel occupancy ($< 1\%$), but the particle flux from $r < 20\cm$ is sufficiently low enough that microstrips can be used without compromising reconstruction efficiency.
+
+Silicon fulfils these requirements and is used in both the inner pixel and microstrip detectors.
+Figure~\ref{fig:tracker} illustrates how the various parts of the silicon microstrip detector surround the inner pixel detector.
+The high particle multiplicity expected closest to the interaction point requires high granularity pixels provide in order to ensure a low channel occupancy ($< 1\%$)
+The particle flux for radii above 20\cm however, is sufficiently low enough that microstrips can be used without compromising track reconstruction efficiency.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=0.97\textwidth]{figs/cms/fig_cmstracker.png}
-\caption{Schematic of the CMS tracking detector, displaying the interaction point in the centre and the location the sub-detectors and through the arrangement of the lines, their modules. The double lines present in the microstrip tracker denoting modules with double sided sensors~\cite{Sprenger:2010ss}.}
+\caption{Schematic of the CMS tracking detector, displaying the interaction point in the centre and the location of the sub-detectors and, through the arrangement of the lines, their modules. The double lines present in the microstrip tracker denote modules with double-sided sensors~\cite{Sprenger:2010ss}.}
 \label{fig:tracker}
 \end{center}
 \end{figure}
@@ -139,7 +142,7 @@ The pitch of the strips vary from 183\mum for the inner four layers to 122\mum f
 The TEC's nine disks per endcap extend coverage from $|z| = 120\cm$ to $|z| = 280\cm$, with the number of rings per disk varing from four to seven depending on the disk's position in z.
 The thickness of the sensors in the TEC are 320\mum and 500\mum in the three innermost rings and the rest respectively.
 A number of ``stereo'' modules of two back to back sensors are used in the inner two layers of the TIB and TOB, the inner two rings of the TID and the inner two and the fifth rings of the TEC.
-These sensors are aligned at an angle of 100 mrad to each other, allowing measurements of both the $r-\phi$ and r-z coordinates, to a resolution of 23-34\mum in $r-\phi$ and 23\mum in z and 35–52\mum in $r-\phi$ and 52\mum in z in the TIB and TOB respectively.
+These sensors are aligned at an angle of 100 mrad to each other, allowing measurements of both the $r-\phi$ and \r-z coordinates, to a resolution of 23-34\mum in $r-\phi$ and 23\mum in z and 35–52\mum in $r-\phi$ and 52\mum in z in the TIB and TOB respectively.
 
 \subsection{Electromagnetic Calorimeter}\label{subsec:ECAL}
 Beyond the tracker, the ECAL~\cite{CMS:1997ysd,CMS:2002xia}, a homogeneous calorimeter, measures the energies of electrons and photons using lead tungstate scintillating crystals.
@@ -248,14 +251,14 @@ Interspaced between the iron return yoke rings and disks are three gaseous detec
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=0.97\textwidth]{figs/cms/cms_muon_quadrant_run_ii.pdf}
-\caption{Layout of one quadrant in r-z of the CMS Muon Detectors in their Run II configuration (from 2015), which saw the addition of CSC and RPC disks ME 4/2 and RE 4 respectively~\cite{CMS-DP-2016-046}.}
+\caption{Layout of one quadrant in \r-z of the CMS Muon Detectors in their Run II configuration (from 2015), which saw the addition of CSC and RPC disks ME 4/2 and RE 4 respectively~\cite{CMS-DP-2016-046}.}
 \label{fig:muonChambers}
 \end{center}
 \end{figure}
 
 The DTs operate in the barrel region across $|\eta| < 1.2$, where the magnetic field strength is low as most of the return field is contained in the iron yoke,	and each tube is $4.2\cm x 1.3\cm$ cell filled with an Ar/$CO_{2}$ mixture of 85\%/15\%.
 The DT chambers are organised into four stations of cylindrical layers and for each station, the chambers are subdivided into three ``superlayers'' (/SLs).
-Each SL is comprised of four layers of DTs, where the outer SLs measure coordinates in the $r-\phi$ plane and the inner SL measures in the r-z plane (which the outermost station lacks), which provides resolutions of $\approx 200\mum$ and a $\phi$ directional precision of $\approx 1$ mrad.
+Each SL is comprised of four layers of DTs, where the outer SLs measure coordinates in the $r-\phi$ plane and the inner SL measures in the \r-z plane (which the outermost station lacks), which provides resolutions of $\approx 200\mum$ and a $\phi$ directional precision of $\approx 1$ mrad.
 
 CSCs are employed in the endcaps across $0.9 < \eta < 2.4$ , where the mangetic field is non-uniform and there is a higher rate of muons than in the barrel, and are organised into four stations of concentric disks.
 Initially only the inner ring of the outermost (fourth ) disk was installed, with the outer ring (ME4/2, see figure~\ref{fig:muonChambers}) being installed in the Long Shutdown 1 (LS1) of the LHC during 2013-2015~\cite{Battilana:2017mrm}.
