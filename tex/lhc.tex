@@ -281,28 +281,14 @@ The CMS trigger system is comprised of two stages, the Level-1 (L1) Trigger and 
 Since initial operations of the CMS experiment, the original event storage rate of 100\Hz has been increased to 0.5-1\kHz~\cite{Dasu:2000ge,phase1L1TDR}.
 
 \subsubsection{Level-1 Trigger}\label{paragraph:L1}
-The Level-1 Trigger reduces the input $40\MHz$ rate to about $100\kHz$ and consists of FPGAs (Field Programmable Gate Arrays) and ASICs (Application Specific Integrated Circuits), which have to be highly efficiency at identifying interesting physics signals.
-
-
-%%% Rewrite
-As the trigger decision cannot be made before the subsequent BX, the L1 Trigger uses a pipelined approach
-
- which uses coarse information from the calorimeters and muon chambers to 
-
-The strict time limitations on how long it takes for the data can be collected and read out, precludes both the reading out of events in full and of the use of iterative reconstruction algorithms.
-
-
- that provides a total system latency of about 3.8\mus.
-While a decision is being made, the detector data is buffered (the Tracker and ES buffers being the limiting factor on the system latency) prior to either being read out or discarded.
-
-
-%%%%
-
+The Level-1 trigger reduces the input $40\MHz$ rate to about $100\kHz$ and consists of FPGAs (Field Programmable Gate Arrays) and ASICs (Application Specific Integrated Circuits), which have to be highly efficiency at identifying interesting physics signals.
+As the trigger decision cannot be made before the subsequent BX, the L1 Trigger uses a pipelined approach that is capable of buffering the detector for about 3.8\mus (limited by the tracker and ES buffers) before a decision has to be made on whether to read-out an event or discard it. 
+This latency prevents precludes both the reading out of events in full and of the use of iterative reconstruction algorithms.
 Tracking information is not used in the L1 Trigger as it was not possible to read  and consequently, it has not been designed to be read out for every event.
 
-As it was planned for the the LHC to increase both its instantaneous luminosity and centre-of-mass following LS1, the Phase-I Trigger Upgrade~\cite{Tapper:2013yva} was undertaken to ensure that the 100\kHz L1 trigger limit would be maintained.
 
-The Phase-I Calorimeter Trigger Upgrade is based on a \emph{time-multiplexed} architecture which uses large FPGAs on a small number of general-purpose boards with fast optical links that allow for full granularity data to be used.
+The current L-1 trigger, the \emph{Phase-I Trigger}, was developed to ensure that the 100\kHz L1 trigger limit would be maintained following the increase in the instantaneous luminosity and centre-of-mass energy of the LHC following LS1~\cite{Tapper:2013yva}.
+The Phase-I Trigger is based on a \emph{time-multiplexed} architecture which uses large FPGAs on a small number of general-purpose boards with fast optical links that allow for full granularity data to be used.
 This \emph{time-multiplexed} trigger concept differs from the previous traditional regional reconstruction data reduction architecture, which forwards the best candidates at each regional level to the next stage which covers a larger region of the detector, by processing all data for every \emph{n}th bunch crossing on one of \emph{n} identical processors.
 Such a system requires at least two layers, linked by a switching network which buffers and transmits data from the multiple sources to a single processor, as illustrated in figure~\ref{fig:TMT}.
 
@@ -325,16 +311,6 @@ A time-multiplexed architecture was used as it provided a number of advantages c
 \end{itemize} 
 
 The electronics of the Phase-I Trigger were installed during LS1 and ran using the legacy trigger system during 2015 with the new trigger system running in parallel for validation prior to commissioning and usage during 2016~\cite{Zabi:2017lya}.
-Figure~\ref{fig:trigger} illustrates how data from the sub-detector systems passes through the various stages of the Phase-I Level-1 trigger architecture.
-Initially the \emph{calorimeter trigger} searches for energy deposits 
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.97\textwidth]{figs/cms/TrigUpgradeBlockDiagram.pdf}
-\caption{The data flow for the Phase-I Level-1 trigger architecture~\cite{Tapper:2013yva}.}
-\label{fig:trigger}
-\end{center}
-\end{figure}
 
 Given the operational successes of this architecture, a similar time-multiplexed approach for a proposed track finding system for the Phase-II Outer Tracker has been developed.
 This proposed system and the studies presented in this thesis relating to it are discussed in Chapter~\ref{chapter:tk-upgrade}.
