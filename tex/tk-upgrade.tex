@@ -352,10 +352,6 @@ While FPGAs can easily perform such operations, potential complications arise wh
 Therefore, any implementation in firmware for an FPGA will require the use of lookup tables containing the precomputed values of the derivatives in order to quickly update a track's helix parameters without exceeding latency budgets.
 
 \subsubsection{Software Results}\label{subsubsec:chi2software}
-This is due to several bugs being discovered in the final version of the TMTT code for the flat geometry used to produce these results, which was not present during the development of this algo.
-As the bug had a LARGE impact on the results, a low stats run has been done in order to not to delay the completion of this chapter draft any longer than it already has been!
-The larger stats (~1000 to 5000 events) runs are currently in progress.}
-
 From equations~\ref{eq:chi4}--~\ref{eq:chi5} and the track derivatives derived in Appendix~\ref{app:chi2}, a software implementation of the linearised $\chi^{2}$ track fit algorithm was developed.
 Initially this implementation used exact floating point mathematics in order to validate the algorithm, before a version using approximated expressions of the track derivatives was developed.
 The motivation behind this was to reduce the number of variables that the matrix of derivatives would depend on in order to simplify (and reduce resources required for) any future tabulation of the matrix.
