@@ -183,30 +183,24 @@ where E is the energy of the incident electron in \GeV.
 The first term is the stochastic term representing the statistical fluctuations in the amount of photo-electrons produced, the second term is the nosie term which represents the noise from the electronics and digitisation, and the third term is the constant term which covers any non-uniform longitudinal response and shower containment losses~\cite{Adzic:2007mi}.
 
 \subsection{Hadronic Calorimeter}\label{subsec:HCAL}
-Hadronic particles pass through the ECAL and enter the HCAL~\cite{CMS:1997xji}
+Hadronic particles pass through the ECAL and enter the HCAL~\cite{CMS:1997xji}.
 The HCAL measures the energies of the resulting hadronic jets and are contains them for the accurate determination of the missing transverse energy~\cite{HCAL:tdr}.
 As such, the HCAL was designed to have as much absorber material within the solenoid coil as practical. 
 
-The barrel (HB) and endcaps (HE) both use plastic scintillator tiles which are interspersed between brass and steel absorber plates, with the latter being used for the external plates for structural strengthening.
-Wavelength shifting fibres embedded in the tiles convert the scintillation light and channel it to hybrid photodiodes.
-%%%
-The HB covers the rapidity range $|\eta| < 1.4$, with the HE overlapping it and providing coverage over the range $1.3 < |\eta| < 3.0$, with each being segmented in $\eta - \phi$ by $0.087 \times 0.087$ for $| \eta | < 1.6$ and up to $0.17 \times 0.17$ for $| \eta | >= 1.6$.
-Individually, the HB contains from 5.8 interaction lengths at minimum pseudorapidity up to 10.6, while 
+The barrel (HB) and endcaps (HE) both use plastic scintillator tiles which are interspersed between brass and steel absorber plates.
+Steel is used for the innermost and outermost HB and HE absorber plates for structural strengthening.
+The HB covers the rapidity range $|\eta| < 1.4$, with the HE providing coverage over the range $1.3 < |\eta| < 3.0$.
+Both the HB and HE are segmented in $\eta - \phi$ by $0.087 \times 0.087$ for $| \eta | < 1.6$ and up to $0.17 \times 0.17$ for $| \eta | >= 1.6$.
+Wavelength shifting fibres embedded in the tiles are used convert the scintillation light and channel it to hybrid photodiodes.
 
-Due to space constraints within the solenoid, the HB is not large enough to fully contain hadronic showers. Consequently, the HB is supplemented by an additional calorimeter in the barrel region outside the coil known as the HO~\cite{HO}. 
-With the solenoid's coil acting as an additional absorber, the HO provides 11.8
-which ensures that any highly penetrating jets are fully contained.
-Given the outer hadronic calorimeter's limited size and function, it will not be discussed further here, but 
-a thorough description of the HO can be found in.
-
-The forward calorimeters (HF)~\cite{HF} overlap with the HE covering the $2.9 < \eta < 5.0$ pseudorapidity region.
-As the forward region experiences the highest radiation dose, the technology used must be able to withstand  doses up to $10^{9}$ rad~\cite{HF}.
-Quartz fibres, interspaced between steel absorbers, are used due to their radiation hardness and fast response time.
-Hadronic showers above an energy threshold 
-
-, quartz fibres are used produce Cherenkov light due to their radiation hardness, fast response time, production of Cherenkov radiation above a certain energy threshold (thus ignoring low energy particles), and ability to give directional information due to the light being strongly correlated with the showers' trajectories.
-
+The forward hadronic calorimeters (HF) extends coverage up to $\eta < 5.2$ region~\cite{HF}.
+As the very forward region experiences the highest radiation dose, quartz fibres, interspaced between steel absorbers, are used instead due to their radiation hardness and fast response time.
+The quartz fibres produce Cherenkov radiation above a certain energy threshold (thus ignoring low energy particles) and are able to give directional information due to the light being strongly correlated with the showers' trajectories.
 The Cherenkov light is transmitted down the fibres to individually shielded photomultiplier tubes contained in readout boxes.
+
+Due to space constraints within the solenoid, the 5.8 to 10.6 interactions lengths of absorber material within the HB is insufficient to fully contain highly penetrating jets.
+Therefore, the HB is supplemented by an additional calorimeter in the barrel region outside the coil known as the HO~\cite{HO}.
+With the solenoid's coil acting as an additional absorber, the HO increases the effective absorber thickness to at least 11.8 interaction lengths.
 
 Using test beam measurements using electrons, muons and pions, the combined energy resolution of the ECAL and HCAL together, in terms of the stochastic and constant terms, was determined to be
 
@@ -227,54 +221,71 @@ for the HF~\cite{Bayatian:2006jz}.
 \subsection{The Superconducting Solenoid}\label{subsec:magnet}
 One of the defining features of the CMS detector is the superconducting solenoid that encompasses the silicon tracker and calorimetry~\cite{Acquistapace:1997fm,Herve:2000}.
 The 220T cylindrical coil measures 13m long, has a 5.9m inner diameter, is situated inside a vacuum tank where it is cooled to its operating temperature of 4.5K using liquid helium, and operates at magnetic field of 3.8 Tesla.
-While the solenoid was designed to operate at 4T, the CMS Collaboration chose to operate it at 3.8T in order maximise the lifetime of the apparatus.
+While the solenoid was designed to operate at 4~T, the CMS Collaboration chose to operate it at 3.8~T in order maximise the lifetime of the apparatus.
 
-The large bending power within the solenoid not only provides excellent momentum resolution for charged particles within the tracking detector, but it also prevents low transverse momentum charged particles from reaching the calorimetry and negatively impacting on energy resolution and isolation efficiency.
-An iron return yoke guides and contains the return magnetic field, which is strong enough at approximately 1.7~T in the barrel and outermost endcap disks to enable accurate momentum resolution for tracking and charge identification of high momentum, \ie $\geq 1\TeV$, muons.
+As shown in figure~\ref{fig:magneticField}, the solenoid provides a strong homogenous magnetic field within its volume.
+This large bending power not only provides excellent momentum resolution for charged particles within the tracking detector, but it also prevents low transverse momentum charged particles from reaching the calorimetry and negatively impacting on energy resolution and isolation efficiency.
+Outside the solenoid, an iron return yoke guides and contains the return magnetic field as illustrated in figure~\ref{fig:magneticField}.
+The return magnetic field is approximately 1.7~T in the barrel and outermost endcap disks which is sufficiently strong to enable accurate momentum resolution for tracking and charge identification of high momentum, \ie $\geq 1\TeV$, muons.
 
-%\begin{figure}[htbp]
-%\begin{center}
-%\includegraphics[width=0.97\textwidth]{figs/cms/cms_magnetic_field.png}
-%\caption{Longitudinal section of the CMS detector, illustrating the predicted magnetic field strength (left) and field lines (right) for the operational central magnetic flux density of 3.8T~\cite{Chatrchyan:2009si}.}
-%\label{fig:magneticField}
-%\end{center}
-%\end{figure}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.97\textwidth]{figs/cms/cms_magnetic_field.png}
+\caption{Longitudinal section of the CMS detector, illustrating the predicted magnetic field strength (left) and field lines (right) for the operational central magnetic flux density of 3.8~T~\cite{Chatrchyan:2009si}.}
+\label{fig:magneticField}
+\end{center}
+\end{figure}
 
 \subsection{Muon Detectors}\label{subsec:muon chambers}
-Detecting muons is incredibly important for CMS (as implied by the experiment’s name), given many of the signatures of interesting events involve them, including the so-called “gold-plated” SM Higgs decay into a pair of $Z^{0}$ bosons, which in turn can decay into four muons. 
-Being Minimum Ionising Particles (MIPs), muons pass through the detector and the magnet with minimal interaction.
-Consequently, the muon chambers~\cite{CMS:1997iti} are placed outside the solenoid and provide strong clean signals that can be triggered upon.
+As implied by the experiment’s name, the detection and measurement of muons is incredibly important for CMS, as many of the signatures of interesting events involve them.
+Given that muons are Minimum Ionising Particles (MIPs), they pass through the inner detectors and the solenoid with minimal interaction.
+Consequently, the muon chambers~\cite{CMS:1997iti} are placed outside the solenoid and are interspaced between the iron return yoke rings and disks.
 
-Given that the magnetic field outside the solenoid is non-uniform and the radiation levels vary, differing detector technologies are used in order to provide a high performance system which delivers the fast identification and momentum resolution required. 
-
-Figure~\ref{fig:muonChambers} shows the layout 
-
-Interspaced between the iron return yoke rings and disks are three gaseous detector technologies: Drift Tubes (DTs), Cathode Strip Chambers (CSCs) and Resistive Plate Chambers (RPCs).
+Figure~\ref{fig:muonChambers} shows the layout of the gas detectors which make up the muon system.
+As the magnetic field outside the solenoid is non-uniform and the radiation levels vary, the muon system is comprised of three different types of detectors that use different technologies in order to provide a high performance system. 
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=0.97\textwidth]{figs/cms/cms_muon_quadrant_run_ii.pdf}
-\caption{Layout of one quadrant in \r-z of the CMS Muon Detectors in their Run II configuration (from 2015), which saw the addition of CSC and RPC disks ME 4/2 and RE 4 respectively~\cite{CMS-DP-2016-046}.}
+\caption{Layout of one quadrant in \r-z of the CMS muon detectors in their current configuration.
+The DTs are marked in yellow, the CSCs in green and the RPCs in blue.
+Prior to the start of Run-II of the LHC in 2015, during LS1 the outer fourth CSC and fourth RPC disks were installed~\cite{CMS-DP-2016-046}.}
 \label{fig:muonChambers}
 \end{center}
 \end{figure}
 
-The DTs operate in the barrel region across $|\eta| < 1.2$, where the magnetic field strength is low as most of the return field is contained in the iron yoke,	and each tube is $4.2\cm x 1.3\cm$ cell filled with an Ar/$CO_{2}$ mixture of 85\%/15\%.
-The DT chambers are organised into four stations of cylindrical layers and for each station, the chambers are subdivided into three ``superlayers'' (/SLs).
+Drift Tubes (DTs) operate in the barrel region covering $|\eta| < 1.2$, where the magnetic field strength is low as most of the return field is contained within the return yoke.
+Each tube is a $4.2\cm \times 1.3\cm$ cell that contains positively charged wire surrounded by a mixture of argon (85\%) and carbon dioxide (15\%).
+As a muon passes through the chamber it ionises the gas within, with the resultant free electron drifting towards the 
+
+Each cylindrical layer of DT chambers is organised into four stations, where the chambers 
+
+ and for each station, the chambers are subdivided into three ``superlayers'' (/SLs).
 Each SL is comprised of four layers of DTs, where the outer SLs measure coordinates in the $r-\phi$ plane and the inner SL measures in the \r-z plane (which the outermost station lacks), which provides resolutions of $\approx 200\mum$ and a $\phi$ directional precision of $\approx 1$ mrad.
 
-CSCs are employed in the endcaps across $0.9 < \eta < 2.4$ , where the mangetic field is non-uniform and there is a higher rate of muons than in the barrel, and are organised into four stations of concentric disks.
-Initially only the inner ring of the outermost (fourth ) disk was installed, with the outer ring (ME4/2, see figure~\ref{fig:muonChambers}) being installed in the Long Shutdown 1 (LS1) of the LHC during 2013-2015~\cite{Battilana:2017mrm}.
-Each CSC is composed of six gas gaps, with six planes of anode wires running almost perpendicularly to six planes of cathode strips, and thus provides six position measurements per chamber with a precision in the $r-\phi$ plane of 75\mum for the first station and 150\mum for the other stations\cite{CMS:1997iti}.
+Cathode Strip Chambers (CSCs) are employed in the endcaps covering the region $0.9 < \eta < 2.4$, where the magnetic field is non-uniform and there is a higher rate of muons than in the barrel.
+The CSCs are organised into four stations of concentric disks.
 
-RPCs provide coverage over $|\eta| < 1.8$, which originally only extended to $|\eta| < 1.6$, instead of the planned $|\eta| < 2.1$, for financial reasons. 
-During LS1, a fourth endcap disk with RPCs was installed which extended coverage to the current coverage of $|\eta| < 1.8$\cite{Battilana:2017mrm}.
-Although the RPCs have a coarser position resolution ($\approx 1\cm$) than the DTs and CPCs, they have fast response times and excellent time resolution ($\approx 2\ns$).
+Initially only the innermost ring of the outermost (fourth) disk was installed.
+An outer ring for the outermost disk was installed during LS1 during 2013-2015~\cite{Battilana:2017mrm}.
+
+Each CSC is composed of six gas gaps, with six planes of anode wires running almost perpendicular to six planes of cathode strips.
+This provides six position measurements per chamber with a resolution in the $r-\phi$ plane of 75\mum for the first station and 150\mum for the other station~\cite{CMS:1997iti}.
+
+Resistive Plate Chambers (RPCs) provide coverage in the range $|\eta| < 1.8$. 
+Originally the RPCs only extended to $|\eta| < 1.6$, instead of the planned $|\eta| < 2.1$, for financial reasons. 
+During LS1, a fourth endcap disk instrumented with RPCs was installed that extended the coverage~\cite{Battilana:2017mrm}.
+
+In contrast to the DTs and CSCs, RPCs have a coarser position resolution of about 1\cm but 
+Although the RPCs have a coarser position resolution of $\approx 1\cm$) than the DTs and CPCs, they have fast response times and excellent time resolution ($\approx 2\ns$).
+
 As such, RPCs provide additional but complimentary input to trigger decisions.
-A RPC is formed of two parallel resistive plates, separated by a few millimetres, with a large electric field applied across the gas filled gap.
+Each RPCs is formed of two parallel resistive plates, separated by a few millimetres, with a large electric field applied across the gas filled gap.
 The barrel contains six layers of RPCs, two layers in the first two stations and one in each of the outer stations, and the endcaps have 4 RPC disks each, one for each CSC station.
 
-Collectively, with information from the tracking system to improve performance (as described in Chapter~\ref{chapter:data-mc}), these systems provide a momentum resolution of $1.3\%$ to $2.0\%$ and up to $6\%$ in the barrels and endcaps, respectively, and a charge misidentification rate of less than $0.1\%$ for muons for $\pT < 100 \GeV$~\cite{Chatrchyan:2012xi,Chatrchyan:2013sba}.
+When the information from the muon and tracker systems are combined, as described in Chapter~\ref{chapter:data-mc}, 
+
+a momentum resolution of $1.3\%$ to $2.0\%$ and up to $6\%$ in the barrels and endcaps, respectively, and a charge misidentification rate of less than $0.1\%$ for muons with transverse momenta less than $100 \GeV$~\cite{Chatrchyan:2012xi,Chatrchyan:2013sba}.
 
 \subsection{Trigger and Data Acquisition Systems}\label{subsec:trigger}
 At design luminosity, the LHC has a bunch crossing (BX) rate of $40\MHz$, i.e. of the order of $10^{9}$ inelastic events per second.
@@ -291,7 +302,6 @@ The Level-1 trigger reduces the input $40\MHz$ rate to about $100\kHz$ and consi
 As the trigger decision cannot be made before the subsequent BX, the L1 Trigger uses a pipelined approach that is capable of buffering the detector for about 3.8\mus (limited by the tracker and ES buffers) before a decision has to be made on whether to read-out an event or discard it. 
 This latency prevents precludes both the reading out of events in full and of the use of iterative reconstruction algorithms.
 Tracking information is not used in the L1 Trigger as it was not possible to read  and consequently, it has not been designed to be read out for every event.
-
 
 The current L-1 trigger, the \emph{Phase-I Trigger}, was developed to ensure that the 100\kHz L1 trigger limit would be maintained following the increase in the instantaneous luminosity and centre-of-mass energy of the LHC following LS1~\cite{Tapper:2013yva}.
 The Phase-I Trigger is based on a \emph{time-multiplexed} architecture which uses large FPGAs on a small number of general-purpose boards with fast optical links that allow for full granularity data to be used.
