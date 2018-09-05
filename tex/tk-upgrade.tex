@@ -1,54 +1,63 @@
 \chapter{Monte Carlo studies for a Track Finding Processor at the High Luminosity-LHC}\label{chapter:tk-upgrade}
- 
+As the statistical gains for an experiment that is operated at a constant luminosity increasingly diminish over time, it is planned to preserve and extend the LHC's physics discovery potential by operating the LHC with an increased instantaneous luminosity.
+Before the start of these higher luminosity operations, the then life-expired CMS tracker will need replacing.
+The new tracker will not only need to have increased radiation hardness to withstand the increased \PU environment, but also the capability to provide limited tracking information to the L-1 trigger in order to keep the L-1 acceptance rate below 750\kHz.
+
+This chapter introduces the motivations behind the high luminosity upgrade of the LHC, the planned upgrade of the CMS tracker and the studies undertaken for one of the proposed track finding systems for the upgrade tracker.
+
 \section{The High-Luminosity Large Hadron Collider} \label{sec:hl-lhc}
-As the statistical gains increasingly diminish over time for an experiment that is operated at a constant luminosity, 
+In order to fully exploit the physics discovery potential of the LHC, it is planned to increase the instantaneous luminosity the accelerator can deliver by up to an order of magnitude greater than the nominal design.
 
+The High-Luminosity Large Hadron Collider (HL-HLC) upgrade is intended to increase the instantaneous luminosity of the LHC up  to $7.5 \times {10}^{34}$\percms.
+This corresponds to an average number of proton-proton interactions (\PU) per 40\MHz bunch crossing of between 140 and 200 and a total integrated luminosity of up to of 3000\fbinv being provided to both the ATLAS and CMS experiments during the 10 year planned lifetime of the HL-LHC.
 
+The installation of the HL-HLC upgrade is planned to take occur during Long Shutdown 3, which is currently expected to start during 2024~\cite{ApollinariG.:2017ojx}. 
+The timing of LS3 is motivated in part by the need to replace the inner triplet quadrupole magnets that focus the beams at the ATLAS and CMS collision regions are expected to be near life-expired due to radiation exposure~\cite{hl-lhc-prelim-design-report,CMSCollaboration:2015zni}.
 
-The High-Luminosity Large Hadron Collider (HL-HLC) upgrade is expected to take palce during Long Shutdown 3 which is expected to occur during 2023-2025~\cite{ApollinariG.:2017ojx}, resulting in the instantaneous luminosity of the LHC increasing up to $7.5 \times {10}^{34}$\percms.
-This corresponds to an average number of proton-proton interactions per 40\MHz bunch crossing of between 140 and 200 and a total integrated luminosity of up to of 3000\fbinv being provided to both the ATLAS and CMS experiments during the 10 year planned lifetime of the HL-LHC.
-
-Increasing the LHC's instantaneous luminosity is motivated by the need to replace the inner triplet quadrupole magnets which focus the beams at the ATLAS and CMS collision regions, which are expected to be near end-of-life due to radiation exposure by 2023~\cite{hl-lhc-prelim-design-report,CMSCollaboration:2015zni}.
-This increase in instantaneous luminosity will provide the experiments the ability to overcome the diminishing statistical gains that occur the longer an experiment is operated zat constant luminosity, and so enable greater precision SM and Higgs measurements, searches for rare processes and their potential deviations from the SM, and the discovery reach for multi-\text{Te\hspace{-.08em}V} massive particles.
-
-The instantaneous luminosity of the machine and the beam parameters are related by: the number of bunches $n_{b}$, the number of protons per bunch $N^{2}_{p}$, the beam beta value (focal length) at the collision point $\beta^{*}$, and a crossing angle dependent luminosity geometrical reduction factor $R$,
+The instantaneous luminosity, $L$, of an accelerator and its beam parameters are related by~\cite{ApollinariG.:2017ojx}: 
 
 \begin{equation}
 L \propto \frac{n_{b}N^{2}_{p}}{\beta^{*}} R  \;
 \label{eq:machineLumi}
 \end{equation}
 
-As it is not practical to increase the number of proton bunches due to the resultant heat loads induced by electron clouds, the increase in the machine's luminosity will be achieved by increasing the number of protons per bunch and by reducing $\beta^{*}$.
-Replacing Linac2 with the new Linear accelerator 4 (Linac4) during the Long Shutdown 2 (2019-2020) will allow for the number of protons per bunch to be increased by a factor of two compared to the nominal LHC design (and to increase the injection energy by a factor of three)~\cite{linac4}.
-The new more radiation tolerant quadrupole magnets to be installed during LS3 will provide the higher magnetic field strength and aperture required to provide the lower $\beta^{*}$ required to increase the instantaneous luminosity. 
+where $n_{b}$ is the number of bunches, $N^{2}_{p}$ is the number of protons per bunch, $\beta^{*}$ is the focal length (beam $\beta$ value) at the collision point, and $R$ is a crossing-angle-dependent luminosity geometrical reduction factor, .
+
+As it is not practical to increase the number of proton bunches due to the resultant heat loads induced by electron clouds, the increase in the machine's luminosity will be achieved by increasing the number of protons per bunch and by reducing $\beta^{*}$~\cite{ApollinariG.:2017ojx}.
+Replacing Linac2 with the new Linear accelerator 4 (Linac4)~\cite{linac4} during the Long Shutdown 2 (2019-2020) will allow for the number of protons per bunch to be increased by a factor of two compared to the nominal LHC design (and to increase the injection energy by a factor of three).
+The new, more radiation tolerant, quadrupole magnets to be installed during LS3 will provide the higher magnetic field strength and the aperture needed to provide the lower $\beta^{*}$ required to increase the instantaneous luminosity. 
 
 \section{The Phase-II Outer Tracker Upgrade}\label{sec:tk-upgrade}
-To meet the significant challenges of, and exploit, the increased instantaneous luminosity environment of the HL-LHC, the CMS detector will be substantially upgraded.
+To meet the significant challenges of, and exploit, the increased instantaneous luminosity delivered by the HL-LHC, the CMS detector will be substantially upgraded.
+This upgrade will take place during LS3 and will not only deliver the improved radiation hardness to handle the increase in radiation from the increased \PU but also greater detector granularity to reduce occupancy and enhanced bandwidth and triggering capabilities to avoid compromising physics potential~\cite{P2TrackerTDR,CMSCollaboration:2015zni}.
 
-This upgrade will take place during the LS3 and will not only deliver the improved radiation hardness to cope with the increase in radiation from the high \PU HL-LHC environment but also greater detector granularity to reduce occupancy and enhanced bandwidth and triggering capabilities to avoid compromising physics potential~\cite{CMSCollaboration:2015zni,P2TrackerTDR}.
-The Phase-II upgrade will see the entire silicon tracking detector being replaced with one comprised of a pixel Inner Tracker and pixel and strip Outer Tracker
-These new tracking detectors will have:
+
+The Phase-II upgrade will see the entire silicon tracking detector being replaced with one comprised of a pixel Inner Tracker and pixel and strip Outer Tracker that have the following properties:
 \begin{itemize}
-\item \textbf{improved radiation hardness} - being able to withstand the increased fluence of the HL-LHC (up to $2.3\times10^{16} n_{eq}/cm^{2}$ for the innermost layers)and operate efficiently up to the targeted luminosity of 3000\fbinv, with a margin of $\approx50\%$ to accommodate the target being exceeded and the uncertainties in the anticipated radiation exposure.
-\item \textbf{increased sensor granularity} - so that the channel occupancy is kept at or below the per cent (per mille) level for the Outer (Inner) Tracker, allowing for a high track reconstruction efficiency and a low misidentification rate under the increased \PU conditions. This will also enable improved track separation in dense environments, such as high \pT jets, compared to the current pixel detector and fully exploit the vast volume of data produced.
-\item \textbf{reduced material in the tracking volume} - the current tracker's performance is significantly impacted by the amount of material present, as are the calorimeters and overall performance of CMS.
-Significantly reducing the tracker's material budget will greatly enhance CMS' performance at the HL-LHC.
-\item \textbf{robust pattern recognition} - enabling fast and efficient track finding, which is especially important for the HLT, in the high \PU environment.
-\item \textbf{level-1 trigger contributions} - it has been shown that the L1 trigger performance will deteriorate in the high luminosity environment from both the rate increase and the reduced efficiencies of the L1 selection algorithms.
-As raising the upgraded calorimeters' and muon chambers' trigger thresholds would have minimal impact on the rate, and would negatively impact sensitivity to low mass searches and measurements, the L1 bandwidth and latency will be increased (from 100\kHz to 750\kHz and from $3.2\mus$ to $12.5\mus$ respectively) and tracking information will be included in the L1 decision process to preserve and improve trigger performance.
-\item \textbf{extended tracking acceptance} - the overall physics capabilities of the CMS experiment would greatly benefit from extended coverage of the tracker and calorimeters up to $|\eta| = 4$ in the forward region.
+\item \textbf{Improved radiation hardness} is required so that the tracker is able to withstand the increased fluence of the HL-LHC (up to $2.3\times10^{16} n_{eq}/cm^{2}$ for the innermost layers)and operate efficiently up to the target luminosity. A margin of about $50\%$ will be required to accommodate the target luminosity being exceeded and the uncertainties in the anticipated radiation exposure.
+\item \textbf{increased sensor granularity} is required to ensure that the channel occupancy is kept at or below the per cent (per mille) level for the Outer (Inner) Tracker to ensure that a high track reconstruction efficiency and a low misidentification rate is maintained under the increased \PU conditions. This will also enable improved track separation in dense environments, such as high \pT jets, compared to the current pixel detector.
+\item \textbf{reduced material in the tracking volume} will significantly enhance the performance of the detector.
+%\item \textbf{robust pattern recognition} - enabling fast and efficient track finding, which is especially important for the HLT, in the high \PU environment.
+\item \textbf{level-1 trigger contributions} are require in order to maintain L-1 trigger performance. It has been shown that the performance of the L1 trigger will deteriorate in the high luminosity environment from both the rate increase and the reduced efficiencies of the L1 selection algorithms~\cite{CMSCollaboration:2015zni}.
+Raising the upgraded calorimeters' and muon chambers' trigger thresholds would have minimal impact on the rate, and would negatively impact sensitivity to BSM physics that predicts new low mass particles~\cite{CMSCollaboration:2015zni}.
+Therefore the L1 bandwidth and latency will be increased (from 100\kHz to 750\kHz and from $3.2\mus$ to $12.5\mus$ respectively) and tracking information will be included in the L1 decision process to preserve and improve trigger performance.
+\item \textbf{an extended tracking acceptance} of  up to $|\eta| = 4$ in the forward region will greatly improve the overall physics capabilities of the CMS experiment as the density of jets associated with vector boson increases with pseudorapidity~\cite{CMS_Upgrade_TP}. By extension, measurements of missing transverse energy, total energy and jet b-tagging acceptance will also be improved.
 \end{itemize}
 
-With the above requirements in mind, the pixel Inner Tracker is designed to cover up to $|\eta| = 4$ with $100-150\mum$ thick planar silicon pixel sensors, measuring either $25\times100\mum^{2}$ or $50\times50\mum^{2}$.
-These sensors provide the low (per mille) occupancy and track separation with the negligible inefficiencies required in the harsh radiation environment.
+Therefore, the Inner Tracker is designed to cover the range up to $|\eta| = 4$ using $100-150\mum$ thick planar silicon pixel sensors, measuring either $25\times100\mum^{2}$ or $50\times50\mum^{2}$.
+These sensors provide the low (per mille) occupancy and track separation with the negligible inefficiencies required.
 
-Akin to the previous pixel detectors, the Phase-II pixel is also designed for easy installation and removal to facilitate the replacement of degraded parts.
-Further discussion of the Inner Tracker is detailed in the Phase-II Technical Design Report~\cite{P2TrackerTDR}.
+As with to the previous pixel detectors, the Inner Tracker is also designed for easy installation and removal to facilitate repairs and replacement of degraded parts.
+Further discussion of the Inner Tracker can be found in the Phase-II Technical Design Report~\cite{P2TrackerTDR}.
 
 As tracking information is required to make L1 decisions at the HL-LHC, the design of the Outer Tracker has been driven by the need to provide tracking information to the L1 trigger.
-Given the implications for reading out every hit for the L1 trigger at the LHC bunch crossing rate of 40\MHz, a novel design of a pair of closely spaced silicon sensors, capable of rejecting hits generated by low \pT particles, has been proposed.
+
+As reading out every hit for the L1 trigger at the LHC bunch crossing rate of 40\MHz is not possible in the , a novel design of a pair of closely spaced silicon sensors, capable of rejecting hits generated by low \pT particles, has been proposed.
+
 These sensors, known as the ``\pT modules''~\cite{jjonespixel,markthesis}, discriminate on a charged particle's \pT based on the local bend of the track within the magnetic field.
+
 As shown in figure.~\ref{fig:stubs}, these modules determine whether or not pairs of clusters are consistent with a track \pT above a configurable threshold (typically 2-3\GeV).
+
 By correlating pairs of clusters on-detector, an effective data rate reduction of approximately a factor of 10 is achieved before the resultant \emph{stubs} are transferred to the L1 trigger~\cite{mpessimperf,2dptmoduleconcept}.
 
 \begin{figure}[!t]
@@ -68,13 +77,13 @@ Both 2S~module strip layers have a pitch of 90\mum in the transverse plane, $r$-
 Each PS~module sensor layer has an active area of 4.69\cm~$\times$~9.60\cm and will be used at radii $20<r<60$\cm where the occupancies are highest.
 The upper PS~module layers consist of an upper silicon strip sensor and a lower silicon pixel sensor, both with a pitch of 100\mum in $r$-$\varphi$, and a strip length in $z$ of 2.35\cm for the strips and 1.47\mm for the pixels.
 The finer granularity provided by the pixel layer affords better resolution along the $z$ axis, which is crucial for vertex identification in the high \PU environment of the HL-LHC.
-Further details on the two \pT modules can be found in~\cite{CMS_Upgrade_TP,P2TrackerTDR}.
+Further details on the two \pT modules can be found in~\cite{P2TrackerTDR,CMS_Upgrade_TP}.
  
 \begin{figure}[tp]
 \centering
-\includegraphics[width=0.55\textwidth,trim={0truecm 0truecm 0truecm 1truecm},clip]{figs/tk-upgrade/2S_assembled.png}
-\hfill
-\includegraphics[width=0.44\textwidth,trim={0truecm 0truecm 0truecm 1truecm},clip]{figs/tk-upgrade/PS_assembled.png}
+\includegraphics[width=\textwidth,trim={0truecm 0truecm 0truecm 1truecm},clip]{figs/tk-upgrade/2S_assembled.png}
+\\
+\includegraphics[width=\textwidth,trim={0truecm 0truecm 0truecm 1truecm},clip]{figs/tk-upgrade/PS_assembled.png}
 % where an .eps filename suffix will be assumed under latex,
 % and a .pdf suffix will be assumed for pdflatex; or what has been declared
 % via \DeclareGraphicsExtensions.
@@ -117,12 +126,12 @@ One uses Associative Memory (\emph{AM}) ASICs for track finding and FPGAs for tr
 
 Hardware demonstrators for each of the three proposed L1 track finder projects were constructed to prove the feasibility of each approach, which were reviewed in December 2016.
 As all of the work discussed in this chapter was on the FPGA-based \HT approach.
-More detailed descriptions and results of both the AM and tracklet projects' approaches are not discussed here, but are given in~\cite{AM,P2TrackerTDR} and~\cite{tracklet,P2TrackerTDR} respectively.
+More detailed descriptions and results of both the AM and tracklet projects' approaches are not discussed here, but are given in earlier references~\cite{P2TrackerTDR,AM} and~\cite{P2TrackerTDR,tracklet} respectively.
 
-As mentioned above, at the time of the review the flat barrel geometry was used for all the studies undertaken, as depicted in the lower diagram in Figure~\ref{fig:trackerlayout}.
-Unless stated otherwise, the results discussed below use the flat barrel geometry instead of the tilted barrel geometry layout.
+As mentioned above, at the time of the review the flat barrel geometry described earlier was used for all the studies undertaken, as depicted in the lower diagram in Figure~\ref{fig:trackerlayout}.
+As such, unless stated otherwise, the results discussed below use the flat barrel geometry instead of the current tilted geometry.
 
-\section{An FPGA Based Track Finding Architecture and Processor}\label{sec:TMTT}
+\section{A FPGA Based Track Finding Architecture and Processor}\label{sec:TMTT}
 \subsection{The Track Finding Architecture}\label{subsec:TFA}
 The proposed FPGA-based Hough Transform Track Finder is a scalable, flexible and redundant design based on a fully time-multiplexed architecture, as previously demonstrated by the Phase-I Calorimeter Trigger Upgrade discussed in Section~\ref{paragraph:L1}, for implementation on commercially available FPGAs.
 A time-multiplexed design has a number of advantages, as discussed in Section~\ref{paragraph:L1}, including that only a single Track Finding Processor (TFP) is required to demonstrate the full system as each processor is identical in every respect.
