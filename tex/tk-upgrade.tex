@@ -37,9 +37,9 @@ The Phase-II upgrade will see the entire silicon tracking detector being replace
 \item \textbf{increased sensor granularity} is required to ensure that the channel occupancy is kept at or below the per cent (per mille) level for the Outer (Inner) Tracker to ensure that a high track reconstruction efficiency and a low misidentification rate is maintained under the increased \PU conditions. This will also enable improved track separation in dense environments, such as high \pT jets, compared to the current pixel detector.
 \item \textbf{reduced material in the tracking volume} will significantly enhance the performance of the detector.
 %\item \textbf{robust pattern recognition} - enabling fast and efficient track finding, which is especially important for the HLT, in the high \PU environment.
-\item \textbf{level-1 trigger contributions} are require in order to maintain L-1 trigger performance. It has been shown that the performance of the L1 trigger will deteriorate in the high luminosity environment from both the rate increase and the reduced efficiencies of the L1 selection algorithms~\cite{CMSCollaboration:2015zni}.
+\item \textbf{level-1 trigger contributions} are require in order to maintain L-1 trigger performance. It has been shown that the performance of the L-1 trigger will deteriorate in the high luminosity environment from both the rate increase and the reduced efficiencies of the L-1 selection algorithms~\cite{CMSCollaboration:2015zni}.
 Raising the upgraded calorimeters' and muon chambers' trigger thresholds would have minimal impact on the rate, and would negatively impact sensitivity to BSM physics that predicts new low mass particles~\cite{CMSCollaboration:2015zni}.
-Therefore the L1 bandwidth and latency will be increased (from 100\kHz to 750\kHz and from $3.2\mus$ to $12.5\mus$ respectively) and tracking information will be included in the L1 decision process to preserve and improve trigger performance.
+Therefore the L1 bandwidth and latency will be increased (from 100\kHz to 750\kHz and from $3.2\mus$ to $12.5\mus$ respectively) and tracking information will be included in the L-1 decision process to preserve and improve trigger performance.
 \item \textbf{an extended tracking acceptance} of  up to $|\eta| = 4$ in the forward region will greatly improve the overall physics capabilities of the CMS experiment as the density of jets associated with vector boson increases with pseudorapidity~\cite{CMS_Upgrade_TP}. By extension, measurements of missing transverse energy, total energy and jet b-tagging acceptance will also be improved.
 \end{itemize}
 
@@ -49,8 +49,8 @@ These sensors provide the low (per mille) occupancy and track separation with th
 As with to the previous pixel detectors, the Inner Tracker is also designed for easy installation and removal to facilitate repairs and replacement of degraded parts.
 Further discussion of the Inner Tracker can be found in the Phase-II Technical Design Report~\cite{P2TrackerTDR}.
 
-As tracking information is required to make L1 decisions at the HL-LHC, the design of the Outer Tracker has been driven by the need to provide tracking information to the L1 trigger.
-Given that it will not be possible to read out the entire Outer Tracker for the L1 trigger for every bunch crossing, a novel design of a pair of closely-spaced silicon sensor layers, separated by a few mm, that are capable of rejecting low transverse momentum tracks has been proposed~\cite{jjonespixel,markthesis}.
+As tracking information is required to make L-1 decisions at the HL-LHC, the design of the Outer Tracker has been driven by the need to provide tracking information to the L-1 trigger.
+Given that it will not be possible to read out the entire Outer Tracker for the L-1 trigger for every bunch crossing, a novel design of a pair of closely-spaced silicon sensor layers, separated by a few mm, that are capable of rejecting low transverse momentum tracks has been proposed~\cite{jjonespixel,markthesis}.
 These sensors, known as the \emph{$\pT$-modules}, are able to discriminate against low transverse momentum charged particle tracks.
 
 As the bend angle of a charged particle in a magnetic field depends on its transverse momentum, a $\pT$-module is able to  reject tracks below a configurable \pT threshold by comparing the distance between clusters of hits between its two sensor layers, as demonstrated in figure~\ref{fig:stubs}(a).
@@ -68,7 +68,7 @@ The sensor spacing however, is increased for the endcap disks, where the $\pT$-m
 \label{fig:stubs}
 \end{figure}
 
-By correlating pairs of clusters on-detector that are consistent with a track with a transverse momentum of about 2\GeV or greater, an effective data rate reduction of approximately a factor of 10 is achieved before the resultant \emph{stubs} are transferred to the L1 trigger~\cite{mpessimperf,2dptmoduleconcept}.
+By correlating pairs of clusters on-detector that are consistent with a track with a transverse momentum of about 2\GeV or greater, an effective data rate reduction of approximately a factor of 10 is achieved before the resultant \emph{stubs} are transferred to the L-1 trigger~\cite{mpessimperf,2dptmoduleconcept}.
 
 Two \pT modules are being developed for the Outer Tracker upgrade: 2S \emph{strip-strip} modules and PS \emph{pixel-strip} modules.
 The 2S~modules, are designed to be used at radii $r>60$\cm from the beam line, where the hit occupancies are lower and each sensor has an active area of 0.05\cm~$\times$~9.14\cm.
@@ -92,9 +92,11 @@ Due to the maturity of the preparations for the review between the three competi
 \label{fig:trackerlayout}
 \end{figure}
 
-Out of the total L1 latency of 12.5\mus, approximately $1\mus$ is required for generation, packaging and transmission of stubs from the tracker front-end electronics to the Data, Trigger and Control (DTC) system and approximately $4\mus$ is available for the reconstruction of tracks from data arriving at the DTC, as shown in figure~\ref{fig:dataFlow}.
-The rest of the available latency is allocated for the correlation of tracks with trigger primitives from the calorimeters and muon systems (circa $3.5\mus$), the propagation of the L1 decision to the front-end buffers ($1\mus$) and a safety margin ($3\mus$)~\cite{CMS_Upgrade_TP}.
-Any Track Finder, which will take the stubs as input and output fully reconstructed tracks for the L1, proposed will be constrained by both being able to reconstruct tracks within the $4\mus$ latency constraint and the cabling of the detector to the DTC system.
+Out of the total L-1 latency of 12.5\mus, about $1\mus$ is required for generation, packaging and transmission of stubs from the tracker front-end (FE) electronics to the Data, Trigger and Control (DTC) system and approximately $4\mus$ is available for the reconstruction of tracks from data arriving at the DTC, as shown in figure~\ref{fig:dataFlow}.
+The rest of the available latency is allocated for the correlation of tracks with trigger primitives from the calorimeters and muon systems ($3.5\mus$), the propagation of the L-1 decision to the front-end buffers ($1\mus$) and a safety margin ($3\mus$)~\cite{CMS_Upgrade_TP}.
+
+The architecture of any Track Finder system proposed, which will take the pre-processed stubs as input and output fully reconstructed tracks for the L-1, will be constrained by the system's latency budget and how the detector is cabled to the DTC system.
+The $4\mus$ latency constraint will limit the amount of processing that can be done for the finding and fitting of tracks and the choice of cabling scheme for the detector will determine how data is distributed and processed throughout the Track Finder system.
 
 \begin{figure}[tb]
 \centering
@@ -102,16 +104,16 @@ Any Track Finder, which will take the stubs as input and output fully reconstruc
 % where an .eps filename suffix will be assumed under latex,
 % and a .pdf suffix will be assumed for pdflatex; or what has been declared
 % via \DeclareGraphicsExtensions.
-\caption{Illustration of data-flow and latency requirements from \pt-modules through to the off-detector electronics dedicated to forming the L1 trigger decision.}
+\caption{Illustration of data flow and latency requirements starting from the \pt-modules and front-end (FE) electronicds and running through to the off-detector electronics dedicated to forming the L-1 trigger decision.}
 \label{fig:dataFlow}
 \end{figure}
 
 \subsection{Level-1 Track Finding Proposals}\label{subsec:TrackFinderReview}
 
-Three different L1 track finders have been explored by the CMS Collaboration.
-One uses Associative Memory (\emph{AM}) ASICs for track finding and FPGAs for track fitting, and the other two all-FPGA approaches, one using a fully Time-Multiplexed approaching using the Hough Transform (\emph{TMTT}) and the other a ``road search'' (\emph{tracklet}) algorithm to reconstruct tracks.
+Three different L-1 track finders have been explored by the CMS Collaboration.
+One uses Associative Memory (\emph{AM}) ASICs for track finding and FPGAs for track fitting, and the other two all-FPGA approaches, one using a fully Time-Multiplexed approaching using the Hough Transform to identify track candidates (\emph{TMTT}) and one using a ``road search'' (\emph{tracklet}) algorithm to reconstruct tracks.
 
-Hardware demonstrators for each of the three proposed L1 track finder projects were constructed to prove the feasibility of each approach, which were reviewed in 2016.
+Hardware demonstrators for each of the three proposed L-1 track finder projects were constructed to prove the feasibility of each approach, which were reviewed in 2016.
 As all of the work discussed in this chapter was on the FPGA-based \HT approach.
 More detailed descriptions and results of both the AM and tracklet projects' approaches are not discussed here, but are given in earlier references~\cite{P2TrackerTDR,AM} and~\cite{P2TrackerTDR,tracklet} respectively.
 
@@ -121,10 +123,10 @@ As such, unless stated otherwise, the results discussed below use the flat barre
 \section{A FPGA-Based Track Finder}\label{sec:TMTT}
 TEXT HERE
 \subsection{The Track Finding Architecture}\label{subsec:TFA}
-The proposed FPGA-based Hough Transform Track Finder is a scalable, flexible and redundant design based on a fully time-multiplexed architecture, as previously demonstrated by the Phase-I Calorimeter Trigger Upgrade discussed in Section~\ref{paragraph:L1}, for implementation on commercially available FPGAs.
-A time-multiplexed design has a number of advantages, as discussed in Section~\ref{paragraph:L1}, including that only a single Track Finding Processor (TFP) is required to demonstrate the full system as each processor is identical in every respect.
+The proposed FPGA-based Hough Transform Track Finder is a scalable, flexible and redundant design based on a fully time-multiplexed architecture for implementation on commercially available FPGAs, as previously demonstrated by the Phase-I Calorimeter Trigger Upgrade~\cite{Tapper:2013yva} discussed in Section~\ref{paragraph:L-1}.
+As discussed in Section~\ref{paragraph:L-1}, a time-multiplexed design has a number of advantages, including that only a single Track Finding Processor (TFP) is required to demonstrate the full system as each processor is identical in every respect.
 
-Unlike the Phase-I Calorimeter Trigger, it is unfeasible to process the entire output of the Phase-II Outer Tracker in a single processor for a given time slice because of the limits imposed by the input and total bandwidth a single FPGA-based processor can handle.
+Unlike the Phase-I Calorimeter Trigger, it is not feasible to process the entire output of the Phase-II Outer Tracker in a single processor for a given time slice because of the limits imposed by the input and total bandwidth a single FPGA-based processor can handle.
 Therefore, as it was assumed at the time of the 2016 review that the DTC system would be arranged such that it forms octants~\footnote{These detector octants are not uniform as the geometry of the tracker does not have an exact eight-fold symmetry} (\ie 45 degree $\varphi$-sectors, referred to as \emph {detector octants}) in the tracker, the baseline system proposed was divided into \emph{processor octants} that were offset from the detector octants by $\approx 22.5$ degrees in $\phi$, in order to handle data duplication across hardware boundaries.
 This baseline system is illustrated in figure~\ref{fig:tmttarch}.
 
@@ -187,7 +189,7 @@ R = \frac{\pt}{0.003\,qB} \;
 \label{eq:R}
 \end{equation}
 
-Assuming, to first order, that $R$ is constant, by neglecting energy losses such as through multiple scattering, and that only primary tracks from or near the primary interaction point are considered (other such tracks are not typically relevant to the L1 trigger), a stub with coordinates ($r$,$\varphi$) is related to $R$ by:
+Assuming, to first order, that $R$ is constant, by neglecting energy losses such as through multiple scattering, and that only primary tracks from or near the primary interaction point are considered (other such tracks are not typically relevant to the L-1 trigger), a stub with coordinates ($r$,$\varphi$) is related to $R$ by:
 
 \begin{equation}
 \frac r{2\,R} = \sin\left(\varphi-\phi\right) \;
@@ -279,7 +281,7 @@ As the \HT and track fitting algorithms discussed all assume that all tracks ori
 For the results presented, only the first four helix parameters, $\pt$, $\phi_{0}$, $z_{0}$ and $\cot(\theta)$, are quoted as both the \HT and track fitters assume that $d_{0} = 0$.
 
 \subsubsection{Reconstructed Track Definition}
-The common definitions of track reconstruction efficiency~\cite{TMTT_JINST} used for the three proposed L1 Track Finder systems are used for the results presented in this chapter:
+The common definitions of track reconstruction efficiency~\cite{TMTT_JINST} used for the three proposed L-1 Track Finder systems are used for the results presented in this chapter:
 
 \begin{itemize}
 \item The reconstruction efficiency is measured relative to all generated charged particles from the primary interaction that produce stubs in at least four layers of the tracker and lies within $\pT > 3\GeV$, $|\eta| < 2.4$, $|z_{0}| < 30\cm$ and $d_{xy} < 1\cm$.
@@ -295,7 +297,7 @@ Where appropriate, the results for both definitions are given.
 \subsection{Linearised $\chi^{2}$ Track Fitter}\label{subsec:chi2}
 Whilst the Kalman Filter was used as a track fitter for the 2016 hardware demonstrator, a Linear Regression (LR)\footnote{The LR fitter~\cite{TMTT_FLP} was developed as an alternative to the KF and exploits the fact that sufficiently high \pT tracks should form a straight line in the \emph{\rphi} and \emph{r-z} planes to perform independent fits in each plane.} algorithm and Linearised $\chi^{2}$ fitting algorithm were also explored.
 
-The studies into a linearised $\chi^{2}$ track fit were initially motivated by the \emph{TMTT} project anticipating potential time and resource pressures in developing all the components of a complete track finder system that could be implemented in hardware due to the project being formed significantly after the other two L1 track finder projects.
+The studies into a linearised $\chi^{2}$ track fit were initially motivated by the \emph{TMTT} project anticipating potential time and resource pressures in developing all the components of a complete track finder system that could be implemented in hardware due to the project being formed significantly after the other two L-1 track finder projects.
 Following discussions with both the \emph{tracklet} and \emph{AM} projects, it was decided that the use of a linearised $\chi^{2}$ fit based off the one proposed by the \emph{tracklet} project would be investigated.
 The general form of the $\chi^{2}$ fit and the derivation of the track derivatives required by the algorithm were provided in a private communication~\cite{CMS_DN-14-043} and were used to produce our own implementation of the track fitting algorithm.
 
@@ -423,7 +425,7 @@ The $\chi^{2}$ track fit increases the purity of the reconstructed tracks by a f
 
 Figure~\ref{fig:chi2HelixParametersResVsEtaApproxVsExact} shows that resolutions of the four track parameters as a function of $\eta$ from primary tracks in \ttbar events at a <PU> of 200 for both mathematical implementations of the algorithm.
 The resolutions compare well not just between the two implementations of the algorithm's mathematics, but also with those obtained for the barrel region with the offline track reconstruction which is able to use all information from the detector with more sophisticated reconstruction techniques ~\cite{P2TrackerTDR}.
-While this guarantees that the tracks found in the the barrel will be useful to the L1 trigger, the significant presence of at least one stub being incorrectly associated with a matched track in the forward regions, as shown in Table~\ref{tab:chi2-exactVsApprox}, significantly degrades the resolution obtained.
+While this guarantees that the tracks found in the the barrel will be useful to the L-1 trigger, the significant presence of at least one stub being incorrectly associated with a matched track in the forward regions, as shown in Table~\ref{tab:chi2-exactVsApprox}, significantly degrades the resolution obtained.
 
 In order to filter out these incorrectly assigned stubs from matched tracks, and also remove fake tracks, the residuals calculated for each stub following the fit were considered.
 These ``fake'' stubs are expected have large residuals compared to stubs correctly associated to genuine tracks or stubs belonging to a fake track.
