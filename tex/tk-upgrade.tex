@@ -128,12 +128,13 @@ As discussed in Section~\ref{paragraph:L-1}, a time-multiplexed design has a num
 
 Unlike the Phase-I Calorimeter Trigger, it is not feasible to process the entire output of the Phase-II Outer Tracker in a single processor for a given time slice because of the limits imposed by the input and total bandwidth a single FPGA-based processor can handle.
 Therefore, as it was assumed at the time of the 2016 review that the DTC system would be arranged such that it forms octants~\footnote{These detector octants are not uniform as the geometry of the tracker does not have an exact eight-fold symmetry} (\ie 45 degree $\varphi$-sectors, referred to as \emph {detector octants}) in the tracker, the baseline system proposed was divided into \emph{processor octants} that were offset from the detector octants by $\approx 22.5$ degrees in $\phi$, in order to handle data duplication across hardware boundaries.
-This baseline system is illustrated in figure~\ref{fig:tmttarch}.
+This baseline system architecture, illustrated in figure~\ref{fig:tmttarch}, uses two neighbouring DTCs to time-multiplex and duplicate stub data across processing octant boundaries before each DTC transmits 50\% of its data to one TFP and 50\% to the neighbouring TFP.
+Based on current electronics and the high speed links available, the data requires 18 TFPs per processing octant (one for each time slice, resulting in a full system requiring 144 TFPs).
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=1.00\textwidth]{figs/tk-upgrade/tmttarch.pdf}
-\caption{The baseline system architecture uses two neighbouring DTCs to time-multiplex and duplicate stub data across processing octant boundaries, before each DTC transmits 50\% of its data to one TFP and 50\% to the neighbouring TFP Based off current electronics and high speed links available, the data requires 18 TFPs per processing octant (one for each time slice, resulting in a full system requiring 144 TFPs).}
+\caption{An illusratation of the baseline system architecture described in the text, demonstrating how two neighbouring DTCs time-multiplex and duplicate stub data across processing octants and how it transmits the processed data to two neighbouring TFPs~\cite{TMTT_JINST}}
 \label{fig:tmttarch}
 \end{figure}
 
