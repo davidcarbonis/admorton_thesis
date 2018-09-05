@@ -62,7 +62,7 @@ These hits are used to reconstruct the particles' trajectories through multiple 
 
 The steps of each iteration of the CTF algorithm are:
 \begin{itemize}
-\item \textbf{Seed generation:} initial track candidates are formed from two or three hits to provide a first estimate of the tracks' helix parameters.
+\item \textbf{Seed generation:} Initial track candidates are formed from two or three hits to provide a first estimate of the tracks' helix parameters.
 \item \textbf{Track Finding:} A combinatorial Kalman Filter then builds a candidate by adding hits from successive layers which are compatible with the extrapolated trajectory, which is updated with the addition of each subsequent hit, taking into account the hit's position, uncertainty and material traversed.
 \item \textbf{Track Fitting:} The initial estimate of a built track's parameters is improved upon with the Kalman Filter performing two passes, the first from the innermost layer outwards and the second from the outermost inwards.
 This approach minimises the bias in determining and discarding which hits are incorrectly associated with the track.
@@ -118,19 +118,20 @@ The computationally heavy nature of the GSF algorithm, however, limits its use t
 that are associated with electrons that have radiated significantly and for the final fitting of the electron track parameters.
 
 %%% Track seeding
-Electron track seeds formed of the initial two or three hits in the tracker from which tracks are built from are constructed by two complimentary algorithms~\cite{Khachatryan:2015hwa}:
+Electron track seeds, formed of the initial two or three hits in the tracker from which tracks are built,  are constructed using two complimentary algorithms~\cite{Khachatryan:2015hwa}:
 \begin{itemize}
-\item \textbf{ECAL-based approach} An electron's SC's energy and position is used to extrapolate the expected electron trajectory towards the primary vertex in order to determine where hits are anticipated to be for both electrons and positrons.
-Reconstructing electrons in jets however, suffers from large inefficiencies due to the potential to incorrectly associate hits from other charged particles with the track and the jet energy deposits  overlapping with the electron SCs impacting the assumed energy and position of the SC.
-Low \pT electrons are also poorly described as the increased bending of their trajectories results in the spread energy not being fully contained by a SC.
-\item \textbf{Tracker-based approach} - This approach is designed to compliment the ECAL-based approach by being able to reconstruct non-isolated and low \pT electrons efficiently.
-A \KF is initially used for track finding which is able to accurately reconstruct electrons that emit limited Bremsstrahlung in the tracker, with the KF track matched to the closest ECAL SC.
-Tracks which are indicative of experiencing a significant amount of Bremsstrahlung are refitted with a GSF which can better follow the changes in the track's curvature.
-The track parameters from both filters, such as the quality ($\chi^{2}$) of the tracks and how well matched the track is to the ECAL SC, are used by a Multivariate Analysis (MVA) technique to determine whether or not the tracker seed is to be considered an electron seed.
+\item \textbf{ECAL-based approach} An electron's SC's energy and position is used to extrapolate the expected electron trajectory towards the primary vertex in order to determine where associated tracker hits would be expected for both electrons and positrons.
+Reconstructing electrons in jets however, suffers from large inefficiencies. 
+This is due to the potential for incorrectly associating hits from other charged particles with the electron track and the jet energy deposits overlapping with the electron SC, impacting its assumed energy and position.
+Low \pT electrons are also poorly reconstructed as the increased bending of their trajectories results in the spread energy not being fully contained within a single SC.
+\item \textbf{Tracker-based approach} This approach is designed to compliment the ECAL-based approach by reconstructing non-isolated and low \pT electrons efficiently.
+A \KF (KF) is initially used for track finding as it is able to accurately reconstruct electrons that emit only a small amount of Bremsstrahlung in the tracker, with the KF track being matched to the closest ECAL SC.
+Tracks that are indicative of the emission of a significant amount of Bremsstrahlung are refitted with a GSF.
+Track parameters from both filters, such as the quality ($\chi^{2}$) and how well matched the track is to the ECAL SC, are used by a Multivariate Analysis (MVA) technique to determine whether or not the tracker seed can be used as an electron seed.
 \end{itemize}
 
-Seeds from both algorithms are combined and electron tracks are iteratively built using a  combinatorial \KF using loose cuts in order to accommodate trajectory changes due to Bremsstrahlung and maintain a high reconstruction efficiency.
-The helix parameters of the reconstructed tracks are determined by a GSF fit and these GSF tracks are subsequently used for the PF algorithm's reconstruction of electrons.
+The seeds produced by both algorithms are combined and electron tracks are then iteratively built using as combinatorial \KF in which loose cuts are applied in order to accommodate trajectory changes due to Bremsstrahlung and to maintain a high reconstruction efficiency.
+The helix parameters of the reconstructed tracks are determined by a GSF fit and the resulting GSF tracks are subsequently used for the PF algorithm's reconstruction of electrons.
 
 \subsection{Muons}\label{subsec:objReco-muons}
 Muon tracks are independently reconstructed in both the inner tracker, as described in Section~\ref{subsec:tracksVertices}, and the muon chambers, where local reconstruction is undertaken using a Kalman Filter to build tracks from the innermost track segments of clustered DT and CSC hits outwards using DT, CSC and RPC hits.
