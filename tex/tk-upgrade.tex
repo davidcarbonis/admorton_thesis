@@ -50,23 +50,12 @@ As with to the previous pixel detectors, the Inner Tracker is also designed for 
 Further discussion of the Inner Tracker can be found in the Phase-II Technical Design Report~\cite{P2TrackerTDR}.
 
 As tracking information is required to make L1 decisions at the HL-LHC, the design of the Outer Tracker has been driven by the need to provide tracking information to the L1 trigger.
-Given that it will not be possible to read out every hit in the Outer Tracker for the L1 trigger with the LHC bunch crossing rate of 40\MHz, a novel design of a pair of closely-spaced silicon sensor layers, separated by a few mm, has been proposed.
+Given that it will not be possible to read out the entire Outer Tracker for the L1 trigger for every bunch crossing, a novel design of a pair of closely-spaced silicon sensor layers, separated by a few mm, that are capable of rejecting low transverse momentum tracks has been proposed~\cite{jjonespixel,markthesis}.
+These sensors, known as the \emph{$\pT$-modules}, are able to discriminate against low transverse momentum charged particle tracks.
 
-Figure~\ref{fig:stubs} illusrates how these sensors, known as the \emph{\pT modules}~\cite{jjonespixel,markthesis}, are able to determine a pair of hits produced by a track are consistent with a track \pT above a configurable threshold (typically 2-3\GeV).
-
-
-Assuming that a particle originates at the beam line
-
-Figure~\ref{fig:stubs}(c) - how a larger sensor spacing is required in the endcap.
-
-\begin{itemize}
-\item Correlating closely spaced clusters between two sensor layers, separated by a few mm, allows discrimination of transverse momentum based on the particle bend in the CMS magnetic field, on the assumption that the particle originated at the beam-line. shown in figure~\ref{fig:stubs}(a).
-\item The same transverse momentum corresponds to a larger distance between signals for a given sensor spacing.
-\item A larger spacing is  Only tracks with \pT $> 2-3$\GeVc are transferred off-detector
-\end{itemize}
-
-
-are able to discriminate on a charged particle's \pT based on the local bend of the track within the magnetic field.
+As the bend angle of a charged particle in a magnetic field depends on its transverse momentum, a $\pT$-module is able to  reject tracks below a configurable \pT threshold by comparing the distance between clusters of hits between its two sensor layers, as demonstrated in figure~\ref{fig:stubs}(a).
+The \pT threshold is designed to be configurable as the separation between the clusters increases with a module's distance from the beam if the sensor spacing remain unchanged, as illustrated in figure~\ref{fig:stubs}(b).
+The sensor spacing however, is increased for the endcap disks, where the $\pT$-modules are orientated perpendicular to the beam line, in order to maintain comparable discrimination due to projective effects, as shown in figure~\ref{fig:stubs}(c).
 
 \begin{figure}[!t]
 \centering
@@ -74,12 +63,12 @@ are able to discriminate on a charged particle's \pT based on the local bend of 
 % where an .eps filename suffix will be assumed under latex,
 % and a .pdf suffix will be assumed for pdflatex; or what has been declared
 % via \DeclareGraphicsExtensions.
-\caption{Cluster matching in the $\pT$-modules proposed for the Outer Tracker~\cite{P2TrackerTDR} as described in the text.
+\caption{Cluster matching in the $\pT$-modules proposed for the Outer Tracker~\cite{P2TrackerTDR} as described in the text; (a) demonstrates how correlating pairs of closely-spaced clusters between the two sensor layers allows for the discrimination of a track candidate's transverse momentum; (b) shows that if the sensor spacing remains unchanged, that the separation between the two clusters increases the further a module is away from the beam line; and (c) illustrates that the sensor spacing of modules in the endcap disks, which are perpendicular to the beam line, is required to be larger because of projective effects.
 }
 \label{fig:stubs}
 \end{figure}
 
-By correlating pairs of clusters on-detector, an effective data rate reduction of approximately a factor of 10 is achieved before the resultant \emph{stubs} are transferred to the L1 trigger~\cite{mpessimperf,2dptmoduleconcept}.
+By correlating pairs of clusters on-detector that are consistent with a track with a transverse momentum of about 2\GeV or greater, an effective data rate reduction of approximately a factor of 10 is achieved before the resultant \emph{stubs} are transferred to the L1 trigger~\cite{mpessimperf,2dptmoduleconcept}.
 
 Two \pT modules are being developed for the Outer Tracker upgrade: 2S \emph{strip-strip} modules and PS \emph{pixel-strip} modules.
 The 2S~modules, are designed to be used at radii $r>60$\cm from the beam line, where the hit occupancies are lower and each sensor has an active area of 0.05\cm~$\times$~9.14\cm.

@@ -1,33 +1,32 @@
 \chapter{Conclusion}\label{chapter:conclusion}
 In this thesis, a search for the production of a singly produced top quark in association with a Z boson using $35.9$\fbinv of proton-proton collision data at $\sqrt{s} = 13\TeV$ collected during 2016 by the CMS detector at the LHC was presented.
-This thesis also presents several software studies relating to the future upgrade of the CMS silicon tracker for the High Luminosity (HL-LHC).
+This thesis also presents the outcomes of several software studies for a proposed track finder system for the future CMS silicon tracking detector at the HL-LHC.
 
 \section{Summary of Results}
-Using the complete 2016 dataset of $35.9\fbinv$, a shape based analysis was performed to search for tZq in the dilepton final state.
-Boosted decision trees were used to enhance 	
+A search for the tZq dilepton final state using a shape based analysis was performed using $35.9\fbinv$ of proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by CMS during 2016.
+The analysis focussed on understanding the contributions from processes which produced non-prompt leptons and suppressing the dominant backgrounds of Z+jets and \ttbar.
 
- using boosted decision trees to aid in separating the signal process from the backgrounds.
-Given the background dominated nature of the search, the analysis focussed on understanding and suppressing the dominant backgrounds of Z+jets and \ttbar
+While a \ttbar enriched control region confirmed that \ttbar processes were accurately modelled, it was observed in a Z+jets enriched control region that although the NLO Z+jets MC sample recommended by CMS provided the best description of data, it was incorrectly normalised.
+Therefore, a Z+jets enriched control region was used to derive a scale factor to correctly normalise the NLO Z+jets sample, with a systematic uncertainty associated with this scale factor derived using the LO sample which correctly described the normalisation of the process.
+Subsequently good agreement between simulation and data was observe after of all event corrections and the event selection criteria were applied. 
+Boosted decision trees were used in order to further enhance the separation between the tZq signal from backgrounds using a set of variables which were determined to have the greater discriminating power.
 
-Using a binned maximum likelihood fit, a cross section of $xxx^{yyy}_{zzz}$ fb was measured for the signal process, with an observed significance of $aaa \pm bbb \sigma$ compared to the expected significance from simulation of $ccc \pm ddd$. 
-\editComment{Some comment about the significance of this result.}
+A binned maximum likelihood fit was used to determine a limit on the tZq dilepton final state production cross section of $xxx^{yyy}_{zzz}$ fb, corresponding to an observed significance of $aaa \pm bbb \sigma$ and an expected significance from simulation of $ccc \pm ddd$. 
+This is the first limit made on the production cross section of the tZq dilepton final state at the LHC and is consistent within errors with the SM predictions.
 
+%%%
 
-
-In order to take advantage of the high luminosity environment of the HL-LHC, a track finding architecture for the CMS tracking detector consisting of currently avaliable hardware and building ... has been successfully demonstrated.
-
-
-Building on the successful development and demonstration of a track finding architecture for the CMS detector at the HL-LHC on currently available technology for both track finding and fitting charged particles with transverse momentum greater than 3\GeV at 40\MHz the latency constraints and operational conditions of the HL-LHC, 
-
-
-where track candidates were identified using time-multiplexed Hough Transforms in the r-$\phi$ plane before being cleaned and fitted by a Kalman Filter and duplicates removed by exploiting how duplicates form in the Hough Transform. 
-Whilst the demonstrator system had 
+In order to take full advantage of the high luminosity environment of the HL-LHC, it is planned replace the current CMS tracking detector with one which is capable of contributing information to the CMS Level-1 trigger.
+One of the proposed track finder systems for the upgraded CMS tracker identifies track candidates using time-multiplexed Hough Transforms in the r-$\phi$ plane, followed by Kalman Filter to precisely fit track parameters to the candidates and remove fake tracks and a duplicate removal process.
+A linearised $\chi^{2}$ fit was explored as an alternative track fitting algorithm
 
 \section{Future CMS tZq measurements}
-As the tZq analysis presented in this thesis is statistically limited, it is intended that the $41.9\fbinv$ of proton-proton collision data at $\sqrt{s} = 13\TeV$ collected during 2017 by the CMS detector
+As the measurement performed for the tZq dilepton final state presented in this thesis is statistically limited, it is expected that the process should be observable with the inclusion of the proton-proton collision data at $\sqrt{s} = 13\TeV$ collected during 2017 is included in the analysis.
+While it is anticipated that 
+
 
 \section{Future development of an FPGA Based Track Finder for the CMS Tracker Upgrade}
-While the 
+While it was determined 
 %%% Future Improvements?
 
 %%%Future work
