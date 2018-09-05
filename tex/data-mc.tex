@@ -8,7 +8,10 @@ The event simulation and objection reconstruction algorithms which are relevant 
 
 \section{Event Simulation}\label{sec:sim}
 As MC simulation is meant to provide a realistic description of physics processes, both accurate modelling of these processes and a detailed understanding of how physical processes interact with the CMS detector are required to produce events in the same format as raw proton-proton collision data prior to undergoing the same reconstruction process.
-The simulation of events is a four stage process: generation (GEN), simulation (SIM), digitisation (DIGI) and reconstruction (RECO).
+
+The simulation of events is a four stage process: generation (GEN), simulation (SIM), digitisation (DIGI) and
+
+ reconstruction (RECO).
 
 The initial GEN stage involves the use \emph{event generators} to simulate the proton-proton interactions and the resultant physics processes~\cite{Buckley:2011ms,Hoche:2014rga}.
 The first stage of this is the modelling of the colliding protons and the hard scattering of their constituent partons, which involves the use Parton Distribution Functions (PDFs) to assign fractions of the proton's momentum to the partons and perturbation theory to compute the Matrix Elements (ME) of the Feynman diagrams for the QCD and electroweak processes involved.
@@ -104,21 +107,23 @@ This is done in the following order:
 \end{itemize}
 
 \subsection{Electrons}\label{subsec:objReco-electrons}
-Electrons lose on average between 33\% (minimal intervening material) and 86\% (maximum intervening material) before reaching the ECAL due to producing Bremsstrahlung photons in the tracker layers~\cite{Khachatryan:2015hwa}, which often undergo electron pair production, producing further Bremsstrahlung photons.	
-It is essential that this radiated energy is collected in order to correctly determine an electron's initial energy.
+Electrons lose, on average, between 33\% (minimal intervening material) and 86\% (maximum intervening material) of their energy before reaching the ECAL through the production of Bremsstrahlung photons in the tracker layers~\cite{Khachatryan:2015hwa}.
+Bremsstrahlung photons often undergo electron pair production, potentially producing further Bremsstrahlung photons.	
+It is essential that this radiated energy is collected in order to correctly determine the electron's initial energy.
 ECAL clusters, known as \emph{superclusters} (SCs), have an extended window in $\phi$ as the magnetic field bends electrons trajectories in the $\phi$ direction whilst photons are unaffected, causing an energy spread across $phi$.
 Two clustering algorithms are used to form SCs of $5 \times 1$ and $5 \times 5$ arrays of ECAL crystals in the EB and EE respectively due to their different geometrical arrangements.
 Both of these ECAL clustering algorithms are discussed in greater detail in~\cite{Khachatryan:2015hwa}.
-The presence of Bremsstrahlung also necessitates the use of a Gaussian Sum Filter (GSF)~\cite{Adam:2003eca} to fit electron tracks instead of a Kalman Filter as the process is non-Gaussian and Kalman Filters only assume Gaussian noise contributions.
-The computationally heavy nature of the GSF algorithm however, limits its use to refitting \KF track seeds which have a significant presence of Bremsstrahlung and for the final fitting of a track's parameters.
+The presence of Bremsstrahlung photons also necessitates the use of a Gaussian Sum Filter (GSF)~\cite{Adam:2003eca} to fit electron tracks instead of a Kalman Filter as the process is non-Gaussian and Kalman Filters assume only Gaussian noise contributions.
+The computationally heavy nature of the GSF algorithm, however, limits its use to refitting \KF track seeds 
+that are associated with electrons that have radiated significantly and for the final fitting of the electron track parameters.
 
 %%% Track seeding
 Electron track seeds formed of the initial two or three hits in the tracker from which tracks are built from are constructed by two complimentary algorithms~\cite{Khachatryan:2015hwa}:
 \begin{itemize}
-\item \textbf{ECAL-based approach} - an electron's SC's energy and position is used to extrapolate the expected electron trajectory towards the primary vertex in order to determine where hits are anticipated to be for both electrons and positrons.
+\item \textbf{ECAL-based approach} An electron's SC's energy and position is used to extrapolate the expected electron trajectory towards the primary vertex in order to determine where hits are anticipated to be for both electrons and positrons.
 Reconstructing electrons in jets however, suffers from large inefficiencies due to the potential to incorrectly associate hits from other charged particles with the track and the jet energy deposits  overlapping with the electron SCs impacting the assumed energy and position of the SC.
 Low \pT electrons are also poorly described as the increased bending of their trajectories results in the spread energy not being fully contained by a SC.
-\item \textbf{tracker-based approach} - this approach is designed to compliment the ECAL-based approach by being able to reconstruct non-isolated and low \pT electrons efficiently.
+\item \textbf{Tracker-based approach} - This approach is designed to compliment the ECAL-based approach by being able to reconstruct non-isolated and low \pT electrons efficiently.
 A \KF is initially used for track finding which is able to accurately reconstruct electrons that emit limited Bremsstrahlung in the tracker, with the KF track matched to the closest ECAL SC.
 Tracks which are indicative of experiencing a significant amount of Bremsstrahlung are refitted with a GSF which can better follow the changes in the track's curvature.
 The track parameters from both filters, such as the quality ($\chi^{2}$) of the tracks and how well matched the track is to the ECAL SC, are used by a Multivariate Analysis (MVA) technique to determine whether or not the tracker seed is to be considered an electron seed.
@@ -128,30 +133,32 @@ Seeds from both algorithms are combined and electron tracks are iteratively buil
 The helix parameters of the reconstructed tracks are determined by a GSF fit and these GSF tracks are subsequently used for the PF algorithm's reconstruction of electrons.
 
 \subsection{Muons}\label{subsec:objReco-muons}
-Muons tracks are independently reconstructed in both the inner tracker, as described in Section~\ref{subsec:tracksVertices}, and the muon chambers, where local reconstruction is undertaken using a Kalman Filter to build tracks from the innermost track segments of clustered DT and CSC hits outwards using DT, CSC and RPC hits.
+Muon tracks are independently reconstructed in both the inner tracker, as described in Section~\ref{subsec:tracksVertices}, and the muon chambers, where local reconstruction is undertaken using a Kalman Filter to build tracks from the innermost track segments of clustered DT and CSC hits outwards using DT, CSC and RPC hits.
 
 These two types of muon tracks are reconstructed using two methods~\cite{Chatrchyan:2012xi}:
 \begin{itemize}
-\item \textbf{Global Muons} are reconstructed using an ``\emph{outside-in}'' approach, where tracks in the muon chambers are extrapolated inwards towards the inner tracker where candidate tracks are searched for.
+\item \textbf{Global Muons} are reconstructed using an ``\emph{outside-in}'' approach, where tracks in the muon chambers are extrapolated inwards towards the inner tracker where candidate tracks are then searched for.
 If a corresponding track is found, the hits from the best candidate in the inner tracker and the muon system are fitted using a Kalman Filter.
-\item \textbf{Tracker Muons} are conversely reconstructed with an ``\emph{inside-out}'' method, where inner tracker tracks with $\pT > 0.5\GeV$ and $|p| > 2.5\GeV$ are extrapolated out to the muon system using a Kalman Filter which takes into account energy losses and multiple scattering.
+\item \textbf{Tracker Muons} are conversely reconstructed with an ``\emph{inside-out}'' approach, where inner tracker tracks with $\pT > 0.5\GeV$ and $|p| > 2.5\GeV$ are extrapolated out to the muon system using a Kalman Filter thatx takes into account energy losses and multiple scattering.
 \end{itemize}
 
-Given the high track reconstruction efficiencies of both the inner track and muon chambers, $\approx 99\%$ of muons produced from the proton-proton collisions (prompt muons) are reconstructed as either a global or tracker muon, if not both.
-Global and tracker muons which share the same inner tracker track are merged into a single candidate muon to be considered by the PF algorithm.
+Given the high track reconstruction efficiencies of both the inner tracker and the muon chambers, approximately $99\%$ of muons produced from the proton-proton collisions (prompt muons) are reconstructed as either a global or tracker muon, if not both.
+Global and tracker muons that share the same inner tracker track are merged into a single candidate muon to be considered by the PF algorithm.
 
 \subsection{Jets}\label{subsec:objReco-jets}
-Due to colour confinement, quarks and gluons produced from the proton-proton hard interaction rapidly hadronise, producing a collimated shower of hadrons which are clustered and reconstructed as \emph{jets}~\cite{Salam:2009jx}.
-Any jet reconstruction algorithm is required to be both \emph{infrared safe} and \emph{collinear safe}, \ie so that the emission of soft gluons and the collinear splitting of gluons, respectively, does not change the jets constructed.
+Due to colour confinement, quarks and gluons produced in a proton-proton hard interaction rapidly hadronise, producing a collimated shower of hadrons that are clustered and reconstructed as \emph{jets}~\cite{Salam:2009jx}.
+Any jet reconstruction algorithm is required to be both \emph{infrared safe} and \emph{collinear safe}, \ie so that the emission of soft gluons and the collinear splitting of gluons, respectively, do not change the jets that are actually constructed.
 
-The main two types of jet algorithms are iterative cone and sequential recombination algorithms~\cite{Salam:2009jx}, and whilst both varieties are supported by CMS, the latter class are typically used in the majority of analyses.
-The general form of a sequential recombination algorithm is:
+The main two types of jet algorithms are iterative cone and sequential recombination algorithms~\cite{Salam:2009jx}, and while both varieties are supported by CMS, the latter are typically used in the majority of analyses.
+
+The general form of a sequential recombination algorithm is as follows:
 \begin{itemize}
 \item The distance, $d_{ij}$, for every pair of particles and the distance between each particle and the beamline, $d_{iB}$, is calculated.
 \item If the minimum value of $d_{ij}$ is less than $d_{iB}$, the pair of particles are recombined into a single particle, and the process starts over.
 \item If the minimum value of $d_{iB}$ is less than $d_{ij}$, the particle is classified as a jet and removed from the list of particles considered, and process starts over.
-\item The process continues until no particles remain.
 \end{itemize}
+
+The process continues until no particles remain on the list.
 
 These distance variables are defined as:
 
@@ -165,18 +172,18 @@ d_{iB} = \frac{1}{p^{2k}_{Ti}} \;
 \label{eq:jetAlgo2}
 \end{equation}
 
-where $\Delta R^{2}_{ij} = (y_{i} - y_{j})^{2} + (\phi_{i} - \phi_{j})^{2}$; k = -1, 0, 1 and R is the jet size parameter which is typically set to 0.4 for CMS analyses to provide consistency with ATLAS and as it contains hadronic showers without being sensitive to \PU.
-The \emph{anti-\kt} algorithm~\cite{Cacciari:2008gp}, where k = -1, which produces cone-shaped jets is commonly used in CMS.
+where $\Delta R^{2}_{ij} = (y_{i} - y_{j})^{2} + (\phi_{i} - \phi_{j})^{2}$; k = ${-1, 0, 1}$ and R is the jet size parameter which is typically set to 0.4 for CMS analyses to provide consistency with ATLAS and as it contains hadronic showers without being sensitive to \PU.
+The \emph{anti-\kt} algorithm~\cite{Cacciari:2008gp}, where k = -1, which produces cone-shaped jets, is commonly used in CMS.
 
-PF jets are produced using the \emph{anti-\kt} with R = 0.4 in conjunction with PF particles produced from all the sub-detectors.
-Making use of PF jets allows a more accurate reconstruction to be undertaken than if only energy clusters from the calorimeters were used, given that jets are typically composed of 65\% charged hadrons, 25\% photons and 10\% neutral hadrons, due to the precise charged hadron measurements from the tracker and ECAL which are able to constraint the small neutral hadron contribution which relies on the relatively poor resolution HCAL.
+PF jets are produced using the \emph{anti-\kt} algorithm with R = 0.4 in conjunction with PF particles based on all the sub-detectors.
+Making use of PF jets allows a more accurate reconstruction to be undertaken than if only energy clusters from the calorimeters are used, given that jets are typically composed of 65\% charged hadrons, 25\% photons and 10\% neutral hadrons, due to the precise charged hadron measurements from the tracker and ECAL, which are able to constrain the small neutral hadron contribution that relies on the relatively poor resolution of the HCAL.
 
 \subsubsection{Jet Energy Corrections}\label{subsubsec:JECs}
 \emph{Jet Energy Corrections} (JECs) are used to take into account the effects of \PU and the non-uniform response in \pT and $eta$ of the detector and any residual differences between simulation and data to ensure that the jet energies measured by the detector properly describe the particle-level energies.
 Each effect is considered as a separation correction level and is applied sequentially as a scale factor applied to a jet's four-momentum in the following order:
 
 \begin{itemize}
-\item \textbf{L1 Pileup} - removes additional energy originating from \PU interactions from the jet energy and is applied to for both data and MC simulated events. 
+\item \textbf{L1 Pileup.} Removes additional energy originating from \PU interactions from the jet energy and is applied to both data and simulated events. 
 \item \textbf{L2 Relative and L3 Absolute} - applied to data and MC simulation to account for the non-uniform detector response in $\eta$ and \pT respectively in both simulation and data by comparing generator level and reconstructed jets.
 \item \textbf{L2L3 Residual} - applied to data only to account for any remaining small differences in the jet response between data and simulation, such as the absolute Jet Energy Scale (JES) following the simulation derived \emph{L2 Relative} and \emph{L3 Absolute} corrections.
 \end{itemize}
@@ -184,7 +191,7 @@ Each effect is considered as a separation correction level and is applied sequen
 The associated uncertainties of these JECS, which are treated as systematic uncertainties, are discussed in Chapter~\ref{chapter:tzq-systematics}.
 A thorough description of the JECs, their determination and associated uncertainties are discussed in~\cite{Khachatryan:2016kdb}.
 
-\subsection{b-Jets}\label{subsec:objReco-bJets}
+\subsection{b-jet tagging}\label{subsec:objReco-bJets}
 Correctly determining whether or not a jet was the product of a bottom quark hadronising is incredibly important for a variety of analyses, allowing them to separate signal processes from topologically similar background processes, including top physics searches due to the top quark's branching ratio to a W boson and bottom quark being $> 99\%$.
 Such identification, known as \emph{b-tagging}, exploits the fact that because b hadrons have a relatively long lifetime of $\approx 1.5 ps$~\cite{Beringer:1900zz}, they travel a measurable distance away from the primary vertex before decaying. 
 These secondary vertices are exploited by the \emph{Combined Secondary Vertex version 2} (CSVv2) algorithm~\cite{Chatrchyan:2012jua,CMS:206kkf}, which uses information about displaced track and secondary vertices as input into a multilayer perceptron ~\footnote{A class of neural network} to produce a discriminator value.
