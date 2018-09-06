@@ -254,37 +254,49 @@ The DTs are marked in yellow, the CSCs in green and the RPCs in blue~\cite{CMS-D
 \end{figure}
 
 Drift Tubes (DTs) operate in the barrel region covering $|\eta| < 1.2$, where the magnetic field strength is low as most of the return field is contained within the return yoke.
-Each tube is a $4.2\cm \times 1.3\cm$ cell that contains positively charged wire surrounded by a mixture of argon (85\%) and carbon dioxide (15\%).
-As a muon passes through the chamber it ionises the gas within, with the resultant free electrons drifting towards the wire. and inducing an electrical signal that is read out.
+Each tube is a $4.2\cm \times 1.3\cm$ cell that contains an anode wire surrounded by a mixture of Ar (85\%) and CO$_{2}$ (15\%).
+As a muon passes through the chamber it ionises the gas within, with the resultant free electrons drifting towards the positively charged wire and inducing an electrical signal that is read out.
 
-Each cylindrical layer of DT chambers is organised into four stations, where the chambers 
+As shown in figure~\ref{fig:dtSuperLayers}, the DT chambers are comprised of twelve layers of DTs that are grouped into three \emph{superlayers} (SLs) of DTs.
+Each SL is comprised of four layers of DTs, with each layer being offset from the other by half the width of half a DT in order to improve angular resolution.
+The outer SLs are orientated to measure coordinates in the $r-\phi$ plane and the innermost SL is orientated to measure coordinates in the \r-z plane (which the outermost station lacks).
+A honeycomb spacing structure separates SL3 from the other SLs to increase the lever arm length for measuring the track direction in the bending plane.
+This arrangement allows for a high muon track identification efficiency and provides resolutions of about $200\mum$ and a $\phi$ angular resolution of approximately $1$ mrad.
 
- and for each station, the chambers are subdivided into three ``superlayers'' (/SLs).
-Each SL is comprised of four layers of DTs, where the outer SLs measure coordinates in the $r-\phi$ plane and the inner SL measures in the \r-z plane (which the outermost station lacks), which provides resolutions of $\approx 200\mum$ and a $\phi$ directional precision of $\approx 1$ mrad.
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.97\textwidth]{figs/cms/DTchamber.png}
+\caption{A schemeatic layout of a DT chamber, illustrating the half DT width offset between the adjacent layers and the $r-\phi$ plane orientation of the outer SLs and the \r-z plane orientation of the inner layer~\cite{Chatrchyan:2009hg}.}
+\label{fig:dtSuperLayers}
+\end{center}
+\end{figure}
 
-Cathode Strip Chambers (CSCs) are employed in the endcaps covering the region $0.9 < \eta < 2.4$, where the magnetic field is non-uniform and there is a higher rate of muons than in the barrel.
+Cathode Strip Chambers (CSCs) are employed across four endcap disks which cover the region $0.9 < \eta < 2.4$.
+SCS are used in the endcaps as they are more suited to the higher muon rate and non-uniform magnetic field environment of the forward regions.
+While only the innermost ring of the outermost (fourth) disk was originally installed, an outer ring for the outermost disk was installed during LS1 during 2013-2015~\cite{Battilana:2017mrm}.
 
+Each CSC, as shown in figure~\ref{fig:csc}, is composed of seven trapezoidal panels. 
+The six gaps between the panels are filled with planes of anode wires that run almost perpendicular to a planes of cathode strips which are surrounded by a gas mixture of Ar, CO$_{2}$ and CF$_{4}$~\cite{Anderson:2004ep}.
+This provides six position measurements per chamber with a resolution in the $r-\phi$ plane of 75\mum for the two innermost rings of the first disk and 150\mum for the other disks~\cite{CMS:1997iti}.
 
-The CSCs are organised into four stations of concentric disks.
-Initially only the innermost ring of the outermost (fourth) disk was installed.
-An outer ring for the outermost disk was installed during LS1 during 2013-2015~\cite{Battilana:2017mrm}.
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.97\textwidth]{figs/cms/csc_trapezoid_v1.pdf}
+\caption{A schemeatic overview of a CSC, illustrating a plane of anode wires between two of the trapezoidal panels and the plane of cathode strips which run almost perpendicular to them~\cite{Bayatian:2006nff}.}
+\label{fig:csc}
+\end{center}
+\end{figure}
 
-Each CSC is composed of six gas gaps, with six planes of anode wires running almost perpendicular to six planes of cathode strips.
-This provides six position measurements per chamber with a resolution in the $r-\phi$ plane of 75\mum for the first station and 150\mum for the other station~\cite{CMS:1997iti}.
 
 Resistive Plate Chambers (RPCs) provide complimentary coverage in the range $|\eta| < 1.8$~\cite{Battilana:2017mrm}.
-The RPCs 
+The barrel contains six layers of RPCs, with a layer either side of the first two DT layers and one in each of the outer stations, and the endcaps have 4 RPC disks each, one for each CSC disk.
 
-In contrast to the DTs and CSCs, RPCs have a coarser position resolution of about 1\cm but 
-Although the RPCs have a coarser position resolution of $\approx 1\cm$) than the DTs and CPCs, they have fast response times and excellent time resolution ($\approx 2\ns$).
+Each RPC is formed of two parallel resistive plates, separated by a gas filled gap of a few millimetres, with a large electric field applied across it.
+In contrast to the DTs and CSCs, RPCs have a coarser position resolution of about 1\cm but have faster response times and a superior excellent time resolution of approximately $2\ns$.
+Consequently, the RPCs are used by trigger system to identify muons and to accurately determine which bunch crossing they originated from.
+Their coarser spatial resolution is also used to supplement information from the DTs and CSCs in track reconstruction.
 
-As such, RPCs provide additional but complimentary input to trigger decisions.
-Each RPCs is formed of two parallel resistive plates, separated by a few millimetres, with a large electric field applied across the gas filled gap.
-The barrel contains six layers of RPCs, two layers in the first two stations and one in each of the outer stations, and the endcaps have 4 RPC disks each, one for each CSC station.
-
-When the information from the muon and tracker systems are combined, as described in Chapter~\ref{chapter:data-mc}, 
-
-a momentum resolution of $1.3\%$ to $2.0\%$ and up to $6\%$ in the barrels and endcaps, respectively, and a charge misidentification rate of less than $0.1\%$ for muons with transverse momenta less than $100 \GeV$~\cite{Chatrchyan:2012xi,Chatrchyan:2013sba}.
+When the information from the muon and tracker systems are combined, as described in Chapter~\ref{chapter:data-mc}, the CMS detector is able to measure momentum resolutions of $1.3\%$ to $2.0\%$ in the barrel and up to $6\%$ in the endcaps and a charge misidentification rate of less than $0.1\%$ for muons with \pT less than $100 \GeV$~\cite{Chatrchyan:2012xi,Chatrchyan:2013sba}.
 
 \subsection{Trigger and Data Acquisition Systems}\label{subsec:trigger}
 At design luminosity, the LHC has a bunch crossing (BX) rate of $40\MHz$, i.e. of the order of $10^{9}$ inelastic events per second.
