@@ -274,7 +274,7 @@ They are defined as below.
 
 \subsubsection{Helix Parameters}
 The helical trajectory of a charged particle at the impact point is described by five helix parameters.
-In the CMS they are defined as:
+In the CMS these parameters are defined as:
 
 \begin{itemize}
 \item $\mathbf{p_{T}}$ - the transverse momentum of the track;
@@ -303,7 +303,8 @@ Where appropriate, the results for both definitions are given.
 
 \subsection{Linearised $\chi^{2}$ Track Fitter}\label{subsec:chi2}
 
-Three different track fitting algorithms were explored for the track fitter to be used for the 2016 hardware demonstrator review.
+Three different track fitting algorithms were explored for the track fitter to be used for the 2016 hardware demonstrator review: a Kalman Filter, a Linear Regression (LR) algorithm and a linearised $\chi^{2}$ track fit.
+
 The Kalman Filter was selected for the 2016 review as it provided the best and an identical track reconstruction efficiency and the highest fake track rejection rate.
 
 The Linear Regression (LR) algorithm~\cite{TMTT_FLP} which was developed exploits the fact that sufficiently high \pT tracks should form a straight line in the \emph{\rphi} and \emph{r-z} planes to perform independent fits in each plane.

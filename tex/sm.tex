@@ -88,10 +88,12 @@ The fundamental forces of nature and the SM gauge bosons which mediate them.
 \subsection{Gauge Symmetries}\label{subsec:gaugeSymmetries}
 The idea that the laws of physics are consistent for all observers, even if the measurements differ between observers, is a fundamental component of all modern physical theories~\cite{Haywood}.
 Systems which are unchanged or \emph{invariant} to a transformation are considered to possess a corresponding \emph{symmetry}.
-As shown by Emmy Noether's theorem, any such symmetry has a corresponding conserved quantity~\cite{Noether:1918zz}, such as the conservation of energy-momentum from space-time symmetry or electrical charge from the $U(1)$ symmetry in electromagnetism.
+
+As shown by Emmy Noether's theorem, the one or more generators of any such symmetry conserve a corresponding quantity~\cite{Noether:1918zz}.
+Examples of such quantities include the conservation of energy-momentum from space-time symmetry or electrical charge from the $U(1)$ symmetry in electromagnetism.
 If a symmetry transformation has no space-time dependence it is said to have a \emph{global symmetry} and conversely, if it has a space-time dependence it is said to have a \emph{local symmetry} or \emph{gauge symmetry}~\cite{Cheng:1985bj}.
 
-These concepts can be demonstrated by considering applying the $U(1)$ gauge symmetry of Quantum Electrodyanmics (QED), the theory of electromagnetism, on the Lagrangian of a relativistic spin-$\frac{1}{2}$ free-fermion field, for a wavefunction $\psi(x)$ and particles of mass $m$~\ref{eq:diracLagrangian,QFT}:
+These concepts can be demonstrated by considering applying the $U(1)$ gauge symmetry of Quantum Electrodyanmics (QED), the theory of electromagnetism, on the Lagrangian of a relativistic spin-$\frac{1}{2}$ free-fermion field (\ie electrons) with a wavefunction $\psi(x)$ and particles of mass $m$~\ref{eq:diracLagrangian,QFT}:
 
 \begin{equation}
 \mathcal{L} = \bar{\psi}(x) (i {\gamma}^{\mu} \partial_{\mu} - m) \psi(x) \;
@@ -105,16 +107,16 @@ If we consider this Lagrangian to have a global $U(1)$ symmetry, then $\psi$ tra
 \label{eq:globalTransformation}
 \end{equation}
 
-where $\alpha$ is an arbitrary phase and $q$ the \emph{coupling constant} which leaves the Lagrangian in equation~\ref{eq:diracLagrangian} unchanged.
+which leaves the Lagrangian in Equation~(\ref{eq:diracLagrangian}) unchanged as $q$ is a constant and $\alpha$ is an arbitrary phase.
 
-If however, equation~\ref{eq:diracLagrangian} has a local $U(1)$ symmetry, then $\psi$ transforms according to equation~\ref{eq:localTransformation}:
+If however, Equation~(\ref{eq:diracLagrangian}) has a local $U(1)$ symmetry, then $\psi$ transforms according to Equation~(\ref{eq:localTransformation}):
 
 \begin{equation}
 \psi(x) \rightarrow \psi'(x) = \psi(x) e^{-i q \alpha (x) } \;
 \label{eq:localTransformation}
 \end{equation}
 
-As a local transformation involves $\alpha$ being dependent on $x$, the derivative term in equation~\ref{eq:diracLagrangian} now transforms as:
+As a local transformation involves $\alpha$ being dependent on $x$, the derivative term in Equation~(\ref{eq:diracLagrangian}) now transforms as:
 
 \begin{equation}
 \begin{split}
@@ -139,23 +141,33 @@ A_{\mu}(x) \rightarrow A_{\mu}(x)' + \frac{1}{q} \partial_{\mu} \alpha\;
 \end{equation}
 
 This field can be simply introduced by replacing the derivative $\partial_{\mu}$ with the \emph{gauge covariant derivative}~\cite{QFT} which is defined as $D_{\mu} = \partial_{\mu} - i A_{\mu}(x)$.
-As $D_{\mu}$ transforms as 
+As $D_{\mu}$ transforms as:
 
 \begin{equation}
 D_{\mu}\psi(x) \rightarrow e^{-i q \alpha (x) } D_{\mu} \psi(x) \;
 \label{eq:Dtransform}
 \end{equation}
 
-the non-invariant term in equation~\ref{eq:localLagrangian} cancels out and ensures that the Lagrangian remains invariant under the local $U(1)$ gauge transformations.
+the non-invariant term in Equation~(\ref{eq:localLagrangian}) cancels out and ensures that the Lagrangian remains invariant under the local $U(1)$ gauge transformations.
 
-Therefore, the QED Lagrangian is given by equation~\ref{eq:qedLagrangian}:
+The presence of the gauge field allows for the inclusion of a gauge invariant term containing a field strength tensor $F_{\mu \nu}$, that describes the geometry of $A_{\mu}(x)$, in the Langrangian.
+The general form of $F_{\mu \nu}$ is given by:
+
+\begin{equation}
+F^{a}_{\mu \nu} = \partial_{\mu} A^{a}_{\nu} - \partial_{\nu} A^{a}_{\mu} + g f \;
+\label{eq:fieldStrengthTensor}
+\end{equation}
+
+For the case of QED, as $U(1)$ has only one generator, which self-commutes, the self-coupling constant in Equation~(\ref{eq:fieldStrengthTensor}) is zero.
+
+Therefore, with the addition of the simplest gauge invariant term for the incorporating $F_{\mu \nu}$, the QED Lagrangian is given by:
 
 \begin{equation}
 \mathcal{L}_{QED} = \bar{\psi} (i {\gamma}^{\mu} D_{\mu} - m) \psi - \frac{1}{4} F_{\mu \nu} F^{\mu \nu} \;
 \label{eq:qedLagrangian}
 \end{equation}
 
-where $F^{a}_{\mu \nu}$ is an invariant field strength tensor $F^{a}_{\mu \nu}$ that describes the geometry of the photon gauge field $A_{\mu}(x)$, $\psi(x)$ is the wavefunction of all electrons in the system and $q$ is the charge of an electron~\cite{QFT,LagrangiansSM}.
+where excitations of the gauge field $A_{\mu}$ correspond to the massless photon and $q$ represents the electric charge of the electron. 
 
 Similarly, by requiring the SM Lagrangian to gauge invariant to the $SU(3)_{C}$ gauge symmetry of the strong force and the $SU(2)_{L} \times U(1)_{Y}$ gauge symmetry of the electroweak force, the gauge fields and their associated gauge bosons for the electromagnetic, weak and strong forces naturally emerge.
 
@@ -171,6 +183,7 @@ $\mathcal{Higgs}$ and $\mathcal{Yukawa}$ arise as a consequence of the breaking 
 \subsection{Electroweak Theory}\label{subsec:QED}
 \subsubsection{Quantum Electrodynamics}\label{subsec:QED}
 Quantum Electrodynamics (QED) is the theory based on the $U(1)_{EM}$ gauge group which describes the electromagnetic force. 
+As the $U(1)_{EM}$ gauge group only has a single generator which self-commutes,  
 
 QED conserves electrical charge, \emph{q} and mediates electromagnetic interactions 
 
@@ -185,7 +198,7 @@ As the particles from the virtual electron anti-electron pairs
 that are continually produced and annihilated in the QED vacuum,  ~\cite{coughlan2006ideas}.
 
 \subsubsection{Weak Interactions}\label{subsec:weakForce}
-The weak force is mediated by the massive charged $W^{\pm}$ and neutral $Z^{0}$ gauge bosons which act upon weak isospin, \emph{T}.
+Weak interactions are mediated by the massive W$^{\pm}$ and Z$^{0}$ bosons 	
 
 The projection of the weak isospin along the z-axis is the conserved quantity of the Weak interaction, which in QFT is described by the $SU(2)_{weak isospin}$ group symmetry. 
 
