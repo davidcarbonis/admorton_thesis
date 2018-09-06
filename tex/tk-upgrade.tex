@@ -203,7 +203,7 @@ Assuming, to first order, that $R$ is constant, by neglecting energy losses such
 \end{equation}
 
 where $\phi$ is the angle of the track in the transverse plane at the origin \cite{markthesis}. 
-For large \pT ($> 3\GeV$) and thus large $R$, the small angle approximation can be used. Combining Eq.~\ref{eq:R} and Eq.~\ref{eq:stub_R}, one produces the key formula showing the transformation from stub positions to straight lines in the track parameter plane (Hough-space):
+For large \pT ($> 3\GeV$) and thus large $R$, the small angle approximation can be used. Combining Equations~(\ref{eq:R}) and (~\ref{eq:stub_R}), one produces the key formula showing the transformation from stub positions to straight lines in the track parameter plane (Hough-space):
 
 \begin{equation}
 \phi = \varphi - \frac{0.0015\,qB}{\pt}\cdot r \;
@@ -237,7 +237,7 @@ Each update of the state can be filtered on number of configurable criteria, inc
 In the event multiple stubs are found on the same layer, each can be propagated with up to the four best states being kept and presented to a final state selector, with preference given to states with the fewest missing layers and the smallest $\chi^2$.
 The final fit is always performed after a fixed period of time, so consequently there is no truncation in the traditional sense as all candidates will be read out, although events such as dense jets with many candidates and stubs per candidate will only be partially filtered.
 
-A greater in-depth discussion of the mathematics and implementation of online track reconstruction using Kalman Filters on FPGAs in \cite{SSummers}.
+A greater in-depth discussion of the mathematics and implementation of online track reconstruction using Kalman Filters on FPGAs in~\cite{SSummers}.
 
 \subsubsection{Duplicate Removal}
 Following the \KF, over half of the track candidates are unwanted duplicate tracks created by the HT.
@@ -265,7 +265,7 @@ By performing a second pass through the rejected tracks, tracks which have fitte
 A more detailed description of the firmware implementation of the \DR for the demonstrator system is discussed in~\cite{TMTT_JINST}.
 
 \section{Simulation Studies}\label{sec:TmttSimStudies}
-During the development of the \emph{TMT} finder demonstrator system both before and following the 2016 review, the author was involved in a number of simulation studies, the more substantive of which are presented below.
+This section presents a number of simulation studies which were undertaken as part of the development of the \emph{TMT} finder demonstrator system both before and following the 2016 review.
 All of the results discussed use a common set of definitions, as defined in Section~\ref{subsec:helixParameter}, and the track fitters discussed use digitised output from the \HT.
 
 \subsection{Definitions}\label{subsec:helixParameter}
@@ -279,43 +279,50 @@ In the CMS they are defined as:
 \begin{itemize}
 \item $\mathbf{p_{T}}$ - the transverse momentum of the track;
 \item $\mathbf{\phi_{0}}$ - the track angle in the transverse plane;
-\item $\mathbf{z_{0}}$ - the \emph{longitudinal} impact parameter, \ie the distance in z from the point of closest approach to the interaction poin;
+\item $\mathbf{z_{0}}$ - the \emph{longitudinal} impact parameter, \ie the distance in z from the point of closest approach to the interaction point;
 \item $\mathbf{\cot(\theta)}$ - the cotangent of the \emph{dip} (polar) angle, related to $\eta$ by $\cot(\theta) = \sinh (\eta)^{-1}$;
 \item $\mathbf{d_{0}}$ - the \emph{transverse} impact parameter, \ie the distance of the track vertex from the interaction point in the $x-y$ plane. 
 \end{itemize}
 
-As the \HT and track fitting algorithms discussed all assume that all tracks originate at the interaction point, \ie $d_{0} = 0$, t.
+As the \HT and track fitting algorithms discussed all assume that all tracks originate at the interaction point, $d_{0}$ is not given in the results below as it is fixed to zero.
 
-For the results presented, only the first four helix parameters, $\pt$, $\phi_{0}$, $z_{0}$ and $\cot(\theta)$, are quoted as both the \HT and track fitters assume that $d_{0} = 0$.
-
-\subsubsection{Reconstructed Track Definition}
+\subsubsection{Reconstructed Tracks}
 The common definitions of track reconstruction efficiency~\cite{TMTT_JINST} used for the three proposed L-1 Track Finder systems are used for the results presented in this chapter:
 
 \begin{itemize}
-\item The reconstruction efficiency is measured relative to all generated charged particles from the primary interaction that produce stubs in at least four layers of the tracker and lies within $\pT > 3\GeV$, $|\eta| < 2.4$, $|z_{0}| < 30\cm$ and $d_{xy} < 1\cm$.
-\item A track is a defined as being correctly reconstructed or \emph{matched} if the reconstructed track has stubs associated to the particle in at least four tracker layers.
-\item Tracks which fail this matching criteria are known either as \emph{unmatched} or \emph{fake} tracks.
-\item If all a reconstructed track's stubs originated from the same particle, the track is defined as being \emph{perfectly} reconstructed. 
-
-This stricter latter definition is typically used in quoting results from the entire chain (\ie all four components of the TFP discussed in Section~\ref{subsec:TFP}), as the presence of stubs incorrectly associated to a track is to be expected if only part of the TFP chain has been run.
-Where appropriate, the results for both definitions are given.
+\item The reconstruction efficiency is measured relative to all generated charged particles from the primary interaction that produce stubs in at least four layers of the tracker which satisfies the following conditions: $\pT > 3\GeV$, $|\eta| < 2.4$, $|z_{0}| < 30\cm$ and $d_{xy} < 1\cm$, where $d_{xy}$ is the distance in the $x-y$ plane from the point of closest approach to the interaction point.
+\item A track is a defined as being correctly reconstructed or \emph{matched} if the reconstructed track has stubs associated to the particle in at least four tracker layers. Tracks which fail this matching criteria are known either as \emph{unmatched} or \emph{fake} tracks.
 \item If the reconstruction of a charged particle produces more than one track, these additional tracks are considered to be \emph{duplicates}.
+\item If all a reconstructed track's stubs originated from the same particle, the track is defined as being \emph{perfectly} reconstructed. 
 \end{itemize}
 
+This stricter definition of \emph{perfect} track reconstruction efficiency is typically used in quoting results from the entire chain (\ie all four components of the TFP discussed in Section~\ref{subsec:TFP}).
+Otherwise, the nominal definition of track reconstruction efficiency is used as the presence of stubs incorrectly associated with a track is to be expected if only part of the TFP chain has been run.
+Where appropriate, the results for both definitions are given.
+
+
 \subsection{Linearised $\chi^{2}$ Track Fitter}\label{subsec:chi2}
-Whilst the Kalman Filter was used as a track fitter for the 2016 hardware demonstrator, a Linear Regression (LR)\footnote{The LR fitter~\cite{TMTT_FLP} was developed as an alternative to the KF and exploits the fact that sufficiently high \pT tracks should form a straight line in the \emph{\rphi} and \emph{r-z} planes to perform independent fits in each plane.} algorithm and Linearised $\chi^{2}$ fitting algorithm were also explored.
 
-The studies into a linearised $\chi^{2}$ track fit were initially motivated by the \emph{TMTT} project anticipating potential time and resource pressures in developing all the components of a complete track finder system that could be implemented in hardware due to the project being formed significantly after the other two L-1 track finder projects.
-Following discussions with both the \emph{tracklet} and \emph{AM} projects, it was decided that the use of a linearised $\chi^{2}$ fit based off the one proposed by the \emph{tracklet} project would be investigated.
-The general form of the $\chi^{2}$ fit and the derivation of the track derivatives required by the algorithm were provided in a private communication~\cite{CMS_DN-14-043} and were used to produce our own implementation of the track fitting algorithm.
+Three different track fitting algorithms were explored for the track fitter to be used for the 2016 hardware demonstrator review.
+The Kalman Filter was selected for the 2016 review as it provided the best and an identical track reconstruction efficiency and the highest fake track rejection rate.
 
-A linearised $\chi^{2}$ fit makes use of residuals between the stubs and the seeded track that minimise $\chi^{2}$ of the fit in order to calculate improved helix parameters for the track candidate.
+The Linear Regression (LR) algorithm~\cite{TMTT_FLP} which was developed exploits the fact that sufficiently high \pT tracks should form a straight line in the \emph{\rphi} and \emph{r-z} planes to perform independent fits in each plane.
+
+The studies of the linearised $\chi^{2}$ track fit were initially motivated by the \emph{TMT} project anticipating potential time and resource pressures in developing all the components of a complete track finder system that could be implemented in hardware due to the project being formed significantly after the other two L-1 track finder projects.
+
+Following discussions with both the \emph{tracklet} and \emph{AM} projects, it was decided that the use of a linearised $\chi^{2}$ fit based on the one proposed by the \emph{tracklet} project would be investigated.
+The general form of the $\chi^{2}$ fit and the derivation of the track derivatives required by the algorithm were provided in a private communication~\cite{CMS_DN-14-043} and were used to produce a \emph{TMT} implementation of the algorithm.
+
+A linearised $\chi^{2}$ fit calculates improved helix parameters for the track candidate by determining the  residuals between the stubs and the seeded track that minimise the $\chi^{2}$ of the fit.
+
 The general form of the $\chi^{2}$ fit describing how these hit residuals are used to obtain a fit of a track's helix parameters is detailed in Section~\ref{subsubsec:chi2maths}.
-A discussion of the development and outcomes of the software implementation of the fitting algorithm are given in Sections~\ref{subsubsec:chi2software,subsubsec:chi2outlook}.
-The calculation of the track derivatives for the barrel layer and endcap disk hits used by the algorithm, including a correction factor for $\phi$ in the outer disks to account for the fact that these modules do not point directly towards the interaction point, which is described in Appendix~\ref{app:chi2}.
+A discussion of the development and outcomes of the software implementation of the fitting algorithm are given in Sections~\ref{subsubsec:chi2software} and~\ref{subsubsec:chi2outlook}.
+
+
+The calculation of the track derivatives for the barrel layer hits and endcap disk hits used by the algorithm, included a correction factor for $\phi$ in the outer disks to account for the fact that these modules do not point directly towards the interaction point, which is described in Appendix~\ref{app:chi2}.
 
 All the results presented here involve the use of a \emph{Seed Filter} (SF) stage that was run following the \HT stage for both the Linear Regression and Linearised $\chi^{2}$ fitting algorithms.
-This process removes stubs in a \HT cell which are inconsistent with a straight line in the \emph{r-z} plane and filters out both fake tracks and stubs incorrectly assigned to tracks (also referred to as \emph{fake} stubs).
+This process removes stubs in a \HT cell that are inconsistent with a straight line in the \emph{r-z} plane and filters out both fake tracks and stubs incorrectly assigned to tracks (also referred to as \emph{fake} stubs).
 
 \subsubsection{General Form of a $\chi^{2}$ Fit}\label{subsubsec:chi2maths}
 For the general form of a $\chi^{2}$ fit for a track, $f$, described by its helix parameters, $\overrightarrow{h}$, and 
@@ -338,23 +345,23 @@ The $\chi^{2}$ of such a track is expressed as:
 \label{eq:chi2}
 \end{equation}
 
-where $\delta f_{i} \equiv f_{i}(\overline{h}) - s_{i}$ are the residuals between the expected position of the track (given by the seed helix parameters) and the position of the track given by the stub, and $V^{-1}_{ij} = diag(\sigma^{2}_{ii})$ is the variance matrix which describes the uncertainty associated to the measurement of the stubs.
+where $\delta f_{i} \equiv f_{i}(\overline{h}) - s_{i}$ are the residuals between the expected position of the track (given by the seed helix parameters) and the position of the track given by the stub, and $V^{-1}_{ij} = diag(\sigma^{2}_{ii})$ is the variance matrix that describes the uncertainty associated with the measurement of the stubs.
 
-By minimising $\chi^{2}$, $\delta h$ can be determined:
+By minimising the $\chi^{2}$, $\delta h$ can be determined:
 
 \begin{equation}
 0 = \frac{\partial \chi^{2}}{\partial \delta \overrightarrow{h_{k}}} = \sum_{ij} \frac{\partial f_{i}}{\partial \delta \overrightarrow{h_{k}}} V^{-1}_{ij} ( \delta f_{j} + \delta \overrightarrow{h} \frac{\partial f_{j}}{\partial \overrightarrow{h}} ) + \sum_{ij}	( \delta f_{i} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} ) V^{-1}_{ij} \frac{\partial f_{j}}{\partial \delta \overrightarrow{h_{k}}}  \;
 \label{eq:chi3}
 \end{equation}
 
-By defining the matrices $D_{ij} = \frac{\partial f_{i}}{\partial h_{k}}$ and $M = D^{T} V^{-1} D$, Equation~\ref{eq:chi3} can be rewritten and solved for $\delta h$:
+By defining the matrices $D_{ij} = \frac{\partial f_{i}}{\partial h_{k}}$ and $M = D^{T} V^{-1} D$, Equation~(\ref{eq:chi3}) can be rewritten and solved for $\delta h$:
 
 \begin{equation}
 0 = D^{T} V^{-1} \delta f + M \delta h \Rightarrow \delta h = - M^{-1} D^{T} \delta f \;
 \label{eq:chi4}
 \end{equation}
 
-Therefore Equation~\ref{eq:chi4} provides a simple linear form for how the track helix parameters should be updated for a set of residuals with respect to the seed track candidate.
+Therefore Equation~(\ref{eq:chi4}) provides a simple linear form for how the track helix parameters should be updated for a set of residuals with respect to the seed track candidate.
 
 Similarly the $\chi^{2}$ of the fit can also be expressed in a linear form:
 
@@ -370,13 +377,13 @@ Similarly the $\chi^{2}$ of the fit can also be expressed in a linear form:
 \label{eq:chi5}
 \end{equation}
 
-As the linear forms of Equations~\ref{eq:chi4} and~\ref{eq:chi5} consist of repeated addition and multiplication operations of the matrices involved, they are naturally suitable for implementation on an FPGA.
+As the linear forms of Equations~(\ref{eq:chi4}) and~(\ref{eq:chi5}) consist of repeated addition and multiplication operations of the matrices involved, they are naturally suitable for implementation on an FPGA.
 
 While FPGAs can easily perform such operations, potential complications arise when considering the calculation of the track derivatives that form the elements of $D$ which would not be trivial given the presence of a large number divisions and trigonometric functions for the endcaps' derivatives.
 Therefore, any implementation in firmware for an FPGA will require the use of lookup tables containing the precomputed values of the derivatives in order to quickly update a track's helix parameters without exceeding latency budgets.
 
 \subsubsection{Software Results}\label{subsubsec:chi2software}
-From equations~\ref{eq:chi4}--~\ref{eq:chi5} and the track derivatives derived in Appendix~\ref{app:chi2}, a software implementation of the linearised $\chi^{2}$ track fit algorithm was developed.
+From equations~(\ref{eq:chi4}) and~(\ref{eq:chi5}) and the track derivatives derived in Appendix~\ref{app:chi2}, a software implementation of the linearised $\chi^{2}$ track fit algorithm was developed.
 Initially this implementation used exact floating point mathematics in order to validate the algorithm, before a version using approximated expressions of the track derivatives was developed.
 The motivation behind this was to reduce the number of variables that the matrix of derivatives would depend on in order to simplify (and reduce resources required for) any future tabulation of the matrix.
 
@@ -617,7 +624,7 @@ With the particles involved having relativistic velocities (\ie $\beta c \cong 1
 
 where $k$ is a coefficient.
 
-From the simplified form of Equation~\ref{eq:scatter2}, two alternative forms of the coefficient $k$, which should require minimal resources and latency, were investigated:
+From the simplified form of Equation~(\ref{eq:scatter2}), two alternative forms of the coefficient $k$, which should require minimal resources and latency, were investigated:
 
 \begin{itemize}
 \item \textbf{constant coefficient - } a constant coefficient of the order of the average anticipated scattering angle is used as the anticipated typical scattering angle for $2-3\GeV$ tracks is of the order of a milliradian.
