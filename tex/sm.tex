@@ -196,7 +196,7 @@ Therefore, the attraction and repulsion of virtual electrons and anti-electrons 
 The weak force acts upon \emph{weak isospin}, $T$, and is mediated by the massive electrically charged W$^{\pm}$ and electrically neutral Z$^{0}$ gauge bosons~\cite{ElectroweakStrong}.
 The weak force conserves weak isospin along the z-axis, $T_{3}$.
 
-Given that the chirality of a fermion determines its $T_{3}$, W$^{\pm}$ bosons, which have $T_{3} = \pm 1$,  can only interact with left-handed/right-handed fermions/anti-fermions, which have $T_{3} = \pm \frac{1}{2}$~\cite{Cheng:1985bj}.
+Given that the chirality of a fermion determines its $T_{3}$, W$^{\pm}$ bosons, which have $T_{3} = \pm 1$, can only interact with left-handed fermions, which have $T_{3} = \pm \frac{1}{2}$~\cite{Cheng:1985bj}.
 This property makes charged weak interactions unique in being the only interactions which can both change the flavour of a fermion and violate parity~\cite{Lee:1956qn,Wu:1957my} and charge-parity symmetries~\cite{Christenson:1964fg}.
 As Z$^{0}$ bosons have $T_{3} = 0$, they interact with both left and right handed fermions and conserve fermion flavour and CP symmetry.
 
@@ -210,15 +210,13 @@ The $U(1)_{Y}$ component of the theory has a single generator, and an associated
 $Y_{W}$ is related to the conserved quantities of electrical charge ($Q$) and the z-projection of weak isospin ($T_{3}$), of its two constituent interactions by $Q = T_{3} + \frac{1}{2} Y_{W}$.
 
 The $SU(2)_{L}$ component of the theory has three generators, ${T_{i}} = \frac{{\sigma_{i}}}{2}$, which manifest as the gauge fields $W_{\mu}^{i}$ where $\bm{\sigma}$ are the pauli spin matrices and $i = 1, 2, 3$.
-Under $SU(2)_{L}$ transformations, these gauge fields only act upon the left-handed component of the fermion field, $\psi_{L}$ 	
-
-the left-handed fields, $\psi_{L}$, transform as doublets and the right-handed fields, $\psi_{R}$, as singlets.
+Under $SU(2)_{L}$ transformations, the left-handed fermion fields, $\psi_{L}$, transform as doublets and the right-handed fermion fields, $\psi_{R}$, as singlets.
 
 As $SU(2)$ transformations are non-Abelian, the 
 
 ...
 
-The 
+These four gauge fields are related to the four physical gauge bosons observed 
 
 \begin{equation}
 \begin{split}
@@ -233,32 +231,44 @@ For the charged weak interactions
 The Cabibbo-Kobayashi-Maskawa (CKM) matrix 
 
 \begin{equation}
-\begin{split}
-\end{split}
-\label{ckm}
+\begin{pmatrix} 
+d' \\
+s' \\
+b'
+\end{pmatrix}
+
+=
+\begin{pmatrix} 
+V_{ud} & V_{us} & V_{ub} \\
+V_{cd} & V_{cs} & V_{cb} \\
+V_{td} & V_{ts} & V_{tb}
+\end{pmatrix}
+
+\begin{pmatrix} 
+d \\
+s \\
+b
+\end{pmatrix}
+
 \end{equation}
+\label{eq:ckm}
 
 
 %%%Spontaneous symmetry breaking
 \subsubsection{Spontaneous symmetry breaking}\label{subsec:higgs}
+Originally, in order to ensure that the SM Lagrangian remained invariant under weak isospin rotations, it required that the gauge bosons were massless.  
+The reconciliation between the requirement for gauge invariance and the observation of massive weak gauge bosons was  achieved through the spontaneous symmetry breaking of the \emph{Higgs mechanism} proposed by Brout, Engler, Higgs,Guralnik, Hagen and Kibble~\cite{Englert:1964et,Higgs:1964pj,Guralnik:1964eu}.
 
-The $SU(2)_{isospin} \times U(1)_{hypercharge}$ ``electroweak'' symmetry is said to be ``broken''. 
-QFTs require massless vector fields in order to be locally invariant but the $W^{\pm}$ and $Z^{0}$ bosons are observed to be massive in contrast to the massless photon. 
-The Higgs mechanism is the simplest solution to this paradox, with the scalar Higgs field being responsible for the massive bosons~\cite{oldcms}. 
+The Higgs mechanism introduces a complex scalar field, known as the \emph{Higgs field}, which has a potential with a non-zero vacuum expectation value (VEV).
+While VEV itself  
+Ellis:2013jnq
+
+Following symmetry breaking, three of Higgs field's degrees of freedom mix with the weak gauge bosons, .
+The remaining degree is freedom 
+This mechanism also imparts Fermions also 
+
 Both the CMS and ATLAS experiments at CERN have independently confirmed the existence of an unknown boson at $\approx$ 125\GeV, which was later confirmed to be consistent with the Higgs Boson, the smallest possible excitation of its associated namesake field~\cite{HiggsCMS,HiggsATLAS}. 
 
-
-Originally, in order to ensure that the SM Lagrangian remained invariant under weak isospin rotations, there were no terms in the Lagrangian 
-
-the weak force's gauge bosons were required to be massless.
-
-Despite being manifestations of the same force, there is an obvious asymmetry between the masses of the gauge bosons 
- at lower energies the photon and weak gauge bosons
-
-
-The lack of evidence for such massless gauge bosons and the subsequent discovery of massive weak gauge bosons however, 
-
-The simplest solution to this problem 
 
 \subsection{Quantum Chromodynamics}\label{subsec:QCD}
 The strong force and its interactions with quarks is described by the theory known as Quantum Chromodynamics (QCD).
@@ -281,14 +291,12 @@ Confinement arises as asymptotic freedom results in increasingly large amounts o
 Eventually it becomes more energetically favourable for \emph{hadronisation}, the creation of a quark anti-quark pair to be produced, to occur and form new hadrons.
 In high energy particle collisions, such as those at the Large Hadron Collider, these hadronising quarks produce collimated showers of hadrons called \emph{jets}.
 
+As colour confinement prevents a hadron's constituent elements being determ, their internal structure is studied using an external probe.
 \editComment{PDFs and DIS to be added}
-DIS provided evidence for confinement as 
 
 If the valence quarks confined within a proton were free particles, then each quark would be expected to carry one third of the proton's momentum.
 
 As the valence quarks confined within a hadron are surrounded by a sea of virtual quarks and gluons, 
-
-colour confinement prevents  structure of the partons that make up a hadron 
 
 
 ~\cite{evenish2004deep} - DIS
@@ -327,6 +335,13 @@ These differences in production rates result from the nature of the particles be
 \end{center}
 \end{figure}
 
+The three different decay modes of pair produced top quarks are characterised by the manner in which the two W bosons, that are produced by the top quarks, decay:
+\begin{itemize}
+\item \textbf{hadronic} decays occur when both W bosons decay into a quark and anti-quark.
+\item \textbf{semi-leptonic} decays occurs when one W boson decays into a lepton and its associated anti-neutrino.
+\item \textbf{leptonic} decays occur when both W bosons decay into a lepton and its associated anti-neutrino.
+\end{itemize}
+ 
 \editComment{Cross sections table} 
 
 Top quark pair production can also occur in association with a vector boson, albeit at relatively small cross sections compared to both \ttbar and singly produced top quarks.

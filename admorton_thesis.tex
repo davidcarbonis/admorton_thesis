@@ -87,7 +87,7 @@
 % >> Title: please make sure that the non-TeX equivalent is in PDFTitle below
 \begin{document}
 \title{
-The Search for the Standard Model Production of a Single Top Quark in association with a Z Boson for the Final State Containing Two Leptons 
+Search for the Production of a Single Top Quark in association with a Z Boson at the LHC 
 %and
 %The Development of Tracking Algorithms for an FPGA Based Level-1 Track Finder for CMS Tracker at the HL-LHC
 }
@@ -97,17 +97,20 @@ The Search for the Standard Model Production of a Single Top Quark in associatio
 \maketitle
 
 \abstract{
-A search for the production of a single top quark in association with a Z boson and an additional jet using  data from proton-proton collisions collected by the Compact Muon Solenoid detector at $\sqrt{s} = 13\TeV$ during 2016 is presented.
-This search focussed on identifying the final state containing two leptons from the Z boson decay and between four to six jets, with one to two originating from the decay of a b quark.
-As this final state for the process is dominated by background events, predominantly a Z boson with additional jets and pair produced top quarks, a multivariate analysis was used to further enhance the separation between the signal and background processes in addition to an event selection designed to suppress these background processes.
+A search for the production of a single top quark in association with a Z boson and an additional jet using data from proton-proton collisions at $\sqrt{s} = 13\TeV$ collected by the Compact Muon Solenoid (CMS) experiment at the Large Hadron Collider is presented.
+This is a rare process that is predicted by the Standard Model 
+This search focussed on identifying the final state containing two leptons from the Z boson decay, two jets from the decay of the W boson produced by the top quark decay, a b-jet from the top quark decay and a recoil jet.
+The signal was dominated by backgrounds involving a real Z boson or two promptly produced leptons consist with a Z boson decay, primarily Z+jet and top quark pair production.
+As such, a Boosted Decision Tree was used to enhance the separation between the signal and background processes.
+
+Using a dataset corresponding to 35.8\fbinv 
 A production cross section of $X_{Y}^{Z}$ fb, corresponding to an OBSERVED/EXPECTED signal significance of $999 \sigma$ when compared to the background only hypothesis, was measured and found to be consistent with the Standard Model prediction.
 
-The Compact Muon Solenoid's new tracking detector at the High-Luminosity Large Hadron Collider, will require the ability to reconstruct all charged tracks with transverse momentum greater than 2-3\GeV within 4\mus so that they can be used in the Level-1 trigger decision.
+The CMS experiment's new tracking detector at the High-Luminosity Large Hadron Collider, will require the ability to reconstruct all charged tracks with transverse momentum greater than 2-3\GeV within 4\mus so that they can be used in the Level-1 trigger decision.
 One of the proposed track finders is an FPGA-based based solution using a fully time-multiplexed architecture, where track candidates are reconstructed using a projective binning algorithm based on the Hough Transform.
-During the development of this track finding system a number of different algorithms were explored to fit track parameters to the candidates reconstructed by the Hough Transform.
-Studies into the suitability of a linearised $\chi^{2}$ track fitting algorithm for fitting track parameters were undertaken and it was found that its performance was inferior to that of the proposed combinatorial \KF fitter.
-The impact of reducing the minimum track transverse momentum from 3\GeV to 2\GeV on the proposed system are discussed was evaluated.
-The significant decreases observed in the tracking efficiency and number of incorrectly reconstructed tracks was found to be recoverable through taking into account in both the \HT and \KF the increased effect of multiple scattering at lower transverse momentum.
+Studies into the suitability of a linearised $\chi^{2}$ algorithm for fitting track parameters were undertaken and it was found that its performance was inferior compared to that of a combinatorial \KF fitter.
+The impact of reducing the minimum track transverse momentum from 3\GeV to 2\GeV on the proposed system was also evaluated.
+The resulting degradation of of performance was found to be recoverable by improving the handling of multiple scattering in the track finding and fitting algorithms.
 }
 
 \section*{Acknowledgements} \label{sec:acknowledgments}
