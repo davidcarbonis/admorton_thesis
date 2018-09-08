@@ -206,33 +206,39 @@ As Z$^{0}$ bosons have $T_{3} = 0$, they interact with both left and right hande
 The theory of \emph{electroweak} interactions, formulated by Glashow, Salam and Weinberg~\cite{Glashow:1961tr,Salam:1964ry,Weinberg:1967tq}, is described by the $SU(2)_{L} \times U(1)_{Y}$ gauge group and hypotheses that its two seemingly disparate constituent forces are described as a single electroweak force above a unification energy.
 
 
-The $U(1)_{Y}$ component of the theory has a single generator, and an associated gauge field $B_{\mu}$, which acts on and conserves weak hypercharge, $Y_{W}$.
+The $U(1)_{Y}$ component of the theory has a single generator, and an associated gauge field B$_{\mu}$, which acts on and conserves weak hypercharge, $Y_{W}$.
 $Y_{W}$ is related to the conserved quantities of electrical charge ($Q$) and the z-projection of weak isospin ($T_{3}$), of its two constituent interactions by $Q = T_{3} + \frac{1}{2} Y_{W}$.
 
-The $SU(2)_{L}$ component of the theory has three generators, ${T_{i}} = \frac{{\sigma_{i}}}{2}$, which manifest as the gauge fields $W_{\mu}^{i}$ where $\bm{\sigma}$ are the pauli spin matrices and $i = 1, 2, 3$.
-Under $SU(2)_{L}$ transformations, the left-handed fermion fields, $\psi_{L}$, transform as doublets and the right-handed fermion fields, $\psi_{R}$, as singlets.
+The $SU(2)_{L}$ component of the theory has three generators, ${T_{i}} = \frac{{\sigma_{i}}}{2}$, which manifest as the gauge fields W$_{\mu}^{i}$ where $\bm{\sigma}$ are the pauli spin matrices and $i = 1, 2, 3$.
+As $SU(2)$ transformations are non-Abelian, W$_{\mu}^{i}$ are able to self-couple.
 
-As $SU(2)$ transformations are non-Abelian, the 
 
-...
+The four physically observed 
 
-The four physically observed gauge bosons are related to the four gauge fields of the electroweak theory by:
+B$_{\mu}$ and W$_{\mu}^{i}$ gauge fields mix are related to the four physically observed gauge bosons by 
 
 \begin{equation}
 \begin{split}
-A_{\mu} = sin(\theta_{W}) W^{3}_{\mu} + cos(\theta_{W}) B_{\mu} \\ 
-Z_{\mu} = cos(\theta_{W}) W^{3}_{\mu} - sin(\theta_{W}) B_{\mu} \\ 
-W^{\pm}_{\mu}
+\text{A}_{\mu} = sin(\theta_{W}) W^{3}_{\mu} + cos(\theta_{W}) B_{\mu} \\ 
+\text{Z}_{\mu} = cos(\theta_{W}) W^{3}_{\mu} - sin(\theta_{W}) B_{\mu} \\ 
+\text{W}^{\pm}_{\mu} = \frac{1}{\sqrt{2}} ( W^{1}_{\mu} \mp i W^{2}_{\mu} ) \;
 \end{split}
 \label{eq:ewBosons}
 \end{equation}
 
-where $\theta_{W}$ is the weak mixing or \emph{Weinberg} angle, which is defined in Equation~(\ref{eq:weakMixingAngle}) as a function of the coupling strengths of the weak hypercharge and weak isospin coupling constants, $g'$ and $g$ respectively.
+where $\theta_{W}$ is the weak mixing or \emph{Weinberg} angle, which is defined as Equation~(\ref{eq:weakMixingAngle}) as a function of the coupling strengths of the weak hypercharge and weak isospin coupling constants, $g'$ and $g$ respectively.
 
 \begin{equation}
 \theta_{W} = \frac{g}{g^{2}+g'^{2}}
 \label{eq:weakMixingAngle}
 \end{equation}
+
+where $g'$ and $g$ are the coupling constants of the weak hypercharge and weak isospin respectively.
+
+As discussed in Section~\ref{subsec:weakForce}, the W$^{\pm}$ gauge bosons only interact with the left-handed components of fermion fields.
+Under the $SU(2)_{L}$ group of transformations, the left-handed fermion fields, $\psi_{L}$, transform as doublets and the right-handed fermion fields, $\psi_{R}$, as singlets.
+
+The charged weak gauge bosons 
 
 
 For the charged weak interactions
@@ -258,9 +264,29 @@ s \\
 b
 \end{pmatrix}
 
-\end{equation}
 \label{eq:ckm}
+\end{equation}
 
+The best estimates of the elements of the CKM matrix are given by a global fit of the measurements various experiments have performed, as given in Equation~((ref{eq:ckmElements})~\cite{Tanabashi:2018oca}.
+
+\begin{equation}
+
+\begin{pmatrix} 
+V_{ud} & V_{us} & V_{ub} \\
+V_{cd} & V_{cs} & V_{cb} \\
+V_{td} & V_{ts} & V_{tb}
+\end{pmatrix}
+
+= 
+
+\begin{pmatrix} 
+0.97420 \pm 0.00021 & 0.2243 \pm 0.0005 & 0.00394 \pm 0.00036 \\
+0.218 \pm 0.004 &  0.997 \pm 0.017 & 0.0422 \pm 0.0008 \\
+0.0081 \pm 0.0005 & 0.0394 \pm 0.0023 & 1.019 \pm 0.025
+\end{pmatrix}
+
+\label{eq:ckmElements}
+\end{equation}
 
 %%%Spontaneous symmetry breaking
 \subsubsection{Spontaneous symmetry breaking}\label{subsec:higgs}
@@ -310,13 +336,13 @@ As the valence quarks confined within a hadron are surrounded by a sea of virtua
 
 ~\cite{evenish2004deep} - DIS
 
-
+Ball:2014uwa PDF plot
 \section{Top Physics}\label{sec:top-physics}
 The existence of a third generation of quarks was first hypothesised in 1973 by Makoto Kobayashi and Toshihide Maskawa in order to account for the CP violation observed in kaon decays~\cite{Kobayashi:1973fv}.
 While the discovery of the tau lepton in 1975 and the bottom quark in 1977~\cite{Herb:1977ek} reinforced the motivation for a weak isospin partner to the bottom quark, as the top quark's mass was larger than intially assumed, it would remain unobserved until a sufficiently powerful collider was built.
 In 1995 the top quark was observed at the Tevatron at the Fermi National Accelerator Laboratory by the CDF and D\O experiments~\cite{Abe:1995hr,D0:1995jca}.
 
-The top quark's mass, $m_{top}$, of $173.44 \pm 0.51 \pm 0.71 \GeV$ makes it the most massive known fundamental particle and is responsible for imbuing it with properties which have no equivalent for the other five quarks~\cite{Patrignani:2016xqp}.
+The top quark's mass, $m_{top}$, of $173.34 \pm 0.27 \pm 0.71 \GeV$ makes it the most massive known fundamental particle and is responsible for imbuing it with properties which have no equivalent for the other five quarks~\cite{Tanabashi:2018oca}.
 $m_{top}$ is greater than the mass of a W boson, making it capable of decaying into an on-shell W boson and a down-type quark (almost exclusive a bottom quark) and giving it a much short lifetime than the other quarks.
 The top quark's lifespan of $5 \times 10^{-25}$ seconds is several orders of magnitude smaller than the characteristic timescale of the strong interaction.
 This results in the top quark being the only quark which decays before it can hadronise. 
@@ -333,7 +359,7 @@ Consequently, many have conjectured that the top quark has a special role to pla
 \subsection{Top quark pair production}\label{subsec:ttbarTheory}
 Top quarks are predominantly produced by pair-production (\ttbar) through strong interactions at hadron colliders.
 As illustrated in the Feynman diagrams in figure~\ref{fig:feyn_ttbar}, at Leading Order (LO) \ttbar events are produced by either gluon fusion or quark anti-quark annihilation. 
-While approximately 90\% of \ttbar events produced at the Tevatron occured via quark fusion, 80-90\% of \ttbar events at the LHC are produced by gluon fusion for $\sqrt{s} = 8-14\TeV$~\cite{Deliot:2011np,Patrignani:2016xqp}.
+While approximately 85\% of \ttbar events produced at the Tevatron occured via quark fusion, 80-90\% of \ttbar events at the LHC are produced by gluon fusion for $\sqrt{s} = 8-14\TeV$~\cite{Deliot:2011np,Tanabashi:2018oca}.
 These differences in production rates result from the nature of the particles being collided at both machines, \ie quark fusion requiring a sea quark at the LHC, and the higher centre-of-mass energies at the LHC resulting in gluons carrying a larger fraction of the proton's energy.
 
 \begin{figure}[htbp]
