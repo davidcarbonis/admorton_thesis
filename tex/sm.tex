@@ -229,18 +229,32 @@ B$_{\mu}$ and W$_{\mu}^{i}$ gauge fields mix are related to the four physically 
 where $\theta_{W}$ is the weak mixing or \emph{Weinberg} angle, which is defined as Equation~(\ref{eq:weakMixingAngle}) as a function of the coupling strengths of the weak hypercharge and weak isospin coupling constants, $g'$ and $g$ respectively.
 
 \begin{equation}
-\theta_{W} = \frac{g}{g^{2}+g'^{2}}
+\theta_{W} = \frac{g}{g^{2}+g'^{2}} \;
 \label{eq:weakMixingAngle}
 \end{equation}
 
 where $g'$ and $g$ are the coupling constants of the weak hypercharge and weak isospin respectively.
 
-As discussed in Section~\ref{subsec:weakForce}, the W$^{\pm}$ gauge bosons only interact with the left-handed components of fermion fields.
-Under the $SU(2)_{L}$ group of transformations, the left-handed fermion fields, $\psi_{L}$, transform as doublets and the right-handed fermion fields, $\psi_{R}$, as singlets.
+As discussed in Section~\ref{subsec:weakForce}, the W$^{\pm}$ gauge bosons only interact with the left-handed components of a fermion field, $\psi$.
+The left and right-handed components of $\psi$, $\psi_{L}$ and $\psi_{R}$, can be obtained by applying the projection operators  
 
-The charged weak gauge bosons 
+where $\gamma^{5} = i \gamma^{0} \gamma^{1} \gamma^{2} \gamma^{3}$.
+
+Under the $SU(2)_{L}$ group of transformations, $\psi_{L}$ transform as doublets and $\psi_{R}$ as singlets.
+The $\psi_{L}$ doublet consists either of a pair of left-handed fermions 
+same generation up-type and down-type left-handed quark pair or a charged lepton and its associated neutrino:
+
+\begin{equation}
+\psi_{L} = 
+\label{eq:weakDoublet}
+\end{equation}
+
+The $\psi_{R}$ singlets consist of either an up-type or down-type quark or charged lepton
 
 
+As the charged weak gauge bosons 
+
+The quark mass eigenstates 
 For the charged weak interactions
 The Cabibbo-Kobayashi-Maskawa (CKM) matrix 
 
@@ -294,6 +308,7 @@ Originally, in order to ensure that the SM Lagrangian remained invariant under w
 The reconciliation between the requirement for gauge invariance and the observation of massive weak gauge bosons was  achieved through the spontaneous symmetry breaking of the \emph{Higgs mechanism} proposed by Brout, Engler, Higgs,Guralnik, Hagen and Kibble~\cite{Englert:1964et,Higgs:1964pj,Guralnik:1964eu}.
 
 The Higgs mechanism introduces a complex scalar field, known as the \emph{Higgs field}, that has a potential with a non-zero vacuum expectation value (VEV).
+This potential forms 
 Infinite number of minima/ground states -> expanding field around arbitary choice of ground state break the EWS
 While VEV itself  
 Ellis:2013jnq
@@ -326,7 +341,7 @@ Confinement arises as asymptotic freedom results in increasingly large amounts o
 Eventually it becomes more energetically favourable for \emph{hadronisation}, the creation of a quark anti-quark pair to be produced, to occur and form new hadrons.
 In high energy particle collisions, such as those at the Large Hadron Collider, these hadronising quarks produce collimated showers of hadrons called \emph{jets}.
 
-As colour confinement prevents a hadron's constituent elements being determ, their internal structure is studied using an external probe.
+As colour confinement prevents a hadron's constituent elements being ..., their internal structure is probed  using 
 \editComment{PDFs and DIS to be added}
 
 If the valence quarks confined within a proton were free particles, then each quark would be expected to carry one third of the proton's momentum.
@@ -337,6 +352,7 @@ As the valence quarks confined within a hadron are surrounded by a sea of virtua
 ~\cite{evenish2004deep} - DIS
 
 Ball:2014uwa PDF plot
+
 \section{Top Physics}\label{sec:top-physics}
 The existence of a third generation of quarks was first hypothesised in 1973 by Makoto Kobayashi and Toshihide Maskawa in order to account for the CP violation observed in kaon decays~\cite{Kobayashi:1973fv}.
 While the discovery of the tau lepton in 1975 and the bottom quark in 1977~\cite{Herb:1977ek} reinforced the motivation for a weak isospin partner to the bottom quark, as the top quark's mass was larger than intially assumed, it would remain unobserved until a sufficiently powerful collider was built.
@@ -377,7 +393,6 @@ The three different decay modes of pair produced top quarks are characterised by
 \item \textbf{leptonic} decays occur when both W bosons decay into a lepton and its associated anti-neutrino.
 \end{itemize}
  
-\editComment{Cross sections table} 
 
 Top quark pair production can also occur in association with a vector boson, albeit at relatively small cross sections compared to both \ttbar and singly produced top quarks.
 Despite their cross sections, these channels are important backgrounds which require detailed understanding in order to be able to probe for new physics with similar or smaller cross sections, such as \ttH or tZq~\cite{Khachatryan:2014ewa}.
@@ -405,8 +420,6 @@ As each of these production channels have differing initial and final states the
 \label{fig:singleTopDiagrams}
 \end{figure}
 
-\editComment{Cross sections table} 
-
 s-channel production, as shown in figure~\ref{fig:singleTopDiagrams}(a), is the quark anti-quark annihilation into an off-shell W boson which decays into a top and anti-bottom quark.
 This process has the lowest single top production cross section at the LHC given the virtuality of the W boson required to produce the top quark and need for the anti-quark to originate from a sea quark.
 Given its low cross section and a final state topology similar to larger background processes, the s-channel has yet to be observed at the LHC~\cite{Khachatryan:2016ewo}.
@@ -426,9 +439,6 @@ Such measurements provide not only the ability to perform precision tests of SM 
 One may initially assume that given the larger production cross section for \ttbar compared to single top processes, that it would be considerably more difficult to probe the top-electroweak sector through single top quark production processes.
 The top quark and W boson coupling however, can only be probed through the single top tW-channel given that the W boson couples to the initial state quarks for \ttW, as illustrated in figure~\ref{fig:feyn_ttV}.
 tH has yet to be observed~\cite{CMS:2018jsz} as it is much more difficult to access than \ttH due to the destructive interference between the tH and HW vertices~\cite{Maltoni:2001hu}.
-In contrast, \ttZ has a lower production cross section than the combined tZ and $\overline{\text{t}}$Z cross section~\cite{Campbell:2013yla}.
-This is the result of the large number of particles present in the \ttZ final state suppressing \ttZ production despite the relative strength of the strong coupling.
-CMS has made measurements of \ttH, \ttW, and \ttZ, all in excess of five standard deviations and consistent with their SM predictions~\cite{Sirunyan:2017uzs,Sirunyan:2018hoz}.
 
 \begin{figure}[p]
 \centering
@@ -436,6 +446,35 @@ CMS has made measurements of \ttH, \ttW, and \ttZ, all in excess of five standar
 \caption{Leading order \ttW (left) and \ttZ (right) production diagrams~\cite{Sirunyan:2017uzs}. Unlike for \ttZ and \ttH, the gauge boson in \ttW is not radiated from the top quark, but from the initial state quarks.}
 \label{fig:deyn_ttV}
 \end{figure}
+
+In contrast, \ttZ has a lower production cross section than the combined tZ and $\overline{\text{t}}$Z cross section~\cite{Campbell:2013yla}.
+This is the result of the large number of particles present in the \ttZ final state suppressing \ttZ production despite the relative strength of the strong coupling.
+CMS has made measurements of \ttH, \ttW, and \ttZ, all in excess of five standard deviations and consistent with their SM predictions~\cite{Sirunyan:2017uzs,Sirunyan:2018hoz}.
+
+\begin{table}[htbp]
+\topcaption {
+}
+\label{tab:tZcrossSection}
+ \centering
+ \resizebox{\textwidth}{!}{
+% This right-aligns numbers in column, but centers them under column title.
+ \begin{tabular}{lc}
+   \hline
+   \bf{Process} & \bf{Cross Section (fb)}  \\
+        \hline
+   HT &  97.0 & 43.1 & 351.2 & 43.9 & 37.0 \\  
+   \hline
+   $\chi^{2}$+DR & 95.0 & 85.8 & 86.4 & 15.7 & 9.5 \\
+   (floating point) & & & & & \\
+   \hline
+   $\chi^{2}$+DR & 94.9 & 85.6 & 87.4 & 15.5 & 10.9 \\  
+   (approximated) & & & & & \\   
+%   \hline
+%   KF+DR & 94.1 & 94.1 & 82.1 & 21.1 & 4.5 \\
+   \hline
+   
+ \end{tabular}}
+\end{table}
 
 The analysis presented in this thesis is the search for the production of a single top quark in association with a Z boson with an additional jet, known as \emph{tZq}, in the dilepton final state.
 tZq is a rare SM process which provides a unique precision probe of the top quark and the electroweak sector, as the Z boson is radiated off one of the quark legs, as shown in figures~\ref{fig:feyn_tZq}(a)-(e), or from the exchanged W boson, as shown in figure~\ref{fig:feyn_tZq}(f).
@@ -505,7 +544,7 @@ Further experiments have confirmed however, that neutrinos do experience flavour
 Given the limited experimental evidence of BSM physics, a large number of BSM physics models, driven by theoretical and ascetic arguments, have been proposed to account for the shortcomings of the SM.
 While the analysis presented in this thesis concerns the search for a SM process, the tZq cross section is sensitive to modifications of the tZ coupling posited by a number of BSM theories.
 
-As discussed in Chapter~\ref{}, in the SM any FCNC process that changes a quark's flavour but not its charge must be loop mediated.
+As eluded to in Section~\ref{subsec:weakForce}, any flavour changing process involving a neutral weak current in the SM requires a loop processes involving a virtual W exchange.
 A number of BSM theories however, introduce top quark FCNC decay contributions at the tree level, such as Supersymmetry (SUSY) models and those proposing additional Higgs doublets and/or quark singlets~\cite{AguilarSaavedra:2004wm}.
 The presence of such new tZ couplings would enhance the production rate of both \ttZ and tZq by several orders of magnitude and should be observable at the LHC. 
 As of to date however, no evidence for BSM FCNCs have been observed for the tZ coupling for both single top and \ttbar processes~\cite{Sirunyan:2with017kkr}.
