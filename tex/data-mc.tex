@@ -137,7 +137,7 @@ The seeds produced by both algorithms are combined and electron tracks are then 
 The helix parameters of the reconstructed tracks are determined by a GSF fit and the resulting GSF tracks are subsequently used for the PF algorithm's reconstruction of electrons.
 
 \subsection{Muons}\label{subsec:objReco-muons}
-Muon tracks are independently reconstructed in both the inner tracker, as described in Section~\ref{subsec:tracksVertices}, and the muon chambers, where local reconstruction is undertaken using a Kalman Filter to build tracks from the innermost track segments of clustered DT and CSC hits outwards using DT, CSC and RPC hits.
+Muon tracks are independently reconstructed in both the inner tracker, as described in Section~\ref{subsec:tracks}, and the muon chambers, where local reconstruction is undertaken using a Kalman Filter to build tracks from the innermost track segments of clustered DT and CSC hits outwards using DT, CSC and RPC hits.
 
 These two types of muon tracks are reconstructed using two methods~\cite{Chatrchyan:2012xi}:
 \begin{itemize}
@@ -192,7 +192,7 @@ Each effect is considered as a separation correction level and is applied sequen
 \item \textbf{L2L3 Residual} - applied to data only to account for any remaining small differences in the jet response between data and simulation, such as the absolute Jet Energy Scale (JES) following the simulation derived \emph{L2 Relative} and \emph{L3 Absolute} corrections.
 \end{itemize}
 
-The associated uncertainties of these JECS, which are treated as systematic uncertainties, are discussed in Chapter~\ref{chapter:tzq-systematics}.
+The associated uncertainties of these JECS, which are treated as systematic uncertainties, are discussed in Chapter~\ref{sec:systematics}.
 A thorough description of the JECs, their determination and associated uncertainties are discussed in~\cite{Khachatryan:2016kdb}.
 
 \subsection{b-jet tagging}\label{subsec:objReco-bJets}

@@ -3,6 +3,7 @@
 
 \pdfoutput=1
 
+\setcounter{secnumdepth}{3}
 
 % Put here some packages required or/and some personnal commands
 \usepackage{ptdr-definitions}
@@ -24,6 +25,7 @@
 \usepackage{multirow}
 \usepackage{pifont}% http://ctan.org/pkg/pifont
 \usepackage{slashed}
+\usepackage{bookmark}
 \usepackage{bm}
 
 \newcommand{\cmark}{\ding{51}}%
@@ -103,11 +105,10 @@ This is a rare process that is predicted by the Standard Model
 This search focussed on identifying the final state containing two leptons from the Z boson decay, two jets from the decay of the W boson produced by the top quark decay, a b-jet from the top quark decay and a recoil jet.
 The signal was dominated by backgrounds involving a real Z boson or two promptly produced leptons consist with a Z boson decay, primarily Z+jet and top quark pair production.
 As such, a Boosted Decision Tree was used to enhance the separation between the signal and background processes.
-
-Using a dataset corresponding to 35.8\fbinv 
+Using a dataset corresponding to 35.8\fbinv, a signal 
 A production cross section of $X_{Y}^{Z}$ fb, corresponding to an OBSERVED/EXPECTED signal significance of $999 \sigma$ when compared to the background only hypothesis, was measured and found to be consistent with the Standard Model prediction.
 
-The CMS experiment's new tracking detector at the High-Luminosity Large Hadron Collider, will require the ability to reconstruct all charged tracks with transverse momentum greater than 2-3\GeV within 4\mus so that they can be used in the Level-1 trigger decision.
+The CMS experiment's new tracking detector at the High-Luminosity Large Hadron Collider will require the ability to reconstruct all charged tracks with transverse momentum greater than 2-3\GeV within 4\mus so that they can be used in the Level-1 trigger decision.
 One of the proposed track finders is an FPGA-based based solution using a fully time-multiplexed architecture, where track candidates are reconstructed using a projective binning algorithm based on the Hough Transform.
 Studies into the suitability of a linearised $\chi^{2}$ algorithm for fitting track parameters were undertaken and it was found that its performance was inferior compared to that of a combinatorial \KF fitter.
 The impact of reducing the minimum track transverse momentum from 3\GeV to 2\GeV on the proposed system was also evaluated.

@@ -1,14 +1,14 @@
 \chapter{Results}\label{chapter:results}
 Following providing the multivariate analysis technique described in Section~\ref{sec:mvas} with the simulated samples, and their systematic variations, and data, the resultant set of BDT discriminator distributions can be used to perform a measurement.
 
-The following chapter describes the statistical methodology used to evaluate these distributions and produce a measurement of the cross section and the upper limit for the signal process and the both the expected and observed significances of this measurement.
-Following a discussion of the impact that the systematic uncertainties have on the fitted results, the result presented is compared with the results made for the fully leptonic final state of tZq.
+The following chapter describes the statistical methodology used to analyses these distributions and produce a measurement of the cross section and the upper limit for the signal process along with both the expected and observed significances of this measurement.
+Following a discussion of the impact that the systematic uncertainties have on the fitted results, the result presented is compared with that from the already published trileptonic final state for tZq production.
 
 \section{Statistical Methodology}\label{sec:statisticalModel}
-The Higgs Analysis Combined Limit (\combine) tool~\cite{Combine} tool, a framework based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}, was used to perform a binned Maximum Likelihood Fit (MLF) to evaluate measurement made using the $CL_{S}$ method~\cite{CMS-NOTE-2011-005,Khachatryan:2014jba,Cowan:2010js}.
+The Higgs Analysis Combined Limit (\combine) tool~\cite{Combine} tool, a framework based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}, was used to perform a binned Maximum Likelihood Fit (MLF) to analyses the measurement made using the $CL_{S}$ method~\cite{CMS-NOTE-2011-005,Khachatryan:2014jba,Cowan:2010js}.
 
 \subsection{Likelihood Model}\label{subsec:likelihoodModel}
-For the signal and background processes considered in the search, the expected event yield $\lambda$ in the bin $i$ is given by equation~\ref{eq:yields1}:
+For the signal and background processes considered in the search, the expected event yield $\lambda$ in the bin $i$ is given by Equation~(\ref{eq:yields1}):
 
 \begin{equation}
 \lambda_{i} = \mu s_{i} + \sum\limits_{j} b_{j} \;
@@ -16,7 +16,7 @@ For the signal and background processes considered in the search, the expected e
 \end{equation}
 
 where $s$ and $b$ are the expected number of signal and background events and $\mu$ is the signal strength modifier.
-$\mu$, as given in equation~\ref{eq:signalModifier} where $\sigma_{obs}$ is the cross section observed, is used typically to parametrise the expected signal yield in lieu of the expected cross section.
+The signal strength modifier as given in equation~\ref{eq:signalModifier} where $\sigma_{obs}$ is the cross section observed, is used typically to parametrise the expected signal yield in lieu of the expected cross section.
 The uncertainties associated with the simulated predictions of the signal and background processes are accounted for by the inclusion of nuisance parameters $\theta$, such that $s_{i} = s_{i} (\theta)$ and $b_{i} = b_{i} (\theta)$.
 
 \begin{equation}
@@ -90,12 +90,10 @@ The Asimov dataset is defined as being constructed such that all observable quan
 A full description of the asymptotic approximation to the CL$_{s}$ method is given in~\cite{Cowan:2010js}.
 
 \section{Statistical Analysis Results}
-\editComment{UPDATE BEFORE SUBMISSION AND ADD PLOTS - SPEAK TO CORIN ABOUT THIS}
-
 For the combination of both of the final states, at the 95\% CL, the cross section for tZq production was measured to be $X^{+Y}_{-Z}$, which is within the uncertainties of the SM prediction.
 This result corresponds to an observed significance of $X_{-Z}^{+Y} \sigma$ against an expected significance of $X_{-Z}^{+Y} \sigma$, which is in agreement with the SM cross section of  $0.0758^{+Y}_{-Z} \pb$.
 
-The observed signal strengths, measured cross sections, and corresponding significances for the individual channels and their combination are shown in full in table~\ref{tab:shapetxs}.
+The observed signal strengths, measured cross sections, and corresponding significances for the individual channels and their combination are shown in full in Table~\ref{tab:shapetxs}.
 
 \begin{table}[!h]
    \centering
@@ -113,13 +111,12 @@ The observed signal strengths, measured cross sections, and corresponding signif
    \label{tab:shapetxs}
 \end{table}
 
+The an
 At the time of writing this thesis this result is not planned to be published in its current form, as the low EXPECTED/OBSERVED significance observed is likely to be significantly improved with additional statistics.
 Therefore, it is intended that a measurement on the data collected by the CMS detector during 2016 and 2017 will be performed, with the anticipation that the tZq dilepton final state can be observed.
 
 \section{Post-Fit Impact of the Systematic Uncertainties}\label{sec:uncertainitiesImpact}
 The impact of each of the sources of systematic uncertainty on the signal strength modifier $\mu$ is shown shown in figure~\ref{fig:systematicsPull}, where the left hand side of the plot illustrates the nuisance parameter residuals and the right hand side the impact of varying a nuisance parameter to its $\pm \sigma$ post-fit values has on the $\mu$.
-
-\editComment{Discuss these impacts once the large pull on the signal strength modifier by the lumi is understood as the cause could impact upon the other parameters.}
 
 %Given the background dominated nature of this search, it is not too surprising that the uncertainty on the luminosity %has the single largest impact on $\mu$.
 %As figure~\ref{fig:systematicsPull} shows, while the maximum likelihood fit does constrain the impact of this uncertainty on the 
