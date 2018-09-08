@@ -92,13 +92,16 @@ Due to the maturity of the preparations for the review between the three competi
 \label{fig:trackerlayout}
 \end{figure}
 
-Out of the total L-1 latency of 12.5\mus, about $1\mus$ is required for generation, packaging and transmission of stubs from the tracker front-end (FE) electronics to the Data, Trigger and Control (DTC) system and approximately $4\mus$ is available for the reconstruction of tracks from data arriving at the DTC, as shown in figure~\ref{fig:dataFlow}.
-The rest of the available latency is allocated for the correlation of tracks with trigger primitives from the calorimeters and muon systems ($3.5\mus$), the propagation of the L-1 decision to the front-end buffers ($1\mus$) and a safety margin ($3\mus$)~\cite{CMS_Upgrade_TP}.
+Figure ~\ref{fig:dataFlow} illustrates the data flow through the constituent parts of the track finding system and the latency available for each component.
+The total L-1 latency is limited to 12.5\mus, of which 
 
-The architecture of any Track Finder system proposed, which will take the pre-processed stubs as input and output fully reconstructed tracks for the L-1, will be constrained by the system's latency budget and how the detector is cabled to the DTC system.
-The $4\mus$ latency constraint will limit the amount of processing that can be done for the finding and fitting of tracks and the choice of cabling scheme for the detector will determine how data is distributed and processed throughout the Track Finder system.
+The tracker front-end (FE) electronics require about $1\mus$ for the generation, packaging and transmission
+of stubs to the Data, Trigger and Control (DTC) system.
+Approximately $4\mus$
 
-\begin{figure}[tb]
+Out of the total L-1 latency of 12.5\mus, about $1\mus$ is required for generation, packaging and transmission of stubs from the tracker front-end (FE) electronics to the  system and approximately $4\mus$ is available for the reconstruction of tracks from data arriving at the DTC, as shown in figure~\ref{fig:dataFlow}.
+
+\begin{figure}[tbp]
 \centering
 \includegraphics[width=\textwidth]{figs/tk-upgrade/dataflow.pdf}
 % where an .eps filename suffix will be assumed under latex,
@@ -107,6 +110,11 @@ The $4\mus$ latency constraint will limit the amount of processing that can be d
 \caption{Illustration of data flow and latency requirements starting from the \pt-modules and front-end (FE) electronicds and running through to the off-detector electronics dedicated to forming the L-1 trigger decision.}
 \label{fig:dataFlow}
 \end{figure}
+
+The rest of the available latency is allocated for the correlation of tracks with trigger primitives from the calorimeters and muon systems ($3.5\mus$), the propagation of the L-1 decision to the front-end buffers ($1\mus$) and a safety margin ($3\mus$)~\cite{CMS_Upgrade_TP}.
+
+The architecture of any Track Finder system proposed, which will take the pre-processed stubs as input and output fully reconstructed tracks for the L-1, will be constrained by the system's latency budget and how the detector is cabled to the DTC system.
+The $4\mus$ latency constraint will limit the amount of processing that can be done for the finding and fitting of tracks and the choice of cabling scheme for the detector will determine how data is distributed and processed throughout the Track Finder system.
 
 \subsection{Level-1 Track Finding Proposals}\label{subsec:TrackFinderReview}
 
@@ -182,13 +190,13 @@ Stubs are assigned to sub-sectors occurs in a three stage process:
 Each of the TFP's logic blocks shown in figure~\ref{fig:TFP} has been designed to be highly reconfigurable and can easily be adapted to any alternative sub-sector definition.
 
 \subsubsection{Hough Transform}
-The Hough Transform algorithm is a widely used means of detecting geometric features in digital image processing \cite{HT}.
+The Hough Transform algorithm is a widely used means of detecting geometric features in digital image processing~\cite{HT}.
 
 %%% GENERAL INTRO
 
- and is used by the TFP to find charged particles with $\pT > 3\GeV$ in the \rphi plane. 
+The \HT is used by the TFP to find charged particles with $\pT > 3\GeV$ in the \rphi plane. 
 
-Within the tracking volume, permeated by a homogeneous 3.8T magnetic field ($B$), a track  with a radius of curvature ($R$) can be described as a function of its \pT and charge $q$:
+Initially we consider for a tracking volume, permeated by a homogeneous 3.8T magnetic field ($B$), a track with a radius of curvature ($R$) can be described as a function of its \pT and charge $q$:
 
 \begin{equation}
 R = \frac{\pt}{0.003\,qB} \;
@@ -290,10 +298,10 @@ As the \HT and track fitting algorithms discussed all assume that all tracks ori
 The common definitions of track reconstruction efficiency~\cite{TMTT_JINST} used for the three proposed L-1 Track Finder systems are used for the results presented in this chapter:
 
 \begin{itemize}
-\item The reconstruction efficiency is measured relative to all generated charged particles from the primary interaction that produce stubs in at least four layers of the tracker which satisfies the following conditions: $\pT > 3\GeV$, $|\eta| < 2.4$, $|z_{0}| < 30\cm$ and $d_{xy} < 1\cm$, where $d_{xy}$ is the distance in the $x-y$ plane from the point of closest approach to the interaction point.
+\item The reconstruction efficiency ($\epsilon$) is measured relative to all generated charged particles from the primary interaction that produce stubs in at least four layers of the tracker which satisfies the following conditions: $\pT > 3\GeV$, $|\eta| < 2.4$, $|z_{0}| < 30\cm$ and $d_{xy} < 1\cm$, where $d_{xy}$ is the distance in the $x-y$ plane from the point of closest approach to the interaction point.
 \item A track is a defined as being correctly reconstructed or \emph{matched} if the reconstructed track has stubs associated to the particle in at least four tracker layers. Tracks which fail this matching criteria are known either as \emph{unmatched} or \emph{fake} tracks.
 \item If the reconstruction of a charged particle produces more than one track, these additional tracks are considered to be \emph{duplicates}.
-\item If all a reconstructed track's stubs originated from the same particle, the track is defined as being \emph{perfectly} reconstructed. 
+\item If all a reconstructed track's stubs originated from the same particle, the track is defined as being \emph{perfectly} reconstructed ($\epsilon_{P}$). 
 \end{itemize}
 
 This stricter definition of \emph{perfect} track reconstruction efficiency is typically used in quoting results from the entire chain (\ie all four components of the TFP discussed in Section~\ref{subsec:TFP}).
@@ -305,15 +313,22 @@ Where appropriate, the results for both definitions are given.
 
 Three different track fitting algorithms were explored for the track fitter to be used for the 2016 hardware demonstrator review: a Kalman Filter, a Linear Regression (LR) algorithm and a linearised $\chi^{2}$ track fit.
 
-The Kalman Filter was selected for the 2016 review as it provided the best and an identical track reconstruction efficiency and the highest fake track rejection rate.
+The development of a Kalman Filter track fitter was motivated by its ability to filter 
+ 
+As it provided the best perfect track reconstruction efficiency and fake track rejection rate out of the three fitting algorithms explored, it was selected as the baseline fitter for the 2016 review.
 
-The Linear Regression (LR) algorithm~\cite{TMTT_FLP} was developed as an alternative to the KF and exploits the fact that sufficiently high \pT tracks should form a straight line in the \emph{\rphi} and \emph{r-z} planes to perform independent fits in each plane.
-While it has
+The Linear Regression (LR) algorithm~\cite{TMTT_FLP} was developed as an alternative to the KF.
+A LR fit is well suited to 
+As sufficiently high \pT tracks should form a straight line in the \emph{\rphi} and \emph{r-z} planes, the fitting of these
 
-The studies of the linearised $\chi^{2}$ track fit were initially motivated by the \emph{TMT} project anticipating potential time and resource pressures in developing all the components of a complete track finder system that could be implemented in hardware due to the project being formed significantly after the other two L-1 track finder projects.
 
-Following discussions with both the \emph{tracklet} and \emph{AM} projects, it was decided that the use of a linearised $\chi^{2}$ fit based on the one proposed by the \emph{tracklet} project would be investigated.
-The general form of the $\chi^{2}$ fit and the derivation of the track derivatives required by the algorithm were provided in a private communication~\cite{CMS_DN-14-043} and were used to produce a \emph{TMT} implementation of the algorithm.
+this allows  LR algorithm	to perform independent fits in each plane.
+While 
+
+The studies of the linearised $\chi^{2}$ track fit were initially motivated by the \emph{TMT} project needing a track fitting algorithm which could be quickly implemented given the time and resource pressures in developing a hardware demonstrator for a complete track finder system for the 2016 review.
+
+Following discussions with both the \emph{tracklet} and \emph{AM} projects, it was decided a linearised $\chi^{2}$ fit based on the algorithm proposed by the \emph{tracklet} project would be investigated.
+The general form of the $\chi^{2}$ fit and the derivation of the track derivatives required by the algorithm were provided in a private communication~\cite{CMS_DN-14-043} and were used to produce a \emph{TMT} implementation of it.
 
 A linearised $\chi^{2}$ fit calculates improved helix parameters for the track candidate by determining the  residuals between the stubs and the seeded track that minimise the $\chi^{2}$ of the fit.
 
@@ -327,11 +342,10 @@ All the results presented here involve the use of a \emph{Seed Filter} (SF) stag
 This process removes stubs in a \HT cell that are inconsistent with a straight line in the \emph{r-z} plane and filters out both fake tracks and stubs incorrectly assigned to tracks (also referred to as \emph{fake} stubs).
 
 \subsubsection{General Form of a $\chi^{2}$ Fit}\label{subsubsec:chi2maths}
-For the general form of a $\chi^{2}$ fit for a track, $f$, described by its helix parameters, $\overrightarrow{h}$, and 
-the position of its $i$ hits (\ie stubs) given at $s_{i}$, we initially linearly expand the projection of the track, $f_{i}$, around the estimate of the helix parameters $\overline{h}$:
+For the general form of a $\chi^{2}$ fit for a track, $f$, described by its helix parameters, $\overrightarrow{h}$, and the position of its hits (\ie stubs), $s_{i}$, we initially linearly expand the expected trajectory of the track, $f_{i}$, around the estimate of the helix parameters $\overline{h}$:
 
 \begin{equation}
-f_{i}(\overrightarrow{h} ) = f_{i}(\overrightarrow{h} + \delta \overrightarrow{h}) \;
+f_{i}(\overrightarrow{h} ) = f_{i}(\overrightarrow{h}) + \delta \overrightarrow{h}) \;
                            = f_{i}(\overline{h} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} + \mathcal{O}(\delta \overrightarrow{h}^{2}) \;
 \label{eq:chi1}
 \end{equation}
@@ -381,18 +395,18 @@ Similarly the $\chi^{2}$ of the fit can also be expressed in a linear form:
 
 As the linear forms of Equations~(\ref{eq:chi4}) and~(\ref{eq:chi5}) consist of repeated addition and multiplication operations of the matrices involved, they are naturally suitable for implementation on an FPGA.
 
-While FPGAs can easily perform such operations, potential complications arise when considering the calculation of the track derivatives that form the elements of $D$ which would not be trivial given the presence of a large number divisions and trigonometric functions for the endcaps' derivatives.
+This is because while FPGAs can easily perform such operations, potential complications arise when considering the calculation of the track derivatives that form the elements of $D$.
+Determining these elements would not be trivial given the presence of a large number of division operations and trigonometric functions for the endcaps' derivatives.
 Therefore, any implementation in firmware for an FPGA will require the use of lookup tables containing the precomputed values of the derivatives in order to quickly update a track's helix parameters without exceeding latency budgets.
 
-\subsubsection{Software Results}\label{subsubsec:chi2software}
+\subsubsection{Results of a Software Implementation}\label{subsubsec:chi2software}
 From equations~(\ref{eq:chi4}) and~(\ref{eq:chi5}) and the track derivatives derived in Appendix~\ref{app:chi2}, a software implementation of the linearised $\chi^{2}$ track fit algorithm was developed.
 Initially this implementation used exact floating point mathematics in order to validate the algorithm, before a version using approximated expressions of the track derivatives was developed.
 The motivation behind this was to reduce the number of variables that the matrix of derivatives would depend on in order to simplify (and reduce resources required for) any future tabulation of the matrix.
 
 \begin{table}[htbp]
-\topcaption {Track finding performance on simulated \ttbar events at a <PU> of 200, after the \HT and the full chain for  both the exact floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
-The track finding efficiencies following each stage are given using the efficiency definitions given in Section~\ref{subsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
-\editComment{Fix table size}
+\topcaption {Track finding performance on simulated \ttbar events with a <PU> of 200, after the \HT and the full chain for  both the exact floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
+The track finding efficiencies, $\epsilon$ and $\epsilon_{P}$, following each stage are given along with the mean number of tracks, $<N_{tracks}>$, and the fraction of those tracks that are either fake or duplicate tracks.
 }
 
 \label{tab:chi2-exactVsApprox}
@@ -401,7 +415,7 @@ The track finding efficiencies following each stage are given using the efficien
 % This right-aligns numbers in column, but centers them under column title.
  \begin{tabular}{cccccc}
    \hline
-   \bf{Stage} & \bf{Efficiency [\%]} & \bf{``Perfect'' Efficiency [\%]} & \bf{Mean \# of tracks} & \\bf{Fakes [\%]} & \bf{Duplicates [\%]}  \\
+   \bf{Stage} & \bf{$\bm{\epsilon}$ [\%]} & \bf{$\bm{\epsilon_{P}}$ [\%]} & $\bm{<N_{tracks}>}$ & \bf{Fakes [\%]} & \bf{Duplicates [\%]}  \\
         \hline
    HT &  97.0 & 43.1 & 351.2 & 43.9 & 37.0 \\  
    \hline
@@ -417,11 +431,11 @@ The track finding efficiencies following each stage are given using the efficien
  \end{tabular}}
 \end{table}
 
-Table~\ref{tab:chi2-exactVsApprox} shows how the tracking performance compares between the floating point maths and ``approximated'' maths versions of the algorithm compare against each other and from the raw track finding output from the \HT.
+Table~\ref{tab:chi2-exactVsApprox} shows how the tracking performance between the floating point maths and ``approximated'' maths versions of the algorithm compare against each other and from the raw track finding output from the \HT.
+
 It can be seen that whilst the \HT finds tracks with high efficiency, over half have at least one incorrectly associated stub and a significant number of the tracks found are fake or duplicated tracks.
 Both floating point and approximated maths implementations give comparable results, indicating that the approximations made are acceptable.
 The $\chi^{2}$ track fit increases the purity of the reconstructed tracks by a factor of two and eliminates the majority of the fake tracks, whilst the \DR algorithm removes the majority of the duplicates.
-
 
 
 \begin{figure}[htb]
@@ -432,7 +446,7 @@ The $\chi^{2}$ track fit increases the purity of the reconstructed tracks by a f
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_It_1_ApproxVsExact.pdf}
 \includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/cotThetaResVsEta_It_1_ApproxVsExact.pdf}
 \caption{
-\pt relative resolution, $\phi$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events at a <PU> of 200 for the floating point (red) and approximated maths (blue) implementations of the linearised $\chi^{2}$ fit algorithm for a single fitting iteration.
+Distributions of \pt relative resolution, $\phi$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events with a <PU> of 200 for the floating point (red) and approximated maths (blue) implementations of the linearised $\chi^{2}$ fit algorithm for a single fitting iteration.
 \editComment{Make plots bigger!}
 }
 \label{fig:chi2HelixParametersResVsEtaApproxVsExact}
@@ -447,23 +461,21 @@ While this guarantees that the tracks found in the the barrel will be useful to 
 In order to filter out these incorrectly assigned stubs from matched tracks, and also remove fake tracks, the residuals calculated for each stub following the fit were considered.
 These ``fake'' stubs are expected have large residuals compared to stubs correctly associated to genuine tracks or stubs belonging to a fake track.
 
-Therefore, in order to increase the fake rate and matched track purity:
+Therefore, in order to decrease the fake rate and increase tge  matched track purity:
 \begin{itemize}
 \item the stub with the worst/largest residual is found;
-\item this stub is compared against a configurable cut;
-\item the stub is removed from the track if its residual exceeds the cut value;
-\item the track is refitted using its remaining stubs;
-\item and the process is repeated until the latency budget is exceeded/no further stubs are removed, with no further consideration of the remaining stubs' residuals following the final cut.
+\item this stub is compared against a configurable threshold;
+\item the stub is removed from the track if its residual exceeds the threshold value;
+\item the track is refitted using only its remaining stubs;
+\item and the process is repeated until the latency budget is exceeded/no further stubs are removed, with no further consideration of the remaining stubs' residuals following the final threshold.
 \end{itemize}
 
-During the optimisation of the cut for this stub quality check it was found that a track could end up having fewer than the minimum of four stubs required to be considered track candidate - thus potentially discarding a matched track by mistake!
-To avoid this happening while retaining the improved matched track purity and reduced rate of fake tracks, a looser residual cut was applied for tracks only containing four stubs.
+During the optimisation of this stub quality check it was found that a track could end up having fewer than the minimum of four stubs required to be considered track candidate - thus potentially discarding a matched track by mistake.
+To avoid this while still retaining the improved matched track purity and reduced fake rate, a looser residual threshold was applied for tracks only containing four stubs.
 
 \begin{table}[htbp]
 \topcaption {Track finding performance on simulated \ttbar events at a <PU> of 200, for the $\chi^{2}$ track fit using approximated calculations of the track derivatives for when one to four fitting iterations are undertaken. 
-The results of further fitting iterations are not shown as they show no further improvement by any metric.
-The track finding efficiencies following each stage are given using the efficiency definitions given in Section~\ref{subsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
-\editComment{Fix table size}
+Further fitting iterations are not shown as further improvement was observed.
 }
 \label{tab:chi2_iterations}
   \centering
@@ -472,7 +484,7 @@ The track finding efficiencies following each stage are given using the efficien
 % This right-aligns numbers in column, but centers them under column title.
  \begin{tabular}{ccccccc}
    \hline
-   \bf{Track Fitter} & [\#] of iterations & \bf{Efficiency [\%]} & \bf{``Perfect'' Efficiency [\%]} & \bf{Mean [\#] of tracks} & \bf{Fakes [\%]} & \bf{Duplicates [\%]}  \\
+   \bf{Track Fitter} & [\#] of iterations & \bf{$\bm{\epsilon}$ [\%]} & \bf{$\bm{\epsilon_{P}}$ [\%]} & $\bm{<N_{tracks}$ & \bf{Fakes [\%]} & \bf{Duplicates [\%]}  \\
    \hline
    $\chi^{2}$+DR & 1 & 94.9 & 85.6 & 87.4 & 15.5 & 10.9 \\  
    & 2 & 93.8 & 91.0 & 73.8 & 6.6 & 7.7 \\
@@ -485,10 +497,10 @@ The track finding efficiencies following each stage are given using the efficien
  \end{tabular}}
 \end{table}
 
-Table~\ref{tab:chi2-exactVsApprox} illustrates how the tracking performance of the linearised $\chi^{2}$ fitter improves with just one additional fitting iteration (removal of a stub), with the fake rate halving and matched track purity noticeably improving, albeit at the expense of the looser definition of the track finding efficiency.
+Table~\ref{tab:chi2_iterations} illustrates how the tracking performance of the linearised $\chi^{2}$ fitter improves with just one additional fitting iteration (removal of a stub), with the fake rate halving and matched track purity noticeably improving, albeit at the expense of the looser definition of the track finding efficiency.
 Further successive fitting iterations yield diminishing returns, with no further improvements seen following four fitting iterations.
 Given that the mean number of hits associated to a track is seven, the majority of tracks can only have up to three stubs removed.
-By contrast, while a greater number of fake tracks survive the \KF's filtering, the \KF achieves a similar tracking efficiency as two iterations of the $\chi^{2}$ fitter whilst none of the matched tracks found contain any incorrect stubs. 
+By contrast, while a greater number of fake tracks survive the \KF's filtering, the \KF achieves a similar tracking efficiency as two iterations of the $\chi^{2}$ fitter while none of the matched tracks found contain any incorrect stubs. 
 This suggests that if a more sophisticated method of removing bad quality stubs were used in the linearised $\chi^{2}$ fitter, then  not many matched tracks would be discarded while their purity would be increased.
 Although such an improvement may come at the expense of a low fake rate, such tracks can be potentially cleaned further downstream but tracks which aren't reconstructed are lost forever.
 
@@ -510,25 +522,34 @@ While the \qpt and $\phi_{0}$ resolutions achieved after four fitting iterations
 \label{fig:chi2HelixParametersResIterationsComparison}
 \end{figure}
 
-\subsubsection{Conclusions and Outlook}\label{subsubsec:chi2outlook}
-\editComment{Polish more}
-A linearised $\chi^{2}$ track fit has been implemented in software in an form using approximated mathematics to simplify any potential tabulation of its derivatives and a set of internal cuts which are iteratively applied to remove fake stubs from matched tracks and reject fake tracks.
-Following the parallel development of both the linearised $\chi^{2}$ track fit and the \KF however, it was decided that development on the former would be discontinued in favour of focussing resources on the latter.
-The motivations behind this decision were that the \KF was capable of achieving a higher track finding efficiency with 100.0\% purity for matched tracks, superior $z_{0}$ and $cot(\theta)$ resolutions in the endcaps which were comparable to the offline resolution and that considerable progress had been made with an implementation in firmware.
-In contrast, the linearised $\chi^{2}$ track was not competitive in terms of track resolution and reconstruction ability, especially with respect to the stricter tracking efficiency definition, and there were also concerns over the potential feasibility of tabulating all (or the most frequently used) track derivatives in the endcap disks for FPGAs which were commercially available at the time.
+Following the parallel development of both the linearised $\chi^{2}$ track fit and the \KF however, it was decided that development of the former would be discontinued.
+The reason behind this decision were that the \KF was capable of achieving a higher track finding efficiency with 100.0\% purity for matched tracks and $z_{0}$ and $cot(\theta)$ resolutions in the forward regions that were comparable to the expected offline resolution.
+Considerable progress had also been made with an implementation in firmware.
+
+In contrast, the linearised $\chi^{2}$ track was not competitive in terms of track resolution and reconstruction ability, especially with respect to the stricter tracking efficiency definition.
+There were also concerns over the potential feasibility of tabulating all (or the most frequently used) track derivatives in the endcap disks for FPGAs that were commercially available at the time.
 
 \subsection{Tracking at low transverse momentum}\label{subsec:Tmtt2GeV}
-The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV may be desirable if the trigger requirements demand it, so the impact of this potential requirement on the proposed proposed track-finder system was studied.
-These studies were initially undertaken as part of the the robustness studies required for the 2016 demonstrator review, focussing on recovering tracking efficiency below 3\GeV with the \HT, and were subsequently built upon with modifications to the \KF algorithm after 2016.
-The results relating to \HT modifications were produced prior to the conclusion of the demonstrator review and were produced using the flat barrel geometry, and the results for the \KF improvements produced with the tilted barrel geometry.
-As the number and width of the \qpt \HT columns used varies from the standard fixed number and size of columns typically used, thus varying the \pT resolution available, the track parameters are expressed as a function of 1/\pT instead of \pT.
+The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV is potentially desirable and so the impact of this potential requirement on the performance of the proposed track-finder system was studied.
+
+These studies were initially undertaken as part of the the robustness studies required for the 2016 demonstrator review, focussing on recovering tracking efficiency below 3\GeV with the \HT.
+Therefore, the results for these studies were produced using the flat barrel geometry.
+
+Following the 2016 review, the studies into tracking with a pT threshold of 2\GeV 
+The initial studies were subsequently developed with modifications to the \KF algorithm after 2016.
+
+The results for the \KF improvements were produced with the preferred tilted barrel geometry.
+
+
+
+As the number and width of \qpt \HT columns used varies from the standard fixed number and size of columns typically used, thus varying the \pT resolution available, the track parameters are expressed as a function of 1/\pT instead of \pT.
 
 \subsubsection{Hough Transform Optimisation}\label{subsubsec:lowPtOptHT}
-Lowering the \HT \pT threshold from 3\GeVc to 2\GeVc required modifying the GP and HT configuration parameters to ensure adequate duplication in $\phi$ and increasing the number of the \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision.
-The increased number of \qpt columns has the impact of increasing the required FPGA resources by 50\% and the output data rate from the \HT by a factor of 2.2.
+Lowering the \pT threshold from 2\GeVc required modifying the GP and HT configuration parameters to ensure adequate duplication in $\phi$ and increasing the number of \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision.
+The increased number of \qpt columns increases the required FPGA resources by 50\% and the output data rate from the \HT by a factor of 2.2.
 
-Without any further modifications, there is a considerable degradation in the track reconstruction efficiency by the \HT in the range $2\GeVc < \pt < 2.7\GeVc$, due to these low momenta tracks being dominated by multiple scattering.
-This results in stubs not always intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
+Without applying further modifications, there is a considerable degradation in the track reconstruction efficiency in the range $2\GeVc < \pt < 2.7\GeVc$, due to these low momenta tracks being dominated by multiple scattering.
+This results in a significant fraction of stubs not intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
 To mitigate against such track reconstruction efficiency losses, using a preexisting feature which had been separately implemented in firmware, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2\GeVc < \pt < 2.7\GeVc$ was reduced by a factor of two (\ie $2 \times 2$ cells were merged).
 Additionally, the \KF state $\chi^2$ cuts for this low \pT range were optimised to reflect the increased hit position uncertainty resulting from the decreased precision of the hits in these \HT cells and thus reduce the number of duplicate and fake tracks as far as possible without impacting on the \HT track reconstruction efficiency.
 Figure~\ref{fig:2GeVFlatEff} shows how the tracking efficiency improves following the use of the variable precision \HT with and without optimised \KF state cuts after both the \HT and the full demonstrator chain. 
