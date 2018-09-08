@@ -93,7 +93,7 @@ As shown by Emmy Noether's theorem, the one or more generators of any such symme
 Examples of such quantities include the conservation of energy-momentum from space-time symmetry or electrical charge from the $U(1)$ symmetry in electromagnetism.
 If a symmetry transformation has no space-time dependence it is said to have a \emph{global symmetry} and conversely, if it has a space-time dependence it is said to have a \emph{local symmetry} or \emph{gauge symmetry}~\cite{Cheng:1985bj}.
 
-These concepts can be demonstrated by considering applying the $U(1)$ gauge symmetry of Quantum Electrodyanmics, the theory of electromagnetism, on the Lagrangian of a relativistic spin-$\frac{1}{2}$ free-fermion field (\ie electrons) with a wavefunction $\psi(x)$ and particles of mass $m$~\citep{1475-7516-2006-06-019}{QFT}:
+These concepts can be demonstrated by considering applying the $U(1)$ gauge symmetry of Quantum Electrodyanmics, the theory of electromagnetism, on the Lagrangian of a relativistic spin-$\frac{1}{2}$ free-fermion field (\ie electrons) with a wavefunction $\psi(x)$ and particles of mass $m$~\cite{QFT}:
 
 \begin{equation}
 \mathcal{L} = \bar{\psi}(x) (i {\gamma}^{\mu} \partial_{\mu} - m) \psi(x) \;
@@ -213,9 +213,7 @@ The $SU(2)_{L}$ component of the theory has three generators, ${T_{i}} = \frac{{
 As $SU(2)$ transformations are non-Abelian, W$_{\mu}^{i}$ are able to self-couple.
 
 
-The four physically observed 
-
-B$_{\mu}$ and W$_{\mu}^{i}$ gauge fields mix are related to the four physically observed gauge bosons by 
+B$_{\mu}$ and W$_{\mu}^{i}$ gauge fields mix are related to the four physically observed gauge bosons by:
 
 \begin{equation}
 \begin{split}
@@ -235,28 +233,40 @@ where $\theta_{W}$ is the weak mixing or \emph{Weinberg} angle, which is defined
 
 where $g'$ and $g$ are the coupling constants of the weak hypercharge and weak isospin respectively.
 
-As discussed in Section~\ref{subsec:weakForce}, the W$^{\pm}$ gauge bosons only interact with the left-handed components of a fermion field, $\psi$.
-The left and right-handed components of $\psi$, $\psi_{L}$ and $\psi_{R}$, can be obtained by applying the projection operators  
+As discussed in Section~\ref{subsec:weakForce}, the W$^{\pm}$ gauge bosons only interact with the left-handed components of a fermion field, $\psi_{L}$.
+The left- and right-handed components of a fermion field are obtained using the projection operators, $P_{L/R}$, as follows:
 
-where $\gamma^{5} = i \gamma^{0} \gamma^{1} \gamma^{2} \gamma^{3}$.
+\begin{equation}
+\psi_{L/R} = P_{L/R} \psi \;
+\end{equation}
 
-Under the $SU(2)_{L}$ group of transformations, $\psi_{L}$ transform as doublets and $\psi_{R}$ as singlets.
-The $\psi_{L}$ doublet consists either of a pair of left-handed fermions 
-same generation up-type and down-type left-handed quark pair or a charged lepton and its associated neutrino:
+where $P_{L/R} = \frac{1}{2}(1 \pm \gamma^{5})$ and $\gamma^{5} =i  \gamma^{0} \gamma^{1} \gamma^{2} \gamma^{3}$.
+
+
+Under the $SU(2)_{L}$ group of transformations, $\psi_{L}$ transform as doublets, and $\psi_{R}$ as singlets.
+The $\psi_{L}$ doublet consists of either a left-handed pair of up-type and down-type quarks of the same generation or a charged lepton and its associated neutrino.
+As no right-handed neutrinos have been observed, the $\psi_{R}$ singlet consists of a right-handed up- or down-type quark or a charged lepton.
+
+The left- and right-handed components of the fields are as follows:
 
 \begin{equation}
 \psi_{L} = 
+\begin{pmatrix} 
+u_{L} \\
+d_{L} 
+\end{pmatrix}
+,
+\begin{pmatrix} 
+l_{L} \\
+\nu_{L} 
+\end{pmatrix}
+;
+\psi_{R} = u_{R}, d_{R}, l_{R} \;
 \label{eq:weakDoublet}
 \end{equation}
 
-The $\psi_{R}$ singlets consist of either an up-type or down-type quark or charged lepton
-
-
-As the charged weak gauge bosons 
-
-The quark mass eigenstates 
-For the charged weak interactions
-The Cabibbo-Kobayashi-Maskawa (CKM) matrix 
+As charged weak interactions 
+The mixing of the weak eigenstates and quark mass eigenstates is described by the Cabibbo-Kobayashi-Maskawa (CKM) matrix.
 
 \begin{equation}
 \begin{pmatrix} 
@@ -278,13 +288,13 @@ b
 \label{eq:ckm}
 \end{equation}
 
-The best estimates of the elements of the CKM matrix are given by a global fit of the measurements various experiments have performed, as given in Equation~((ref{eq:ckmElements})~\cite{Tanabashi:2018oca}.
+The best estimates of the elements of the CKM matrix are given by a global fit of the measurements various experiments have performed, as given in Equation~(\ref{eq:ckmElements})~\cite{Tanabashi:2018oca}.
 
 \begin{equation}
 \begin{pmatrix} 
-V_{ud} & V_{us} & V_{ub} \\
-V_{cd} & V_{cs} & V_{cb} \\
-V_{td} & V_{ts} & V_{tb}
+|V_{ud}| & |V_{us}| & |V_{ub}| \\
+|V_{cd}| & |V_{cs}| & |V_{cb}| \\
+|V_{td}| & |V_{ts}| & |V_{tb}|
 \end{pmatrix}
 = 
 \begin{pmatrix} 
@@ -329,28 +339,37 @@ While the virtual quark pairs screen a hadron's \emph{valence} quarks, the virtu
 Therefore, the strength of the strong interaction coupling constant, $\alpha_{s}$, decreases as the separation between colour charged particles decreases.
 $\alpha_{s}$ inside hadrons has decreased to the extent that the quarks effectively behave as if they were free particles.
 
-This remarkable property of the strong force makes performing theoretical calculations extremely challenging.
-In contrast to QED and its relatively small coupling constant, $\alpha_{s}$ can rapidly change and be greater than one, increasing both the importance of higher order terms in the calculation and the difficulty and accuracy of the perturbative QCD calculations.
-
 A direct consequence of asymptotic freedom is the phenomenon of \emph{colour confinement}, in which quarks can only exist in colour-singlet states~\cite{ElectroweakStrong,Griffiths,devenish2004deep}.
 Such ``colourless states'' are created by the combination of quarks possessing the equivalent colour and anti-colour or all three colours.
 Confinement arises as asymptotic freedom results in increasingly large amounts of energy being required to further any separation between quarks.
 Eventually it becomes more energetically favourable for \emph{hadronisation}, the creation of a quark anti-quark pair to be produced, to occur and form new hadrons.
 In high energy particle collisions, such as those at the Large Hadron Collider, these hadronising quarks produce collimated showers of hadrons called \emph{jets}.
 
-The probing 
-Consequently, as a hadron consists of not only its constituent valence quarks but also a sea of gluons and quarks from the continuous gluon splitting inside it~\cite{coughlan2006ideas,evenish2004deep}.
+
+Asymptotic freedom makes performing theoretical QCD calculations extremely challenging.
+In contrast to QED and its relatively small coupling constant, $\alpha_{s}$ can rapidly change and be greater than one, increasing both the importance of higher order terms in the calculation and the difficulty and accuracy of the perturbative QCD calculations.
+
+
+
+The 
+continual gluon splitting inside a hadron results in it  
+As colour confinement results in a hadron containing not only its constituent valence quarks but also a sea of gluons and quarks from the continuous gluon splitting inside
+
+Consequently, as a hadron consists of not only its constituent valence quarks but also a  it~\cite{coughlan2006ideas,evenish2004deep}.
 The first evidence of the 
-The probing of the proton through Deep Inelastic Scattering (DIS) 
+The probing of the proton through Deep Inelastic Scattering (DIS) is used to experimentally determine how the number 
+
+
 
 each constituent valence quark within a hadron does not possess an equal fraction of the hadron's momentum due to the 
 Given that 
 As colour confinement prevents a hadron's constituent elements being ..., their internal structure is probed  using 
 \editComment{PDFs and DIS to be added}
 
+PDFs are an essential component of modelling hadron collisions
+
 ~\cite{evenish2004deep} - DIS
 
-Ball:2014uwa PDF plot
 
 \section{Top Physics}\label{sec:top-physics}
 The existence of a third generation of quarks was first hypothesised in 1973 by Makoto Kobayashi and Toshihide Maskawa in order to account for the CP violation observed in kaon decays~\cite{Kobayashi:1973fv}.

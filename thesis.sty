@@ -1,5 +1,8 @@
 \setlength{\parskip}{\medskipamount}  % a little space before a \par
-\setlength{\parindent}{0pt}	      % don't indent first lines of paragraphs
+%\setlength{\parskip}{2ex plus 0.5ex minus 0.2ex}
+\setlength{\parindent}{0pt}
+
+\def\submitdate#1{\gdef\@submitdate{#1}}
 
 \makeatletter
 
@@ -13,17 +16,18 @@
   \vskip 3em
   {\Large \lineskip 0.75em
   \begin{tabular}[t]{c}
-   \@author
+   \@author \\
   \end{tabular}\par}
   \vskip 1.5em
+   Brunel University London \\
+   Department of Electronic and Computer Engineering \\
 %  {\Large \@date \par}
   \vskip \z@ \@plus3fill
   \vskip 3em
  \end{center}\par
  \noindent\begin{minipage}[b]{\textwidth}
   \centering
-  Submitted in part fulfilment of the requirements for the degree of Doctor of Philosophy 
-  of Brunel University London
+  A thesis submitted in part fulfilment of the requirements for the degree of Doctor of Philosophy 
  \end{minipage}
 %%% Declaration of authorship
 % \ifx\@declaration\@empty\else{
