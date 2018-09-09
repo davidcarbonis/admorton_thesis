@@ -12,7 +12,10 @@ void kfTrackingEffVsInvPtFlatGeometry_5000()
    Canvas_1_n3->SetGridy();
    Canvas_1_n3->SetTickx(1);
    Canvas_1_n3->SetTicky(1);
-   Canvas_1_n3->SetFrameBorderMode(0);
+   Canvas_1_n3->SetLeftMargin(0.10);
+   Canvas_1_n3->SetRightMargin(0.05);
+   Canvas_1_n3->SetTopMargin(0.05);
+   Canvas_1_n3->SetBottomMargin(0.10);
    Canvas_1_n3->SetFrameBorderMode(0);
    
    Double_t AlgEffFitVsInvPt_KF4ParamsComb_fx3001[16] = {

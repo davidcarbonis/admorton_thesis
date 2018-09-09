@@ -12,6 +12,10 @@ void htTrackingEffVsInvPtFlatGeometry_5000()
    Canvas_1_n2->SetGridy();
    Canvas_1_n2->SetTickx(1);
    Canvas_1_n2->SetTicky(1);
+   Canvas_1_n2->SetLeftMargin(0.10);
+   Canvas_1_n2->SetRightMargin(0.05);
+   Canvas_1_n2->SetTopMargin(0.05);
+   Canvas_1_n2->SetBottomMargin(0.10);
    Canvas_1_n2->SetFrameBorderMode(0);
    
    Double_t AlgEffVsInvPt_fx3001[16] = {

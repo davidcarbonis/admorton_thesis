@@ -12,6 +12,10 @@ void kfChi2NdfVsInvPtFlatGeometry_5000()
    Canvas_1_n2->SetGridy();
    Canvas_1_n2->SetTickx(1);
    Canvas_1_n2->SetTicky(1);
+   Canvas_1_n2->SetLeftMargin(0.10);
+   Canvas_1_n2->SetRightMargin(0.05);
+   Canvas_1_n2->SetTopMargin(0.05);
+   Canvas_1_n2->SetBottomMargin(0.10);
    Canvas_1_n2->SetFrameBorderMode(0);
    
    TProfile *FitChi2DofVsInvPtMatched__1 = new TProfile("FitChi2DofVsInvPtMatched","",25,0,0.5,"");
