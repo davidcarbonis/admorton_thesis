@@ -3,7 +3,7 @@ The following three chapters of this thesis describe the search for production o
 This search was performed using proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by the CMS experiment during 2016.
 
 In contrast to the previous searches for this process which focussed on the final state where the W boson from the top quark and the Z boson decays leptonically (the so-called trilepton final state),\cite{Sirunyan:2017kkr,Sirunyan:2017nbr}, the dilepton final state consists purely of leptons and jets with no \MET.
-While this topology allows for the full reconstruction of all the particles involved, including the top quark, it also presents the main challenge for this analysis.
+While this topology allows for the full reconstruction of all the particles involved, including the top quark, .
 
 The presence of two leptons and multiple jets is identical to the topologies of the large number of background processes with a multi-jet component with cross sections many orders of magnitude larger than tZq.
 Consequently the signal region will inevitably be dominated by such backgrounds regardless of the selection requirements applied to the leptons and jets present.
@@ -83,16 +83,17 @@ Triggers and datasets used for each decay channel.
 \end{table}
 
 \section{Event Cleaning}\label{sec:metFilters}
-Following the trigger requirements, a number of filters are applied so that events with beam or detector anomalies which result in anomalous \MET are not considered for use in the analysis:
+After selecting an event that meets the trigger requirements described in Section~\ref{sec:triggerStrategy}, a number of filters are applied to remove events with beam or detector from further consideration in the analysis:
 
 \begin{itemize}
-\item \textbf{Primary Vertex Filter} - ensures that the primary vertex is well reconstructed by requiring it to be within $|z| \leq 24\cm$ of the interaction point and within $d_{0} < 2\cm$ of the beam line.
-\item \textbf{Beam Halo Filter} - beam halos are machine induced particles (\eg beam-gas, beam-pipe interactions) which circulate with the beam at radii up to 5m. The filter removes events with calorimeter and muon chamber energy deposits consistent with either halo particles or particle showers caused by halos interacting with the collimator blocks that used to clean halos from the beam.
-\item \textbf{HBHE Noise and Isolation Filters} - removes events where anomalous noise is present in the HCAL's hybrid photodiodes or readout boxes, which registers as large isolated energy deposits which would infer the presence of large \MET, by considering the channel multiplicities, pulse shape of the readout and the neighbouring activity in the calorimeters and tracker.
-\item \textbf{ECAL Trigger Primitive Filter} - the L1 trigger primitive readout can be used to estimate the energy deposited in approximately 70\% of the channels which lack regular data links and are masked out for reconstruction. As trigger the primitives have a narrower energy acceptance range than the read-out, when the energy is near their saturation energy the measured energy is likely to be underestimated, resulting in high anomalous \MET. 
+\item \textbf{Primary Vertex Filter:} Ensures that the primary vertex is well reconstructed by requiring it to be within $|z| \leq 24\cm$ of the interaction point and within $d_{0} < 2\cm$ of the beam line.
+\item \textbf{Beam Halo Filter:} Beam halos are machine-induced particles (\ie produced from the beam interacting with the pipe and residual gas in the pipes) that circulate with the beam at radii up to 5m. This filter removes events with calorimeter and muon chamber energy deposits consistent with those expected to be produced by either halo particles or particle showers.
+These effects are caused by beam halos interacting with the collimator blocks that are used to clean halos from the beam.
+\item \textbf{HBHE Noise and Isolation Filters:} Remove events where anomalous noise is observed in the HCAL's hybrid photodiodes or readout boxes, which registers as large isolated energy deposits which would infer the presence of large \MET, by considering the channel multiplicities, pulse shape of the readout and the neighbouring activity in the calorimeters and tracker.
+\item \textbf{ECAL Trigger Primitive Filter:} The L1 trigger primitive readout can be used to estimate the energy deposited in approximately 70\% of the channels that lack regular data links and which ignored in the offline reconstruction. As trigger primitives have a narrower energy acceptance range than the read-out, when the energy is near their saturation energy the measured energy is likely to be underestimated, resulting in high anomalous \MET. 
 %\item \textbf{ECAL Endcap SC Filters} - NOT recommended for 2016
-\item \textbf{Bad Charged Hadron Filter} - removes events where a muon is not defined as a PF muon due to its low quality, but makes its way into the PF MET calculation as a charged hadron candidate.
-\item \textbf{Bad Muon Filter} - removes events where a muon is defined as a PF muon, but is still has too low a quality and large \pT to be considered.
+\item \textbf{Bad Charged Hadron Filter:} Removes events where a muon is not defined as a PF muon due to its low quality, but instead makes its way into the PF MET calculation as a mis-identified charged hadron candidate.
+%\item \textbf{Bad Muon Filter} Removes events where a muon is defined as a PF muon, but still has too low a quality and large \pT to be considered.
 \end{itemize}
 
 \section{Physics Objects}\label{sec:physicsObjects}
@@ -100,19 +101,19 @@ In order to meet the analysis strategy's criteria for a signal enriched region a
 The following section describes the selection criteria used in this analysis and how the final state products are used to reconstruct their mother particles.
 
 \subsection{Lepton Selection}
-All PF electrons and muons considered must pass a set of kinematic requirements and a set identification criteria defined by CMS.
-The kinematic requirements are applied to ensure that the leptons lie within detector acceptance and that their transverse momenta lies in the region where the trigger's turn-on is well described.
-The identification criteria have been designed to be efficient at selecting isolated prompt leptons and rejecting leptons which have been produced non-promptly from decays from within jets or taus or from incorrectly reconstructed tracks.
+All PF electrons and muons identified by the PF algorithm must pass a set of kinematic requirements and a set of identification quality criteria defined by CMS.
+The kinematic requirements are applied to ensure that the leptons lie fully within the detector's acceptance and that their transverse momenta lies in the region where the behaviour of the trigger well described.
+The identification criteria have been designed to be efficient at selecting isolated promptly produced  leptons and rejecting leptons that have been produced non-promptly from decays from within jets or taus or from incorrectly reconstructed tracks.
 
 Different working points are used by identification criteria defined by CMS, where the lepton selection efficiency is traded off against the purity of the leptons selected.
-For both lepton flavours the ``tightest'' working point is used to select high purity collections of leptons, with the ``loosest'' working point used to veto events with any additional leptons.
+For both lepton flavours considered in the analysis, the ``tightest'' working point is used to select high purity collections of leptons, with the ``loosest'' working point used to veto events with any additional leptons.
 
 \subsubsection{Electrons}\label{subsubsec:electronSelection}
-For any PF electron candidate to be considered it must meet the following kinematic requirements:
+For any PF electron candidate to be considered in the final analysis it must meet the following kinematic requirements:
 
 \begin{itemize}
-\item the \pt of the leading and subleading electrons considered must be greater than the 35\GeVc and 15\GeVc respectively.
-\item electrons must have $|\eta| \leq 2.50$ to ensure that the electrons are within the ECAL acceptance.
+\item the \pt of the leading and subleading electrons considered must be greater than the 35\GeVc and 15\GeVc, respectively;
+\item electrons must have $|\eta| \leq 2.50$ to ensure that the electrons are fully within the ECAL acceptance;
 \item as accurate reconstruction cannot be undertaken in the transition region between the ECAL barrel and endcap, electrons with $1.4442 \leq \eta \leq 1.566$ are not considered.
 \item the longitudinal impact parameter, $d_{z}$, of the electron must be less than 0.10\cm in the barrel and 0.20\cm in the endcap disks.
 \item the transverse impact parameter, $d_{0}$, of the electron must be less than 0.05\cm in the barrel and 0.10\cm in the endcap disks.
@@ -481,12 +482,12 @@ They were found to be $A$ and $B$ respectively.
 \editComment{recall a more precise/sophisticated method was suggested? Add updated values}
 \editComment{Once updated values are added, add plots}
 
-Using the simulated samples, the signal region and the \emph{side band} region were defined as the regions enclosed by $\chi^{2} < C$ and $D < \chi^{2} <E $ respectively.
+Using the simulated samples, the signal region and the \emph{side band} region were defined as the regions enclosed by $\chi^{2} < C$ and $D < \chi^{2} <E $, respectively.
+
 The choice of these cuts had to balance the need for:
 \begin{itemize}
-\item the blinded signal region was required contain the majority of the signal process with minimal background contamination.
-\item the \emph{side band} region to contain sufficient statistics of signal-like events while rejecting any extreme outliers.
+\item the signal region to contain the majority of the signal process.
+\item the \emph{side band} region to contain sufficient statistics to make the analysis possible.
 \end{itemize}
 
-By choosing the cuts between the two regions whereby 80\% of the signal events were contained within the blinded signal region, these goals were met.
-
+The results shown in Chapters~\ref{} are all blinded, \ie performed using the side band region only.

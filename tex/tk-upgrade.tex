@@ -70,13 +70,13 @@ The sensor spacing however, is increased for the endcap disks, where the $\pT$-m
 
 By correlating pairs of clusters on-detector that are consistent with a track with a transverse momentum of about 2\GeV or greater, an effective data rate reduction of approximately a factor of 10 is achieved before the resultant \emph{stubs} are transferred to the L-1 trigger~\cite{mpessimperf,2dptmoduleconcept}.
 
-Two \pT modules are being developed for the Outer Tracker upgrade: 2S \emph{strip-strip} modules and PS \emph{pixel-strip} modules.
+Two \pT-modules are being developed for the Outer Tracker upgrade: 2S \emph{strip-strip} modules and PS \emph{pixel-strip} modules.
 The 2S~modules, are designed to be used at radii $r>60$\cm from the beam line, where the hit occupancies are lower and each sensor has an active area of 0.05\cm~$\times$~9.14\cm.
 Both 2S~module strip layers have a pitch of 90\mum in the transverse plane ($r$-$\varphi$) and a strip length of 5.03\cm along the direction of the beam axis, $z$.
 Each PS~module sensor layer has an active area of 4.69\cm~$\times$~9.60\cm and will be used at radii in the range  $20<r<60$\cm where the occupancies are highest.
 The upper PS~module layers consist of a silicon strip sensor and a silicon pixel sensor, both with a pitch of 100\mum in $r$-$\varphi$, and a strip length in $z$ of 2.35\cm for the strips and 1.47\mm for the pixels.
 The finer granularity provided by the pixel layer affords better resolution along the $z$ axis, which is crucial for vertex identification in the high \PU environment of the HL-LHC.
-Further details on the two \pT modules can be found in~\cite{CMS_Upgrade_TP,P2TrackerTDR}.
+Further details on the two \pT-modules can be found in~\cite{CMS_Upgrade_TP,P2TrackerTDR}.
 
 The current proposed layout of the Phase-II Outer Tracker, referred to as the \emph{tilted barrel} geometry, is depicted in the upper diagram in figure~\ref{fig:trackerlayout}, and a previous proposal, referred to as the \emph{flat barrel} geometry, is shown in the lower diagram~\cite{CMS_Upgrade_TP}.
 Both plots illustrate the PS and 2S module positions in the six barrel layers and the five endcap disks on either side of the barrel, with only modules located at $|\eta| < 2.4$ being configured to send stub data off-detector.
@@ -92,14 +92,10 @@ Due to the maturity of the preparations for the review between the three competi
 \label{fig:trackerlayout}
 \end{figure}
 
-Figure ~\ref{fig:dataFlow} illustrates the data flow through the constituent parts of the track finding system and the latency available for each component.
-The total L-1 latency is limited to 12.5\mus, of which 
-
-The tracker front-end (FE) electronics require about $1\mus$ for the generation, packaging and transmission
-of stubs to the Data, Trigger and Control (DTC) system.
-Approximately $4\mus$
-
-Out of the total L-1 latency of 12.5\mus, about $1\mus$ is required for generation, packaging and transmission of stubs from the tracker front-end (FE) electronics to the  system and approximately $4\mus$ is available for the reconstruction of tracks from data arriving at the DTC, as shown in figure~\ref{fig:dataFlow}.
+Figure~\ref{fig:dataFlow} illustrates the data flow and latency requirements from the \pt-modules to the off-detector electrons for the upgraded tracker.
+Out of the total L-1 latency of 12.5\mus, about $1\mus$ is required for generation, packaging and transmission of stubs from the tracker front-end (FE) electronics to the Data, Trigger and Control (DTC) system. 
+Approximately $4\mus$ is available for the reconstruction of tracks from data arriving at the DTC.
+The rest of the available latency is allocated for the correlation of tracks with trigger primitives from the calorimeters and muon systems ($3.5\mus$), the propagation of the L-1 decision to the FW buffers ($1\mus$) and an additional safety margin ($3\mus$)~\cite{TMTT_JINST}.
 
 \begin{figure}[tbp]
 \centering
@@ -107,11 +103,9 @@ Out of the total L-1 latency of 12.5\mus, about $1\mus$ is required for generati
 % where an .eps filename suffix will be assumed under latex,
 % and a .pdf suffix will be assumed for pdflatex; or what has been declared
 % via \DeclareGraphicsExtensions.
-\caption{Illustration of data flow and latency requirements starting from the \pt-modules and front-end (FE) electronicds and running through to the off-detector electronics dedicated to forming the L-1 trigger decision.}
+\caption{Illustration of data flow and latency requirements starting from the \pt-modules and front-end (FE) electronics and running through to the off-detector electronics dedicated to forming the L-1 trigger decision~\cite{TMTT_JINST}.}
 \label{fig:dataFlow}
 \end{figure}
-
-The rest of the available latency is allocated for the correlation of tracks with trigger primitives from the calorimeters and muon systems ($3.5\mus$), the propagation of the L-1 decision to the front-end buffers ($1\mus$) and a safety margin ($3\mus$)~\cite{CMS_Upgrade_TP}.
 
 The architecture of any Track Finder system proposed, which will take the pre-processed stubs as input and output fully reconstructed tracks for the L-1, will be constrained by the system's latency budget and how the detector is cabled to the DTC system.
 The $4\mus$ latency constraint will limit the amount of processing that can be done for the finding and fitting of tracks and the choice of cabling scheme for the detector will determine how data is distributed and processed throughout the Track Finder system.
@@ -119,17 +113,20 @@ The $4\mus$ latency constraint will limit the amount of processing that can be d
 \subsection{Level-1 Track Finding Proposals}\label{subsec:TrackFinderReview}
 
 Three different L-1 track finders have been explored by the CMS Collaboration.
-One uses Associative Memory (\emph{AM}) ASICs for track finding and FPGAs for track fitting, and the other two all-FPGA approaches, one using a fully Time-Multiplexed Track (\emph{TMT})finder which uses the Hough Transform to identify track candidates and one using a ``road search'' (\emph{tracklet}) algorithm to reconstruct tracks.
+One uses Associative Memory (\emph{AM}) ASICs for track finding and FPGAs for track fitting~\cite{AM}, and the other two all-FPGA approaches, one using a fully Time-Multiplexed Track (\emph{TMTT}) finder which uses the Hough Transform to identify track candidates~\cite{TMTT_JINST} and one using a ``road search'' (\emph{tracklet}) algorithm to reconstruct tracks~\cite{tracklet}.
 
 Hardware demonstrators for each of the three proposed L-1 track finder projects were constructed to prove the feasibility of each approach, which were reviewed in 2016.
-As all of the work discussed in this chapter was on the FPGA-based \HT approach.
-More detailed descriptions and results of both the AM and tracklet projects' approaches are not discussed here, but are given in earlier references~\cite{P2TrackerTDR,AM} and~\cite{P2TrackerTDR,tracklet} respectively.
+As all of the work discussed in this chapter was on the FPGA-based \HT approach, detailed descriptions and results of both the AM and tracklet projects' approaches are not discussed here, but are given in~\cite{P2TrackerTDR,AM} and~\cite{P2TrackerTDR,tracklet} respectively.
 
 As mentioned in Section~\ref{sec:tk-upgrade}, at the time of the review the flat barrel geometry described earlier was used for all the studies undertaken, as depicted in the lower diagram in figure~\ref{fig:trackerlayout}.
 As such, unless stated otherwise, the results discussed below use the flat barrel geometry instead of the current tilted geometry.
 
-\section{A Time-Multiplexed Track Finder }\label{sec:TMTT}
-The Time-Multiplexed Track finder 
+\section{A Time-Multiplexed Track Finder}\label{sec:TMTT}
+The proposed FPGA-based Hough Transform Track Finder 
+
+ is a fully time-multiplexed design for implementation on commercially available FPGAs.
+
+In this section the architecture and components of the Track Finding Processor developed are discussed.
 
 \subsection{The Track Finding Architecture}\label{subsec:TFA}
 The proposed FPGA-based Hough Transform Track Finder is a scalable, flexible and redundant design based on a fully time-multiplexed architecture for implementation on commercially available FPGAs, as previously demonstrated by the Phase-I Calorimeter Trigger Upgrade~\cite{Tapper:2013yva} discussed in Section~\ref{paragraph:L1}.
@@ -190,13 +187,17 @@ Stubs are assigned to sub-sectors occurs in a three stage process:
 Each of the TFP's logic blocks shown in figure~\ref{fig:TFP} has been designed to be highly reconfigurable and can easily be adapted to any alternative sub-sector definition.
 
 \subsubsection{Hough Transform}
-The Hough Transform algorithm is a widely used means of detecting geometric features in digital image processing~\cite{HT}.
+The Hough Transform algorithm is a widely used method of detecting geometric features in digital image processing~\cite{HT}.
+
+
 
 %%% GENERAL INTRO
 
-The \HT is used by the TFP to find charged particles with $\pT > 3\GeV$ in the \rphi plane. 
+The \HT is used by the TFP to find charged particles tracks with $\pT > 3\GeV$ in the \rphi plane using data from the upgraded tracker. 
 
-Initially we consider for a tracking volume, permeated by a homogeneous 3.8T magnetic field ($B$), a track with a radius of curvature ($R$) can be described as a function of its \pT and charge $q$:
+
+
+The radius of a charged particle passing through a aracking volume, permeated by a homogeneous 3.8T magnetic field ($B$), can be described as a function of its \pT and charge $q$:
 
 \begin{equation}
 R = \frac{\pt}{0.003\,qB} \;
@@ -228,7 +229,6 @@ This threshold can be further reduced to four layers to account for the reduced 
 A more detailed description of the firmware implementation of the \HT for the demonstrator system is discussed in~\cite{TMTT_JINST,IEEE}.
 
 \subsubsection{Kalman Filter}\label{subsubsec:KF}
-\editComment{More detail - including on the covariance matrix ...}
 The coarse \rphi helix parameters that are output by the \HT are used as the initial variables for track finding, with the segment assignment also providing a good seed value.
 Given that in simulation over half the track candidates from by the HT are considered to be \textit{fake} or contain at least one stub associated with another particle, a Kalman Filter is used to both remove these incorrect stubs and reject fake tracks. 
 
@@ -248,17 +248,12 @@ The final fit is always performed after a fixed period of time, so consequently 
 A greater in-depth discussion of the mathematics and implementation of online track reconstruction using Kalman Filters on FPGAs in~\cite{SSummers}.
 
 \subsubsection{Duplicate Removal}
-Following the \KF, over half of the track candidates are unwanted duplicate tracks created by the HT.
+Over half of the track candidates at input to the DR are duplicate tracks created by the HT.
 Instead of comparing pairs of tracks to see if they are the same, a more elegant and subtle DR algorithm is used which takes into account how the \HT produces these duplicate tracks.
-This approach is illustrated in figure~\ref{fig:DR}, where five stubs, which correspond to the blue lines in Hough Space, produce candidates in the green and two yellow cells.
-The coarse track finding performed by the \HT 
-
-however, as all three candidates contain the same stubs, they will be fitted with identical helix parameters in the same cell (the yellow cell) regardless of the original HT cell.
-
-
-The DR algorithm accepts only tracks whose fitted parameters are consistent with the \HT cell in which they were initially found. 
-There is however, a small subtlety, given that the algorithm eliminates unique tracks whose fitted parameters were not consistent, which results in the loss of a few percent of efficiency. 
-By performing a second pass through the rejected tracks, tracks which have fitted parameters that do not correspond to the HT cell of a track from the first pass are probably not duplicates, and so they are recovered.
+This approach is illustrated in figure~\ref{fig:DR}.
+In this example, the \HT has produced candidates in the green and two yellow HT cells from the five stubs, which correspond to the blue lines in Hough Space, that have been produced by a single particle.
+As all three candidates however, contain the same stubs, they will be fitted by the \KF with identical helix parameters in the same (yellow) cell regardless of the original HT cell.
+By comparing a track's fitted parameters with the \HT cell in which they were initially found, any track whose fitted parameters does not correspond to the same HT cell in which the \HT found the track in is rejected.
 
 \begin{figure}[!h]
 \centering
@@ -266,9 +261,13 @@ By performing a second pass through the rejected tracks, tracks which have fitte
 % where an .eps filename suffix will be assumed under latex,
 % and a .pdf suffix will be assumed for pdflatex; or what has been declared
 % via \DeclareGraphicsExtensions.
-\caption{Illustration of how duplicates are formed by the \rphi \HT.}
+\caption{Illustration of how duplicates are formed by the \rphi \HT, as discussed in the text.}
 \label{fig:DR}
 \end{figure}
+
+There is however, a small subtlety, as the DR algorithm loses a few percent of efficiency due to resolution effects, the algorithm performs second pass through the rejected tracks.
+This second pass looks for tracks which have fitted parameters that do not correspond to the HT cell of a track from the first pass.
+As such tracks are probably not duplicates, they are recovered.
 
 A more detailed description of the firmware implementation of the \DR for the demonstrator system is discussed in~\cite{TMTT_JINST}.
 
@@ -735,6 +734,8 @@ At the time of writing, this observation is still being investigated, but is sus
 }
 \label{fig:kfHelixParametersResVsInvPt}
 \end{figure}
+
+
 
 \subsubsection{Conclusions}\label{subsubsec:2GevConclusions}
 After investigating modifications to the \HT and \KF algorithms to improve upon the default performance obtained for track finding and fitting of low \pT ($< 3\GeV$) tracks.

@@ -21,7 +21,7 @@ The NNPDF3.0 family of PDF sets was used as input for the generators of the MC s
 
 \begin{table}[htbp]
 \topcaption {
-The MC processes and their associated total number of events, cross sections and generators (and order in perturbative QCD accuracy they are calculated to), considered for the search for tZq in the dilepton final state. Both generators considered for the Z+jet background are also listed below.
+The MC processes and their associated sample sizes, cross sections and generators used. Two generators are considered for the simulation of the Z+jets process; both samples are included in the table.
 }
 \label{tab:mcList}
   \centering
@@ -87,12 +87,14 @@ The MC processes and their associated total number of events, cross sections and
  \end{tabular}}
 \end{table}
 
-To determine the impact of a number of theoretical uncertainties for a number of processes, a several dedicated samples, listed in table~\ref{tab:theorySampleList}, were used.
-These systematic uncertainties are discussed further in Section~\ref{sec:theorySysts}.
+To determine the impact of a variety of different theoretical uncertainties for several of the processes defined in table~\ref{tab:mcList}, dedicated MC samples, listed in table~\ref{tab:theorySampleList}, were used.
+For samples where the parton shower scale has been varied
+
+These uncertainties are discussed further in Section~\ref{sec:theorySysts}.
 
 \begin{table}[htbp]
 \topcaption {
-The dedicated MC samples used to determine the impact of theoretical uncertainties, including the associated total number of events, cross sections and generators (and order in perturbative QCD accuracy they are calculated to), considered for the search for tZq in the dilepton final state.
+The dedicated MC samples used to estimate some theoretical uncertainties. The table includes the associated size of the samples, cross sections and generators used.
 }
 \label{tab:theorySampleList}
   \centering
@@ -151,12 +153,12 @@ The dedicated MC samples used to determine the impact of theoretical uncertainti
 %
 \section{Simulation Corrections}\label{sec:simCorrections}
 Simulation is unable to fully recreate all the effects observed in data, either because certain parameters are not precisely known or cannot be calculated.
-To account for these discrepancies, corrective scale factors are used to reweight MC on a per event basis.
-Such scale factors are usually derived as a function of \pt and $\eta$ so as to account for the variation of the detector response in both.
-These corrections are used to correct simulation for lepton identification, isolation and reconstruction efficiencies, b-tagging efficiencies, the poor modelling of pileup in simulation, and the detector resolutions observed in data.
+To account for possible discrepancies, corrective scale factors are used to reweight MC samples on a per event basis.
+Such scale factors are usually derived as a function of \pt and $\eta$ so as to fully account for the variation of the detector response in both.
+These scale factors are used to correct the simulation for any discrepencies in the lepton identification, isolation and reconstruction efficiencies, b-tagging efficiencies, the poor modelling of pileup in simulation, and the detector resolutions observed in data.
 
 \subsection{Miscalibrated Tracker APV}\label{subsec:hipEffect}
-During the first half of data taking in 2016 the silicon strip detector suffered from instantaneous luminosity dependent  hit finding inefficiencies, particularly in high occupancy regions, due to saturation in the pre-amplifier in the front end electronics~\cite{Fiori:2016ebh}.
+During the first half of data taking in 2016 the silicon strip detector suffered from an instantaneous-luminosity-dependent hit finding inefficiency, which particularly affected high occupancy regions, due to saturation in the pre-amplifier in the front-end electronics~\cite{Fiori:2016ebh}.
 This issue was resolved by changing the configuration of the electronics.
 While the affected part of the dataset has been reprocessed to mitigate the impact on the quality of the data taken, there is still a negative impact on the detector efficiency for objects that rely upon highly efficient tracking data.
 This is accounted for by the weighting of events appropriately when the scale factors are produced, either centrally by CMS or those derived for the analysis (\ie the trigger scale factors), so that a single scale factor is applied to a simulated event.
@@ -234,12 +236,12 @@ This removes any sensitivity to detector efficiencies or physics modelling.
 The Rochester Corrections are applied to each muon an event weight that is a function of the muon's charge, \pt, $\eta$ and $phi$.
 
 \subsection{Jet Energy Corrections}\label{subsec:jesjer}
-As described in Section~\ref{subsubsec:JECs}, the JECs are applied to account for the non-uniform response in \pT and $eta$ of the detector by comparing the differences between the generator level and detector level responses.
+As described in Section~\ref{subsubsec:JECs}, the Jet Energy Corrections are applied to account for the non-uniform response in \pT and $\eta$ of the detector by comparing the differences between the generator level and detector level responses and any residual differences between simulation and data.
 
 In addition to these corrections, as the Jet Energy Resolution (JER) observed in data is approximately 10\% poorer than that in observed simulation, the 4-vectors of simulated jets are smeared as functions of generator level and reconstructed \pt and $\eta$ to account for this~\cite{Khachatryan:2016kdb}.
 
 \subsection{b-tagging Efficiency}\label{subsec:btagEff}
-The B-Tag and Vertexing (BTV) Physics Object Group measures the b-tagging efficiency and misidentification rates for b and light flavoured jets in data and MC simulation (multijet and \ttbar) of the algorithms which they support~\cite{Sirunyan:2017ezt}.
+The CMS B-Tag and Vertexing (BTV) Physics Object Group measures the b-tagging efficiency and misidentification rates for b and light flavoured jets in data and MC simulation (multijet and \ttbar) of the algorithms which they support~\cite{Sirunyan:2017ezt}.
 From these measurements b-tagging efficiency scale factors are produced and provided for analysts to apply to simulated events to correct differences observed between data and simulation.
 These scale factors, as functions of the jet flavour, \pT and $\eta$, are used to alter the weight of the selected MC events.
 This methodology was chosen as it involves only changing the weight of the selected MC events which, unlike other methods, avoids events migrating into different b-tag multiplicity bins and having events with potentially undefined variables such as the top mass.
@@ -595,16 +597,15 @@ Distributions of the ... for the combination of the $ee$ and $\mu\mu$ channel}
 \end{figure}
 
 \subsection{BDT Model Hyperparameters}\label{subsec:hyperparameters}
-%The model hyperparameters are the set of parameters which are set before the BDT training begins, such the maximum depth trees can be grown to or the number of training iterations to be run. 
 Instead of tuning the choice hyperparmeters for optimal classification performance either by hand or a time and computationally expensive grid search, the minima of a classification quality metric based on the AUROC, $f(\theta)$, were found.
 
-These minima were evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise} to construct a regression model based on a Gaussian process with the Mat\'{e}rn $\nu =\frac{5}{2}$ kernel.
-Initially this model evaluates $f$ using random values of $\theta$ for fifteen iterations before values of $\theta$ are chosen based on the regression model.
-
-In order to robustly train the classifier, for each of the 150 training iterations performed $f(\theta)$ was evaluated across four subsets of the training data using the the k-fold cross-validation scheme.
-These subsets were formed of 80\% of the total data which was randomly split between the four folds, with the remaining 20\% of the data being reserved for later testing.
-Following evaluating $f$ four times, where a different fold was withheld each time, the resultant average $f$ was taken as the final metric.
-Out of the 150 averaged final metrics, the classifier with the best $(\theta)$ was retrained on all of the training data, checked against the reserved test data, and if satisfactory, used to produce the optimal BDT.
+%These minima were evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise} to construct a regression model based on a Gaussian process with the Mat\'{e}rn $\nu =\frac{5}{2}$ kernel.
+%Initially this model evaluates $f$ using random values of $\theta$ for fifteen iterations before values of $\theta$ are chosen based on the regression model.
+%
+%In order to robustly train the classifier, for each of the 150 training iterations performed $f(\theta)$ was evaluated across four subsets of the training data using the the k-fold cross-validation scheme.
+%These subsets were formed of 80\% of the total data which was randomly split between the four folds, with the remaining 20\% of the data being reserved for later testing.
+%Following evaluating $f$ four times, where a different fold was withheld each time, the resultant average $f$ was taken as the final metric.
+%Out of the 150 averaged final metrics, the classifier with the best $(\theta)$ was retrained on all of the training data, checked against the reserved test data, and if satisfactory, used to produce the optimal BDT.
 
 %
 %\begin{table}[htbp]
@@ -655,34 +656,32 @@ These uncertainties are treated as nuisance parameters in the statistical fit mo
 
 \subsection{Experimental Uncertainties}
 \subsubsection{Jet Energy Corrections}
-The Jet Energy Corrections group also provides the uncertainties associated with the JES and JER they determine, discussed in Sections~\ref{subsubsec:JECs} and~\ref{subsec:jesjer}, are determined by the Jet Energy Corrections group~\cite{Khachatryan:2016kdb}. 
+The CMS Jet Energy Corrections group provides the uncertainties associated with the JES and JER values they determine (discussed in Sections~\ref{subsubsec:JECs} and~\ref{subsec:jesjer})~\cite{Khachatryan:2016kdb}. 
 
-The impact that the JES has on the jet kinematics is evaluated by varying the corrective JES up and down by a standard deviation.
+The impact of the JES is evaluated by varying the JES values applied to all jets up and down by a standard deviation.
 The uncertainty associated with the JER smearing is accounted for by varying the smearing factor up and down by the associated statistical uncertainty.
-Recently the uncertainties associated with the JER have been updated during the reprocessing of the 2016 dataset to include the systematic uncertainties in addition to the statistical uncertainties.
-At the time of writing this thesis, these reprocessed samples and the impact of the revised total JER uncertainties has not been propagated through the analysis.
 
 \subsubsection{Missing Transverse Energy Uncertainties}
-As missing transverse energy is calculated from the sum of the \pT of all the PF objects and the remaining unclustered energy deposits, the uncertainties associated from both have to be considered.
+As missing transverse energy is calculated from the sum of the \pT of all PF objects in a given event along with the remaining unclustered energy deposits, the uncertainties associated from both have to be considered.
 
 The impact of the uncertainties associated with both the JES and JER on the PF \MET are accounted for by propagating the JEC uncertainties through to the \MET and evaluating the impact they have.
-As the unclustered energy remains uncorrected, the impact on the \MET uncertainty is evaluated by varying the contribution from each particle by its associated resolution.
+As the unclustered energy remains uncorrected, the impact on the \MET uncertainty is evaluated by varying the contributions to the unclustered energy from each particle by their respective resolution.
 
 \subsubsection{Pileup Reweighting}
 The uncertainty associated with the primary vertex distributions used in the \PU reweighting is determined by varying the expected minimum bias cross section used in simulation $\pm X\%$ in order to ascertain the impact of greater or lesser amounts of \PU on the analysis.
 
 \subsubsection{Parton Density Functions}\label{subsec:pdfSysts}
 %%Discussion of what PDFs are, is given in an earlier chapter 
-The impact of the PDF uncertainties are evaluated according to the PDF4LHC recommendations~\cite{Butterworth:2015oua}, where they are estimated as the standard deviation of the weights of the nominal and the variations of the PDF set.
+The impact of the PDF uncertainties are evaluated according to PDF4LHC recommendations~\cite{Butterworth:2015oua}, namely as the standard deviation of the weights of the nominal and the variations of the PDF set.
 
 For almost all of the MC samples considered, this is achieved by considering the nonimal event weight and one hundred alternative PDF weights which are stored as per-event weights in the LHE 
 event header for almost all of the MC samples considered.
 
-The single top tW-channel samples are the exception to this as at the time of their generation it was not possible to generate per-event weights to account for the PDF variations for this process.
-Therefore, the LHAPDF (Les Houches Accord Parton Distribution Function) library is used to access both the nominal PDF weight and 50 eigenvalues from the NNPDF3.0 set to provide one hundred alternative event weights to be evaluated.
+The single top tW-channel samples are the exception to this as at the time of their generation it was not possible to generate the required per-event weights.
+In this case, the LHAPDF (Les Houches Accord Parton Distribution Function) library is used to access both the nominal PDF weight and the 50 eigenvalues from the NNPDF3.0 set needed to provide one hundred alternative event weights.
 
 \subsubsection{b-tagging Uncertainties}
-The uncertainties associated with the b-tagging scale factors described in Section~\ref{subsec:btagEff} are obtained by varying their value by $\pm 1\sigma$, as calculated by the BTV POG.
+The uncertainties associated with the b-tagging scale factors described in Section~\ref{subsec:btagEff} are obtained by varying their value by $\pm 1\sigma$.
 
 \subsubsection{Non-prompt Lepton Contributions}
 The data-driven estimate of the instrumental backgrounds should have no dependence on either the lepton flavour or selection cuts.
@@ -700,6 +699,8 @@ This is possible as the probability of pixel hit belonging to multiple tracks is
 
 Using Van der Meer (VdM) scans during dedicated LHC runs to calibrate the absolute luminosity scale calibrations of the detectors~\cite{vanderMeer:1968zz}
 
+%%%%
+
 
 The overall uncertainty in the integrated luminosity collected by CMS in 2016 was estimated to be 2.5\%~\cite{CMS:2017_lumi}.
 
@@ -711,7 +712,7 @@ The overall uncertainty in the integrated luminosity collected by CMS in 2016 wa
 %where $\pazocal{L}$ is the amount of total integrated luminosity considered in the data used, $\sigma$ the cross section of the MC sample considered and $N_{MC}^{Events}$ is number of simulated events considered for the process.
 
 \subsubsection{Lepton Efficiencies}
-The uncertainties associated with the lepton identification, isolation and reconstruction efficiency scale factors discussed in Section~\ref{subsec:leptonRecoSFs} are varied +/- 1 sigma.
+The uncertainties associated with the lepton identification, isolation and reconstruction efficiency scale factors discussed in Section~\ref{subsec:leptonRecoSFs} are varied by $\pm \sigma$.
 
 Several systematic studies were performed to estimate the systematic uncertainty for the trigger scale factors.
 These studies included the comparison of the trigger efficiencies in simulation for \ttbar and Z+jets amd the independence of the \MET trigger selection.
