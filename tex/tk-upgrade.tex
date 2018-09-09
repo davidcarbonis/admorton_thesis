@@ -439,14 +439,13 @@ The $\chi^{2}$ track fit increases the purity of the reconstructed tracks by a f
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/ptRelResVsEta_It_1_ApproxVsExact.pdf}
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/phi0ResVsEta_It_1_ApproxVsExact.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/ptRelResVsEta_It_1_ApproxVsExact.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/phi0ResVsEta_It_1_ApproxVsExact.pdf}
 \\
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_It_1_ApproxVsExact.pdf}
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/cotThetaResVsEta_It_1_ApproxVsExact.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_It_1_ApproxVsExact.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/cotThetaResVsEta_It_1_ApproxVsExact.pdf}
 \caption{
 Distributions of \pt relative resolution, $\phi$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events with a $<\text{PU}>$ of 200 for the floating point (red) and approximated maths (blue) implementations of the linearised $\chi^{2}$ fit algorithm for a single fitting iteration.
-\editComment{Make plots bigger!}
 }
 \label{fig:chi2HelixParametersResVsEtaApproxVsExact}
 \end{figure}
@@ -473,7 +472,7 @@ During the optimisation of this stub quality check it was found that a track cou
 To avoid this while still retaining the improved matched track purity and reduced fake rate, a looser residual threshold was applied for tracks only containing four stubs.
 
 \begin{table}[htbp]
-\topcaption {Track finding performance on simulated \ttbar events at a $<\text{PU}>$ of 200, for the $\chi^{2}$ track fit using approximated calculations of the track derivatives for when one to four fitting iterations are undertaken. 
+\topcaption {Track finding performance on simulated \ttbar events at a $<\text{PU}>$ of 200, for the $\chi^{2}$ track fit using approximated calculations of the track derivatives for when one to four fitting iterations, $N_{It}$, are undertaken. 
 Further fitting iterations are not shown as further improvement was observed.
 }
 \label{tab:chi2_iterations}
@@ -483,7 +482,7 @@ Further fitting iterations are not shown as further improvement was observed.
 % This right-aligns numbers in column, but centers them under column title.
  \begin{tabular}{ccccccc}
    \hline
-   \bf{Track Fitter} & [\#] of iterations & \bf{$\bm{\epsilon}$ [\%]} & \bf{$\bm{\epsilon_{P}}$ [\%]} & $\bm{<N_{tracks}}$ & \bf{Fakes [\%]} & \bf{Duplicates [\%]}  \\
+   \bf{Track Fitter} & $N_{It}$ & \bf{$\bm{\epsilon}$ [\%]} & \bf{$\bm{\epsilon_{P}}$ [\%]} & $\bm{<N_{tracks}>}$ & \bf{Fakes [\%]} & \bf{Duplicates [\%]}  \\
    \hline
    $\chi^{2}$+DR & 1 & 94.9 & 85.6 & 87.4 & 15.5 & 10.9 \\  
    & 2 & 93.8 & 91.0 & 73.8 & 6.6 & 7.7 \\
@@ -509,14 +508,13 @@ While the \qpt and $\phi_{0}$ resolutions achieved after four fitting iterations
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/ptRelResVsEta_IterationComparison.pdf}
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/phi0ResVsEta_IterationComparison.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/ptRelResVsEta_IterationComparison.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/phi0ResVsEta_IterationComparison.pdf}
 \\
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_IterationComparison.pdf}
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-chi2fitter/cotThetaResVsEta_IterationComparison.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_IterationComparison.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/cotThetaResVsEta_IterationComparison.pdf}
 \caption{
 \pt relative resolution, $\phi$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events at a $<\text{PU}>$ of 200 for the approximated maths implementation of the linearised $\chi^{2}$ fit algorithm for one (black) and four (blue) fitting iterations. The \KF (red) is also included for comparison.
-\editComment{Make plots bigger!}
 }
 \label{fig:chi2HelixParametersResIterationsComparison}
 \end{figure}
@@ -555,8 +553,8 @@ Figure~\ref{fig:2GeVFlatEff} shows how the tracking efficiency improves followin
 
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/htTrackingEffVsInvPtFlatGeometry_5000.pdf}
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/htTrackingEffVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
 \caption{The post-\HT (left) and post-\KF (right) tracking efficiency for $\pt > 2\GeVc$ for \ttbar events at a $<\text{PU}>$ of 200, with the default configuration where only the number of \qpt columns are increased (red) and with the increased number of columns, HT cell merging and \KF state cuts optimisation(blue).
 }
 \label{fig:2GeVFlatEff}	
@@ -571,8 +569,7 @@ The duplicate removal algorithm however, remains effective at removing almost al
 
 \begin{table}[htbp]
 \topcaption {Track finding performance on simulated \ttbar events at a $<\text{PU}>$ of 200, after the \HT and the full chain  for the configurations of only increasing the number of \qpt columns (\emph{Default}), additionally using \HT cell merging and the optimised \KF state cuts (\emph{Optimised}).
-The track finding efficiencies following each stage are given using the efficiency definitions given in Section~\ref{subsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
-\editComment{Fix table size}
+The track finding efficiencies, $\epsilon$, following each stage are given along with the mean number of tracks, $<N_{tracks}>$, and the fraction of those tracks which are either fake or duplicate tracks.
 }
 \label{tab:trackFindingPerformance2GeVHT}
   \centering
@@ -581,7 +578,7 @@ The track finding efficiencies following each stage are given using the efficien
 % This right-aligns numbers in column, but centers them under column title.
 \begin{tabular}{cccccc}
    \hline
-   \bf{Configuration} & \bf{Stage} & \bf{Efficiency [\%]} & \bf{Mean \# of tracks} & \bf{Fakes [\%]} & \bf{Duplicates [\%]}  \\
+   \bf{Configuration} & \bf{Stage} & \bf{$\bm{\epsilon}$ [\%]} & $\bm{<N_{tracks}>}$ & \bf{Fakes [\%]} & \bf{Duplicates [\%]}  \\
         \hline
     Default & \bf{HT}     & 93.6 & 713.2 & 34.0 & 44.5 \\  
     & \bf{Full chain}     & 89.2 & 193.9 & 21.1 & 5.1 \\      
@@ -612,14 +609,13 @@ The slight degradation in the $\phi_{0}$ resolution is a result of the decreased
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/qOverPtResVsInvPtFlatGeometry_5000.pdf}
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/phi0ResVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/qOverPtResVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/phi0ResVsInvPtFlatGeometry_5000.pdf}
 \\
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtFlatGeometry_5000.pdf}
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/cotThetaResVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/cotThetaResVsInvPtFlatGeometry_5000.pdf}
 \caption{
 The \pt resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolution measured for both the default configuration where only the number of \HT \qpt columns have been increased (red) and after the \HT and \KF optimisations have been applied (blue) for primary reconstructed tracks in simulated \ttbar events at a $<\text{PU}>$ of 200 for tracks with $\pt > 2\GeVc$.
-\editComment{Make plots bigger!}
 }
 \label{fig:htHelixParametersResVsInvPt}
 \end{figure}
@@ -667,11 +663,10 @@ Consequently, this change was adopted by the project and all the results present
 
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/htFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/htFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
 \caption{The fraction of genuine tracks with duplicates as a function of $\frac{1}{\pT}$ following reconstruction by the \HT (left) and fitting and filtering by the \KF and \DR (right) for where the \HT cell merging \pT threshold is set to 2.7\GeV (red) and 3.5\GeV (blue). 
 The constant coefficient for the \MS contribution was used for these \KF results.
-\editComment{Resize plots!}
 }
 \label{fig:2GeVfracDups}
 \end{figure}
@@ -690,21 +685,19 @@ The similar performance observed between the two coefficients in figure~\ref{fig
 
 Table~\ref{tab:trackFindingPerformance2GeVKF} also shows that compared to just the \HT optimisations alone, for both \MS coefficients, the \KF is more capable at rejecting incorrectly reconstructed tracks by up to an additional 3-4\%.
 In contrast, the duplicate increases for both coefficients by 3-5\% for the full chain, with the increase in duplicates occurring between $3.2\GeV$ and $5\GeV$, as shown in figure~\ref{fig:2GeVfracDups}, near the $3.5\GeV$ threshold for merging adjacent \HT cells.
-At the time of writing this chapter, it is not understood how incorporating \MS into the \KF causes this, but it is suspected to be related to the use of the reduced precision of \HT cells.
-\editComment{It is hoped that by the time of submission, someone (Ian ... ?) will have figured this out.}
+Currently it is not understood how incorporating \MS into the \KF causes this, but it is suspected to be related to the use of the reduced precision of \HT cells.
 %Tracks with \pt approaching the \pt threshold at which reduced precision of \HT cells are used are have the potential to be built out of both stubs from both the full and reduced precision \HT cells.
 
 \begin{table}[htbp]
 \topcaption {Track finding performance on simulated \ttbar events at a $<\text{PU}>$ of 200, after the full demonstrator chain for the three differing \KF configurations where \MS is not considered ($k = 0$), a constant \MS coefficient (const $k$) is used and a layer dependent \MS coefficient ($k(layer)$)is used. 
-The track finding efficiencies following each stage are given using the efficiency definitions given in Section~\ref{subsec:helixParameter}, along with the mean number of tracks and the fraction of those tracks which are either fake or duplicate tracks.
-\editComment{Fix table size!.}
+The track finding efficiencies, $\epsilon$, following each stage are given along with the mean number of tracks, $<N_{tracks}>$, and the fraction of those tracks which are either fake or duplicate tracks.
 }
 \label{tab:trackFindingPerformance2GeVKF}
 \centering
  \resizebox{\textwidth}{!}{
 \begin{tabular}{ccccc}
    \hline
-   \bf{Scattering coefficient} & \bf{Efficiency [\%]} & \bf{Mean \# of tracks} & \bf{Fakes [\%]} & \bf{Duplicates [\%]}  \\
+   \bf{Scattering coefficient} & \bf{$\bm{\epsilon}$ [\%]} & $\bm{<N_{tracks}>}$ & \bf{Fakes [\%]} & \bf{Duplicates [\%]}  \\
    \hline
 %     & \bf{HT}     &  96.2 & 752.0 & 28.2 & 47.3 \\  
    $k = 0$  & 93.6 & 216.0 & 13.3 & 9.4 \\      
@@ -725,11 +718,11 @@ At the time of writing, this observation is still being investigated, but is sus
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/qOverPtResVsInvPtTiltedGeometry_5000.pdf}
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/phi0ResVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/qOverPtResVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/phi0ResVsInvPtTiltedGeometry_5000.pdf}
 \\
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtTiltedGeometry_5000.pdf}
-\includegraphics[width=0.49\textwidth]{figs/tk-upgrade/results-lowPtTracking/cotThetaResVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/cotThetaResVsInvPtTiltedGeometry_5000.pdf}
 \caption{\pt resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolution measured for primary reconstructed tracks in simulated \ttbar events at a $<\text{PU}>$ of 200 for when multiple scattering isn't considered by the \KF (red), when a constant \MS coefficient is used (black) and when a layer dependent coefficient is used (blue).
 }
 \label{fig:kfHelixParametersResVsInvPt}
