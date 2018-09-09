@@ -205,8 +205,10 @@ void kfChi2NdfVsInvPtTiltedGeometry_5000()
    FitChi2DofVsInvPtMatched_KF4ParamsComb__2->SetEntries(969947);
    FitChi2DofVsInvPtMatched_KF4ParamsComb__2->SetDirectory(0);
    FitChi2DofVsInvPtMatched_KF4ParamsComb__2->SetLineStyle(7);
+   FitChi2DofVsInvPtMatched_KF4ParamsComb__2->SetLineColor(1);
    FitChi2DofVsInvPtMatched_KF4ParamsComb__2->SetMarkerStyle(4);
    FitChi2DofVsInvPtMatched_KF4ParamsComb__2->SetMarkerSize(1.2);
+   FitChi2DofVsInvPtMatched_KF4ParamsComb__2->SetMarkerColor(1);
    FitChi2DofVsInvPtMatched_KF4ParamsComb__2->GetXaxis()->SetTitle("Simulated track 1/p_{T} [GeV^{-1}]");
    FitChi2DofVsInvPtMatched_KF4ParamsComb__2->GetXaxis()->SetLabelFont(42);
    FitChi2DofVsInvPtMatched_KF4ParamsComb__2->GetXaxis()->SetLabelSize(0.035);
@@ -328,7 +330,7 @@ void kfChi2NdfVsInvPtTiltedGeometry_5000()
    
    TLegend *leg = new TLegend(0.2,0.47,0.27,0.68,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextSize(0.03417969);
+   leg->SetTextSize(0.035);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);

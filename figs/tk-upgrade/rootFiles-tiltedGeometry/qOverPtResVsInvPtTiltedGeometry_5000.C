@@ -198,8 +198,10 @@ void qOverPtResVsInvPtTiltedGeometry_5000()
    QoverPtResVsTrueInvPt_KF4ParamsComb__2->SetEntries(122644);
    QoverPtResVsTrueInvPt_KF4ParamsComb__2->SetDirectory(0);
    QoverPtResVsTrueInvPt_KF4ParamsComb__2->SetLineStyle(7);
+   QoverPtResVsTrueInvPt_KF4ParamsComb__2->SetLineColor(1);
    QoverPtResVsTrueInvPt_KF4ParamsComb__2->SetMarkerStyle(4);
    QoverPtResVsTrueInvPt_KF4ParamsComb__2->SetMarkerSize(2);
+   QoverPtResVsTrueInvPt_KF4ParamsComb__2->SetMarkerColor(1);
    QoverPtResVsTrueInvPt_KF4ParamsComb__2->GetXaxis()->SetTitle(" Simulated track 1/p_{T} [GeV^{-1}]");
    QoverPtResVsTrueInvPt_KF4ParamsComb__2->GetXaxis()->SetLabelFont(42);
    QoverPtResVsTrueInvPt_KF4ParamsComb__2->GetXaxis()->SetLabelSize(0.035);
@@ -333,7 +335,7 @@ void qOverPtResVsInvPtTiltedGeometry_5000()
    entry->SetMarkerStyle(4);
    entry->SetMarkerSize(2);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("QoverPtResVsTrueInvPt_KF4ParamsComb_2","k = 0","PEL");
+   entry=leg->AddEntry("QoverPtResVsTrueInvPt_KF4ParamsComb_2","constant k","PEL");
    entry->SetLineColor(1);
    entry->SetLineStyle(7);
    entry->SetLineWidth(1);

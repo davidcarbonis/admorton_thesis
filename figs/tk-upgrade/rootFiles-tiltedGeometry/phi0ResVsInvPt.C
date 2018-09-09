@@ -198,8 +198,10 @@ void phi0ResVsInvPt()
    PhiResVsTrueInvPt_KF4ParamsComb__2->SetEntries(122644);
    PhiResVsTrueInvPt_KF4ParamsComb__2->SetDirectory(0);
    PhiResVsTrueInvPt_KF4ParamsComb__2->SetLineStyle(7);
+   PhiResVsTrueInvPt_KF4ParamsComb__2->SetLineColor(1);
    PhiResVsTrueInvPt_KF4ParamsComb__2->SetMarkerStyle(4);
    PhiResVsTrueInvPt_KF4ParamsComb__2->SetMarkerSize(2);
+   PhiResVsTrueInvPt_KF4ParamsComb__2->SetMarkerColor(1);
    PhiResVsTrueInvPt_KF4ParamsComb__2->GetXaxis()->SetTitle(" Simulated track 1/p_{T} [GeV^{-1}]");
    PhiResVsTrueInvPt_KF4ParamsComb__2->GetXaxis()->SetLabelFont(42);
    PhiResVsTrueInvPt_KF4ParamsComb__2->GetXaxis()->SetLabelSize(0.035);

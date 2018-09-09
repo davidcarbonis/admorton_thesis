@@ -198,8 +198,10 @@ void cotThetaResVsInvPt()
    CotThetaResVsTrueInvPt_KF4ParamsComb__2->SetEntries(122644);
    CotThetaResVsTrueInvPt_KF4ParamsComb__2->SetDirectory(0);
    CotThetaResVsTrueInvPt_KF4ParamsComb__2->SetLineStyle(7);
+   CotThetaResVsTrueInvPt_KF4ParamsComb__2->SetLineColor(1);
    CotThetaResVsTrueInvPt_KF4ParamsComb__2->SetMarkerStyle(4);
    CotThetaResVsTrueInvPt_KF4ParamsComb__2->SetMarkerSize(2);
+   CotThetaResVsTrueInvPt_KF4ParamsComb__2->SetMarkerColor(1);
    CotThetaResVsTrueInvPt_KF4ParamsComb__2->GetXaxis()->SetTitle(" Simulated track 1/p_{T} [GeV^{-1}]");
    CotThetaResVsTrueInvPt_KF4ParamsComb__2->GetXaxis()->SetLabelFont(42);
    CotThetaResVsTrueInvPt_KF4ParamsComb__2->GetXaxis()->SetLabelSize(0.035);
