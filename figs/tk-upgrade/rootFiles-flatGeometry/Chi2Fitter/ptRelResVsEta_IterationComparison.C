@@ -4,6 +4,7 @@ void ptRelResVsEta_IterationComparison()
 //=========  (Sun Sep  9 16:46:48 2018) by ROOT version 6.14/04
    TCanvas *Canvas_1_n2 = new TCanvas("Canvas_1_n2", "Canvas_1_n2",0,0,1280,925);
    gStyle->SetOptStat(0);
+   Canvas_1_n2->Range(-0.4860759,-0.2025316,2.551899,1.063291);;
    Canvas_1_n2->SetFillColor(0);
    Canvas_1_n2->SetBorderMode(0);
    Canvas_1_n2->SetBorderSize(2);
