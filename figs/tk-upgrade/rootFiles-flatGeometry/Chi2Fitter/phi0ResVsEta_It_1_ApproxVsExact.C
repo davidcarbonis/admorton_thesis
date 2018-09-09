@@ -113,7 +113,7 @@ void phi0ResVsEta_It_1_ApproxVsExact()
    PhiResVsTrueEta_ChiSquared4ParamsTrackletStyle__1->GetYaxis()->SetLabelSize(0.05);
    PhiResVsTrueEta_ChiSquared4ParamsTrackletStyle__1->GetYaxis()->SetTitleSize(0.05);
    PhiResVsTrueEta_ChiSquared4ParamsTrackletStyle__1->GetYaxis()->SetTitleFont(42);
-   PhiResVsTrueEta_ChiSquared4ParamsTrackletStyle__1->GetYaxis()->SetTitleOffset(1.3);
+   PhiResVsTrueEta_ChiSquared4ParamsTrackletStyle__1->GetYaxis()->SetTitleOffset(1.5);
    PhiResVsTrueEta_ChiSquared4ParamsTrackletStyle__1->GetZaxis()->SetLabelFont(42);
    PhiResVsTrueEta_ChiSquared4ParamsTrackletStyle__1->GetZaxis()->SetLabelSize(0.05);
    PhiResVsTrueEta_ChiSquared4ParamsTrackletStyle__1->GetZaxis()->SetTitleSize(0.05);
