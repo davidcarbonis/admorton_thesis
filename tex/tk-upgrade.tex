@@ -122,9 +122,15 @@ In this section the architecture and components of the \emph{TMTT} Track Finding
 The proposed FPGA-based Hough Transform Track Finder is a scalable, flexible and redundant design based on a fully time-multiplexed architecture for implementation on commercially available FPGAs, as previously demonstrated by the Phase-I Calorimeter Trigger Upgrade~\cite{Tapper:2013yva} discussed in Section~\ref{paragraph:L1}.
 As discussed in Section~\ref{paragraph:L1}, a time-multiplexed design has a number of advantages, including that only a single Track Finding Processor (TFP) is required to demonstrate the full system as each processor is identical in every respect.
 
-Unlike the Phase-I Calorimeter Trigger, it is not feasible to process the entire output of the Phase-II Outer Tracker in a single processor for a given time slice because of the limits imposed by the input and total bandwidth a single FPGA-based processor can handle.
-Therefore, as it was assumed at the time of the 2016 review that the DTC system would be arranged such that it forms octants~\footnote{These detector octants are not uniform as the geometry of the tracker does not have an exact eight-fold symmetry} (\ie 45 degree $\varphi$-sectors, referred to as \emph {detector octants}) in the tracker, the baseline system proposed was divided into \emph{processor octants} that were offset from the detector octants by $\approx 22.5$ degrees in $\phi$, in order to handle data duplication across hardware boundaries.
-This baseline system architecture, illustrated in figure~\ref{fig:tmttarch}, uses two neighbouring DTCs to time-multiplex and duplicate stub data across processing octant boundaries before each DTC transmits 50\% of its data to one TFP and 50\% to the neighbouring TFP.
+Unlike the Phase-I Calorimeter Trigger, it is not feasible to process the entire output of the Phase-II Outer Tracker in a single processor for a given time slice.
+This is because of the limits imposed on the system by the total data and latency bandwidth a single FPGA-based processor can handle.
+
+The number of independent track finding processors was determined by how the DTC system was connected to the tracker.
+At the time of the 2016 review it was assumed that the detector would be cabled to the DTC system such that each DTC board would process all data from a \ie 45 degree $\varphi$-sector, known as a \emph{detector octants}, in the tracker.
+Consequently, the proposed track finding system was divided into \emph{processor octants} that were offset from the detector octants by about $22.5$ degrees in $\phi$, as shown in figure~\ref{fig:tmttarch}, in order to handle data duplication across hardware boundaries.
+The detector octants are not uniform as the geometry of the tracker does not have an exact eight-fold symmetry.
+
+This baseline track finding system architecture, illustrated in figure~\ref{fig:tmttarch}, uses two neighbouring DTC boards to time-multiplex and duplicate stub data across processing octant boundaries before each DTC transmits 50\% of its data to one TFP and 50\% to the neighbouring TFP.
 Based on current electronics and the high speed links available, the data requires 18 TFPs per processing octant (one for each time slice, resulting in a full system requiring 144 TFPs).
 
 \begin{figure}[t]
@@ -134,7 +140,7 @@ Based on current electronics and the high speed links available, the data requir
 \label{fig:tmttarch}
 \end{figure}
 
-A hardware demonstrator of the baseline system consisting of five Imperial Master Processor Virtex-7 (MP7) cards~\cite{mp7ref}, capable of processing one phi-octant of the tracker with a time-multiplexing factor of 36, was used to validate the feasibility of the proposed full system using hardware available at the time of the 2016 review.
+A hardware demonstrator of the baseline system consisting of five Master Processor Virtex-7 (MP7) cards~\cite{mp7ref}, capable of processing one phi-octant of the tracker with a time-multiplexing factor of 36, was used to validate the feasibility of the proposed full system using hardware available at the time of the 2016 review.
 All of the results achieved, and a complete description of the system, are given in~\cite{TMTT_JINST}.
 
 \subsection{The Track Finding Processor}\label{subsec:TFP}
@@ -177,9 +183,8 @@ Stubs are assigned to sub-sectors occurs in a three stage process:
 Each of the TFP's logic blocks shown in figure~\ref{fig:TFP} has been designed to be highly reconfigurable and can easily be adapted to any alternative sub-sector definition.
 
 \subsubsection{Hough Transform}
-The Hough Transform algorithm is a widely used method of detecting geometric features in digital image processing~\cite{HT}.
-
-
+The Hough Transform algorithm is a widely used method of detecting geometric features, such as straight lines, in digital image processing~\cite{HT}.
+The simplest version of the Hough Transform 
 
 %%% GENERAL INTRO
 
@@ -214,7 +219,7 @@ As the line gradients in Hough-space is given by the radius of the stubs, they w
 
 Given that $R$ for the lowest \pT track (3\GeV) to be considered is greater than the outer radius of the tracking detector ($r$ = 1.2m), all relevant particles are expected to traverse through at least six barrel layers or endcap disks. 
 The threshold for the identification of a track candidate however, is set at a minimum of five detector layers or disks in order to allow for detector or readout inefficiencies. 
-This threshold can be further reduced to four layers to account for the reduced geometric coverage between $0.89 < \eta < 1.16$ or for dead detector layers or disks.
+This threshold can be further reduced to four layers to account for the reduced geometric coverage between $0.89 < \eta < 1.16$ or for dead detector layers or disks without significantly increasing the volume of data to be considered.
 
 A more detailed description of the firmware implementation of the \HT for the demonstrator system is discussed in~\cite{TMTT_JINST,IEEE}.
 
@@ -235,7 +240,7 @@ Each update of the state can be filtered on number of configurable criteria, inc
 In the event multiple stubs are found on the same layer, each can be propagated with up to the four best states being kept and presented to a final state selector, with preference given to states with the fewest missing layers and the smallest $\chi^2$.
 The final fit is always performed after a fixed period of time, so consequently there is no truncation in the traditional sense as all candidates will be read out, although events such as dense jets with many candidates and stubs per candidate will only be partially filtered.
 
-A greater in-depth discussion of the mathematics and implementation of online track reconstruction using Kalman Filters on FPGAs in~\cite{SSummers}.
+Further discussion of the mathematics and implementation of online track reconstruction using Kalman Filters on FPGAs can be found in~\cite{SSummers}.
 
 \subsubsection{Duplicate Removal}
 Over half of the track candidates at input to the DR are duplicate tracks created by the HT.
