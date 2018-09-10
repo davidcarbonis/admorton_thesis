@@ -37,16 +37,16 @@ The Standard Model fermions and their properties.
 % This right-aligns numbers in column, but centers them under column title.
  \begin{tabular}{llcllccc}
    \hline
-   & \textbf{Generation} & \textbf{Particle} & & \textbf{Mass \MeV} & \textbf{Electric Charge} & \textbf{Colour Charge} & \textbf{Weak Isospin}\\
+   & \textbf{Generation} & \textbf{Particle} & & \textbf{Mass [\MeV]} & \textbf{Electric Charge} & \textbf{Colour Charge} & \textbf{Weak Isospin}\\
    \hline
-   \multirow{3}{*}{Quarks}  & \multirow{2}{*}{I} & up \textit{$u$}  & 2.3 & $+ \frac{2}{3}$ & 0 & $+ \frac{1}{2}$ \\
+   \multirow{3}{*}{Quarks}  & \multirow{2}{*}{I} & up & \textit{$u$}  & 2.3 & $+ \frac{2}{3}$ & 0 & $+ \frac{1}{2}$ \\
    & & down & \textit{$d$} & $4.8$ & $- \frac{1}{3}$ & $0$ & $- \frac{1}{2}$ \\
    & \multirow{2}{*}{II} & charm & \textit{$c$}  & $2.3$ & $+ \frac{2}{3}$ & 0 & $+ \frac{1}{2}$ \\
    & & strange & \textit{$s$}  & $4.8$ & $- \frac{1}{3}$ & $0$ & $- \frac{1}{2}$ \\
    & \multirow{2}{*}{II} & top & \textit{$t$}  & $2.3$ & $+ \frac{2}{3}$ & $0$ & $+ \frac{1}{2}$ \\
    & & bottom &\textit{$b$}  & $4.8$ & $- \frac{1}{3}$ & $0$ & $- \frac{1}{2}$ \\
    \hline
-   \multirow{3}{*}{Leptons}  & \multirow{2}{*}{I} & electron \textit{$e$}  & $0.511$ & $-1$ & $0$ & $- \frac{1}{2}$ \\
+   \multirow{3}{*}{Leptons}  & \multirow{2}{*}{I} & electron & \textit{$e$}  & $0.511$ & $-1$ & $0$ & $- \frac{1}{2}$ \\
    & & electron neutrino & \textit{$\nu_{e}$}  & $< 2 \times 10^{-6}$ & $0$ & $0$ & $+ \frac{1}{2}$ \\
    & \multirow{2}{*}{II} & muon & \textit{$\mu$}  & $106$ & $-1$ & $0$ & $-\frac{1}{2}$ \\
    & & muon neutrino & \textit{$\nu_{\mu}$}  & $< 0.19$ & $0$ & $0$ & $+ \frac{1}{2}$ \\
@@ -72,7 +72,7 @@ The fundamental forces of nature and the SM gauge bosons which mediate them.
 % This right-aligns numbers in column, but centers them under column title.
  \begin{tabular}{lccccc}
    \hline
-   Gauge Bosons & & Mass (\GeV) & Electrical Charge & Colour Charge & Weak Isospin \\
+   Gauge Bosons & & Mass [\GeV] & Electrical Charge & Colour Charge & Weak Isospin \\
    \hline
    Photon & $\gamma$ & $0$ & $0$ & $0$ & $0$ \\
    \hline
@@ -449,23 +449,24 @@ In contrast, \ttZ has a lower production cross section than the combined tZ and 
 This is the result of the large number of particles present in the \ttZ final state suppressing \ttZ production despite the relative strength of the strong coupling.
 CMS has made measurements of \ttH, \ttW, and \ttZ, all in excess of five standard deviations and consistent with their SM predictions~\cite{Sirunyan:2017uzs,Sirunyan:2018hoz}.
 
-\begin{table}[htbp]
-\topcaption {
-}
-\label{tab:tZcrossSection}
- \centering
- \resizebox{\textwidth}{!}{
-% This right-aligns numbers in column, but centers them under column title.
- \begin{tabular}{lc}
-   \hline
-   \bf{Process} & \bf{Cross Section (fb)}  \\
-   \hline
-   HT &  97.0 \\  
-   \hline
-   $\chi^{2}$+DR & 95.0 \\
-   \hline
- \end{tabular}}
-\end{table}
+%\begin{table}[htbp]
+%\topcaption {Standard Model cross sections for top .
+%}
+%\label{tab:tZcrossSection}
+% \centering
+%% \resizebox{\textwidth}{!}{
+%% This right-aligns numbers in column, but centers them under column title.
+% \begin{tabular}{lc}
+%   \hline
+%   \bf{Process} & \bf{Cross Section (fb)}  \\
+%   \hline
+%   \ttbar &  97.0 \\  
+%   \ttbarZ & 
+%   tZ & 95.0 \\
+%   
+%   \hline
+% \end{tabular}%}
+%\end{table}
 
 The analysis presented in this thesis is the search for the production of a single top quark in association with a Z boson with an additional jet, known as \emph{tZq}, in the dilepton final state.
 tZq is a rare SM process which provides a unique precision probe of the top quark and the electroweak sector, as the Z boson is radiated off one of the quark legs, as shown in figures~\ref{fig:feyn_tZq}(a)-(e), or from the exchanged W boson, as shown in figure~\ref{fig:feyn_tZq}(f).
@@ -535,7 +536,7 @@ Further experiments have confirmed however, that neutrinos do experience flavour
 Given the limited experimental evidence of BSM physics, a large number of BSM physics models, driven by theoretical and ascetic arguments, have been proposed to account for the shortcomings of the SM.
 While the analysis presented in this thesis concerns the search for a SM process, the tZq cross section is sensitive to modifications of the tZ coupling posited by a number of BSM theories.
 
-As eluded to in Section~\ref{subsec:weakForce}, any flavour changing process involving a neutral weak current in the SM requires a loop processes involving a virtual W exchange.
+As eluded to in Section~\ref{subsec:weakForce}, any flavour changing process involving a neutral weak current in the SM cannot occur at the tree level and requires a loop processes involving a virtual W exchange.
 A number of BSM theories however, introduce top quark FCNC decay contributions at the tree level, such as Supersymmetry (SUSY) models and those proposing additional Higgs doublets and/or quark singlets~\cite{AguilarSaavedra:2004wm}.
 The presence of such new tZ couplings would enhance the production rate of both \ttZ and tZq by several orders of magnitude and should be observable at the LHC. 
 As of to date however, no evidence for BSM FCNCs have been observed for the tZ coupling for both single top and \ttbar processes~\cite{Sirunyan:2with017kkr}.
