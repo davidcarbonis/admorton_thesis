@@ -355,9 +355,7 @@ A Linear Regression (LR) track fitting algorithm was developed as an alternative
 As high \pT tracks should form a straight line in the \emph{\rphi} and \emph{$r-z$} planes, the the linear nature of the maths of a LR fit makes it well suited to perform independent fits in each plane using minimal latency and resources.
 
 A linearised $\chi^{2}$ track fit was the first fitting algorithm to be studied by the \emph{TMTT} project.
-These studies were motivated by the need to quickly develop and implement a track fitting algorithm which could be used with 
-
-which could be quickly implemented given the time and resource pressures in developing a hardware demonstrator for a complete track finder system for the 2016 review.
+Given the limited time and resource constraints at the start of the \emph{TMTT} project, there was the urgent need to quickly evaluate potential track fitting algorithms so that the optimal one could be implemented in a complete track finder system for the 2016 review.
 
 Following discussions with both the \emph{tracklet} and \emph{AM} projects, it was decided a linearised $\chi^{2}$ fit based on the algorithm proposed by the \emph{tracklet} project would be investigated.
 The general form of the $\chi^{2}$ fit and the derivation of the track derivatives required by the algorithm were provided in a private communication~\cite{CMS_DN-14-043} and were used to produce a \emph{TMTT} implementation of it.
@@ -458,8 +456,6 @@ The motivation behind this was to reduce the number of variables that the matrix
         \hline
    HT &  97.0 & 43.1 & 351.2 & 43.9 & 37.0 \\  
    \hline
-%   $\chi^{2}$+no DR & 95.2 & 8 & 147.3 & 4.6 & 52.5 \\
-%   (floating point) & & & & & \\
    $\chi^{2}$+DR & 95.0 & 85.8 & 86.4 & 15.7 & 9.5 \\
    (floating point) & & & & & \\
    \hline
