@@ -183,13 +183,15 @@ Stubs are assigned to sub-sectors occurs in a three stage process:
 Each of the TFP's logic blocks shown in figure~\ref{fig:TFP} has been designed to be highly reconfigurable and can easily be adapted to any alternative sub-sector definition.
 
 \subsubsection{Hough Transform}
-The Hough Transform algorithm is a widely used method of detecting geometric features in digital image processing~\cite{HT}.
-For the simplest case of detecting straight lines, the Hough Transform describes a set of points $(x,y)$ in real space in terms of the gradient and intercept of a line in parameter space.
-The point at which these lines intersect in the \emph{Hough}-space correspond to a line in real space. 
+The Hough Transform algorithm is a widely used method of detecting geometric features in digital image processing~\cite{HT} and is used by the TFP to reconstruct primary charged particles tracks in the \rphi plane from a set of stubs.
 
-As such, the \HT is well suited to identifying tracks from a set of stubs.
+The \HT's suitability for this task is illustrated by considering the simplest use of the \HT algorithm: the detection of straight lines.
+In this case, the \HT describes a point $(x,y)$ in real space as a straight line described by a gradient, $m$, and intercept, $q,$.
+Conversely, a point in the \emph{Hough}-space corresponds to a straight line in real space. 
 
-This concept is illustrated in figure~\ref{fig:HT}
+
+
+Given that the trajectory of a charged particle with a sufficiently high \pT ($> 2-3\GeV$) forms a straight line in the \rphi plane, the \HT is well suited to identifying tracks from a set of hits.
 
 \begin{figure}[!h]
 \centering
@@ -213,10 +215,10 @@ R = \frac{\pt}{0.003\,qB} \;
 
 By neglecting energy losses such as through multiple scattering and only considering primary tracks from or near the primary interaction point (other such tracks are not typically relevant to the L-1 trigger), $R$ can be assumed to be constant.
 As $R$
-For this assumption and for large $R$,  a stub with coordinates ($r$,$\varphi$) is related to $R$ by:
+For this assumption and for large $R$, a stub with coordinates ($r$,$\varphi$) is related to $R$ by:
 
 \begin{equation}
-\frac r{2\,R} = \sin\left(\varphi-\phi\right) = \varphi-\phi\;
+\frac {r}{2\,\pt} = \sin\left(\varphi-\phi\right) = \varphi-\phi\;
 \label{eq:stub_R}
 \end{equation}
 
@@ -246,7 +248,7 @@ This threshold can be further reduced to four layers to account for the reduced 
 A more detailed description of the firmware implementation of the \HT for the demonstrator system is discussed in~\cite{TMTT_JINST,IEEE}.
 
 \subsubsection{Kalman Filter}\label{subsubsec:KF}
-
+The \HT provides a high
 
 
 The coarse \rphi helix parameters that are output by the \HT are used as the initial variables for track finding, with the $\eta$-$\phi$ segment assignment also providing a good seed value.

@@ -1,5 +1,5 @@
 \chapter{Event Simulation and Object Reconstruction}\label{chapter:data-mc}
-After triggered events from the CMS experiment have been read out, the reconstruction of the physics objects which the detector signals correspond to is performed.
+After triggered events from the CMS experiment have been read out, the reconstruction of the reconstruction of the particles produced by the proton-proton collision is performed.
 Monte Carlo (MC) simulations, which provide a detailed, precise and realistic description of the expected SM and potential BSM processes, form an essential component of performing any physics analysis.
 MC is used for optimising signal extraction strategies and for 
 
@@ -60,14 +60,17 @@ Therefore, the reweighting of the simulated samples is required and is discussed
 
 \subsection{Event Generators}\label{subsec:eventGenerators}
 A number of event generators are used by CMS to produce the MC simulation samples used to describe the expected processes produced.
-Whilst there are several general-purpose event generators which can describe an event from the initial hadron collision to final state particles, they are typically used in conjunction with generators that specialise in a specific physics aspect (\ie ME calculations or PS simulation) or process (\eg tau decays) in order to provide a complete event.
-Perturbative calculations of the MEs of the QCD and electroweak processes are done, where possible, to Next-To-Leading Order (NLO) in order to both enable precision measurements to be made and to accurately model processes with many distinct high energy jets.
+While there are several general-purpose event generators that can describe an event from the initial hadron collision to final state particles, 
 
-The MC samples used to model the background and signal processes for the analysis presented in this thesis were simulated using the following generators:
+they are typically used in conjunction with generators that specialise in a specific physics aspect (\ie ME calculations or PS simulation) or process (\eg tau decays) in order to provide a complete event.
+
+Perturbative calculations of the MEs of the QCD and electroweak processes are done, where possible, to Next-To-Leading Order (NLO) in order to both enable precision measurements to be made and to accurately model processes that include multiple high energy jets.
+
+The MC event generators used to model the background and signal processes for the analysis presented in this thesis are as follows::
 
 \begin{itemize}
 %\item \textbf{Madgraph} - Madgraph~\cite{Alwall:2011uj} is a package which performs tree-level perturbativecalculations to produce matrix elements at Leading Order (LO) for processes %such as decays and 2 $\rightarrow$ n scatterings through evaluating the ME for a given phase space point for all the Feynman diagrams produced.
-\item \textbf{Madgraph} - Madgraph~\cite{Alwall:2011uj} is a package which performs tree-level perturbativecalculations to produce matrix elements at Leading Order (LO) for processes through evaluating the ME for a given phase space point for all the Feynman diagrams produced.
+\item \textbf{Madgraph} - Madgraph~\cite{Alwall:2011uj} is a package that performs tree-level perturbativecalculations to produce matrix elements at Leading Order (LO) for processes through evaluating the ME for a given phase space point for all the Feynman diagrams produced.
 \item \textbf{aMC@NLO} - aMC@NLO~\cite{Alwall:2014hca} is a package that considers tree-level and one-loop Feynman diagrams to produce matrix elements at NLO.
 Considering the constructive and destructive interferences which result from considering both the leading and higher order cross section terms results in positively and negatively weighted events.
 These negatively weighted events are not simply discarded as they are required to correctly simulate the NLO cross section by applying a scale factor, $SF^{NLO}$, which considers the ratio of the total number of events to the effective number of events (\ie the difference in positively and negatively weighted events) in the sample and the sign of an individual event's weighting:
@@ -83,7 +86,7 @@ The latter is achieved by interfacing to a PS generator which order emissions by
 \end{itemize}
 
 \section{Object Reconstruction}\label{sec:reco}
-Using the readouts of all of the CMS sub-detectors, a full reconstruction of the triggered physics event is undertaken.
+Using the output of all the CMS sub-detectors, a full reconstruction of the triggered physics event is undertaken.
 This process involves the \emph{Particle Flow} (PF) algorithm which combines the complementary information from each of the CMS sub-detectors, known as \emph{elements}, to provide an optimal reconstruction and identification of all of the stable particles present in the event~\cite{CMS:2009nxa,CMS:2010eua,CMS-PRF-14-001}.
 Using these reconstructed particles, additional objects such as b-jets and missing transverse energy can also be constructed.
 
