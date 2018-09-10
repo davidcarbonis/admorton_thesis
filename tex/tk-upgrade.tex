@@ -183,41 +183,52 @@ Stubs are assigned to sub-sectors occurs in a three stage process:
 Each of the TFP's logic blocks shown in figure~\ref{fig:TFP} has been designed to be highly reconfigurable and can easily be adapted to any alternative sub-sector definition.
 
 \subsubsection{Hough Transform}
-The Hough Transform algorithm is a widely used method of detecting geometric features, such as straight lines, in digital image processing~\cite{HT}.
-The simplest version of the Hough Transform 
+The Hough Transform algorithm is a widely used method of detecting geometric features in digital image processing~\cite{HT}.
+For the simplest case of detecting straight lines, the Hough Transform describes a set of points $(x,y)$ in real space in terms of 
+As such, given that points in real space are represented as a line in Hough Space, the intercept of these lines
 
 %%% GENERAL INTRO
 
-The \HT is used by the TFP to find charged particles tracks with $\pT > 3\GeV$ in the \rphi plane using data from the upgraded tracker. 
+As such, the \HT is well suited to identifying tracks from a set of stubs.
+The \HT is used by the TFP to find charged particles tracks with $\pT > 3\GeV$ in the \rphi plane, which has the best resolution, independently for each $\eta$-$\phi$ sub-sector within each processing octant.
 
-
-
-The radius of a charged particle passing through a aracking volume, permeated by a homogeneous 3.8T magnetic field ($B$), can be described as a function of its \pT and charge $q$:
+The trajectory of a charged particle through the tracker is bent by the homogeneous 3.8T magnetic field, $B$ (T).
+The radius of curvature of this trajectory, $R$ (cm), can be described as a function of the particle's \pT and charge $q$:
 
 \begin{equation}
 R = \frac{\pt}{0.003\,qB} \;
 \label{eq:R}
 \end{equation}
 
-Assuming, to first order, that $R$ is constant, by neglecting energy losses such as through multiple scattering, and that only primary tracks from or near the primary interaction point are considered (other such tracks are not typically relevant to the L-1 trigger), a stub with coordinates ($r$,$\varphi$) is related to $R$ by:
+By neglecting energy losses such as through multiple scattering and only considering primary tracks from or near the primary interaction point (other such tracks are not typically relevant to the L-1 trigger), $R$ can be assumed to be constant.
+As $R$
+For this assumption and for large $R$,  a stub with coordinates ($r$,$\varphi$) is related to $R$ by:
 
 \begin{equation}
-\frac r{2\,R} = \sin\left(\varphi-\phi\right) \;
+\frac r{2\,R} = \sin\left(\varphi-\phi\right) = \varphi-\phi\;
 \label{eq:stub_R}
 \end{equation}
 
-where $\phi$ is the angle of the track in the transverse plane at the origin \cite{markthesis}. 
-For large \pT ($> 3\GeV$) and thus large $R$, the small angle approximation can be used. Combining Equations~(\ref{eq:R}) and (~\ref{eq:stub_R}), one produces the key formula showing the transformation from stub positions to straight lines in the track parameter plane (Hough-space):
+where $\phi$ is the angle of the track in the transverse plane at the origin~\cite{markthesis}. 
+For large \pT ($> 3\GeV$) and thus large $R$, the small angle approximation can be used. 
+
+Combining Equations~(\ref{eq:R}) and (~\ref{eq:stub_R}), the key formula showing the transformation from stub positions to straight lines in the track parameter plane (Hough-space) can br produced:
 
 \begin{equation}
 \phi = \varphi - \frac{0.0015\,qB}{\pt}\cdot r \;
 \label{eq:localHT}
 \end{equation}
 
-The point of intersection of these lines in Hough-space would therefore correspond to a circle in the \rphi plane which is consistent with the primary interaction point and all stubs involved.
-As the line gradients in Hough-space is given by the radius of the stubs, they will always be positive, the stub radius is transformed to $r_{58} = r - 58cm$ in order to utilise a larger phase space, which leads to fewer \textit{fake} (in that the found track does not match to a simulated particle) and duplicated tracks.
+The point of intersection of these lines in Hough-space would therefore correspond to a circle in the \rphi plane that is consistent with the primary interaction point and all stubs involved.
 
-Given that $R$ for the lowest \pT track (3\GeV) to be considered is greater than the outer radius of the tracking detector ($r$ = 1.2m), all relevant particles are expected to traverse through at least six barrel layers or endcap disks. 
+As the line gradients in Hough-space are given by the radii of the stubs, they will always be positive.
+Therefore, it is preferable to measure
+
+the stub radius is transformed to $r_{58} = r - 58$ cm in order to utilise a larger area of the Hough Transform phase space, leading to fewer fake (a found track that does not match to a simulated particle) and duplicated tracks.
+The choice measuring $\phi$ at the point it crosses a cylinder of 58 cm 
+
+Given that $R$ for the lowest \pT track (3\GeV) to be considered is greater than the outer radius of the tracking detector ($r$ = 1.2 m), all relevant particles are expected to traverse at least six barrel layers or endcap disks. 
+
 The threshold for the identification of a track candidate however, is set at a minimum of five detector layers or disks in order to allow for detector or readout inefficiencies. 
 This threshold can be further reduced to four layers to account for the reduced geometric coverage between $0.89 < \eta < 1.16$ or for dead detector layers or disks without significantly increasing the volume of data to be considered.
 
