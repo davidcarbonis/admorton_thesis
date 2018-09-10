@@ -87,31 +87,35 @@ The latter is achieved by interfacing to a PS generator which order emissions by
 
 \section{Object Reconstruction}\label{sec:reco}
 Using the output of all the CMS sub-detectors, a full reconstruction of the triggered physics event is undertaken.
-This process involves the \emph{Particle Flow} (PF) algorithm which combines the complementary information from each of the CMS sub-detectors, known as \emph{elements}, to provide an optimal reconstruction and identification of all of the stable particles present in the event~\cite{CMS:2009nxa,CMS:2010eua,CMS-PRF-14-001}.
-Using these reconstructed particles, additional objects such as b-jets and missing transverse energy can also be constructed.
+This process involves the \emph{Particle Flow} (PF) algorithm, which combines complementary information from each of the CMS sub-detectors, known as \emph{elements}, to provide an optimal reconstruction and identification of all stable particles present in the event~\cite{CMS:2009nxa,CMS:2010eua,CMS-PRF-14-001}.
+Using these reconstructed particles, additional objects such as b-jets and missing transverse energy can also be identified.
 
 \subsection{Charged Particle Tracks}\label{subsec:tracks}
-As the charged particles produced from the proton-proton collisions traverse the silicon tracker, they interact with it and leave energy deposits known as \emph{hits}.
-These hits are used to reconstruct the particles' trajectories through multiple iterations of the Combinatorial Track Finder (CTF) algorithm, which is based off combinatorial Kalman Filtering~\cite{Chatrchyan:2014fea,Fruhwirth:1987fm}.
+As the charged particles produced in proton-proton collisions traverse the silicon tracker, they interact with it and leave energy deposits on the individual layers, known as \emph{hits}.
+These hits are used to reconstruct the particles' trajectories using the Combinatorial Track Finder (CTF) algorithm, which is based on combinatorial Kalman Filtering~\cite{Chatrchyan:2014fea,Fruhwirth:1987fm}.
 
-The steps of each iteration of the CTF algorithm are:
+The CTF algorithm is iterative and consists of the following steps:
 \begin{itemize}
-\item \textbf{Seed generation:} Initial track candidates are formed from two or three hits to provide a first estimate of the tracks' helix parameters.
-\item \textbf{Track Finding:} A combinatorial Kalman Filter then builds a candidate by adding hits from successive layers which are compatible with the extrapolated trajectory, which is updated with the addition of each subsequent hit, taking into account the hit's position, uncertainty and material traversed.
-\item \textbf{Track Fitting:} The initial estimate of a built track's parameters is improved upon with the Kalman Filter performing two passes, the first from the innermost layer outwards and the second from the outermost inwards.
-This approach minimises the bias in determining and discarding which hits are incorrectly associated with the track.
-\item \textbf{Track Selection:} Quality criteria, such as $\chi^{2}$, the number of layers with hits and compatibility, are used to reject \emph{fake} tracks which are not associated with a charged particle.
+\item \textbf{Seed generation:} Initial track candidates are formed from two or three hits in the inner part of the track in order to provide a first estimate of the tracks' helix parameters.
+\item \textbf{Track Finding:} A combinatorial Kalman Filter then builds a candidate by adding hits from successive layers that are compatible with the extrapolated trajectory. The candidate is updated with the addition of each subsequent hit, taking into account the hit's position, uncertainty and material traversed.
+\item \textbf{Track Fitting:} The initial estimate of a track's parameters is improved using two additional passes of the KF.
+The first pass minimises the bias from the seed generation step by working from the innermost layer outwards.
+The second minimises the bias from the track finding step by working from the outermost layer inwards.
+By performing these two passes any bias in the identification of incorrectly associated hits is minimised.
+\item \textbf{Track Selection:} Quantities, such as $\chi^{2}$, the number of layers with hits and compatibility, are used to identify and reject tracks that have been incorrectly reconstructed.
 \end{itemize}
 
-Up to six iterations of the CTF are performed, with selected tracks' hits removed from consideration by subsequent iterations.
-Whilst initial four iterations use seeds exclusively from the pixel tracker, the last two iterations use seeds from the strip tracker to enable a high track reconstruction efficiency for those originating outside the pixel or those which did not leave any hits in the pixel tracker.
+Up to six iterations of the CTF are performed, with selected tracks' hits removed from consideration in subsequent iterations, in order to ensure that 
+
+The initial four iterations use seeds exclusively from the pixel tracker and the last two iterations use seeds from the strip tracker.
+By using seeds from the outer part of the tracking detector, to enable a high track reconstruction efficiency for those originating outside the pixel detector or those that did not leave any hits in the pixel tracker.
 
 \subsection{Primary Vertices}\label{subsec:vertices}
-The reconstructed tracks are subsequently used to reconstruct the positions where the proton-proton collisions occurred, known as the \emph{primary vertices}~\cite{Speer:2006mh,Chatrchyan:2014fea}.
-Initially tracks are required to be consistent with originating promptly from the interaction region, namely having a small transverse impact parameter, a minimum number of hits in the pixel and strip trackers and a low normalised $\chi^{2}$.
-Such tracks are then clustered along the z-axis at their point of closest approach to the beamspot using a deterministic annealing algorithm	~\cite{Kenneth:1998i}, with these vertex candidates being used as input to an adaptive vertex filter~\cite{Fruhwirth:2007hz} to provide 3D position fits, uncertainties and variables such as the number of degrees of freedom to discriminate against fake vertices.
-Out of these resultant primary vertex candidates, the one with the greatest scalar transverse momentum is considered as the \emph{primary vertex}, with the rest being considered \PU vertices.
-Displaced vertices, such as those from heavy hadrons, are reconstructed during later reconstruction stages.
+The reconstructed tracks described above are used to reconstruct the positions where the proton-proton collisions occurred, known as \emph{primary vertices}~\cite{Speer:2006mh,Chatrchyan:2014fea}.
+Initially tracks are required to be consistent with originating promptly from the interaction region, namely having a $d_{0}$, a minimum number of hits in the pixel and strip trackers and a low normalised $\chi^{2}$.
+Tracks meeting these requirements are then clustered along the z-axis at their point of closest approach to the beamspot using a deterministic annealing algorithm~\cite{Kenneth:1998i}, with the resulting clusters or vertex candidates being used as input to an adaptive vertex filter~\cite{Fruhwirth:2007hz} to provide 3D position fits, uncertainties and variables such as the number of degrees of freedom to discriminate against fake vertices.
+Out of the resulting primary vertex candidates, the one with the greatest scalar transverse momentum is considered as the \emph{primary vertex}, with the rest being assumed to represent \PU vertices.
+Displaced vertices, such as those from the decay of heavy hadrons, are identified later in the reconstruction process.
 
 \subsection{Calorimeter Energy Clusters}\label{subsec:clustering}
 The energy deposited by particles in the calorimeters is independently clustered in each sub-detector, except for the HF where each large cell can give rise to one cluster, to determine the energy and direction of the particles~\cite{CMS:2009nxa}.
@@ -193,7 +197,7 @@ The general form of a sequential recombination algorithm is as follows:
 \begin{itemize}
 \item The distance, $d_{ij}$, for every pair of particles and the distance between each particle and the beamline, $d_{iB}$, is calculated.
 \item If the minimum value of $d_{ij}$ is less than $d_{iB}$, the pair of particles are recombined into a single particle, and the process starts over.
-\item If the minimum value of $d_{iB}$ is less than $d_{ij}$, the particle is classified as a jet and removed from the list of particles considered, and process starts over.
+\item If the minimum value of $d_{iB}$ is less than $d_{ij}$, the particle is classified as a jet and removed from the list of particles under consideration, and process begins again.
 \end{itemize}
 
 The process continues until no particles remain on the list.
@@ -210,28 +214,29 @@ d_{iB} = \frac{1}{p^{2k}_{Ti}} \;
 \label{eq:jetAlgo2}
 \end{equation}
 
-where $\Delta R^{2}_{ij} = (y_{i} - y_{j})^{2} + (\phi_{i} - \phi_{j})^{2}$; k = ${-1, 0, 1}$ and R is the jet size parameter which is typically set to 0.4 for CMS analyses to provide consistency with ATLAS and as it contains hadronic showers without being sensitive to \PU.
+where $\Delta R^{2}_{ij} = (y_{i} - y_{j})^{2} + (\phi_{i} - \phi_{j})^{2}$; k = ${-1, 0, 1}$ and R is the jet size parameter, which is typically set to 0.4 in CMS analyses to provide consistency with ATLAS and as it has been found to contain hadronic showers without being sensitive to \PU.
 The \emph{anti-\kt} algorithm~\cite{Cacciari:2008gp}, where k = -1, which produces cone-shaped jets, is commonly used in CMS.
+The other values of k, where k = $0,1$, correspond to the Cambridge/Aachen and \kt algorithms respectively.
 
 PF jets are produced using the \emph{anti-\kt} algorithm with R = 0.4 in conjunction with PF particles based on all the sub-detectors.
 Making use of PF jets allows a more accurate reconstruction to be undertaken than if only energy clusters from the calorimeters are used, given that jets are typically composed of 65\% charged hadrons, 25\% photons and 10\% neutral hadrons, due to the precise charged hadron measurements from the tracker and ECAL, which are able to constrain the small neutral hadron contribution that relies on the relatively poor resolution of the HCAL.
 
 \subsubsection{Jet Energy Corrections}\label{subsubsec:JECs}
-\emph{Jet Energy Corrections} (JECs) are used to take into account the effects of \PU and the non-uniform response in \pT and $eta$ of the detector and any residual differences between simulation and data to ensure that the jet energies measured by the detector properly describe the particle-level energies.
-Each effect is considered as a separation correction level and is applied sequentially as a scale factor applied to a jet's four-momentum in the following order:
+\emph{Jet Energy Corrections} (JECs) are used to take into account the effects of \PU and the non-uniform response in \pT and $\eta$ of the detector and any residual differences between simulation and data.
+Each of these effects is considered as a separate correction level; they are applied sequentially through the use of a scale factor applied to a jet's four-momentum in the following order:
 
 \begin{itemize}
 \item \textbf{L1 Pileup.} Removes additional energy originating from \PU interactions from the jet energy and is applied to both data and simulated events. 
-\item \textbf{L2 Relative and L3 Absolute} - applied to data and MC simulation to account for the non-uniform detector response in $\eta$ and \pT respectively in both simulation and data by comparing generator level and reconstructed jets.
-\item \textbf{L2L3 Residual} - applied to data only to account for any remaining small differences in the jet response between data and simulation, such as the absolute Jet Energy Scale (JES) following the simulation derived \emph{L2 Relative} and \emph{L3 Absolute} corrections.
+\item \textbf{L2 Relative and L3 Absolute} Applied to data and simulation to account for the non-uniform detector response in $\eta$ and \pT, respectively. The scale factor is derived by comparing generator level and reconstructed jets in the simulation.
+\item \textbf{L2L3 Residual} Applied to data only to account for any remaining small differences in the jet response between data and simulation, such as the absolute Jet Energy Scale (JES) following application of the previous corrections..
 \end{itemize}
 
-The associated uncertainties of these JECS, which are treated as systematic uncertainties, are discussed in Chapter~\ref{sec:systematics}.
-A thorough description of the JECs, their determination and associated uncertainties are discussed in~\cite{Khachatryan:2016kdb}.
+The uncertainties associated with these JECS are treated as systematic uncertainties, which are discussed in Chapter~\ref{sec:systematics}.
+Further details regarding the JECs can be found in~\cite{Khachatryan:2016kdb}.
 
 \subsection{b-jet tagging}\label{subsec:objReco-bJets}
-Correctly determining whether or not a jet was the product of a bottom quark hadronising is incredibly important for a variety of analyses, allowing them to separate signal processes from topologically similar background processes, including top physics searches due to the top quark's branching ratio to a W boson and bottom quark being $> 99\%$.
-Such identification, known as \emph{b-tagging}, exploits the fact that because b hadrons have a relatively long lifetime of $\approx 1.5 ps$~\cite{Beringer:1900zz}, they travel a measurable distance away from the primary vertex before decaying. 
+Correctly determining whether or not a jet was the product of a bottom quark hadronising is  important for a variety of analyses, allowing them to separate signal processes from topologically similar background processes, including top physics searches due to the top quark's branching ratio to a W boson and bottom quark being $> 99\%$.
+This process is known as \emph{b-tagging} and exploits the fact that because b-hadrons have a relatively long lifetime of approximately 1.5 ps~\cite{Beringer:1900zz}, they travel a measurable distance away from the primary vertex before decaying. 
 These secondary vertices are exploited by the \emph{Combined Secondary Vertex version 2} (CSVv2) algorithm~\cite{Chatrchyan:2012jua,CMS:206kkf}, which uses information about displaced track and secondary vertices as input into a multilayer perceptron ~\footnote{A class of neural network} to produce a discriminator value.
 The CMS B-Tag and Vertexing (BTV) Physics Object Group defines working points for this (and other) algorithm's discriminator based on the mis-identification rate.
 
@@ -261,12 +266,12 @@ The CSVv2 algorithm's selection efficiencies for bottom, charm, and light jets w
  \addtolength{\tabcolsep}{-1ex}
 \end{table}
 
-\begin{figure}[h]
-\centering
-\includegraphics{figs/data-mc/ak4_pfjets_CSVIVF_Log.pdf}
-\caption{The distribution of the CSVv2 algorithm's discriminator for multijet events, for $50\GeV < \pT < 250\GeV$, at $\sqrt{13\TeV}$, where the jets have been reconstructed with the anti-\kt algorithm with $R = 0.4$~\cite{CMS:2016kkf}. T}
-\label{fig:bTagDiscriminator}
-\end{figure}
+%\begin{figure}[h]
+%\centering
+%\includegraphics{figs/data-mc/ak4_pfjets_CSVIVF_Log.pdf}
+%\caption{The distribution of the CSVv2 algorithm's discriminator for multijet events, for $50\GeV < \pT < 250\GeV$, at $\sqrt{13\TeV}$, where the jets have been reconstructed with the anti-\kt algorithm with $R = 0.4$~\cite{CMS:2016kkf}. T}
+%\label{fig:bTagDiscriminator}
+%\end{figure}
 
 \subsection{Missing Transverse Energy}\label{subsec:objReco-MET}
 Particles which only weakly interact with matter, such as neutrinos and some hypothesised BSM particles, escape the detector without being directly observed, but can be inferred from considering the conservation of the transverse momentum of the event.

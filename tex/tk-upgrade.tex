@@ -234,23 +234,18 @@ The coordinates of the intersection point in Hough-space also provides an initia
 As the line gradients in Hough-space are given by the radii of the stubs, they will always be positive.
 Therefore, it is preferable to measure the stub coordinates relative to the point where it crosses a cylinder of radius $T$.
 Through an appropriate choice of $T$, the transformation of $r \rightarrow r_{T}$ and $\phi \rightarrow \phi_{T}$ increases the size of Hough Transform phase space used, allowing for more precise measurements of the intersection point to be made.
-This results in fewer fake tracks and duplicates being found
-The optiminal value of $T$ was determined to be 58 cm.
+This results in fewer fake tracks and duplicates being found.
+The optimal value of $T$ was determined to be 58 cm.
 
-Given that $R$ for the lowest \pT track (3\GeV) to be considered is greater than the outer radius of the tracking detector ($r$ = 1.2 m), all relevant particles are expected to traverse at least six barrel layers or endcap disks. 
+As the $R$ for the lowest \pT track (3\GeV) to be considered is greater than the outer radius of the tracking detector ($r$ = 1.2 m), all relevant particles are expected to traverse at least six barrel layers or endcap disks. 
 The threshold for the identification of a track candidate however, is set at a minimum of five detector layers or disks in order to allow for detector or readout inefficiencies. 
 This threshold can be further reduced to four layers to account for the reduced geometric coverage between $0.89 < \eta < 1.16$ or for dead detector layers or disks without significantly increasing the volume of data considered.
 
 A more detailed description of the firmware implementation of the \HT for the demonstrator system is discussed in~\cite{TMTT_JINST,IEEE}.
 
 \subsubsection{Kalman Filter}\label{subsubsec:KF}
-While the \HT is highly efficient at finding tracks, it produces candidates with coarse rphi helix parameters and over half the track candidates are considered to be \emph{fake} or contain at least one incorrectly associated stub.
-
-
-A Kalman Filter uses both the coarse \rphi helix parameters from the \HT and ... as the initial variables for filtering the track candidates and precisely fitting helix parameters to them.
-Ideally a \KF would be used
-
-The coarse \rphi helix parameters that are output by the \HT are used as the initial variables for track finding, with the $\eta$-$\phi$ segment assignment also providing a good seed value.
+While the \HT is highly efficient method of finding track candidates, over half the track candidates are considered to be \emph{fake} or contain at least one incorrectly associated stub.
+Therefore, a Kalman Filter was used to filter the tracks candidates whilst precisely fitting their track parameters.
 
 In addition to the advantages of the Kalman filter for track reconstruction discussed by Fr{\"u}hwirth in \cite{Fruhwirth:1987fm}, the algorithm has several aspects making it suitable for FPGA implementation compared to global track fitting methods:
 
@@ -259,10 +254,27 @@ In addition to the advantages of the Kalman filter for track reconstruction disc
 \item {only involve the inversion of a small matrix.}
 \end{itemize}
 
-The initial estimates, or \textit{state}, of the track parameters and their uncertainties, $\chi^2$ value and other status information are updated by the KF iteratively applying stubs to update the state following the Kalman formalism, decreasing the uncertainty in the state. 
+Despite these advantages, 
+
+
+A Kalman Filter uses both the coarse \rphi helix parameters from the \HT and ... as the initial variables for filtering the track candidates and precisely fitting helix parameters to them.
+Ideally a \KF would be used
+
+The coarse \rphi helix parameters that are output by the \HT are used as the initial variables for track finding, with the $\eta$-$\phi$ segment assignment also providing a good seed value.
+
+Starting from an initial estimate , or \textit{state}, of the track parameters and their uncertainties, stubs are iteratively applied to update the state following the Kalman formalism.
+
+The \KF iteratively applies stubs
+
+
+The initial estimates $\chi^2$ value and other status information are updated by the KF iteratively applying stubs , decreasing the uncertainty in the state. 
 Each update of the state can be filtered on number of configurable criteria, including \pT, $\chi^2$, and the minimum number of stubs from PS modules, and can take into account and skip missing missing layers due to missing or incorrect stubs.
 In the event multiple stubs are found on the same layer, each can be propagated with up to the four best states being kept and presented to a final state selector, with preference given to states with the fewest missing layers and the smallest $\chi^2$.
-The final fit is always performed after a fixed period of time, so consequently there is no truncation in the traditional sense as all candidates will be read out, although events such as dense jets with many candidates and stubs per candidate will only be partially filtered.
+
+
+The final fit is always performed after a fixed period of time.
+Consequently there is no truncation in the traditional sense given that all tracks candidates are read out.
+This means that while events which a large number of track candidates, such as dense jets, will always be read out, they be only partially filtered.
 
 Further discussion of the mathematics and implementation of online track reconstruction using Kalman Filters on FPGAs can be found in~\cite{TMTT_JINST,SSummers}.
 
