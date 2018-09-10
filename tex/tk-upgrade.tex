@@ -184,12 +184,23 @@ Each of the TFP's logic blocks shown in figure~\ref{fig:TFP} has been designed t
 
 \subsubsection{Hough Transform}
 The Hough Transform algorithm is a widely used method of detecting geometric features in digital image processing~\cite{HT}.
-For the simplest case of detecting straight lines, the Hough Transform describes a set of points $(x,y)$ in real space in terms of 
-As such, given that points in real space are represented as a line in Hough Space, the intercept of these lines
-
-%%% GENERAL INTRO
+For the simplest case of detecting straight lines, the Hough Transform describes a set of points $(x,y)$ in real space in terms of the gradient and intercept of a line in parameter space.
+The point at which these lines intersect in the \emph{Hough}-space correspond to a line in real space. 
 
 As such, the \HT is well suited to identifying tracks from a set of stubs.
+
+This concept is illustrated in figure~\ref{fig:HT}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.80\textwidth]{figs/tk-upgrade/HT.pdf}
+% where an .eps filename suffix will be assumed under latex,
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+\caption{Illustration of the Hough Transform. The left-hand side shows the trajectory of a single charged particle in one quarter of the tracker barrel in the $x-y$ plane. The right-side illusrates The six stubs which the particle produces are represented as dots in real space, but as lines 	in Hough-space on the right-hand side}
+\label{fig:HT}
+\end{figure}
+
 The \HT is used by the TFP to find charged particles tracks with $\pT > 3\GeV$ in the \rphi plane, which has the best resolution, independently for each $\eta$-$\phi$ sub-sector within each processing octant.
 
 The trajectory of a charged particle through the tracker is bent by the homogeneous 3.8T magnetic field, $B$ (T).
@@ -235,14 +246,20 @@ This threshold can be further reduced to four layers to account for the reduced 
 A more detailed description of the firmware implementation of the \HT for the demonstrator system is discussed in~\cite{TMTT_JINST,IEEE}.
 
 \subsubsection{Kalman Filter}\label{subsubsec:KF}
-The coarse \rphi helix parameters that are output by the \HT are used as the initial variables for track finding, with the segment assignment also providing a good seed value.
-Given that in simulation over half the track candidates from by the HT are considered to be \textit{fake} or contain at least one stub associated with another particle, a Kalman Filter is used to both remove these incorrect stubs and reject fake tracks. 
 
-In addition to the advantages of the Kalman filter for track reconstruction discussed by Fr{\"u}hwirth in \cite{Fruhwirth:1987fm}, the algorithm has several aspects making it suitable for FPGA implementation compared to global track fitting methods, namely the matrices:
+
+
+The coarse \rphi helix parameters that are output by the \HT are used as the initial variables for track finding, with the $\eta$-$\phi$ segment assignment also providing a good seed value.
+
+Given that in simulation over half the track candidates from the HT are considered to be \textit{fake} or to contain at least one stub associated with another particle, 
+
+
+a Kalman Filter is used to both remove these incorrect stubs and reject fake tracks. 
+
+In addition to the advantages of the Kalman filter for track reconstruction discussed by Fr{\"u}hwirth in \cite{Fruhwirth:1987fm}, the algorithm has several aspects making it suitable for FPGA implementation compared to global track fitting methods:
 
 \begin{itemize}
-\item {are small.}
-\item {are sized independently of the number of measurements.}
+\item {the matrices involved are small and are their size is independent of the number of measurements}
 \item {only involve the inversion of a small matrix.}
 \end{itemize}
 
@@ -251,7 +268,7 @@ Each update of the state can be filtered on number of configurable criteria, inc
 In the event multiple stubs are found on the same layer, each can be propagated with up to the four best states being kept and presented to a final state selector, with preference given to states with the fewest missing layers and the smallest $\chi^2$.
 The final fit is always performed after a fixed period of time, so consequently there is no truncation in the traditional sense as all candidates will be read out, although events such as dense jets with many candidates and stubs per candidate will only be partially filtered.
 
-Further discussion of the mathematics and implementation of online track reconstruction using Kalman Filters on FPGAs can be found in~\cite{SSummers}.
+Further discussion of the mathematics and implementation of online track reconstruction using Kalman Filters on FPGAs can be found in~\cite{TMTT_JINST,SSummers}.
 
 \subsubsection{Duplicate Removal}
 Over half of the track candidates at input to the DR are duplicate tracks created by the HT.
@@ -321,8 +338,11 @@ Where appropriate, the results for both definitions are given.
 
 \subsection{Linearised $\chi^{2}$ Track Fitter}\label{subsec:chi2}
 Three different track fitting algorithms were explored for the track fitter component of the TFP used in the 2016 hardware demonstrator review: a Kalman Filter, a Linear Regression (LR) algorithm and a linearised $\chi^{2}$ track fit.
+The development of each of these algorithms
 
-The development of a Kalman Filter track fitter was motivated by its property of being the optimal method of filtering a linear system and determining an estimate of the system's parameters.
+While the \HT produces a large number of incorrectly reconstructed tracks and stubs incorrectly associated with a track
+The development of a Kalman Filter track fitter was motivated by the \HT  property of being the optimal method of filtering a linear system.
+
 As the \KF provided the best perfect track reconstruction efficiency and fake track rejection rate out of the three fitting algorithms explored, it was selected as the baseline fitter for the 2016 review.
 
 A Linear Regression (LR) track fitting algorithm was developed as an alternative to the KF~\cite{TMTT_FLP}.
