@@ -244,8 +244,8 @@ This threshold can be further reduced to four layers to account for the reduced 
 A more detailed description of the firmware implementation of the \HT for the demonstrator system is discussed in~\cite{TMTT_JINST,IEEE}.
 
 \subsubsection{Kalman Filter}\label{subsubsec:KF}
-While the \HT is highly efficient method of finding track candidates, over half the track candidates are considered to be \emph{fake} or contain at least one incorrectly associated stub.
-Therefore, a Kalman Filter was used to filter the tracks candidates whilst precisely fitting their track parameters.
+Following from the \HT is highly efficient method of finding track candidates, over half the track candidates are considered to be \emph{fake} or contain at least one incorrectly associated stub.
+A Kalman Filter was used to filter the tracks candidates whilst precisely fitting their track parameters.
 
 In addition to the advantages of the Kalman filter for track reconstruction discussed by Fr{\"u}hwirth in \cite{Fruhwirth:1987fm}, the algorithm has several aspects making it suitable for FPGA implementation compared to global track fitting methods:
 
@@ -346,17 +346,18 @@ Where appropriate, the results for both definitions are given.
 
 \subsection{Linearised $\chi^{2}$ Track Fitter}\label{subsec:chi2}
 Three different track fitting algorithms were explored for the track fitter component of the TFP used in the 2016 hardware demonstrator review: a Kalman Filter, a Linear Regression (LR) algorithm and a linearised $\chi^{2}$ track fit.
-The development of each of these algorithms
 
-While the \HT produces a large number of incorrectly reconstructed tracks and stubs incorrectly associated with a track
-The development of a Kalman Filter track fitter was motivated by the \HT  property of being the optimal method of filtering a linear system.
 
-As the \KF provided the best perfect track reconstruction efficiency and fake track rejection rate out of the three fitting algorithms explored, it was selected as the baseline fitter for the 2016 review.
+The development of a Kalman Filter was motivated by it being the optimal method of filtering a linear system, making it ideally suited removing incorrectly assigned stubs from tracks and the removal of fake track candidates.
+As the \KF provided the best perfect track reconstruction efficiency and fake track candidate rejection rate out of the three fitting algorithms explored, it was selected as the baseline fitter for the 2016 review.
 
 A Linear Regression (LR) track fitting algorithm was developed as an alternative to the KF~\cite{TMTT_FLP}.
-As sufficiently high \pT tracks should form a straight line in the \emph{\rphi} and \emph{r-z} planes, the the linear nature of the maths of a LR fit makes it well suited to quickly perform independent fits in each plane.
+As high \pT tracks should form a straight line in the \emph{\rphi} and \emph{$r-z$} planes, the the linear nature of the maths of a LR fit makes it well suited to perform independent fits in each plane using minimal latency and resources.
 
-The studies of the linearised $\chi^{2}$ track fit were initially motivated by the \emph{TMTT} project needing a track fitting algorithm which could be quickly implemented given the time and resource pressures in developing a hardware demonstrator for a complete track finder system for the 2016 review.
+A linearised $\chi^{2}$ track fit was the first fitting algorithm to be studied by the \emph{TMTT} project.
+These studies were motivated by the need to quickly develop and implement a track fitting algorithm which could be used with 
+
+which could be quickly implemented given the time and resource pressures in developing a hardware demonstrator for a complete track finder system for the 2016 review.
 
 Following discussions with both the \emph{tracklet} and \emph{AM} projects, it was decided a linearised $\chi^{2}$ fit based on the algorithm proposed by the \emph{tracklet} project would be investigated.
 The general form of the $\chi^{2}$ fit and the derivation of the track derivatives required by the algorithm were provided in a private communication~\cite{CMS_DN-14-043} and were used to produce a \emph{TMTT} implementation of it.
@@ -366,8 +367,9 @@ The general form of the $\chi^{2}$ fit describing how these hit residuals are us
 A discussion of the development and outcomes of the software implementation of the fitting algorithm are given in Section~\ref{subsubsec:chi2software}.
 %The calculation of the track derivatives for the barrel layer hits and endcap disk hits used by the algorithm, included a correction factor for $\phi$ in the outer disks to account for the fact that these modules do not point directly towards the interaction point, which is described in Appendix~\ref{app:chi2}.
 
-All the results presented here involve the use of a \emph{Seed Filter} (SF) stage that was run following the \HT stage for both the Linear Regression and Linearised $\chi^{2}$ fitting algorithms.
-This process removes stubs in a \HT cell that are inconsistent with a straight line in the \emph{r-z} plane and filters out both fake tracks and stubs incorrectly assigned to tracks (also referred to as \emph{fake} stubs).
+All the results presented here involve the use of the \emph{Seed Filter} (SF) stage that was run following the \HT stage for both the Linear Regression and Linearised $\chi^{2}$ fitting algorithms.
+This process removes stubs in a \HT cell that are inconsistent with a straight line in the \emph{$r-z$} plane and filters out both fake tracks and stubs incorrectly assigned to tracks (also referred to as \emph{fake} stubs).
+It was found that running the SF before the \KF did not improve its performance due to the efficiency of the \KF's filtering.
 
 \subsubsection{General Form of a $\chi^{2}$ Fit}\label{subsubsec:chi2maths}
 For the general form of a $\chi^{2}$ fit for a track, $f$, described by its helix parameters, $\overrightarrow{h}$, and the position of its hits (\ie stubs), $s_{i}$, we initially linearly expand the expected trajectory of the track, $f_{i}$, around the estimate of the helix parameters $\overline{h}$:
@@ -433,7 +435,7 @@ From Equations~(\ref{eq:chi4}) and~(\ref{eq:chi5}) and the track derivatives as 
 
 The strategy behind the development of this track fitting algorithm intiially involved 
 
-The validation 
+debugging and optimising the floating point maths implementation to give optiminal performance which was comparable to 
 
 %%% Signposting
 
@@ -456,6 +458,8 @@ The motivation behind this was to reduce the number of variables that the matrix
         \hline
    HT &  97.0 & 43.1 & 351.2 & 43.9 & 37.0 \\  
    \hline
+%   $\chi^{2}$+no DR & 95.2 & 8 & 147.3 & 4.6 & 52.5 \\
+%   (floating point) & & & & & \\
    $\chi^{2}$+DR & 95.0 & 85.8 & 86.4 & 15.7 & 9.5 \\
    (floating point) & & & & & \\
    \hline

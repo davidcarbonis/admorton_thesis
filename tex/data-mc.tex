@@ -81,7 +81,6 @@ SF^{NLO} = \frac{N^{postive events} + N^{negative events}}{N^{postive events} - 
 \item \textbf{POWHEG} - The Positive Weight Hardest Emission Generator (POWHEG)~\cite{Alioli:2010xd} is a framework that interfaces NLO ME calculations with PS generators.
 As its name suggests, POWHEG produces the hardest emission first through using the exact NLO ME and produces only positively weighted events.
 The latter is achieved by interfacing to a PS generator which order emissions by \pT or allows for the use of a $p_{T}$-veto to reject subsequent emissions, avoiding double counting such emissions and the need for negative weights.
-\editComment{Worth mentioning angular ordered generators? Wary of needing to defend that several levels beyond what is written.}
 \item \textbf{PYTHIA} - PYTHIA~\cite{Sjostrand:2014zea} is a general-purpose generator which capable of taking the output of a ME event generator and perform the parton showering and hadronisation to produce the full event. For all of the MC samples considered in Section~\ref{sec:samples} for the analysis presented, PYTHIA 8 is used to develop the samples from their ME event generator output into a full event.
 \end{itemize}
 
@@ -111,38 +110,45 @@ The initial four iterations use seeds exclusively from the pixel tracker and the
 By using seeds from the outer part of the tracking detector, to enable a high track reconstruction efficiency for those originating outside the pixel detector or those that did not leave any hits in the pixel tracker.
 
 \subsection{Primary Vertices}\label{subsec:vertices}
-The reconstructed tracks described above are used to reconstruct the positions where the proton-proton collisions occurred, known as \emph{primary vertices}~\cite{Speer:2006mh,Chatrchyan:2014fea}.
-Initially tracks are required to be consistent with originating promptly from the interaction region, namely having a $d_{0}$, a minimum number of hits in the pixel and strip trackers and a low normalised $\chi^{2}$.
-Tracks meeting these requirements are then clustered along the z-axis at their point of closest approach to the beamspot using a deterministic annealing algorithm~\cite{Kenneth:1998i}, with the resulting clusters or vertex candidates being used as input to an adaptive vertex filter~\cite{Fruhwirth:2007hz} to provide 3D position fits, uncertainties and variables such as the number of degrees of freedom to discriminate against fake vertices.
-Out of the resulting primary vertex candidates, the one with the greatest scalar transverse momentum is considered as the \emph{primary vertex}, with the rest being assumed to represent \PU vertices.
+The reconstructed tracks described above are used to reconstruct the positions where the proton-proton collisions occurred, known as \emph{primary vertices}~\cite{Chatrchyan:2014fea,Speer:2006mh}.
+Tracks are considered for primary vertex reconstruction if they are consistent with originating promptly from the interaction region, namely having a small $d_{0}$, a minimum number of hits in the pixel and strip trackers and a low $\frac{\chi^{2}}{ndf}$.
+Tracks meeting those requirements are then clustered along the z-axis at their point of closest approach to the beamspot using a deterministic annealing algorithm~\cite{Kenneth:1998i}.
+An adaptive vertex fitter is used to produce a 3D fit of the vertex track candidates and determine their uncertainties and variables such as the number of degrees of freedom to discriminate against fake vertices~\cite{Fruhwirth:2007hz}.
+Out of the resulting track candidates, the one with the greatest scalar transverse momentum is considered as the \emph{primary vertex}, with the rest being assumed to represent \PU vertices.
 Displaced vertices, such as those from the decay of heavy hadrons, are identified later in the reconstruction process.
 
 \subsection{Calorimeter Energy Clusters}\label{subsec:clustering}
-The energy deposited by particles in the calorimeters is independently clustered in each sub-detector, except for the HF where each large cell can give rise to one cluster, to determine the energy and direction of the particles~\cite{CMS:2009nxa}.
+The energy deposited by particles in the calorimeters is independently clustered in each sub-detector, except for the HF where each large cell gives rise at most to just one cluster, to determine the energy and direction of the particles~\cite{CMS:2009nxa}.
 
 The clustering algorithm consists of three steps:
 \begin{itemize}
-\item \textbf{Cluster seeding} - local cells' energies above a thresholds are considered as seeds.
-\item \textbf{Clustering} - adjacent cells are summed together to form topological clusters.
-\item \textbf{Energy threshold} - if the energy of the cluster is greater than two standard deviations of the electronics noise (80\MeV in the EB, up to 300\MeV in the EE, and 800\MeV in the HCAL), the cluster is accepted.
+\item \textbf{Cluster seeding:} Local cells with energies above a certain threshold are identified and considered as seeds.
+\item \textbf{Clustering:} Adjacent seed cells are summed together to form seed clusters.
+\item \textbf{Energy threshold:} A cluster is retained for further use if its energy is greater than two $\sigma$ above the expected electronics noise in that part of the calorimeter (80\MeV in the EB, 300\MeV in the EE, and 800\MeV in the HCAL).
 \end{itemize}
 
 \subsection{Particle Flow Algorithm}\label{subsec:PF}
-Through combining the calorimeters' energy clusters and charged particle tracks from the tracker and muon systems, the Particle Flow algorithm is able to use all the available information from an event to reconstruct and identify all stable particles in an event with far superior results than if each sub-detector were used individually.
+Through combining clusters in the calorimeters and charged particle tracks from the tracker and muon systems, the Particle Flow algorithm is able to use all the available information from an event to reconstruct and identify all the stable particles that it contains with far superior results than if each sub-detector were used individually~\cite{CMS-PRF-14-001}.
 
-The initial stage of the process involves associating charged particle tracks to energy clusters from the ECAL and HCAL sub-detectors.
-Tracks are extrapolated from the last hit in the tracker to the typical shower profiles in the calorimeters, and if the particles' expected positions in the calorimeters are within the clusters' boundaries, these elements are linked together.
+The first stage of the algorithm involves associating charged particle tracks with clusters in the ECAL and HCAL sub-detectors.
+The linking of tracks to clusters is done by extrapolating a track's last measured hit in the tracker to the calorimeter systems.
+If a track's expected position in the calorimeters are within the clusters' boundaries, these elements are linked together.
+Similarly, Bremsstrahlung photons are
 
-These linked elements are used by the Particle Flow algorithm to sequentially reconstruct and identify PF particles, removing classified elements from further consideration, with the least ambiguous or cleanest objects reconstructed first, followed by progressively more difficult objects which can be constrained by previous ones.
 
-This is done in the following order: 
+These linked elements are then used to sequentially reconstruct and identify different PF particles types.
+As PF particles are identified, their associated tracks and clusters are removed from further consideration.
+
+The different particle types are reconstructed in the following order: 
 \begin{itemize}
-\item muons are reconstructed, as described in Section~\ref{subsec:objReco-muons}.
-\item electrons and associated Bremsstrahlung photons and isolated photons are reconstructed, as described in Section~\ref{subsec:objReco-electrons}.
-\item charged hadrons are reconstructed from the HCAL clusters which are compatible with the remaining ECAL clusters and charged particle tracks.
-\item any remaining ECAL and HCAL clusters with no associated charged particle tracks are reconstructed as photons and neutral hadrons respectively.
-\item a post-processing stage is undertaken to mitigate against the small probability of misidentified or reconstructed particles, usually high momentum muons, causing the appearance of a large amount of missing transverse energy being present.
+\item muons (see Section~\ref{subsec:objReco-muons}).
+\item electrons, associated Bremsstrahlung photons and isolated photons (see Section~\ref{subsec:objReco-electrons}).
+\item charged hadrons are reconstructed from the HCAL clusters which are compatible with the remaining ECAL clusters and charged particle tracks. HOW
+\item any remaining ECAL and HCAL clusters with no associated charged particle tracks are reconstructed as photons and neutral hadrons, respectively. HOW
 \end{itemize}
+
+After all these particle types are reconstructed, a post-processing stage is undertaken to mitigate against the small probability mis-identifying or reconstructing particles, usually high momentum muons. 
+This avoids the appearance of an apparently large amount of missing transverse energy being present in an event.
 
 \subsection{Electrons}\label{subsec:objReco-electrons}
 Electrons lose, on average, between 33\% (minimal intervening material) and 86\% (maximum intervening material) of their energy before reaching the ECAL through the production of Bremsstrahlung photons in the tracker layers~\cite{Khachatryan:2015hwa}.
@@ -175,13 +181,15 @@ The seeds produced by both algorithms are combined and electron tracks are then 
 The helix parameters of the reconstructed tracks are determined by a GSF fit and the resulting GSF tracks are subsequently used for the PF algorithm's reconstruction of electrons.
 
 \subsection{Muons}\label{subsec:objReco-muons}
-Muon tracks are independently reconstructed in both the inner tracker, as described in Section~\ref{subsec:tracks}, and the muon chambers, where local reconstruction is undertaken using a Kalman Filter to build tracks from the innermost track segments of clustered DT and CSC hits outwards using DT, CSC and RPC hits.
+Muon tracks are independently reconstructed in both the inner tracker, as described in Section~\ref{subsec:tracks}, and the muon chambers.
+Track reconstruction in the muon chambers is undertaken using a Kalman Filter to build tracks from the innermost track segments made up of clustered DT and CSC hits outwards using DT, CSC and RPC hits.
 
 These two types of muon tracks are reconstructed using two methods~\cite{Chatrchyan:2012xi}:
 \begin{itemize}
 \item \textbf{Global Muons} are reconstructed using an ``\emph{outside-in}'' approach, where tracks in the muon chambers are extrapolated inwards towards the inner tracker where candidate tracks are then searched for.
 If a corresponding track is found, the hits from the best candidate in the inner tracker and the muon system are fitted using a Kalman Filter.
-\item \textbf{Tracker Muons} are conversely reconstructed with an ``\emph{inside-out}'' approach, where inner tracker tracks with $\pT > 0.5\GeV$ and $|p| > 2.5\GeV$ are extrapolated out to the muon system using a Kalman Filter thatx takes into account energy losses and multiple scattering.
+\item \textbf{Tracker Muons} are conversely reconstructed with an ``\emph{inside-out}'' approach, where inner tracker tracks with $\pT > 0.5\GeV$ and $|p| > 2.5\GeV$ are extrapolated out to the muon system using a Kalman Filter that takes into account energy losses and multiple scattering.
+If the extrapolated track lies within t
 \end{itemize}
 
 Given the high track reconstruction efficiencies of both the inner tracker and the muon chambers, approximately $99\%$ of muons produced from the proton-proton collisions (prompt muons) are reconstructed as either a global or tracker muon, if not both.
@@ -234,15 +242,30 @@ Each of these effects is considered as a separate correction level; they are app
 The uncertainties associated with these JECS are treated as systematic uncertainties, which are discussed in Chapter~\ref{sec:systematics}.
 Further details regarding the JECs can be found in~\cite{Khachatryan:2016kdb}.
 
-\subsection{b-jet tagging}\label{subsec:objReco-bJets}
-Correctly determining whether or not a jet was the product of a bottom quark hadronising is  important for a variety of analyses, allowing them to separate signal processes from topologically similar background processes, including top physics searches due to the top quark's branching ratio to a W boson and bottom quark being $> 99\%$.
-This process is known as \emph{b-tagging} and exploits the fact that because b-hadrons have a relatively long lifetime of approximately 1.5 ps~\cite{Beringer:1900zz}, they travel a measurable distance away from the primary vertex before decaying. 
-These secondary vertices are exploited by the \emph{Combined Secondary Vertex version 2} (CSVv2) algorithm~\cite{Chatrchyan:2012jua,CMS:206kkf}, which uses information about displaced track and secondary vertices as input into a multilayer perceptron ~\footnote{A class of neural network} to produce a discriminator value.
-The CMS B-Tag and Vertexing (BTV) Physics Object Group defines working points for this (and other) algorithm's discriminator based on the mis-identification rate.
+\subsection{b-tagging}\label{subsec:objReco-bJets}
+Correctly determining whether or not a jet was the product of a b-quark hadronising is important for a variety of analyses, allowing them to better separate signal processes from topologically-similar background processes.
+b-jet identification is particularly pertinent for top physics searches due to the fact that the dominant decay mode for a top quark is to a W boson and a b-quark~\cite{Tanabashi:2018oca}.
+
+This process is known as \emph{b-tagging} and exploits the fact that because b-hadrons have a relatively long lifetime of approximately 1.5 ps~\cite{Beringer:1900zz}, they can travel a measurable distance away from the primary vertex before decaying. 
+The resulting secondary vertices are exploited in b-tagging, which is performed in CMS by a number of algorithms supported by the CMS B-Tag and Vertexing (BTV) Physics Object Group.
+The analysis presented uses the \emph{Combined Secondary Vertex} version 2 (CSVv2) algorithm~\cite{Sirunyan:2017ezt}.
+The CSVv2 algorithm uses information about displaced track and secondary vertices as input into a multilayer perceptron (a class of neural network) to produce a discriminator value which characterises the likelihood that the likelihood a jet originated from a b-quark.
+
+Three different \emph{working points} (loose, medium and tight) are defined by the BTV POG for b-tagging algorithms, such that the probability for incorrectly tagging light flavoured jets is 10\%, 1\% and 0.1\% respectively.
+Figure~\ref{bTagEffVsMisId} illustrates the negative impact that minimising the light jet misidentification probability has on the efficiency at selecting genuine b-jets for the b-tagging algorithms supported within CMS~\cite{Sirunyan:2017ezt}.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figs/data-mc/effVsMisTagcsvV2.pdf}
+\caption{The light flavoured jets misidentification probability as a function of the efficiency of tagging genuine b-jets for the b-tagging algorithms supported within CMS~\cite{Sirunyan:2017ezt}.}
+\label{fig:bTagEffVsMisId}
+\end{figure}
+
+The selection efficiencies for b-jets, c-jets and light jets for each of the working points for the CSVv2 algorithm are given in table~\ref{tab:bTagWPs}.
 
 \begin{table}[htbp]
 \topcaption {
-The CSVv2 algorithm's selection efficiencies for bottom, charm, and light jets with $\pT > 20\GeVc$ in simulated \ttbar events~\cite{Sirunyan:2017ezt}.
+The CSVv2 algorithm's selection efficiencies and mis-identification rates for each of the three working points for b-($\epsilon_{b}$}), c-($\epsilon_{c}$}), and light jets ($\epsilon_{udsg}$}) with $\pT > 20\GeVc$ in simulated \ttbar events~\cite{Sirunyan:2017ezt}.
 }
 \label{tab:bTagWPs}
   \centering
@@ -266,26 +289,18 @@ The CSVv2 algorithm's selection efficiencies for bottom, charm, and light jets w
  \addtolength{\tabcolsep}{-1ex}
 \end{table}
 
-%\begin{figure}[h]
-%\centering
-%\includegraphics{figs/data-mc/ak4_pfjets_CSVIVF_Log.pdf}
-%\caption{The distribution of the CSVv2 algorithm's discriminator for multijet events, for $50\GeV < \pT < 250\GeV$, at $\sqrt{13\TeV}$, where the jets have been reconstructed with the anti-\kt algorithm with $R = 0.4$~\cite{CMS:2016kkf}. T}
-%\label{fig:bTagDiscriminator}
-%\end{figure}
-
 \subsection{Missing Transverse Energy}\label{subsec:objReco-MET}
-Particles which only weakly interact with matter, such as neutrinos and some hypothesised BSM particles, escape the detector without being directly observed, but can be inferred from considering the conservation of the transverse momentum of the event.
-Therefore, the missing energy in the plane transverse to the beam line, $\overrightarrow{\MET}$, is defined as the negative vector sum of the transverse momentum in the end:
+Particles that only weakly interact with matter, such as neutrinos and some hypothesised BSM particles, escape the detector without being directly observed.
+Their presence however, can be inferred by imposing conservation of transverse momentum to any given event.
+The missing energy in the plane transverse to the beam line, $\overrightarrow{\MET}$, is defined as the negative vector sum of the transverse momentum in the event:
 
 \begin{equation}
 \overrightarrow{\MET} = - \sum \overrightarrow{\pT} \;
 \label{eq:MET}
 \end{equation}
 
-There are several different algorithms, using differing variables and techniques, which are used in CMS analyses to determine \MET.
-PF \MET, producing using the PF particles, is used in this analysis because of its high performance with \emph{Type-I} \MET corrections applied~\cite{CMS:2016ljj}.
-This correction applies the jet energy corrections discussed in Section~\ref{subsubsec:JECs} to the PF jets with $\pT >15\GeV$ which are used in calculating the \MET.
+There are several different algorithms, using differing variables and techniques, that are used in CMS analyses to determine \MET.
 
-The Type-I corrections become unreliable for jets with $\pT <15\GeV$, so \emph{Type-II} \MET corrections are derived from the \emph{unclustered} energy deposits.
-
-Given that the event selection for the analysis presented in this thesis uses jets with $\pT > 30\GeV$, the \emph{Type-II} corrections (discussed in detail in~\cite{Chatrchyan:2011tn}) applied to jets with $\pT < 15\GeV$ is not considered.
+PF \MET, produced using PF particles, is used in this analysis because of its high performance~\cite{CMS:2016ljj}. 
+It must however, first be corrected before it can be used.
+The so-called \emph{Type-I} \MET corrections replace the PF jets used to determine the \MET of an event with the PF jets with the JECs~\cite{Chatrchyan:2011tn}).
