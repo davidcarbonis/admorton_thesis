@@ -1,9 +1,7 @@
 \chapter{Event Simulation and Object Reconstruction}\label{chapter:data-mc}
 After triggered events from the CMS experiment have been read out, the reconstruction of the reconstruction of the particles produced by the proton-proton collision is performed.
-Monte Carlo (MC) simulations form an essential component of performing any physics analysis.
-which provide a detailed, precise and realistic description of the expected SM and potential BSM processes, 
-MC is used for optimising signal extraction strategies and for 
-
+As Monte Carlo (MC) simulation is used in physics analyses to optimise searches and in the statistical analysis of the measurements that are made.
+It is therefore essential that MC provides a detailed, precise and realistic description of the expected physics processes.
  
 The event simulation and objection reconstruction algorithms which are relevant to the single top physics search presented in this thesis are discussed in this chapter.
 
@@ -44,9 +42,13 @@ As MC simulation is meant to provide a realistic description of physics processe
 The simulation of events is a four stage process: generation, simulation, digitisation and reconstruction.
 
 The initial generation stage involves the use \emph{event generators} to simulate the proton-proton interactions and the resultant physics processes~\cite{Buckley:2011ms,Hoche:2014rga}.
-The first stage of this is the modelling of the colliding protons and the hard scattering of their constituent partons, which involves the use Parton Distribution Functions (PDFs) to assign fractions of the proton's momentum to the partons and perturbation theory to compute the Matrix Elements (ME) of the Feynman diagrams for the QCD and electroweak processes involved.
+
+The first part of this stage is the modelling of the colliding protons and the hard scattering of their constituent partons, which involves the use Parton Distribution Functions (PDFs) to assign fractions of the proton's momentum to the partons and perturbation theory to compute the Matrix Elements (ME) of the Feynman diagrams for the QCD and electroweak processes involved.
+
 The second stage models resultant Parton Showers (PS) through an iterative process until the infrared cutoff scale for the shower is reached and perturbation theory no longer applies.
+
 The remaining particles undergo hadronisation using non-perturbative modelling process.
+
 The various event generators used in the production of MC samples used in this thesis are discussed in Section~\ref{subsec:eventGenerators}.
 
 Following the generation stage, the simulation and digitisation stages involves passing the GEN output through a complete simulation of the CMS detector that has been with the GEANT4 program~\cite{geant4,Lefebure:1999wja}.
@@ -69,18 +71,28 @@ The MC event generators used to model the background and signal processes for th
 
 \begin{itemize}
 %\item \textbf{Madgraph} - Madgraph~\cite{Alwall:2011uj} is a package which performs tree-level perturbativecalculations to produce matrix elements at Leading Order (LO) for processes %such as decays and 2 $\rightarrow$ n scatterings through evaluating the ME for a given phase space point for all the Feynman diagrams produced.
-\item \textbf{Madgraph} - Madgraph~\cite{Alwall:2011uj} is a package that performs tree-level perturbative calculations to produce matrix elements at Leading Order (LO) for processes through evaluating the ME for a given phase space point for all the Feynman diagrams produced.
-\item \textbf{aMC@NLO} - aMC@NLO~\cite{Alwall:2014hca} is a package that can be used to tree-level and one-loop Feynman diagrams to produce matrix elements at NLO.
+\item \textbf{MADGRAPH5 aMC@NLO 2.2.2:} MADGRAPH5 aMC@NLO 2.2.2~\cite{Alwall:2014hca} is a package that performs tree-level and one-loop Feynman diagrams to produce matrix elements at NLO.
+
+
+
+\item \textbf{Madgraph} - Madgraph~\cite{Alwall:2011uj} is a package that performs tree-level perturbative calculations to produce matrix elements at  for processes through evaluating the ME for a given phase space point for all the Feynman diagrams produced.
+\item \textbf{aMC@NLO} - aMC@NLO~\cite{Alwall:2014hca} is a package that can be used to .
 Considering the constructive and destructive interferences which result from considering both the leading and higher order cross section terms results in positively and negatively weighted events.
 These negatively weighted events are not simply discarded as they are required to correctly simulate the NLO cross section by applying a scale factor, $SF^{NLO}$, which considers the ratio of the total number of events to the effective number of events (\ie the difference in positively and negatively weighted events) in the sample and the sign of an individual event's weighting:
 \begin{equation}
 SF^{NLO} = \frac{N^{postive events} + N^{negative events}}{N^{postive events} - N^{negative events}} \times \frac{|event weight|}{event weight} \;
 \end{equation}
 
-\item \textbf{POWHEG} - The Positive Weight Hardest Emission Generator (POWHEG)~\cite{Alioli:2010xd} is a framework that interfaces NLO ME calculations with PS generators.
-As its name suggests, POWHEG produces the hardest emission first through using the exact NLO ME and produces only positively weighted events.
-The latter is achieved by interfacing to a PS generator which order emissions by \pT or allows for the use of a $p_{T}$-veto to reject subsequent emissions, avoiding double counting such emissions and the need for negative weights.
-\item \textbf{PYTHIA} - PYTHIA~\cite{Sjostrand:2014zea} is a general-purpose generator which capable of taking the output of a ME event generator and perform the parton showering and hadronisation to produce the full event. For all of the MC samples considered in Section~\ref{sec:samples} for the analysis presented, PYTHIA 8 is used to develop the samples from their ME event generator output into a full event.
+\item \textbf{POWHEG} - The Positive Weight Hardest Emission Generator  (POWHEG)~\cite{Alioli:2010xd} is a framework that interfaces NLO ME calculations with PS generators.
+As its name suggests, POWHEG produces the hardest emission first by using the exact NLO ME and generates only positively weighted events.
+Given that 
+
+The reason why POWHEG is capable of avoiding the need to 
+The latter is achieved by interfacing to a PS generator that order emissions by \pT or allows for the use of a $p_{T}$-veto to reject subsequent emissions, avoiding double counting such emissions and the need for negative weights.
+
+\item \textbf{PYTHIA 8} - PYTHIA 8~\cite{Sjostrand:2014zea} is a general-purpose generator that is capable of generating all aspects of a complete event, including  
+It is more commonly used however to take 
+of taking the output of a ME event generator and perform the parton showering and hadronisation to produce the full event. For all of the MC samples considered in Section~\ref{sec:samples} for the analysis presented, PYTHIA 8 is used to develop the samples from their ME event generator output into a full event.
 \end{itemize}
 
 \section{Object Reconstruction}\label{sec:reco}

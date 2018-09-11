@@ -232,55 +232,52 @@ The coordinates of the intersection point in Hough-space also provides an initia
 \end{figure}
 
 As the line gradients in Hough-space are given by the radii of the stubs, they will always be positive.
-Therefore, it is preferable to measure the stub coordinates relative to the point where it crosses a cylinder of radius $T$.
-Through an appropriate choice of $T$, the transformation of $r \rightarrow r_{T}$ and $\phi \rightarrow \phi_{T}$ increases the size of Hough Transform phase space used, allowing for more precise measurements of the intersection point to be made.
-This results in fewer fake tracks and duplicates being found.
+Therefore, it is preferable to measure the stub coordinates relative to the point where it crosses a cylinder in the $x--y$ plane of radius $T$.
+This is because if an appropriate choice of $T$ is used, the transformation of $r \rightarrow r_{T}$ and $\phi \rightarrow \phi_{T}$ increases the size of Hough Transform phase space used>
+This allows for more precise measurements of the intersection point to be made and consequently fewer fake tracks and duplicates are found.
 The optimal value of $T$ was determined to be 58 cm.
 
 As the $R$ for the lowest \pT track (3\GeV) to be considered is greater than the outer radius of the tracking detector ($r$ = 1.2 m), all relevant particles are expected to traverse at least six barrel layers or endcap disks. 
 The threshold for the identification of a track candidate however, is set at a minimum of five detector layers or disks in order to allow for detector or readout inefficiencies. 
 This threshold can be further reduced to four layers to account for the reduced geometric coverage between $0.89 < \eta < 1.16$ or for dead detector layers or disks without significantly increasing the volume of data considered.
 
-A more detailed description of the firmware implementation of the \HT for the demonstrator system is discussed in~\cite{TMTT_JINST,IEEE}.
+A detailed description of the firmware implementation of the \HT for the demonstrator system is given in~\cite{TMTT_JINST,IEEE}.
 
 \subsubsection{Kalman Filter}\label{subsubsec:KF}
 While the \HT is highly efficient at finding genuine tracks, it was found in simulation that over half of the genuine tracks found contain at least one incorrectly associated stub and over half of the tracks candidates did not correspond to a genuine track (\ie were fake).
-Given that these incorrectly associated stubs will negatively impact the accuracy of the fitted track parameters and  
+As these incorrectly associated stubs will negatively impact the accuracy of the fitted track parameters and it is preferable to discard fake tracks, a \KF 
 
+A \KF is well s
 As the presence of incorrectly associated stubs will  and 
 As it is desirable to filter out tracks without a significant loss 
 
 While it would be impractical to use a \KF to find tracks instead of the \HT , it 
-A Kalman Filter was used to filter out and precisely fit the tracks candidates produced by the \HT.
 
 
 
-In addition to the advantages of the Kalman filter for track reconstruction discussed by Fr{\"u}hwirth in~\cite{Fruhwirth:1987fm}, the algorithm has several aspects making it more suitable for FPGA implementation compared to global track fitting methods:
+In addition to being the optimal linear filter and, in certain circumstance, the optimal non-linear filter, the \KF has several aspects that make it more suitable for FPGA implementation compared to global track fitting methods~\cite{Fruhwirth:1987fm}:
 
 \begin{itemize}
-\item {the matrices involved are small and are their size is independent of the number of measurements - }
-\item {the only matrix inversion is of a small matrix.}
+\item {The matrices involved are small and are their size is independent of the number of measurements, minimising the logic required to implement them;}
+\item {The only matrix inversion involved is for a small matrix.}
 \end{itemize}
 
 
-Figure~\ref{fig:KF} illustrates the \KF filtering and fitting process for a track candidate in the \rz plane of the barrel.
-The \KF initially begins with an estimate of the track parameters and their uncertainties from the \HT array and $\eta$-$\phi$ segment assignment, known as the \emph{state}.
+Figure~\ref{fig:KF} illustrates the \KF filtering and fitting process for a track candidate in the \rz plane of the barrel, where each line segment represents the predicted track trajectory at a given stage in the fitting process
+The \KF begins with an estimate of the track parameters and their covariance matrix (containing the measurement uncertainties) from the \HT array and $\eta$-$\phi$ segment assignment, known as the \emph{state}.
+Stubs are iteratively added to the predicted state in order to produced an updated state estimate formed of weighted combination of the predicted state and the measurement.
+This weighting, known as the \emph{Kalman gain}, is derived from the relative uncertainties of the predicted state and measurement and is used to control how the state's track parameter are updated.
+Therefore, with every additional measurement added to the state, the uncertainty of the state's estimate decreases.
+This is illustrated in figure~\ref{fig:KF} by the size of the shaded area around the line segments decreasing with every stub added.
 
+The filtering of state following each update makes use number of configurable criteria, including \pT, $\chi^2$, and the minimum number of stubs from PS modules.
+It can also be configured to take into account and skip missing missing layers when the expected stub is either missing or deemded to be incorrectly associated with the track.
 
-
-Stubs are iteratively added to the state and its covariance matrix, ordered 
-
-Using the track parameters and their uncertainties from the \HT array and $\eta$-$\phi$ segment assignment as an initial estimate, or \emph{state}, the \KF iteratively adds stubs to the state in order of increasing radius.
-With the addition of each stub, the state 
-
-
-The initial estimates $\chi^2$ value and other status information are updated by the KF iteratively applying stubs , decreasing the uncertainty in the state. 
-Each update of the state can be filtered on number of configurable criteria, including \pT, $\chi^2$, and the minimum number of stubs from PS modules, and can take into account and skip missing missing layers due to missing or incorrect stubs.
-In the event multiple stubs are found on the same layer, each can be propagated with up to the four best states being kept and presented to a final state selector, with preference given to states with the fewest missing layers and the smallest $\chi^2$.
-
-
-The line segments represent the predicted track trajectory at a given stage in the fitting process. The projected trajectory and its uncertainty is updated following the iterative addition of stubs in order of increasing radius. The two dashed line segments correspond to the projected trajectories of the track from two stubs that were compatible with the expected track trajectory at that stage. The state including stub 2b is discard
-
+In the event multiple stubs are found on the same layer, each can be propagated with up to the four best states being kept and presented to a final state selector.
+Preference is given to states with the fewest missing layers and the smallest $\chi^2$.
+An example of this is shown in figure~\ref{fig:KF}, where the two dashed line segments correspond to the projected trajectories of the track from the stubs labelled 2a and 2b.
+As each stub is compatible with the expected track trajectory at that stage, both are propagated.
+The track associated to stub 2b however, is rejected after stub 4 has been added to the track propagated from stub 2a, due to failing a $\chi^2$ cut in two consecutive layers.
 
 \begin{figure}[!h]
 \centering
@@ -293,11 +290,12 @@ The line segments represent the predicted track trajectory at a given stage in t
 \label{fig:KF}
 \end{figure}
 
-The final fit is always performed after a fixed period of time.
-Consequently there is no truncation in the traditional sense given that all tracks candidates are read out.
-This means that while events which a large number of track candidates, such as dense jets, will always be read out, they be only partially filtered.
-
-Further discussion of the mathematics and implementation of online track reconstruction using Kalman Filters on FPGAs can be found in~\cite{TMTT_JINST,SSummers}.
+%The implementation of 	
+%The final fit is always performed after a fixed period of time.
+%Consequently there is no truncation in the traditional sense given that all tracks candidates are read out.
+%Therefore, while events which a large number of track candidates, such as dense jets, may only be partially filtered, they will always be read out.
+%
+Details of the mathematics involved in the Kalman formalism is given in~\cite{Fruhwirth:1987fm} and the details of the \emph{TMTT} project's implementation of the Kalman Filter using FPGAs for online track reconstruction is given in~\cite{TMTT_JINST,SSummers}.
 
 \subsubsection{Duplicate Removal}
 Over half of the track candidates at input to the DR are duplicate tracks created by the HT.
@@ -373,8 +371,7 @@ Where appropriate, the results for both definitions are given.
 \subsection{Linearised $\chi^{2}$ Track Fitting Studies}\label{subsec:chi2}
 Three different track fitting algorithms were explored for the track fitter component of the TFP used in the 2016 hardware demonstrator review: a Kalman Filter, a Linear Regression (LR) algorithm and a linearised $\chi^{2}$ track fit.
 
-The development of a Kalman Filter was motivated by it being the optimal method of filtering a linear systems.
-This made it ideally suited removing incorrectly assigned stubs from tracks and the removal of fake track candidates.
+The development of a Kalman Filter was motivated by its ability to filter incorrectly assigned stubs from tracks and the remove fake track candidates at the same time as precisely fitting track parameters.
 As the \KF provided the best perfect track reconstruction efficiency and fake track candidate rejection rate out of the three fitting algorithms explored, it was selected as the baseline fitter for the TFP in the 2016 review.
 
 A Linear Regression (LR) track fitting algorithm was developed as an alternative to the KF~\cite{TMTT_FLP}.
