@@ -1,12 +1,13 @@
-\chapter{Further information regarding Boosted Decision Trees}\label{app:bdt}
+%\chapter{Further information regarding Boosted Decision Trees}\label{app:bdt}
+\chapter{}\label{app:bdt}
 
 \section{BDT Input Features}\label{appsec:bdtFeatures}
 Following the application of the event selection criteria, as described in Chapter~\ref{chapter:tzq-search}, a large number of input variables which were considered for use in the boosted decision trees used were constructed from the selected reconstructed physics objects.
 
-The complete list of variables and their descriptions are listed in tables~\ref{tab:allBdtVariables}--~\ref{tab:allBdtVariables2}.
+The complete list of variables and their descriptions are listed in table~\ref{tab:allBdtVariables}.
 
 \begin{table}[htbp]
-\topcaption {The name and descriptions of all of variables considered by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
+\topcaption {The list of the names and descriptions of all of variables considered by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
 }
 \label{tab:allBdtVariables}
   \centering
@@ -30,6 +31,8 @@ The complete list of variables and their descriptions are listed in tables~\ref{
     mTW & W boson transverse mass  \\
     met & Missing transverse energy   \\
     nJets & Number of jets  \\
+    j1j2delR & $\Delta R$ between the leading and subleading jets \\
+    j1j2delPhi & $\Delta \phi$ between the leading and subleading jets \\
     leadJetPt & Leading jet \pt \\
     leadJetPhi & Leading jet $\phi$  \\
     leadJetEta & Leading jet $\eta$  \\
@@ -38,6 +41,20 @@ The complete list of variables and their descriptions are listed in tables~\ref{
     secJetPhi & Subleading jet $\phi$  \\
     secJetEta & Subleading jet $\eta$ \\
     secJetbTag & Subleading jet b-tag output discriminant  \\
+   \hline
+ \end{tabular}}
+\end{table}
+
+\begin{table}[htbp]
+\label{tab:allBdtVariables2}
+  \centering
+% This increases column spacing.
+\resizebox{\textwidth}{!}{
+% This right-aligns numbers in column, but centers them under column title.
+\begin{tabular}{cc}
+   \hline
+   \textbf{Variable} & \textbf{Description} \\
+   \hline
     thirdJetPt & Third jet \pt \\
     thirdJetPhi & Third jet $\phi$  \\
     thirdJetEta & Third jet $\eta$ \\
@@ -53,20 +70,6 @@ The complete list of variables and their descriptions are listed in tables~\ref{
     lep1Phi & Leading lepton $\phi$ \\
     lep1RelIso & Leading lepton $I^{rel}$ \\
     lep1D0 & Leading lepton $d_{0}$ \\
-   \hline
- \end{tabular}}
-\end{table}
-
-\begin{table}[htbp]
-\label{tab:allBdtVariables2}
-  \centering
-% This increases column spacing.
-\resizebox{\textwidth}{!}{
-% This right-aligns numbers in column, but centers them under column title.
-\begin{tabular}{cc}
-   \hline
-   \textbf{Variable} & \textbf{Description} \\
-   \hline
     lep2Pt & Subleading lepton \pt \\
     lep2Eta & Subleading lepton $\eta$ \\
     lep2Phi & Subleading lepton $\phi$ \\
@@ -80,8 +83,6 @@ The complete list of variables and their descriptions are listed in tables~\ref{
     topPt & Reconstructed top quark \pt \\
     topEta & Reconstructed top quark $\eta$ \\
     topPhi & Reconstructed top quark $\phi$ \\
-    j1j2delR & $\Delta R$ between the leading and subleading jets \\
-    j1j2delPhi & $\Delta \phi$ between the leading and subleading jets \\
     w1w2delR & $\Delta R$ between the W boson candidate's jets \\
     w1w2delPhi & $\Delta \phi$ between the W boson candidate's jets \\
     zLepdelR & $\Delta R$ between the Z boson candidate leptons \\
@@ -111,6 +112,9 @@ The complete list of variables and their descriptions are listed in tables~\ref{
 \resizebox{\textwidth}{!}{
 % This right-aligns numbers in column, but centers them under column title.
 \begin{tabular}{cc}
+   \hline
+   \textbf{Variable} & \textbf{Description} \\
+   \hline
     totPtVec & \pt of the system \\
     totEta & $\eta$ of the system \\
     totPhi & $\phi$ of the system \\

@@ -244,9 +244,10 @@ This threshold can be further reduced to four layers to account for the reduced 
 A more detailed description of the firmware implementation of the \HT for the demonstrator system is discussed in~\cite{TMTT_JINST,IEEE}.
 
 \subsubsection{Kalman Filter}\label{subsubsec:KF}
-While the \HT is highly efficient at finding genuine tracks, it was found in simulation that over half of the genuine tracks found contain at least one incorrectly associated stub and over half of the genuine track found did not correspond to a genuine track.
-Given that 
-As the presence of incorrectly associated stubs will negatively impact the accuracy of the fitted track parameters and 
+While the \HT is highly efficient at finding genuine tracks, it was found in simulation that over half of the genuine tracks found contain at least one incorrectly associated stub and over half of the tracks candidates did not correspond to a genuine track (\ie were fake).
+Given that these incorrectly associated stubs will negatively impact the accuracy of the fitted track parameters and  
+
+As the presence of incorrectly associated stubs will  and 
 As it is desirable to filter out tracks without a significant loss 
 
 While it would be impractical to use a \KF to find tracks instead of the \HT , it 
@@ -262,8 +263,11 @@ In addition to the advantages of the Kalman filter for track reconstruction disc
 \end{itemize}
 
 
-Figure~\ref{fig:KF} illustrates the \KF filtering and fitting process.
+Figure~\ref{fig:KF} illustrates the \KF filtering and fitting process for a track candidate in the \rz plane of the barrel.
 The \KF initially begins with an estimate of the track parameters and their uncertainties from the \HT array and $\eta$-$\phi$ segment assignment, known as the \emph{state}.
+
+
+
 Stubs are iteratively added to the state and its covariance matrix, ordered 
 
 Using the track parameters and their uncertainties from the \HT array and $\eta$-$\phi$ segment assignment as an initial estimate, or \emph{state}, the \KF iteratively adds stubs to the state in order of increasing radius.
@@ -275,7 +279,7 @@ Each update of the state can be filtered on number of configurable criteria, inc
 In the event multiple stubs are found on the same layer, each can be propagated with up to the four best states being kept and presented to a final state selector, with preference given to states with the fewest missing layers and the smallest $\chi^2$.
 
 
-
+The line segments represent the predicted track trajectory at a given stage in the fitting process. The projected trajectory and its uncertainty is updated following the iterative addition of stubs in order of increasing radius. The two dashed line segments correspond to the projected trajectories of the track from two stubs that were compatible with the expected track trajectory at that stage. The state including stub 2b is discard
 
 
 \begin{figure}[!h]
@@ -284,7 +288,7 @@ In the event multiple stubs are found on the same layer, each can be propagated 
 % where an .eps filename suffix will be assumed under latex,
 % and a .pdf suffix will be assumed for pdflatex; or what has been declared
 % via \DeclareGraphicsExtensions.
-\caption{An illustrated example of the \KF filtering procedure for a track candidate in the \rz plane of the barrel. The line segments represent 
+\caption{An illustrated example of the \KF filtering procedure for a track candidate in the \rz plane of the barrel as described in the text.
 }
 \label{fig:KF}
 \end{figure}
@@ -454,7 +458,7 @@ Therefore, any implementation in firmware for an FPGA will require the use of lo
 From Equations~(\ref{eq:chi4}) and~(\ref{eq:chi5}) and the track derivatives derived in~\cite{CMS_DN-14-043}, a software implementation of the linearised $\chi^{2}$ track fit algorithm was developed.
 
 Initially the algorithm was implemented using floating point calculations in order to both debug and optimise its performance.
-This process involved confirming that the track derivatives and stub residuals were correctly calculated and the track finding efficiencies and parameter resolution of the $\chi^{2}$ were comparable to the \emph{tracklet} project's software implementation.
+This process involved confirming that the track derivatives and stub residuals were correctly calculated and the track finding efficiencies and parameter resolution of the $\chi^{2}$ were comparable to the \emph{tracklet} project's software implementation at the time.
 
 After this validation processes, the algorithm was simplified in order to reduce the resources required for any future tabulation of the matrix of track derivatives.
 This process involved developing approximated expressions of the track derivatives which reduced the number of variables they depended on but still gave performance comparable to when floating point precision is used.
@@ -575,7 +579,6 @@ While the \qpt and $\phi_{0}$ resolutions achieved after four fitting iterations
 \end{figure}
 
 \subsubsection{Outcome of the $\chi^{2}$ Track Fit Studies}\label{subsubsec:chi2Conclusions}
-
 Following the parallel development of both the linearised $\chi^{2}$ track fit and the \KF however, it was decided that development of the former would be discontinued.
 The reason behind this decision were that the \KF was capable of achieving a higher track finding efficiency with 100.0\% purity for matched tracks and $z_{0}$ and $cot(\theta)$ resolutions in the forward regions that were comparable to the expected offline resolution.
 Considerable progress had also been made with an implementation in firmware.
