@@ -25,7 +25,7 @@ The relationship between $\mu$ and the observed and expected cross sections, $\s
 \end{equation}
  
 The uncertainties associated with the simulated predictions for the signal and background processes are accounted for by the inclusion of a set of nuisance parameters $\theta$.
-The dependence of the number of expected  such that $s_{i} = s_{i} (\theta)$ and $b_{i} = b_{i} (\theta)$.
+Therefore, as $s_{i}$ and $b_{i}$ are dependent on $\theta$, they become $s_{i} = s_{i} (\theta)$ and $b_{i} = b_{i} (\theta)$.
 
 Assuming that the number of observed events, $n_{i}$, in any given bin of the distribution considered will be distributed according to Poisson statistics, the probability of observing $n_{i}$ is given by Equation~(\ref{eq:poissonProb}):
 
@@ -34,8 +34,9 @@ Assuming that the number of observed events, $n_{i}$, in any given bin of the di
 \label{eq:poissonProb}
 \end{equation}
 
-A probability density function, $\rho ( \theta | \tilde{\theta} )$ with a nominal value of $\tilde{\theta}$ for the best estimate of the nuisance, is used to describe all the sources of uncertainty for the nuisance parameters.
-For the search presented in this thesis, it is assumed that each source of systematic uncertainty is either 100\% correlated or uncorrelated, thus allowing each systematic uncertainty to be incorporated into $\rho ( \theta | \tilde{\theta} )$ in a clean factorised form.
+A probability density function, $\rho ( \theta | \tilde{\theta} )$ is used to describe all the sources of uncertainty for the nuisance parameters, where $\tilde{\theta}$ is the set of nominal values for the the best estimate of the nuisances.
+For the search presented in this thesis, it is assumed that each source of systematic uncertainty is either 100\% correlated or uncorrelated.
+This allows each systematic uncertainty to be incorporated into the likelihood function in a clean factorised form.
 Shape uncertainties are modelled by vertically morphing the nominal shape template up and down by one $\sigma$.
 The data aMC@NLO Z+jets sample and non-prompt lepton normalisation ,and luminosity flat rate uncertainties are treated as log-uniform and log-normal nuisance parameters respectively~\cite{Baak:2014fta,AsymptoticFormulae}.
 
