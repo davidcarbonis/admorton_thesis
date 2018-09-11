@@ -1,55 +1,51 @@
 \chapter{Conclusion}\label{chapter:conclusion}
-In this thesis, a search for the production of a singly produced top quark in association with a Z boson using $35.9$\fbinv of proton-proton collision data at $\sqrt{s} = 13\TeV$ collected during 2016 by the CMS detector at the LHC was presented.
+In this thesis a search was presented for dilepton final state of tZq the using a shape based analysis which used a dataset corresponding to $35.9\fbinv$ of proton-proton collision data collected by the CMS experiment.
+A boosted decision tree was used to further enhance the separation between the tZq signal from backgrounds using a set of variables which were determined to have the greater discriminating power.
 
-A search for the tZq using a shape based analysis was performed using $35.9\fbinv$ of proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by CMS during 2016.
-The analysis focussed on understanding the contributions from processes that produce non-prompt leptons and suppressing the Z+jets and \ttbar processes.
+As this analysis is still blinded, only the expected results from a binned maximum likelihood fit used to determine the limit on the tZq cross section using the dilepton state and its corresponding significance are presented.
+The expected upper limit on the tZq cross section was determined to be $xxx^{yyy}_{zzz}$ fb, corresponding to an expected significance of $aaa \pm bbb \sigma$.
+This expected result is consistent within errors with the SM prediction and measurements of the cross section using the trilepton final state.
+When this result has been unblinded in accordance with CMS policy, it will be the first limit which has been set for tZq using the dilepton final state.
 
-While a \ttbar enriched control region confirmed that \ttbar processes were accurately modelled, it was observed in a Z+jets enriched control region that although the NLO Z+jets MC sample recommended by CMS provided the best description of data, it was incorrectly normalised.
-Therefore, a Z+jets enriched control region was used to derive a scale factor to correctly normalise the NLO Z+jets sample, with a systematic uncertainty associated with this scale factor derived using the LO sample which correctly described the normalisation of the process.
-Subsequently good agreement between simulation and data was observe after of all event corrections and the event selection criteria were applied. 
-Boosted decision trees were used in order to further enhance the separation between the tZq signal from backgrounds using a set of variables which were determined to have the greater discriminating power.
-
-A binned maximum likelihood fit was used to determine a limit on the tZq cross section for the dilepton final state of $xxx^{yyy}_{zzz}$ fb.
-This corresponds to an observed significance of $aaa \pm bbb \sigma$ and an expected significance from simulation of $ccc \pm ddd$. 
-This is the first limit which has been set for the production cross section using the tZq dilepton final state at the LHC and is consistent within errors with the SM predictions.
+%This analysis focussed on understanding the contributions from processes that produce non-prompt leptons and suppressing the Z+jets and \ttbar processes.
+%
+%While a \ttbar enriched control region confirmed that \ttbar processes were accurately modelled, it was observed in a Z+jets enriched control region that although the NLO Z+jets MC sample recommended by CMS provided the best description of data, it was incorrectly normalised.
+%
+%Therefore, a Z+jets enriched control region was used to derive a scale factor to correctly normalise the NLO Z+jets sample, with a systematic uncertainty associated with this scale factor derived using the LO sample which correctly described the normalisation of the process.
+%Subsequently good agreement between simulation and data was observe after of all event corrections and the event selection criteria were applied. 
 
 %%%
-With searches for tZq being statistically limited to varying degrees due to its small production cross section, the discovery of the process should be achievable through the inclusion of additional data collected by the CMS experiment.
-Given that evidence has already found for the trilepton final state, it is expected that 
 
-The accuracy of the measurement
+Studies into the suitability of a linearised $\chi^{2}$ track fitting algorithm and the ability to reconstruct track with low transverse momenta for a proposed track finder system for the future CMS tracking detector at the HL-LHC were also presented.
 
-Recently the uncertainties associated with the JER have been updated during the reprocessing of the 2016 dataset to include the systematic uncertainties in addition to the statistical uncertainties.
-At the time of writing this thesis, these reprocessed samples and the impact of the revised total JER uncertainties has not been propagated through the analysis.
+An linearised $\chi^{2}$ track fit algorithm was developed and was shown to be capable of filtering the track candidates produced by the \HT and fitting precise helix parameters to them.
+Following evaluating the $\chi^{2}$ track fit against the \KF that was developed in parallel it was decided not to continue development of the former algorithm.
+This was because the $\chi^{2}$ track fit was not able to filter genuine tracks and precisely fit track parameters in the forward regions as well as the \KF.
 
-
-%%%TMTT work
-This thesis also presents the outcomes of several software studies for a proposed track finder system for the future CMS silicon tracking detector at the HL-LHC.
-
-The studies into the suitability 
-
-In order to take full advantage of the high luminosity environment of the HL-LHC, it is planned replace the current CMS tracking detector with one which is capable of contributing information to the CMS Level-1 trigger.
-
-One of the track finder systems for the upgraded CMS tracker identifies track candidates using time-multiplexed Hough Transforms in the r-$\phi$ plane, followed by Kalman Filter to precisely fit track parameters to the candidates and remove fake tracks and a duplicate removal process.
-A linearised $\chi^{2}$ fit was explored as an alternative track fitting algorithm
+The reconstruction efficiency and fitting of track parameters of low transverse momenta tracks ($2\GeV < \pT < 3\GeV$) was shown to be considerably improved by considering the impact of \MS.
+This involved using decreased precision cells in the \HT to mitigate against scattering causing stubs to be found in adjacent \HT cells.
+The incorporation of an uncertainty term into the \KF's covariance matrix that described the average scattering angle as a function of \pT was shown to be as effective as one that also depended on the layer that a hit was found in.
 
 
-%%%Future work
+\section{Future Prospects}
+As the search for tZq is statistically limited, it is expected that this process should be observable for the dilepton final state by extending the analysis to incorporate additional data collected by the CMS experiment.
+The accuracy of this measurement will be improved by using the proton-proton collision datasets for and their associated simulated samples which have been centrally reprocessed to provide an optimal event reconstruction by CMS.
+The incorporation of the updated uncertainties relating to these reprocessed datasets is also expected to improve the accuracy of the measurement.
+Alternative lepton selection and b-tagging algorithms which have improved the event selection efficiency of other single top searches might also be able to increase the statistics of this analysis and deserve investigation.
+Once an accurate measurement of the tZq cross section can be made, it should be possible to probe  the strength of the WZ and tZ couplings in this process and compare them to SM predictions.
 
-For the linearised $chi^{2}$ track fitting algorithm to be considered in the future, the following would to be addressed:
+
+Currently the development of the linearised $chi^{2}$ track fitting algorithm for the \emph{TMTT} project's track finder is not being pursued.
+For this track fitting algorithm to be considered as a viable alternative to the other track fitters used by the proposed \HT-based track finding system, it will need to address the following:
+
 \begin{itemize}
-\item An improved track fitting efficiency which obtains a high, if not 100\%, tracks purity, in order to be competitive with both the \KF and \LR which are currently able achieve 100\% purity.
-\item Can the algorithm resources be reduced and/or are there sufficient resources on the board be implement the algorithm with.
-\item Whether or not the inclusion of the fifth helix parameter, the vertex impact parameter in the x-y plane, $d_{0}$, would provide comparable or improved performance to other fitting algorithms which produce it.
-\item The cause of the increased number of duplicate tracks compared to the \KF, and whether or not they can be reduced to a similar level.
+\item Improved stub filtering such that all of the genuine tracks fitted contain no incorrectly associated stubs. Both the \KF and \LR are currently able to remove all incorrectly associated stubs from the genuine tracks they fit. 
+\item Determine whether or not there are sufficient resources to implement the algorithm in firmware.
+\item Whether or not the inclusion of the fifth helix parameter, the vertex impact parameter in the x-y plane, would provide comparable or improved performance to other fitting algorithms fit this parameter.
 \end{itemize}
 
-There are a number of potential improvements for tracking down to 2\GeV which merit further investigation which include:
-\begin{itemize}
-\item understanding why the duplicate rate increases near the boundary between normal and reduced precision \HT cells increase when \MS is accounted for.
-\item determining suitable coefficients as functions of both \pT and $\eta$ experimentally through simulation in order to more accurately account for the amount of material traversed and thus a more accurate description of the uncertainty in the hit position caused by \MS.
-\item whether separate \KF $\chi^{2}$ cuts for the \rphi and r-z planes could enhance performance, given that the dominant uncertainty contribution for the former varies depending on $\pT$.
-\item further studies into optimising the \pT threshold used for reducing the precision of \HT cells.
-\item \pt dependent threshold criteria for the \HT.
-\item further optimisation of the \KF in relation to any such changes.
-\end{itemize}
+There are a number of areas of investigation which could improve both the \HT's and \KF's performance at low  transverse momenta.
+Currently it is not understood why the duplicate rate increases near the boundary between normal and reduced precision \HT cells.
+This effect needs to be understood before an optimal value for the cell merging threshold can be determined.
+The ability of the \KF to account for \MS could be improved by using a scattering constant term that is parameterised in such a way that it accurately took into account the volume of material a track has passed through - such as the \pt and $\eta$ of the track candidate.
+The performance of the \KF could also be further improved by using separate \KF $\chi^{2}$ cuts for the \rphi and r-z planes given that the dominant uncertainty contribution for the former varies depending on $\pT$.

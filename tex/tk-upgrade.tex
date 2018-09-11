@@ -82,7 +82,7 @@ The current proposed layout of the Phase-II Outer Tracker, referred to as the \e
 Both plots illustrate the PS and 2S module positions in the six barrel layers and the five endcap disks on either side of the barrel, with only modules located at $|\eta| < 2.4$ being configured to send stub data off-detector.
 The geometries are so named as they were inspired by whether or not the modules in the three innermost barrel layers are tilted so that their normals point towards the interaction region.
 The advantages of the tilted geometry over the original flat barrel are that it not only improves stub-finding efficiency for tracks with large incident angles but also reduces the overall cost of the system~\cite{P2TrackerTDR}.
-Due to the maturity of the preparations for the review between the three competing proposed track finder systems, discussed later in Section~\ref{subsec:TrackFinderReview}, at the time the tilted barrel geometry was adopted for the Phase-II Outer Tracker TDR it was decided to use the flat barrel geometry for results produced for the review.
+Due to the maturity of the preparations for the review between the three competing proposed track finder systems, discussed later in Section~\ref{sec:TMTT}, at the time the tilted barrel geometry was adopted for the Phase-II Outer Tracker TDR it was decided to use the flat barrel geometry for results produced for the review.
 
 \begin{figure}[tbp]
 \centering
@@ -113,10 +113,10 @@ The $4\mus$ latency constraint will limit the amount of processing that can be d
 \section{A Time-Multiplexed Track Finder}\label{sec:TMTT}
 Three different L-1 track finders have been explored by the CMS Collaboration.
 One of the proposals uses Associative Memory (\emph{AM}) ASICs for track finding and FPGAs for track fitting~\cite{P2TrackerTDR,AM}.
-The other two proposasls are all-FPGA approaches, one using a fully Time-Multiplexed Track (\emph{TMTT}) finder which uses the Hough Transform to identify track candidates~\cite{TMTT_JINST} and one using a ``road search'' (\emph{tracklet}) algorithm to reconstruct tracks~\cite{tP2TrackerTDR,racklet}.
+The other two proposasls are all-FPGA approaches, one using a fully Time-Multiplexed Track (\emph{TMTT}) finder which uses the Hough Transform to identify track candidates~\cite{TMTT_JINST} and one using a ``road search'' (\emph{tracklet}) algorithm to reconstruct tracks~\cite{P2TrackerTDR,tracklet}.
 Hardware demonstrators for each of these proposed L-1 track finders were constructed to prove the feasibility of each approach, which were reviewed in 2016.
 
-In this section the architecture and components of the \emph{TMTT} Track Finding Processor are discussed. 
+In rest of this section the architecture and components of the \emph{TMTT} Track Finding Processor are discussed. 
 
 \subsection{The Track Finding Architecture}\label{subsec:TFA}
 The proposed FPGA-based Hough Transform Track Finder is a scalable, flexible and redundant design based on a fully time-multiplexed architecture for implementation on commercially available FPGAs, as previously demonstrated by the Phase-I Calorimeter Trigger Upgrade~\cite{Tapper:2013yva} discussed in Section~\ref{paragraph:L1}.
