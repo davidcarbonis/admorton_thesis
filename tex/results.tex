@@ -55,7 +55,7 @@ To evaluate these hypotheses, the $CL_{S}$ method constructs a test statistic, $
 The test statistic used by the ATLAS and CMS is defined as the loglikelihood ratio in equation~\ref{eq:testStatistic},
 
 \begin{equation}
-q_{\mu} =  -2 \ln \frac{ \mathcal{L}(data | \mu s , \hat{\theta_{\mu}})}{ \mathcal{L}(data | \hat{\mu} s \hat{\theta_{\mu})  } \textrm{ , where } 0 \leq \hat{\mu} \leq \mu \;
+q_{\mu} =  -2 \ln \frac{ \mathcal{L}(data | \mu s , \hat{\theta_{\mu}})} { \mathcal{L}(data | \hat{\mu} s \hat{\theta_{\mu})  }} \textrm{ , where } 0 \leq \hat{\mu} \leq \mu \;
 \label{eq:testStatistic}
 \end{equation}
 
@@ -95,8 +95,8 @@ The Asimov dataset is defined as being constructed such that all observable quan
 A full description of the asymptotic approximation to the CL$_{s}$ method is given in~\cite{AsymptoticFormulae}.
 
 \section{Statistical Analysis Results}
-For the combination of both inal states, at 95\% CL, the cross section for tZq production was measured to be $X^{+Y}_{-Z}$, which is within the uncertainties of the SM prediction.
-This result corresponds to an observed significance of $X_{-Z}^{+Y} \sigma$ against an expected significance of $X_{-Z}^{+Y} \sigma$, which is in agreement with the SM cross section of  $0.0758^{+Y}_{-Z} \pb$.
+For the combination of both final states, at 95\% CL, the upper on the cross section for tZq production was measured to be $X^{+Y}_{-Z}$, which is within the uncertainties of the SM prediction of $0.0758^{Y}_{Z}$ pb~\cite{}.
+This result corresponds to an observed significance of $X_{-Z}^{+Y} \sigma$ against an expected significance of $X_{-Z}^{+Y} \sigma$.
 
 The observed signal strengths, measured cross sections, and corresponding significances for the individual channels and their combination are shown in full in Table~\ref{tab:shapetxs}.
 
@@ -116,9 +116,7 @@ The observed signal strengths, measured cross sections, and corresponding signif
    \label{tab:shapetxs}
 \end{table}
 
-The an
-At the time of writing this thesis this result is not planned to be published in its current form, as the low EXPECTED/OBSERVED significance observed is likely to be significantly improved with additional statistics.
-Therefore, it is intended that a measurement on the data collected by the CMS detector during 2016 and 2017 will be performed, with the anticipation that the tZq dilepton final state can be observed.
+In order to improve on this result, this analysis is being extended to incorporate 2017 in accordance with CMS policy.
 
 \section{Post-Fit Impact of the Systematic Uncertainties}\label{sec:uncertainitiesImpact}
 The impact of each of the sources of systematic uncertainty on the signal strength modifier $\mu$ is shown shown in figure~\ref{fig:systematicsPull}, where the left hand side of the plot illustrates the nuisance parameter residuals and the right hand side the impact of varying a nuisance parameter to its $\pm \sigma$ post-fit values has on the $\mu$.
@@ -151,14 +149,18 @@ The impact of each of the sources of systematic uncertainty on the signal streng
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=0.97\textwidth]{figs/results/systematicsImpact.pdf}
-\caption{The impact of each of the systematic uncertainties considered for the measurement made. The left hand side of the plot shows the residuals of the nuisance parameters, where $\theta$ and $\theta_{0}$ are the post-fit and pre-fit values of the nuisance parameter and $\Delta_{\theta}$ is the pre-fit uncertainty. The right hand side of the plot illustrates the shift in the signal strength parameter induced as a nuisance parameter is fixed and brought to its $\pm \sigma$ post-fit values (with the other parameters profiled as normal).}
+\caption{The impact of each of the systematic uncertainties considered for the measurement made. The left hand side of the plot shows the residuals of the nuisance parameters, where $\theta_{0}$ and $\theta$ are the values of the nuisance parameter before and after they has been constrained by the fit and $\Delta_{\theta}$ is the uncertainty the nuisance parameter has on the measurement pre-fit.
+The right hand side of the plot illustrates the impact of each systematic uncertainty on the signal strength parameter $r$ following the fit.
+}
 \label{fig:systematicsPull}
 \end{center}
 \end{figure}
 
 \section{Discussion of other searches for tZq at the Large Hadron Collider}
-The search for the dilepton final state of a singly produced top in association with a Z boson presented in this thesis is the first one that has been undertaken at the LHC.
-Therefore, while this result cannot be directly compared against any previous or competing results, its ability to observe this process can be compared against the searches performed for the fully leptonic	final state at $\sqrt{s} = 8 \TeV$ and $13 \TeV$.
+The search for the decay of a single top produced in association with a Z boson presented in this thesis is the first one for the dilepton final state that has been undertaken at the LHC.
+
+The production of a single top quark in association with a Z boson has previously been 
+T
 
 The first search made for the tZq trilepton final state at $\sqrt{s} = 8 \TeV$ was made by the CMS collaboration which reported a significance of 2.9 standard deviations~\cite{Sirunyan:2017kkr}.
 Following this, both the ATLAS and CMS collaborations have performed searches at $\sqrt{s} = 13 \TeV$, observing the process with reported signifiances of 4.2 and 3.7 standard deviations respectively~\cite{Aaboud:2017ylb,Sirunyan:2017nbr}.

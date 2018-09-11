@@ -244,8 +244,14 @@ This threshold can be further reduced to four layers to account for the reduced 
 A more detailed description of the firmware implementation of the \HT for the demonstrator system is discussed in~\cite{TMTT_JINST,IEEE}.
 
 \subsubsection{Kalman Filter}\label{subsubsec:KF}
-Following from the \HT is highly efficient method of finding track candidates, over half the track candidates are considered to be \emph{fake} or contain at least one incorrectly associated stub.
-A Kalman Filter was used to filter the tracks candidates whilst precisely fitting their track parameters.
+A Kalman Filter was used to filter and precisely fit the tracks candidates produced by the \HT.
+While 
+WHAT DOES IT DO
+
+
+
+
+Following from the \HT is highly efficient method of finding track candidates, over half the track candidates are considered to be \emph{fake} and over half the genuine candidates contain at least one incorrectly associated stub.
 
 In addition to the advantages of the Kalman filter for track reconstruction discussed by Fr{\"u}hwirth in \cite{Fruhwirth:1987fm}, the algorithm has several aspects making it suitable for FPGA implementation compared to global track fitting methods:
 
@@ -271,6 +277,21 @@ The initial estimates $\chi^2$ value and other status information are updated by
 Each update of the state can be filtered on number of configurable criteria, including \pT, $\chi^2$, and the minimum number of stubs from PS modules, and can take into account and skip missing missing layers due to missing or incorrect stubs.
 In the event multiple stubs are found on the same layer, each can be propagated with up to the four best states being kept and presented to a final state selector, with preference given to states with the fewest missing layers and the smallest $\chi^2$.
 
+
+Figure~\ref{fig:KF} 
+
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{figs/tk-upgrade/kf_states.pdf}
+% where an .eps filename suffix will be assumed under latex,
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+\caption{An illustrated example of the \KF filtering procedure for a track candidate in the \rz plane of the barrel. 
+}
+\label{fig:KF}
+\end{figure}
 
 The final fit is always performed after a fixed period of time.
 Consequently there is no truncation in the traditional sense given that all tracks candidates are read out.
