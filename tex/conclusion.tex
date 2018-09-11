@@ -1,8 +1,6 @@
 \chapter{Conclusion}\label{chapter:conclusion}
 In this thesis, a search for the production of a singly produced top quark in association with a Z boson using $35.9$\fbinv of proton-proton collision data at $\sqrt{s} = 13\TeV$ collected during 2016 by the CMS detector at the LHC was presented.
-This thesis also presents the outcomes of several software studies for a proposed track finder system for the future CMS silicon tracking detector at the HL-LHC.
 
-\section{Summary of Results}
 A search for the tZq dilepton final state using a shape based analysis was performed using $35.9\fbinv$ of proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by CMS during 2016.
 The analysis focussed on understanding the contributions from processes that produce non-prompt leptons and suppressing the Z+jets and \ttbar processes.
 
@@ -13,16 +11,9 @@ Boosted decision trees were used in order to further enhance the separation betw
 
 A binned maximum likelihood fit was used to determine a limit on the tZq cross section for the dilepton final state of $xxx^{yyy}_{zzz}$ fb.
 This corresponds to an observed significance of $aaa \pm bbb \sigma$ and an expected significance from simulation of $ccc \pm ddd$. 
-This is the first limit made for the production cross section of the tZq dilepton final state at the LHC and is consistent within errors with the SM predictions.
+This is the first limit which has been set for the production cross section using the tZq dilepton final state at the LHC and is consistent within errors with the SM predictions.
 
 %%%
-The studies into the suitability 
-
-In order to take full advantage of the high luminosity environment of the HL-LHC, it is planned replace the current CMS tracking detector with one which is capable of contributing information to the CMS Level-1 trigger.
-One of the proposed track finder systems for the upgraded CMS tracker identifies track candidates using time-multiplexed Hough Transforms in the r-$\phi$ plane, followed by Kalman Filter to precisely fit track parameters to the candidates and remove fake tracks and a duplicate removal process.
-A linearised $\chi^{2}$ fit was explored as an alternative track fitting algorithm
-
-\section{Future CMS tZq measurements}
 With searches for tZq being statistically limited to varying degrees due to its small production cross section, the discovery of the process should be achievable through the inclusion of additional data collected by the CMS experiment.
 Given that evidence has already found for the trilepton final state, it is expected that 
 
@@ -31,9 +22,20 @@ The accuracy of the measurement
 Recently the uncertainties associated with the JER have been updated during the reprocessing of the 2016 dataset to include the systematic uncertainties in addition to the statistical uncertainties.
 At the time of writing this thesis, these reprocessed samples and the impact of the revised total JER uncertainties has not been propagated through the analysis.
 
-\section{Future development of an FPGA Based Track Finder for the CMS Tracker Upgrade}
-If the linearised $chi^{2}$ track fitting algorithm is to be 
+
+%%%TMTT work
+This thesis also presents the outcomes of several software studies for a proposed track finder system for the future CMS silicon tracking detector at the HL-LHC.
+
+The studies into the suitability 
+
+In order to take full advantage of the high luminosity environment of the HL-LHC, it is planned replace the current CMS tracking detector with one which is capable of contributing information to the CMS Level-1 trigger.
+
+One of the track finder systems for the upgraded CMS tracker identifies track candidates using time-multiplexed Hough Transforms in the r-$\phi$ plane, followed by Kalman Filter to precisely fit track parameters to the candidates and remove fake tracks and a duplicate removal process.
+A linearised $\chi^{2}$ fit was explored as an alternative track fitting algorithm
+
+
 %%%Future work
+
 For the linearised $chi^{2}$ track fitting algorithm to be considered in the future, the following would to be addressed:
 \begin{itemize}
 \item An improved track fitting efficiency which obtains a high, if not 100\%, tracks purity, in order to be competitive with both the \KF and \LR which are currently able achieve 100\% purity.

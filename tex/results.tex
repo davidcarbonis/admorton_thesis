@@ -1,30 +1,33 @@
 \chapter{Results}\label{chapter:results}
 Following providing the multivariate analysis technique described in Section~\ref{sec:mvas} with the simulated samples, and their systematic variations, and data, the resultant set of BDT discriminator distributions can be used to perform a measurement.
 
-The following chapter describes the statistical methodology used to analyses these distributions and produce a measurement of the cross section and the upper limit for the signal process along with both the expected and observed significances of this measurement.
-Following a discussion of the impact that the systematic uncertainties have on the fitted results, the result presented is compared with that from the already published trileptonic final state for tZq production.
+The following chapter describes the statistical methodology used to analyses these distributions and produce the blinded measurement of the upper limit of the signal process' cross section along with its expected significance.
+Following a discussion of the impact that the systematic uncertainties have on the fitted results, the blinded result presented is compared with that from the already published trileptonic final state for tZq production.
 
 \section{Statistical Methodology}\label{sec:statisticalModel}
-The Higgs Analysis Combined Limit (\combine) tool~\cite{Combine} tool, a framework based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}, was used to perform a binned Maximum Likelihood Fit (MLF) to analyses the measurement made using the $CL_{S}$ method~\cite{CMS-NOTE-2011-005,Khachatryan:2014jba,Cowan:2010js}.
+The Higgs Analysis Combined Limit (\combine) tool~\cite{Combine} tool, a framework based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}, was used to perform a binned Maximum Likelihood Fit (MLF) to analyses the measurement made using the $CL_{S}$ method~\cite{CMS-NOTE-2011-005,Khachatryan:2014jba,AsymptoticFormulae}.
 
 \subsection{Likelihood Model}\label{subsec:likelihoodModel}
-For the signal and background processes considered in the search, the expected event yield $\lambda$ in the bin $i$ is given by Equation~(\ref{eq:yields1}):
+For the signal and background processes considered in the search, the expected event yield $\lambda$ in bin $i$ of the distribution considered (\ie the BDT discriminator) is given by Equation~(\ref{eq:yields1}):
 
 \begin{equation}
-\lambda_{i} = \mu s_{i} + \sum\limits_{j} b_{j} \;
+\lambda_{i} = \mu s_{i} + \sum\limits_{j}^{n_{bkgs}} b_{j} \;
 \label{eq:yields1}
 \end{equation}
 
-where $s$ and $b$ are the expected number of signal and background events and $\mu$ is the signal strength modifier.
-The signal strength modifier as given in equation~\ref{eq:signalModifier} where $\sigma_{obs}$ is the cross section observed, is used typically to parametrise the expected signal yield in lieu of the expected cross section.
-The uncertainties associated with the simulated predictions of the signal and background processes are accounted for by the inclusion of nuisance parameters $\theta$, such that $s_{i} = s_{i} (\theta)$ and $b_{i} = b_{i} (\theta)$.
+where $s$ and $b$ are the expected number of signa, and background events, respectively, the index $j$ runs over the number of background sources, $n_{bkgs}$, and $\mu$ is the signal strength modifier.
+The signal strength modifier is typically used instead of directly determining the expected (and observed) cross section of a process as it makes the comparison of different results (particularly from different experiments) more straightforward. 
+The relationship between $\mu$ and the observed and expected cross sections, $\sigma_{obs}$ and $\sigma_{s}$, is given by Equation(~\ref{eq:signalModifier}):
 
 \begin{equation}
 \mu = \frac{\sigma_{obs}}{\sigma_{s}}  \;
 \label{eq:signalModifier}
 \end{equation}
+ 
+The uncertainties associated with the simulated predictions for the signal and background processes are accounted for by the inclusion of a set of nuisance parameters $\theta$.
+The dependence of the number of expected  such that $s_{i} = s_{i} (\theta)$ and $b_{i} = b_{i} (\theta)$.
 
-Assuming that the number of observed events, $n_{i}$, in any given bin will be distributed according to Poisson statistics, the probability of observing $n_{i}$ is given by equation~\ref{eq:poissonProb}.
+Assuming that the number of observed events, $n_{i}$, in any given bin of the distribution considered will be distributed according to Poisson statistics, the probability of observing $n_{i}$ is given by Equation~(\ref{eq:poissonProb}):
 
 \begin{equation}
 \mathcal{P} ( n_{i} | \lambda_{i} ) = \frac{\lambda_{i}}{n_{i}!} e^{- \lambda_{i}} = \frac{ \big( \mu s_{i}(\theta) + b_{i}(\theta) \big)^{n_{i}}}{n_{i} !} e^{- \mu s_{i}(\theta) - b_{i}(\theta)}  \;
@@ -33,10 +36,10 @@ Assuming that the number of observed events, $n_{i}$, in any given bin will be d
 
 A probability density function, $\rho ( \theta | \tilde{\theta} )$ with a nominal value of $\tilde{\theta}$ for the best estimate of the nuisance, is used to describe all the sources of uncertainty for the nuisance parameters.
 For the search presented in this thesis, it is assumed that each source of systematic uncertainty is either 100\% correlated or uncorrelated, thus allowing each systematic uncertainty to be incorporated into $\rho ( \theta | \tilde{\theta} )$ in a clean factorised form.
-Shape uncertainties are modelled by vertically morphing the nominal shape template between between its up and down variations while the the non-prompt lepton normalisation and luminosity flat rate uncertainties are treated as log-uniform and log-normal nuisance parameters respectively~\cite{Baak:2014fta,AsymptoticFormulae}.
-\combine includes the impact of the statistical uncertainty on the the aMC@NLO Z+jets sample normalisation determined in the Z+jets control region obtained as a log-normal nuisance parameter.
+Shape uncertainties are modelled by vertically morphing the nominal shape template up and down by one $\sigma$.
+The data aMC@NLO Z+jets sample and non-prompt lepton normalisation ,and luminosity flat rate uncertainties are treated as log-uniform and log-normal nuisance parameters respectively~\cite{Baak:2014fta,AsymptoticFormulae}.
 
-Therefore, the likelihood for the entire dataset can be expressed the product of the Poisson probabilities, $\mathcal{P}$, for all bins and the nuisance parameters' probability density function, as given by equation~\ref{eq:poissonLikelihood}.
+Thus, the likelihood for the entire dataset can be expressed as the product of the Poisson probabilities, $\mathcal{P}$, for all bins and the nuisance parameters' probability density function, as given by Equation~(\ref{eq:poissonLikelihood}).
 
 \begin{equation}
 \mathcal{L} ( n_{i} | \mu , \theta ) = 
@@ -45,23 +48,24 @@ Therefore, the likelihood for the entire dataset can be expressed the product of
 \end{equation}
 
 \subsection{$CL_{S}$ method}\label{subsec:CLsMethod}
-The modified classical frequentist method, known as the $CL_{S}$ method, was used to evaluate the compatibility of data with the \emph{signal+background} (s+b) and \emph{background only} (b-only) hypotheses in terms of the siginfiance of and the limits on the signal strength measured~\cite{Cowan:2010js}.
+The modified classical frequentist method, known as the $CL_{S}$ method, was used to evaluate the compatibility of data with the \emph{signal plus background} (s+b) and \emph{background only} (b-only) hypotheses in terms of the signifiance of, and the limits on, the measured signal strength ~\cite{AsymptoticFormulae}.
 
-To evaluate these hypotheses, the method constructs a test statistic, $q_{\mu}$.
-The ATLAS and CMS collaborations at the LHC define $q_{\mu}$ as the log likelihood ratio for a given model with $\mu$ by equation~\ref{eq:testStatistic},
+To evaluate these hypotheses, the $CL_{S}$ method constructs a test statistic, $q_{\mu}$.
+The test statistic used by the ATLAS and CMS is defined as the loglikelihood ratio in equation~\ref{eq:testStatistic},
 
 \begin{equation}
-q_{\mu} =  -2 \ln \frac{ \mathcal{L}(data | \mu s , \hat{\theta_{\mu}}}{ \mathcal{L}(data | \hat{\mu} s \hat{\theta_{\mu}},  } , where 0 \leq \hat{\mu} \leq \mu \;
+q_{\mu} =  -2 \ln \frac{ \mathcal{L}(data | \mu s , \hat{\theta_{\mu}})}{ \mathcal{L}(data | \hat{\mu} s \hat{\theta_{\mu})  } \textrm{ , where } 0 \leq \hat{\mu} \leq \mu \;
 \label{eq:testStatistic}
 \end{equation}
 
 where $\hat{\theta_{\mu}}$ refers to the maximum likelihood estimators of $\theta$ for a given $\mu$, and 
 $\hat{\mu}$ and $\hat{\theta}$ correspond to the global maximum of the likelihood. 
-By definition $\hat{\mu}$ cannot take negative values as physics defines the signal rate as positive, and the constraint $\hat{\mu} < \mu$ is applied to ensure a one-sided confidence interval.
+By definition $\hat{\mu}$ cannot take negative values as physics defines the signal rate as positive. 
+The constraint $\hat{\mu} < \mu$ is applied to ensure a one-sided confidence interval.
 
-As the analysis is initially conducted blind, \emph{pseudodata} is generated using toy MC for the \emph{expected} outcomes in order to construct probability distribution functions for the \emph{s+b} and \emph{b-only} hypotheses for a given signal strength.
-After the unblinding of the analysis, the \emph{observed} measurement is made by replacing the pseudodata used for the \emph{s+b} probability distribution functions with the actual data.
-From these probability distribution functions, the probability values for the s+b and b-only hypotheses can be defined as equations~\ref{eq:pmu} and~\ref{eq:1-pb}.
+As the analysis is initially conducted blind, \emph{pseudodata} is generated using toy MC for the \emph{expected} outcomes in order to construct probability distribution functions for the s+b and b-only hypotheses for a given signal strength.
+For the unblinding of the analysis, the \emph{observed} measurement will be made by replacing the pseudodata used for the s+b probability distribution functions with the actual data.
+From these probability distribution functions, the probability values for the s+b and b-only hypotheses can be defined as Equations~(\ref{eq:pmu})-(~\ref{eq:1-pb}):
 
 \begin{equation}
 p_{\mu} = P ( q_{\mu} \geq  q_{\mu}^{obs} | \mu s + b ) = \int^{\infty}_{q_{\mu}^{obs}} f ( q_{\mu} | \mu , \theta_{\mu}^{obs} ) dq_{\mu} \;
@@ -73,24 +77,24 @@ p_{\mu} = P ( q_{\mu} \geq  q_{\mu}^{obs} | \mu s + b ) = \int^{\infty}_{q_{\mu}
 \label{eq:1-pb}
 \end{equation}
 
-The ratio of these probabilities are used to define $CL_{S} (\mu)$ in equation~\ref{eq:CLs}.
+The ratio of these probabilities is used to define $CL_{S} (\mu)$ in Equation~(\ref{eq:CLs}).
 
 \begin{equation}
 CL_{S} (\mu) = \frac{ p_{\mu} }{ 1 - p_{b} }\;
 \label{eq:CLs}
 \end{equation}
 
-If for a given $\mu$, $CL_{S} < \alpha$, then it is said that the signal process in question is excluded with a $(1 - \alpha)$ Confidence Level (CL).
+If, for a given $\mu$, $CL_{S} < \alpha$, then it is said that the signal process in question is excluded with a $(1 - \alpha)$ Confidence Level (CL).
 Therefore, as the 95\% CL upper limit is used in this search, the limit is determined by altering $\mu$  until $CL_{S} = 0.05$.
 
-\subsection{Asymptotic CL$_{s}$ method}\label{subsec:asymptoticCLS}
+%\subsection{Asymptotic CL$_{s}$ method}\label{subsec:asymptoticCLS}
 Instead of using an ensemble of toy MC samples to generate the pseudodata, one representative dataset, known as the \emph{Asimov dataset}, was used.
-This method, known as the \emph{asymptotic} CL$_{s}$ method, can be used was the number of expected events is sufficiently large and typically reduces the amount of computing time required.
+This method, known as the \emph{asymptotic} CL$_{s}$ method, is used when the number of expected events is sufficiently large as it typically reduces the amount of computing time required.
 The Asimov dataset is defined as being constructed such that all observable quantities are equal to their expectation values.
-A full description of the asymptotic approximation to the CL$_{s}$ method is given in~\cite{Cowan:2010js}.
+A full description of the asymptotic approximation to the CL$_{s}$ method is given in~\cite{AsymptoticFormulae}.
 
 \section{Statistical Analysis Results}
-For the combination of both of the final states, at the 95\% CL, the cross section for tZq production was measured to be $X^{+Y}_{-Z}$, which is within the uncertainties of the SM prediction.
+For the combination of both inal states, at 95\% CL, the cross section for tZq production was measured to be $X^{+Y}_{-Z}$, which is within the uncertainties of the SM prediction.
 This result corresponds to an observed significance of $X_{-Z}^{+Y} \sigma$ against an expected significance of $X_{-Z}^{+Y} \sigma$, which is in agreement with the SM cross section of  $0.0758^{+Y}_{-Z} \pb$.
 
 The observed signal strengths, measured cross sections, and corresponding significances for the individual channels and their combination are shown in full in Table~\ref{tab:shapetxs}.

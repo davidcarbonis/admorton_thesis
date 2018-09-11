@@ -304,18 +304,17 @@ A more detailed description of the firmware implementation of the \DR for the de
 
 \section{Simulation Studies}\label{sec:TmttSimStudies}
 This section presents a number of simulation studies which were undertaken as part of the development of the \emph{TMT} finder demonstrator system both before and following the 2016 review.
-All of the results discussed were obtained using simulated \ttbar events with a $<\text{PU}>$ of 200 events
-and use a common set of definitions, as defined in Section~\ref{subsec:helixParameter}.
-The results from track fitting algorithms discussed use digitised output from the \HT.
+All of the results discussed were obtained using simulated \ttbar events with a $<\text{PU}>$ of 200 events and use digitised output from the \HT.
+The set of metrics used to evaluate the performance of the proposed track finder systems are used for the results presented and are described in Section~\ref{subsec:definitions}.
 
 As mentioned in Section~\ref{sec:tk-upgrade}, at the time of the review the flat barrel geometry described earlier was used for all the studies undertaken, as depicted in the lower diagram in figure~\ref{fig:trackerlayout}.
 As such, unless stated otherwise, the results discussed below use the flat barrel geometry instead of the current tilted geometry.
 
-\subsection{Definitions}\label{subsec:helixParameter}
-A number of parameters and metrics are used throughout this chapter to describe tracks and how well the track fitters have reconstructed them.
-They are defined as below.
+\subsection{Definitions}\label{subsec:definitions}
+A common set of parameters and metrics are used throughout the next sections of this chapter to describe tracks and how well the track fitters have reconstructed them.
+They are defined as below in Sections~\ref{subsec:helixParameter}-~\ref{subsec:recoTracks}.
 
-\subsubsection{Helix Parameters}
+\subsubsection{Helix Parameters}\label{subsec:helixParameter}
 The helical trajectory of a charged particle at the impact point is described by five helix parameters.
 In the CMS these parameters are defined as:
 
@@ -329,7 +328,7 @@ In the CMS these parameters are defined as:
 
 As the \HT and track fitting algorithms discussed all assume that all tracks originate at the interaction point, $d_{0}$ is not given in the results below as it is fixed to zero.
 
-\subsubsection{Reconstructed Tracks}
+\subsubsection{Reconstructed Tracks}\label{subsec:recoTracks}
 The common definitions of track reconstruction efficiency~\cite{TMTT_JINST} used for the three proposed L-1 Track Finder systems are used for the results presented in this chapter:
 
 \begin{itemize}
@@ -356,9 +355,8 @@ As high \pT tracks should form a straight line in the \emph{\rphi} and \emph{$r-
 
 A linearised $\chi^{2}$ track fit was the first fitting algorithm to be studied by the \emph{TMTT} project.
 Given the limited time and resource constraints at the start of the \emph{TMTT} project, there was the urgent need to quickly evaluate potential track fitting algorithms so that the optimal one could be implemented in a complete track finder system for the 2016 review.
-
 Following discussions with both the \emph{tracklet} and \emph{AM} projects, it was decided a linearised $\chi^{2}$ fit based on the algorithm proposed by the \emph{tracklet} project would be investigated.
-The general form of the $\chi^{2}$ fit and the derivation of the track derivatives required by the algorithm were provided in a private communication~\cite{CMS_DN-14-043} and were used to produce a \emph{TMTT} implementation of it.
+The general form of the $\chi^{2}$ fit and the derivation of the track derivatives used by the algorithm were provided in a private communication~\cite{CMS_DN-14-043} and were used to produce a \emph{TMTT} implementation of it.
 
 A linearised $\chi^{2}$ fit determines improved helix parameters for the track candidate by determining the  residuals between the stubs and the seeded track that minimise the $\chi^{2}$ of the fit.
 The general form of the $\chi^{2}$ fit describing how these hit residuals are used to obtain a fit of a track's helix parameters is detailed in Section~\ref{subsubsec:chi2maths}.
@@ -429,7 +427,11 @@ Therefore, any implementation in firmware for an FPGA will require the use of lo
 
 \subsubsection{$\chi^{2}$ Track Fitter Results}\label{subsubsec:chi2software}
 %From equations~(\ref{eq:chi4}) and~(\ref{eq:chi5}) and the track derivatives derived in Appendix~\ref{app:chi2}, a software implementation of the linearised $\chi^{2}$ track fit algorithm was developed.
-From Equations~(\ref{eq:chi4}) and~(\ref{eq:chi5}) and the track derivatives as given in~\cite{CMS_DN-14-043}, a software implementation of the linearised $\chi^{2}$ track fit algorithm was developed.
+From Equations~(\ref{eq:chi4}) and~(\ref{eq:chi5}) and the track derivatives derived in~\cite{CMS_DN-14-043}, a software implementation of the linearised $\chi^{2}$ track fit algorithm was developed.
+Initially this implementation used exact floating point mathematics in order to validate that the algorithm had been correctly implemented.
+This process involved 
+
+Following confirmation that 
 
 The strategy behind the development of this track fitting algorithm intiially involved 
 
@@ -440,7 +442,7 @@ debugging and optimising the floating point maths implementation to give optimin
 Initially this implementation used exact floating point mathematics in order to validate the algorithm, before a version using approximated expressions of the track derivatives was developed.
 The motivation behind this was to reduce the number of variables that the matrix of derivatives would depend on in order to simplify (and reduce resources required for) any future tabulation of the matrix.
 
-
+%%%
 
 \begin{table}[htbp]
 \topcaption {Track finding performance on simulated \ttbar events with a $<\text{PU}>$ of 200 events, after the \HT and the full chain for  both the exact floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
@@ -562,16 +564,15 @@ There were also concerns over the potential feasibility of tabulating all (or th
 \subsection{Tracking at low transverse momenta}\label{subsec:Tmtt2GeV}
 The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV is potentially desirable and so the impact of this potential requirement on the performance of the proposed track-finder system was studied.
 
-These studies were initially undertaken as part of the the robustness studies required for the 2016 demonstrator review, focussing on recovering tracking efficiency below 3\GeV with the \HT.
+These studies were initially undertaken as part of the the robustness studies required for the 2016 demonstrator review.
+The focussing on recovering tracking efficiency below 3\GeV with the \HT.
 Therefore, the results for these studies were produced using the flat barrel geometry.
 
 Following the 2016 review, the studies into tracking with a pT threshold of 2\GeV 
 The initial studies were subsequently developed with modifications to the \KF algorithm after 2016.
-
 The results for the \KF improvements were produced with the preferred tilted barrel geometry.
 
-
-As the number and width of \qpt \HT columns used varies from the standard fixed number and size of columns typically used, thus varying the \pT resolution available, results are expressed as a function of 1/\pT instead of \pT.
+As the number and width of \qpt \HT columns used varies from the standard fixed number and size of columns typically used, thus varying the \pT resolution available, results in the following subsections are expressed as a function of 1/\pT instead of \pT.
 
 \subsubsection{Hough Transform Optimisation and Results}\label{subsubsec:lowPtOptHT}
 Lowering the \pT threshold from 2\GeVc required modifying the GP and HT configuration parameters to ensure adequate duplication in $\phi$ and increasing the number of \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision.
