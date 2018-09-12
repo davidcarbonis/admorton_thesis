@@ -11,14 +11,15 @@
 \section{Data and Simulation Samples}\label{sec:samples}
 Out of the 37.8\fbinv of  proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by the CMS experiment during 2016, 35.8\fbinv was certified by the collaboration as being of sufficient quality to be used for physics analysis.
 
-The difference between the certified value and the total data recorded is the result of various factors such as the unavailability of a detector.
+The difference between the certified value and the total data recorded is the result of various factors such as the unavailability of a detector due to power failures .
 
-Due to the prescaling of both ... electron triggers during the start of the most luminous runs, as discussed in Section~\ref{sec:triggerStrategy}, the $ee$ channel uses a reduced dataset of 35.6\fbinv where none of the triggers considered were prescaled.
+Due to the prescaling of all of the electron triggers considered during the start of the most luminous runs, as discussed in Section~\ref{sec:triggerStrategy}, the $ee$ channel uses a reduced dataset of 35.6\fbinv where none of the triggers considered were prescaled.
 Events in the double lepton and single lepton datasets from across these ``good'' data runs are considered where the double and single lepton triggers respectively have fired, using the strategy described in Section~\ref{sec:triggerStrategy}.
 
-The MC samples used to model signal and background processes that were considered are listed in table~\ref{tab:mcList}, which includes information on the number of events generated, their cross sections and the order in perturbative accuracy in QCD to which the generators calculated the processes.
-For all the MC samples considered, the hadronisation of all the MC samples considered was undertaken using PYTHIA 8.
-The NNPDF3.0 family of PDF sets was used as input for the generators of the MC samples, where the corresponding PDF sets were used depending on whether the sample was produced at LO or NLO and used either the four or five flavour scheme.
+The MC samples used to model both the model signal and background processes considered here are listed in table~\ref{tab:mcList}.
+For each of the processes considered, the table which includes information on the number of events generated, the cross section used in their generation and the order in perturbative accuracy in QCD to which the generators calculated the processes.
+For all the MC samples considered, the hadronisation perfrmed was undertaken using PYTHIA 8.
+The NNPDF3.0 family of PDF sets~\cite{Ball:2012cx} was used as for sample generation, where the exact set chosen depended on whether the sample was produced at LO or NLO and used either the four or five flavour scheme.
 
 \begin{table}[htbp]
 \topcaption {
@@ -59,18 +60,18 @@ The MC processes and their associated sample sizes, cross sections and generator
    \hline
    W+jets & 24.1M & 61526.7 & aMC@NLO (NLO) \\
    \hline
-   Z+jets ($m_{Z} \geq 50\GeVcc $ & 146M & 5765.4 & Madgraph (LO) \\
-   Z+jets ($10 \GeVcc \leq m_{Z} < 50\GeVcc$ & 35.3M & 18610.0 & Madgraph (LO) \\
+   Z+jets ($m_{Z} \geq 50\GeVcc $) & 146M & 5765.4 & Madgraph (LO) \\
+   Z+jets ($10 \GeVcc \leq m_{Z} < 50\GeVcc$) & 35.3M & 18610.0 & Madgraph (LO) \\
    \hline
-   Z+jets ($m_{Z} \geq 50\GeVcc $ & 151M & 5765.4 & aMC@NLO (NLO) \\
-   Z+jets ($10 \GeVcc \leq m_{Z} < 50\GeVcc$ & 106M & 18610.0 & aMC@NLO (NLO) \\
+   Z+jets ($m_{Z} \geq 50\GeVcc $) & 151M & 5765.4 & aMC@NLO (NLO) \\
+   Z+jets ($10 \GeVcc \leq m_{Z} < 50\GeVcc$) & 106M & 18610.0 & aMC@NLO (NLO) \\
    \hline
    WW $\rightarrow$ l$\nu$qq & 9.0M & 49.997  & POWHEG (NLO) \\
       $\rightarrow$ ll$nu\nu$ & 2.0M & 12.178 & POWHEG (NLO) \\
    \hline
    WZ $\rightarrow$ l$\nu$qq & 24.2M & 10.73 & aMC@NLO (NLO) \\
       $\rightarrow$ llqq & 26.5M & 5.606 & aMC@NLO (NLO) \\
-      $\rightarrow$ lll$\nu$ 1.9M & 5.26 & aMC@NLO (NLO) \\
+      $\rightarrow$ lll$\nu$ & 1.9M & 5.26 & aMC@NLO (NLO) \\
    \hline
    ZZ $\rightarrow$ ll$\nu\nu$ & 8.8M & 0.5644 & POWHEG (NLO) \\
       $\rightarrow$ llqq & 15.3M & 3.222 & aMC@NLO (NLO) \\
@@ -155,15 +156,17 @@ The dedicated MC samples used to estimate some theoretical uncertainties. The ta
 \section{Simulation Corrections}\label{sec:simCorrections}
 Simulation is unable to fully recreate all the effects observed in data, either because certain parameters are not precisely known or cannot be calculated.
 To account for possible discrepancies, corrective scale factors are used to reweight MC samples on a per event basis.
-Such scale factors are usually derived as a function of \pt and $\eta$ so as to fully account for the variation of the detector response in both.
-These scale factors are used to correct the simulation for any discrepencies in the lepton identification, isolation and reconstruction efficiencies, b-tagging efficiencies, the poor modelling of pileup in simulation, and the detector resolutions observed in data.
+If required, scale factors are usually derived as a function of \pt and $\eta$ so as to fully account for the variation of the detector response in both.
+These scale factors are used to correct the simulation for any discrepencies in the lepton identification, isolation and reconstruction efficiencies, lepton and jet energy scales and resolutions, b-tagging efficiencies, the poor modelling of pileup in simulation, and the detector resolutions observed in data.
 
 \subsection{Miscalibrated Tracker APV}\label{subsec:hipEffect}
 During the first half of data taking in 2016 the silicon strip detector suffered from an instantaneous-luminosity-dependent hit finding inefficiency, which particularly affected high occupancy regions, due to saturation in the pre-amplifier in the front-end electronics~\cite{Fiori:2016ebh}.
 This issue was resolved by changing the configuration of the electronics.
-While the affected part of the dataset has been reprocessed to mitigate the impact on the quality of the data taken, there is still a negative impact on the detector efficiency for objects that rely upon highly efficient tracking data.
-This is accounted for by the weighting of events appropriately when the scale factors are produced, either centrally by CMS or those derived for the analysis (\ie the trigger scale factors), so that a single scale factor is applied to a simulated event.
+The 55\% of the total dataset affected by this issue has since been reprocessed by CMS to mitigate the impact on the quality of the data taken.
 
+Despite this however, there is still a negative impact on the reconstructing tracks efficiency for physics objects that rely upon tracking data.
+
+This reduced detector efficiency is accounted for by using the weighted average of the scale factors that have been derived separately for both the affected and unaffected portions of the dataset.
 
 \subsection{Lepton Efficiency}\label{subsec:leptonRecoSFs}
 The identification, isolation and reconstruction efficiencies of leptons are calculated using measurements of $Z \rightarrow l^{+} l ^{-}$ events with the \emph{tag-and-probe} method~\cite{CMS:2008rxa}.
@@ -197,11 +200,11 @@ The determination of the systematic uncertainties is given in Section~\ref{sec:s
 % This right-aligns numbers in column, but centers them under column title.
  \begin{tabular}{lccc}
    \hline
-   \textbf{Channel} & \textbf{$\epsilon _{data}$} & \textbf{$\epsilon _{MC}$} & \textbf{SF}\\
+   \textbf{Channel} & \textbf{$\epsilon _{data}$} & \textbf{$\epsilon _{MC}$} & \textbf{Scale Factor}\\
    \hline   
-   $ee$ & 0.97554 $\pm$ 0.00138 & 0.98823 $\pm$ 0.00086 & 0.98715 $\pm$ 0.00063\\
-   $\mu\mu$ & 0.98516 $\pm$ 0.00068 & 0.99192 $\pm$ 0.00074 & 0.99318 $\pm$ 0.00015  \\
-   $e \mu$ & 0.87477 $\pm$ 0.01358 & 0.88228 $\pm$ 0.01877 & 0.99148 $\pm$ 0.00722\\
+   $ee$ & 0.976 $\pm$ 0.001 & 0.988 $\pm$ 0.001 & 0.987 $\pm$ 0.001\\
+   $\mu\mu$ & 0.985 $\pm$ 0.001 & 0.992 $\pm$ 0.001 & 0.993 $\pm$ 0.000  \\
+   $e \mu$ & 0.875 $\pm$ 0.014 & 0.882 $\pm$ 0.019 & 0.991 $\pm$ 0.007\\
    \hline
  \end{tabular}}
 \end{table}
@@ -219,7 +222,10 @@ The determination of the systematic uncertainties is given in Section~\ref{sec:s
 
 \subsection{Lepton Energy Corrections}\label{subsec:leptonEnergyCorrections}
 \subsubsection{Electron Regression and Energy Scale and Smearing Corrections}
-Two types of energy corrections which have been produced by the CMS EGM POG are applied to electrons and photons, energy regression and energy scale and smearing corrections.
+Two types of energy corrections that have been produced by the CMS ElectronGamma (EGM) Physics Object Group are applied to electrons and photons, namely energy regression and energy scale and smearing corrections.
+These corrections use $Z \rightarrow e^{+} e^{-}$
+WHAT DO THEY CORRECT 
+
 These corrections are applied to both MC simulation and data and are used to improve the electron resolution obtained and to resolve the observed discrepancies between them.
 
 Using simulation for tuning, energy regression obtains the best possible energy resolution by using the detector information to correct the reconstructed object energy.
@@ -228,34 +234,33 @@ The disagreement between data and MC is resolved by scaling the data energy to t
 These corrections are pre-applied onto the PF electron collections used.
 
 \subsubsection{Rochester Corrections}
-The muon momentum scale and resolution correction methods developed by the University of Rochester~\cite{rochester}, known as \emph{Rochester Corrections}, are used to remove any muon momentum bias from any detector misalignment, reconstruction or uncertainties in the magnetic field for both MC and data.
-These corrections are derived with high \pt ($> 20\GeVc$) muons from Z $ \rightarrow \mu\mu$ decays using a two step method, where the muons are binned in charge, $\eta$ and $\phi$.
-The first step requires the mean inverse transverse momenta of the muons reconstructed from data and simulation to be the same as the corresponding values from a perfectly aligned detector.
-These corrections are tuned in the second step by using the $M_{\mu^{+1}\mu^{-1}}$ peak for a perfectly aligned detector to calibrate the corrections.
-This removes any sensitivity to detector efficiencies or physics modelling.
+The muon momentum scale and resolution correction methods developed by the University of Rochester~\cite{rochester}, known as \emph{Rochester Corrections}, are used to remove any muon momentum bias arising from any possible detector misalignment and any error in the measurement of the magnetic field for both MC and data.
+These corrections are derived using a sample of high \pt $> 20\GeVc$ muons from Z $ \rightarrow \mu^{+}\mu^{-}$ decays using a two-step method.
+The first of the two steps determines a correction factor that is defined as the difference in the mean inverse transverse momenta of the muons from a perfectly aligned simulation and reconstructed data or simulation.
+These corrections are tuned in the second step using the $M_{\mu^mu}$ peak for a perfectly aligned detector to calibrate the corrections.
+This removes any dependence on detector efficiency or physics modelling.
 
-The Rochester Corrections are applied to each muon an event weight that is a function of the muon's charge, \pt, $\eta$ and $phi$.
+The Rochester Corrections are applied to each muon as an event weight that is a function of the muon's charge, \pt, $\eta$ and $\phi$.
 
 \subsection{Jet Energy Corrections}\label{subsec:jesjer}
-As described in Section~\ref{subsubsec:JECs}, the Jet Energy Corrections are applied to account for the non-uniform response in \pT and $\eta$ of the detector by comparing the differences between the generator level and detector level responses and any residual differences between simulation and data.
+As described in Section~\ref{subsubsec:JECs}, the Jet Energy Corrections are applied to account for the non-uniform response in \pT and $\eta$ of the detector by comparing the differences between the generator level and detector level responses in simulation and any residual differences between simulation and data.
 
-In addition to these corrections, as the Jet Energy Resolution (JER) observed in data is approximately 10\% poorer than that in observed simulation, the 4-vectors of simulated jets are smeared as functions of generator level and reconstructed \pt and $\eta$ to account for this~\cite{Khachatryan:2016kdb}.
+In addition to these corrections, as the Jet Energy Resolution (JER) observed in data is approximately 10\% poorer than that observed in simulation, the 4-vectors of simulated jets are smeared as functions of generator level and reconstructed \pt and $\eta$ to account for this~\cite{Khachatryan:2016kdb}.
 
 \subsection{b-tagging Efficiency}\label{subsec:btagEff}
-The CMS B-Tag and Vertexing (BTV) Physics Object Group measures the b-tagging efficiency and misidentification rates for b and light flavoured jets in data and MC simulation (multijet and \ttbar) of the algorithms which they support~\cite{Sirunyan:2017ezt}.
-From these measurements b-tagging efficiency scale factors are produced and provided for analysts to apply to simulated events to correct differences observed between data and simulation.
-These scale factors, as functions of the jet flavour, \pT and $\eta$, are used to alter the weight of the selected MC events.
+The CMS B-Tag and Vertexing (BTV) Physics Object Group measures the b-tagging efficiency and misidentification rates for b- and light-flavoured jets in data and MC simulation (multijet and \ttbar) of the algorithms which they support~\cite{Sirunyan:2017ezt}.
+From these measurements b-tagging efficiency scale factors are produced and provided for analysts to apply to simulated events to correct for differences observed between data and simulation.
+These scale factors, as functions of the jet flavour, \pT and $\eta$, are used to alter the weight of the MC events.
 This methodology was chosen as it involves only changing the weight of the selected MC events which, unlike other methods, avoids events migrating into different b-tag multiplicity bins and having events with potentially undefined variables such as the top mass.
 
 \subsection{\PU Modelling}\label{subsec:puSF}
 It is challenging to model variations in the number of \PU interactions that result from the changing LHC conditions.
-Therefore MC events are reweighted as a function of the number of primary vertices so that the simulated PU interactions resemble what is observed in data.
+To achieve this, MC events are reweighted as a function of the number of primary vertices so that the simulated PU distributions resemble those observed in data.
 
-The \PU SF is determined as a function of the number of primary vertices, $n_{PV}$, present by comparing $n_{PV}$ in minimum bias data over the running period considered to $n_{PV}$ for simulated events.
+The \PU SF is determined as a function of the number of primary vertices, $n_{PV}$, by comparing the $n_{PV}$ distribution in minimum bias data over the running period considered to the corresponding $n_{PV}$ distribution in simulated events.
 
 \subsection{Top quark \pt}
-A scale factor is applied to \ttbar MC as a function of the top's and anti-top's generator level transverse momenta to account for the \pt spectra of top quarks in data being significantly softer than that predicted by LO and NLO precision MC simulation~\cite{Khachatryan:2015oqa}.
-
+A scale factor is used to reweight all simulated \ttbar events to account for the differences in the top quark \pt distribution observed between data and both the LO and NLO MC simulation~\cite{Khachatryan:2015oqa}.
 
 \section{Signal Region Simulated Backgrounds}\label{sec:simBackgrounds}
 The impact of the application of the full event selection and simulation corrections in the signal region on the simulated samples, including non-prompt lepton contribution estimated from data, compared to data is shown in table~\ref{tab:signalYields}.
@@ -305,28 +310,30 @@ Total MC + NPLs & 5322.654 & 10098.641 & 15361.377    \\
 \section{Data-driven Background Estimation}\label{sec:dataDrivenBackground}
 
 \subsection{Non-Prompt Leptons}\label{sec:NPLs}
-Leptons which are produced from events where at least one jet is incorrectly reconstructed as a lepton (predominately electrons) or a lepton from the decay of heavy quarks (predominately muons) are known as \emph{non-prompt leptons} (NPLs).
-The majority of these events are produced by \ttbar decaying semi-leptonically and W+jets, with smaller contributions from QCD and single top production.
-Given the difficulty in accurately modelling QCD processes and the very low statistics of such processes passing the lepton selection and isolation criteria could result in an inaccurate estimate of such processes from simulation alone, the NPL contribution is estimated with data.
+Leptons that are produced from events where at least one jet is incorrectly reconstructed as a lepton (predominately electrons) or a lepton from the decay of heavy quarks (predominately muons) are known as \emph{non-prompt leptons} (NPLs).
+The majority of these events are produced by semi-leptonic \ttbar decays, and W+jets production, with smaller contributions from QCD and single top production.
+As it is difficult to accurately model QCD processes and very few events from the simulated processes that pass the lepton selection  could result in an inaccurate estimate of such processes from simulation alone, 
 
-This data-driven estimation is based off the methodology used in top quark pair production~\cite{CMS:2016syx} and same charge SUSY searches~\cite{CMS:2015vqc}.
-This approach takes advantage of the fact that the vast majority of the event yields for same charge lepton pairs result from non-prompt and charge misidentified leptons, with some contributions from prompt leptons (such as \ttV).
-As these backgrounds are independent of the charge of the lepton pairs, it is expected that the nominal opposite charge event selection would have a similar contribution.
+the NPL contribution is estimated with data.
 
-Therefore by inverting the signal region's oppositely charged lepton requirement (\ie the leptons must have the same charge), a same charge control region can be defined which is dominated by NPL events while containing some contributions from prompt lepton events, charge misidentification and real same charge pairs.
+This data-driven estimate is based on the methodology used in top quark pair production~\cite{CMS:2016syx} and same charge SUSY searches~\cite{CMS:2015vqc}.
+This approach takes advantage of the fact that the vast majority of events containing same charge lepton pairs result from non-prompt and charge misidentified leptons, with some contributions from prompt leptons (such as \ttV).
+As these backgrounds are independent of the charge of the lepton pairs, it is expected that the nominal opposite charge event selection would have a contribution with a similar magnitude.
 
-Using this control region, a data-driven estimate of the contribution of opposite charge NPLs can be derived using Equation~\ref{eq:NPL}:
+Thus, by inverting the signal region's opposite charge lepton pair requirement (\ie by requiring the leptons to have the same, not opposite, charge), a same sign control region can be defined that is dominated by NPL events while containing a small admixture of from prompt lepton events, charge misidentification and real same charge lepton pairs.
+
+Using this control region, a data-driven estimate of the contribution of opposite charge NPLs can be derived as follows:
 
 \begin{equation}\label{eq:NPL}
- N_{data}^{OS non-prompt} = (N_{data}^{SS} - N^{SS}_{real + mis-ID}).\frac{N_{MC}^{OS non-prompt}}{N_{MC}^{SS non-prompt}}
+N_{data}^{OS non-prompt} = (N_{data}^{SS} - N^{SS}_{real + mis-ID}) \cdot \frac{N_{MC}^{OS non-prompt}}{N_{MC}^{SS non-prompt}}
 \end{equation}
 
-where $N_{data}^{SS}$ is the total number of same charge events observed in data and $N^{SS}_{real + mis-ID}$ is the expected number of real same charge events and events with charge misidentification.
+where $N_{data}^{SS}$ is the total number of same sign events observed in data and $N^{SS}_{real + mis-ID}$ is the expected number of real same sign events and events with charge misidentification.
 
-The ratio of opposite charge and same charge NPLs in simulation, $N_{MC}^{OS non-prompt}$ and $N_{MC}^{SS non-prompt}$, is used to appropriately normalise this estimate and uses the generator level information to correctly identify how the leptons were produced.
-The W+jets, \ttZ, \ttW, and single top simulated samples which have sufficient statistics in the control region are used to calculate this ratio as these processes are expected to be the predominant source of non-prompt leptons for this analysis.
+The ratio of opposite sign and same sign NPLs in simulation, $N_{MC}^{OS non-prompt}$ and $N_{MC}^{SS non-prompt}$, respectively, is used to appropriately normalise this estimate and uses the generator level information in simulation to correctly identify how the leptons were produced.
+The W+jets, \ttZ, \ttW, and single top simulated samples that have sufficient statistics in the same sign control region are used to calculate this ratio as these simulation indicates that these processes are the predominant source of non-prompt leptons for this analysis.
 
-The event yields of the simulated samples and data following the full event selection in the same lepton charge control region, the same sign background contributions not accounted for by simulation, ratio of same charge to opposite charge event yields and the data-driven NPL contribution estimate are given in table~\ref{tab:fakeLeptonYields}.
+The event yields of the simulated samples and data following the full event selection in the same lepton sign control region, the same sign background contributions not accounted for by simulation, ratio of same charge to opposite charge event yields and the data-driven NPL contribution estimate are given in table~\ref{tab:fakeLeptonYields}.
 
 %\editComment{Add bit about study into number of expected SS events with no fakes from DY mis-ID. Found to be negligible for mumu and < 1\% for ee - should be well covered by syst}
 
@@ -339,24 +346,24 @@ The event yields of the simulated samples and data following the full event sele
 \hline
 Source &  $ee$ & $\mu\mu$ & $e\mu$ \\ 
 \hline
-\ttbar (SS): & 30.971 & 71.539 & 365.992  \\
-\ttV (SS): & 6.729 & 10.479 & 48.204  \\ 
-Single Top (SS): & 1.764 & 2.624 & 20.054  \\
-W+jets (SS): & 0.0 & 0.0 & 6.515  \\
-Z+jets (SS): & 44.400 & 0.0 & 1.349  \\
-VV (SS): & 2.148 & 0.348 & 1.289 \\
-VVV (SS): & -0.024 & 0.098 & 0.683 \\
+$(N_{\ttbar}^{SS}$: & 30.971 & 71.539 & 365.992  \\
+$(N_{\ttV)^{SS}$: & 6.729 & 10.479 & 48.204  \\ 
+$(N_{single top)^{SS}$: & 1.764 & 2.624 & 20.054  \\
+$(N_{W+jets)^{SS}$: & 0.0 & 0.0 & 6.515  \\
+$(N_{Z+jets)^{SS}$: & 44.400 & 0.0 & 1.349  \\
+$(VV)^{SS}$: & 2.148 & 0.348 & 1.289 \\
+$(VVV)^{SS}$: & -0.024 & 0.098 & 0.683 \\
 \hline
-Total background (SS): & 85.988 & 85.088 & 444.086 \\ 
-Data (SS): & 126.0 & 125.0 & 643.0  \\ 
+$(N_{MC}^{SS}$ background: & 85.988 & 85.088 & 444.086 \\ 
+$(N_{data}^{SS}$: & 126.0 & 125.0 & 643.0  \\ 
 \hline
-SS data bkg: & 40.012 & 39.912 & 198.914\\
+$(N_{data}^{SS} - (N_{MC}^{SS}$: & 40.012 & 39.912 & 198.914\\
 \hline
-Non W/Z (SS): & 1.681 & 2.613 & 7.375\\
-Non W/Z (OS): & 1.579 & 2.337 & 11.161\\
-R (OS/SS): & 0.939 & 0.894 & 1.513 \\
+$N_{MC}^{SS non-prompt}$: & 1.681 & 2.613 & 7.375\\
+$N_{MC}^{OS non-prompt}$: & 1.579 & 2.337 & 11.161\\
+$\frac{N_{MC}^{OS non-prompt}}{N_{MC}^{SS non-prompt}}$: & 0.939 & 0.894 & 1.513 \\
 \hline
-NPL estimate: & 37.571$\pm$11.271 & 35.681$\pm$10.704 & 300.957$\pm$90.287\\
+$N_{data}^{OS non-prompt}$: & 37.571$\pm$11.271 & 35.681$\pm$10.704 & 300.957$\pm$90.287\\
 \hline
 \end{tabular}
 \label{tab:fakeLeptonYields}
