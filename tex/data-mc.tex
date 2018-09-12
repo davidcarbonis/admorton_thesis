@@ -39,31 +39,31 @@ As MC simulation is meant to provide a realistic description of physics processe
 %
 %~\cite{evenish2004deep} - DIS
 
-The simulation of events is a four stage process: generation, simulation, digitisation and reconstruction.
+The simulation of a process involves the generation, simulation, digitisation and reconstruction of an event.
 
 The initial generation stage involves the use \emph{event generators} to simulate the proton-proton interactions and the resultant physics processes~\cite{Buckley:2011ms,Hoche:2014rga}.
+The first part of this stage uses proton Parton Distribution Functions to assign 
 
-The first part of this stage is the modelling of the colliding protons and the hard scattering of their constituent partons, which involves the use Parton Distribution Functions (PDFs) to assign fractions of the proton's momentum to the partons and perturbation theory to compute the Matrix Elements (ME) of the Feynman diagrams for the QCD and electroweak processes involved.
+is the modelling of the colliding protons and the hard scattering of their constituent partons where 
 
-The second stage models resultant Parton Showers (PS) through an iterative process until the infrared cutoff scale for the shower is reached and perturbation theory no longer applies.
 
+, which involves the use Parton Distribution Functions (PDFs) to assign fractions of the proton's momentum to the partons and perturbation theory to compute the Matrix Elements (ME) of the Feynman diagrams for the QCD and electroweak processes involved.
+
+The second stage models result Parton Showers (PS) through an iterative process until the infrared cutoff scale for the shower is reached and perturbation theory is no longer applicable.
 The remaining particles undergo hadronisation using non-perturbative modelling process.
-
 The various event generators used in the production of MC samples used in this thesis are discussed in Section~\ref{subsec:eventGenerators}.
 
-Following the generation stage, the simulation and digitisation stages involves passing the GEN output through a complete simulation of the CMS detector that has been with the GEANT4 program~\cite{geant4,Lefebure:1999wja}.
-This process models particle interactions and decays and the propagation of particles through the detector, the effects of solenoidal field and detector material.
-The DIGI stage uses the SIM output to produce the detector's electronics response, which then undergoes the same reconstruction process that data does, as described in Section~\ref{sec:reco}.
+Following the generation stage, the simulation and digitisation stages involves passing the generation output through a complete simulation of the CMS detector that has been with the GEANT4 program~\cite{geant4,Lefebure:1999wja}.
+This process models particle interactions and decays and the propagation of particles through the detector and the detector's electronics response.
+The output from this stage then undergoes the same reconstruction process that data does, as described in Section~\ref{sec:reco}.
 
-The inelastic proton-proton interactions, typically called pileup (\PU), which occur both within and adjacent to the event's bunch crossing, referred to as \emph{in-time} and \emph{out-of-time} \PU  respectively, also require modelling in simulation.
-Simulated \PU however, does not adequately describe observed \PU in data.
-Therefore, the reweighting of the simulated samples is required and is discussed in Section~\ref{subsec:puSF}.
+As \PU modelled in simulation does not adequately describe observed \PU in data, it is reweighted as described in Section~\ref{subsec:puSF}.
 
 \subsection{Event Generators}\label{subsec:eventGenerators}
 A number of event generators are used by CMS to produce the MC simulation samples used to describe the expected processes produced.
-While there are several general-purpose event generators that can describe an event from the initial hadron collision to final state particles, 
+While there are several general-purpose event generators that can describe an event from the initial hadron collision to final state particles, such generators can be interfaced with 
 
-they are typically used in conjunction with generators that specialise in a specific physics aspect (\ie ME calculations or PS simulation) or process (\eg tau decays) in order to provide a complete event.
+they are typically used in conjunction with a specialist generator that that models a specific physics aspect (\ie ME calculations or PS simulation) or process (\eg tau decays) in order to provide a complete event.
 
 Perturbative calculations of the MEs of the QCD and electroweak processes are done, where possible, to Next-To-Leading Order (NLO) in order to both enable precision measurements to be made and to accurately model processes that include multiple high energy jets.
 
@@ -71,28 +71,23 @@ The MC event generators used to model the background and signal processes for th
 
 \begin{itemize}
 %\item \textbf{Madgraph} - Madgraph~\cite{Alwall:2011uj} is a package which performs tree-level perturbativecalculations to produce matrix elements at Leading Order (LO) for processes %such as decays and 2 $\rightarrow$ n scatterings through evaluating the ME for a given phase space point for all the Feynman diagrams produced.
-\item \textbf{MADGRAPH5 aMC@NLO 2.2.2:} MADGRAPH5 aMC@NLO 2.2.2~\cite{Alwall:2014hca} is a package that performs tree-level and one-loop Feynman diagrams to produce matrix elements at NLO.
-
-
-
-\item \textbf{Madgraph} - Madgraph~\cite{Alwall:2011uj} is a package that performs tree-level perturbative calculations to produce matrix elements at  for processes through evaluating the ME for a given phase space point for all the Feynman diagrams produced.
-\item \textbf{aMC@NLO} - aMC@NLO~\cite{Alwall:2014hca} is a package that can be used to .
+\item \textbf{Madgraph5:}~\cite{Alwall:2011uj} is a package that performs tree-level perturbative calculations to produce matrix elements at LO for processes.
+This is done by evaluating the ME for a given phase space point for all the Feynman diagrams produced.
+\item \textbf{MADGRAPH5_aMC@NLO 2.2.2}~\cite{Alwall:2014hca} is the new version of MadGraph5 and the aMC@NLO generators which is capable of evaluating tree-level and one-loop Feynman diagrams to produce matrix elements at NLO.
 Considering the constructive and destructive interferences which result from considering both the leading and higher order cross section terms results in positively and negatively weighted events.
-These negatively weighted events are not simply discarded as they are required to correctly simulate the NLO cross section by applying a scale factor, $SF^{NLO}$, which considers the ratio of the total number of events to the effective number of events (\ie the difference in positively and negatively weighted events) in the sample and the sign of an individual event's weighting:
+These negatively weighted events are not simply discarded as they are required to correctly simulate the NLO cross section by applying a scale factor, $SF^{NLO}$.
+This scale factor considers the ratio of the total number of events to the effective number of events (\ie the difference in positively and negatively weighted events) in the sample and the sign of an individual event's weighting:
 \begin{equation}
 SF^{NLO} = \frac{N^{postive events} + N^{negative events}}{N^{postive events} - N^{negative events}} \times \frac{|event weight|}{event weight} \;
 \end{equation}
 
-\item \textbf{POWHEG} - The Positive Weight Hardest Emission Generator  (POWHEG)~\cite{Alioli:2010xd} is a framework that interfaces NLO ME calculations with PS generators.
+\item \textbf{POWHEG V2} (The Positive Weight Hardest Emission Generator)~\cite{Alioli:2010xd} is a framework that interfaces NLO ME calculations with PS generators.
 As its name suggests, POWHEG produces the hardest emission first by using the exact NLO ME and generates only positively weighted events.
-Given that 
 
-The reason why POWHEG is capable of avoiding the need to 
-The latter is achieved by interfacing to a PS generator that order emissions by \pT or allows for the use of a $p_{T}$-veto to reject subsequent emissions, avoiding double counting such emissions and the need for negative weights.
 
-\item \textbf{PYTHIA 8} - PYTHIA 8~\cite{Sjostrand:2014zea} is a general-purpose generator that is capable of generating all aspects of a complete event, including  
-It is more commonly used however to take 
-of taking the output of a ME event generator and perform the parton showering and hadronisation to produce the full event. For all of the MC samples considered in Section~\ref{sec:samples} for the analysis presented, PYTHIA 8 is used to develop the samples from their ME event generator output into a full event.
+As POWHEG V2 was not capable of simulating the single top tW-channel process at the time the simulated samples were produced, the tW-channel samples listed in Section~\ref{sec:samples} were created using POWHEG V1.
+\item \textbf{PYTHIA 8:}~\cite{Sjostrand:2014zea} is a general-purpose generator that is capable of generating all aspects of a process to a complete event.
+It can also used to take the output of a ME event generator and perform the parton showering and hadronisation required to produce the full event. For all of the MC samples considered in Section~\ref{sec:samples} for the analysis presented, PYTHIA 8 is used to develop the samples from their ME event generator output into a full event.
 \end{itemize}
 
 \section{Object Reconstruction}\label{sec:reco}

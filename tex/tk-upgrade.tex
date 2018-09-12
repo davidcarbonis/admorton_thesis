@@ -245,6 +245,7 @@ A detailed description of the firmware implementation of the \HT for the demonst
 
 \subsubsection{Kalman Filter}\label{subsubsec:KF}
 While the \HT is highly efficient at finding genuine tracks, it was found in simulation that over half of the genuine tracks found contain at least one incorrectly associated stub and over half of the tracks candidates did not correspond to a genuine track (\ie were fake).
+
 As these incorrectly associated stubs will negatively impact the accuracy of the fitted track parameters and it is preferable to discard fake tracks, a \KF 
 
 A \KF is well s
@@ -252,7 +253,6 @@ As the presence of incorrectly associated stubs will  and
 As it is desirable to filter out tracks without a significant loss 
 
 While it would be impractical to use a \KF to find tracks instead of the \HT , it 
-
 
 
 In addition to being the optimal linear filter and, in certain circumstance, the optimal non-linear filter, the \KF has several aspects that make it more suitable for FPGA implementation compared to global track fitting methods~\cite{Fruhwirth:1987fm}:
