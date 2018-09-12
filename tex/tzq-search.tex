@@ -304,23 +304,19 @@ With all the jets identified, the W boson candidate constructed from the two jet
 To be consistent with a W boson decay, the invariant mass of the two jets is required to be within $20\GeVcc$ of the known W boson mass.
 As additional b-jets will be softer than the one produced from the top quark decay, the leading b-jet is not considered to have been produced from the W boson decay.
 
-
 Therefore the complete event selection for the signal region was chosen to be:
 
 \begin{itemize}
 \item Exactly two same flavour and opposite sign electrons or muons which pass the tight identification and isolation cuts. The leading and sub-leading electrons must have a $\pT > 35\GeVc (26\GeVc)$ and be within $|\eta| < 2.50$. The leading and sub-leading muons $\pT > 15\GeVc (20\GeVc)$ respectively and be within $|\eta| < 2.0$.
-\item No additional electrons or muons which pass the same kinematic cuts and the veto or loose identification and isolation cuts respectively. 
+\item  No additional electrons or muons that pass the same kinematic cuts and the veto or loose identification and isolation cuts respectively. 
 \item The invariant mass of the two selected leptons must be within $20\GeVcc$ of the known Z boson mass.
-\item Four to six jets which pass the loose jet ID requirements and have a $\pt > 30\GeVc$ and are within $|\eta| < 4.7$.
-\item One or two of the selected jets are considered to be b-tagged by the CSVv2 tagging algorithm at the medium WP.
-\item The invariant mass of the two jets which are closest to the known W boson mass must be within $20\GeVcc$. The leading b-jet is not considered to have originated from the W boson decay.
+\item Four to six jets that pass the loose jet ID requirements and have a $\pt > 30\GeVc$ and are within $|\eta| < 4.7$.
+\item One or two of the selected jets are considered to be b-tagged by the CSVv2 tagging algorithm at the medium WP and are within $|\eta| < 2.4$.
+\item The invariant mass of the two jets that are closest to the known W boson mass must be within $20\GeVcc$. The leading b-jet is not considered to have originated from the W boson decay.
 \end{itemize}
 
-No \MET cut was applied in the signal region event selection despite there being no \MET directly produced by the signal process.
-This decision was taken as \MET was anticipated to be a useful variable the multivariate analysis (discussed in Section~\ref{sec:mvas}) that could be used to discriminate against background processes such as \ttbar.
-
 \section{Control Regions}\label{sec:controlRegions}
-In any high energy particle physics analysis, accurate modelling of the background processes is essential in order to be able to make a measurement.
+In any high energy particle physics analysis, accurate modelling of the background processes is essential in order extract the signal yield.
 As the main challenge in the search for the dilepton final state of tZq is that the signal region will be dominated by background processes, it is especially important to ensure that the background processes are accurately modelled in simulation if any meaningful measurement is to be made.
 Therefore background enriched control regions which were topologically similar and orthogonal to the signal region were used to validate the whether the Z+jets and \ttbar simulated samples adequately describe data and, if needed, to provide data-driven estimations of them.
 
@@ -413,17 +409,17 @@ Total MC\@: & 5284.867 & 10067.752 & 15352.619    \\
 \end{table}
 
 \subsubsection{\ttbar Background Control Region}\label{subsec:ttbarCR}
-\ttbar events form the second largest background process, where events with two leptons produced from W bosons decaying having an invariant mass which is compatible with the Z boson mass window in the being selected in the signal region.
+\ttbar events which decay leptonically form the second largest background process.
 
 The selection criteria for the \ttbar control region differs from the signal region definition defined in Section~\ref{sec:signalRegion}, by requiring that:
 \begin{itemize}
-\item the two oppositely charged leptons selected to have different flavours (\ie one is an electron and the other a muon).
-\item \pt cuts of 35\GeV and 26\GeV are used for the electron and muon respectively, as the leading lepton \pt thresholds of the HLT paths considered for the e$\mu$ final state differ from those for the same flavour final states, as as given in Section~\ref{sec:triggerStrategy}. 
+\item the two oppositely-charged leptons to have different flavours (\ie one is an electron and the other a muon).
+\item \pt cuts of 35\GeV and 26\GeV are used for the electron and muon respectively are required to have a , as the leading lepton \pt thresholds of the HLT paths considered for the e$\mu$ final state differ from those for the same flavour final states, as described in Section~\ref{sec:triggerStrategy}. 
 \end{itemize} 
 
 As the branching ratio for a W boson (produced by the top quark and anti-top quark decays) to decay into either an electron or muon is the same, this produces a \ttbar enriched background control region which is topologically similar to the \ttbar contributions in the signal region. 
 
-Table~\ref{tab:ttbarCR} shows that following these selection criteria and the application of all of the simulation corrections discussed in Section~\ref{sec:simCorrections}, that the resultant control has a 94.8\% purity and that half of the backgrounds result from single top in the tW-channel.
+Table~\ref{tab:ttbarCR} shows that after these selection criteria and the required simulation corrections discussed in Section~\ref{sec:simCorrections} have been applied, the resulting control region has a 94.8\% purity and that half of the backgrounds are from tW single top production.
 
 \begin{table}[htbp]
 \topcaption {
@@ -471,7 +467,8 @@ In order to prevent this from happening, experiments are ``blinded'' so that the
 
 
 CMS:2016tlj	 TheATLAScollaboration:2016myw
-For this analysis a $\chi^{2}$-like variable that depends on both the reconstructed top quark mass and the W boson mass is constructed 
+For this analysis this is achieved using a $\chi^{2}$-like variable that depends on both the reconstructed top quark mass and the W boson mass for when the distributions of data and MC are compared.
+
 
 The $\chi^{2}$-like variable is defined as follows:
 
@@ -481,17 +478,18 @@ The $\chi^{2}$-like variable is defined as follows:
 
 where $m_{\rm jj}$ is the W boson mass reconstructed from the two candidate jets, $m_{\rm W}$ is the known W boson mass, $m_{\mathrm{jj+b}}$ is the top quark mass reconstructed from the leading b-jet thus the two two jets associated with the W boson decay, $m_{\mathrm{t}}$ is the known top mass, and $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}})$ represent the mass resolution for the top quark and W boson respectively.
 Both $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}}$ were determined by taking the standard deviation of a Gaussian fitted to the corresponding reconstructed peaks respectively.
-They were found to be $A$ and $B$ respectively.
 
-\editComment{recall a more precise/sophisticated method was suggested? Add updated values}
-\editComment{Once updated values are added, add plots}
+\editComment{Update values are added, add plots}
 
-Using the simulated samples, the signal region and the \emph{side band} region were defined as the regions enclosed by $\chi^{2} < C$ and $D < \chi^{2} <E $, respectively.
+Using the simulated samples, a Signal Region (SR) and \emph{Side Band} (SB) were defined as the regions enclosed by $\chi^{2} < \chi^{2}_{SR}$ and $\chi^{2}_{SR} < \chi^{2} < \chi^{2}_{SB}$, respectively.
 
-The choice of these cuts had to balance the need for:
+The choice of value used for $\chi^{2}_{SR}$ and $\chi^{2}_{SB}$ had to balance the need for:
 \begin{itemize}
 \item the signal region to contain the majority of the signal process.
 \item the \emph{side band} region to contain sufficient statistics to make the analysis possible.
 \end{itemize}
 
-The results shown in Chapters~\ref{} are all blinded, \ie performed using the side band region only.
+It was determined that ..
+
+The figures showing the comparison of data and simulation distributions in this Chapter and Chapter~\ref{chapter:bkg}  are all blinded by only showing events within the SB.
+The results presented in Chapter~\ref{chapter:results} do not use Equation~(\ref{eq:blindingChi2}), but are 
