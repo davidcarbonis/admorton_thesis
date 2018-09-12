@@ -82,9 +82,9 @@ SF^{NLO} = \frac{N^{postive events} + N^{negative events}}{N^{postive events} - 
 \end{equation}
 
 \item \textbf{POWHEG V2} (The Positive Weight Hardest Emission Generator)~\cite{Alioli:2010xd} is a framework that interfaces NLO ME calculations with PS generators.
-As its name suggests, POWHEG produces the hardest emission first by using the exact NLO ME and generates only positively weighted events.
-
-
+As its name suggests, POWHEG produces the hardest emission first by using the exact NLO ME and only produces positively weighted events.
+When it is interfaced with a generator that orders emissions by \pT or allows the use of a \pT-veto, all emissions following the hardest emission are rejected.
+Therefore, the double counting of low-\pT emissions is avoided and thus the need for negatively weighted events.
 As POWHEG V2 was not capable of simulating the single top tW-channel process at the time the simulated samples were produced, the tW-channel samples listed in Section~\ref{sec:samples} were created using POWHEG V1.
 \item \textbf{PYTHIA 8:}~\cite{Sjostrand:2014zea} is a general-purpose generator that is capable of generating all aspects of a process to a complete event.
 It can also used to take the output of a ME event generator and perform the parton showering and hadronisation required to produce the full event. For all of the MC samples considered in Section~\ref{sec:samples} for the analysis presented, PYTHIA 8 is used to develop the samples from their ME event generator output into a full event.
