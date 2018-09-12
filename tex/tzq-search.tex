@@ -278,13 +278,13 @@ These effects are caused by beam halos interacting with the collimator blocks th
 \end{itemize}
 
 \section{Physics Objects}\label{sec:physicsObjects}
-In order to meet the analysis strategy's criteria for a signal enriched region and background enriched control regions, a number of event selection criteria are applied to the physics objects that have been identified and reconstructed using the particle flow algorithm described in Chapter~\ref{chapter:data-mc}.
+In order to meet the analysis strategy's criteria for a signal enriched region and background enriched control regions, described in Sections~\ref{sec:signalRegion}-\ref{sec:controlRegions}, a number of event selection criteria are applied to the physics objects that have been reconstructed using the particle flow algorithm described in Chapter~\ref{chapter:data-mc}.
 The following section describes the selection criteria used in this analysis and how the final state products are used to reconstruct their mother particles.
 
 \subsection{Lepton Selection}
-All PF electrons and muons identified by the PF algorithm must pass a set of kinematic requirements and a set of identification quality criteria defined by CMS.
+All PF electrons and muons identified by the PF algorithm must pass a set of kinematic requirements and a set of quality criteria defined by CMS.
 The kinematic requirements are applied to ensure that the leptons lie fully within the detector's acceptance and that their transverse momenta lies in the region where the behaviour of the trigger well described.
-The identification criteria have been designed to be efficient at selecting isolated promptly produced  leptons and rejecting leptons that have been produced non-promptly from decays from within jets or taus or from incorrectly reconstructed tracks.
+The identification criteria have been designed to be efficient at selecting isolated leptons produced from W and Z boson decays and rejecting leptons that have been from decays from within jets or taus or from incorrectly reconstructed tracks.
 
 Different working points are used by identification criteria defined by CMS, where the lepton selection efficiency is traded off against the purity of the leptons selected.
 For both lepton flavours considered in the analysis, the ``tightest'' working point is used to select high purity collections of leptons, with the ``loosest'' working point used to veto events with any additional leptons.
@@ -295,9 +295,9 @@ For any PF electron candidate to be considered in the final analysis it must mee
 \begin{itemize}
 \item the \pt of the leading and subleading electrons considered must be greater than the 35\GeVc and 15\GeVc, respectively;
 \item electrons must have $|\eta| \leq 2.50$ to ensure that the electrons are fully within the ECAL acceptance;
-\item as accurate reconstruction cannot be undertaken in the transition region between the ECAL barrel and endcap, electrons with $1.4442 \leq \eta \leq 1.566$ are not considered.
+\item electrons with $1.4442 \leq \eta \leq 1.566$ are not considered as  accurate reconstruction cannot be undertaken in the transition region between the ECAL barrel and endcap;
 \item the longitudinal impact parameter, $d_{z}$, of the electron must be less than 0.10\cm in the barrel and 0.20\cm in the endcap disks.
-\item the transverse impact parameter, $d_{0}$, of the electron must be less than 0.05\cm in the barrel and 0.10\cm in the endcap disks.
+\item the transverse impact parameter, $d_{xy}$, of the electron must be less than 0.05\cm in the barrel and 0.10\cm in the endcap disks.
 \end{itemize}
 
 The \emph{tight} and \emph{veto} working points (WPs) of the \emph{cut based} identification criteria which are approximately  70\% and 95\% efficient respectively, are used to select electrons and to veto any additional electrons.
@@ -305,7 +305,7 @@ The cut based identification uses a mixture of manually set and multivariate ana
 
 The manually set variables are:
 \begin{itemize}
-\item \textbf{$N^{missing}_{inner hits}$} - as photons which subsequently convert do not leave hits in the innermost layers of the tracker, electrons are rejected if the expected number of missing hits is exceeded.
+\item \textbf{$N^{missing}_{inner hits}$:} As photons that subsequently convert into $e^{+} e^{-}$ pairs do not leave hits in the innermost layers of the tracker, electrons are rejected if the expected number of missing hits is exceeded.
 \item \textbf{a conversion veto} - is applied for all working points, where any electron which fails the electron conversion veto is rejected.
 \end{itemize}
 
@@ -322,7 +322,7 @@ The cuts used for the tight and veto WPs for these variables are given in table~
 
 \begin{table}[htbp]
 \topcaption {
-The cuts used for the tight and veto working points of the cut based identification criteria for electrons for the barrel and endcap disks.
+The selection requirements used for the tight and veto working points of the cut based identification criteria for electrons for the barrel and endcap disks.
 }
 \label{tab:electronCuts}
   \centering
@@ -346,27 +346,27 @@ The cuts used for the tight and veto working points of the cut based identificat
 \end{table}
 
 \subsubsection{Muons}\label{subsubsec:muonSelection}
-Similar to the electrons, PF muons are required to meet a set of kinematic requirements and identification and isolation criteria.
+PF muons are alsop required to meet an equivalent set of kinematic requirements along with identification and isolation criteria.
 
-In the case of the kinematic requirements, PF muons candidates are required to:
+PF muons candidates are required to meet the following kinematic requirements:
 \begin{itemize}
-\item the \pt of the leading and subleading electrons considered must be greater than the 26\GeVc and 20\GeVc respectively.
-\item muons must have $|\eta| \leq 2.50$ to ensure that the muon are within the acceptance of the muon systems.
+\item the \pt of the leading and subleading electrons considered must be greater than 26\GeVc and 20\GeVc, respectively;
+\item muons must have $|\eta| \leq 2.50$ to ensure that a muon is fully within the acceptance of the muon systems.
 \end{itemize}
 
 The \emph{tight} and \emph{loose} identification and isolation criteria~\cite{Chatrchyan:2012xi} are used to select muons and veto any additional muons.
 
-The tight muon criteria suppresses hadronic punch-through into the muon system and non-prompt muons, creating a high purity collection of particle flow muons.
+The tight muon criteria suppress hadronic punch-through into the muon system and selection of non-prompt muons, creating a high purity collection of particle flow muons.
 
 These criteria are:
 \begin{itemize}
-\item is a PF Muon and is also both a tracker and global muon.
-\item $\chi^{2}/ndf$ of the global muon track fit is less than ten. 
-\item at least one muon chamber is included in the global track fit.
-\item that muon segments are found in at least two muon stations.
-\item $d_{0} < 0.2\cm$ and $d_{z} < 0.5\cm$.
-\item the muon must have at least one hit in the pixel detector.
-\item hits must be present in at least six tracker layers in order to achieve a good \pT measurement.
+\item As well as being identified as a PF Muon, it is also identified as both a tracker muon and global muon;
+\item $\chi^{2}/ndf$ of the global muon track fit is less than ten;
+\item at least one muon chamber is included in the global track fit;
+\item that associated muon segments are found in at least two muon stations;
+\item $d_{0} < 0.2\cm$ and $d_{z} < 0.5\cm$;
+\item the muon must have at least one hit i;the pixel detector.
+\item the muon must have hits that are present in at least six tracker layers in order to achieve a good \pT measurement.
 \end{itemize}
 
 The tight isolation cut applied to the resultant collection of tight muons is 95\% efficient, and rejects muons that have a relative isolation, with $\Delta\beta$ pileup corrections, greater than 0.15 for a cone size of 0.4.
@@ -409,47 +409,46 @@ Therefore, the leptons must have the same flavour and opposite charge and an inv
 
 \subsection{Jet, b-tagging, W Boson and Top Quark Candidate Requirements}
 \subsubsection{Jet Requirements}
-Jets are considered from the PF jet collection which reconstructs jets using the \emph{anti-\kt} algorithm with R = 0.4 with charged hadrons originating from \PU vertices excluded from clustering.
-Following identification, the jet energy corrections are applied as described in Section~\ref{subsubsec:JECs}.
+Jets belonging to the PF jet collection are considered, which are reconstructed using the \emph{anti-\kt} algorithm~\cite{Cacciari:2008gp} with R = 0.4 with charged hadrons originating from \PU vertices excluded from clustering.
 
-Jets are considered in the analysis if they have a $\pT > 30\GeVc$, are within $|\eta| < 4.7$ and meet the \emph{loose} working point jet identification criteria developed by CMS.
-In addition, selected leptons (electron or muon) which lie within a cone of $\Delta R = 0.4$ of a selected jet are not considered to be a prompt leptons and instead part of the jet in question.
+Jets are considered in this analysis if they have a $\pT > 30\GeVc$, are within $|\eta| < 4.7$ and meet the \emph{loose} working point jet identification criteria developed by CMS.
+In addition, selected leptons (electron or muon) that lie within a cone of $\Delta R = 0.4$ of a selected jet are not considered to be a prompt leptons but are instead considered to be part of the jet in question.
 
-The loose jet ID was designed to reject the majority of the fake tracks produced from detector and/or electronics noise while maintaining a high selection efficiency for real jets by requiring all jets to have part of their energy deposited in both the ECAL and HCAL and be composed of more than one particle.
+The loose jet working point was designed to reject the majority of fake tracks produced within the detector and/or electronics noise.
+The  while maintaining a high selection efficiency for real jets by requiring all jets to have part of their energy deposited in both the ECAL and HCAL and be composed of more than one particle.
 
-The loose jet identification criteria are as follows:
-
-for jets with $\eta \leq 2.70$ the loose ID criteria are:
+For jets with $\eta \leq 2.70$, the loose working point criteria are:
 \begin{itemize}
 \item the fraction of the jet energy from both neutral electromagnetic particles in the ECAL and neutral hadronic particles in the HCAL is less than $0.99$.
 \item at least two constituent particles are present.
 \end{itemize}
 
-With these additional criteria applying for jets for $\eta \leq 2.40$:
+The follwowing criteria are additionally applied for jets for $\eta \leq 2.40$:
 \begin{itemize}
 \item the fraction of the jet energy from charged electromagnetic particles in the ECAL is less than $0.99$ and greater than 0.0 for charged hadronic particles in the HCAL.
-\item at least one charged particle is present.
+\item at least one charged particle is present within the jet..
 \end{itemize}
 
-For jets with $ 2.70 \leq \eta \leq 3.0$ the loose ID criteria are:
+For jets with $ 2.70 \leq \eta \leq 3.0$ the loose working point criteria are:
 \begin{itemize}
 \item the fraction of the jet energy from neutral electromagnetic particles in the ECAL is greater than than $0.01$ and less than $0.98$ for neutral hadronic particles in the HCAL.
-\item at least three neutral particles are present.
+\item at least three neutral particles are present within the jet.
 \end{itemize}
 
-And for jets with $\eta > 3.0$ the loose ID criteria are:
+For jets with $\eta > 3.0$ the loose working point criteria are:
 \begin{itemize}
 \item the fraction of the jet energy in the ECAL that is from neutral electromagnetic particles is less than $0.90$.
-\item at least eleven neutral particles are present.
+\item at least eleven neutral particles are present within the jet.
 \end{itemize}
 
 \subsubsection{b-tagging Requirements}
-The CSVv2 tagging algorithm described in Section~\ref{subsec:objReco-bJets} is used to tag jets, with a working point (WP) cut applied to the b-tag discriminator.
+The CSVv2 tagging algorithm described in Section~\ref{subsec:objReco-bJets} is used to tag jets as being initiated by a b-quark, with a working point (WP) cut applied to the b-tag discriminator.
 If the value of a jet's discriminator exceeds that of the Medium WP and has $|\eta| < 2.40$, the jet is considered to be a b-jet.
-From the \emph{Loose}, \emph{Medium} and \emph{Tight} WPs defined by CMS~\cite{Sirunyan:2017ezt}, as given in table~\ref{tab:bTagWPs} in Section~\ref{subsec:objReco-bJets}, the Medium WP was chosen as it provided the optimum performance in terms of providing as large statistics as possible for the signal process without too great a compromise on the purity of the selection.
+Based on the \emph{Loose}, \emph{Medium} and \emph{Tight} WPs definitions~\cite{Sirunyan:2017ezt}, given in table~\ref{tab:bTagWPs} in Section~\ref{subsec:objReco-bJets}, the Medium WP was chosen.
+This was because it provided the optimum performance in terms of providing as large statistics as possible for the signal process without too great a compromise on the purity of the selection.
 
 \subsubsection{W Boson Candidate}
-In contrast to the previous tZq searches where the W boson decays into a lepton and its associated antineutrino, the W boson in the dilepton final state decays hadronically, allowing for the top quark to be fully reconstructed.
+In contrast to the other tZq searches~\cite{Aaboud:2017ylb,Sirunyan:2017nbr} where the W boson decays into a lepton and its associated antineutrino, the W boson in the dilepton final state decays hadronically, allowing for the top quark to be fully reconstructed.
 The W boson candidate is constructed by considering each possible pair of jets, with the pair with a dijet invariant mass closest to the known W boson mass of 80.4\GeVcc being chosen as the W candidate.
 %Additionally, the invariant mass of the two selected jets was required to be within $20\GeVcc$ of the known W boson mass.
 

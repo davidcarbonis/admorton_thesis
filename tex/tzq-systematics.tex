@@ -174,20 +174,21 @@ Using events within a dilepton invariant mass window to ensure a high purity, fr
 For source of each efficiency and lepton flavour, the efficiency is given as the fraction of events where the probe leptons passed the relevant selection criteria.
 This methodology is used to create corrective scale factors for each component and these are multiplicatively applied to each leptons' event weight as functions of their \pt, $\eta$, and flavour.
 
-The triggers efficiencies were calculated by considering events that pass triggers which are weakly correlated with the lepton triggers.
-By counting these events and whether or not they pass or fail the analysis triggers, the trigger efficiency is estimated as follows:
+The triggers efficiencies for the $ee$ and $\mu\mu$ final states were calculated by considering events that pass triggers which are weakly correlated with all of the lepton triggers considered, known as \emph{cross triggers} (X triggers).
+By counting these events and whether or not they pass at least one of the lepton triggers considered for the relevant final state, the trigger efficiency is estimated as follows:
 
 \begin{equation}
 \epsilon_{trigger} = \frac{N_{X triggers + lepton triggers}}{N_{X triggers}} \;
 \end{equation}
 
-where $N_{X trigger}$ is the number of events which have passed the analysis' lepton selection criteria and the cross triggers, and $N_{X triggers + lepton triggers}$ is $N_{X trigger}$ and the number of events which have also passed the lepton triggers.
+where $N_{X trigger}$ is the number of events that have passed the analysis' lepton selection criteria and the cross triggers, and $N_{X triggers + lepton triggers}$ is $N_{X trigger}$ and the number of events that additionally passed at least one of the lepton triggers for the relevant lepton flavour.
 
-As the trigger requirements are applied to both simulated and data events, a scale factor of the ratio of the trigger efficiency in data and in simulation is applied to the event weight in simulation.
+As the trigger requirements are applied to both simulated and data events, a scale factor of the ratio of the trigger efficiency in data and in simulation is calculations and used to weight the simulation.
 For both the $ee$ and $\mu\mu$ channels in the signal region and the $e \mu$ channel for the \ttbar control region, a constant scale factor was found to be sufficient to account for the differences between data and simulation.
 
-The efficiencies were calculated for data, \ttbar MC simulation and the resultant corrective scale factors applied to simulation are given in table~\ref{tab:triggerSFs} with their associated statistical uncertainties.
-The value determined for the systematic uncertainties is discussed in Section~\ref{sec:systematics}.
+The efficiencies were determined using data and simulated \ttbar events.
+The resultant trigger efficiency scale factors applied to simulation are given in table~\ref{tab:triggerSFs} with their associated statistical uncertainties.
+The associated systematic uncertainties are discussed in Section~\ref{sec:systematics}.
 
 \begin{table}[htbp]
 \topcaption {
@@ -222,8 +223,8 @@ The determination of the systematic uncertainties is given in Section~\ref{sec:s
 
 \subsection{Lepton Energy Corrections}\label{subsec:leptonEnergyCorrections}
 \subsubsection{Electron Regression and Energy Scale and Smearing Corrections}
-Two types of energy corrections that have been produced by the CMS ElectronGamma (EGM) Physics Object Group are applied to electrons and photons, namely energy regression and energy scale and smearing corrections.
-These corrections use $Z \rightarrow e^{+} e^{-}$
+Two types of energy corrections that have been produced by the CMS ElectronGamma (EGM) Physics Object Group are applied to electrons and photons.
+These energy regression and energy scale and smearing corrections use $Z \rightarrow e^{+} e^{-}$ events 
 WHAT DO THEY CORRECT 
 
 These corrections are applied to both MC simulation and data and are used to improve the electron resolution obtained and to resolve the observed discrepancies between them.
