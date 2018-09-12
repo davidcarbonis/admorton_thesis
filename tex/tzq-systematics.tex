@@ -534,11 +534,8 @@ Both the input features and model hyperparameters were chosen separately for $ee
 
 \subsection{BDT Input Features}
 From the selected reconstructed physics objects, a large number of input variables or \emph{features} were constructed and considered as potential inputs for the BDT.
+A recursive feature elimination was used to determine the set of features which gave the optimal performance.
 
-In order to determine which of set of features was optimal, recursive feature elimination was used to select the features which had the greatest discriminating power between the signal and background process.
-This process iteratively removes the least important feature and re-trains the BDT until every feature has been ranked in order of their removal.
-From this ranked list, the top $n$ features are selected for when fewer than $n$ features results in the AUROC experiencing a significant decline.
- 
 The features chosen by recursive feature elimination for the $ee$ and $\mu\mu$ channels are given in table~\ref{tab:selectedBdtVariables}.
 Figure~\ref{fig:inputFeaturesDistributions} shows the distributions of the selected features in the signal and background samples.
 Figures~\ref{fig:inputFeaturesDataSimAgreement} show the good agreement observed between simulation and data for the combination of the $ee$ and $\mu\mu$ channels for the features selected, validating their validity as reliable features.
@@ -598,6 +595,7 @@ Distributions of the ... for the combination of the $ee$ and $\mu\mu$ channel}
 \end{figure}
 
 \subsection{BDT Model Hyperparameters}\label{subsec:hyperparameters}
+The choice 
 Instead of tuning the choice hyperparmeters for optimal classification performance either by hand or a time and computationally expensive grid search, the minima of a classification quality metric based on the AUROC, $f(\theta)$, were found.
 
 %These minima were evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise} to construct a regression model based on a Gaussian process with the Mat\'{e}rn $\nu =\frac{5}{2}$ kernel.
