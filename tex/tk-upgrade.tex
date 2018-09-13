@@ -53,9 +53,9 @@ As tracking information is required to make L-1 decisions at the HL-LHC, the des
 Given that it will not be possible to read out the entire Outer Tracker for the L-1 trigger for every bunch crossing, a novel design of a pair of closely-spaced silicon sensor layers, separated by a few mm, that are capable of rejecting low transverse momentum tracks has been proposed~\cite{jjonespixel,markthesis}.
 These sensors, known as the \emph{$\pT$-modules}, are able to discriminate against low transverse momentum charged particle tracks.
 
-As the bend angle of a charged particle in a magnetic field depends on its transverse momentum, a $\pT$-module is able to  reject tracks below a configurable \pT threshold by comparing the distance between clusters of hits between its two sensor layers, as demonstrated in figure~\ref{fig:stubs}(a).
-The \pT threshold is designed to be configurable as the separation between the clusters increases with a module's distance from the beam if the sensor spacing remain unchanged, as illustrated in figure~\ref{fig:stubs}(b).
-The sensor spacing however, is increased for the endcap disks, where the $\pT$-modules are orientated perpendicular to the beam line, in order to maintain comparable discrimination due to projective effects, as shown in figure~\ref{fig:stubs}(c).
+As the bend angle of a charged particle in a magnetic field depends on its transverse momentum, a $\pT$-module is able to  reject tracks below a configurable \pT threshold by comparing the distance between clusters of hits between its two sensor layers, as demonstrated in Figure~\ref{fig:stubs}(a).
+The \pT threshold is designed to be configurable as the separation between the clusters increases with a module's distance from the beam if the sensor spacing remain unchanged, as illustrated in Figure~\ref{fig:stubs}(b).
+The sensor spacing however, is increased for the endcap disks, where the $\pT$-modules are orientated perpendicular to the beam line, in order to maintain comparable discrimination due to projective effects, as shown in Figure~\ref{fig:stubs}(c).
 
 \begin{figure}[!t]
 \centering
@@ -78,7 +78,7 @@ The upper PS~module layers consist of a silicon strip sensor and a silicon pixel
 The finer granularity provided by the pixel layer affords better resolution along the $z$ axis, which is crucial for vertex identification in the high \PU environment of the HL-LHC.
 Further details on the two \pT-modules can be found in~\cite{CMS_Upgrade_TP,P2TrackerTDR}.
 
-The current proposed layout of the Phase-II Outer Tracker, referred to as the \emph{tilted barrel} geometry, is depicted in the upper diagram in figure~\ref{fig:trackerlayout}, and a previous proposal, referred to as the \emph{flat barrel} geometry, is shown in the lower diagram~\cite{CMS_Upgrade_TP}.
+The current proposed layout of the Phase-II Outer Tracker, referred to as the \emph{tilted barrel} geometry, is depicted in the upper diagram in Figure~\ref{fig:trackerlayout}, and a previous proposal, referred to as the \emph{flat barrel} geometry, is shown in the lower diagram~\cite{CMS_Upgrade_TP}.
 Both plots illustrate the PS and 2S module positions in the six barrel layers and the five endcap disks on either side of the barrel, with only modules located at $|\eta| < 2.4$ being configured to send stub data off-detector.
 The geometries are so named as they were inspired by whether or not the modules in the three innermost barrel layers are tilted so that their normals point towards the interaction region.
 The advantages of the tilted geometry over the original flat barrel are that it not only improves stub-finding efficiency for tracks with large incident angles but also reduces the overall cost of the system~\cite{P2TrackerTDR}.
@@ -127,10 +127,10 @@ This is because of the limits imposed on the system by the total data and latenc
 
 The number of independent track finding processors was determined by how the DTC system was connected to the tracker.
 At the time of the 2016 review it was assumed that the detector would be cabled to the DTC system such that each DTC board would process all data from a \ie 45 degree $\varphi$-sector, known as a \emph{detector octants}, in the tracker.
-Consequently, the proposed track finding system was divided into \emph{processor octants} that were offset from the detector octants by about $22.5$ degrees in $\phi$, as shown in figure~\ref{fig:tmttarch}, in order to handle data duplication across hardware boundaries.
+Consequently, the proposed track finding system was divided into \emph{processor octants} that were offset from the detector octants by about $22.5$ degrees in $\phi$, as shown in Figure~\ref{fig:tmttarch}, in order to handle data duplication across hardware boundaries.
 The detector octants are not uniform as the geometry of the tracker does not have an exact eight-fold symmetry.
 
-This baseline track finding system architecture, illustrated in figure~\ref{fig:tmttarch}, uses two neighbouring DTC boards to time-multiplex and duplicate stub data across processing octant boundaries before each DTC transmits 50\% of its data to one TFP and 50\% to the neighbouring TFP.
+This baseline track finding system architecture, illustrated in Figure~\ref{fig:tmttarch}, uses two neighbouring DTC boards to time-multiplex and duplicate stub data across processing octant boundaries before each DTC transmits 50\% of its data to one TFP and 50\% to the neighbouring TFP.
 Based on current electronics and the high speed links available, the data requires 18 TFPs per processing octant (one for each time slice, resulting in a full system requiring 144 TFPs).
 
 \begin{figure}[t]
@@ -144,7 +144,7 @@ A hardware demonstrator of the baseline system consisting of five Master Process
 All of the results achieved, and a complete description of the system, are given in~\cite{TMTT_JINST}.
 
 \subsection{The Track Finding Processor}\label{subsec:TFP}
-The Track Finding Processor shown in figure~\ref{fig:TFP} consists of four self-contained components:
+The Track Finding Processor shown in Figure~\ref{fig:TFP} consists of four self-contained components:
 \begin{itemize}
 \item {\bf Geometric Processor (GP):} Responsible for pre-processing the stubs from the DTC.
 \item {\bf Hough Transform (HT):} A highly parallelised initial coarse track finding that identifies track candidates that are consistent with a track in the \rphi plane. This process also greatly reduces the combinatorics that have to be considered by the later stages.
@@ -180,7 +180,7 @@ Stubs are assigned to sub-sectors occurs in a three stage process:
 \item A $\phi$ sorting into two bins. 
 \end{itemize}
 
-Each of the TFP's logic blocks shown in figure~\ref{fig:TFP} has been designed to be highly reconfigurable and can easily be adapted to any alternative sub-sector definition.
+Each of the TFP's logic blocks shown in Figure~\ref{fig:TFP} has been designed to be highly reconfigurable and can easily be adapted to any alternative sub-sector definition.
 
 \subsubsection{Hough Transform}
 The Hough Transform algorithm is a widely used method of detecting geometric features in digital image processing~\cite{HT}.
@@ -219,7 +219,7 @@ Therefore, Equations~(\ref{eq:R}) and~(\ref{eq:stub_R}) can be combined to descr
 \label{eq:localHT}
 \end{equation}
 
-As illustrated in figure~\ref{fig:HT}, if a particle produces multiple stubs, the intersection of the corresponding stub lines in Hough-space can be used to identify a track candidate.
+As illustrated in Figure~\ref{fig:HT}, if a particle produces multiple stubs, the intersection of the corresponding stub lines in Hough-space can be used to identify a track candidate.
 The coordinates of the intersection point in Hough-space also provides an initial estimate of the track's $p_{T}$ and $phi$ helix parameters, as defined in Section~\ref{subsec:helixParameter}.
 
 \begin{figure}[!h]
@@ -263,14 +263,14 @@ The \KF begins with an estimate of the track parameters and their covariance mat
 Stubs are iteratively added to the predicted state in order to produced an updated state estimate formed of weighted combination of the predicted state and the measurement.
 This weighting, known as the \emph{Kalman gain}, is derived from the relative uncertainties of the predicted state and measurement and is used to control how the state's track parameter are updated.
 Therefore, with every additional measurement added to the state, the uncertainty of the state's estimate decreases.
-This is illustrated in figure~\ref{fig:KF} by the size of the shaded area around the line segments decreasing with every stub added.
+This is illustrated in Figure~\ref{fig:KF} by the size of the shaded area around the line segments decreasing with every stub added.
 
 The filtering of state following each update makes use number of configurable criteria, including \pT, $\chi^2$, and the minimum number of stubs from PS modules.
 It can also be configured to take into account and skip missing missing layers when the expected stub is either missing or deemded to be incorrectly associated with the track.
 
 In the event multiple stubs are found on the same layer, each can be propagated with up to the four best states being kept and presented to a final state selector.
 Preference is given to states with the fewest missing layers and the smallest $\chi^2$.
-An example of this is shown in figure~\ref{fig:KF}, where the two dashed line segments correspond to the projected trajectories of the track from the stubs labelled 2a and 2b.
+An example of this is shown in Figure~\ref{fig:KF}, where the two dashed line segments correspond to the projected trajectories of the track from the stubs labelled 2a and 2b.
 As each stub is compatible with the expected track trajectory at that stage, both are propagated.
 The track associated to stub 2b however, is rejected after stub 4 has been added to the track propagated from stub 2a, due to failing a $\chi^2$ cut in two consecutive layers.
 
@@ -295,7 +295,7 @@ Details of the mathematics involved in the Kalman formalism is given in~\cite{Fr
 \subsubsection{Duplicate Removal}
 Over half of the track candidates at input to the DR are duplicate tracks created by the HT.
 Instead of comparing pairs of tracks to see if they are the same, a more elegant and subtle DR algorithm is used which takes into account how the \HT produces these duplicate tracks.
-This approach is illustrated in figure~\ref{fig:DR}.
+This approach is illustrated in Figure~\ref{fig:DR}.
 In this example, the \HT has produced candidates in the green and two yellow HT cells from the five stubs, which correspond to the blue lines in Hough Space, that have been produced by a single particle.
 As all three candidates however, contain the same stubs, they will be fitted by the \KF with identical helix parameters in the same (yellow) cell regardless of the original HT cell.
 By comparing a track's fitted parameters with the \HT cell in which they were initially found, any track whose fitted parameters does not correspond to the same HT cell in which the \HT found the track in is rejected.
@@ -322,7 +322,7 @@ All of the results discussed were obtained using simulated \ttbar events with a 
 The set of metrics used to evaluate the performance of the proposed track finder systems in the 2016 review are used for the results presented.
 These are defined below in Section~\ref{subsec:definitions}.
 
-As mentioned in Section~\ref{sec:tk-upgrade}, at the time of the review the flat barrel geometry described earlier was used for all the studies undertaken, as depicted in the lower diagram in figure~\ref{fig:trackerlayout}.
+As mentioned in Section~\ref{sec:tk-upgrade}, at the time of the review the flat barrel geometry described earlier was used for all the studies undertaken, as depicted in the lower diagram in Figure~\ref{fig:trackerlayout}.
 As such, unless stated otherwise, the results discussed below use the flat barrel geometry instead of the current tilted geometry.
 
 The results presented in Section~\ref{subsec:chi2} for the linearised $\chi^{2}$ track fitting algorithm involve the use of a \emph{Seed Filter} (SF) stage that was run after the \HT stage.
@@ -617,7 +617,7 @@ Figure~\ref{fig:2GeVFlatEff} shows how the tracking efficiency improves followin
 %%% Disucss table here
 Table~\ref{tab:trackFindingPerformance2GeVHT} shows the impact that the decreased precision \HT cells and optimised \KF state cuts have on tracking performance both following the \HT and after the full chain has been run.
 It is clear that whilst the merging of adjacent \HT cells recovers tracks that did not previously intersect within a single \HT cell, the tracking efficiency following the full chain is significantly less than that post-\HT.
-As can be seen in figure~\ref{fig:2GeVFlatEff}, these losses occur for tracks where the particle's transverse momentum is less than 3\GeV, as the \KF does not take the effects of \MS into account.
+As can be seen in Figure~\ref{fig:2GeVFlatEff}, these losses occur for tracks where the particle's transverse momentum is less than 3\GeV, as the \KF does not take the effects of \MS into account.
 This shortcoming of the \KF also accounts for it not being as efficient at removing fake tracks, with an observed increase of 5\% in the fraction of fakes reconstructed.
 The duplicate removal algorithm however, remains effective at removing almost all the duplicates.
 
@@ -646,7 +646,7 @@ The duplicate removal algorithm however, remains effective at removing almost al
  \end{tabular}}
 \end{table}
 
-The impact of \MS on the \KF is further illustrated by figure~\ref{fig:2GeVFlatChi2Ndf}, which shows the distributions of $\chi^{2}$ per number of degree of freedom ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ for genuine tracks produced by the \KF.
+The impact of \MS on the \KF is further illustrated by Figure~\ref{fig:2GeVFlatChi2Ndf}, which shows the distributions of $\chi^{2}$ per number of degree of freedom ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ for genuine tracks produced by the \KF.
 If all uncertainties were accounted for, the ideal distribution of $\frac{\chi^{2}}{ndf}$ would be unity for all values of \pT, in contrast to the observed dramatic increase above approximately 3\GeV.
 
 \begin{figure}[tbp]
@@ -707,10 +707,10 @@ The initial layer-dependent coefficients were obtained through experimentally de
 Both these initial-layer dependent coefficients and the initial constant coefficient of a milliradian were subsequently further optimised in order to recover as much tracking efficiency as  possible.
 Similarly, the \KF state $\chi^{2}$ cuts for both approaches were also tuned in order to reject the optimal number of fake and duplicate tracks without compromising on tracking efficiency.
 
-During the comparative studies of these two approaches (as shown in figure~\ref{fig:2GeVfracDups}) it was observed that following the \DR stage,the fraction of duplicates present increased when $\pT > 3\GeV (\frac{1}{\pT} < 0.33 1/\GeV)$ in contrast to the observed trend in the fraction of duplicates as a function \pT.
+During the comparative studies of these two approaches (as shown in Figure~\ref{fig:2GeVfracDups}) it was observed that following the \DR stage,the fraction of duplicates present increased when $\pT > 3\GeV (\frac{1}{\pT} < 0.33 1/\GeV)$ in contrast to the observed trend in the fraction of duplicates as a function \pT.
 As this feature is also present following the \HT stage, this implies that the \HT produces more duplicates at low \pT in the full precision cells.
 As the fraction of duplicate tracks produced where decreased precision \HT cells are used is well controlled, the \pT ($\frac{1}{\pT}$) threshold for the $2 \times 2$ merging of \HT cells was increased from $2.7\GeV$ ($0.37/\GeV$) to $3.5\GeV$ ($0.29/\GeV$).
-While an increase in the duplicate rate is observed for \pT ($\frac{1}{\pT}$) between $3.2\GeV$ ($0.31 1/\GeV$) and $5\GeV$ ($0.20/\GeV$) in figure~\ref{fig:2GeVfracDups}, a decreased number of duplicates were produced below the \pt ($\frac{1}{\pT}$) threshold of $3.5\GeV$ ($0.29/\GeV$), which led to an overall reduction in the number of duplicates produced of about 2.8\%.
+While an increase in the duplicate rate is observed for \pT ($\frac{1}{\pT}$) between $3.2\GeV$ ($0.31 1/\GeV$) and $5\GeV$ ($0.20/\GeV$) in Figure~\ref{fig:2GeVfracDups}, a decreased number of duplicates were produced below the \pt ($\frac{1}{\pT}$) threshold of $3.5\GeV$ ($0.29/\GeV$), which led to an overall reduction in the number of duplicates produced of about 2.8\%.
 
 The increased \pT threshold for the \HT cell merging had the additional benefit of recovering a further 0.2\% of the tracks that were previously lost to \MS.
 Consequently, this change was adopted by the project and all the results presented below for the two \MS coefficient forms were produced using this increased threshold. 
@@ -738,7 +738,7 @@ The constant coefficient for the \MS contribution was used for these \KF results
 Figure~\ref{fig:2GeVTiltEff} and table~\ref{tab:trackFindingPerformance2GeVKF} demonstrate how the tracking efficiency for the whole chain improves when \MS is accounted for in the \KF.
 Table~\ref{tab:trackFindingPerformance2GeVKF} also shows that compared to just the \HT optimisations alone, for both \MS coefficients, the \KF is more capable of rejecting incorrectly reconstructed tracks by up to an additional 3-4\%.
 In contrast, the fraction of duplicates increases for both coefficients by 3-5\% for the full chain.
-As illustrated in figure~\ref{fig:2GeVfracDups}, this increase occurs between $3.2\GeV$ and $5\GeV$ - near the $\pT = 3.5\GeV (\frac{1}{\pT} = 0.29 1/\GeV)$ threshold for merging adjacent \HT cells.
+As illustrated in Figure~\ref{fig:2GeVfracDups}, this increase occurs between $3.2\GeV$ and $5\GeV$ - near the $\pT = 3.5\GeV (\frac{1}{\pT} = 0.29 1/\GeV)$ threshold for merging adjacent \HT cells.
 Currently it is not understood how incorporating \MS into the \KF causes this, but it is suspected to be related to the use of the reduced precision of \HT cells.
 %Tracks with \pt approaching the \pt threshold at which reduced precision of \HT cells are used are have the potential to be built out of both stubs from both the full and reduced precision \HT cells.
 
@@ -767,7 +767,7 @@ The track finding efficiencies, $\epsilon$, following each stage are given along
 Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of track $\frac{1}{\pT}$ in simulation for both of these \MS coefficients and for when \MS is not accounted for at all.
 The resolutions of both \MS coefficients are superior across all \pt compared to when \MS is not considered at all, with the constant \MS coefficient typically providing more slightly more precise measurements than the layer-dependent coefficient.  
 As expected, lower transverse momentum tracks experience the greatest improvements given that this is the regime in which \MS dominates.
-This improvement is further illustrated by the distribution of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ in figure~\ref{fig:2GeVTiltChi2Ndf}.
+This improvement is further illustrated by the distribution of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ in Figure~\ref{fig:2GeVTiltChi2Ndf}.
 In contrast to the \KF that was not modified to take \MS into account, the distributions of the \KF's performance for both \MS coefficients implies that \MS was the dominant source of uncertainty in the track measurements and that it has been well accounted for.
 
 \begin{figure}[tbp]

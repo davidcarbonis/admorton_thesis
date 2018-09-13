@@ -1,6 +1,6 @@
 \chapter{An Introduction to the Standard Model and Top Quark Physics}\label{chapter:theory}
 \section{The Standard Model}\label{sec:sm}
-The Standard Model (SM) of particle physics describes all the known elementary matter particles and their interactions with the weak, strong, and electromagnetic forces using Quantum Field Theory (QFT).
+The Standard Model (SM) of particle physics describes all the known elementary matter particles and their interactions with the weak, strong, and electromagnetic forces using renormalisable Quantum Field Theory (QFT).
 QFT describe particles as excitations of quantum fields, whose dynamics are typically described using the Lagrangian formalism~\cite{LagrangiansSM}.
 
 This chapter introduces and briefly describes the theoretical framework of the SM, the shortcomings of the SM and the physics of the top quark.
@@ -203,8 +203,8 @@ The weak force acts upon \emph{weak isospin}, $T$, and is mediated by the massiv
 The weak force conserves weak isospin along the z-axis, $T_{3}$.
 
 Given that the chirality of a fermion determines the value of $T_{3}$, W$^{\pm}$ bosons, which have $T_{3} = \pm 1$, can only interact with left-handed fermions, which have $T_{3} = \pm \frac{1}{2}$~\cite{Cheng:1985bj}.
-This property makes charged weak interactions unique in being the only interactions during which fermion flavour can change, violating parity (P)~\cite{Lee:1956qn,Wu:1957my} and charge-parity (CP) symmetries~\cite{Christenson:1964fg}.
-Consequently, 
+This property makes charged weak interactions unique in being the only interactions during which fermion flavour can change and violate parity (P)~\cite{Lee:1956qn,Wu:1957my} and charge-parity (CP) symmetries~\cite{Christenson:1964fg}.
+The violation of CP symmetry results in weak interactions occurring for matter and anti-matter occurring at different rates, partially accounting for the observed matter-anti-matter asymmetry in the universe.
 As Z$^{0}$ bosons have $T_{3} = 0$, they interact with both left and right handed fermions and conserve fermion flavour and CP symmetry.
 
 \subsubsection{Electroweak Unification}\label{subsec:electroweak}
@@ -271,7 +271,7 @@ As no right-handed neutrinos have been observed, the $\psi_{R}$ singlet consists
 %\end{equation}
 
 As the weak flavour eigenstates of the down-type quarks do not coincide with their mass eigenstates, charged weak interactions allow for flavour changing interactions.
-The Cabibbo-Kobayashi-Maskawa (CKM) matrix, in Equation~(\ref{eq:ckm}), describes the proportion of the mass eigenstates $d$, $s$, and $b$ that are present in the weak flavour eigenstates $d'$, $s'$, and $b'$~\cite{Tanabashi:2018oca}.
+The Cabibbo-Kobayashi-Maskawa (CKM) matrix, in Equation~(\ref{eq:ckm}), is a unitary matrix that describes the proportion of the mass eigenstates $d$, $s$, and $b$ that are present in the weak flavour eigenstates $d'$, $s'$, and $b'$~\cite{Tanabashi:2018oca}.
 The individual elements of the CKM matrix describe the strength of the couplings for charged weak interactions.
 
 \begin{equation}
@@ -366,14 +366,18 @@ In contrast to QED and its relatively small coupling constant, $\alpha_{s}$ can 
 link to PDF
 
 \section{Top Physics}\label{sec:top-physics}
-The existence of a third generation of quarks was first hypothesised in 1973 by Makoto Kobayashi and Toshihide Maskawa in order to account for the CP violation observed in kaon decays~\cite{Kobayashi:1973fv}.
-While the discovery of the tau lepton in 1975 and the bottom quark in 1977~\cite{Herb:1977ek} reinforced the motivation for a weak isospin partner to the bottom quark, as the top quark's mass was larger than intially assumed, it would remain unobserved until a sufficiently powerful collider was built.
+The existence of a third generation of quarks was first hypothesised in 1973 by Makoto Kobayashi and Toshihide Maskawa as the CP violation observed in kaon decays was not possible with only two generations of quarks~\cite{Kobayashi:1973fv}.
+This hypothesis was reinforced with the discovery of a third generation (tau) lepton in 1975 and a third generation down-type (bottom) quark in 1977~\cite{Herb:1977ek}, which strongly implied the existence of a weak isospin partner to the bottom quark.
+Given that the top quark was more massive than initially assumed however, it would remain unobserved until a sufficiently powerful collider was built.
 Finally in 1995 the top quark was observed at the Tevatron at the Fermi National Accelerator Laboratory by the CDF and D\O  experiments~\cite{Abe:1995hr,D0:1995jca}.
 
 The top quark's mass, $m_{top}$, of $173.34 \pm 0.27 \pm 0.71 \GeV$~\cite{Tanabashi:2018oca} makes it the most massive known fundamental particle and is responsible for imbuing it with properties that have no equivalent for the other five quarks~\cite{Tanabashi:2018oca}.
-As the top quark's mass is greater than the mass of a W boson it capable of decaying into an on-shell W boson and a down-type quark.
+Unlike the other five quarks, the top quark is massive enough to decay into an on-shell W boson 
 
- (almost exclusive a bottom quark) and giving it a much short lifetime than the other quarks.
+As the top quark's mass is greater than that of the W boson, it capable of decaying into an on-shell W boson and a down-type quark, giving it a much shorter lifetime than the other quarks
+This 
+
+ and .
 The top quark's lifespan of $5 \times 10^{-25}$ seconds is several orders of magnitude smaller than the characteristic timescale of the strong interaction.
 This results in the top quark being the only quark that decays before it can hadronise. 
 
@@ -391,7 +395,10 @@ Consequently, many believe that the top quark has a special role to play in elec
 At hadron colliders, top quarks are predominantly produced by pair production (\ttbar) through strong interactions.
 As illustrated in the Feynman diagrams in figure~\ref{fig:feyn_ttbar}, at Leading Order (LO) \ttbar events are produced by either gluon fusion or quark-anti-quark annihilation. 
 While approximately 85\% of \ttbar events produced at the Tevatron occured via quark fusion, 80-90\% of \ttbar events at the LHC are produced by gluon fusion for $\sqrt{s} = 8-14\TeV$~\cite{Tanabashi:2018oca,Deliot:2011np}.
-These differences in production rates result from the nature of the particles being collided at both machines, \ie quark fusion requiring a sea quark at the LHC, and the higher centre-of-mass energies at the LHC resulting in gluons carrying a larger fraction of the proton's energy.
+These differences in production rates occur for two reasons:
+\begin{itemize}
+\item The Tevatron was a proton-anti-proton collider, both quarks involved in quark fusion could be valance quarks, unlike the LHC where one would have to be a sea quark. 
+\end{itemize} The PDFs ch	
 
 \begin{figure}[htbp]
 \begin{center}
@@ -410,44 +417,41 @@ The three different decay modes of pair produced top quarks are characterised by
  
 
 Top quark pair production can also occur in association with a vector boson (\ttV), albeit at relatively small cross sections compared to both \ttbar and single top production (see next section).
-Despite their relatively small cross sections, 
-
-\ttV processes are important backgrounds to other processes.
-Therefore, \ttV 
-which require detailed understanding in order to be able to probe for new physics with similar or smaller cross sections, such as tHq and tZq production~\cite{Khachatryan:2014ewa}.
+%Despite the relatively small production cross sections for \ttV processes, it is important that they are well understood as they form some of the irreducible background processes for other rare processes, such as tHq and tZq production~\cite{Khachatryan:2014ewa}.
 
 \subsection{Single top quark production}\label{subsec:singleTopTheory}
-Top quarks can also be produced singly through weak interactions, albeit with smaller cross sections than \ttbar given the relative weakness of the electroweak coupling compared to the strong coupling.
+Top quarks can also be produced singly through weak interactions, albeit with smaller cross sections than that for \ttbar production given the relative weakness of the electroweak coupling compared to the strong coupling.
 
 There are three main SM single top production mechanisms, which are categorised by the virtuality of the W boson involved in the interaction.
-As each of these production channels have differing initial and final states they are typically considered separately.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=1.00\textwidth]{figs/top-physics/singletop_feyn.jpg}
-\caption{Leading order diagrams for single top quark production channels via weak processes: (a) s-channel, (b) t-channel and (c) tW production.}
+\caption{The leading order diagrams for each of the three single top production mechanisms: (a) s-channel, (b) t-channel and (c) single top production in association with a W boson (tW production).}
 \label{fig:singleTopDiagrams}
 \end{figure}
 
-s-channel production, as shown in figure~\ref{fig:singleTopDiagrams}(a), is the quark anti-quark annihilation into an off-shell W boson which decays into a top and anti-bottom quark.
-This process has the lowest single top production cross section at the LHC given the virtuality of the W boson required to produce the top quark and need for the anti-quark to originate from a sea quark.
+Figure~\ref{fig:singleTopDiagrams}(a) shows the first of these mechanisms, which is known as s-channel production. 
+This is quark-anti-quark annihilation producing an off-shell W boson that decays into a top and anti-b quark.
+This process has the lowest production cross section of the three at the LHC given the virtuality of the W boson required to produce the top quark and the need for the anti-b quark to originate from the sea.
 Given its low cross section and a final state topology similar to larger background processes, the s-channel has yet to be observed at the LHC~\cite{Khachatryan:2016ewo}.
 
-The t-channel, as shown in figure~\ref{fig:singleTopDiagrams}(b), is the dominant single top prodution mechanism at the LHC.
-The process involves the scattering of the W boson off a bottom quark originating either from a sea quark or from gluon splitting.
-Initially observed at the Tevatron~\cite{Aaltonen:2009jj,Abazov:2009ii}, the t-channel has since been studied at higher energies at the LHC, with all results to date remaining consistent with the SM~\cite{Berta:2017ghf,Morton:2018wkb}.	
+The t-channel production mechanism, as shown in Figure~\ref{fig:singleTopDiagrams}(b), is the dominant single top prodution mechanism at the LHC.
+The process involves the scattering of a W boson off a sea b quark or produced a b quark produced by gluon splitting.
+Initially observed at the Tevatron~\cite{Aaltonen:2009jj,Abazov:2009ii}, the t-channel process has since been studied at higher energies at the LHC, with all results to date remaining consistent with the SM~\cite{Berta:2017ghf,Morton:2018wkb}.	
 
-The tW-channel, as shown in figure~\ref{fig:singleTopDiagrams}(c), is where a top quark is produced in association with an on-shell W boson.
-In contrast to being negligible at the Tevatron, the tW-channel is accessible at LHC and was discovered in 2014~\cite{Chatrchyan:2014tua}.
-The discovery of the tW-channel was particularly anticipated as the presence of the on-shell W boson in the final state makes it an excellent probe of the Wtb vertex and the theoretical challenges that were involved in describing its interference with \ttbar production at next-to-leading order.
+The tW production mechanism, as shown in Figure~\ref{fig:singleTopDiagrams}(c), is the process in which  a top quark is produced in association with an on-shell W boson.
+In contrast to being negligible at the Tevatron, tW production is observable at the LHC and was discovered in 2014~\cite{Chatrchyan:2014tua}.
+%The discovery of the tW-channel was particularly anticipated as the presence of the on-shell W boson in the final state makes it an excellent probe of the Wtb vertex and the theoretical challenges that were involved in describing its interference with \ttbar production at next-to-leading order.
 
-Single top production processes are a powerful probe of the electroweak interactions of the top quark.
-The Wtb vertex allows for the direct measurement of the $\abs{V_{tb}}$ element of the Cabibbo-Kobayashi-Maskawa (CKM) matrix and thus test whether the CKM matrix is unitary as presumed or otherwise~\cite{Shibata:2008sy}.
+Single top production processes are a powerful probe of the electroweak interactions of the top quark
+In contrast to \ttbar, these processes allow for the Wtb vertex to be probed for the production of top quarks as well as their decay 
+ Wtb vertex allows for the direct measurement of the $\abs{V_{tb}}$ element of the Cabibbo-Kobayashi-Maskawa (CKM) matrix and thus test whether the CKM matrix is unitary as presumed or otherwise~\cite{Shibata:2008sy}.
 Additionally, these processes can be used to determine the top quark's spin by considering the angular distribution of its decay products.
 
 Understanding single top quark production processes is also important from an experimental viewpoint as:
 \begin{itemize}
-\item these processes form backgrounds for not only SM processes such as \ttbar, but for for Higgs and BSM physics searches, .
+\item these processes form backgrounds for not only SM processes such as \ttbar, but also for Higgs and BSM physics searches, .
 \item precision measurements of these processes can be used to constrain Parton Distribution Functions~\cite{Guffanti:2010yu}.
 \end{itemize}
 
@@ -456,8 +460,8 @@ Understanding single top quark production processes is also important from an ex
 With the high centre-of-mass energies and integrated luminosities available at the LHC, it has become possible to not only undertake precision studies of singly and pair produced top quarks, but also to probe the top quark and electroweak sector.
 Such measurements provide not only the ability to perform precision tests of SM predictions, but are also sensitive to new physics such as new electroweak bosons, new fermions, and Flavour Changing Neutral Currents (FCNC).
 
-One may initially assume that given the larger production cross section for \ttbar compared to single top processes, that it would be considerably more difficult to probe the top-electroweak sector through single top quark production processes.
-The top quark and W boson coupling however, can only be probed through the single top tW-channel given that the W boson couples to the initial state quarks for \ttW, as illustrated in figure~\ref{fig:feyn_ttV}.
+Although it may be initially assumed that, given the larger production cross section for \ttbar production compared to single top processes, it would be considerably more difficult to probe the top-electroweak sector through single top quark production processes.
+The top quark and W boson coupling however, can only be probed through the single top tW-channel given that the W boson couples to the initial state quarks for \ttW, as illustrated in Figure~\ref{fig:feyn_ttV}.
 tH has yet to be observed~\cite{CMS:2018jsz} as it is much more difficult to access than \ttH due to the destructive interference between the tH and HW vertices~\cite{Maltoni:2001hu}.
 
 \begin{figure}[htbp]
@@ -467,9 +471,9 @@ tH has yet to be observed~\cite{CMS:2018jsz} as it is much more difficult to acc
 \label{fig:feyn_ttV}
 \end{figure}
 
-In contrast, \ttZ has a lower production cross section than the combined tZ and $\overline{\text{t}}$Z cross section~\cite{Campbell:2013yla}.
+In contrast, \ttZ production has a lower production cross section than the combined cross sections for the prodution of a single top (tZ) or anti-top quark in association with a Z boson ($\overline{\text{t}}$Z)~\cite{Campbell:2013yla}.
 This is the result of the large number of particles present in the \ttZ final state suppressing \ttZ production despite the relative strength of the strong coupling.
-CMS has made measurements of \ttH, \ttW, and \ttZ, all in excess of five standard deviations and consistent with their SM predictions~\cite{Sirunyan:2017uzs,Sirunyan:2018hoz}.
+CMS has made measurements of \ttH, \ttW, and \ttZ production, all of which are consistent with the corresponding SM predictions~\cite{Sirunyan:2017uzs,Sirunyan:2018hoz}.
 
 %\begin{table}[htbp]
 %\topcaption {Standard Model cross sections for top .
@@ -491,9 +495,9 @@ CMS has made measurements of \ttH, \ttW, and \ttZ, all in excess of five standar
 %\end{table}
 
 The analysis presented in this thesis is the search for the production of a single top quark in association with a Z boson with an additional jet, known as \emph{tZq}, in the dilepton final state.
-tZq is a rare SM process which provides a unique precision probe of the top quark and the electroweak sector, as the Z boson is radiated off one of the quark legs, as shown in figures~\ref{fig:feyn_tZq}(a)-(e), or from the exchanged W boson, as shown in figure~\ref{fig:feyn_tZq}(f).
+tZq is a rare SM process which provides a unique precision probe of the top quark and the electroweak sector, as the Z boson is radiated off one of the quark legs, as shown in figures~\ref{fig:feyn_tZq}(a)-(e), or from the exchanged W boson, as shown in Figure~\ref{fig:feyn_tZq}(f).
 Therefore, in contrast to \ttZ, tZq not only sensitive to the top quark and Z boson coupling, but also to the WWZ coupling.
-In addition, tZq is an important process to be understood as it forms irreducible backgrounds for other rare SM processes, such as tH, but also BSM processes such as Flavour Changing Neutral Currents (FCNC)~\cite{AguilarSaavedra:2004wm}
+In addition, tZq prodcution needs to be well understood as it forms one of the irreducible backgrounds for other rare SM processes, such as tH production, as well as BSM processes such as Flavour Changing Neutral Currents (FCNC)~\cite{AguilarSaavedra:2004wm}.
 
 \begin{figure}[htbp]
 \centering
@@ -507,7 +511,7 @@ In addition, tZq is an important process to be understood as it forms irreducibl
 \label{fig:feyn_tZq}
 \end{figure}
 
-The first search for tZq was undertaken for the trilepton final state using data collected by the CMS detector at $\sqrt{s} = 8\TeV$.
+The first search for tZq production was undertaken for the trilepton final state using data collected by the CMS detector at $\sqrt{s} = 8\TeV$.
 This final state involves the W boson from the top quark decay and the Z boson decaying leptonically and two or three jets, one from the bottom quark produced from the top quark decay, one from the recoil quark and potentially one from the gluon splitting that creates the initial state bottom quark.
 While the trilepton final state has a smaller production cross section than either of the final states where the W boson or Z boson decays hadronically, it is the easiest to distinguish against background processes.
 
@@ -529,20 +533,21 @@ The full event selection requirements used in the analysis of this process is di
 
 \section{Beyond the Standard Model Physics}\label{sec:bsm}
 The SM has been incredibly successful at accurately predicting the majority of the properties of the known fundamental particles up to the electroweak scale.
-Despite this however, given the inability of the SM to incorporate gravity and address a number of experimental observations, it is apparent that there must be physics Beyond the Standard Model (BSM).
+However, given the inability of the SM to incorporate gravity and to fully address a number of experimental observations, such as massive neutrinos, it is apparent that there must be new physics beyond the Standard Model.
 
 \subsection{Shortcomings of the Standard Model Physics}\label{subsec:shortcomings}
 One of the major and most apparent shortcomings of the SM is its inability to explain why there is an asymmetry between matter and anti-matter in the universe.
-While CP violation does occur within the SM, it is insufficient to account for the degree of the matter excess observed.
+While CP symmetry violation does occur within the SM, it is insufficient to account for the amount of matter observed in the universe.
 
 Gravity is currently described by the extremely successful classical theory of General Relativity (GR).
-GR however, is fundamentally incompatible with the SM and  has produced contradictory results, such as the predicted cosmological constant and Higgs field's vacuum energy density.
+GR however, is fundamentally incompatible with the SM and  has produced contradictory results, such as their predictions for the cosmological constant differing by 120 orders of magnitude~\cite{Adler:1995vd}.
 While attempts have been made to reconcile the two theories, no successful quantum theory of gravity has yet been produced~\cite{Sola:2013gha}.	
 
-One of the other serious theoretical issues with the SM is the so-called \emph{hierarchy problem} concerning the vast discrepancies between aspects of the weak force and gravity~\cite{Burdman:2007ck}.
+One of the other serious theoretical issues with the SM is the \emph{hierarchy problem} concerning the lack of explanation for the vast differences observed between the electroweak scale and the Grand Unified Theory and Plank scales were gravity becomes strong~\cite{Burdman:2007ck}.
+The mass of the Higgs boson presents a related hierarchy problem.
 As the vacuum expectation value of the Higgs field determines the mass of the weak bosons, for the observed masses of these bosons, one would expect a vacuum expectation value of approximately 246\GeV.
-Given that the radiative corrections to the observable mass of the Higgs boson are proportional to the energy scale of new physics, this would imply that the Higgs vacuum expectation value would be either zero or of the order of the BSM physics energy scale.
-In order to obtain the observed Higgs mass the cancellations required from the radiative corrections must be extremely ``fine tuned''.
+Given that the radiative corrections to the observable mass of the Higgs boson are proportional to the energy scale of any new physics, this would imply that the Higgs vacuum expectation value would be either zero or of the order Plank's constant.
+In order to obtain the observed Higgs mass of 125\GeV, the cancellations required from the radiative corrections must be extremely ``fine tuned''.
 While there is nothing fundamentally wrong with this, many scientists find such fine tuning to be \emph{unnatural}.
 
 %Other astronomical and cosmological inconsistencies include the presence of \emph{dark matter} (DM) and \emph{dark energy} in the universe.
