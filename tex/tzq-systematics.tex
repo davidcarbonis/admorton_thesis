@@ -13,12 +13,11 @@ Out of the 37.8\fbinv of  proton-proton collision data at $\sqrt{s} = 13\TeV$ co
 
 The difference between the certified value and the total data recorded is the result of various factors such as the unavailability of a detector due to power failures .
 
-Due to the prescaling of all of the electron triggers considered during the start of the most luminous runs, as discussed in Section~\ref{sec:triggerStrategy}, the $ee$ channel uses a reduced dataset of 35.6\fbinv where none of the triggers considered were prescaled.
-Events in the double lepton and single lepton datasets from across these ``good'' data runs are considered where the double and single lepton triggers respectively have fired, using the strategy described in Section~\ref{sec:triggerStrategy}.
+Due to the prescaling of all of the electron triggers considered during the start of the most luminous runs (as discussed in Section~\ref{sec:triggerStrategy}) the $ee$ channel uses a reduced dataset corresponding to 35.6\fbinv where none of the triggers considered were prescaled.
 
 The MC samples used to model both the model signal and background processes considered here are listed in table~\ref{tab:mcList}.
 For each of the processes considered, the table which includes information on the number of events generated, the cross section used in their generation and the order in perturbative accuracy in QCD to which the generators calculated the processes.
-For all the MC samples considered, the hadronisation perfrmed was undertaken using PYTHIA 8.
+For all the MC samples considered, the hadronisation performed was undertaken using PYTHIA 8.
 The NNPDF3.0 family of PDF sets~\cite{Ball:2012cx} was used as for sample generation, where the exact set chosen depended on whether the sample was produced at LO or NLO and used either the four or five flavour scheme.
 
 \begin{table}[htbp]
@@ -89,9 +88,10 @@ The MC processes and their associated sample sizes, cross sections and generator
  \end{tabular}}
 \end{table}
 
-To determine the impact of a variety of different theoretical uncertainties for several of the processes defined in table~\ref{tab:mcList}, dedicated MC samples, listed in table~\ref{tab:theorySampleList}, were used.
-For samples where the parton shower scale has been varied
-
+To determine the impact of a variety of different theoretical uncertainties for several of the processes defined in table~\ref{tab:mcList}, dedicated MC samples were used, which are listed in table~\ref{tab:theorySampleList}.
+The entries labelled ``scale'' denote samples where the renormalisation and factorisation scales for PS has been varied ``up'' by a factor of 2 and ``down'' by a factor of 0.5.
+For \ttbar simulation samples, the initial state radiation (ISR) and final state radiation (FSR) scales are varied independently, with corresponding samples in the table.
+The entries labelled ``matching'' denote samples where the energy threshold used in the ME/PS matching is varied.
 These uncertainties are discussed further in Section~\ref{sec:theorySysts}.
 
 \begin{table}[htbp]
@@ -154,9 +154,8 @@ The dedicated MC samples used to estimate some theoretical uncertainties. The ta
 %\end{table}
 %
 \section{Simulation Corrections}\label{sec:simCorrections}
-Simulation is unable to fully recreate all the effects observed in data, either because certain parameters are not precisely known or cannot be calculated.
-To account for possible discrepancies, corrective scale factors are used to reweight MC samples on a per event basis.
-If required, scale factors are usually derived as a function of \pt and $\eta$ so as to fully account for the variation of the detector response in both.
+Simulation is unable to fully recreate all the effects observed in data corrective scale factors are used to reweight MC samples on a per event basis to account for possible discrepancies.
+
 These scale factors are used to correct the simulation for any discrepencies in the lepton identification, isolation and reconstruction efficiencies, lepton and jet energy scales and resolutions, b-tagging efficiencies, the poor modelling of pileup in simulation, and the detector resolutions observed in data.
 
 \subsection{Miscalibrated Tracker APV}\label{subsec:hipEffect}
@@ -169,13 +168,13 @@ Despite this however, there is still a negative impact on the reconstructing tra
 This reduced detector efficiency is accounted for by using the weighted average of the scale factors that have been derived separately for both the affected and unaffected portions of the dataset.
 
 \subsection{Lepton Efficiency}\label{subsec:leptonRecoSFs}
-The identification, isolation and reconstruction efficiencies of leptons are calculated using measurements of $Z \rightarrow l^{+} l ^{-}$ events with the \emph{tag-and-probe} method~\cite{CMS:2008rxa}.
-Using events within a dilepton invariant mass window to ensure a high purity, from this large statistics lepton sample, the method ``tags'' and ``probes'' the leptons where one has passed a tight and the other a loose selection criteria.
-For source of each efficiency and lepton flavour, the efficiency is given as the fraction of events where the probe leptons passed the relevant selection criteria.
-This methodology is used to create corrective scale factors for each component and these are multiplicatively applied to each leptons' event weight as functions of their \pt, $\eta$, and flavour.
+The identification, isolation and reconstruction efficiency scale factors for leptons are produced centrally by CMS and are determined by using a large sample of of $Z \rightarrow l^{+} l ^{-}$ events and the so-called \emph{tag-and-probe} method~\cite{CMS:2008rxa}.
+From a high-purity sub-sample of these events, where the dilepton invariant mass lies within tjhe window $60 < m_{ll} < 120 \GeV$, the lepton that passes a tight selection criteria is ``tagged'' and other lepton is ``probed'' against a loose selection criteria.
+For each type and lepton flavour, the efficiency is the fraction of events where the probe leptons passed the selection criteria under study.
+The corrective scale factors determined from these efficiencies are used to reweight events as functions of their leptons' \pt, $\eta$, and flavour.
 
-The triggers efficiencies for the $ee$ and $\mu\mu$ final states were calculated by considering events that pass triggers which are weakly correlated with all of the lepton triggers considered, known as \emph{cross triggers} (X triggers).
-By counting these events and whether or not they pass at least one of the lepton triggers considered for the relevant final state, the trigger efficiency is estimated as follows:
+The triggers efficiencies for the analysis were determined by the author by using events that pass other trigger combinations that are weakly correlated with those used in the analysis, known as \emph{cross triggers} (X triggers).
+The trigger efficiency is estimated as follows:
 
 \begin{equation}
 \epsilon_{trigger} = \frac{N_{X triggers + lepton triggers}}{N_{X triggers}} \;
@@ -223,16 +222,9 @@ The determination of the systematic uncertainties is given in Section~\ref{sec:s
 
 \subsection{Lepton Energy Corrections}\label{subsec:leptonEnergyCorrections}
 \subsubsection{Electron Regression and Energy Scale and Smearing Corrections}
-Two types of energy corrections that have been produced by the CMS ElectronGamma (EGM) Physics Object Group are applied to electrons and photons.
-These energy regression and energy scale and smearing corrections use $Z \rightarrow e^{+} e^{-}$ events 
-WHAT DO THEY CORRECT 
-
-These corrections are applied to both MC simulation and data and are used to improve the electron resolution obtained and to resolve the observed discrepancies between them.
-
-Using simulation for tuning, energy regression obtains the best possible energy resolution by using the detector information to correct the reconstructed object energy.
-The disagreement between data and MC is resolved by scaling the data energy to the MC energy scale and smearing the MC so that it has the same energy resolution as data. 
-
-These corrections are pre-applied onto the PF electron collections used.
+Energy regression and energy scale and smearing corrections that have been produced by the CMS Electron Gamma (EGM) Physics Object Group.
+The energy regression uses detector information to correct the electron energy recorded in order to obtain the best possible resolution of the reconstructed particle.
+The energy scale and smearing corrections are used to correct the energy scale and resolution in simulation.
 
 \subsubsection{Rochester Corrections}
 The muon momentum scale and resolution correction methods developed by the University of Rochester~\cite{rochester}, known as \emph{Rochester Corrections}, are used to remove any muon momentum bias arising from any possible detector misalignment and any error in the measurement of the magnetic field for both MC and data.
@@ -249,7 +241,7 @@ As described in Section~\ref{subsubsec:JECs}, the Jet Energy Corrections are app
 In addition to these corrections, as the Jet Energy Resolution (JER) observed in data is approximately 10\% poorer than that observed in simulation, the 4-vectors of simulated jets are smeared as functions of generator level and reconstructed \pt and $\eta$ to account for this~\cite{Khachatryan:2016kdb}.
 
 \subsection{b-tagging Efficiency}\label{subsec:btagEff}
-The CMS B-Tag and Vertexing (BTV) Physics Object Group measures the b-tagging efficiency and misidentification rates for b- and light-flavoured jets in data and MC simulation (multijet and \ttbar) of the algorithms which they support~\cite{Sirunyan:2017ezt}.
+The CMS B-Tag and Vertexing (BTV) Physics Object Group measures the b-tagging efficiency and misidentification rates for b- and light-flavoured jets in data and MC simulation considering both multijet and \ttbar processes for the algorithms that they support~\cite{Sirunyan:2017ezt}.
 From these measurements b-tagging efficiency scale factors are produced and provided for analysts to apply to simulated events to correct for differences observed between data and simulation.
 These scale factors, as functions of the jet flavour, \pT and $\eta$, are used to alter the weight of the MC events.
 This methodology was chosen as it involves only changing the weight of the selected MC events which, unlike other methods, avoids events migrating into different b-tag multiplicity bins and having events with potentially undefined variables such as the top mass.
@@ -264,11 +256,13 @@ The \PU SF is determined as a function of the number of primary vertices, $n_{PV
 A scale factor is used to reweight all simulated \ttbar events to account for the differences in the top quark \pt distribution observed between data and both the LO and NLO MC simulation~\cite{Khachatryan:2015oqa}.
 
 \section{Signal Region Simulated Backgrounds}\label{sec:simBackgrounds}
-The impact of the application of the full event selection and simulation corrections in the signal region on the simulated samples, including non-prompt lepton contribution estimated from data, compared to data is shown in table~\ref{tab:signalYields}.
+A comparison between data and simulation, after all corrections have been applied, in the signal region 
 
-While jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process, the signal region is still dominated by a number of background processes.
-The two dominant background processes are Z+jets and \ttbar, with contributions of a similar order to tZq from the single top tW-channel, \ttbarZ, WZ and ZZ processes.
+While the jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions and reduced contributions from the W+jets process to negligible levels, the signal region is still dominated by a number of background processes.
+The two most dominant background processes are Z+jets and \ttbar production, with contributions of a similar size to that from the tZq process from the tW, \ttbarZ, WZ and ZZ processes.
 The remaining single top (tHq, tWZ, s-channel, t-channel), \ttbarW, \ttbarH, WW and triboson backgrounds produce contributions smaller than the signal process.
+
+
 
 \begin{table}[htbp]
 \topcaption{The number of observed events in data, the data-driven estimate of the non-prompt leptons and the number of expected events in simulation in the signal region following the full event selection for each of the separate channels and with both channels combined. The aMC@NLO sample is used for the Z+jets contribution.
