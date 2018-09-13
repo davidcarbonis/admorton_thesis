@@ -1,9 +1,9 @@
-g\chapter{An Introduction to the Standard Model and Top Quark Physics}\label{chapter:theory}
+\chapter{An Introduction to the Standard Model and Top Quark Physics}\label{chapter:theory}
 \section{The Standard Model}\label{sec:sm}
 The Standard Model (SM) of particle physics describes all the known elementary matter particles and their interactions with the weak, strong, and electromagnetic forces using Quantum Field Theory (QFT).
-QFTs describe particles as excitations of quantum fields, whose dynamics are typically described using the Lagrangian formalism~\cite{LagrangiansSM}.
+QFT describe particles as excitations of quantum fields, whose dynamics are typically described using the Lagrangian formalism~\cite{LagrangiansSM}.
 
-This chapter introduces and briefly describes the theoretical framework of the SM, the physics of top quark and the shortcomings of the SM.
+This chapter introduces and briefly describes the theoretical framework of the SM, the shortcomings of the SM and the physics of the top quark.
 The second section of the chapter discusses the motivations and context of the search for a single top quark produced in association with a Z boson presented in this thesis.
 
 Throughout this thesis \emph{natural units}, where the fundamental constants $c$, $\hbar$ and $k_{B}$ are set to unity, and Einstein's summation convention are used.
@@ -20,7 +20,7 @@ Table~\ref{tab:fermions} lists the charges, weak isospins and masses of the quar
 The ``up-type'' and ``down-type'' quarks have an electrical charges of $\frac{+2}{3}$ and $\frac{-1}{3}$,  respectively, and \emph{colour charges} (or anti-colour charges) of red, blue or green.
 As the phenomena of \emph{colour confinement} (described in Section~\ref{subsec:QCD}) only allows for colourless states, quarks form composite particles collectively called hadrons.
 Typically hadrons are composed of a quark anti-quark pair, known as mesons, or of groups of three quarks, referred to as baryons.
-Exotic hadrons formed of larger groupings of quarks can be also formed, with both tetraquark and pentaquark states having been observed by the LHCb detector~\cite{Aaij:2014jqa,Aaij:2015tga} and ....
+Exotic hadrons formed of larger groupings of quarks can be also formed, with both tetraquark and pentaquark states having been observed by the LHCb detector~\cite{Aaij:2014jqa,Aaij:2015tga} and elsewhere~\cite{Tanabashi:2018oca}.
 
 Each generation of leptons consists of a charged lepton that interacts through the electromagnetic and weak forces, and a corresponding neutral near massless lepton, known as a neutrino, that interacts solely through the weak force.
 As with the quarks, the charged lepton of each subsequent generation is more massive than the last.
@@ -35,23 +35,23 @@ The Standard Model fermions and their properties.
   \centering
   \resizebox{\textwidth}{!}{
 % This right-aligns numbers in column, but centers them under column title.
- \begin{tabular}{llcllccc}
+ \begin{tabular}{llllccc}
    \hline
-   & \textbf{Generation} & \textbf{Particle} & & \textbf{Mass [\MeV]} & \textbf{Electric Charge} & \textbf{Weak Isospin}\\
+   & \textbf{Generation} & \textbf{Particle} & \textbf{Mass [\MeV]} & \textbf{Electric Charge} & \textbf{Weak Isospin}\\
    \hline
-   \multirow{3}{*}{Quarks}  & \multirow{2}{*}{I} & up & \textit{$u$}  & 2.3 & $+ \frac{2}{3}$ & 0 & $+ \frac{1}{2}$ \\
-   & & down & \textit{$d$} & $4.8$ & $- \frac{1}{3}$ & $- \frac{1}{2}$ \\
-   & \multirow{2}{*}{II} & charm & \textit{$c$}  & $2.3$ & $+ \frac{2}{3}$ & $+ \frac{1}{2}$ \\
-   & & strange & \textit{$s$}  & $4.8$ & $- \frac{1}{3}$ & $- \frac{1}{2}$ \\
-   & \multirow{2}{*}{II} & top & \textit{$t$}  & $2.3$ & $+ \frac{2}{3}$ & $+ \frac{1}{2}$ \\
-   & & bottom &\textit{$b$}  & $4.8$ & $- \frac{1}{3}$ & $- \frac{1}{2}$ \\
+   \multirow{3}{*}{Quarks}  & \multirow{2}{*}{I} & up (\textit{$u$})  & 2.3 & $+ \frac{2}{3}$ & $+ \frac{1}{2}$ \\
+   & & down (\textit{$d$}) & $4.8$ & $- \frac{1}{3}$ & $- \frac{1}{2}$ \\
+   & \multirow{2}{*}{II} & charm (\textit{$c$})  & $2.3$ & $+ \frac{2}{3}$ & $+ \frac{1}{2}$ \\
+   & & strange (\textit{$s$})  & $4.8$ & $- \frac{1}{3}$ & $- \frac{1}{2}$ \\
+   & \multirow{2}{*}{II} & top (\textit{$t$})  & $2.3$ & $+ \frac{2}{3}$ & $+ \frac{1}{2}$ \\
+   & & bottom (\textit{$b$})  & $4.8$ & $- \frac{1}{3}$ & $- \frac{1}{2}$ \\
    \hline
-   \multirow{3}{*}{Leptons}  & \multirow{2}{*}{I} & electron & \textit{$e$}  & $0.511$ & $-1$ & $- \frac{1}{2}$ \\
-   & & electron neutrino & \textit{$\nu_{e}$}  & $< 2 \times 10^{-6}$ & $0$ & $+ \frac{1}{2}$ \\
-   & \multirow{2}{*}{II} & muon & \textit{$\mu$}  & $106$ & $-1$ &  $-\frac{1}{2}$ \\
-   & & muon neutrino & \textit{$\nu_{\mu}$}  & $< 0.19$ & $0$ & $+ \frac{1}{2}$ \\
-   & \multirow{2}{*}{II} & tau & \textit{$\tau$}  & $1777$ & $0$ & $- \frac{1}{2}$ \\
-   & & tau neutrino & \textit{$\nu_{\tau}$}  & $<18.2$ & $0$ & $+ \frac{1}{2}$ \\   
+   \multirow{3}{*}{Leptons}  & \multirow{2}{*}{I} & electron (\textit{$e$})  & $0.511$ & $-1$ & $- \frac{1}{2}$ \\
+   & & electron neutrino (\textit{$\nu_{e}$})  & $< 2 \times 10^{-6}$ & $0$ & $+ \frac{1}{2}$ \\
+   & \multirow{2}{*}{II} & muon (\textit{$\mu$})  & $106$ & $-1$ &  $-\frac{1}{2}$ \\
+   & & muon neutrino (\textit{$\nu_{\mu}$})  & $< 0.19$ & $0$ & $+ \frac{1}{2}$ \\
+   & \multirow{2}{*}{II} & tau (\textit{$\tau$})  & $1777$ & $0$ & $- \frac{1}{2}$ \\
+   & & tau neutrino (\textit{$\nu_{\tau}$})  & $<18.2$ & $0$ & $+ \frac{1}{2}$ \\   
    \hline   
  \end{tabular}}
 \end{table}
@@ -70,18 +70,18 @@ The fundamental forces of nature and the SM gauge bosons which mediate them.
   \centering
   \resizebox{\textwidth}{!}{
 % This right-aligns numbers in column, but centers them under column title.
- \begin{tabular}{lccccc}
+ \begin{tabular}{lcccc}
    \hline
-   Gauge Bosons & & Mass [\GeV] & Electrical Charge & Colour Charge & Weak Isospin \\
+   Gauge Bosons & Mass [\GeV] & Electrical Charge & Colour Charge & Weak Isospin \\
    \hline
-   Photon & $\gamma$ & $0$ & $0$ & $0$ & $0$ \\
+   Photon ($\gamma$) & $0$ & $0$ & $0$ & $0$ \\
    \hline
-   W & $\text{W}^{\pm}$ & $80.385 \pm 0.015$ & $\pm 1$ & $0$ & $\pm 1$ \\
-   Z & $\text{Z}^0$ & $91.1876 \pm 0.0021$ & $0$ & $0$ & $0$ \\
-   Higgs & $\text{h}^{0}$ & $125 \pm 0.24$ & $0$ & $0$ & $- \frac{1}{2}$ \\
+   W ($\text{W}^{\pm}$) & $80.385 \pm 0.015$ & $\pm 1$ & $0$ & $\pm 1$ \\
+   Z ($\text{Z}^0$) & $91.1876 \pm 0.0021$ & $0$ & $0$ & $0$ \\
+   Higgs ($\text{h}^{0}$) & $125 \pm 0.24$ & $0$ & $0$ & $- \frac{1}{2}$ \\
    \hline
-   \multirow{2}{*}{Gluon }& $g$ & $0$ & $0$ & $r \overline{g}$, $r \overline{b}, g \overline{r}, g \overline{b}, b \overline{r}, b \overline{g} ,$ & $0$ \\
-   & & & &  $\frac{1}{\sqrt{2}}(r \overline{r} - g \overline{g}), \frac{1}{\sqrt{6}}(r \overline{r} + g \overline{g} - 2 b \overline{b})$ & \\
+   \multirow{2}{*}{Gluon ($g$)} &$0$ & $0$ & $0$ & $r \overline{g}$, $r \overline{b}, g \overline{r}, g \overline{b}, b \overline{r}, b \overline{g} $ \\
+   & & & &  $\frac{1}{\sqrt{2}}(r \overline{r} - g \overline{g}), \frac{1}{\sqrt{6}}(r \overline{r} + g \overline{g} - 2 b \overline{b})$ \\
    \hline   
  \end{tabular}}
 \end{table}	
@@ -101,7 +101,7 @@ These concepts can be demonstrated by considering applying the $U(1)$ gauge symm
 \label{eq:diracLagrangian}
 \end{equation}
 
-where ${\gamma}^{\mu}$ are the \emph{gamma matrices} (also known as the Dirac matrices), which are defined in ... and $\partial_{\mu}$ is the partial derivative operator.
+where $\partial_{\mu}$ is the partial derivative operator ${\gamma}^{\mu}$ are the Dirac matrices, defined in Appendix~\ref{app:maths}.
 
 If we consider this Lagrangian to have a global $U(1)$ symmetry, then $\psi(x)$ transforms as:
 
@@ -112,7 +112,7 @@ If we consider this Lagrangian to have a global $U(1)$ symmetry, then $\psi(x)$ 
 
 which leaves the Lagrangian in Equation~(\ref{eq:diracLagrangian}) unchanged as $q$ is a constant and $\alpha$ is an arbitrary phase.
 
-If however, equation~(\ref{eq:diracLagrangian}) has a local $U(1)$ symmetry, then $\psi(x)$ transforms according to:
+If Equation~(\ref{eq:diracLagrangian}) has a local $U(1)$ symmetry, then $\psi(x)$ transforms according to:
 
 \begin{equation}
 \psi(x) \rightarrow \psi'(x) = \psi(x) e^{-i q \alpha (x) } \;
@@ -153,17 +153,17 @@ D_{\mu}\psi(x) \rightarrow e^{-i q \alpha (x) } D_{\mu} \psi(x) \;
 
 the non-invariant term in Equation~(\ref{eq:localLagrangian}) cancels out and ensures that the Lagrangian remains invariant under the local $U(1)$ gauge transformations.
 
-The presence of this gauge field allows for the inclusion of a gauge invariant term containing a field strength tensor $F_{\mu \nu}$, that describes the geometry of $A_{\mu}(x)$, in the Langrangian.
+The presence of this gauge field allows for the inclusion of a gauge invariant term containing a field strength tensor $F_{\mu \nu}$, that describes the geometry of $A_{\mu}(x)$, in the Lagrangian.
 The general form of $F_{\mu \nu}$ is given by:
 
 \begin{equation}
-F^{a}_{\mu \nu} = \partial_{\mu} A^{a}_{\nu} - \partial_{\nu} A^{a}_{\mu} + g f \;
+F^{a}_{\mu \nu} = \partial_{\mu} A^{a}_{\nu} - \partial_{\nu} A^{a}_{\mu} + g f^{abc} A^{b}_{\mu} A^{c}_{\nu} \;
 \label{eq:fieldStrengthTensor}
 \end{equation}
 
-where ....
+where $g$ is the self-coupling constant and $f^{abc}$ are the structure constants of the symmetry group.
 
-For the case of QED, as $U(1)$ has only one generator, which self-commutes, the self-coupling constant in Equation~(\ref{eq:fieldStrengthTensor}) is zero.
+For the case of QED, as $U(1)$ has only one generator, which self-commutes, $g$ is zero.
 
 Therefore, with the addition of the simplest gauge invariant term for incorporating $F_{\mu \nu}$, the QED Lagrangian is given by:
 
@@ -187,15 +187,16 @@ The $\mathcal{L}_{Higgs}$ and $\mathcal{L}_{Yukawa}$ terms arise as a consequenc
 
 \subsection{Electroweak Theory}\label{subsec:QED}
 \subsubsection{Quantum Electrodynamics}\label{subsec:QED}
-Quantum Electrodynamics (QED) is the Abelian gauge theory that describes the interactions electromagnetic force between all electrically charged particles.
-QED is based on the $U(1)_{EM}$ gauge group which describes the conservation of electrical charge, \emph{q}, and the mediation of the force by the massless and chargeless photon.
-The massless nature of the photon results in the electromagnetic force having an infinite range. Consequently the coupling constant of the electromagnetic force, which is related to the electrical charge of an electron, is constant for all distances.
+Quantum Electrodynamics (QED) is the Abelian gauge theory that describes how the electromagnetic force interacts with electrically charged particles.
+QED is based on the $U(1)_{EM}$ gauge group, which describes the conservation of electrical charge, \emph{q}, and the mediation of the force by the massless and chargeless photon.
+The massless nature of the photon results in the electromagnetic force having an infinite range. 
 
-Beyond short distances however, the effective strength of a charged particle's field decreases due to the nature of the QED vacuum.
-In contrast to the featureless void of the classical vacuum, in QFTs the vacuum is the ground state of the quantum field, which, despite lacking any particles, is is not devoid of energy.
-Given that neither the position or momentum of the quantum field can be precisely known as a consequence of Heisenberg's uncertainty principle, the quantum field experiences random fluctuations.
-These fluctuations are interpreted as virtual electron anti-electron pairs that are continually produced and annihilated~\cite{coughlan2006ideas}.
-Therefore, the attraction and repulsion of virtual electrons and anti-electrons towards electrically charged particles results in the vacuum partially screening the strength of a charged particle's field.
+In contrast to the featureless void of the classical vacuum, in QFT the vacuum is the ground state of the quantum field.
+Given that neither the position nor the momentum of the photon field can be precisely known as a consequence of Heisenberg's uncertainty principle, it field experiences random fluctuations.
+These fluctuations are interpreted as virtual electron-anti-electron pairs that are continually materalising out of the vacuum before annihilating~\cite{coughlan2006ideas}.
+During their brief existance, these virtual electrons and anti-electrons interact with the electromagnetic fields of real particles - being attracted to oppositely signed and repelled by same signed particles.
+This results in the vacuum acting as a dielectric medium which partially screens the strength of a charged particle's field.
+At shorter distances however, the effective strength of a charged particle's field increases as the impact of screening is reduced.
 
 \subsubsection{Weak Interactions}\label{subsec:weakForce}
 The weak force acts upon \emph{weak isospin}, $T$, and is mediated by the massive electrically charged W$^{\pm}$ and electrically neutral Z$^{0}$ gauge bosons~\cite{ElectroweakStrong}.
@@ -203,6 +204,7 @@ The weak force conserves weak isospin along the z-axis, $T_{3}$.
 
 Given that the chirality of a fermion determines the value of $T_{3}$, W$^{\pm}$ bosons, which have $T_{3} = \pm 1$, can only interact with left-handed fermions, which have $T_{3} = \pm \frac{1}{2}$~\cite{Cheng:1985bj}.
 This property makes charged weak interactions unique in being the only interactions during which fermion flavour can change, violating parity (P)~\cite{Lee:1956qn,Wu:1957my} and charge-parity (CP) symmetries~\cite{Christenson:1964fg}.
+Consequently, 
 As Z$^{0}$ bosons have $T_{3} = 0$, they interact with both left and right handed fermions and conserve fermion flavour and CP symmetry.
 
 \subsubsection{Electroweak Unification}\label{subsec:electroweak}
@@ -211,11 +213,11 @@ As Z$^{0}$ bosons have $T_{3} = 0$, they interact with both left and right hande
 The theory of \emph{electroweak} interactions, formulated by Glashow, Salam and Weinberg~\cite{Glashow:1961tr,Salam:1964ry,Weinberg:1967tq}, is described by the $SU(2)_{L} \times U(1)_{Y}$ gauge group and hypothesises that its two seemingly disparate constituent forces - weak and electromagnetic - are described as a single unified electroweak force above some threshold energy.
 
 
-The $U(1)_{Y}$ component of the theory has a single generator, and an associated gauge field B$_{\mu}$, which acts on, and conserves, weak hypercharge, $Y_{W}$.
-$Y_{W}$ is related to the conserved quantities of electrical charge ($Q$) and the z-projection of weak isospin ($T_{3}$), of its two constituent interactions by $Q = T_{3} + \frac{1}{2} Y_{W}$.
+The $U(1)_{Y}$ component of the theory has a single generator and an associated gauge field B$_{\mu}$ with coupling constant $g'$.
+This field acts on, and conserves, weak hypercharge, $Y_{W}$, which is related to electrical charge, $Q$, and the z-projection of weak isospin, $T_{3}$, by $Q = T_{3} + \frac{1}{2} Y_{W}$.
 
-The $SU(2)_{L}$ component of the theory has three generators, ${T_{i}} = \frac{{\sigma_{i}}}{2}$, which manifest as the gauge fields W$_{\mu}^{i}$ where $\bm{\sigma}$ are the pauli spin matrices and $i = 1, 2, 3$.
-As $SU(2)$ transformations are non-Abelian, W$_{\mu}^{i}$ are able to self-couple.
+The $SU(2)_{L}$ component of the theory has three generators, ${T_{i}} = \frac{{\sigma_{i}}}{2}$, which manifest as the gauge fields W$_{\mu}^{i}$ with coupling constant $g$, where $i = 1, 2, 3$ and $\bm{\sigma}$ are the Pauli spin matrices (defined in Appendix~\ref{app:maths}).
+As $SU(2)$ transformations are non-Abelian, W$_{\mu}^{i}$ are able to interact with themselves.
 
 
 The B$_{\mu}$ and W$_{\mu}^{i}$ gauge fields are related to the four physically observed gauge bosons as follows:
@@ -229,23 +231,21 @@ The B$_{\mu}$ and W$_{\mu}^{i}$ gauge fields are related to the four physically 
 \label{eq:ewBosons}
 \end{equation}
 
-where $\theta_{W}$ is the weak mixing or \emph{Weinberg} angle, which is defined in Equation~(\ref{eq:weakMixingAngle}) as a function of the coupling strengths of the weak hypercharge and weak isospin coupling constants, $g'$ and $g$ respectively.
+where $\theta_{W}$ is the weak mixing or \emph{Weinberg} angle, which is defined as:
 
 \begin{equation}
 \theta_{W} = \frac{g}{g^{2}+g'^{2}} \;
 \label{eq:weakMixingAngle}
 \end{equation}
 
-where $g'$ and $g$ are the coupling constants of the weak hypercharge and weak isospin respectively.
-
-As discussed in Section~\ref{subsec:weakForce}, the W$^{\pm}$ gauge bosons only interact with the left-handed components of the fermion field, $\psi_{L}$.
-The left- and right-handed components of a fermion field are obtained using the projection operators, $P_{L/R}$, as follows:
+The W$^{\pm}$ gauge bosons only interact with the left-handed components of the fermion field, $\psi_{L}$.
+The left- and right-handed components of the fermion field $\psi$ are obtained using the projection operators, $P_{L/R}$, as follows:
 
 \begin{equation}
 \psi_{L/R} = P_{L/R} \psi \;
 \end{equation}
 
-where $P_{L/R} = \frac{1}{2}(1 \pm \gamma^{5})$ and $\gamma^{5} =i  \gamma^{0} \gamma^{1} \gamma^{2} \gamma^{3}$.
+where $P_{L/R} = \frac{1}{2}(1 \pm \gamma^{5})$ and $\gamma^{5} =i  \gamma^{0} \gamma^{1} \gamma^{2} \gamma^{3}$. 
 
 
 Under the $SU(2)_{L}$ group of transformations, $\psi_{L}$ transforms as doublets, and $\psi_{R}$ as a singlet.
@@ -253,7 +253,7 @@ The $\psi_{L}$ doublet consists of either a left-handed pair of up-type and down
 As no right-handed neutrinos have been observed, the $\psi_{R}$ singlet consists of a right-handed up- or down-type quark or a charged lepton.
 
 %The left- and right-handed components of the fields are as follows:
-%
+
 %\begin{equation}
 %\psi_{L} = 
 %\begin{pmatrix} 
@@ -271,7 +271,8 @@ As no right-handed neutrinos have been observed, the $\psi_{R}$ singlet consists
 %\end{equation}
 
 As the weak flavour eigenstates of the down-type quarks do not coincide with their mass eigenstates, charged weak interactions allow for flavour changing interactions.
-The Cabibbo-Kobayashi-Maskawa (CKM) matrix, in Equation~(\ref{eq:ckm}):
+The Cabibbo-Kobayashi-Maskawa (CKM) matrix, in Equation~(\ref{eq:ckm}), describes the proportion of the mass eigenstates $d$, $s$, and $b$ that are present in the weak flavour eigenstates $d'$, $s'$, and $b'$~\cite{Tanabashi:2018oca}.
+The individual elements of the CKM matrix describe the strength of the couplings for charged weak interactions.
 
 \begin{equation}
 \begin{pmatrix} 
@@ -293,18 +294,10 @@ b
 \label{eq:ckm}
 \end{equation}
 
-describes the proportion of the mass eigenstates $d$, $s$, and $b$ that are present in the weak flavour eigenstates $d'$, $s'$, and $b'$~\cite{Tanabashi:2018oca}.
-As such, each of the elements of the CKM matrix describes the strength of the coupling, or decay fraction, for charged W boson decays.
-
-The best estimates of the elements of the CKM matrix are given by a global fit of the measurements various experiments have performed, as given in Equation~(\ref{eq:ckmElements})~\cite{Tanabashi:2018oca}.
+The current best estimates of the elements of the CKM matrix, which have been determined by a global fit of the measurements various experiments have performed, are~\cite{Tanabashi:2018oca}.
 
 \begin{equation}
-\begin{pmatrix} 
-|V_{ud}| & |V_{us}| & |V_{ub}| \\
-|V_{cd}| & |V_{cs}| & |V_{cb}| \\
-|V_{td}| & |V_{ts}| & |V_{tb}|
-\end{pmatrix}
-= 
+V_{CKM} = 
 \begin{pmatrix} 
 0.97420 \pm 0.00021 & 0.2243 \pm 0.0005 & 0.00394 \pm 0.00036 \\
 0.218 \pm 0.004 &  0.997 \pm 0.017 & 0.0422 \pm 0.0008 \\
@@ -315,10 +308,12 @@ The best estimates of the elements of the CKM matrix are given by a global fit o
 
 %%%Spontaneous symmetry breaking
 \subsubsection{Spontaneous symmetry breaking}\label{subsec:higgs}
-Originally, the SM lacked a mechanism to include massive gauge fields in its Lagrangian which remained invariant under weak isospin rotations despite the observation of the massive weak gauge bosons~\cite{Griffiths}.
+Originally, the SM lacked a mechanism to include massive gauge fields in its Lagrangian, without breaking the gauge invariance of weak isospin rotations~\cite{Griffiths}.
 The inclusion of gauge invariant mass terms in the electroweak Lagrangian was achieved through the spontaneous symmetry breaking \emph{Higgs mechanism} proposed by Brout, Engler, Higgs,Guralnik, Hagen and Kibble~\cite{Englert:1964et,Higgs:1964pj,Guralnik:1964eu}.
 
-The Higgs mechanism introduces a complex scalar field with four degrees of freedom, $\phi$, which has a potential, $V(\phi)$, with a non-zero vacuum expectation value (\textit{VEV}) and an infinite number of ground states, as shown in figure~\ref{fig:higgsPotential}.
+The Higgs mechanism introduces a complex scalar field with four degrees of freedom, $\phi$.
+As the potential of $\phi$, $V(\phi)$, has a non-zero vacuum expectation value (\textit{VEV}), it has an infinite number of ground states.
+Figure~\ref{fig:higgsPotential} shows that while $V(\phi)$ is symmetrical, the rotational symmetry of the field is spontaneously broken when a single ground state for the vacuum is chosen.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -328,29 +323,39 @@ The Higgs mechanism introduces a complex scalar field with four degrees of freed
 \end{center}
 \end{figure}
 
-At energies below the \textit{VEV}, a single ground state is chosen, spontaneously breaking the symmetry.
-Following the symmetry breaking, three of the four degrees of freedom of the Higgs field couple to and provide mass terms to the weak gauge bosons.
-The remaining degree of freedom manifests as a single massive scalar field, the \emph{Higgs boson}~\cite{Cheng:1985bj}.
-Both the CMS and ATLAS experiments at CERN have independently confirmed the existence of the Higgs boson with a mass of $125\GeV$~\cite{HiggsCMS,HiggsATLAS}. 
+Through the spontaneous symmetry breaking of the Higgs potential, three of the four degrees of freedom of the Higgs field couple to and provide mass terms for the weak gauge bosons.
+The remaining degree of freedom manifests as a single massive scalar field excitatation known as the \emph{Higgs boson}~\cite{Cheng:1985bj}.
+Both the CMS and ATLAS experiments at CERN have independently confirmed the existence of an  Higgs boson with a mass of $125\GeV$~\cite{HiggsCMS,HiggsATLAS}. 
 
-The Higgs field also allows for the inclusion of gauge invariant {Yukawa} mass terms for fermions in the SM Lagrangian, where the strength of a fermion's Yukawa coupling to the Higgs field results in its mass~\cite{Cheng:1985bj}.
+While the introduction of a Higgs field was motivated to explain the broken electroweak symmetry, it has allowed for of gauge invariant \emph{Yukawa} mass terms for fermions to be added to the SM Lagrangian.
+In these terms, the strength of a fermion's Yukawa coupling to the Higgs results in the fermions gaining a non-zero mass~\cite{Cheng:1985bj}.
+The experimental evidence for the Higgs coupling to fermions include the recent observations of \ttH production~\cite{Sirunyan:2018hoz} and of the Higgs boson decaying into a $\tau \overline{\tau}$ pair~\cite{CERN-EP-2018-221} and into $b \overline{b}$ pair~\cite{Sirunyan:2017guj}.
 
 \subsection{Quantum Chromodynamics}\label{subsec:QCD}
-The strong force and its interactions with quarks is described by the theory known as Quantum Chromodynamics (QCD).
+The strong force and its interactions with quarks is described by Quantum Chromodynamics (QCD).
 QCD is based on the non-Abelian $SU(3)_{colour}$ gauge group, which describes strong interactions through eight massless spin-$1$ gauge bosons called \emph{gluons} that act upon the \emph{colour} charge, \emph{C}, carried by quarks~\cite{ElectroweakStrong}.
-Quarks carry either a red, green or blue colour charge, with anti-quarks possessing anti-colour charges.
-Given the non-Abelian nature of QCD, gluons can self-couple as they carry both a colour and anti-colour charge.
+Quarks carry either a red, green or blue colour charge, with anti-quarks possessing equivalent anti-colour charges.
+Given the non-Abelian nature of QCD, gluons can self-couple as they themselves carry both a colour and anti-colour charge, unlike the photon, for example, which is electrically neutral.
 
 The ability of gluons to self-couple results in a phenomena unique to the strong force known as \emph{asymptotic freedom}~\cite{ElectroweakStrong,coughlan2006ideas,devenish2004deep}.
-In a manner similar to QED where the vacuum is considered to be a sea of virtual pairs of electrons and anti-electrons, QCD considers the vacuum to be occupied by virtual \emph{sea} quarks and gluons.
+In a manner similar to QED, where the vacuum is considered to be a sea of virtual pairs of electrons and anti-electrons, QCD considers the vacuum to be occupied by a virtual \emph{sea} of quarks and gluons.
 While the virtual quark pairs screen a hadron's \emph{valence} quarks, the virtual gluons have a greater and opposite effect. 
-Therefore, the strength of the strong interaction coupling constant, $\alpha_{s}$, decreases as the separation between colour charged particles decreases.
-$\alpha_{s}$ inside hadrons has decreased to the extent that the quarks effectively behave as if they were free particles.
+Therefore, the strength of the strong interaction coupling constant, $\alpha_{s}$, decreases as the separation between colour -charged particles decreases.
+Inside hadrons, $\alpha_{s}$, has decreased to such an extent that the quarks effectively behave as if they were free particles.
 
-A direct consequence of asymptotic freedom is the phenomenon of \emph{colour confinement}, in which quarks can only exist in colour-singlet states~\cite{ElectroweakStrong,Griffiths,devenish2004deep}.
+As increasingly large amounts of energy are required to further separate quarks, it eventually it becomes more energetically favourable to create quark-anti-quark pairs 
+
+A direct consequence of asymptotic freedom is that quarks are confined t
+
+the phenomenon  known as \emph{colour confinement}.
+
+
+in which quarks can only exist in colour-singlet states~\cite{ElectroweakStrong,Griffiths,devenish2004deep}.
 Such ``colourless states'' are created by the combination of quarks possessing the equivalent colour and anti-colour or all three colours.
 Confinement arises as asymptotic freedom results in increasingly large amounts of energy being required to further any separation between quarks.
-Eventually it becomes more energetically favourable for a quark anti-quark pair to be produced.
+
+
+Ev
 The process of confining these energetic parton showers is known as \emph{hadronisation}.
 
 In high energy particle collisions, such as those at the Large Hadron Collider, these hadronising quarks produce collimated showers of hadrons called \emph{jets}.
@@ -363,7 +368,7 @@ link to PDF
 \section{Top Physics}\label{sec:top-physics}
 The existence of a third generation of quarks was first hypothesised in 1973 by Makoto Kobayashi and Toshihide Maskawa in order to account for the CP violation observed in kaon decays~\cite{Kobayashi:1973fv}.
 While the discovery of the tau lepton in 1975 and the bottom quark in 1977~\cite{Herb:1977ek} reinforced the motivation for a weak isospin partner to the bottom quark, as the top quark's mass was larger than intially assumed, it would remain unobserved until a sufficiently powerful collider was built.
-In 1995 the top quark was observed at the Tevatron at the Fermi National Accelerator Laboratory by the CDF and D\O  experiments~\cite{Abe:1995hr,D0:1995jca}.
+Finally in 1995 the top quark was observed at the Tevatron at the Fermi National Accelerator Laboratory by the CDF and D\O  experiments~\cite{Abe:1995hr,D0:1995jca}.
 
 The top quark's mass, $m_{top}$, of $173.34 \pm 0.27 \pm 0.71 \GeV$~\cite{Tanabashi:2018oca} makes it the most massive known fundamental particle and is responsible for imbuing it with properties that have no equivalent for the other five quarks~\cite{Tanabashi:2018oca}.
 As the top quark's mass is greater than the mass of a W boson it capable of decaying into an on-shell W boson and a down-type quark.
@@ -377,7 +382,7 @@ This also makes it possible to determine the helicity of the W boson involved in
 
 Given all these properties, the top quark makes an excellent probe of the Wtb vertex and is sensitive to any anomalous couplings that would impact it.
 Additionally, with the top mass being greater than that of any other fundamental particle, it has the strongest Yukawa coupling to the Higgs field.
-Consequently, many have conjectured that the top quark has a special role to play in electroweak symmetry breaking~\cite{Giammanco:2017xyn}
+Consequently, many believe that the top quark has a special role to play in electroweak symmetry breaking and Beyond the Standard Model (BSM) Physics~\cite{Giammanco:2017xyn}
  
 %The top quark has not been studied to the same extent as the other quarks due to its later discovery and the relatively low top quark production rate at the Tevatron limiting statistics.
 %The greater operational energy and integrated luminosity provided by the LHC however, has produced greater statistics will be available to probe the nature of the top quark~\cite{Shibata:2008sy}. 
@@ -417,7 +422,7 @@ Top quarks can also be produced singly through weak interactions, albeit with sm
 There are three main SM single top production mechanisms, which are categorised by the virtuality of the W boson involved in the interaction.
 As each of these production channels have differing initial and final states they are typically considered separately.
 
-\begin{figure}[!h]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=1.00\textwidth]{figs/top-physics/singletop_feyn.jpg}
 \caption{Leading order diagrams for single top quark production channels via weak processes: (a) s-channel, (b) t-channel and (c) tW production.}
@@ -455,7 +460,7 @@ One may initially assume that given the larger production cross section for \ttb
 The top quark and W boson coupling however, can only be probed through the single top tW-channel given that the W boson couples to the initial state quarks for \ttW, as illustrated in figure~\ref{fig:feyn_ttV}.
 tH has yet to be observed~\cite{CMS:2018jsz} as it is much more difficult to access than \ttH due to the destructive interference between the tH and HW vertices~\cite{Maltoni:2001hu}.
 
-\begin{figure}[p]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figs/top-physics/CMS-TOP-17-005_Figure_001.pdf}
 \caption{Leading order \ttW (left) and \ttZ (right) production diagrams~\cite{Sirunyan:2017uzs}. Unlike for \ttZ and \ttH, the gauge boson in \ttW is not radiated from the top quark, but from the initial state quarks.}
@@ -490,7 +495,7 @@ tZq is a rare SM process which provides a unique precision probe of the top quar
 Therefore, in contrast to \ttZ, tZq not only sensitive to the top quark and Z boson coupling, but also to the WWZ coupling.
 In addition, tZq is an important process to be understood as it forms irreducible backgrounds for other rare SM processes, such as tH, but also BSM processes such as Flavour Changing Neutral Currents (FCNC)~\cite{AguilarSaavedra:2004wm}
 
-\begin{figure}[p]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/top-physics/tZq_feyn1.jpg}
 \includegraphics[width=0.47\textwidth]{figs/top-physics/tZq_feyn2.jpg}
@@ -514,7 +519,7 @@ This final state involves the presence of two leptons consistent with a Z boson 
 Additional jets may be produced as the result of gluon splitting.
 The full event selection requirements used in the analysis of this process is discussed in detail in Chapter~\ref{chapter:tzq-search}.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figs/top-physics/TplusZtot.png}
 \caption{The next-to-leading order cross section for single top and top pair production with and without an associated Z boson as a function of the centre-of-energy for proton-proton collisions at the LHC~\cite{Campbell:2013yla}.
