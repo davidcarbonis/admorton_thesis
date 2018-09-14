@@ -259,7 +259,7 @@ The remaining single top (tHq, tWZ, s-channel, t-channel), \ttbarW, \ttbarH, WW 
 The impact of the application of the full event selection and simulation corrections in the signal region on the simulated samples, including non-prompt lepton contribution estimated from data, compared to data is shown in table~\ref{tab:signalYields}.
 
 While jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process, the signal region is still dominated by a number of background processes.
-The two dominant background processes are Z+jets and \ttbar, with contributions of a similar order to tZq from the single top tW-channel, \ttbarZ, WZ and ZZ processes.
+The two dominant background processes are Z+jets and \ttbar, with the single top tW-channel, \ttbarZ, WZ and ZZ processes contributing a similar order of events as tZq processes.
 The remaining single top (tHq, tWZ, s-channel, t-channel), \ttbarW, \ttbarH, WW and triboson backgrounds produce contributions smaller than the signal process.
 
 \begin{table}[htbp]
@@ -779,7 +779,6 @@ The uncertainty associated with the \PU reweighting (see Section~\ref{subsec:puS
 As PDFs are derived from data measured by different experiments, the uncertainties associated with each measurement must be propagated to the momentum fractions and energies that have been assigned to partons of the incoming protons.
 
 The impact of the PDF uncertainties are evaluated according to PDF4LHC recommendations~\cite{Butterworth:2015oua}, namely as the standard deviation of the weights of the nominal and the variations of the PDF set.
-
 For almost all of the MC samples considered, this is achieved by considering the nonimal event weight and one hundred alternative PDF weights.
 
 The single top tW-channel samples are the exception to this as at the time of their generation it was not possible to generate the required per-event weights.
@@ -789,12 +788,14 @@ In this case, the LHAPDF (Les Houches Accord Parton Distribution Function) libra
 The uncertainties associated with the b-tagging scale factors described in Section~\ref{subsec:btagEff} are obtained by varying their value by $\pm 1\sigma$.
 
 \subsubsection*{Non-prompt Lepton Contributions}
+Based on the experience of other analyses which determine similar background contributions, CMS recommends a 30\% normalisation uncertainty for 
+ 
 The uncertainty on the variation of the ratio of opposite-sign over same-sign events as a function of the lepton flavour and the cut level was taken to be a 30\% rate uncertainty so as to conservatively cover all potential uncertainties.
 
-\subsubsection*{Z+jets Background}
-The uncertainty associated with the normalisation of the aMC@NLO Z+jets background sample is evaluated as part of the signal extraction process described in Section~\ref{sec:statisticalModel}.
-This involves a simultaneous fit of the Z+jets background enriched control region and the signal region to measure the yields for both tZq and Z+jets processes.
-As such, it incorporates the impact of the statistical uncertainty on the fit of the Z+jets control region as a nuisance parameter, which then controls the normalisation of the Z+jets contribution in the final signal region fit.
+%\subsubsection*{Z+jets Background}
+%The uncertainty associated with the normalisation of the aMC@NLO Z+jets background sample is evaluated as part of the signal extraction process described in Section~\ref{sec:statisticalModel}.
+%This involves a simultaneous fit of the Z+jets background enriched control region and the signal region to measure the yields for both tZq and Z+jets processes.
+%As such, it incorporates the impact of the statistical uncertainty on the fit of the Z+jets control region as a nuisance parameter, which then controls the normalisation of the Z+jets contribution in the final signal region fit.
 
 \subsubsection*{Luminosity Uncertainties}
 The overall uncertainty in the integrated luminosity collected by CMS in 2016 was estimated to be 2.5\%~\cite{CMS:2017_lumi}.
