@@ -16,7 +16,7 @@ Due to the prescaling of all of the electron triggers considered during the star
 The MC samples used to model both the model signal and background processes considered here are listed in table~\ref{tab:mcList}.
 For each of the processes considered, the table which includes information on the number of events generated, the cross section used in their generation and the order in perturbative accuracy in QCD to which the generators calculated the processes.
 For all the MC samples considered, the hadronisation performed was undertaken using PYTHIA 8 which used the CUETP8M2T4 underlying event tune.
-The NNPDF3.0 family of PDF sets~\cite{Ball:2012cx} was used as for sample generation, where the exact set chosen depended on whether the sample was produced at LO or NLO and used either the four or five flavour scheme.
+The NNPDF3.0 family of PDF sets~\cite{Ball:2012cx} was used in the sample generation, where the exact set chosen depended on whether the sample was produced at LO or NLO and used either the four or five flavour scheme.
 
 \begin{table}[htbp]
 \topcaption {
@@ -32,9 +32,9 @@ The MC processes and their associated sample sizes, cross sections and generator
    \hline
    tZq  & 14.5M & 0.0758  & aMC@NLO (NLO) \\
    \hline
-   tHq  & 3.5M & 0.07462  & Madgraph (LO) \\
+   tHq  & 3.5M & 0.07462  & Madgraph5 (LO) \\
    \hline
-   tWZ/tWll  & 50K & 0.01104  & Madgraph (LO) \\
+   tWZ/tWll  & 50K & 0.01104  & Madgraph5 (LO) \\
    \hline
    t tW-channel & 7M & 35.85 & POWHEG (NLO) \\
    $\overline{\text{t}}$ tW-channel & 6.9M & 35.85 & POWHEG (NLO) \\
@@ -57,8 +57,8 @@ The MC processes and their associated sample sizes, cross sections and generator
    \hline
    W+jets & 24.1M & 61526.7 & aMC@NLO (NLO) \\
    \hline
-   Z+jets ($m_{Z} \geq 50\GeVcc $) & 146M & 5765.4 & Madgraph (LO) \\
-   Z+jets ($10 \GeVcc \leq m_{Z} < 50\GeVcc$) & 35.3M & 18610.0 & Madgraph (LO) \\
+   Z+jets ($m_{Z} \geq 50\GeVcc $) & 146M & 5765.4 & Madgraph5 (LO) \\
+   Z+jets ($10 \GeVcc \leq m_{Z} < 50\GeVcc$) & 35.3M & 18610.0 & Madgraph55 (LO) \\
    \hline
    Z+jets ($m_{Z} \geq 50\GeVcc $) & 151M & 5765.4 & aMC@NLO (NLO) \\
    Z+jets ($10 \GeVcc \leq m_{Z} < 50\GeVcc$) & 106M & 18610.0 & aMC@NLO (NLO) \\
@@ -87,10 +87,7 @@ The MC processes and their associated sample sizes, cross sections and generator
 \end{table}
 
 To determine the impact of a variety of different theoretical uncertainties for several of the processes defined in table~\ref{tab:mcList}, dedicated MC samples were used, which are listed in table~\ref{tab:theorySampleList}.
-The entries labelled ``scale'' denote samples where the renormalisation and factorisation scales for PS has been varied ``up'' by a factor of 2 and ``down'' by a factor of 0.5.
-For \ttbar simulation samples, the initial state radiation (ISR) and final state radiation (FSR) scales are varied independently, with corresponding samples in the table.
-The entries labelled ``matching'' denote samples where the energy threshold used in the ME/PS matching is varied.
-These uncertainties are discussed further in Section~\ref{sec:theorySysts}.
+The entries labelled ``scale'', ``matching'', ``isr'' and ``fsr'' correspond to the variations of the theoretical uncertainties considered in this analysis and are discussed further in Section~\ref{sec:theorySysts}.
 
 \begin{table}[htbp]
 \topcaption {
@@ -106,26 +103,26 @@ The dedicated MC samples used to estimate some theoretical uncertainties. The ta
    tZq scale up & 6.9M & 0.0758  & aMC@NLO (NLO) \\
    tZq scale down & 7.0M & 0.0758  & aMC@NLO (NLO) \\
    \hline
-   t tW-channel scale up & 998K & 35.85 & POWHEG (NLO) \\
-   t tW-channel scale down & 994K & 35.85 & POWHEG (NLO) \\
-   $\overline{\text{t}}$ tW-channel scale down & 1.0M & 35.85 & POWHEG (NLO) \\
-   $\overline{\text{t}}$ tW-channel scale down & 999K & 35.85 & POWHEG (NLO) \\
+   t tW-channel scale up & 998K & 35.85 & POWHEG V2(NLO) \\
+   t tW-channel scale down & 994K & 35.85 & POWHEG V2 (NLO) \\
+   $\overline{\text{t}}$ tW-channel scale down & 1.0M & 35.85 & POWHEG V2 (NLO) \\
+   $\overline{\text{t}}$ tW-channel scale down & 999K & 35.85 & POWHEG V2 (NLO) \\
    \hline
-   t t-channel scale up & 5.7M & 136.02 & POWHEG (NLO) \\
-   t t-channel scale down & 5.9M & 136.02 & POWHEG (NLO) \\
-   t t-channel matching up & 6.0M & 136.02 & POWHEG (NLO) \\
-   t t-channel matching down & 6.0M & 136.02 & POWHEG (NLO) \\
-   $\overline{\text{t}}$ t-channel scale up & 4.0M & 80.95 & POWHEG (NLO) \\
-   $\overline{\text{t}}$ t-channel scale down & 3.9M & 80.95 & POWHEG (NLO) \\
-   $\overline{\text{t}}$ t-channel matching up & 4.0M & 80.95 & POWHEG (NLO) \\
-   $\overline{\text{t}}$ t-channel matching down & 4.0M & 80.95 & POWHEG (NLO) \\
+   t t-channel scale up & 5.7M & 136.02 & POWHEG V2 (NLO) \\
+   t t-channel scale down & 5.9M & 136.02 & POWHEG V2 (NLO) \\
+   t t-channel matching up & 6.0M & 136.02 & POWHEG V2 (NLO) \\
+   t t-channel matching down & 6.0M & 136.02 & POWHEG V2 (NLO) \\
+   $\overline{\text{t}}$ t-channel scale up & 4.0M & 80.95 & V2 POWHEG (NLO) \\
+   $\overline{\text{t}}$ t-channel scale down & 3.9M & 80.95 & V2 POWHEG (NLO) \\
+   $\overline{\text{t}}$ t-channel matching up & 4.0M & 80.95 & V2 POWHEG (NLO) \\
+   $\overline{\text{t}}$ t-channel matching down & 4.0M & 80.95 & V2 POWHEG (NLO) \\
    \hline
-   \ttbar ISR up & 156.5M & 831.76 & POWHEG (NLO) \\
-   \ttbar ISR down & 149.8M & 831.76 & POWHEG (NLO) \\
-   \ttbar FSR up & 152.6M & 831.76 & POWHEG (NLO) \\
-   \ttbar FSR down & 156.0M & 831.76 & POWHEG (NLO) \\
-   \ttbar matching up & 58.9M & 831.76 & POWHEG (NLO) \\
-   \ttbar matching down & 58.2M & 831.76 & POWHEG (NLO) \\
+   \ttbar ISR up & 156.5M & 831.76 & POWHEG V2 (NLO) \\
+   \ttbar ISR down & 149.8M & 831.76 & POWHEG V2 (NLO) \\
+   \ttbar FSR up & 152.6M & 831.76 & POWHEG V2 (NLO) \\
+   \ttbar FSR down & 156.0M & 831.76 & POWHEG V2 (NLO) \\
+   \ttbar matching up & 58.9M & 831.76 & POWHEG V2 (NLO) \\
+   \ttbar matching down & 58.2M & 831.76 & POWHEG V2 (NLO) \\
    \hline   
  \end{tabular}}
 \end{table}
@@ -258,8 +255,12 @@ While the jet cleaning and tight isolation criteria for leptons has significantl
 The two most dominant background processes are Z+jets and \ttbar production, with contributions of a similar size to that from the tZq process from the tW, \ttbarZ, WZ and ZZ processes.
 The remaining single top (tHq, tWZ, s-channel, t-channel), \ttbarW, \ttbarH, WW and triboson backgrounds produce contributions smaller than the signal process.
 
-\section{Signal Region Background Estimation}
-A comparison between data and simulation (after all corrections have been applied) is shown in 
+\section{Signal Region Background Estimation}\label{sec:simBackgrounds}
+The impact of the application of the full event selection and simulation corrections in the signal region on the simulated samples, including non-prompt lepton contribution estimated from data, compared to data is shown in table~\ref{tab:signalYields}.
+
+While jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process, the signal region is still dominated by a number of background processes.
+The two dominant background processes are Z+jets and \ttbar, with contributions of a similar order to tZq from the single top tW-channel, \ttbarZ, WZ and ZZ processes.
+The remaining single top (tHq, tWZ, s-channel, t-channel), \ttbarW, \ttbarH, WW and triboson backgrounds produce contributions smaller than the signal process.
 
 \begin{table}[htbp]
 \topcaption{The number of observed events in data, the data-driven estimate of the non-prompt leptons and the number of expected events in simulation in the signal region following the full event selection for each of the separate channels and with both channels combined. The aMC@NLO sample is used for the Z+jets contribution.
@@ -392,11 +393,11 @@ $N_{data}^{OS non-prompt}$: & 37.571$\pm$11.271 & 35.681$\pm$10.704 \\
 
 
 \subsection{Z+jets Background}\label{subsec:zPlusJetsEstimation}
-Following the application of the full event selection and simulation corrections in the signal region both the Madgraph (LO) and aMC@NLO (NLO) Z+jets samples listed in table~\ref{tab:mcList} were compared.
+Following the application of the full event selection and simulation corrections in the signal region both the Madgraph55 (LO) and aMC@NLO (NLO) Z+jets samples listed in table~\ref{tab:mcList} were compared.
 
-In contrast to the correct normalisation of Madgraph Z+jets samples that was seen in the signal region and both of the Z+jets control regions, it was observed that there was a dramatic normalisation offset for the aMC@NLO Z+jets samples.
+In contrast to the correct normalisation of Madgraph55 Z+jets samples that was seen in the signal region and both of the Z+jets control regions, it was observed that there was a dramatic normalisation offset for the aMC@NLO Z+jets samples.
 
-Figures~\ref{fig:zPlusCR_nJets},~\ref{fig:zPlusCR_leadJetPt},~\ref{fig:zPlusCR_secJetPt},~\ref{fig:zPlusCR_thirdJetPt} and ~\ref{fig:zPlusCR_fourthJetPt} show that that despite this scaling issue, the aMC@NLO Z+jets samples did better describe the higher jet multiplicities and the kinematics of the four leading jets in the nominal Z+jets control region defined in Section~\ref{subsec:zPlusJetsCR}.
+Figures~\ref{fig:zPlusCR_nJets} and~\ref{fig:zPlusCR_leadJetPt} respectively show that that despite this scaling issue, the aMC@NLO Z+jets samples did better describe the higher jet multiplicities and the kinematics of the four leading jets in the nominal Z+jets control region defined in Section~\ref{subsec:zPlusJetsCR}.
 
 Z+jets CR
 
@@ -478,8 +479,9 @@ Total MC\@: & 5284.867 & 10067.752 & 15352.619    \\
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/nJets.pdf}
+\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/nBjets.pdf}
 \caption{
-The distributions of the number of jets in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the combination of both channels.
+The distributions of the number of jets and b-jets in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the combination of both channels.
 }
 \label{fig:zPlusCR_nJets}
 \end{figure}
@@ -487,41 +489,19 @@ The distributions of the number of jets in the nominal Z+jets control region fol
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/leadJetPt.pdf}
-\caption{
-The distributions of the leading jet \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the combination of both channels.
-}
-\label{fig:zPlusCR_leadJetPt}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
 \includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/secJetPt.pdf}
-\caption{
-The distributions of the subleading jet \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the combination of both channels.
-}
-\label{fig:zPlusCR_secJetPt}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
+\\
 \includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/thirdJetPt.pdf}
-\caption{
-The distributions of the third jet \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the combination of both channels.
-}
-\label{fig:zPlusCR_thirdJetPt}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
 \includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/fourthJetPt.pdf}
 \caption{
-The distributions of the fourth jet \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the combination of both channels.
+The distributions of the leading four jets \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the combination of both channels.
 }
-\label{fig:zPlusCR_fourthJetPt}
+\label{fig:zPlusCR_jetPt}
 \end{figure}
 
+
 Following observing this normalisation offset, a number of alternative Z+jets samples which were binned as a function of the Z boson's \pT and the number of jets produced by the hard process were also considered.
-In contrast to the nominal Z boson mass binned samples, the alternative Z+jets samples generated by Madgraph and aMC@NLO were found to poorly describe the shapes of Z boson and jet distributions.
+In contrast to the nominal Z boson mass binned samples, the alternative Z+jets samples generated by Madgraph5 and aMC@NLO were found to poorly describe the shapes of Z boson and jet distributions.
 Consequently, these alternative samples were not considered as viable replacements of the Z boson mass binned Z+jets samples.
 
 As having a NLO description of this large multi-jet background was highly desirable in light of the event selection requirements, it was decided to use nominal Z+jets control region to determine the correct normalisation of the aMC@NLO Z+jets samples.
@@ -612,7 +592,6 @@ The distribution of the selected electron and muon \pT and their combined invari
 }
 \label{fig:ttbarCR_leptons}
 \end{figure}
-
 
 \section{Multivariate Analysis Techniques}\label{sec:mvas}
 Multivariate Analysis (MVA) techniques are used to enhance the separation between signal and background processes which are difficult to discriminate between by applying individual selection criteria.
@@ -810,8 +789,7 @@ In this case, the LHAPDF (Les Houches Accord Parton Distribution Function) libra
 The uncertainties associated with the b-tagging scale factors described in Section~\ref{subsec:btagEff} are obtained by varying their value by $\pm 1\sigma$.
 
 \subsubsection*{Non-prompt Lepton Contributions}
-As the data-driven estimate of the NPL background contributions should have no dependence on either the lepton flavour or selection cuts.
-Therefore the variation of the ratio of opposite-sign over same-sign events as a function of the lepton flavour and the cut level was considered to be well accounted for by a 30\% rate uncertainty.
+The uncertainty on the variation of the ratio of opposite-sign over same-sign events as a function of the lepton flavour and the cut level was taken to be a 30\% rate uncertainty so as to conservatively cover all potential uncertainties.
 
 \subsubsection*{Z+jets Background}
 The uncertainty associated with the normalisation of the aMC@NLO Z+jets background sample is evaluated as part of the signal extraction process described in Section~\ref{sec:statisticalModel}.
@@ -959,8 +937,10 @@ The dedicated samples for these variations are listed in able~\ref{tab:theorySam
 
 \subsubsection{Parton Shower Matching Thresholds}
 As discussed in Section~\ref{subsec:eventGenerators}, all of the MC samples considered use model the hard scattering process through a dedicated Matrix Element generator, with PYTHIA 8 being used to perform the subsequent PS and hadronisation.
+The matching of of the output of the 
 
-Dedicated samples evaluate the impact of the uncertainty associated with the choice of the energy threshold used for matching for the \ttbar and single top t-channel backgrounds generated with POWHEG, listed in table~\ref{tab:theorySampleList}.
+Dedicated samples are used evaluate the impact of the uncertainty associated with the choice of the energy threshold used for matching for the \ttbar and single top t-channel backgrounds generated with POWHEG.
+These samples are listed in table~\ref{tab:theorySampleList} as ``matching''.
 For these samples, the model's matching threshold parameter is varied up and down by one standard deviation, effectively 
 
 The uncertainty associated with the choice of the matching threshold for  quark samplse used is evaluated using dedicated matching samples where the matching threshold energy is varied up and down by one standard deviation~\cite{CMS:2016kle}.

@@ -46,7 +46,10 @@ The first stage of generation models the hard interactions between the partons o
 The second stage models results in Parton Showers (PS) through an iterative process until the infrared cutoff scale for the shower is reached and perturbation theory is no longer applicable.
 The remaining particles in this stage undergo hadronisation using a non-perturbative modelling process.
 Two models have been developed for to model hadronisation, the Lund String Model~\cite{Andersson:1983ia} and the Cluster Model~\cite{Winter:2003tt}.
-To ensure that the matching of 
+When different generators are used for the ME and PS modelling, the \emph{matching} occurs to ensure a smooth transition from the well .
+Particles below the matching energy threshold
+
+
 The various event generators used in the production of MC samples used in this thesis are discussed in Section~\ref{subsec:eventGenerators}.
 
 Following the generation stage, the simulation and digitisation stages involves passing the generation output through a complete simulation of the CMS detector that has been with the GEANT4 program~\cite{geant4,Lefebure:1999wja}.
@@ -58,9 +61,7 @@ As \PU modelled in simulation does not adequately describe observed \PU in data,
 
 \subsection{Event Generators}\label{subsec:eventGenerators}
 A number of event generators are used by CMS to produce the MC simulation samples used to describe the expected processes produced.
-While there are several general-purpose event generators that can describe an event from the initial hadron collision to final state particles, such generators can be interfaced with 
-
-they are typically used in conjunction with a specialist generator that that models a specific physics aspect (\ie ME calculations or PS simulation) or process (\eg tau decays) in order to provide a complete event.
+While there are several general-purpose event generators that can describe an event from the initial hadron collision to final state particles, such generators can be interfaced with a specialist generator that that models a specific physics aspect (\ie ME calculations or PS simulation) or process (\eg tau decays) in order to provide a complete event.
 
 Perturbative calculations of the MEs of the QCD and electroweak processes are done, where possible, to Next-To-Leading Order (NLO) in order to both enable precision measurements to be made and to accurately model processes that include multiple high energy jets.
 
@@ -84,7 +85,8 @@ As its name suggests, POWHEG produces the hardest emission first by using the ex
 When it is interfaced with a generator that orders emissions by \pT or allows the use of a \pT-veto, all emissions following the hardest emission are rejected.
 Therefore, the double counting of low-\pT emissions is avoided and thus the need for negatively weighted events.
 As POWHEG V2 was not capable of simulating the single top tW-channel process at the time the simulated samples were produced, the tW-channel samples listed in Section~\ref{sec:samples} were created using POWHEG V1.
-\item \textbf{PYTHIA 8:}~\cite{Sjostrand:2014zea} is a general-purpose generator that is capable of generating all aspects of a process to a complete event.
+
+\item \textbf{PYTHIA 8:}~\cite{Sjostrand:2014zea} is a general-purpose generator that is capable of generating all aspects of a process to form a complete event.
 It can also used to take the output of a ME event generator and perform the parton showering and hadronisation required to produce the full event. For all of the MC samples considered in Section~\ref{sec:samples} for the analysis presented, PYTHIA 8 is used to develop the samples from their ME event generator output into a full event.
 \end{itemize}
 
