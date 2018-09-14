@@ -23,7 +23,6 @@ The sensitivity of this measurement will be improved by using the proton-proton 
 The incorporation of the updated uncertainties relating to these reprocessed datasets is  expected to improve the accuracy of the measurement.
 Alternative lepton selection and b-tagging algorithms have improved the event selection efficiency of other single top searches and their potential for improving the sensitivity of this analysis deserves investigation.
 Once an accurate measurement of the tZq cross section can be made, it should be possible to probe  the strength of the WZ and tZ couplings in this process and compare them to SM predictions.
-Another area of interest
 
 %Given the limited experimental evidence of BSM physics, a large number of BSM physics models, driven by theoretical and ascetic arguments, have been proposed to account for the shortcomings of the SM.
 %While the analysis presented in this thesis concerns the search for a SM process, the tZq cross section is sensitive to modifications of the tZ coupling posited by a number of BSM theories.
@@ -37,25 +36,24 @@ Another area of interest
 Studies  
  for a proposed track finder system for the future CMS tracking detector at the HL-LHC were also presented.
 
-An linearised $\chi^{2}$ track fit algorithm was developed and was shown to be capable of filtering the track candidates produced by the \HT and fitting precise helix parameters to them.
-Following evaluating the $\chi^{2}$ track fit against the \KF that was developed in parallel it was decided not to continue development of the former algorithm.
-This was because the $\chi^{2}$ track fit was not able to filter genuine tracks and precisely fit track parameters in the forward regions as well as the \KF.
+A linearised $\chi^{2}$ track fit algorithm was developed and was shown to be capable of filtering the track candidates produced by the \HT and fitting precise helix parameters to them.
+Following evaluating this fitting algorithm and comparing it to the Kalman filter that was developed in parallel it was decided not to continue development of the former algorithm as it was determined that the \KF performance was superior, particularly in the forward regions, and should therefore be pursued in preference to the linearised $\chi^{2}$ fitter.
 
-The reconstruction efficiency and fitting of track parameters of low transverse momenta tracks ($2\GeV < \pT < 3\GeV$) was shown to be considerably improved by considering the impact of \MS.
+The reconstruction efficiency and fitting of the parameters of low transverse momenta tracks ($2\GeV < \pT < 3\GeV$) was shown to be considerably improved by accounting for the effects of \MS.
 This involved using decreased precision cells in the \HT to mitigate against scattering causing stubs to be found in adjacent \HT cells.
-The incorporation of an uncertainty term into the \KF's covariance matrix that described the average scattering angle as a function of \pT was shown to be as effective as one that also depended on the layer that a hit was found in.
+The incorporation of an uncertainty term into the \KF's covariance matrix, which described the average scattering angle as a function of \pT, was shown to be as effective as one that also depended on the layer that a hit was found in.
 
-Currently the development of the linearised $chi^{2}$ track fitting algorithm for the \emph{TMTT} project's track finder is not being pursued.
+Currently the development of the linearised $\chi^{2}$ track fitting algorithm for the \emph{TMTT} project's track finder is not being pursued.
 For this track fitting algorithm to be considered as a viable alternative to the other track fitters used by the proposed \HT-based track finding system, it will need to address the following:
 
 \begin{itemize}
-\item Improved stub filtering such that all of the genuine tracks fitted contain no incorrectly associated stubs. Both the \KF and \LR are currently able to remove all incorrectly associated stubs from the genuine tracks they fit. 
+\item Whether or not the stub filtering can be improved to the extend that all of the genuine tracks fitted contain no incorrectly associated stubs. Both the \KF and \LR can be used to remove all incorrectly associated stubs from the genuine tracks they fit. 
 \item Determine whether or not there are sufficient resources to implement the algorithm in firmware.
 \item Whether or not the inclusion of the fifth helix parameter, the vertex impact parameter in the x-y plane, would provide comparable or improved performance to other fitting algorithms fit this parameter.
 \end{itemize}
 
-There are a number of areas of investigation which could improve both the \HT's and \KF's performance at low  transverse momenta.
+There are a number of areas of investigation that could potentially improve both the \HT's and \KF's performance at low  transverse momenta.
 Currently it is not understood why the duplicate rate increases near the boundary between normal and reduced precision \HT cells.
 This effect needs to be understood before an optimal value for the cell merging threshold can be determined.
-The ability of the \KF to account for \MS could be improved by using a scattering constant term that is parameterised in such a way that it accurately took into account the volume of material a track has passed through - such as the \pt and $\eta$ of the track candidate.
-The performance of the \KF could also be further improved by using separate \KF $\chi^{2}$ cuts for the \rphi and r-z planes given that the dominant uncertainty contribution for the former varies depending on $\pT$.
+The ability of the \KF to account for \MS could be improved by using a scattering constant term that is parameterised in such a way that it accurately took into account the volume of material a track has passed through.
+The performance of the \KF could also be further improved by using separate \KF $\chi^{2}$ cuts for the \rphi and \rz planes given that the dominant uncertainty contribution for the former varies depending on $\pT$.
