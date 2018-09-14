@@ -42,12 +42,7 @@ As MC simulation is meant to provide a realistic description of physics processe
 The simulation of a process involves the generation, simulation, digitisation and reconstruction of an event.
 
 The initial generation stage involves the use \emph{event generators} to simulate the proton-proton interactions and the resultant physics processes~\cite{Buckley:2011ms,Hoche:2014rga}.
-The first part of this stage uses proton Parton Distribution Functions to assign 
-
-is the modelling of the colliding protons and the hard scattering of their constituent partons where 
-
-
-, which involves the use Parton Distribution Functions (PDFs) to assign fractions of the proton's momentum to the partons and perturbation theory to compute the Matrix Elements (ME) of the Feynman diagrams for the QCD and electroweak processes involved.
+This involves the use Parton Distribution Functions (PDFs) to assign fractions of the proton's momentum to the partons in the colliding protons and perturbation theory to compute the Matrix Elements (ME) of the Feynman diagrams for the QCD and electroweak processes involved.
 
 The second stage models result Parton Showers (PS) through an iterative process until the infrared cutoff scale for the shower is reached and perturbation theory is no longer applicable.
 The remaining particles undergo hadronisation using non-perturbative modelling process.
@@ -57,6 +52,7 @@ Following the generation stage, the simulation and digitisation stages involves 
 This process models particle interactions and decays and the propagation of particles through the detector and the detector's electronics response.
 The output from this stage then undergoes the same reconstruction process that data does, as described in Section~\ref{sec:reco}.
 
+\PU is included in event simulation by sampling large statistics samples minimum bias events and overlapping them with the simulated events from the process being generated.
 As \PU modelled in simulation does not adequately describe observed \PU in data, it is reweighted as described in Section~\ref{subsec:puSF}.
 
 \subsection{Event Generators}\label{subsec:eventGenerators}
