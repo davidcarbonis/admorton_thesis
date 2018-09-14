@@ -101,8 +101,6 @@ The $\chi^{2}$-like variable is defined as follows:
 where $m_{\rm jj}$ is the W boson mass reconstructed from the two candidate jets, $m_{\rm W}$ is the known W boson mass, $m_{\mathrm{jj+b}}$ is the top quark mass reconstructed from the leading b-jet thus the two two jets associated with the W boson decay, $m_{\mathrm{t}}$ is the known top mass, and $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}})$ represent the mass resolution for the top quark and W boson respectively.
 Both $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}}$ were determined by taking the standard deviation of a Gaussian fitted to the corresponding reconstructed peaks respectively.
 
-\editComment{Update values are added, add plots}
-
 Using the simulated samples, a Signal Region (SR) and \emph{Side Band} (SB) were defined as the regions enclosed by $\chi^{2} < \chi^{2}_{SR}$ and $\chi^{2}_{SR} < \chi^{2} < \chi^{2}_{SB}$, respectively.
 
 The choice of value used for $\chi^{2}_{SR}$ and $\chi^{2}_{SB}$ had to balance the need for:
@@ -124,28 +122,28 @@ To this end, events are required to have triggered the single lepton and/or the 
 The use of either or both the single and double lepton triggers ensures maximum efficiency as it does not discard events from any dataset.
 To avoid double counting, the triggers used to select events for the other channel are required to have not fired.
 The logic for this set of conditions is illustrated in table~\ref{tab:triggerCombo}, where \emph{EM} refers to the muon plus electron triggers, \emph{EE} to the double electron triggers, \emph{E} to the single electron triggers, \emph{MM} to the double muon triggers and \emph{M} to the single muon triggers.
-%
-%\begin{table}[htbp]
-%\topcaption {
-%The trigger logic used for each of the datasets considered.
-%}
-%\label{tab:triggerCombo}
-%  \centering
-%%  \resizebox{\textwidth}{!}{
-%   \begin{tabular}{cc}
-%   \hline
-%   \textbf{Dataset} & \textbf{Trigger logic}  \\
-%   \hline
-%   Muon plus Electron & EM \\
-%   \hline
-%   Double Muon & MM and !EM and !EE\\
-%   Single Muon & M and !EE and !MM and !EM \\
-%   \hline  
-%   Double Electron & EE and !EM and !MM \\
-%   Single Electron & E and !EE and !MM and !EM \\
-%   \hline
-% \end{tabular}%}
-%\end{table}
+
+\begin{table}[htbp]
+\topcaption {
+The trigger logic used for each of the datasets considered.
+}
+\label{tab:triggerCombo}
+  \centering
+%  \resizebox{\textwidth}{!}{
+   \begin{tabular}{cc}
+   \hline
+   \textbf{Dataset} & \textbf{Trigger logic}  \\
+   \hline
+   Muon plus Electron & EM \\
+   \hline
+   Double Muon & MM and !EM and !EE\\
+   Single Muon & M and !EE and !MM and !EM \\
+   \hline  
+   Double Electron & EE and !EM and !MM \\
+   Single Electron & E and !EE and !MM and !EM \\
+   \hline
+ \end{tabular}%}
+\end{table}
 
 Ideally the, single and double lepton triggers with the lowest possible transverse momentum thresholds would be considered to ensure that the maximum possible statistics can be obtained over the largest possible phase space.
 The high instantaneous luminosity at the start of the most luminous data taking periods, however, required a number of the L1 triggers to be prescaled to prevent the trigger bandwidth constraints being exceeded.
@@ -153,7 +151,7 @@ As only the triggers considered for the $ee$ channel were impacted by this; thes
 
 Table~\ref{tab:triggersDatasets} lists the triggers applied to data and MC events for each channel, including the e$mu$ final state which is considered for a \ttbar enriched control region discussed in Section~\ref{subsec:ttbarCR}.
 In these trigger path names, \emph{Ele} and \emph{Mu}, refer to a reconstructed electron and muon, respectively.
-The number following the lepton flavour denotes the \pT applied to the leptons.
+The number following the lepton flavour denotes the minimum \pT threshold applied to the leptons.
 In order to avoid raising \pT thresholds to maintain the trigger data rate, additional criteria are used by the triggers.
 These include simple identification (\emph{Id}) and isolation (\emph{Iso}) criteria, which are extracted from the calorimeter (\emph{Calo}) and tracker (\emph{Trk}) systems, that have 
 

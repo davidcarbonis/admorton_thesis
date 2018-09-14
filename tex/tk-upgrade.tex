@@ -1,4 +1,4 @@
-\chapter{Monte Carlo studies for a Track Finding Processor at the High Luminosity-LHC}\label{chapter:tk-upgrade}
+\chapter{Development of a Level-1 Track Trigger for the CMS Phase 2 Upgrade}\label{chapter:tk-upgrade}
 As the statistical gains for an experiment that is operated at a constant luminosity increasingly diminish over time, it is planned to preserve and extend the LHC's physics discovery potential by operating the LHC with an increased instantaneous luminosity.
 Before the start of these higher luminosity operations, the then life-expired CMS tracker will need replacing.
 The new tracker will not only need to have increased radiation hardness to withstand the increased \PU environment, but also the capability to provide limited tracking information to the L-1 trigger in order to keep the L-1 acceptance rate below 750\kHz.
@@ -185,21 +185,20 @@ Each of the TFP's logic blocks shown in Figure~\ref{fig:TFP} has been designed t
 \subsubsection{Hough Transform}
 The Hough Transform algorithm is a widely used method of detecting geometric features in digital image processing~\cite{HT}.
 While the \HT can be used to find any shape that can be parametrised, its simplest form of detecting straight lines is the most relevant for the proposed track finder.
-In this case, the \HT describes a point $(x,y)$ in real space as a straight line with a gradient and intercept ($m,q$) in parameter space known as \emph{Hough}-space.
-Conversely, a point in the \emph{Hough}-space corresponds to a straight line in real space. 
-Therefore, a straight line corresponding to a set of points in real-space is given by the intersect of a set of lines corresponding to the real-space points in \emph{Hough}-space.
+In this case, the \HT describes a point $(x,y)$ in real space as a straight line with a gradient and intercept ($m,c$) in the parameter space known as \emph{Hough}-space.
+Conversely, a point in Hough-space corresponds to a straight line in real space. 
+Therefore, a straight line corresponding to a set of points in real-space is given by the intersect of a set of lines corresponding to the real-space points in Hough-space.
 
-The \HT is used by the TFP to find the tracks of charged particles with $\pT > 3\GeV$ in the \rphi plane, which has the best resolution, independently for each $\eta$-$\phi$ sub-sector within each processing octant.
+The \HT is used by the TFP to find the tracks of charged particles with $\pT > 3\GeV$ in the \rphi plane, which has a better resolution than the \rz plane, independently for each $\eta$-$\phi$ sub-sector within each processing octant.
 
-
-The radius of curvature, $R$ (cm), for a charged particle's trajectory can be described as a function of the particle's \pT, charge $q$ and of the homogeneous magnetic field, $B$, that has bent its trajectory:
+The radius of curvature, $R$ (cm), for a charged particle's trajectory can be described as a function of the particle's \pT, charge $q$ and of the homogeneous magnetic field, $B$, in which it is travelling:
 
 \begin{equation}
 R = \frac{\pt}{0.003\,qB} \;
 \label{eq:R}
 \end{equation}
 
-A stub with coordinates ($r$,$\varphi$) is related to $R$ by:
+A stub associated with such a charged particles' trajectory and which has coordinates ($r$,$\varphi$) is related to $R$ by:
 
 \begin{equation}
 \frac {r}{2\,R} = \sin\left(\varphi-\phi\right)\;
@@ -209,18 +208,18 @@ A stub with coordinates ($r$,$\varphi$) is related to $R$ by:
 where $\phi$ is the angle of the track in the transverse plane at the origin~\cite{markthesis}. 
 
 From Equation~(\ref{eq:R}), it can be seen that tracks with large \pT ($> 2-3\GeV$) have a large $R$.
-This allows for the use of the small angle approximation to simplify the right-hand side of Equation~\ref{eq:stub_R}).
-If energy losses are neglected from processes such as multiple scattering and Bremsstrahlung, the position of the stubs will be compatible with the trajectory described by (\ref{eq:stub_R}) (\ie $R$ can be assumed to be constant).
+This allows for the use of the small angle approximation to simplify the right-hand side of Equation~(\ref{eq:stub_R}).
+If energy losses are neglected from processes such as multiple scattering and Bremsstrahlung, the position of the stubs will be compatible with the trajectory described by Equation~(\ref{eq:stub_R}) (\ie $R$ can be assumed to be constant).
 
-Therefore, Equations~(\ref{eq:R}) and~(\ref{eq:stub_R}) can be combined to describe how a stub's position in ($r, \varphi$) can be transformed into a line in the (\qpt,$\phi$) parameter space:
+Therefore, Equations~(\ref{eq:R}) and~(\ref{eq:stub_R}) can be combined to describe how a stub's position in ($r, \varphi$) can be transformed into a line in (\qpt,$\phi$) Hough-space where:
 
 \begin{equation}
 \phi = \varphi - \frac{0.0015\,qB}{\pt}\cdot r \;
 \label{eq:localHT}
 \end{equation}
 
-As illustrated in Figure~\ref{fig:HT}, if a particle produces multiple stubs, the intersection of the corresponding stub lines in Hough-space can be used to identify a track candidate.
-The coordinates of the intersection point in Hough-space also provides an initial estimate of the track's $p_{T}$ and $phi$ helix parameters, as defined in Section~\ref{subsec:helixParameter}.
+If a particle produces multiple stubs, such as those represented by the six dots in the left-hand side of Figure~\ref{fig:HT}, they can be used to identify a track candidate through their intersection point, which is also shown in the figure (right-hand side).
+The coordinates of the intersection point in Hough-space also provides an initial estimate of the track's $p_{T}$ and $\phi$ helix parameters, as defined in Section~\ref{subsec:helixParameter}.
 
 \begin{figure}[!h]
 \centering
@@ -232,13 +231,13 @@ The coordinates of the intersection point in Hough-space also provides an initia
 \label{fig:HT}
 \end{figure}
 
-As the line gradients in Hough-space are given by the radii of the stubs, they will always be positive.
-Therefore, it is preferable to measure the stub coordinates relative to the point where it crosses a cylinder in the $x--y$ plane of radius $T$.
-This is because if an appropriate choice of $T$ is used, the transformation of $r \rightarrow r_{T}$ and $\phi \rightarrow \phi_{T}$ increases the size of Hough Transform phase space used>
-This allows for more precise measurements of the intersection point to be made and consequently fewer fake tracks and duplicates are found.
-The optimal value of $T$ was determined to be 58 cm.
+As the radii of the stubs gives the line gradients in Hough-space, they will always be positive.
+Therefore, it is preferable to measure the stub coordinates relative to the point where the corresponding track crosses a cylinder in the $x-y$ plane of radius $T$.
+By choosing an appropriate value of $T$, the transformation of $r \rightarrow r_{T}$ and $\phi \rightarrow \phi_{T}$ increases the size of Hough Transform phase space used.
+This allows more precise measurements of the intersection point to be made and consequently fewer fake tracks and duplicates are found.
+The optimal value of $T$ was determined to be 58~cm~\cite{TMTT_JINST}.
 
-As the $R$ for the lowest \pT track (3\GeV) to be considered is greater than the outer radius of the tracking detector ($r$ = 1.2 m), all relevant particles are expected to traverse at least six barrel layers or endcap disks. 
+As the $R$ for the lowest \pT track (3\GeV) to be considered is greater than the outer radius of the tracking detector ($r$ = 1.2~m), all relevant particles are expected to traverse at least six barrel layers or endcap disks. 
 The threshold for the identification of a track candidate however, is set at a minimum of five detector layers or disks in order to allow for detector or readout inefficiencies. 
 This threshold can be further reduced to four layers to account for the reduced geometric coverage between $0.89 < \eta < 1.16$ or for dead detector layers or disks without significantly increasing the volume of data considered.
 
@@ -250,29 +249,20 @@ If ignored, the presence of these stubs would negatively impact the accuracy of 
 In addition, over half of the tracks candidates that were found by the \HT in simulation did not correspond to a genuine track (\ie were fake).
 Therefore, a \KF was developed to precisely fit the track parameters given its ability to simultaneously filter out these incompatible stubs and perform the track fit.
 
-While the \KF is the optimal linear filter and, in certain circumstance, the optimal non-linear filter, it also has several aspects that make it more suitable for FPGA implementation compared to global track fitting methods~\cite{Fruhwirth:1987fm}:
+While the \KF is the optimal linear filter and, in certain circumstances, the optimal non-linear filter, it also has several aspects that make it suitable for FPGA implementation compared to global track fitting methods~\cite{Fruhwirth:1987fm}, namely:
 
 \begin{itemize}
-\item {The matrices involved are small and are their size is independent of the number of measurements, minimising the logic required to implement them;}
+\item {The matrices involved are small and their size is independent of the number of measurements, minimising the logic required to implement them;}
 \item {The only matrix inversion involved is for a small matrix.}
 \end{itemize}
 
 
-Figure~\ref{fig:KF} illustrates the \KF filtering and fitting process for a track candidate in the \rz plane of the barrel, where each line segment represents the predicted track trajectory at a given stage in the fitting process
-The \KF begins with an estimate of the track parameters and their covariance matrix (containing the measurement uncertainties) from the \HT array and $\eta$-$\phi$ segment assignment, known as the \emph{state}.
-Stubs are iteratively added to the predicted state in order to produced an updated state estimate formed of weighted combination of the predicted state and the measurement.
-This weighting, known as the \emph{Kalman gain}, is derived from the relative uncertainties of the predicted state and measurement and is used to control how the state's track parameter are updated.
+Figure~\ref{fig:KF} illustrates the \KF filtering and fitting process for a track candidate in the \rz plane of the barrel, where each line segment represents the predicted track trajectory at a given stage in the fitting process.
+The \KF begins with an estimate of the track parameters and their covariance matrix (containing the measurement uncertainties) from the \HT array, which along with the $\eta$-$\phi$ segment assignment, is known as the \emph{state}.
+Stubs are iteratively added to the predicted state in order to produce an updated state estimate formed of the weighted combination of the predicted state and the measurement.
+This weighting, known as the \emph{Kalman gain}, is derived from the relative uncertainties of the predicted state and measurement and is used to control how the state's track parameters are updated.
 Therefore, with every additional measurement added to the state, the uncertainty of the state's estimate decreases.
 This is illustrated in Figure~\ref{fig:KF} by the size of the shaded area around the line segments decreasing with every stub added.
-
-The filtering of state following each update makes use number of configurable criteria, including \pT, $\chi^2$, and the minimum number of stubs from PS modules.
-It can also be configured to take into account and skip missing missing layers when the expected stub is either missing or deemded to be incorrectly associated with the track.
-
-In the event multiple stubs are found on the same layer, each can be propagated with up to the four best states being kept and presented to a final state selector.
-Preference is given to states with the fewest missing layers and the smallest $\chi^2$.
-An example of this is shown in Figure~\ref{fig:KF}, where the two dashed line segments correspond to the projected trajectories of the track from the stubs labelled 2a and 2b.
-As each stub is compatible with the expected track trajectory at that stage, both are propagated.
-The track associated to stub 2b however, is rejected after stub 4 has been added to the track propagated from stub 2a, due to failing a $\chi^2$ cut in two consecutive layers.
 
 \begin{figure}[!h]
 \centering
@@ -284,6 +274,15 @@ The track associated to stub 2b however, is rejected after stub 4 has been added
 }
 \label{fig:KF}
 \end{figure}
+
+The filtering of state following each update makes use number of configurable criteria, including \pT, $\chi^2$, and the minimum number of stubs from PS modules.
+It can also be configured to take into account and skip missing missing layers when the expected stub is either missing or deemed to be incorrectly associated with the track.
+
+In the event multiple stubs are found on the same layer, each can be propagated with up to the four best states being kept and presented to a final state selector.
+Preference is given to states with the fewest missing layers and the smallest $\chi^2$.
+An example of this is shown in Figure~\ref{fig:KF}, where the two dashed line segments correspond to the projected trajectories of the track from the stubs labelled 2a and 2b.
+As each stub is compatible with the expected track trajectory at that stage, both are propagated.
+The track associated to stub 2b however, is rejected after stub 4 has been added to the track propagated from stub 2a, due to failing a $\chi^2$ cut in two consecutive layers.
 
 %The implementation of 	
 %The final fit is always performed after a fixed period of time.
@@ -570,7 +569,6 @@ While the \qpt and $\phi_{0}$ resolutions achieved after four fitting iterations
 \label{fig:chi2HelixParametersResIterationsComparison}
 \end{figure}
 
-\subsubsection{Outcome of the $\chi^{2}$ Track Fit Studies}\label{subsubsec:chi2Conclusions}
 Following the parallel development of both the linearised $\chi^{2}$ track fit and the \KF however, it was decided that development of the former would be discontinued.
 The reason behind this decision were that the \KF was capable of achieving a higher track finding efficiency with 100.0\% purity for matched tracks and $z_{0}$ and $cot(\theta)$ resolutions in the forward regions that were comparable to the expected offline resolution.
 Considerable progress had also been made with an implementation in firmware.
@@ -796,7 +794,6 @@ This is due the amount of material traversed by a track not being constant for a
 \label{fig:kfHelixParametersResVsInvPt}
 \end{figure}
 
-\subsubsection{Outcome of tracking at low transverse momenta studies}\label{subsubsec:2GevConclusions}
 Following the improved performance considering the impact of \MS on the \HT and \KF discussed in these studies, these optimisations have been incorporated into the firmware for both TFP components.
 The constant \MS term was chosen for inclusion into the \KF as it demonstrated the best performance and required the least resources to implement.
 
