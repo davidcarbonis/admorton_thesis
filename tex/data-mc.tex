@@ -41,11 +41,12 @@ As MC simulation is meant to provide a realistic description of physics processe
 
 The simulation of a process involves the generation, simulation, digitisation and reconstruction of an event.
 
-The initial generation stage involves the use \emph{event generators} to simulate the proton-proton interactions and the resultant physics processes~\cite{Buckley:2011ms,Hoche:2014rga}.
-This involves the use Parton Distribution Functions (PDFs) to assign fractions of the proton's momentum to the partons in the colliding protons and perturbation theory to compute the Matrix Elements (ME) of the Feynman diagrams for the QCD and electroweak processes involved.
-
-The second stage models result Parton Showers (PS) through an iterative process until the infrared cutoff scale for the shower is reached and perturbation theory is no longer applicable.
-The remaining particles undergo hadronisation using non-perturbative modelling process.
+The generation stage involves the use \emph{event generators} to simulate the proton-proton interactions and the resultant physics processes~\cite{Buckley:2011ms,Hoche:2014rga}.
+The first stage of generation models the hard interactions between the partons of the two incoming protons: using Parton Distribution Functions to provide a detailed description of the internal structure of the two protons in their initial state and perturbative methods to determine the Matrix Elements (ME) of the hard process.
+The second stage models results in Parton Showers (PS) through an iterative process until the infrared cutoff scale for the shower is reached and perturbation theory is no longer applicable.
+The remaining particles in this stage undergo hadronisation using a non-perturbative modelling process.
+Two models have been developed for to model hadronisation, the Lund String Model~\cite{Andersson:1983ia} and the Cluster Model~\cite{Winter:2003tt}.
+To ensure that the matching of 
 The various event generators used in the production of MC samples used in this thesis are discussed in Section~\ref{subsec:eventGenerators}.
 
 Following the generation stage, the simulation and digitisation stages involves passing the generation output through a complete simulation of the CMS detector that has been with the GEANT4 program~\cite{geant4,Lefebure:1999wja}.
@@ -86,6 +87,8 @@ As POWHEG V2 was not capable of simulating the single top tW-channel process at 
 \item \textbf{PYTHIA 8:}~\cite{Sjostrand:2014zea} is a general-purpose generator that is capable of generating all aspects of a process to a complete event.
 It can also used to take the output of a ME event generator and perform the parton showering and hadronisation required to produce the full event. For all of the MC samples considered in Section~\ref{sec:samples} for the analysis presented, PYTHIA 8 is used to develop the samples from their ME event generator output into a full event.
 \end{itemize}
+
+
 
 \section{Object Reconstruction}\label{sec:reco}
 Using the output of all the CMS sub-detectors, a full reconstruction of the triggered physics event is undertaken.

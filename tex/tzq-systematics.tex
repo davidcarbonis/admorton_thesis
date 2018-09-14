@@ -797,7 +797,7 @@ The uncertainty associated with the \PU reweighting (see Section~\ref{subsec:puS
 
 \subsubsection*{Parton Density Functions}\label{subsec:pdfSysts}
 %%Discussion of what PDFs are, is given in an earlier chapter 
-As PDFs are derived from data measured by different experiments, the uncertainties associated with each measurement must be propagated to the momentum fractions and energies that have been assigned to partons.
+As PDFs are derived from data measured by different experiments, the uncertainties associated with each measurement must be propagated to the momentum fractions and energies that have been assigned to partons of the incoming protons.
 
 The impact of the PDF uncertainties are evaluated according to PDF4LHC recommendations~\cite{Butterworth:2015oua}, namely as the standard deviation of the weights of the nominal and the variations of the PDF set.
 
@@ -940,30 +940,30 @@ Given the statistical uncertainties involved and the results of the studies brie
 
 \subsection{Theoretical Uncertainties}\label{sec:theorySysts}
 \subsubsection{Factorisation and renormalisation scales}
-In order to consider the impact of the uncertainty associated with the choice of factorisation ($\mu_{F}$) and renormalisation scales ($\mu_{R}$) used, they are varied up and down by factors of 2 and 0.5, respectively.
+In order to consider the impact of the uncertainty associated with the choice of factorisation ($\mu_{F}$) and renormalisation scales ($\mu_{R}$) used in the ME and PS step of the generator, they are varied up and down by factors of 2 and 0.5, respectively.
 
 %\editComment{WHAT IS Q2?}
 %ISR : q^2 =  muR^2 = z(1-z)q^2; q^2 = -p^2
 %FSR q^2 =  muR^2 = z(1-z)q^2; q^2 = p^2-m_0^2
 
 
-Events weights are produced for where one scale is fixed as the other is varied or both are varied simultaneously.
-The event weights for the simultaneously varied scales were used to reweighting each event in order to evaluate the impact of the $\mu_{f}$ and $\mu_{s}$ uncertainties.
+Events weights are produced for the variation of $\mu_{F}$ and $\mu_{R}$ for the ME step where both scales are varied simultaneously in order to evaluate the impact of the $\mu_{f}$ and $\mu_{s}$ uncertainties.
 
-In contrast to the ME level, the impact of the PS shower scale uncertainties was evaluated through the use of dedicated samples where the PS scale had been varied up and down.
-These centrally produced samples are listed in Table~\ref{tab:theorySampleList} as the ``scale up'' and ``scale down'' samples.
-\editComment{What is ISR/FSR? What does varying it do?}
-In the case of \ttbar however, these samples are listed as ISR (initial-state radiation) and FSR (final-state radiation), as it includes the variations in the gluon emissions of the incoming and outgoing partons.
-
+In contrast to the ME level, the impact of the PS shower scale uncertainties was evaluated through the use of dedicated samples for certain processes.
+In these samples the $\mu_{F}$ and $\mu_{R}$ 
+These centrally produced samples are listed in Table~\ref{tab:theorySampleList} as the ``scale up'' and ``scale down'' samples. 
 As mentioned above in Section~\ref{subsec:pdfSysts}, it was not possible for the single top tW-channel MC samples to be produced with per-event weights to account for the matrix element factorisation and renormalisation scales.
-Dedicated samples for this process, listed in Table~\ref{tab:theorySampleList}, where the matrix element and parton shower scales are varied are used to evaluate these systematic uncertainties.
+To account for this, the ``scale up'' and ``scale down'' samples listed in Table~\ref{tab:theorySampleList} for tW production also include the impact of varying $\mu_{F}$ and $\mu_{R}$ for the ME as well as the PS.
+In the case of \ttbar however, the variations in the initial-state radiation (ISR) and final-state radiation (FSR) are considered separately.
+The dedicated samples for these variations are listed in able~\ref{tab:theorySampleList} as the ``isr/fsr up'' and ``isr/fsr down'' samples for \ttbar production.
 
 \subsubsection{Parton Shower Matching Thresholds}
 As discussed in Section~\ref{subsec:eventGenerators}, all of the MC samples considered use model the hard scattering process through a dedicated Matrix Element generator, with PYTHIA 8 being used to perform the subsequent PS and hadronisation.
-Dedicated samples evaluate the impact of the uncertainty associated with the choice of the matching threshold for the \ttbar and single top t-channel backgrounds generated with POWHEG, listed in table~\ref{tab:theorySampleList}.
-For these samples, the model's matching threshold parameter \emph{hdamp} is varied up and down by one standard deviation, effectively 
 
-The uncertainty associated with the choice of the matching threshold for  quark samplse used is evaluated by using dedicated matching samples where the model's matching threshold parameter \emph{hdamp} is varied up and down by one standard deviation~\cite{CMS:2016kle}.
+Dedicated samples evaluate the impact of the uncertainty associated with the choice of the energy threshold used for matching for the \ttbar and single top t-channel backgrounds generated with POWHEG, listed in table~\ref{tab:theorySampleList}.
+For these samples, the model's matching threshold parameter is varied up and down by one standard deviation, effectively 
+
+The uncertainty associated with the choice of the matching threshold for  quark samplse used is evaluated using dedicated matching samples where the matching threshold energy is varied up and down by one standard deviation~\cite{CMS:2016kle}.
 
 \subsection{Pre-Fit Impact of the Systematic Uncertainties}\label{sec:uncertainitiesPreFitImpact}
 The impact of the each of the systematics on the event yield (in percentage) of the simulated processes is shown in Table~\ref{tab:systImpact}.
