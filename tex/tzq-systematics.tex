@@ -700,20 +700,12 @@ Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of a
  \end{tabular}}
 \end{table}
 
-\begin{figure}[tbp]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
 \caption{
 Distributions of the features chosen for use with the BDT for the signal and background samples.}
 \label{fig:inputFeaturesDistributions}
-\end{figure}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
-\caption{
-Distributions of the ... for the combination of the $ee$ and $\mu\mu$ channel}
-\label{fig:inputFeaturesDataSimAgreement}
 \end{figure}
 
 Instead of tuning the choice hyperparmeters for optimal classification performance either by hand or a time and computationally expensive grid search, the optimal choice of hyperparmeters was evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise} to construct and evaluate a regression model based on a Gaussian process.
@@ -901,6 +893,7 @@ The values of $\alpha$, expressing the strength of correlation between the lepto
 Given the statistical uncertainties involved and the results of the studies briefly described above, it was determined that associating a systematic uncertainty of 1.0\%, 1.0\% and 2\% for the triggers used for the $ee$, $\mu\mu$, and $e \mu$ channels would be sufficient.
 
 \subsection{Theoretical Uncertainties}\label{sec:theorySysts}
+\subsubsection{Cross sections}
 \subsubsection{Factorisation and renormalisation scales}
 In order to consider the impact of the uncertainty associated with the choice of factorisation ($\mu_{F}$) and renormalisation scales ($\mu_{R}$) used in the ME and PS step of the generator, they are varied up and down by factors of 2 and 0.5, respectively.
 
