@@ -17,7 +17,7 @@ Any proposed upgrades of the detectors will naturally have to coincide with the 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=0.97\textwidth]{figs/lhc/LHC-Planning.jpg}
+\includegraphics[width=0.99\textwidth]{figs/lhc/LHC-Planning.jpg}
 \caption{Overview of the plan for the LHC and its injectors from 2015 to 2035~\cite{P2TrackerTDR}. Data taking for physics is indicated in green, long shutdowns in red, beam commissioning in yellow and technical stops in blue.}
 \label{fig:lhc-planning}
 \end{center}
@@ -38,24 +38,21 @@ In the PS, the protons are accelerated to 26\GeV and are injected into the Super
 \end{center}
 \end{figure}
 
-Sixteen Radio Frequency (RF) cavities (eight per beam), each operating at frequency of 400\MHz, at a temperature of 4.5K, and delivering a maximum of 2 MV, are used to accelerate the two beams up to their designed operational energies of 7\TeV over the course of about twenty minutes.
+Sixteen Radio Frequency (RF) cavities (eight per beam), each operating at frequency of 400\MHz, delivering a maximum of 2 MV at an operational temperature of 4.5K, are used to accelerate the two beams up to their designed operational energies of 7\TeV over the course of about twenty minutes.
 Each of the two beams are accelerated in separate beam pipes, circulating in opposite directions.
-
 The beams requires 1232 dipole magnets to bend them along their circular path and 392 quadrupole magnets to focus them, with each magnet producing a 8.3T field whilst operating at 1.9K.
 A more detailed description of the LHC accelerator chain at CERN can be found in~\cite{Schindl:397574}. 
 
 \subsection{Motivation}\label{subsec:lhcMotivation}
-The core motivations behind the LHC are to shed light on the nature of the electroweak symmetry breaking,  for which the Higgs was presumed and found to be responsible, and to probe the consistency of the SM above the \TeV level through precision measurements of SM parameters and the Higgs mechanism.
-Extensions of the SM, such as SUSY theories, additional dimensions or new fundamental forces and particles are expected to emerge at and above the TeV level, giving the potential to ascertain whether these theories have any basis beyond mere conjecture~\cite{Bayatian:2006zz}.
-
-In order to explore and permit the discovery of physics above the \TeV level, the total centre of mass energy has to be greater than the energy region being explored as, due to the composite nature of the proton, only a fraction of the collision centre-of-mass energy is available.
-Access to physics beyond the \TeV level is not excluded	however, as some signals would be ``unmissable'', but the majority of physics would be limited by statistics.
-
-As shown in Figure~\ref{fig:crossSections}, the production cross section of the Higgs boson and hypothesised SUSY particles, if they have \TeV masses (and exist), are predicted to be many orders of magnitude smaller than both their associated backgrounds and  the total inelastic cross section.
+The core motivations behind the LHC are to shed light on the nature of the electroweak symmetry breaking, for which the Higgs was presumed and found to be responsible, and to probe the consistency of the SM above the \TeV level through precision measurements of SM parameters and the Higgs mechanism.
+Extensions of the SM, such as SUSY theories, additional dimensions or new fundamental forces and particles are expected to emerge at and above the \TeV level, giving the potential to ascertain whether these theories have any basis beyond mere conjecture~\cite{Bayatian:2006zz}.
+%In order to explore and permit the discovery of physics above the \TeV level, the total centre of mass energy has to be greater than the energy region being explored as, due to the composite nature of the proton, only a fraction of the collision centre-of-mass energy is available.
+%Access to physics beyond the \TeV level is not excluded	however, as some signals would be ``unmissable'', but the majority of physics would be limited by statistics.
+As shown in Figure~\ref{fig:crossSections}, the production cross section of the Higgs boson and hypothesised SUSY particles, if they have \TeV masses (and exist), are predicted to be many orders of magnitude smaller than both their associated backgrounds and the total inelastic cross section.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=\textwidth]{figs/cms/crossSections.pdf}
+\includegraphics[width=0.97\textwidth]{figs/cms/crossSections.pdf}
 \caption{The inclusive proton-proton cross sections at $\sqrt{s} = 14\TeV$ and the production frequency for various physics processes, as a function of jet \ET or mass, expected at the LHC at a luminosity of $10^{34}\percms$~\cite{Dasu:2000ge}.}
 \label{fig:crossSections}
 \end{center}
@@ -150,11 +147,11 @@ These sensors are aligned at an angle of 100 mrad to each other, allowing measur
 
 \subsection{Electromagnetic Calorimeter}\label{subsec:ECAL}
 Beyond the tracker, the ECAL~\cite{CMS:1997ysd,CMS:2002xia}, a homogeneous calorimeter, measures the energies of electrons and photons using lead tungstate scintillating crystals.
-The choice of detector technology was motivated by the need for the ECAL to be sufficiently compact to fit inside the solenoid along with the HCAL while containing the showers' energy within the ECAL.
+The choice of detector technology was motivated by the need for the ECAL to be sufficiently compact to fit inside the solenoid along with the HCAL, while containing the EM showers' energy within the ECAL.
 Therefore, lead tungstate crystals were chosen due to their short radiation length (0.89\cm) and small Molier\'{e} radius (2.2\cm).
 The crystals also have a high radiation tolerance and have a short scintillation delay time, with 80\% of the scintillated light being emitted within one 25\ns bunch crossing.
 
-The ECAL barrel and each of the endcaps contain 61,200 and 7,324 crystals, respectively, with each crystal having a granularity of 0.0174 in the $\eta - \phi$ plane.
+The ECAL barrel and each of the ECAL endcaps contain 61,200 and 7,324 crystals, respectively, with each crystal having a granularity of 0.0174 in the $\eta - \phi$ plane.
 These crystals however, only emit a small amount of scintillation light when the electromagnetic shower de-excites and require photodetectors to amplify this light.
 Avalanche photosdiodes are used in the barrel and the more radiation hard vacuum photodiodes in the endcap disks, respectively, to amplify the light and it into an electrical current that is directly proportional to the energy of the induced electromagnetic showers.
 These signals are digitised on-detector and buffered until a Level-1 Trigger decision has been made.
@@ -163,7 +160,7 @@ The layout of the ECAL system is displayed in Figure~\ref{fig:ecal}, illustratin
 
 The ES aids the EE system in discriminating between neutral pions and photons within the fidicial region $1.653 < |\eta| < 2.6$.
 For each ES, two lead radiators initiate the electromagnetic showers and two silicon strip sensors, orthogonal to one another to provide fine resolution, are placed after the radiators.
-The thickness of the radiators was chosen to be two and one radiation lengths for the first and second lead radiators respectively in order to ensure that ~95\% of incident photons shower before reaching the second silicon strip sensor.
+The thickness of the radiators was chosen to be two and one radiation lengths for the first and second lead radiators, respectively, in order to ensure that ~95\% of incident photons shower before reaching the second silicon strip sensor.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -185,7 +182,7 @@ The first term is the stochastic term representing the statistical fluctuations 
 
 \subsection{Hadronic Calorimeter}\label{subsec:HCAL}
 Hadronic particles pass through the ECAL and enter the HCAL~\cite{CMS:1997xji}.
-The HCAL measures the energies of the resulting hadronic jets and are contains them for the accurate determination of the missing transverse energy~\cite{HCAL:tdr}.
+The HCAL measures the energies of the resulting hadronic jets and contains them for the accurate determination of the missing transverse energy~\cite{HCAL:tdr}.
 As such, the HCAL was designed to have as much absorber material within the solenoid coil as practical. 
 
 The barrel (HB) and endcaps (HE) both use plastic scintillator tiles which are interspersed between brass and steel absorber plates.
@@ -201,7 +198,7 @@ The Cherenkov light is transmitted down the fibres to individually shielded phot
 
 Due to space constraints within the solenoid, the 5.8 to 10.6 interactions lengths of absorber material within the HB is insufficient to fully contain highly penetrating jets.
 Therefore, the HB is supplemented by an additional calorimeter in the barrel region outside the coil known as the HO~\cite{HO}.
-With the solenoid's coil acting as an additional absorber, the HO increases the effective absorber thickness to at least 11.8 interaction lengths.
+With the solenoid's coil, which acts as an additional absorber, the HO increases the effective absorber thickness to at least 11.8 interaction lengths.
 
 Using test beam measurements using electrons, muons and pions, the combined energy resolution of the ECAL and HCAL together, in terms of the stochastic and constant terms, was determined to be
 
@@ -220,7 +217,7 @@ for the HB and HE~\cite{Abdullin:2008zzb}, and
 for the HF~\cite{Bayatian:2006jz}.
 
 \subsection{The Superconducting Solenoid}\label{subsec:magnet}
-One of the defining features of the CMS detector is the superconducting solenoid that encompasses the silicon tracker and calorimetry~\cite{Acquistapace:1997fm,Herve:2000}.
+One of the defining features of the CMS detector is the superconducting solenoid, that encompasses the silicon tracker and calorimetry~\cite{Acquistapace:1997fm,Herve:2000}.
 The 220T cylindrical coil measures 13m long, has a 5.9m inner diameter, is situated inside a vacuum tank where it is cooled to its operating temperature of 4.5K using liquid helium, and operates at magnetic field of 3.8 Tesla.
 While the solenoid was designed to operate at 4~T, the CMS Collaboration chose to operate it at 3.8~T in order maximise the lifetime of the apparatus.
 
@@ -239,7 +236,7 @@ The return magnetic field is approximately 1.7~T in the barrel and outermost end
 
 \subsection{Muon Detectors}\label{subsec:muon chambers}
 As implied by the experiment’s name, the detection and measurement of muons is incredibly important for CMS, as many of the signatures of interesting events involve them.
-Given that muons are Minimum Ionising Particles (MIPs), they pass through the inner detectors and the solenoid with minimal interaction.
+As muons are Minimum Ionising Particles (MIPs), they pass through the inner detectors and the solenoid with minimal interaction.
 Consequently, the muon chambers~\cite{CMS:1997iti} are placed outside the solenoid and are interspaced between the iron return yoke rings and disks.
 
 Figure~\ref{fig:muonChambers} shows the layout of the gas detectors which make up the muon system.
@@ -282,7 +279,7 @@ This provides six position measurements per chamber with a resolution in the $r-
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=0.97\textwidth]{figs/cms/csc_trapezoid_v1.pdf}
+\includegraphics[width=0.55\textwidth]{figs/cms/csc_trapezoid_v1.pdf}
 \caption{A schemeatic overview of a CSC, illustrating a plane of anode wires between two of the trapezoidal panels and the plane of cathode strips which run almost perpendicular to them~\cite{Bayatian:2006nff}.}
 \label{fig:csc}
 \end{center}
@@ -306,18 +303,19 @@ With each proton-proton collision event having a size of about $1.5$MB~\cite{Bay
 The vast majority of events however, are uninteresting from a physics perspective, with the cross sections of interesting processes being at least a factor of $10^{7}$ smaller than the total proton-proton cross section of $110.6 \pm 3.4$ mb~\cite{Antchev:2017dia}.
 Consequently, the CMS trigger system is designed to reject these background events and select events in a manner that allows all possible new physics signatures to be detected whilst keeping acceptance thresholds sufficiently as low as reasonably possible.
 
-The CMS trigger system is comprised of two stages, the Level-1 (L1) Trigger and the High Level Trigger (HLT), as it not feasible to reduce the data rate in a single processing stage without compromising on physics performance.
+The CMS trigger system is comprised of two stages, the Level-1 (L-1) Trigger and the High Level Trigger (HLT), as it not feasible to reduce the data rate in a single processing stage without compromising on physics performance.
 Since initial operations of the CMS experiment, the original event storage rate of 100\Hz has been increased to 0.5-1\kHz~\cite{Dasu:2000ge,phase1L1TDR}.
 
 \subsubsection{Level-1 Trigger}\label{paragraph:L1}
 The Level-1 trigger reduces the input $40\MHz$ rate to about $100\kHz$ and consists of FPGAs (Field Programmable Gate Arrays) and ASICs (Application Specific Integrated Circuits), which have to be highly efficiency at identifying interesting physics signals.
-As the trigger decision cannot be made before the subsequent BX, the L1 Trigger uses a pipelined approach that is capable of buffering the detector for about 3.8\mus (limited by the tracker and ES buffers) before a decision has to be made on whether to read-out an event or discard it. 
+As the trigger decision cannot be made before the subsequent BX, the L-1 Trigger uses a pipelined approach that is capable of buffering the detector for about 3.8\mus (limited by the tracker and ES buffers) before a decision has to be made on whether to read-out an event or discard it. 
 This latency prevents precludes both the reading out of events in full and of the use of iterative reconstruction algorithms.
-Tracking information is not used in the L1 Trigger as it was not possible to read  and consequently, it has not been designed to be read out for every event.
+Tracking information is not used in the L-1 Trigger as it was not possible to read  and consequently, it has not been designed to be read out for every event.
 
 The current L-1 trigger, the \emph{Phase-I Trigger}, was developed to ensure that the 100\kHz L1 trigger limit would be maintained following the increase in the instantaneous luminosity and centre-of-mass energy of the LHC following LS1~\cite{Tapper:2013yva}.
-The Phase-I Trigger is based on a \emph{time-multiplexed} architecture which uses large FPGAs on a small number of general-purpose boards with fast optical links that allow for full granularity data to be used.
-This \emph{time-multiplexed} trigger concept differs from the previous traditional regional reconstruction data reduction architecture, which forwards the best candidates at each regional level to the next stage which covers a larger region of the detector, by processing all data for every \emph{n}th bunch crossing on one of \emph{n} identical processors.
+The Phase-I Calorimeter Trigger is based on a \emph{time-multiplexed} architecture which uses large FPGAs on a small number of general-purpose boards with fast optical links that allow for full granularity data to be used.
+The previous calorimeter trigger architecture reduced the volume of input data by identifying the best trigger candidates at a regional level and forwarding them to a global stage where a L-1 acceptance decision would be made~\cite{Tapper:2013yva}.
+In contrast, time-multiplexed trigger concept processes full granularity data from across the calorimetry systems for every \emph{n}th bunch crossing on one of \emph{n} identical processors.
 Such a system requires at least two layers, linked by a switching network which buffers and transmits data from the multiple sources to a single processor, as illustrated in Figure~\ref{fig:TMT}.
 
 \begin{figure}[htbp]
