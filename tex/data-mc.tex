@@ -44,11 +44,13 @@ The simulation of a process involves the generation, simulation, digitisation an
 The generation stage involves the use \emph{event generators} to simulate the proton-proton interactions and the resultant physics processes~\cite{Buckley:2011ms,Hoche:2014rga}.
 The first stage of generation models the hard interactions between the partons of the two incoming protons: using Parton Distribution Functions to provide a detailed description of the internal structure of the two protons in their initial state and perturbative methods to determine the Matrix Elements (ME) of the hard process.
 The second stage models results in Parton Showers (PS) through an iterative process until the infrared cutoff scale for the shower is reached and perturbation theory is no longer applicable.
+
 The remaining particles in this stage undergo hadronisation using a non-perturbative modelling process.
+
 Two models have been developed for to model hadronisation, the Lund String Model~\cite{Andersson:1983ia} and the Cluster Model~\cite{Winter:2003tt}.
+
 When different generators are used for the ME and PS modelling, the \emph{matching} occurs to ensure a smooth transition from the well .
 Particles below the matching energy threshold
-
 
 The various event generators used in the production of MC samples used in this thesis are discussed in Section~\ref{subsec:eventGenerators}.
 
@@ -112,10 +114,9 @@ By performing these two passes any bias in the identification of incorrectly ass
 \item \textbf{Track Selection:} Quantities, such as $\chi^{2}$, the number of layers with hits and compatibility, are used to identify and reject tracks that have been incorrectly reconstructed.
 \end{itemize}
 
-Up to six iterations of the CTF are performed, with selected tracks' hits removed from consideration in subsequent iterations, in order to ensure that 
-
+Up to six iterations of the CTF are performed, with all hits associated to a track removed from consideration in subsequent iterations.
 The initial four iterations use seeds exclusively from the pixel tracker and the last two iterations use seeds from the strip tracker.
-By using seeds from the outer part of the tracking detector, to enable a high track reconstruction efficiency for those originating outside the pixel detector or those that did not leave any hits in the pixel tracker.
+This iterative approach ensures that a high track reconstruction efficiency and a minimal fake rate is achieved, including for tracks originating from outside the pixel detector or those that did not leave any hits in the pixel tracker.
 
 \subsection{Primary Vertices}\label{subsec:vertices}
 The reconstructed tracks described above are used to reconstruct the positions where the proton-proton collisions occurred, known as \emph{primary vertices}~\cite{Chatrchyan:2014fea,Speer:2006mh}.
