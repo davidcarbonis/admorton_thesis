@@ -67,7 +67,7 @@ Thus an alternative Z+jets enriched control region was defined.
 This alternative control region required the same b-jet selection (one to two b-jets) as the signal region, but with an inverted W boson mass threshold and that the \MET present in the event was less than 50\GeV.
 The inverted W boson mass threshold rejects events containing a hadronically decaying W boson (such as the signal process) and the \MET threshold suppresses \ttbar which contains significant quantities of \MET from the leptonically decaying W bosons.
 
-The performance of both of these control regions and how they are used is discussed in Section~\ref{subsec:zPlusJetsEstimation}.
+The performance of both of these control regions is discussed in Section~\ref{subsec:zPlusJetsEstimation}.
 
 \subsubsection{\ttbar Background Control Region}\label{subsec:ttbarCR}
 \ttbar events that decay dileptonically contribute to the background when the leptons are compatible with originating from a Z boson decay.
@@ -87,8 +87,12 @@ The performance of this control region is discussed in Section~\ref{subsec:ttbar
 Despite even the best intentions, there is the potential experimental procedure to be inadvertently biased by previous observations~\cite{Roodman:2003rw}.
 In order to prevent this from happening, experiments are ``blinded'' so that the result is not known until the analysis has been optimised using simulation and/or data outside of the signal region.
 
-For this analysis this is achieved using a $\chi^{2}$-like variable, inspired by the one defined in~\cite{CMS:2016tlj,TheATLAScollaboration:2016myw}, that depends on both the reconstructed top quark mass and the W boson mass was constructed.
+For this analysis this is achieved by two methods: defining a \emph{side-band} region which does  ... and only using pseudo-data
+
+
+using a $\chi^{2}$-like variable, inspired by the one defined in~\cite{CMS:2016tlj,TheATLAScollaboration:2016myw}, that depends on both the reconstructed top quark mass and the W boson mass was constructed.
 This variable is used when comparing data and MC in the signal region, following the full application of the event selection criteria, to blind the region in phase space where the signal is expected to be.
+
 The $\chi^{2}$-like variable is not used however, when optimising the BDT discussed in Section~\ref{sec:mvas}, nor when determining the expected signal strength and its corresponding significance as described in Section~\ref{sec:statisticalModel}.
 This is because the training and testing of the BDT does not require the use of data and because the calculation of the expected signal strength is done by comparing pseudodata against simulation.
 
@@ -109,9 +113,10 @@ The choice of value used for $\chi^{2}_{SR}$ and $\chi^{2}_{SB}$ had to balance 
 \item the \emph{side band} region to contain sufficient statistics to make the analysis possible.
 \end{itemize}
 
-It was determined that ..
+The optimised values of $\chi^{2}_{SR}$ and $\chi^{2}_{SB}$ were determined to be X and Y respectively.
 
-The figures showing the comparison of data and simulation distributions in this Chapter and Chapter~\ref{chapter:bkg}  are all blinded by only showing events within the SB.
+Following 
+The figures showing the comparison of data and simulation distributions in this Chapter and Chapter~\ref{chapter:bkg} are all blinded by only showing events within the SB.
 The results presented in Chapter~\ref{chapter:results} do not use Equation~(\ref{eq:blindingChi2}), but are 
 
 \section{Trigger Strategy}\label{sec:triggerStrategy}
@@ -368,7 +373,7 @@ Out of the \emph{Loose}, \emph{Medium} and \emph{Tight} WPs thresholds~\cite{Sir
 This was because it provided the optimum performance in terms of providing as large statistics as possible for the signal process without too great a compromise on the purity of the selection.
 
 \section{Background Processes}\label{sec:backgroundProcesses}
-This next section discusses the background processes considered which can have the same final state as the signal process, their anticipated contributions to the background, and how they've been constrained.
+This next section discusses the background processes considered which can have the same final state as the signal process, their anticipated contributions to the background, and how they have been constrained.
 
 The additional contributions from processes not considered here, where events that involve at least one jet that has been incorrectly reconstructed as a lepton or a lepton from the decay of a heavy quark, are discussed in Section~\ref{sec:NPLs}.
 
