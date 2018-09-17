@@ -605,153 +605,6 @@ The distribution of the selected electron and muon \pT and their combined invari
 \label{fig:ttbarCR_leptons}
 \end{figure}
 
-\section{Multivariate Analysis Techniques}\label{sec:mvas}
-Multivariate Analysis (MVA) techniques are used to enhance the separation between signal and background processes which are difficult to discriminate between by applying individual selection criteria.
-
-Therefore, a MVA technique was used to enhance the separation between the signal process from the background processes present following the application of the selection requirements described in Chapter~\ref{chapter:tzq-search}.
-\emph{Boosted Decision Trees}~(BDTs) were chosen for this analysis as they were found to give superior performance compared to other MVA techniques and they are a widely used and supported technique with CMS existing expertise.
-
-\subsection{Boosted Decision Trees}\label{subsec:bdt}
-As illustrated in Figure~\ref{fig:decisionTree}, a decision tree is a series of sequential binary decisions (nodes) used to classify an event.
-Each node compares a single input variable (\emph{feature}) against a threshold to determine which of the next two nodes it'll be sent to.
-After a final decision
- are made on a single input variable (\emph{feature}), $x_{i}$, until a final decision is made at a terminating or \emph{leaf node} and the object is classified as either signal (S) or background (B).
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.97\textwidth]{figs/background-estimation/decisionTree.pdf}
-\caption{A simple decision tree where repeated cuts a member of the set of variables $\textbf{x}$ are perfomed until a leaf node is reached and the object is classified as either signal (S) or background (B)~\cite{Hocker:2007ht}.
-}
-\label{fig:decisionTree}
-\end{figure}
-
-As the decision criterion for each node is dependent on the decisions of the preceding nodes, decision trees have the potential to obtain better separation between signal and background processes through individual cuts on isolated variables.
-Without any prior knowledge of the system however, a single isolated tree is not expected to be an efficient classifier.
-Despite this however, such a weak learner will still contain some knowledge about the underlying structure of the classification problem.
-
-\emph{Boosting} aims to exploit this knowledge by using an ensemble of repeatedly trained weak learners to produce a more effective classifier.
-Following each training iteration the dataset is reweighted based on the success of the previous classifiers in order to force the weak learners to attempt to classify objects that are harder to identify.
-At the end of this process a weighted average (based) of all the weak learners are combined to produce a single strong learner.
-
-\emph{Bagging} is a similar concept to boosting, but involves each weak learner being trained on a random subset of the training sample, such that every element has an equal probability of being sampled.
-
-Therefore by extending boosting (or bagging) to decision trees, the resultant forest of \emph{Boosted Decision Trees} produces a classifier that is both much more effective and resilient to fluctuations in the training sample than one created by a single tree.
-
-Typically the classifier produced by a BDT takes the form of a single discriminator whose response ranges between -1 to +1, denoting completely background-like and signal-like objects, respectively.
-
-Two of the most common boosting algorithms used with decision trees are the Adaptive Boosting (\emph{AdaBoost})~\cite{Friedman:additivelogistic} and \emph{Gradient Boosting}~\cite{Friedman:greedyfunction,Friedman:GradientBoosting} algorithms.
-Adaboost adjusts the weighting assigned to both  misclassified objects and the best performing weak learners after each iteration so that the best learners are trained to correctly identify the most difficult objects.
-In contrast, gradient boosting uses gradient descent following each iteration to determine the residuals of the objects in order to focus on correctly classifying the objects with the largest residuals.
-
-Despite their effectiveness however, BDTs are particularly sensitive to the effects of \emph{overtraining}.
-This phenomena occurs when BDT is overly optimised on correctly classifying the training dataset and results in the poor classification of unseen data.
-To minimise the impact of any potential overtraining, the signal and background process samples are split into training and testing samples, where the latter samples are used to check the validity of the BDT trained with the former.
-A description of the training and testing method used to validate both the optimisation of the selection of the hyperparameters and whether or not they were overtrained is given in Section~\ref{subsec:hyperparameters}.
-
-
-A number of studies were performed to determine the optimal settings for this analysis.
-These included the evaluation of:
-
-\begin{itemize}
-\item a number of different boosting and bagging algorithms;
-\item which simulated background processes should be included in the training processes;
-\item whether or not multiple BDTs trained on separate backgrounds would be more effective than a single BDT;
-\item how to determine which features possessed the greater discriminating power;
-\item and which \emph{hyperparameters}, the set of options used to control BDT behaviour, and associated values gave the optimal classification performance.
-\end{itemize}
-
-It was determined that the \emph{eXtreme Gradient Boosting} (XGBoost) implementation of the Gradiant Boost algorithm for a single BDT trained on all the MC simulation samples gave the optimal performance for this search~\cite{xgboost}.
-
-The methods used for selecting these features and the model hyperparameters are described in the following subsections.
-Both the input features and model hyperparameters were chosen separately for $ee$ and $\mu\mu$ channels and all the simulated MC samples were considered.
-
-\subsection{BDT Optimisation}
-From the selected reconstructed physics objects, a large number of possible input variables or \emph{features} were constructed and considered as inputs for the BDT.
-In order to determine the optimal set of features, recursive feature elimination was used to those that had the greatest discriminating power between signal and background.
-This process iteratively removes the least important feature and re-trains the BDT until every feature has been ranked in order of their removal (\ie in increasing order of their discriminating power).
-From this list, the features with the best discriminating power are selected for use in the BDT.
-
-The features chosen by this process for the $ee$ and $\mu\mu$ channels are given in table~\ref{tab:selectedBdtVariables}.
-Figure~\ref{fig:inputFeaturesDistributions} shows the distributions of the selected features in the signal and background samples.
-Figure~\ref{fig:inputFeaturesDataSimAgreement} shows good agreement observed between simulation and data for the two channels for the features selected, demonstrating their reliability.
-Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of all the features that were considered.
-
-\begin{table}[htbp]
-\topcaption {The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
-}
-\label{tab:selectedBdtVariables}
-  \centering
-% This increases column spacing.
-\resizebox{\textwidth}{!}{
-% This right-aligns numbers in column, but centers them under column title.
-\begin{tabular}{cccc}
-   \hline\
-   \multirow{2}{*}{\textbf{Feature}} & \multirow{2}{*}{\textbf{Description}} & \multicolumn{2}{c}{\textbf{Discriminating Power}} \\
-   & & \textbf{$ee$} & \textbf{$\mu\mu$} \\
-   \hline
-    bTagDisc & Leading b-tagged jet b-tag output discriminant & 0 & $4.529 \times 10^{-2}$ \\ 
-    fourthJetPt & Fourth jet \pt & - & $3.391 \times 10^{-2}$ \\ 
-    jetHt & ${\ensuremath{H_{\mathrm{T}}}}$ of all the jets in an event & - & $3.413 \times 10^{-2}$ \\ 
-    jetMass & Total mass of every jet in an event & $1.467 \times 10^{-1}$  & $5.747 \times 10^{-2}$  \\
-    jjDelR & $\Delta R$ between the leading jets & $5.778 \times 10^{-2}$  & $6.405 \times 10^{-2}$  \\ 
-    leadJetEta & Leading jet $\eta$ & $2.222 \times 10^{-2}$ & $6.756\times 10^{-2}$  \\
-    leadJetPt & Leading jet \pt & $0$ & $4.098 \times 10^{-2}$  \\ 
-    zEta & Reconstructed Z boson $\eta$ & - & $6.129 \times 10^{-2}$ \\
-    lepHt & ${\ensuremath{H_{\mathrm{T}}}}$ of the Z boson candidate's leptons & - & $5.325 \times 10^{-2}$ \\
-    met & Missing transverse energy & $1.822 \times 10^{-1}$  & $7.587 \times 10^{-2}$  \\
-    secJetPt & Second jet \pt & -  & $3.916 \times 10^{-2}$  \\
-    thirdJetPt & Third jet \pt & $0$  & $3.613 \times 10^{-2}$  \\ 
-    topMass & Reconstructed top quark mass & $1.067 \times 10^{-1}$  & $8.076 \times 10^{-2}$  \\
-    totHtOverPt & Total ${\ensuremath{H_{\mathrm{T}}}}$ divided by total \pt & $1.200 \times 10^{-1}$  & $5.738 \times 10^{-2}$  \\
-    wPairMass & Reconstructed W boson mass & -  & $4.894 \times 10^{-2}$  \\
-    wQuark2Eta & Subleading W boson candidate jet $\eta$ & - & $4.342 \times 10^{-2}$ \\
-    zMass & Reconstructed Z boson mass & $3.644 \times 10^{-1}$  & $7.085 \times 10^{-2}$  \\
-    zTopDelR & $\Delta R$ between the Z boson and top quark candidates & - & $4.778 \times 10^{-2}$ \\
-    zjminR & Minimum $\Delta R$ between the Z boson candidate and any jet & - & $4.178 \times 10^{-2}$ \\
-   \hline
- \end{tabular}}
-\end{table}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
-\caption{
-Distributions of the features chosen for use with the BDT for the signal and background samples.}
-\label{fig:inputFeaturesDistributions}
-\end{figure}
-
-Instead of tuning the choice hyperparmeters for optimal classification performance either by hand or a time and computationally expensive grid search, the optimal choice of hyperparmeters was evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise} to construct and evaluate a regression model based on a Gaussian process.
-Table~\ref{tab:hyperparameters} lists the optimal hyperparameters for the $ee$ and $\mu\mu$ channels were that were determined by the \emph{Scikit-Optimize} regression model.
-
-\begin{table}[htbp]
-\topcaption {The optimal hyperparameters for the $ee$ and $\mu\mu$ channels for XGBoost that were found by \emph{Scikit-Optimize} and the maximum and minimum values that they can take.
-}
-\label{tab:hyperparameters}
-  \centering
-% This increases column spacing.
-\resizebox{\textwidth}{!}{
-% This right-aligns numbers in column, but centers them under column title.
-\begin{tabular}{lccccc}
-   \hline
-   \textbf{Option} & \textbf{Min} & \textbf{Max} & \textbf{$ee$} & \textbf{$\mu\mu$}\\
-   \hline
-    gamma & $10^{-5}$ & 100 & 9.79 \\
-    learning\_rate & $10^{-5}$ & 10 & $5.70 \times 10^{-2}$ \\
-    max\_depth & 2 & 10 & 5 & 3\\
-    min\_child\_weight & $10^{-5}$ & 100 & 30.6 & 3.40 \\
-    n\_estimator & 25 & 7500 & 2338 & 6280 \\
-    reg\_alpha & $10^{-5}$ & 1000 & $2.31 \times 10^{-3}$ & $1.33 \times 10^{-2}$ \\
-    reg\_lambda & $10^{-5}$ & 1000 & 71.5 & $1.96 \times 10^{-4}$ \\
-    subsample & 0.5 & 1 & 0.504 & 0.801 \\
-   \hline
- \end{tabular}}
-\end{table}
-
-Following the optimisation of both the BDT features and the choice of hyperparameters for both channels independently, the optimal BDT is trained.
-The BDT is then used to produce the distribution of the output discriminant for each of the data and simulation samples considered, including the dedicated simulation samples required to estimate the systematic uncertainties.
-These output discriminant distributions are used to extract the signal strength and its statistical significance.
-
-
 \section{Systematic Uncertainties}\label{sec:systematics}
 %%% Intro
 For any meaningful and robust measurement to be made in any physics analysis, it is vital that the sources of systematic uncertainties associated with it are both understood and controlled.
@@ -958,8 +811,8 @@ bTag             &  $_{-2.97\%}^{+3.11\%}$ /  $_{-3.4\%}^{+2.86\%}$   & $_{-6.07
 PDF             &  $_{-16.13\%}^{+15.92\%}$ /  $_{-16.39\%}^{+15.88\%}$   & $_{-8.36\%}^{+7.28\%}$ / $_{-8.57\%}^{+7.95\%}$  & $_{-2.70\%}^{+2.17\%}$ / $_{-2.30\%}^{+2.34\%}$  & $_{-7.03\%}^{+6.74\%}$ / $_{-6.80\%}^{+7.23\%}$  & $_{-7.14\%}^{+8.09\%}$ / $_{-5.45\%}^{+8.39\%}$ & $_{-7.58\%}^{+8.07\%}$ / $_{-8.85\%}^{+6.70\%}$\\
 ME             &  $_{-7.33\%}^{+7.14\%}$ /  $_{-6.96\%}^{+6.29\%}$   & $_{-8.05\%}^{+9.94\%}$ / $_{-8.98\%}^{+9.59\%}$  & $_{-13.46\%}^{+15.84\%}$ / $_{-13.46\%}^{+15.04\%}$  & $_{-18.82\%}^{+11.61\%}$ / $_{-11.38\%}^{+11.07\%}$  & $_{-7.14\%}^{+10.86\%}$ / $_{-8.38\%}^{+10.14\%}$ & $_{-8.08\%}^{+8.29\%}$ / $_{-9.57\%}^{+9.41\%}$\\
 PS             &  $_{-10.33\%}^{+6.74\%}$ /  $_{-6.51\%}^{+4.47\%}$   & $-$  & $-$ & $_{-13.34\%}^{+9.90\%}$ / $_{-5.01\%}^{+7.55\%}$  \\
-ISR             &  $-$   & $-$  & $^{+4.35}_{-6.57}$/$_{-6.44}^{+3.16}$ & $-$  & $-$ & $-$  \\ & $-$  & $-$ & $-$  \\
-FSR             &  $-$   & $-$  & $^{+15.31}_{-3.87}$/$_{-5.78}^{+12.63}$ & $-$  & $-$ & $-$  \\ & $-$  & $-$ & $-$  \\
+ISR             &  $-$   & $-$  & $^{+4.35}_{-6.57}$/$_{-6.44}^{+3.16}$ & $-$  & $-$ & $-$  \\
+FSR             &  $-$   & $-$  & $^{+15.31}_{-3.87}$/$_{-5.78}^{+12.63}$ & $-$  & $-$ & $-$  \\ 
 ME-PS             &  $-$   & $-$  & $^{+2.15}_{-9.01}$/$_{-5.89}^{+1.02}$ & $-$  & $-$ & $-$ \\
 Luminosity             &  $_{-2.5\%}^{+2.5\%}$ /  $_{-2.5\%}^{+2.5\%}$    & $_{-2.5\%}^{+2.5\%}$  / $_{-2.5\%}^{+2.5\%}$   & $_{-2.5\%}^{+2.5\%}$  / $_{-2.5\%}^{+2.5\%}$   & $_{-2.5\%}^{+2.5\%}$  / $_{-2.5\%}^{+2.5\%}$  & $_{-2.5\%}^{+2.5\%}$  / $_{-2.5\%}^{+2.5\%}$ & $_{-2.5\%}^{+2.5\%}$  / $_{-2.5\%}^{+2.5\%}$ \\    
 \hline
@@ -967,3 +820,151 @@ Luminosity             &  $_{-2.5\%}^{+2.5\%}$ /  $_{-2.5\%}^{+2.5\%}$    & $_{-
 }
 \end{center}
 \end{table}
+
+\section{Multivariate Analysis Techniques}\label{sec:mvas}
+Multivariate Analysis (MVA) techniques are used to enhance the separation between signal and background processes which are difficult to discriminate between by applying individual selection criteria.
+
+Therefore, a MVA technique was used to enhance the separation between the signal process from the background processes present following the application of the selection requirements described in Chapter~\ref{chapter:tzq-search}.
+\emph{Boosted Decision Trees}~(BDTs) were chosen for this analysis as they were found to give superior performance compared to other MVA techniques and they are a widely used and supported technique with CMS existing expertise.
+
+\subsection{Boosted Decision Trees}\label{subsec:bdt}
+As illustrated in Figure~\ref{fig:decisionTree}, a decision tree is a series of sequential binary decisions (nodes) used to classify an event.
+Each node compares a single input variable (\emph{feature}) against a threshold to determine which of the next two nodes it'll be sent to.
+After a final decision
+ are made on a single input variable (\emph{feature}), $x_{i}$, until a final decision is made at a terminating or \emph{leaf node} and the object is classified as either signal (S) or background (B).
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.97\textwidth]{figs/background-estimation/decisionTree.pdf}
+\caption{A simple decision tree where repeated cuts a member of the set of variables $\textbf{x}$ are perfomed until a leaf node is reached and the object is classified as either signal (S) or background (B)~\cite{Hocker:2007ht}.
+}
+\label{fig:decisionTree}
+\end{figure}
+
+As the decision criterion for each node is dependent on the decisions of the preceding nodes, decision trees have the potential to obtain better separation between signal and background processes through individual cuts on isolated variables.
+Without any prior knowledge of the system however, a single isolated tree is not expected to be an efficient classifier.
+Despite this however, such a weak learner will still contain some knowledge about the underlying structure of the classification problem.
+
+\emph{Boosting} aims to exploit this knowledge by using an ensemble of repeatedly trained weak learners to produce a more effective classifier.
+Following each training iteration the dataset is reweighted based on the success of the previous classifiers in order to force the weak learners to attempt to classify objects that are harder to identify.
+At the end of this process a weighted average (based) of all the weak learners are combined to produce a single strong learner.
+
+\emph{Bagging} is a similar concept to boosting, but involves each weak learner being trained on a random subset of the training sample, such that every element has an equal probability of being sampled.
+
+Therefore by extending boosting (or bagging) to decision trees, the resultant forest of \emph{Boosted Decision Trees} produces a classifier that is both much more effective and resilient to fluctuations in the training sample than one created by a single tree.
+
+Typically the classifier produced by a BDT takes the form of a single discriminator whose response ranges between -1 to +1, denoting completely background-like and signal-like objects, respectively.
+
+Two of the most common boosting algorithms used with decision trees are the Adaptive Boosting (\emph{AdaBoost})~\cite{Friedman:additivelogistic} and \emph{Gradient Boosting}~\cite{Friedman:greedyfunction,Friedman:GradientBoosting} algorithms.
+Adaboost adjusts the weighting assigned to both  misclassified objects and the best performing weak learners after each iteration so that the best learners are trained to correctly identify the most difficult objects.
+In contrast, gradient boosting uses gradient descent following each iteration to determine the residuals of the objects in order to focus on correctly classifying the objects with the largest residuals.
+
+Despite their effectiveness however, BDTs are particularly sensitive to the effects of \emph{overtraining}.
+This phenomena occurs when BDT is overly optimised on correctly classifying the training dataset and results in the poor classification of unseen data.
+To minimise the impact of any potential overtraining, the signal and background process samples are split into training and testing samples, where the latter samples are used to check the validity of the BDT trained with the former.
+A description of the training and testing method used to validate both the optimisation of the selection of the hyperparameters and whether or not they were overtrained is given in Section~\ref{subsec:hyperparameters}.
+
+
+A number of studies were performed to determine the optimal settings for this analysis.
+These included the evaluation of:
+
+\begin{itemize}
+\item a number of different boosting and bagging algorithms;
+\item which simulated background processes should be included in the training processes;
+\item whether or not multiple BDTs trained on separate backgrounds would be more effective than a single BDT;
+\item how to determine which features possessed the greater discriminating power;
+\item and which \emph{hyperparameters}, the set of options used to control BDT behaviour, and associated values gave the optimal classification performance.
+\end{itemize}
+
+It was determined that the \emph{eXtreme Gradient Boosting} (XGBoost) implementation of the Gradiant Boost algorithm for a single BDT trained on all the MC simulation samples gave the optimal performance for this search~\cite{xgboost}.
+
+The methods used for selecting these features and the model hyperparameters are described in the following subsections.
+Both the input features and model hyperparameters were chosen separately for $ee$ and $\mu\mu$ channels and all the simulated MC samples were considered.
+
+\subsection{BDT Optimisation}
+From the selected reconstructed physics objects, a large number of possible input variables or \emph{features} were constructed and considered as inputs for the BDT.
+In order to determine the optimal set of features, recursive feature elimination was used to those that had the greatest discriminating power between signal and background.
+This process iteratively removes the least important feature and re-trains the BDT until every feature has been ranked in order of their removal (\ie in increasing order of their discriminating power).
+From this list, the features with the best discriminating power are selected for use in the BDT.
+
+The features chosen by this process for the $ee$ and $\mu\mu$ channels are given in table~\ref{tab:selectedBdtVariables}.
+Figure~\ref{fig:inputFeaturesDistributions} shows the distributions of the selected features in the signal and background samples.
+Figure~\ref{fig:inputFeaturesDataSimAgreement} shows good agreement observed between simulation and data for the two channels for the features selected, demonstrating their reliability.
+Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of all the features that were considered.
+
+\begin{table}[htbp]
+\topcaption {The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
+}
+\label{tab:selectedBdtVariables}
+  \centering
+% This increases column spacing.
+\resizebox{\textwidth}{!}{
+% This right-aligns numbers in column, but centers them under column title.
+\begin{tabular}{cccc}
+   \hline\
+   \multirow{2}{*}{\textbf{Feature}} & \multirow{2}{*}{\textbf{Description}} & \multicolumn{2}{c}{\textbf{Discriminating Power}} \\
+   & & \textbf{$ee$} & \textbf{$\mu\mu$} \\
+   \hline
+    bTagDisc & Leading b-tagged jet b-tag output discriminant & 0 & $4.529 \times 10^{-2}$ \\ 
+    fourthJetPt & Fourth jet \pt & - & $3.391 \times 10^{-2}$ \\ 
+    jetHt & ${\ensuremath{H_{\mathrm{T}}}}$ of all the jets in an event & - & $3.413 \times 10^{-2}$ \\ 
+    jetMass & Total mass of every jet in an event & $1.467 \times 10^{-1}$  & $5.747 \times 10^{-2}$  \\
+    jjDelR & $\Delta R$ between the leading jets & $5.778 \times 10^{-2}$  & $6.405 \times 10^{-2}$  \\ 
+    leadJetEta & Leading jet $\eta$ & $2.222 \times 10^{-2}$ & $6.756\times 10^{-2}$  \\
+    leadJetPt & Leading jet \pt & $0$ & $4.098 \times 10^{-2}$  \\ 
+    zEta & Reconstructed Z boson $\eta$ & - & $6.129 \times 10^{-2}$ \\
+    lepHt & ${\ensuremath{H_{\mathrm{T}}}}$ of the Z boson candidate's leptons & - & $5.325 \times 10^{-2}$ \\
+    met & Missing transverse energy & $1.822 \times 10^{-1}$  & $7.587 \times 10^{-2}$  \\
+    secJetPt & Second jet \pt & -  & $3.916 \times 10^{-2}$  \\
+    thirdJetPt & Third jet \pt & $0$  & $3.613 \times 10^{-2}$  \\ 
+    topMass & Reconstructed top quark mass & $1.067 \times 10^{-1}$  & $8.076 \times 10^{-2}$  \\
+    totHtOverPt & Total ${\ensuremath{H_{\mathrm{T}}}}$ divided by total \pt & $1.200 \times 10^{-1}$  & $5.738 \times 10^{-2}$  \\
+    wPairMass & Reconstructed W boson mass & -  & $4.894 \times 10^{-2}$  \\
+    wQuark2Eta & Subleading W boson candidate jet $\eta$ & - & $4.342 \times 10^{-2}$ \\
+    zMass & Reconstructed Z boson mass & $3.644 \times 10^{-1}$  & $7.085 \times 10^{-2}$  \\
+    zTopDelR & $\Delta R$ between the Z boson and top quark candidates & - & $4.778 \times 10^{-2}$ \\
+    zjminR & Minimum $\Delta R$ between the Z boson candidate and any jet & - & $4.178 \times 10^{-2}$ \\
+   \hline
+ \end{tabular}}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\caption{
+Distributions of the features chosen for use with the BDT for the signal and background samples.}
+\label{fig:inputFeaturesDistributions}
+\end{figure}
+
+Instead of tuning the choice hyperparmeters for optimal classification performance either by hand or a time and computationally expensive grid search, the optimal choice of hyperparmeters was evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise} to construct and evaluate a regression model based on a Gaussian process.
+Table~\ref{tab:hyperparameters} lists the optimal hyperparameters for the $ee$ and $\mu\mu$ channels were that were determined by the \emph{Scikit-Optimize} regression model.
+
+\begin{table}[htbp]
+\topcaption {The optimal hyperparameters for the $ee$ and $\mu\mu$ channels for XGBoost that were found by \emph{Scikit-Optimize} and the maximum and minimum values that they can take.
+}
+\label{tab:hyperparameters}
+  \centering
+% This increases column spacing.
+\resizebox{\textwidth}{!}{
+% This right-aligns numbers in column, but centers them under column title.
+\begin{tabular}{lccccc}
+   \hline
+   \textbf{Option} & \textbf{Min} & \textbf{Max} & \textbf{$ee$} & \textbf{$\mu\mu$}\\
+   \hline
+    gamma & $10^{-5}$ & 100 & 9.79 \\
+    learning\_rate & $10^{-5}$ & 10 & $5.70 \times 10^{-2}$ \\
+    max\_depth & 2 & 10 & 5 & 3\\
+    min\_child\_weight & $10^{-5}$ & 100 & 30.6 & 3.40 \\
+    n\_estimator & 25 & 7500 & 2338 & 6280 \\
+    reg\_alpha & $10^{-5}$ & 1000 & $2.31 \times 10^{-3}$ & $1.33 \times 10^{-2}$ \\
+    reg\_lambda & $10^{-5}$ & 1000 & 71.5 & $1.96 \times 10^{-4}$ \\
+    subsample & 0.5 & 1 & 0.504 & 0.801 \\
+   \hline
+ \end{tabular}}
+\end{table}
+
+Following the optimisation of both the BDT features and the choice of hyperparameters for both channels independently, the optimal BDT is trained.
+The BDT is then used to produce the distribution of the output discriminant for each of the data and simulation samples considered, including the dedicated simulation samples required to estimate the systematic uncertainties.
+These output discriminant distributions are used to extract the signal strength and its statistical significance.
+
+
