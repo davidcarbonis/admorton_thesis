@@ -5,7 +5,7 @@ The following chapter describes the statistical methodology used to analyse thes
 Following a discussion of the impact that the systematic uncertainties have on the fitted results, the result presented is compared with those from the already published searches for tZq production made using the trilepton final state.
 
 \section{Statistical Methodology}\label{sec:statisticalModel}
-The Higgs Analysis Combined Limit (\combine) tool~\cite{Combine} tool, a framework based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}, was used to perform a binned Maximum Likelihood Fit (MLF) to analyses the measurement made using the $CL_{S}$ method~\cite{CMS-NOTE-2011-005,Khachatryan:2014jba,AsymptoticFormulae}.
+The Higgs Analysis Combined Limit (\combine) tool~\cite{Combine} tool, a framework based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}, was used to perform a binned Maximum Likelihood Fit (MLF) to analyse the measurement made using the $CL_{S}$ method~\cite{CMS-NOTE-2011-005,Khachatryan:2014jba,AsymptoticFormulae}.
 
 \subsection{Likelihood Model}\label{subsec:likelihoodModel}
 For the signal and background processes considered in the search, the expected event yield $\lambda$ in bin $i$ of the distribution considered (\ie the BDT discriminator) is given by Equation~(\ref{eq:yields1}):
@@ -65,8 +65,8 @@ $\hat{\mu}$ and $\hat{\theta}$ correspond to the global maximum of the likelihoo
 By definition $\hat{\mu}$ cannot take negative values as physics defines the signal rate as positive. 
 The constraint $\hat{\mu} < \mu$ is applied to ensure a one-sided confidence interval.
 
-As the analysis was initially conducted blind, \emph{pseudodata} was generated using toy MC for the \emph{expected} outcomes in order to construct probability distribution functions for the s+b and b-only hypotheses for a given signal strength.
-For the unblinding of the analysis, the \emph{observed} measurement were made by replacing the pseudodata used for the s+b probability distribution functions with the actual data.
+As the analysis was initially conducted blind, \emph{pseudo-data} was generated for the \emph{expected} outcomes in order to construct probability distribution functions for the s+b and b-only hypotheses for a given signal strength.
+For the unblinding of the analysis, the \emph{observed} measurement was made by replacing the pseudo-data used for the s+b probability distribution functions with the actual data.
 From these probability distribution functions, the probability values for the s+b and b-only hypotheses can be defined as Equations~(\ref{eq:pmu})-(~\ref{eq:1-pb}):
 
 \begin{equation}
@@ -90,7 +90,7 @@ If, for a given $\mu$, $CL_{S} < \alpha$, then it is said that the signal proces
 Therefore, as the 95\% CL upper limit is used in this search, the limit is determined by altering $\mu$  until $CL_{S} = 0.05$.
 
 %\subsection{Asymptotic CL$_{s}$ method}\label{subsec:asymptoticCLS}
-Instead of using an ensemble of toy MC samples to generate the pseudodata, one representative dataset, known as the \emph{Asimov dataset}, was used.
+Instead of using an ensemble of toy MC samples to generate the pseudo-data, one representative dataset, known as the \emph{Asimov dataset}, was used.
 This method, known as the \emph{asymptotic} CL$_{s}$ method, is used when the number of expected events is sufficiently large as it typically reduces the amount of computing time required.
 The Asimov dataset is defined as being constructed such that all observable quantities are equal to their expectation values.
 A full description of the asymptotic approximation to the CL$_{s}$ method is given in~\cite{AsymptoticFormulae}.
