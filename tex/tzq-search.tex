@@ -86,20 +86,19 @@ The performance of this control region is discussed in Section~\ref{subsec:ttbar
 Despite even the best intentions, there is the potential experimental procedure to be inadvertently biased by previous observations~\cite{Roodman:2003rw}.
 In order to prevent this from happening, experiments are ``blinded'' so that the result is not known until the analysis has been optimised using simulation and/or data outside of the signal region.
 
-Before unblinding a $\chi^{2}$-like variable is used to define a side-band region outside the expected signal region in which data and simulation distributions can be compared and pseudo-data is used to evaluate the expected outcomes of the measurement, as discussed in Chapter~\cite{chapter:results}.
-
+Before unblinding, a $\chi^{2}$-like variable was used to define a side-band region outside the expected signal region where data and simulation distributions could be compared prior to the training and testing of the BDT (see Section~\ref{sec:mvas}).
+No blinding method was required for the BDT, as training and testing consists only uses simulation, and prior to unblinding pseudo-data was used to evaluate the expected outcomes of the measurement (see Chapter~\cite{chapter:results}).
 
 As the analysis has been unblinded in accordance with CMS procedure for this analysis, all of the results 
-Following the unblinding of the analysis for this thesis, in accordance with CMS procedure, all of the data and simulation comparison figures do not use the $\chi^{2}$-like variable and the observed results are given in Chapter~\cite{chapter:results}
-
+Following the unblinding of the analysis for this thesis, in accordance with CMS procedure, all of the data and simulation comparison figures do not use the $\chi^{2}$-like variable and the observed results are given in Chapter~\cite{chapter:results}.
 
 %The figures showing the comparison of data and simulation distributions in this Chapter and Chapter~\ref{chapter:bkg} are all blinded by only showing events within the SB.
 %The results presented in Chapter~\ref{chapter:results} do not use Equation~(\ref{eq:blindingChi2}), but are 
 
-The $\chi^{2}$-like variable was inspired by the ones used by the CMS and ATLAS searches for the decay of a Higgs boson to two b-quark pairs~\cite{CMS:2016tlj,TheATLAScollaboration:2016myw} as inspiration, and uses the reconstructed top quark mass and the W boson mass to define the blinded region in phase space where the signal is expected to be
+The $\chi^{2}$-like variable was inspired by the ones used by the CMS and ATLAS searches for the decay of a Higgs boson to two b-quark pairs~\cite{CMS:2016tlj,TheATLAScollaboration:2016myw} as inspiration, and uses the reconstructed top quark mass and the W boson mass to define the blinded region in phase space where the signal is expected to be.
 
-The $\chi^{2}$-like variable is not used however, when optimising the BDT discussed in Section~\ref{sec:mvas}, nor when determining the expected signal strength and its corresponding significance as described in Section~\ref{sec:statisticalModel}.
-This is because the training and testing of the BDT does not require the use of data and because the calculation of the expected signal strength is done by comparing pseudo-data against simulation.
+%The $\chi^{2}$-like variable is not used however, when optimising the BDT discussed in Section~\ref{sec:mvas}, nor when determining the expected signal strength and its corresponding significance as described in Section~\ref{sec:statisticalModel}.
+%This is because the training and testing of the BDT does not require the use of data and because the calculation of the expected signal strength is done by comparing pseudo-data against simulation.
 
 The $\chi^{2}$-like variable is defined as follows:
 
@@ -119,6 +118,17 @@ The choice of value used for $\chi^{2}_{SR}$ and $\chi^{2}_{SB}$ had to balance 
 \end{itemize}
 
 For $\sigma_{\mathrm{t}} = 8\GeV$ and $\sigma_{\mathrm{W}}) = 30\GeV$, the optimised values of $\chi^{2}_{SR}$ and $\chi^{2}_{SB}$ were determined to be 20 and 250, respectively.
+Figure~\ref{fig:blindingChi2} illustrates the reconstructed top quark mass and w boson mass distributions for the tZq simulation sample (left) and all simulation samples (right) considered (see Section~\ref{sec:samples}) and the side-band region within the
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.47\textwidth]{CMS-bw-logo.pdf}
+\includegraphics[width=0.47\textwidth]{CMS-bw-logo.pdf}
+\caption{
+The reconstructed top quark mass and w boson mass distributions for the tZq simulation sample (left) and all simulation samples (right) following the application of the signal region criteria described in Section~\ref{sec:signalRegion}, where region bounded between the two contour lines is the side-band region.
+}
+\label{fig:blindingChi2}
+\end{figure}
 
 \section{Trigger Strategy}\label{sec:triggerStrategy}
 As the search for the tZq dilepton final state relies on the identification of the two leptons from the Z boson decay, the trigger strategy consists of selecting events from datasets identified by the presence of electrons or muons.
