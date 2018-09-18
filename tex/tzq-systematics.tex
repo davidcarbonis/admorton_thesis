@@ -88,7 +88,8 @@ The MC processes and their associated sample sizes, cross sections and generator
 \end{table}
 
 To determine the impact of a variety of different theoretical uncertainties for several of the processes defined in table~\ref{tab:mcList}, dedicated MC samples were used, which are listed in table~\ref{tab:theorySampleList}.
-The entries labelled ``scale'', ``matching'', ``isr'' and ``fsr'' correspond to the variations of the theoretical uncertainties considered in this analysis and are discussed further in Section~\ref{sec:theorySysts}.
+The entries labelled ``scale'', ``matching'', ``isr'' and ``fsr'' correspond to the variations of the theoretical uncertainties considered in this analysis.
+These theoretical uncertainties are discussed further in Section~\ref{sec:theorySysts}.
 
 \begin{table}[htbp]
 \topcaption {
@@ -257,14 +258,14 @@ The two most dominant background processes are Z+jets and \ttbar production, wit
 The remaining single top (tHq, tWZ, s-channel, t-channel), \ttbarW, \ttbarH, WW and triboson backgrounds produce contributions smaller than the signal process.
 
 \section{Signal Region Background Estimation}\label{sec:simBackgrounds}
-The impact of the application of the full event selection and simulation corrections in the signal region on the simulated samples, including non-prompt lepton contribution estimated from data, compared to data is shown in table~\ref{tab:signalYields}.
+The impact of the application of the full event selection and simulation corrections in the signal region on the simulated samples, including non-prompt lepton contribution estimated from data (see Section~\ref{sec:NPLs}), compared to data is shown in table~\ref{tab:signalYields}.
 
-While jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process, the signal region is still dominated by a number of background processes.
+While jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process, the signal region is  dominated by background processes involving a real Z boson decay or two leptons from W boson decays.
 The two dominant background processes are Z+jets and \ttbar, with the single top tW-channel, \ttbarZ, WZ and ZZ processes contributing a similar order of events as tZq processes.
 The remaining single top (tHq, tWZ, s-channel, t-channel), \ttbarW, \ttbarH, WW and triboson backgrounds produce contributions smaller than the signal process.
 
 \begin{table}[htbp]
-\topcaption{The number of observed events in data, the data-driven estimate of the non-prompt leptons and the number of expected events in simulation in the signal region following the full event selection for each of the separate channels and with both channels combined. The aMC@NLO sample is used for the Z+jets contribution.
+\topcaption{The number of observed events in data, expected events in simulation and , the data-driven estimate of the non-prompt leptons in the signal region following the full event selection for each of the separate channels and with both channels combined. The statistical uncertainties for each process is given and the Madgraph sample is used for the Z+jets contribution.
 }\label{tab:signalYields}
 \centering
 \begin{tabular}{lccc}
@@ -302,6 +303,44 @@ Data & 5274.0$\pm$72.62 & 9750.0$\pm$98.74 & 15024.0$\pm$171.36    \\
 \end{tabular}
 \end{table}
 
+Not only is good agreement observed between simulation and data for the event yields at each stage of applying selection criteria and simulation corrections, but also in the distributions of the reconstructed variables.
+
+Examples of such good agreement include the distributions of the reconstructed Z boson mass following the lepton and jet selection cuts in Figure~\ref{fig:SR_zBoson}; the reconstructed W boson following application of the b-tagging criteria in Figure~\ref{fig:SR_zBoson}; and the invariant \pT of all the jets in an event following the jet selection criteria in Figure~\ref{fig:SR_totJetPt}.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/zPairMass_lepSel.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/zPairMass_lepSel.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/zPairMass_jetSel.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/zPairMass_jetSel.pdf}
+\caption{
+The distributions of the reconstructed Z boson mass for the $ee$ and $\mu\mu$ channels, left and right respectively, following the application of only the lepton selection criteria and corrections (top) and lepton, Z boson mass and jet selection criteria and corrections (bottom).
+}
+\label{fig:SR_zBoson}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/wMass_bTag.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/wMass_bTag.pdf}
+\caption{
+The distributions of the reconstructed W boson mass for the $ee$ and $\mu\mu$ channels, left and right respectively, following the application of all the event selection criteria and selections except the W boson mass cut.
+}
+\label{fig:SR_wBoson}
+\end{figure}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/totalJetPt_jetSel.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/totalJetPt_jetSel.pdf}
+\caption{
+The distributions of the invariant \pT of all the jets in an event for the $ee$ and $\mu\mu$ channels, left and right respectively, following the application of the jet selection criteria and selections.
+}
+\label{fig:SR_totJetPt}
+\end{figure}
+
+A larger selection of data and simulation comparison plots for both the $ee$ and $\mu\mu$ channels is provided in Appendix~\ref{app:plots}.
 
 \section{Data-driven Background Estimation}\label{sec:dataDrivenBackground}
 
@@ -395,16 +434,11 @@ $N_{data}^{OS non-prompt}$: & 37.571$\pm$11.271 & 35.681$\pm$10.704 \\
 
 
 \subsection{Z+jets Background}\label{subsec:zPlusJetsEstimation}
-Following the application of the full event selection and simulation corrections in the signal region both the Madgraph55 (LO) and aMC@NLO (NLO) Z+jets samples listed in table~\ref{tab:mcList} were compared.
+Both of the Z+jets enriched control regions, as defined in Section~\ref{subsec:zPlusJetsCR}, were designed to provide an orthogonal region that was topologically similar to the signal region to validate if the simulated Z+jets samples considered accurately modelled this process in data.
 
-In contrast to the correct normalisation of Madgraph55 Z+jets samples that was seen in the signal region and both of the Z+jets control regions, it was observed that there was a dramatic normalisation offset for the aMC@NLO Z+jets samples.
-
-Figures~\ref{fig:zPlusCR_nJets} and~\ref{fig:zPlusCR_leadJetPt} respectively show that that despite this scaling issue, the aMC@NLO Z+jets samples did better describe the higher jet multiplicities and the kinematics of the four leading jets in the nominal Z+jets control region defined in Section~\ref{subsec:zPlusJetsCR}.
-
-Z+jets CR
-
-both the zero b-tagged jets and \MET and inverted W boson mass cut selection criteria produce highly enriched Z+jets control regions, 90.7\% and yy\% respectively.
-Despite the control region defined by the \MET and inverted W boson mass cut selection criteria having lower statistics than the other, as it was expected to more closely resemble the signal region's topology, it was decided that this control region would be used for the analysis
+The impact of applying for all of the selection criteria and simulation corrections for the zero b-tagged jets control region is given in table~\ref{tab:zPlusControlYieldsOld} and the \MET and inverted W boson mass cut control region in table~\ref{tab:zPlusControlYieldsNew}.
+As can be seen in these tables, it was found that the zero b-tagged jets control region had a purity of 94\% and the \MET and inverted W boson mass cut had a purity of 82\$.
+Given its higher purity and statistics, it was decided to use the zero b-tagged jets Z+jets control region to validate the Z+jets modelling.
 
 \begin{table}[htbp]
 \topcaption{The number of observed events in data and the number of expected events from simulation for the Z+jets control region requiring zero b-tagged jets, including the statistical uncertainties for each process, following the application of the full event selection and simulation corrections.
@@ -435,12 +469,10 @@ ZZZ: & 1.65$\pm$0.05 & 2.84$\pm$0.07 & 4.49$\pm$0.12    \\
 W+jets: & 0.000$\pm$ & 0.000$\pm$ & 0.000$\pm$    \\
 \hline
 Z+jets (LO): & 25102.1$\pm$180.2 & 48148.2$\pm$253.6 & 73250.3$\pm$433.8    \\
-Z+jets (NLO): & 26772.6$\pm$134.3 & 50793.5$\pm$188.1 & 77566.1$\pm$322.4    \\
+Z+jets (NLO): & 66092.6$\pm$331.5 & 125392.2$\pm$464.4 & 191484.8$\pm$795.9    \\
 \hline
-NPLs: & 44.05$\pm$0.47 & 11.82$\pm$0.17 & 55.87$\pm$0.64    \\
-\hline
-Total MC (LO): & 26768.8$\pm$204.6 & 51274.6$\pm$289.0 & 78043.4$\pm$493.63    \\
-Total MC (NLO): & 28439.3$\pm$158.7 & 53919.9$\pm$223.5 & 82359.2$\pm$382.2    \\
+Total MC (LO): & 26768.8$\pm$204.6 & 51274.6$\pm$289.0 & 78043.4$\pm$493.6   \\
+Total MC (NLO): & 67759.3$\pm$335.9 & 128518.6$\pm$499.8 & 196277.9$\pm$835.7    \\
 \hline
 Data & 27598.0$\pm$166.13 & 50814.0$\pm$255.42 & 78412.0$\pm$421.55    \\
 \hline
@@ -478,8 +510,6 @@ W+jets: & 0.0$\pm$0.0 & 0.0$\pm$0.0 & 0.0$\pm$0.0    \\
 Z+jets (LO): & 2259.5$\pm$54.5 & 4363.7$\pm$77.2 & 6623.2$\pm$131.7    \\
 Z+jets (NLO): & 2804.1$\pm$43.7 & 5325.7$\pm$61.5 & 8129.8$\pm$105.2    \\
 \hline
-NPLs: & 78.79$\pm$0.86 & 114.01$\pm$1.25 & 192.8$\pm$2.11    \\
-\hline
 Total MC (LO): & 2773.3$\pm$69.7 & 5394.7$\pm$99.9 & 8168.0$\pm$169.6    \\
 Total MC (NLO): & 3317.9$\pm$58.9 & 6356.8$\pm$84.2 & 9674.7$\pm$143.1    \\
 \hline
@@ -488,49 +518,54 @@ Data: & 5274.0$\pm$72.62 & 9750.0$\pm$98.74 & 15024$\pm$171.36    \\
 \end{tabular}
 \end{table}
 
+Following the application of the full event selection and simulation corrections in the signal region both the Madgraph (LO) and aMC@NLO (NLO) Z+jets samples listed in table~\ref{tab:mcList} were compared.
+As seen in table~\ref{tab:zPlusControlYieldsOld}, while the Madgraph (LO) sample describes the overall normalisation well, it is clear that there is at the very least a normalisation issue with the aMC@NLO (NLO) Z+jets sample.
+Upon closer inspection, it was found that while the NLO Z+jets sample did correctly describe the (offset) shape of the jets' transverse momenta distributions, as illustrated in Figure~\ref{fig:zPlusCR_nJets}, this sample poorly describes low jet multiplicities, as illustrated in in Figure~\ref{fig:zPlusCR_jetPt}.
+
+Following observing these issues with the aMC@NLO (NLO) Z+jets sample, a number of alternative Z+jets samples which were binned as a function of the Z boson's \pT and the number of jets produced by the hard process were also considered.
+In contrast to the nominal Z boson mass binned samples, the alternative Z+jets samples generated by Madgraph and aMC@NLO were found to poorly describe the shapes of Z boson and jet distributions.
+Consequently, these alternative samples were not considered as viable replacements of the Z boson mass binned Z+jets samples.
+
+While it is recommended by CMS to use NLO samples where possible, it was decided to use the LO sample to model the Z+jets background.
+This decision was taken as while a NLO description of this large multi-jet background is preferable, the Madgraph sample correctly described both the overall normalisation of the process and the jet multiplicity and transverse momenta distributions well.
+
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/nJets.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/nBjets.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/nJets_lepSel.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_DYamcatnlo_noSF/nJets_lepSel.pdf}
 \caption{
-The distributions of the number of jets and b-jets in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the combination of both channels.
+The distributions of the number of jets in the zero b-tagged jets Z+jets control region following the full selection criteria, except the number of jets, and associated simulation corrections for Madgraph (left) and aMC@NLO (right) MC samples in the $\mu\mu$ channel.
 }
 \label{fig:zPlusCR_nJets}
 \end{figure}
 
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/leadJetPt.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/secJetPt.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/leadingJetPt_jetSel.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_DYamcatnlo_noSF/leadingJetPt_jetSel.pdf}
 \\
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/thirdJetPt.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_ee_zPlus/fourthJetPt.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/secondJetPt_jetSel.pdfpdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_DYamcatnlo_noSF/secondJetPt_jetSel.pdfpdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/thirdJetPt_jetSel.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_DYamcatnlo_noSF/thirdJetPt_jetSel.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/fourthJetPt_jetSel.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_DYamcatnlo_noSF/fourthJetPt_jetSel.pdf}
 \caption{
-The distributions of the leading four jets \pt in the nominal Z+jets control region following the application of the full control region event selection and simulation corrections for the combination of both channels.
+The distributions of the leading four jets \pt in the nominal Z+jets control region following the application of the jet selection criteria and simulation corrections for Madgraph (left) and aMC@NLO (right) MC samples in the $ee$ channel.
 }
 \label{fig:zPlusCR_jetPt}
 \end{figure}
 
 
-Following observing this normalisation offset, a number of alternative Z+jets samples which were binned as a function of the Z boson's \pT and the number of jets produced by the hard process were also considered.
-In contrast to the nominal Z boson mass binned samples, the alternative Z+jets samples generated by Madgraph5 and aMC@NLO were found to poorly describe the shapes of Z boson and jet distributions.
-Consequently, these alternative samples were not considered as viable replacements of the Z boson mass binned Z+jets samples.
-
-As having a NLO description of this large multi-jet background was highly desirable in light of the event selection requirements, it was decided to use nominal Z+jets control region to determine the correct normalisation of the aMC@NLO Z+jets samples.
-This was achieved by simultaneously fitting this background in the control region at the same time as the signal region fit was performed.
-
 \subsection{\ttbar Background}\label{subsec:ttbarEstimation}
-The \ttbar enriched control region, as defined in Section~\ref{subsec:ttbarCR}, was designed to provide an orthogonal region which was topologically similar to the signal region.
+The \ttbar enriched control region, as defined in Section~\ref{subsec:ttbarCR}, was designed to provide an orthogonal region was topologically similar to the signal region.
 This was done to validate whether or not the simulated \ttbar sample used accurately modelled the \ttbar process in the data, and if not, to be used to derive a data-driven estimate for \ttbar.
 
-As good agreement was observed between data and MC simulation for both the overall normalisation and the shapes of individual variables, it was determined that a data-driven estimate of the \ttbar contribution was not necessary.
-
-Examples of this good agreement can be seen in the distributions of the number of jets and b-jets in figure~\ref{fig:ttbarCR_nJets}, the \pT of the four leading jets in figure~\ref{fig:ttbarCR_jetPt}, and the \pT of each of the leptons and the invariant mass and \pT in figure~\ref{fig:ttbarCR_leptons}.
-
-Table~\ref{tab:ttbarCR} shows that after these selection criteria and the required simulation corrections discussed in Section~\ref{sec:simCorrections} have been applied, the resulting control region has a 94.5\% purity and that half of the backgrounds are from tW single top production.
 \begin{table}[htbp]
 \topcaption {
-The event yields, and the uncertainties associated with them, following the full event selection and simulation corrections for the \ttbar control region. The non-prompt lepton contribution is estimated using the methodology described in Section~\ref{sec:NPLs}.
+The event yields, and the statistical uncertainties associated with them, following the full event selection and simulation corrections for the \ttbar control region. The non-prompt lepton contribution is estimated using the methodology described in Section~\ref{sec:NPLs}.
 }
 \label{tab:ttbarCR}
   \centering
@@ -539,71 +574,74 @@ The event yields, and the uncertainties associated with them, following the full
    \hline
    \textbf{MC process} & \textbf{$e\mu$}  \\
    \hline
-	tZq\@: & 1.64$\pm$0.02  \\
-	tWZ\@: & 11.62$\pm$0.07  \\
-	tHq\@: & 1.15$\pm$0.03  \\
-	ttW\@: & 50.09$\pm$0.30   \\
-	ttZ\@: & 45.17$\pm$0.26   \\
-	ttH\@: & 34.02$\pm$0.25  \\
-	\ttbar: & 11832.4$\pm$60.3   \\
-	tW\@: & 489.56$\pm$12.08   \\
+	tZq\@: & 0.42$\pm$0.01  \\
+	tWZ\@: & 0.14$\pm$0.03  \\
+	tHq\@: & 0.32$\pm$0.01  \\
+	ttW\@: & 11.90$\pm$0.15   \\
+	ttZ\@: & 10.90$\pm$0.13   \\
+	ttH\@: & 8.71$\pm$0.13  \\
+	\ttbar: & 3288.4$\pm$31.4   \\
+	tW\@: & 112.59$\pm$5.76   \\
 	s-channel\@: &  0.0$\pm$0.0 \\
-	t-channel\@: & 1.75$\pm$0.44 \\
-	WW\@: & 11.36$\pm$1.39  \\
-	WZ\@: & 3.87$\pm$0.29 \\
-	ZZ\@: & 0.69$\pm$0.05 \\
-	WWW\@: & 0.85$\pm$0.15     \\
-	WWZ\@: & 0.73$\pm$0.12     \\
-	WZZ\@: & 0.07$\pm$0.02     \\
-	ZZZ\@: & 0.01$\pm$0.01     \\
-	W + jets\@: & 23.39$\pm$16.54     \\
-	Z + jets\@: & 19.64$\pm$5.07     \\
+	t-channel\@: & 0.70$\pm$0.27 \\
+	WW\@: & 1.77$\pm$0.56  \\
+	WZ\@: & 0.61$\pm$0.16 \\
+	ZZ\@: & 0.11$\pm$0.02 \\
+	WWW\@: & 0.18$\pm$0.06     \\
+	WWZ\@: & 0.09$\pm$0.05     \\
+	WZZ\@: & 0.0$\pm$0.0     \\
+	ZZZ\@: & 0.0$\pm$0.0     \\
+	W + jets\@: & 0.0$\pm$0.0     \\
+	Z + jets\@: & 0.0$\pm$0.0     \\
 	\hline
-%	NPLs\@: & 406.38$\pm$1.87     \\
+	Total MC\@: & 3366.84$\pm$38.74     \\
 	\hline
-	Data\@: & 12498.0$\pm$111.79     \\
-	\hline
-	Total MC\@: & 12528.01$\pm$97.39     \\
+	Data\@: & 3396.0$\pm$58.26     \\
    \hline
  \end{tabular}
 \end{table}
 
+The impact of the \ttbar control region selection criteria is shown in table~\ref{tab:ttbarCR} to produce an enriched region that has a purity of 97.5\%, with 70\% of the remaining backgrounds being from tW single top production.
+Good agreement is observed not only between the overall normalisation of simulation and data for each stage of applying selection criteria and simulation corrections, but also for the distributions of individual variables.
+
+Examples of this observed good agreement are illustrated by the distributions of the number of jets and b-jets in Figure~\ref{fig:ttbarCR_nJets}, the \pT of the four leading jets in Figure~\ref{fig:ttbarCR_jetPt}, and the invariant mass and \pT of the two leptons in Figure~\ref{fig:ttbarCR_leptons}, following the application of the all of the selection criteria and simulation corrections.
+
+Given the good agreement observed between data and simulation for both the overall normalisation and the distributions of individual variables, it was determined that a data-driven estimate of the \ttbar contribution was not necessary.
 
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/nJets.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/nBjets.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/numJets_wMass.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/numBJets_Wmass.pdf}
 \caption{
-The distributions of the number of jets and the number b-tagged jets for the \ttbar control region following the application of the full control region event selection and simulation corrections.
+The distributions of the number of jets and the number b-tagged jets for the \ttbar control region following the application of the full control region selection criteria and simulation corrections.
 }
 \label{fig:ttbarCR_nJets}
 \end{figure}
 
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/leadJetPt.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/secJetPt.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/leadJetPt_wMass.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/secondJetPt_wMass.pdf}
 \\
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/thirdJetPt.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/fourthJetPt.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/thirdJetPt_wMass.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/fourthJetPt_wMass.pdf}
 \caption{
-The distribution of the \pt of the four leading jets for the \ttbar control region following the application of the full control region event selection and simulation corrections.
+The distribution of the \pt of the four leading jets for the \ttbar control region following the application of the full control region selection criteria and simulation corrections.
 }
 \label{fig:ttbarCR_jetPt}
 \end{figure}
 
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/lep1Pt.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/lep2Pt.pdf}
-\\
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/zMass.pdf}
-\includegraphics[width=0.47\textwidth]{figs/tzq-fullSelection-plots/plots_emu/zPt.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/zPairMass_wMass.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/zPairPt_wMass.pdf}
 \caption{
-The distribution of the selected electron and muon \pT and their combined invariant mass and \pt for the \ttbar control region following the application of the full control region event selection and simulation corrections.
+The distribution of the selected electron's and muon's combined invariant mass and \pt for the \ttbar control region following the application of the full control region selection criteria and simulation corrections.
 }
 \label{fig:ttbarCR_leptons}
 \end{figure}
+
+%A larger selection of data and simulation comparison plots for this control region is provided in Appendix~\ref{app:plots}.
 
 \section{Systematic Uncertainties}\label{sec:systematics}
 %%% Intro
@@ -663,7 +701,7 @@ The uncertainties associated with the lepton identification, isolation and recon
 Several systematic studies were performed to estimate the systematic uncertainty associated with the trigger scale factors.
 These studies were the comparison of the trigger efficiencies \ttbar and Z+jets processes in simulation and the strength of the correlation of the \MET trigger selection to the lepton triggers used in the analysis.
 
-As shown in table~\ref{tab:zPlusTriggerSFs} the differences in the triggers efficiencies observed in all channels are so small that they are covered by the statistical uncertainties.
+As shown in table~\ref{tab:zPlusTriggerSFs} the differences observed between the triggers efficiencies for each MC sample in all the channels are so small that they are covered by the statistical uncertainties.
 
 \begin{table}[htbp]
 \topcaption {
@@ -709,9 +747,9 @@ The values of $\alpha$, expressing the strength of correlation between the lepto
    \hline
    \textbf{Channel} & \textbf{$\alpha$}   \\
    \hline   
-   $ee$ & 0.99890 \\
-   $\mu\mu$ & 1.00151  \\
-   $e \mu$ & 0.98883  \\
+   $ee$ & 0.99890 $\pm$ \\
+   $\mu\mu$ & 1.00151 $\pm$  \\
+   $e \mu$ & 0.98883 $\pm$ \\
    \hline
  \end{tabular}%}
 \end{table}
@@ -755,42 +793,37 @@ The values of $\alpha$, expressing the strength of correlation between the lepto
 %-----------------------------------------------------------
 %
 
-Given the statistical uncertainties involved and the results of the studies briefly described above, it was determined that associating a systematic uncertainty of 1.0\%, 1.0\% and 2\% for the triggers used for the $ee$, $\mu\mu$, and $e \mu$ channels would be sufficient.
+Given the statistical uncertainties of the trigger efficiencies and the results of the studies , it was determined that systematic uncertainties of 1.0\%, 1.0\% and 2\% for the $ee$, $\mu\mu$, and $e \mu$ channels would be sufficient to account for the residual differences in trigger efficiency between data and simulation.
 
 \subsection{Theoretical Uncertainties}\label{sec:theorySysts}
 \subsubsection{Cross section normalisation}
+The uncertainty associated with the cross sections of the simulated samples was taken into account by associating a normalisation uncertainty with each of the simulated samples considered.
+While the CMS Collaboration's search for tZq production using the trilepton channel at $\sqrt{s} = 13\TeV$ assumed a value of 30\% for this source of systematic uncertainty~\cite{Sirunyan:2017nbr}, it is now CMS policy to assume an uncertainty of 10\%.
 
 \subsubsection{Factorisation and renormalisation scales}
-In order to consider the impact of the uncertainty associated with the choice of factorisation ($\mu_{F}$) and renormalisation scales ($\mu_{R}$) used in the ME and PS step of the generator, they are varied up and down by factors of 2 and 0.5, respectively.
+In order to consider the impact of the uncertainty associated with the choice of factorisation ($\mu_{F}$) and renormalisation scales ($\mu_{R}$) used in the generation of the simulation samples, they are simultaneously varied up and down by factors of 2 and 0.5, respectively.
 
-%\editComment{WHAT IS Q2?}
-%ISR : q^2 =  muR^2 = z(1-z)q^2; q^2 = -p^2
-%FSR q^2 =  muR^2 = z(1-z)q^2; q^2 = p^2-m_0^2
+Events weights are produced for the variation of $\mu_{F}$ and $\mu_{R}$ at the ME level, where both scales are varied simultaneously in order to evaluate the impact of the uncertainties for these scales.
 
-
-Events weights are produced for the variation of $\mu_{F}$ and $\mu_{R}$ for the ME step where both scales are varied simultaneously in order to evaluate the impact of the $\mu_{f}$ and $\mu_{s}$ uncertainties.
-
-In contrast to the ME level, the impact of the PS shower scale uncertainties was evaluated through the use of dedicated samples for certain processes.
-In these samples the $\mu_{F}$ and $\mu_{R}$ 
+The impact of varying $\mu_{F}$ and $\mu_{R}$ for the PS level however, was evaluated through the use of dedicated samples for certain processes.
 These centrally produced samples are listed in Table~\ref{tab:theorySampleList} as the ``scale up'' and ``scale down'' samples. 
-As mentioned above in Section~\ref{subsec:pdfSysts}, it was not possible for the single top tW-channel MC samples to be produced with per-event weights to account for the matrix element factorisation and renormalisation scales.
-To account for this, the ``scale up'' and ``scale down'' samples listed in Table~\ref{tab:theorySampleList} for tW production also include the impact of varying $\mu_{F}$ and $\mu_{R}$ for the ME as well as the PS.
 In the case of \ttbar however, the variations in the initial-state radiation (ISR) and final-state radiation (FSR) are considered separately.
 The dedicated samples for these variations are listed in able~\ref{tab:theorySampleList} as the ``isr/fsr up'' and ``isr/fsr down'' samples for \ttbar production.
 
+As mentioned above in Section~\ref{subsec:pdfSysts}, it was not possible for the single top tW-channel MC samples to be produced with per-event weights to account for the matrix element factorisation and renormalisation scales.
+To account for this, the ``scale up'' and ``scale down'' samples listed in Table~\ref{tab:theorySampleList} for tW production also include the impact of varying $\mu_{F}$ and $\mu_{R}$ for both the ME and PS levels.
+
 \subsubsection{Parton Shower Matching Thresholds}
-As discussed in Section~\ref{subsec:eventGenerators}, all of the MC samples considered use model the hard scattering process through a dedicated Matrix Element generator, with PYTHIA 8 being used to perform the subsequent PS and hadronisation.
-The matching of of the output of the 
-
-Dedicated samples are used evaluate the impact of the uncertainty associated with the choice of the energy threshold used for matching for the \ttbar and single top t-channel backgrounds generated with POWHEG.
-These samples are listed in table~\ref{tab:theorySampleList} as ``matching''.
-For these samples, the model's matching threshold parameter is varied up and down by one standard deviation, effectively 
-
-The uncertainty associated with the choice of the matching threshold for  quark samplse used is evaluated using dedicated matching samples where the matching threshold energy is varied up and down by one standard deviation~\cite{CMS:2016kle}.
+The uncertainty associated with the choice of the energy threshold at which the ME calculations are matched to the PS is evaluated using dedicated matching samples where the matching threshold energy is varied up and down by one standard deviation~\cite{CMS:2016kle}.
+This source of uncertainty is evaluated for the \ttbar and single top t-channel backgrounds generated with POWHEG and the samples used this are listed in table~\ref{tab:theorySampleList} as ``matching''.
 
 \subsection{Pre-Fit Impact of the Systematic Uncertainties}\label{sec:uncertainitiesPreFitImpact}
-The impact of the each of the systematics on the event yield (in percentage) of the simulated processes in the signal region is shown in Table~\ref{tab:systImpact}.
+The impact of the each of the systematics on the event yield (in percentage) of the simulated processes in the signal region following the application of the signal region selection criteria is shown in Table~\ref{tab:systImpact}.
 These rates, whilst giving an overview of which systematics are the most important, do not show how the shape of the fitted variable, the BDT discriminant, is influenced by each uncertainty.
+
+Prior performing the binned maximum likelihood fit described in Chapter~\ref{chapter:results}, the theoretical sources of uncertainty are observed to have the greatest impact on the observed yields of the simulated samples.
+The experimental uncertainties that have the greatest impact on the observed yields are those associated with the PDFs and JES.
+In the case of the simulated tZq and Z+jets samples, the PDF and JES uncertainties, respectively, were found to have a greater impact on the observed yields than any of the theoretical uncertainties.
 
 \begin{sidewaystable}[!htbp]
 \topcaption{Rate impact of systematics on MC templates}\label{tab:systImpact}
@@ -803,17 +836,17 @@ Systematic      &  tZq                  & Z+jets                   & \ttbar     
 \hline
 Statistical &  $\pm0.23\%$ /  $\pm0.18$   & $\pm2.03\%$ / $\pm1.49\%$  & $\pm1.43\%$ / $\pm1.04\%$ & $\pm0.32\%$ / $\pm0.25\%$ & $0.66\pm\%$ / $0.50\pm\%$ & $\pm\%$ / $1.64\pm\%$  \\
 \hline
-Lepton Eff.     &  $_{-5.41\%}^{+5.42\%}$ /  $_{-0.77\%}^{+4.87\%}$   & $_{-4.88\%}^{+5.45\%}$ / $_{-0.69\%}^{+4.77\%}$  & $_{-5.35\%}^{+5.14\%}$ / $_{-1.19\%}^{+5.19\%}$ & $_{-5.63\%}^{+5.48\%}$ / $_{-1.21\%}^{+5.24\%}$  & $_{-5.13\%}^{+6.48\%}$ / $_{-0.61\%}^{+4.85\%}$ & $_{-4.34\%}^{+5.01\%}$ / $_{-0.48\%}^{+4.10\%}$ \\
-JER             &  $_{-4.12\%}^{+3.85\%}$ /  $_{-4.48\%}^{+4.01\%}$   & $_{-11.53\%}^{+13.87\%}$ / $_{-12.09\%}^{+14.42\%}$  & $_{-7.02\%}^{+7.71\%}$ / $_{-8.08\%}^{+8.93\%}$  & $_{-0.08\%}^{+1.22\%}$ / $_{-0.08\%}^{+0.20\%}$ & $_{-8.34\%}^{+8.41\%}$ / $_{-8.42\%}^{+8.99\%}$ & $_{-6.67\%}^{+8.48\%}$ / $_{-10.53\%}^{+9.67\%}$\\
-JES             &  $_{-0.17\%}^{+0.08\%}$ /  $_{-0.14\%}^{+0.14\%}$   & $_{-0.69\%}^{+0.65\%}$ / $_{-0.16\%}^{+0.12\%}$  & $_{-0.68\%}^{+0.01\%}$ / $_{-0.11\%}^{+0.34\%}$  & $_{-0.14\%}^{+0.03\%}$ / $_{-0.16\%}^{+0.18\%}$ & $_{-0.46\%}^{+0.50\%}$ / $_{-0.01\%}^{+0.36\%}$ & $_{-1.25\%}^{+1.57\%}$ / $_{-0.16\%}^{+0.67\%}$\\
-Pileup             &  $_{-0.59\%}^{+0.59\%}$ /  $_{-0.32\%}^{+0.01\%}$   & $_{-1.54\%}^{+0.34\%}$ / $_{-2.15\%}^{+2.08\%}$  & $_{-0.41\%}^{+0.92\%}$ / $_{-0.97\%}^{+0.28\%}$  & $_{-0.81\%}^{+0.57\%}$ / $_{-0.15\%}^{+0.11\%}$  & $_{-0.55\%}^{+0.99\%}$ / $_{-1.39\%}^{+1.68\%}$ & $_{-0.13\%}^{+0.44\%}$ / $_{-1.40\%}^{+1.34\%}$\\
+Lepton Eff.     &  $_{-5.41\%}^{+5.42\%}$ /  $_{+0.77\%}^{+4.87\%}$   & $_{-4.88\%}^{+5.45\%}$ / $_{+0.69\%}^{+4.77\%}$  & $_{-5.35\%}^{+5.14\%}$ / $_{+1.19\%}^{+5.19\%}$ & $_{-5.63\%}^{+5.48\%}$ / $_{+1.21\%}^{+5.24\%}$  & $_{-5.13\%}^{+6.48\%}$ / $_{+0.61\%}^{+4.85\%}$ & $_{-4.34\%}^{+5.01\%}$ / $_{+0.48\%}^{+4.10\%}$ \\
+JER             &  $_{-4.12\%}^{+3.85\%}$ /  $_{-4.48\%}^{+4.01\%}$   & $_{-11.53\%}^{+13.87\%}$ / $_{-12.09\%}^{+14.42\%}$  & $_{-7.02\%}^{+7.71\%}$ / $_{-8.08\%}^{+8.93\%}$  & $_{-0.08\%}^{-1.22\%}$ / $_{+0.08\%}^{+0.20\%}$ & $_{-8.34\%}^{+8.41\%}$ / $_{-8.42\%}^{+8.99\%}$ & $_{-6.67\%}^{+8.48\%}$ / $_{-10.53\%}^{+9.67\%}$\\
+JES             &  $_{-0.17\%}^{+0.08\%}$ /  $_{-0.14\%}^{-0.14\%}$   & $_{-0.69\%}^{-0.65\%}$ / $_{+0.12\%}^{-0.16\%}$  & $_{-0.68\%}^{-0.01\%}$ / $_{-0.11\%}^{-0.34\%}$  & $_{-0.14\%}^{-0.03\%}$ / $_{-0.16\%}^{+0.18\%}$ & $_{+0.46\%}^{+0.50\%}$ / $_{+0.01\%}^{+0.36\%}$ & $_{+1.57\%}^{-1.25\%}$ / $_{-0.16\%}^{-0.67\%}$\\
+Pileup             &  $_{+0.59\%}^{-0.59\%}$ /  $_{+0.01\%}^{-0.32\%}$   & $_{-1.54\%}^{+0.34\%}$ / $_{-2.15\%}^{+2.08\%}$  & $_{-0.41\%}^{-0.92\%}$ / $_{-0.97\%}^{+0.28\%}$  & $_{+0.57\%}^{-0.81\%}$ / $_{+0.11\%}^{-0.15\%}$  & $_{-0.55\%}^{+0.99\%}$ / $_{-1.39\%}^{+1.68\%}$ & $_{+0.13\%}^{+0.44\%}$ / $_{-1.40\%}^{-1.34\%}$\\
 bTag             &  $_{-2.97\%}^{+3.11\%}$ /  $_{-3.4\%}^{+2.86\%}$   & $_{-6.07\%}^{+5.42\%}$ / $_{-5.65\%}^{+4.83\%}$  & $_{-3.01\%}^{+3.29\%}$ / $_{-3.75\%}^{+3.49\%}$  & $_{-3.21\%}^{+3.19\%}$ / $_{-3.13\%}^{+3.14\%}$  & $_{-5.86\%}^{+6.65\%}$ / $_{-5.98\%}^{+5.67\%}$ & $_{-2.56\%}^{2.98+\%}$ / $_{-3.00\%}^{+3.34\%}$\\
 PDF             &  $_{-16.13\%}^{+15.92\%}$ /  $_{-16.39\%}^{+15.88\%}$   & $_{-8.36\%}^{+7.28\%}$ / $_{-8.57\%}^{+7.95\%}$  & $_{-2.70\%}^{+2.17\%}$ / $_{-2.30\%}^{+2.34\%}$  & $_{-7.03\%}^{+6.74\%}$ / $_{-6.80\%}^{+7.23\%}$  & $_{-7.14\%}^{+8.09\%}$ / $_{-5.45\%}^{+8.39\%}$ & $_{-7.58\%}^{+8.07\%}$ / $_{-8.85\%}^{+6.70\%}$\\
-ME             &  $_{-7.33\%}^{+7.14\%}$ /  $_{-6.96\%}^{+6.29\%}$   & $_{-8.05\%}^{+9.94\%}$ / $_{-8.98\%}^{+9.59\%}$  & $_{-13.46\%}^{+15.84\%}$ / $_{-13.46\%}^{+15.04\%}$  & $_{-18.82\%}^{+11.61\%}$ / $_{-11.38\%}^{+11.07\%}$  & $_{-7.14\%}^{+10.86\%}$ / $_{-8.38\%}^{+10.14\%}$ & $_{-8.08\%}^{+8.29\%}$ / $_{-9.57\%}^{+9.41\%}$\\
-PS             &  $_{-10.33\%}^{+6.74\%}$ /  $_{-6.51\%}^{+4.47\%}$   & $-$  & $-$ & $_{-13.34\%}^{+9.90\%}$ / $_{-5.01\%}^{+7.55\%}$  \\
+Renormalisation Scale             &  $_{+7.33\%}^{-7.14\%}$ /  $_{+6.26\%}^{-6.96\%}$   & $_{+9.94\%}^{-8.05\%}$ / $_{+9.59\%}^{-8.98\%}$  & $_{+15.84\%}^{-13.464\%}$ / $_{+15.04\%}^{-13.46\%}$  & $_{+11.61\%}^{-18.82\%}$ / $_{+11.07\%}^{-11.38\%}$  & $_{+10.86\%}^{-7.14\%}$ / $_{+10.14\%}^{-8.38\%}$ & $_{+8.29\%}^{-8.08\%}$ / $_{+9.41\%}^{-9.57\%}$\\
+Factorisation Scale             &  $_{-10.33\%}^{+6.74\%}$ /  $_{-6.51\%}^{+4.47\%}$  & $-$  & $-$  & $-$  & $-$ & $_{-13.34\%}^{-9.90\%}$ / $_{-7.55\%}^{-5.01\%}$  \\
 ISR             &  $-$   & $-$  & $^{+4.35}_{-6.57}$/$_{-6.44}^{+3.16}$ & $-$  & $-$ & $-$  \\
-FSR             &  $-$   & $-$  & $^{+15.31}_{-3.87}$/$_{-5.78}^{+12.63}$ & $-$  & $-$ & $-$  \\ 
-ME-PS             &  $-$   & $-$  & $^{+2.15}_{-9.01}$/$_{-5.89}^{+1.02}$ & $-$  & $-$ & $-$ \\
+FSR             &  $-$   & $-$  & $_{+15.31}^{-3.87}$/$^{-5.78}_{+12.63}$ & $-$  & $-$ & $-$  \\ 
+Matching Scale             &  $-$   & $-$  & $^{-2.15}_{-9.01}$/$_{-5.89}^{+1.02}$ & $-$  & $-$ & $-$ \\
 Luminosity             &  $_{-2.5\%}^{+2.5\%}$ /  $_{-2.5\%}^{+2.5\%}$    & $_{-2.5\%}^{+2.5\%}$  / $_{-2.5\%}^{+2.5\%}$   & $_{-2.5\%}^{+2.5\%}$  / $_{-2.5\%}^{+2.5\%}$   & $_{-2.5\%}^{+2.5\%}$  / $_{-2.5\%}^{+2.5\%}$  & $_{-2.5\%}^{+2.5\%}$  / $_{-2.5\%}^{+2.5\%}$ & $_{-2.5\%}^{+2.5\%}$  / $_{-2.5\%}^{+2.5\%}$ \\    
 \hline
 \end{tabular}
@@ -829,9 +862,8 @@ Therefore, a MVA technique was used to enhance the separation between the signal
 
 \subsection{Boosted Decision Trees}\label{subsec:bdt}
 As illustrated in Figure~\ref{fig:decisionTree}, a decision tree is a series of sequential binary decisions (nodes) used to classify an event.
-Each node compares a single input variable (\emph{feature}) against a threshold to determine which of the next two nodes it'll be sent to.
-After a final decision
- are made on a single input variable (\emph{feature}), $x_{i}$, until a final decision is made at a terminating or \emph{leaf node} and the object is classified as either signal (S) or background (B).
+At each node in the decision tree, a single input variable (\emph{feature}) is compared against a threshold to determine which of the next two nodes it'll be sent to.
+When the last node is reached, the object is classified as either signal (S) or background (B).
 
 \begin{figure}[htb]
 \centering
@@ -849,27 +881,22 @@ Despite this however, such a weak learner will still contain some knowledge abou
 Following each training iteration the dataset is reweighted based on the success of the previous classifiers in order to force the weak learners to attempt to classify objects that are harder to identify.
 At the end of this process a weighted average (based) of all the weak learners are combined to produce a single strong learner.
 
-\emph{Bagging} is a similar concept to boosting, but involves each weak learner being trained on a random subset of the training sample, such that every element has an equal probability of being sampled.
-
-Therefore by extending boosting (or bagging) to decision trees, the resultant forest of \emph{Boosted Decision Trees} produces a classifier that is both much more effective and resilient to fluctuations in the training sample than one created by a single tree.
-
+Therefore by extending boosting to decision trees, the resultant forest of Boosted Decision Trees produces a classifier that is both much more effective and resilient to fluctuations in the training sample than one created by a single tree.
 Typically the classifier produced by a BDT takes the form of a single discriminator whose response ranges between -1 to +1, denoting completely background-like and signal-like objects, respectively.
+
+BDTs are however, particularly sensitive to the effects of \emph{overtraining}.
+This phenomena occurs when BDT is overly optimised on correctly classifying the dataset used to train it and results in the poor classification of unseen data.
+In order to minimise any potential of overtraining, the signal and background process samples are typically split into training and testing samples, where the latter samples are used to check the validity of the BDT trained with the former.
 
 Two of the most common boosting algorithms used with decision trees are the Adaptive Boosting (\emph{AdaBoost})~\cite{Friedman:additivelogistic} and \emph{Gradient Boosting}~\cite{Friedman:greedyfunction,Friedman:GradientBoosting} algorithms.
 Adaboost adjusts the weighting assigned to both  misclassified objects and the best performing weak learners after each iteration so that the best learners are trained to correctly identify the most difficult objects.
 In contrast, gradient boosting uses gradient descent following each iteration to determine the residuals of the objects in order to focus on correctly classifying the objects with the largest residuals.
 
-Despite their effectiveness however, BDTs are particularly sensitive to the effects of \emph{overtraining}.
-This phenomena occurs when BDT is overly optimised on correctly classifying the training dataset and results in the poor classification of unseen data.
-To minimise the impact of any potential overtraining, the signal and background process samples are split into training and testing samples, where the latter samples are used to check the validity of the BDT trained with the former.
-A description of the training and testing method used to validate both the optimisation of the selection of the hyperparameters and whether or not they were overtrained is given in Section~\ref{subsec:hyperparameters}.
-
-
 A number of studies were performed to determine the optimal settings for this analysis.
 These included the evaluation of:
 
 \begin{itemize}
-\item a number of different boosting and bagging algorithms;
+\item a number of different boosting algorithms;
 \item which simulated background processes should be included in the training processes;
 \item whether or not multiple BDTs trained on separate backgrounds would be more effective than a single BDT;
 \item how to determine which features possessed the greater discriminating power;
@@ -878,18 +905,26 @@ These included the evaluation of:
 
 It was determined that the \emph{eXtreme Gradient Boosting} (XGBoost) implementation of the Gradiant Boost algorithm for a single BDT trained on all the MC simulation samples gave the optimal performance for this search~\cite{xgboost}.
 
-The methods used for selecting these features and the model hyperparameters are described in the following subsections.
+\subsection{BDT Optimisation and Evaluation}
+The methods used for determining the optimal features and model hyperparameters for this BDT are described in the following subsection.
 Both the input features and model hyperparameters were chosen separately for $ee$ and $\mu\mu$ channels and all the simulated MC samples were considered.
 
-\subsection{BDT Optimisation}
+Following the optimisation of both the BDT features and the choice of hyperparameters for both channels independently, the optimal BDT is trained.
+The BDT is then used to produce the distribution of the output discriminant for each of the data and simulation samples considered, including the dedicated simulation samples required to estimate the systematic uncertainties.
+These output discriminant distributions are used to extract the signal strength and its statistical significance, as described in Chapter~\ref{chapter:results}.
+
+\subsubsection*{BDT Feature Optimisation}
 From the selected reconstructed physics objects, a large number of possible input variables or \emph{features} were constructed and considered as inputs for the BDT.
+
 In order to determine the optimal set of features, recursive feature elimination was used to those that had the greatest discriminating power between signal and background.
 This process iteratively removes the least important feature and re-trains the BDT until every feature has been ranked in order of their removal (\ie in increasing order of their discriminating power).
 From this list, the features with the best discriminating power are selected for use in the BDT.
 
-The features chosen by this process for the $ee$ and $\mu\mu$ channels are given in table~\ref{tab:selectedBdtVariables}.
+The features chosen by this process for the $ee$ and $\mu\mu$ channels are given in table~\ref{tab:selectedBdtVariables} and 
 Figure~\ref{fig:inputFeaturesDistributions} shows the distributions of the selected features in the signal and background samples.
-Figure~\ref{fig:inputFeaturesDataSimAgreement} shows good agreement observed between simulation and data for the two channels for the features selected, demonstrating their reliability.
+Figure~\ref{fig:inputFeaturesDataSimAgreement} shows the good agreement observed between simulation and data for the features selected, demonstrating their reliability.
+Given the number of features used, when a feature is used by both the $ee$ and $\mu\mu$ channels, only the distributions for the one of the channels are given in this chapter.
+The complete set of distributions for both channels is given in Appendix~\ref{app:bdt}.
 Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of all the features that were considered.
 
 \begin{table}[htbp]
@@ -906,24 +941,24 @@ Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of a
    & & \textbf{$ee$} & \textbf{$\mu\mu$} \\
    \hline
     bTagDisc & Leading b-tagged jet b-tag output discriminant & 0 & $4.529 \times 10^{-2}$ \\ 
-    fourthJetPt & Fourth jet \pt & - & $3.391 \times 10^{-2}$ \\ 
     jetHt & ${\ensuremath{H_{\mathrm{T}}}}$ of all the jets in an event & - & $3.413 \times 10^{-2}$ \\ 
     jetMass & Total mass of every jet in an event & $1.467 \times 10^{-1}$  & $5.747 \times 10^{-2}$  \\
     jjDelR & $\Delta R$ between the leading jets & $5.778 \times 10^{-2}$  & $6.405 \times 10^{-2}$  \\ 
     leadJetEta & Leading jet $\eta$ & $2.222 \times 10^{-2}$ & $6.756\times 10^{-2}$  \\
     leadJetPt & Leading jet \pt & $0$ & $4.098 \times 10^{-2}$  \\ 
-    zEta & Reconstructed Z boson $\eta$ & - & $6.129 \times 10^{-2}$ \\
-    lepHt & ${\ensuremath{H_{\mathrm{T}}}}$ of the Z boson candidate's leptons & - & $5.325 \times 10^{-2}$ \\
-    met & Missing transverse energy & $1.822 \times 10^{-1}$  & $7.587 \times 10^{-2}$  \\
     secJetPt & Second jet \pt & -  & $3.916 \times 10^{-2}$  \\
     thirdJetPt & Third jet \pt & $0$  & $3.613 \times 10^{-2}$  \\ 
-    topMass & Reconstructed top quark mass & $1.067 \times 10^{-1}$  & $8.076 \times 10^{-2}$  \\
-    totHtOverPt & Total ${\ensuremath{H_{\mathrm{T}}}}$ divided by total \pt & $1.200 \times 10^{-1}$  & $5.738 \times 10^{-2}$  \\
+    fourthJetPt & Fourth jet \pt & - & $3.391 \times 10^{-2}$ \\ 
+    met & Missing transverse energy & $1.822 \times 10^{-1}$  & $7.587 \times 10^{-2}$  \\
     wPairMass & Reconstructed W boson mass & -  & $4.894 \times 10^{-2}$  \\
     wQuark2Eta & Subleading W boson candidate jet $\eta$ & - & $4.342 \times 10^{-2}$ \\
+    lepHt & ${\ensuremath{H_{\mathrm{T}}}}$ of the Z boson candidate's leptons & - & $5.325 \times 10^{-2}$ \\
+    zEta & Reconstructed Z boson $\eta$ & - & $6.129 \times 10^{-2}$ \\
     zMass & Reconstructed Z boson mass & $3.644 \times 10^{-1}$  & $7.085 \times 10^{-2}$  \\
     zTopDelR & $\Delta R$ between the Z boson and top quark candidates & - & $4.778 \times 10^{-2}$ \\
     zjminR & Minimum $\Delta R$ between the Z boson candidate and any jet & - & $4.178 \times 10^{-2}$ \\
+    topMass & Reconstructed top quark mass & $1.067 \times 10^{-1}$  & $8.076 \times 10^{-2}$  \\
+    totHtOverPt & Total ${\ensuremath{H_{\mathrm{T}}}}$ divided by total \pt & $1.200 \times 10^{-1}$  & $5.738 \times 10^{-2}$  \\
    \hline
  \end{tabular}}
 \end{table}
@@ -936,7 +971,30 @@ Distributions of the features chosen for use with the BDT for the signal and bac
 \label{fig:inputFeaturesDistributions}
 \end{figure}
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\caption{
+Distributions of the features chosen for use with the BDT for the signal and background samples.}
+\label{fig:inputFeaturesDataSimAgreement}
+\end{figure}
+
+%% HYPERPARAMETERS
+\subsubsection*{BDT Hyperparmeter Optimisation}
 Instead of tuning the choice hyperparmeters for optimal classification performance either by hand or a time and computationally expensive grid search, the optimal choice of hyperparmeters was evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise} to construct and evaluate a regression model based on a Gaussian process.
+
+The hyperparameters considered were:
+\begin{itemize}
+\item \textbf{gamma:} minimum loss reduction required to make a further partition on a node.
+\item \textbf{learning\_rate:} a scale factor/weighting of the weights of the new features that have been trained on. The smaller the value this is, the slower the BDT learns but is less likely to overtrain.
+\item \textbf{max\_depth:} the maximum depth of the trees grown.
+\item \textbf{min\_child\_weight:} minimum number of instances required for a node to be partitioned.
+\item \textbf{n\_estimator:} number of trees grown.
+\item \textbf{reg\_alpha:} a regularisation tern for the tree weights.
+\item \textbf{reg\_lambda:} a regularisation tern for the tree weights.
+\item \textbf{subsample:} the proportion of the training sample which is randomly chosen for training a tree for each iteration. This is used to prevent overtraining.
+\end{itemize}
+
 Table~\ref{tab:hyperparameters} lists the optimal hyperparameters for the $ee$ and $\mu\mu$ channels were that were determined by the \emph{Scikit-Optimize} regression model.
 
 \begin{table}[htbp]
@@ -962,9 +1020,4 @@ Table~\ref{tab:hyperparameters} lists the optimal hyperparameters for the $ee$ a
    \hline
  \end{tabular}}
 \end{table}
-
-Following the optimisation of both the BDT features and the choice of hyperparameters for both channels independently, the optimal BDT is trained.
-The BDT is then used to produce the distribution of the output discriminant for each of the data and simulation samples considered, including the dedicated simulation samples required to estimate the systematic uncertainties.
-These output discriminant distributions are used to extract the signal strength and its statistical significance.
-
 
