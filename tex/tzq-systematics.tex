@@ -378,22 +378,22 @@ The event yields of the simulated samples and data following the full event sele
 \hline
 Source &  $ee$ & $\mu\mu$  \\ 
 \hline
-$(N_{\ttbar}^{SS}$: & 30.971 & 71.539   \\
-$(N_{\tt})^{SS}$: & 6.729 & 10.479   \\ 
-$(N_{single top}^{SS}$: & 1.764 & 2.624   \\
-$(N_{W+jets}^{SS}$: & 0.0 & 0.0   \\
-$(N_{Z+jets}^{SS}$: & 44.400 & 0.0   \\
-$(VV)^{SS}$: & 2.148 & 0.348  \\
-$(VVV)^{SS}$: & -0.024 & 0.098 \\
+$N_{\ttbar}^{SS}$ & 30.971 & 71.539   \\
+$N_{\tt})^{SS}$ & 6.729 & 10.479   \\ 
+$N_{single top}^{SS}$: & 1.764 & 2.624   \\
+$N_{W+jets}^{SS}$: & 0.0 & 0.0   \\
+$N_{Z+jets}^{SS}$: & 44.400 & 0.0   \\
+$VV^{SS}$ & 2.148 & 0.348  \\
+$VVV^{SS}$ & -0.024 & 0.098 \\
 \hline
-$(N_{MC}^{SS}$ background: & 85.988 & 85.088  \\ 
-$(N_{data}^{SS}$: & 126.0 & 125.0  \\ 
+$(N_{MC}^{SS}$ background & 85.988 & 85.088  \\ 
+$(N_{data}^{SS}$ & 126.0 & 125.0  \\ 
 \hline
 $(N_{data}^{SS} - (N_{MC}^{SS}$: & 40.012 & 39.912 \\
 \hline
 $N_{MC}^{SS non-prompt}$: & 1.681 & 2.613 \\
 $N_{MC}^{OS non-prompt}$: & 1.579 & 2.337 \\
-$\frac{N_{MC}^{OS non-prompt}}{N_{MC}^{SS non-prompt}}$: & 0.939 & 0.894 \\
+$N_{MC}^{OS non-prompt}/N_{MC}^{SS non-prompt}$: & 0.939 & 0.894 \\
 \hline
 $N_{data}^{OS non-prompt}$: & 37.571$\pm$11.271 & 35.681$\pm$10.704 \\
 \hline
@@ -436,7 +436,7 @@ $N_{data}^{OS non-prompt}$: & 37.571$\pm$11.271 & 35.681$\pm$10.704 \\
 \subsection{Z+jets Background}\label{subsec:zPlusJetsEstimation}
 Both of the Z+jets enriched control regions, as defined in Section~\ref{subsec:zPlusJetsCR}, were designed to provide an orthogonal region that was topologically similar to the signal region to validate if the simulated Z+jets samples considered accurately modelled this process in data.
 
-The impact of applying for all of the selection criteria and simulation corrections for the zero b-tagged jets control region is given in table~\ref{tab:zPlusControlYieldsOld} and the \MET and inverted W boson mass cut control region in table~\ref{tab:zPlusControlYieldsNew}.
+The final event yield after applying for all of the selection criteria and simulation corrections for the zero b-tagged jets control region is given in table~\ref{tab:zPlusControlYieldsOld} and the \MET and inverted W boson mass cut control region in table~\ref{tab:zPlusControlYieldsNew}.
 As can be seen in these tables, it was found that the zero b-tagged jets control region had a purity of 94\% and the \MET and inverted W boson mass cut had a purity of 82\$.
 Given its higher purity and statistics, it was decided to use the zero b-tagged jets Z+jets control region to validate the Z+jets modelling.
 
@@ -830,7 +830,7 @@ Prior performing the binned maximum likelihood fit described in Chapter~\ref{cha
 The experimental uncertainties that have the greatest impact on the observed yields are those associated with the PDFs and JES.
 In the case of the simulated tZq and Z+jets samples, the PDF and JES uncertainties, respectively, were found to have a greater impact on the observed yields than any of the theoretical uncertainties.
 
-\begin{sidewaystable}[!htbp]
+\begin{sidewaystable}[htbp]
 \topcaption{Rate impact of systematics on MC templates}\label{tab:systImpact}
 \begin{center}
 \linespread{2}
@@ -867,7 +867,7 @@ Therefore, a MVA technique was used to enhance the separation between the signal
 
 \subsection{Boosted Decision Trees}\label{subsec:bdt}
 As illustrated in Figure~\ref{fig:decisionTree}, a decision tree is a series of sequential binary decisions (nodes) used to classify an event.
-At each node in the decision tree, a single input variable (\emph{feature}) is compared against a threshold to determine which of the next two nodes it'll be sent to.
+At each node in the decision tree, a single input variable is compared against a threshold to determine which of the next two nodes it will be sent to.
 When the last node is reached, the object is classified as either signal (S) or background (B).
 
 \begin{figure}[htb]
@@ -904,32 +904,31 @@ These included the evaluation of:
 \item a number of different boosting algorithms;
 \item which simulated background processes should be included in the training processes;
 \item whether or not multiple BDTs trained on separate backgrounds would be more effective than a single BDT;
-\item how to determine which features possessed the greater discriminating power;
+\item how to determine which input variables possessed the greater discriminating power;
 \item and which \emph{hyperparameters}, the set of options used to control BDT behaviour, and associated values gave the optimal classification performance.
 \end{itemize}
 
 It was determined that the \emph{eXtreme Gradient Boosting} (XGBoost) implementation of the Gradiant Boost algorithm for a single BDT trained on all the MC simulation samples gave the optimal performance for this search~\cite{xgboost}.
 
 \subsection{BDT Optimisation and Evaluation}
-The methods used for determining the optimal features and model hyperparameters for this BDT are described in the following subsection.
-Both the input features and model hyperparameters were chosen separately for $ee$ and $\mu\mu$ channels and all the simulated MC samples were considered.
+The methods used for determining the optimal input variables and model hyperparameters for this BDT are described in the following subsection.
+Both the input variables and model hyperparameters were chosen separately for $ee$ and $\mu\mu$ channels and all the simulated MC samples were considered.
 
-Following the optimisation of both the BDT features and the choice of hyperparameters for both channels independently, the optimal BDT is trained.
-The BDT is then used to produce the distribution of the output discriminant for each of the data and simulation samples considered, including the dedicated simulation samples required to estimate the systematic uncertainties.
+Once the optimisation is complete, the BDT is trained.
+The BDT produces the output discriminant for each of the data and simulation samples considered.
 These output discriminant distributions are used to extract the signal strength and its statistical significance, as described in Chapter~\ref{chapter:results}.
 
-\subsubsection*{BDT Feature Optimisation}
-From the selected reconstructed physics objects, a large number of possible input variables or \emph{features} were constructed and considered as inputs for the BDT.
-As training a BDT with all of the possible features increases its vulnerability to overtraining, as correlated features are considered multiple times and statistical fluctuations in poorly discriminating features may give the illusion of discriminative power.
+\subsubsection*{BDT Input Variable Optimisation}
+From the selected reconstructed physics objects, a large number of possible input variables were constructed and considered as inputs for the BDT.
+As training a BDT with all of the possible input variables increases its vulnerability to overtraining, as correlated input variables are considered multiple times and statistical fluctuations in poorly discriminating input variables may give the illusion of discriminative power.
 
-In order to determine the optimal set of features, recursive feature elimination was used to those that had the greatest discriminating power between signal and background.
-This process iteratively removes the least important feature and re-trains the BDT until every feature has been ranked in order of their removal.
-As each feature is removed from consideration the probability a randomly chosen signal event has a higher discriminator value than a random background event is recorded.
-From this list, the highest ranked features are selected for use in the BDT.
+In order to determine the optimal set of input variables, recursive feature elimination was used to those that had the greatest discriminating power between signal and background~\cite{Guyon2002}.
+This process iteratively removes the least important input variable and re-trains the BDT until every input variable has been ranked in order of their removal.
+From this process, the highest ranked input variables are identified for use in the BDT.
 
-The features chosen by this process for the $ee$ and $\mu\mu$ channels are given in table~\ref{tab:selectedBdtVariables}.
+The input variables chosen by this method for the $ee$ and $\mu\mu$ channels are given in table~\ref{tab:selectedBdtVariables}.
 As can be seen in Figures~\ref{fig:corr_ee}-~\ref{fig:corr_mumu}, the majority of these variables are weakly correlated, as indicated by pale squares, signifying that they provide unique and useful information to the BDT.
-Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of all the features that were considered.
+Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of all the input variables that were considered.
 
 \begin{table}[htbp]
 \topcaption {The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
@@ -941,7 +940,7 @@ Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of a
 % This right-aligns numbers in column, but centers them under column title.
 \begin{tabular}{cccc}
    \hline\
-   \multirow{2}{*}{\textbf{Feature}} & \multirow{2}{*}{\textbf{Description}} & \multicolumn{2}{c}{\textbf{Discriminating Power}} \\
+   \multirow{2}{*}{\textbf{Input variable}} & \multirow{2}{*}{\textbf{Description}} & \multicolumn{2}{c}{\textbf{Discriminating Power}} \\
    & & \textbf{$ee$} & \textbf{$\mu\mu$} \\
    \hline
     bTagDisc & Leading b-tagged jet b-tag output discriminant & 0 & $4.529 \times 10^{-2}$ \\ 
@@ -973,7 +972,7 @@ Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of a
 \\
 \includegraphics[width=0.97\textwidth]{figs/background-estimation/plots/corr_bkg_ee.pdf}
 \caption{
-The correlations between the features chosen for use with the BDT for the signal (top) and background (bottom) samples for the $ee$ channel.}
+The correlations between the input variables chosen for use with the BDT for the signal (top) and background (bottom) samples for the $ee$ channel.}
 \label{fig:corr_ee}
 \end{figure}
 
@@ -983,41 +982,29 @@ The correlations between the features chosen for use with the BDT for the signal
 \\
 \includegraphics[width=0.97\textwidth]{figs/background-estimation/plots/corr_bkg_mumu.pdf}
 \caption{
-The correlations between the features chosen for use with the BDT for the signal (top) and background (bottom) samples for the $\mu\mu$ channel.}
+The correlations between the input variables chosen for use with the BDT for the signal (top) and background (bottom) samples for the $\mu\mu$ channel.}
 \label{fig:corr_mumu}
 \end{figure}
 
-Figure~\ref{fig:inputFeaturesDataSimAgreement} shows that good agreement was observed between simulation and data for the selected features, demonstrating that they are reliable features.
-
-Given the number of features used, when a feature is used by both the $ee$ and $\mu\mu$ channels, only the distributions for the one of the channels are given in this chapter.
+Figure~\ref{fig:inputFeaturesDataSimAgreement} shows that good agreement was observed between simulation and data for the selected input variables.
+Given the number of input variables used, when an input variable is used by both the $ee$ and $\mu\mu$ channels, only the distributions for the one of the channels are given in this chapter.
 The complete set of distributions for both channels is given in Appendix~\ref{app:bdt}.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
 \caption{
-Distributions comparing the agreement between data and simulation for the variables used as features in the BDT training.}
+Distributions comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
 \label{fig:inputFeaturesDataSimAgreement}
 \end{figure}
 
 %% HYPERPARAMETERS
-\subsubsection*{BDT Hyperparmeter Optimisation}
-Instead of tuning the choice hyperparmeters for optimal classification performance either by hand or a time and computationally expensive grid search, a regression model was constructed and evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise}.
-This regression model was constructed using a Gaussian process which identifies of optimal hyperparmeters as the minima of a mteric used to rank the hyperparmeters considered.
+\subsubsection*{BDT Hyperparameter Optimisation}
+Instead of tuning the of choice hyperparameters for optimal classification performance either by hand or using a time and computationally expensive grid search, a regression model was constructed and evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise}.
+This regression model identifies the set of optimal hyperparameters as the minima of a metric used to rank the hyperparameters considered.
  
-The hyperparameters considered were:
-\begin{itemize}
-\item \textbf{gamma:} minimum loss reduction required to make a further partition on a node.
-\item \textbf{learning\_rate:} a scale factor/weighting of the weights of the new features that have been trained on. The smaller the value this is, the slower the BDT learns but is less likely to overtrain.
-\item \textbf{max\_depth:} the maximum depth of the trees grown.
-\item \textbf{min\_child\_weight:} minimum number of instances required for a node to be partitioned.
-\item \textbf{n\_estimator:} number of trees grown.
-\item \textbf{reg\_alpha:} a regularisation tern for the tree weights.
-\item \textbf{reg\_lambda:} a regularisation tern for the tree weights.
-\item \textbf{subsample:} the proportion of the training sample which is randomly chosen for training a tree for each iteration. This is used to prevent overtraining.
-\end{itemize}
-
-Table~\ref{tab:hyperparameters} lists the optimal hyperparameters for the $ee$ and $\mu\mu$ channels were that were determined by the \emph{Scikit-Optimize} regression model.
+Table~\ref{tab:hyperparameters} lists the set of hyperparameters for the $ee$ and $\mu\mu$ channels whose optimal values were found by the regression model to differ from their default values.
+Further
 
 \begin{table}[htbp]
 \topcaption {The optimal hyperparameters for the $ee$ and $\mu\mu$ channels for XGBoost that were found by \emph{Scikit-Optimize} and the maximum and minimum values that they can take.
@@ -1031,20 +1018,20 @@ Table~\ref{tab:hyperparameters} lists the optimal hyperparameters for the $ee$ a
    \hline
    \textbf{Option} & \textbf{Min} & \textbf{Max} & \textbf{$ee$} & \textbf{$\mu\mu$}\\
    \hline
-    gamma & $10^{-5}$ & 100 & 9.79 \\
-    learning\_rate & $10^{-5}$ & 10 & $5.70 \times 10^{-2}$ \\
-    max\_depth & 2 & 10 & 5 & 3\\
-    min\_child\_weight & $10^{-5}$ & 100 & 30.6 & 3.40 \\
-    n\_estimator & 25 & 7500 & 2338 & 6280 \\
+    $\gamma$ & $10^{-5}$ & 100 & 9.79 \\
+    Learning rate & $10^{-5}$ & 10 & $5.70 \times 10^{-2}$ \\
+    maximum tree depth & 2 & 10 & 5 & 3\\
+    Minimum child weight & $10^{-5}$ & 100 & 30.6 & 3.40 \\
+    Number of estimators & 25 & 7500 & 2338 & 6280 \\
     reg\_alpha & $10^{-5}$ & 1000 & $2.31 \times 10^{-3}$ & $1.33 \times 10^{-2}$ \\
     reg\_lambda & $10^{-5}$ & 1000 & 71.5 & $1.96 \times 10^{-4}$ \\
-    subsample & 0.5 & 1 & 0.504 & 0.801 \\
+    Subsample & 0.5 & 1 & 0.504 & 0.801 \\
    \hline
  \end{tabular}}
 \end{table}
 
 Figure~\ref{fig:bdtResponse} shows the BDT responses for the $ee$ and $\mu\mu$ channels for both the training and testing samples.
-As the response of the BDT classifier for both the training and testing samples are consistent with each other, this implies that little to no overtraining has occurred. 
+As the response of the BDT classifier for both the training and testing samples are consistent with each other, this implies that negligible overtraining has occurred. 
 
 \begin{figure}[htbp]
 \centering
@@ -1052,17 +1039,17 @@ As the response of the BDT classifier for both the training and testing samples 
 \\
 \includegraphics[width=0.97\textwidth]{figs/background-estimation/plots/response_mumu.pdf}
 \caption{
-Distributions of the features chosen for use with the BDT for the signal and background samples.}
+Distributions of the input variables chosen for use with the BDT for the signal and background samples.}
 \label{fig:bdtResponse}
 \end{figure}
 
-Figures~\ref{fig:inputFeaturesDistributions_ee} and~\ref{fig:inputFeaturesDistributions_mumu} shows the distributions of the selected features in the signal and background samples for the $ee$ and $\mu\mu$ channels, respectively.
+Figures~\ref{fig:inputFeaturesDistributions_ee} and~\ref{fig:inputFeaturesDistributions_mumu} shows the distributions of the selected input variables in the signal and background samples for the $ee$ and $\mu\mu$ channels, respectively.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.97\textwidth]{figs/background-estimation/plots/vars_ee.pdf}
 \caption{
-Distributions of the features chosen for use with the BDT for the signal and background samples for the $ee$ channel.}
+Distributions of the input variables chosen for use with the BDT for the signal and background samples for the $ee$ channel.}
 \label{fig:inputFeaturesDistributions_ee}
 \end{figure}
 
@@ -1070,6 +1057,6 @@ Distributions of the features chosen for use with the BDT for the signal and bac
 \centering
 \includegraphics[width=0.97\textwidth]{figs/background-estimation/plots/vars_mumu.pdf}
 \caption{
-Distributions of the features chosen for use with the BDT for the signal and background samples for the $ee$ channel.}
+Distributions of the input variables chosen for use with the BDT for the signal and background samples for the $ee$ channel.}
 \label{fig:inputFeaturesDistributions_mumu}
 \end{figure}
