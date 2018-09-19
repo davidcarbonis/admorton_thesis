@@ -519,7 +519,7 @@ Data: & 5274.0$\pm$72.62 & 9750.0$\pm$98.74 & 15024$\pm$171.36    \\
 \end{table}
 
 Following the application of the full event selection and simulation corrections in the signal region both the Madgraph (LO) and aMC@NLO (NLO) Z+jets samples listed in table~\ref{tab:mcList} were compared.
-As seen in table~\ref{tab:zPlusControlYieldsOld}, while the Madgraph (LO) sample describes the overall normalisation well, it is clear that there is at the very least a normalisation issue with the aMC@NLO (NLO) Z+jets sample.
+As seen in table~\ref{tab:zPlusControlYieldsOld}, while the Madgraph (LO) sample describes the overall normalisation well, it is clear that there is, at the very least, an issue with the normalisation of the aMC@NLO (NLO) Z+jets sample.
 Upon closer inspection, it was found that while the NLO Z+jets sample did correctly describe the (offset) shape of the jets' transverse momenta distributions, as illustrated in Figure~\ref{fig:zPlusCR_nJets}, this sample poorly describes low jet multiplicities, as illustrated in in Figure~\ref{fig:zPlusCR_jetPt}.
 
 Following observing these issues with the aMC@NLO (NLO) Z+jets sample, a number of alternative Z+jets samples which were binned as a function of the Z boson's \pT and the number of jets produced by the hard process were also considered.
@@ -534,7 +534,7 @@ This decision was taken as while a NLO description of this large multi-jet backg
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/nJets_lepSel.pdf}
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_DYamcatnlo_noSF/nJets_lepSel.pdf}
 \caption{
-The distributions of the number of jets in the zero b-tagged jets Z+jets control region following the full selection criteria, except the number of jets, and associated simulation corrections for Madgraph (left) and aMC@NLO (right) MC samples in the $\mu\mu$ channel.
+The distributions of the number of jets in the zero b-tagged jets Z+jets control region following the lepton selection criteria and associated simulation corrections for Madgraph (left) and aMC@NLO (right) MC samples in the $\mu\mu$ channel.
 }
 \label{fig:zPlusCR_nJets}
 \end{figure}
@@ -807,14 +807,22 @@ Events weights are produced for the variation of $\mu_{F}$ and $\mu_{R}$ at the 
 
 The impact of varying $\mu_{F}$ and $\mu_{R}$ for the PS level however, was evaluated through the use of dedicated samples for certain processes.
 These centrally produced samples are listed in Table~\ref{tab:theorySampleList} as the ``scale up'' and ``scale down'' samples. 
+
 In the case of \ttbar however, the variations in the initial-state radiation (ISR) and final-state radiation (FSR) are considered separately.
+
 The dedicated samples for these variations are listed in able~\ref{tab:theorySampleList} as the ``isr/fsr up'' and ``isr/fsr down'' samples for \ttbar production.
 
 As mentioned above in Section~\ref{subsec:pdfSysts}, it was not possible for the single top tW-channel MC samples to be produced with per-event weights to account for the matrix element factorisation and renormalisation scales.
 To account for this, the ``scale up'' and ``scale down'' samples listed in Table~\ref{tab:theorySampleList} for tW production also include the impact of varying $\mu_{F}$ and $\mu_{R}$ for both the ME and PS levels.
 
 \subsubsection{Parton Shower Matching Thresholds}
-The uncertainty associated with the choice of the energy threshold at which the ME calculations are matched to the PS is evaluated using dedicated matching samples where the matching threshold energy is varied up and down by one standard deviation~\cite{CMS:2016kle}.
+
+As discussed in Section~\ref{sec:samples}
+at which the ME calculations are matched to the PS
+
+threshold = hdamp^2 / pt^2 + hdamp^2; hdamp = 1.58m_top
+
+The uncertainty associated with this choice of matching threshold was evaluated using dedicated samples where the matching threshold energy is varied up and down by one standard deviation~\cite{CMS:2016kle}.
 This source of uncertainty is evaluated for the \ttbar and single top t-channel backgrounds generated with POWHEG and the samples used this are listed in table~\ref{tab:theorySampleList} as ``matching''.
 
 \subsection{Pre-Fit Impact of the Systematic Uncertainties}\label{sec:uncertainitiesPreFitImpact}
@@ -915,16 +923,15 @@ These output discriminant distributions are used to extract the signal strength 
 
 \subsubsection*{BDT Feature Optimisation}
 From the selected reconstructed physics objects, a large number of possible input variables or \emph{features} were constructed and considered as inputs for the BDT.
+As training a BDT with all of the possible features increases its vulnerability to overtraining, as correlated features are considered multiple times and statistical fluctuations in poorly discriminating features may give the illusion of discriminative power.
 
 In order to determine the optimal set of features, recursive feature elimination was used to those that had the greatest discriminating power between signal and background.
-This process iteratively removes the least important feature and re-trains the BDT until every feature has been ranked in order of their removal (\ie in increasing order of their discriminating power).
-From this list, the features with the best discriminating power are selected for use in the BDT.
+This process iteratively removes the least important feature and re-trains the BDT until every feature has been ranked in order of their removal.
+As each feature is removed from consideration the probability a randomly chosen signal event has a higher discriminator value than a random background event is recorded.
+From this list, the highest ranked features are selected for use in the BDT.
 
-The features chosen by this process for the $ee$ and $\mu\mu$ channels are given in table~\ref{tab:selectedBdtVariables} and 
-Figure~\ref{fig:inputFeaturesDistributions} shows the distributions of the selected features in the signal and background samples.
-Figure~\ref{fig:inputFeaturesDataSimAgreement} shows the good agreement observed between simulation and data for the features selected, demonstrating their reliability.
-Given the number of features used, when a feature is used by both the $ee$ and $\mu\mu$ channels, only the distributions for the one of the channels are given in this chapter.
-The complete set of distributions for both channels is given in Appendix~\ref{app:bdt}.
+The features chosen by this process for the $ee$ and $\mu\mu$ channels are given in table~\ref{tab:selectedBdtVariables}.
+As can be seen in Figures~\ref{fig:corr_ee}-~\ref{fig:corr_mumu}, the majority of these variables are weakly correlated, as indicated by pale squares, signifying that they provide unique and useful information to the BDT.
 Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of all the features that were considered.
 
 \begin{table}[htbp]
@@ -965,24 +972,42 @@ Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of a
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\includegraphics[width=0.97\textwidth]{figs/background-estimation/plots/corr_sig_ee.pdf}
+\\
+\includegraphics[width=0.97\textwidth]{figs/background-estimation/plots/corr_bkg_ee.pdf}
 \caption{
-Distributions of the features chosen for use with the BDT for the signal and background samples.}
-\label{fig:inputFeaturesDistributions}
+The correlations between the features chosen for use with the BDT for the signal (top) and background (bottom) samples for the $ee$ channel.}
+\label{fig:corr_ee}
 \end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.97\textwidth]{figs/background-estimation/plots/corr_sig_mumu.pdf}
+\\
+\includegraphics[width=0.97\textwidth]{figs/background-estimation/plots/corr_bkg_mumu.pdf}
+\caption{
+The correlations between the features chosen for use with the BDT for the signal (top) and background (bottom) samples for the $\mu\mu$ channel.}
+\label{fig:corr_mumu}
+\end{figure}
+
+Figure~\ref{fig:inputFeaturesDataSimAgreement} shows that good agreement was observed between simulation and data for the selected features, demonstrating that they are reliable features.
+
+Given the number of features used, when a feature is used by both the $ee$ and $\mu\mu$ channels, only the distributions for the one of the channels are given in this chapter.
+The complete set of distributions for both channels is given in Appendix~\ref{app:bdt}.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
 \caption{
-Distributions of the features chosen for use with the BDT for the signal and background samples.}
+Distributions comparing the agreement between data and simulation for the variables used as features in the BDT training.}
 \label{fig:inputFeaturesDataSimAgreement}
 \end{figure}
 
 %% HYPERPARAMETERS
 \subsubsection*{BDT Hyperparmeter Optimisation}
-Instead of tuning the choice hyperparmeters for optimal classification performance either by hand or a time and computationally expensive grid search, the optimal choice of hyperparmeters was evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise} to construct and evaluate a regression model based on a Gaussian process.
-
+Instead of tuning the choice hyperparmeters for optimal classification performance either by hand or a time and computationally expensive grid search, a regression model was constructed and evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise}.
+This regression model was constructed using a Gaussian process which identifies of optimal hyperparmeters as the minima of a mteric used to rank the hyperparmeters considered.
+ 
 The hyperparameters considered were:
 \begin{itemize}
 \item \textbf{gamma:} minimum loss reduction required to make a further partition on a node.
@@ -1021,3 +1046,33 @@ Table~\ref{tab:hyperparameters} lists the optimal hyperparameters for the $ee$ a
  \end{tabular}}
 \end{table}
 
+Figure~\ref{fig:bdtResponse} shows the BDT responses for the $ee$ and $\mu\mu$ channels for both the training and testing samples.
+As the response of the BDT classifier for both the training and testing samples are consistent with each other, this implies that little to no overtraining has occurred. 
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.97\textwidth]{figs/background-estimation/plots/response_ee.pdf}
+\\
+\includegraphics[width=0.97\textwidth]{figs/background-estimation/plots/response_mumu.pdf}
+\caption{
+Distributions of the features chosen for use with the BDT for the signal and background samples.}
+\label{fig:bdtResponse}
+\end{figure}
+
+Figures~\ref{fig:inputFeaturesDistributions_ee} and~\ref{fig:inputFeaturesDistributions_mumu} shows the distributions of the selected features in the signal and background samples for the $ee$ and $\mu\mu$ channels, respectively.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.97\textwidth]{figs/background-estimation/plots/vars_ee.pdf}
+\caption{
+Distributions of the features chosen for use with the BDT for the signal and background samples for the $ee$ channel.}
+\label{fig:inputFeaturesDistributions_ee}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.97\textwidth]{figs/background-estimation/plots/vars_mumu.pdf}
+\caption{
+Distributions of the features chosen for use with the BDT for the signal and background samples for the $ee$ channel.}
+\label{fig:inputFeaturesDistributions_mumu}
+\end{figure}
