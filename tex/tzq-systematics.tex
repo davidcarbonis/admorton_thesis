@@ -258,7 +258,10 @@ The two most dominant background processes are Z+jets and \ttbar production, wit
 The remaining single top (tHq, tWZ, s-channel, t-channel), \ttbarW, \ttbarH, WW and triboson backgrounds produce contributions smaller than the signal process.
 
 \section{Signal Region Background Estimation}\label{sec:simBackgrounds}
-The final event yield after applying the full selection criteria and simulation corrections for the signal region on the simulated samples, including non-prompt lepton contribution estimated from data (see Section~\ref{sec:NPLs}), compared to data is shown in table~\ref{tab:signalYields}.
+The final event yield after applying the full selection criteria and simulation corrections for the signal region on the simulated samples
+
+
+ including non-prompt lepton contribution estimated from data (see Section~\ref{sec:NPLs}), compared to data is shown in table~\ref{tab:signalYields}.
 
 While jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process, the signal region is  dominated by background processes involving a real Z boson decay or two leptons from W boson decays.
 The two dominant background processes are Z+jets and \ttbar, with the single top tW-channel, \ttbarZ, WZ and ZZ processes contributing a similar order of events as tZq processes.
@@ -533,7 +536,7 @@ This decision was taken as while a NLO description of this large multi-jet backg
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_ttbarInc/nJets_lepSel.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_DYamcatnlo_noSF/nJets_lepSel.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_DYamcatnlo/nJets_lepSel.pdf}
 \caption{
 The distributions of the number of jets in the zero b-tagged jets Z+jets control region following the lepton selection criteria and associated simulation corrections for Madgraph (left) and aMC@NLO (right) MC samples in the $\mu\mu$ channel.
 }
@@ -542,17 +545,17 @@ The distributions of the number of jets in the zero b-tagged jets Z+jets control
 
 \begin{figure}[tbp]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/leadingJetPt_jetSel.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_DYamcatnlo_noSF/leadingJetPt_jetSel.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/leadingJetPt_jetSel.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/leadingJetPt_jetSel.pdf}
 \\
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/secondJetPt_jetSel.pdfpdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_DYamcatnlo_noSF/secondJetPt_jetSel.pdfpdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/secondJetPt_jetSel.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/secondJetPt_jetSel.pdf}
 \\
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/thirdJetPt_jetSel.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_DYamcatnlo_noSF/thirdJetPt_jetSel.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/thirdJetPt_jetSel.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/thirdJetPt_jetSel.pdf}
 \\
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/fourthJetPt_jetSel.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_DYamcatnlo_noSF/fourthJetPt_jetSel.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/fourthJetPt_jetSel.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/fourthJetPt_jetSel.pdf}
 \caption{
 The distributions of the leading four jets \pt in the nominal Z+jets control region following the application of the jet selection criteria and simulation corrections for Madgraph (left) and aMC@NLO (right) MC samples in the $ee$ channel.
 }
@@ -965,6 +968,9 @@ Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of a
     zEta & Reconstructed Z boson $\eta$ & - & $2.111 \times 10^{-2}$ \\
     zlb2DelR & $\Delta R$ between the Z boson candidate and subleading b-tagged jet & $2.627\times 10^{-2}$ & - \\
     fourthJetPt & Fourth jet \pt & $1.873 \times 10^{-2}$ & - \\ 
+    \hline
+ \end{tabular}}
+\end{table}
 
 \begin{figure}[htbp]
 \centering
@@ -1003,10 +1009,10 @@ Distributions comparing the agreement between data and simulation for the variab
 Instead of tuning the of choice hyperparameters for optimal classification performance either by hand or using a time and computationally expensive grid search, a regression model was constructed and evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise}.
 This regression model identifies the set of optimal hyperparameters as the minima of a metric used to rank the hyperparameters considered.
  
-Table~\ref{tab:hyperparameters} lists the set of hyperparameters for the $ee$ and $\mu\mu$ channels whose optimal values were found to differ from their default values.
+Table~\ref{tab:hyperparameters} lists the set of hyperparameters and their values for the $ee$ and $\multicolumn{•}{•}{•}\mu$ channels whose optimal values differ from their default values.
 Further descriptions of all of the hyperparameters available are given in~\ref{xgboost}.
 
-\begin{table}[htbp]
+%\begin{table}[htbp]
 \topcaption {The optimal hyperparameters for the $ee$ and $\mu\mu$ channels for XGBoost that were found by \emph{Scikit-Optimize} and the maximum and minimum values that they can take.
 }
 \label{tab:hyperparameters}
