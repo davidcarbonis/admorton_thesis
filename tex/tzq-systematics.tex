@@ -892,7 +892,7 @@ Following each training iteration the dataset is reweighted based on the success
 At the end of this process a weighted average (based) of all the weak learners are combined to produce a single strong learner.
 
 Therefore by extending boosting to decision trees, the resultant forest of Boosted Decision Trees produces a classifier that is both much more effective and resilient to fluctuations in the training sample than one created by a single tree.
-Typically the classifier produced by a BDT takes the form of a single discriminator whose response ranges between -1 to +1, denoting completely background-like and signal-like objects, respectively.
+Typically the classifier produced by a BDT takes the form of a single discriminator whose response ranges between $-1$ to $+1$, denoting completely background-like and signal-like objects, respectively.
 
 BDTs are however, particularly sensitive to the effects of \emph{overtraining}.
 This phenomena occurs when a BDT is overly optimised on correctly classifying events from the training dataset and results in the poor classification of unseen data.
@@ -946,7 +946,7 @@ Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of a
 % This right-aligns numbers in column, but centers them under column title.
 \begin{tabular}{cccc}
    \hline\
-   \multirow{2}{*}{\textbf{Input variable}} & \multirow{2}{*}{\textbf{Description}} & \multicolumn{2}{c}{\textbf{Discriminating Power}} \\
+   \multirow{2}{*}{\textbf{Input variable}} & \multirow{2}{*}{\textbf{Description}} & \multicolumn{2}{c}{\textbf{Discriminating Power}}  \\
    & & \textbf{$ee$} & \textbf{$\mu\mu$} \\
    \hline
     topMass & Reconstructed top quark mass & $1.449 \times 10^{-1}$  & $1.794 \times 10^{-1}$  \\
@@ -1008,12 +1008,12 @@ Distributions comparing the agreement between data and simulation for the variab
 \subsubsection*{BDT Hyperparameter Optimisation}
 Instead of tuning the of choice hyperparameters for optimal classification performance either by hand or using a time and computationally expensive grid search, a regression model was constructed and evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise}.
 This regression model identifies the set of optimal hyperparameters as the minima of a metric used to rank the hyperparameters considered.
- 
-Table~\ref{tab:hyperparameters} lists the set of hyperparameters and their values for the $ee$ and $\multicolumn{•}{•}{•}\mu$ channels whose optimal values differ from their default values.
-Further descriptions of all of the hyperparameters available are given in~\ref{xgboost}.
 
-%\begin{table}[htbp]
-\topcaption {The optimal hyperparameters for the $ee$ and $\mu\mu$ channels for XGBoost that were found by \emph{Scikit-Optimize} and the maximum and minimum values that they can take.
+Table~\ref{tab:hyperparameters} lists the set of hyperparameters and their values for the $ee$ and $\mu\mu$ channels whose optimal values differ from their default values.
+Further descriptions of all of the hyperparameters available are given in~\cite{xgboost}.
+
+\begin{table}[htbp]
+\topcaption {The optimal hyperparameters for the $ee$ and $\mu\mu$ channels for XGBoost that were found by the regression model and the maximum and minimum values that they can take.
 }
 \label{tab:hyperparameters}
   \centering
