@@ -435,6 +435,7 @@ $N_{data}^{OS non-prompt}$: & 37.571$\pm$11.271 & 35.681$\pm$10.704 \\
 
 \subsection{Z+jets Background}\label{subsec:zPlusJetsEstimation}
 Both of the Z+jets enriched control regions, as defined in Section~\ref{subsec:zPlusJetsCR}, were designed to provide an orthogonal region that was topologically similar to the signal region to validate if the simulated Z+jets samples considered accurately modelled this process in data.
+Both a l
 
 The final event yield after applying for all of the selection criteria and simulation corrections for the zero b-tagged jets control region is given in table~\ref{tab:zPlusControlYieldsOld} and the \MET and inverted W boson mass cut control region in table~\ref{tab:zPlusControlYieldsNew}.
 As can be seen in these tables, it was found that the zero b-tagged jets control region had a purity of 94\% and the \MET and inverted W boson mass cut had a purity of 82\$.
@@ -890,8 +891,9 @@ Therefore by extending boosting to decision trees, the resultant forest of Boost
 Typically the classifier produced by a BDT takes the form of a single discriminator whose response ranges between -1 to +1, denoting completely background-like and signal-like objects, respectively.
 
 BDTs are however, particularly sensitive to the effects of \emph{overtraining}.
-This phenomena occurs when BDT is overly optimised on correctly classifying the dataset used to train it and results in the poor classification of unseen data.
-In order to minimise any potential of overtraining, the signal and background process samples are typically split into training and testing samples, where the latter samples are used to check the validity of the BDT trained with the former.
+This phenomena occurs when a BDT is overly optimised on correctly classifying events from the training dataset and results in the poor classification of unseen data.
+In order to minimise the potential of overtraining occurring, the signal and background process samples are typically split into training and testing samples.
+The testing samples are not trained on in order to check the effectiveness of the BDT trained using the training sample.
 
 Two of the most common boosting algorithms used with decision trees are the Adaptive Boosting (\emph{AdaBoost})~\cite{Friedman:additivelogistic} and \emph{Gradient Boosting}~\cite{Friedman:greedyfunction,Friedman:GradientBoosting} algorithms.
 Adaboost adjusts the weighting assigned to both  misclassified objects and the best performing weak learners after each iteration so that the best learners are trained to correctly identify the most difficult objects.
@@ -927,7 +929,7 @@ This process iteratively removes the least important input variable and re-train
 From this process, the highest ranked input variables are identified for use in the BDT.
 
 The input variables chosen by this method for the $ee$ and $\mu\mu$ channels are given in table~\ref{tab:selectedBdtVariables}.
-As can be seen in Figures~\ref{fig:corr_ee}-~\ref{fig:corr_mumu}, the majority of these variables are weakly correlated, as indicated by pale squares, signifying that they provide unique and useful information to the BDT.
+As can be seen in Figures~\ref{fig:corr_ee}-\ref{fig:corr_mumu}, the majority of these variables are weakly correlated, as indicated by pale squares, signifying that they provide unique and useful information to the BDT.
 Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of all the input variables that were considered.
 
 \begin{table}[htbp]
@@ -943,28 +945,25 @@ Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of a
    \multirow{2}{*}{\textbf{Input variable}} & \multirow{2}{*}{\textbf{Description}} & \multicolumn{2}{c}{\textbf{Discriminating Power}} \\
    & & \textbf{$ee$} & \textbf{$\mu\mu$} \\
    \hline
-    bTagDisc & Leading b-tagged jet b-tag output discriminant & 0 & $4.529 \times 10^{-2}$ \\ 
-    jetHt & ${\ensuremath{H_{\mathrm{T}}}}$ of all the jets in an event & - & $3.413 \times 10^{-2}$ \\ 
-    jetMass & Total mass of every jet in an event & $1.467 \times 10^{-1}$  & $5.747 \times 10^{-2}$  \\
-    jjDelR & $\Delta R$ between the leading jets & $5.778 \times 10^{-2}$  & $6.405 \times 10^{-2}$  \\ 
-    leadJetEta & Leading jet $\eta$ & $2.222 \times 10^{-2}$ & $6.756\times 10^{-2}$  \\
-    leadJetPt & Leading jet \pt & $0$ & $4.098 \times 10^{-2}$  \\ 
-    secJetPt & Second jet \pt & -  & $3.916 \times 10^{-2}$  \\
-    thirdJetPt & Third jet \pt & $0$  & $3.613 \times 10^{-2}$  \\ 
-    fourthJetPt & Fourth jet \pt & - & $3.391 \times 10^{-2}$ \\ 
-    met & Missing transverse energy & $1.822 \times 10^{-1}$  & $7.587 \times 10^{-2}$  \\
-    wPairMass & Reconstructed W boson mass & -  & $4.894 \times 10^{-2}$  \\
-    wQuark2Eta & Subleading W boson candidate jet $\eta$ & - & $4.342 \times 10^{-2}$ \\
-    lepHt & ${\ensuremath{H_{\mathrm{T}}}}$ of the Z boson candidate's leptons & - & $5.325 \times 10^{-2}$ \\
-    zEta & Reconstructed Z boson $\eta$ & - & $6.129 \times 10^{-2}$ \\
-    zMass & Reconstructed Z boson mass & $3.644 \times 10^{-1}$  & $7.085 \times 10^{-2}$  \\
-    zTopDelR & $\Delta R$ between the Z boson and top quark candidates & - & $4.778 \times 10^{-2}$ \\
-    zjminR & Minimum $\Delta R$ between the Z boson candidate and any jet & - & $4.178 \times 10^{-2}$ \\
-    topMass & Reconstructed top quark mass & $1.067 \times 10^{-1}$  & $8.076 \times 10^{-2}$  \\
-    totHtOverPt & Total ${\ensuremath{H_{\mathrm{T}}}}$ divided by total \pt & $1.200 \times 10^{-1}$  & $5.738 \times 10^{-2}$  \\
-   \hline
- \end{tabular}}
-\end{table}
+    topMass & Reconstructed top quark mass & $1.449 \times 10^{-1}$  & $1.794 \times 10^{-1}$  \\
+    zMass & Reconstructed Z boson mass & $1.202 \times 10^{-1}$  & $1.372 \times 10^{-1}$  \\
+    jetMass & Total mass of every jet in an event & $1.079 \times 10^{-1}$  & $9.304 \times 10^{-2}$  \\
+    met & Missing transverse energy & $9.100 \times 10^{-2}$  & $9.382 \times 10^{-2}$  \\
+    bTagDisc & Leading b-tagged jet b-tag output discriminant & $6.773 \times 10^{-2}$  & $6.372 \times 10^{-2}$ \\ 
+    leadJetPt & Leading jet \pt & $6.093 \times 10^{-2}$ & $4.926 \times 10^{-2}$  \\ 
+    jjDelR & $\Delta R$ between the leading jets & $5.300 \times 10^{-2}$  & $3.987 \times 10^{-2}$  \\ 
+    wPairMass & Reconstructed W boson mass & $5.093 \times 10^{-2}$ & $4.808 \times 10^{-2}$  \\
+    lepHt & ${\ensuremath{H_{\mathrm{T}}}}$ of the Z boson candidate's leptons & $4.620\times 10^{-2}$ & $5.395 \times 10^{-2}$ \\
+    totHtOverPt & Total ${\ensuremath{H_{\mathrm{T}}}}$ divided by total \pt & $4.487 \times 10^{-2}$  & $3.284 \times 10^{-2}$  \\
+    leadJetEta & Leading jet $\eta$ & $4.467 \times 10^{-2}$ & $6.138 \times 10^{-2}$  \\
+    jetHt & ${\ensuremath{H_{\mathrm{T}}}}$ of all the jets in an event & - & $5.629 \times 10^{-2}$ \\ 
+    secJetPt & Second jet \pt & $4.453 \times 10^{-2}$ & -  \\
+    zl1Quark2DelR & $\Delta R$ between the leading lepton and W boson candidate's subleading jet & $4.093\times 10^{-2}$ & - \\
+    thirdJetPt & Third jet \pt & $3.720 \times 10^{-2}$  & $3.753 \times 10^{-2}$  \\ 
+    zlb1DelR & $\Delta R$ between the Z boson candidate and leading b-tagged jet & - & $3.245 \times 10^{-2}$ \\    
+    zEta & Reconstructed Z boson $\eta$ & - & $2.111 \times 10^{-2}$ \\
+    zlb2DelR & $\Delta R$ between the Z boson candidate and subleading b-tagged jet & $2.627\times 10^{-2}$ & - \\
+    fourthJetPt & Fourth jet \pt & $1.873 \times 10^{-2}$ & - \\ 
 
 \begin{figure}[htbp]
 \centering
@@ -1003,8 +1002,8 @@ Distributions comparing the agreement between data and simulation for the variab
 Instead of tuning the of choice hyperparameters for optimal classification performance either by hand or using a time and computationally expensive grid search, a regression model was constructed and evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise}.
 This regression model identifies the set of optimal hyperparameters as the minima of a metric used to rank the hyperparameters considered.
  
-Table~\ref{tab:hyperparameters} lists the set of hyperparameters for the $ee$ and $\mu\mu$ channels whose optimal values were found by the regression model to differ from their default values.
-Further
+Table~\ref{tab:hyperparameters} lists the set of hyperparameters for the $ee$ and $\mu\mu$ channels whose optimal values were found to differ from their default values.
+Further descriptions of all of the hyperparameters available are given in~\ref{xgboost}.
 
 \begin{table}[htbp]
 \topcaption {The optimal hyperparameters for the $ee$ and $\mu\mu$ channels for XGBoost that were found by \emph{Scikit-Optimize} and the maximum and minimum values that they can take.
@@ -1016,16 +1015,16 @@ Further
 % This right-aligns numbers in column, but centers them under column title.
 \begin{tabular}{lccccc}
    \hline
-   \textbf{Option} & \textbf{Min} & \textbf{Max} & \textbf{$ee$} & \textbf{$\mu\mu$}\\
+   \textbf{Option} & \textbf{$ee$} & \textbf{$\mu\mu$}\\
    \hline
-    $\gamma$ & $10^{-5}$ & 100 & 9.79 \\
-    Learning rate & $10^{-5}$ & 10 & $5.70 \times 10^{-2}$ \\
-    maximum tree depth & 2 & 10 & 5 & 3\\
-    Minimum child weight & $10^{-5}$ & 100 & 30.6 & 3.40 \\
-    Number of estimators & 25 & 7500 & 2338 & 6280 \\
-    reg\_alpha & $10^{-5}$ & 1000 & $2.31 \times 10^{-3}$ & $1.33 \times 10^{-2}$ \\
-    reg\_lambda & $10^{-5}$ & 1000 & 71.5 & $1.96 \times 10^{-4}$ \\
-    Subsample & 0.5 & 1 & 0.504 & 0.801 \\
+    Number of estimators & 5000 & 3282 \\
+    Subsample & 0.5 & 1.0 \\
+    Learning rate & $2.82\times10^{-3}$ & $19.56\times10^{-3}$  \\
+    Maximum tree depth & 2 & 2\\
+    Minimum child weight & 1.496 & $1\times10^{-05}$ \\
+    $\gamma$ & $56.2\times10^{-3}$ & 5.404 \\
+    $\alpha$ & $1.63\times10^{-3}$ & $2.89$ \\
+    $\lambda$ & 0.606 & 1.473 \\
    \hline
  \end{tabular}}
 \end{table}
