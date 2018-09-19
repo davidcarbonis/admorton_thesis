@@ -801,10 +801,9 @@ The uncertainty associated with the cross sections of the simulated samples was 
 While the CMS Collaboration's search for tZq production using the trilepton channel at $\sqrt{s} = 13\TeV$ assumed a value of 30\% for this source of systematic uncertainty~\cite{Sirunyan:2017nbr}, it is now CMS policy to assume an uncertainty of 10\%.
 
 \subsubsection{Factorisation and renormalisation scales}
-In order to consider the impact of the uncertainty associated with the choice of factorisation ($\mu_{F}$) and renormalisation scales ($\mu_{R}$) used in the generation of the simulation samples, they are simultaneously varied up and down by factors of 2 and 0.5, respectively.
+In order to consider the impact of the uncertainty associated with the choice of factorisation ($\mu_{F}$) and renormalisation scales ($\mu_{R}$) used in the generation of the simulation samples, they are simultaneously varied up and down by from their nominal value of the Z boson mass by factors of 2 and 0.5, respectively.
 
 Events weights are produced for the variation of $\mu_{F}$ and $\mu_{R}$ at the ME level, where both scales are varied simultaneously in order to evaluate the impact of the uncertainties for these scales.
-
 The impact of varying $\mu_{F}$ and $\mu_{R}$ for the PS level however, was evaluated through the use of dedicated samples for certain processes.
 These centrally produced samples are listed in Table~\ref{tab:theorySampleList} as the ``scale up'' and ``scale down'' samples. 
 
@@ -815,14 +814,12 @@ The dedicated samples for these variations are listed in able~\ref{tab:theorySam
 As mentioned above in Section~\ref{subsec:pdfSysts}, it was not possible for the single top tW-channel MC samples to be produced with per-event weights to account for the matrix element factorisation and renormalisation scales.
 To account for this, the ``scale up'' and ``scale down'' samples listed in Table~\ref{tab:theorySampleList} for tW production also include the impact of varying $\mu_{F}$ and $\mu_{R}$ for both the ME and PS levels.
 
-\subsubsection{Parton Shower Matching Thresholds}
-
-As discussed in Section~\ref{sec:samples}
-at which the ME calculations are matched to the PS
-
-threshold = hdamp^2 / pt^2 + hdamp^2; hdamp = 1.58m_top
-
-The uncertainty associated with this choice of matching threshold was evaluated using dedicated samples where the matching threshold energy is varied up and down by one standard deviation~\cite{CMS:2016kle}.
+\subsubsection{Matrix Element - Parton Shower Matching Thresholds}
+%As discussed in Section~\ref{sec:samples}
+%at which the ME calculations are matched to the PS
+%
+%threshold = hdamp^2 / pt^2 + hdamp^2; hdamp = 1.58m_top
+The uncertainty associated with the matching threshold used by POWHEG, discussed in Section~\ref{sec:sim}, was evaluated using dedicated samples where the matching threshold energy is varied up and down by one standard deviation~\cite{CMS:2016kle}.
 This source of uncertainty is evaluated for the \ttbar and single top t-channel backgrounds generated with POWHEG and the samples used this are listed in table~\ref{tab:theorySampleList} as ``matching''.
 
 \subsection{Pre-Fit Impact of the Systematic Uncertainties}\label{sec:uncertainitiesPreFitImpact}
