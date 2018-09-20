@@ -44,8 +44,16 @@ The simulation of a process involves the generation, simulation, digitisation an
 The generation stage involves the use \emph{event generators} to simulate the proton-proton interactions and the resultant physics processes~\cite{Buckley:2011ms,Hoche:2014rga}.
 The first stage of generation models the hard interactions between the partons of the two incoming protons: using Parton Distribution Functions to provide a detailed description of the internal structure of the two protons in their initial state and perturbative methods to determine the Matrix Elements (ME) of the hard process.
 The second stage models the resultant Parton Showers (PS) through an iterative process until the infrared cutoff scale for the shower is reached and perturbation theory is no longer applicable.
+In order to combine the well separated particles described in the ME calculations with the lower \pT particles in the PS
+
+
 The remaining particles in this stage undergo hadronisation using a non-perturbative modelling process using either the Lund String Model~\cite{Andersson:1983ia} and the Cluster Model~\cite{Winter:2003tt}.
 The various event generators used in the production of MC samples used in this thesis are discussed in Section~\ref{subsec:eventGenerators}.
+
+%As discussed in Section~\ref{sec:samples}
+%at which the ME calculations are matched to the PS
+%
+%threshold = hdamp^2 / pt^2 + hdamp^2; hdamp = 1.58m_top
 
 Following the generation stage, the simulation and digitisation stages involves passing the generation output through a complete simulation of the CMS detector that has been with the GEANT4 program~\cite{geant4,Lefebure:1999wja}.
 This process models particle interactions and decays and the propagation of particles through the detector and the detector's electronics response.
