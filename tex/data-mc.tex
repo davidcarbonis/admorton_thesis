@@ -43,12 +43,26 @@ As MC simulation is meant to provide a realistic description of physics processe
 
 The simulation of a process involves the generation, simulation, digitisation and reconstruction of an event.
 
-The generation stage involves the use \emph{event generators} to simulate the proton-proton interactions and the resultant physics processes~\cite{Buckley:2011ms,Hoche:2014rga}.
-The first stage of generation models the hard interactions between the partons of the two incoming protons.
-Parton Distribution Functions are used to provide a detailed description of the internal structure of the two protons in their initial state and perturbative methods are used to determine the Matrix Elements (ME) of the hard process.
-The second stage models the resultant Parton Showers (PS) through an iterative process until the factorisation scale for the shower is reached and perturbation theory is no longer applicable.
+The generation stage involves the use \emph{event generators} to simulate all aspects of a physics event from the initial protons to the hadronised remmants of the collision and the proton 
+remmants~\cite{Buckley:2011ms,Hoche:2014rga}.
 
-In order to combine the well separated particles described in the ME calculations with the lower \pT particles in the PS
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=0.7\textwidth]{figs/data-mc/event.png}
+%\caption{
+%}
+%\label{fig:generation}
+%\end{figure}
+%
+%Figure~\ref{fig:generation} illustrates the various stages involved in the generation process.
+Parton Distribution Functions are used to provide a detailed description of the internal structure of the two protons in their initial state.
+
+Using this description of the incoming protons, the event generator uses perturbative methods to calculate the Matrix Elements (ME) for the hard interaction .
+
+The following \emph{Parton Shower} (PS) stage models the hadronisation of the outgoing partons through an iterative process until the factorisation scale for the shower is reached and perturbation theory is no longer applicable.
+The PS stage also includes the simulation of gluons or quarks being radiated from the initial state (ISR) and final state partons.
+
+The well separated particles produced by the ME stage are \emph{matched} to the lower \pT particles in the PS stage.
 
 
 Following the PS stage, the remaining particles undergo hadronisation using a non-perturbative modelling process using either the Lund String Model~\cite{Andersson:1983ia} and the Cluster Model~\cite{Winter:2003tt}.
