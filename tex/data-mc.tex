@@ -55,10 +55,9 @@ remmants~\cite{Buckley:2011ms,Hoche:2014rga}.
 %\end{figure}
 %
 %Figure~\ref{fig:generation} illustrates the various stages involved in the generation process.
-Parton Distribution Functions are used to provide a detailed description of the internal structure of the two protons in their initial state.
 
-Using this description of the incoming protons, the event generator uses perturbative methods to calculate the Matrix Elements (ME) for the hard interaction .
-
+The initial generation stage models the hard interaction of the two incoming protons, where perturbative methods are used to calculate the Matrix Elements (ME) for the hard interaction.
+This stage uses PDFs to provide a detailed description of the internal structure of the two protons in their initial state.
 The following \emph{Parton Shower} (PS) stage models the hadronisation of the outgoing partons through an iterative process until the factorisation scale for the shower is reached and perturbation theory is no longer applicable.
 The PS stage also includes the simulation of gluons or quarks being radiated from the initial state (ISR) and final state partons.
 
@@ -79,6 +78,14 @@ The output from this stage then undergoes the same reconstruction process that d
 
 The simultaneous inelastic proton-proton collisions that occur known as pile-up are included in event simulation by sampling large statistics samples minimum bias events and overlapping them with the simulated events from the process being generated.
 As \PU modelled in simulation does not adequately describe observed \PU in data, it is reweighted as described in Section~\ref{subsec:puSF}.
+
+The MC events produced are weighted by a scale factor in order to correctly normalise them with respect to the data they are compared against.
+This normalisation scale factor is given by:
+\begin{equation}
+SF_{dataset} = \frac{\pazocal{L} \sigma}{N_{MC}^{Events}}
+\end{equation}
+where $\pazocal{L}$ is the amount of total integrated luminosity considered in the data used, $\sigma$ the cross section of the MC sample considered and $N_{MC}^{Events}$ is number of simulated events considered for the process.
+
 
 \subsection{Event Generators}\label{subsec:eventGenerators}
 A number of event generators are used by CMS to produce the MC simulation samples used to describe the expected processes produced.
