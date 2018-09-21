@@ -9,16 +9,6 @@ The event simulation and objection reconstruction algorithms which are relevant 
 As MC simulation is meant to provide a realistic description of physics processes, both accurate modelling of these processes and a detailed understanding of how physical processes interact with the CMS detector are required to produce events in the same format as raw proton-proton collision data prior to undergoing the same reconstruction process.
 
 
-%In hadron collisions,
-%
-%As model hadron collision we need
-%As a hadron contains not jist sea of gluons and quarks from the continuous gluon splitting inside it in addition to its constituent valence quarks, 
-%
-%For the accurate modelling of hadron collisions, knowledge of the internal structure of each hadron 
-%
-%The inability to directly measure 
-%Another difficulty arises from colour confinement preventing 
-% the accurate modelling 
 %
 %The 
 %continual gluon splitting inside a hadron results in it  
@@ -56,21 +46,13 @@ remmants~\cite{Buckley:2011ms,Hoche:2014rga}.
 %
 %Figure~\ref{fig:generation} illustrates the various stages involved in the generation process.
 
-The initial generation stage models the hard interaction of the two incoming protons, where perturbative methods are used to calculate the Matrix Elements (ME) for the hard interaction.
-This stage uses PDFs to provide a detailed description of the internal structure of the two protons in their initial state.
+The initial generation stage models the hard interaction of the two incoming protons, where perturbative methods are used to calculate the Matrix Elements (ME) for the hard interaction and the momentum fractions of the incoming partons are sampled from a PDF.
 The following \emph{Parton Shower} (PS) stage models the hadronisation of the outgoing partons through an iterative process until the factorisation scale for the shower is reached and perturbation theory is no longer applicable.
 The PS stage also includes the simulation of gluons or quarks being radiated from the initial state (ISR) and final state partons.
-
-The well separated particles produced by the ME stage are \emph{matched} to the lower \pT particles in the PS stage.
-
-
 Following the PS stage, the remaining particles undergo hadronisation using a non-perturbative modelling process using either the Lund String Model~\cite{Andersson:1983ia} and the Cluster Model~\cite{Winter:2003tt}.
 The various event generators used in the production of MC samples used in this thesis are discussed in Section~\ref{subsec:eventGenerators}.
 
-%As discussed in Section~\ref{sec:samples}
-%at which the ME calculations are matched to the PS
-%
-%threshold = hdamp^2 / pt^2 + hdamp^2; hdamp = 1.58m_top
+Depending on the generator used, different \emph{matching} methods are used to ensure that the description of the well separated particles produced by the ME stage are consistent with the lower \pT particles in the PS stage.
 
 Following the generation stage, the simulation and digitisation stages involves passing the generation output through a complete simulation of the CMS detector that has been with the GEANT4 program~\cite{geant4,Lefebure:1999wja}.
 This process models particle interactions and decays and the propagation of particles through the detector and the detector's electronics response.
@@ -82,9 +64,9 @@ As \PU modelled in simulation does not adequately describe observed \PU in data,
 The MC events produced are weighted by a scale factor in order to correctly normalise them with respect to the data they are compared against.
 This normalisation scale factor is given by:
 \begin{equation}
-SF_{dataset} = \frac{\pazocal{L} \sigma}{N_{MC}^{Events}}
+SF_{dataset} = \frac{\mathcal{L} \sigma}{N_{MC}^{Events}}
 \end{equation}
-where $\pazocal{L}$ is the amount of total integrated luminosity considered in the data used, $\sigma$ the cross section of the MC sample considered and $N_{MC}^{Events}$ is number of simulated events considered for the process.
+where $\mathcal{L}$ is the amount of total integrated luminosity considered in the data used, $\sigma$ the cross section of the MC sample considered and $N_{MC}^{Events}$ is number of simulated events considered for the process.
 
 
 \subsection{Event Generators}\label{subsec:eventGenerators}
@@ -96,11 +78,6 @@ Perturbative calculations of the MEs of the QCD and electroweak processes are do
 The MC event generators used to model the background and signal processes for the analysis presented in this thesis are as follows:
 
 \begin{itemize}
-%\item \textbf{Madgraph} - Madgraph~\cite{Alwall:2011uj} is a package which performs tree-level perturbativecalculations to produce matrix elements at Leading Order (LO) for processes %such as decays and 2 $\rightarrow$ n scatterings through evaluating the ME for a given phase space point for all the Feynman diagrams produced.
-
-%\item \textbf{Madgraph5}~\cite{Alwall:2011uj} is a package that performs tree-level perturbative calculations to produce matrix elements at LO for processes.
-%This is done by evaluating the ME for a given phase space point for all the Feynman diagrams produced.
-
 \item \textbf{MADGRAPH5\_aMC@NLO 2.2.2}~\cite{Alwall:2014hca} is the new version of MadGraph$5$ and the aMC@NLO generators.
 It is capable of evaluating tree-level and one-loop Feynman diagrams for a given phase space point for all the Feynman diagrams produced to produce matrix elements at NLO.
 Considering the constructive and destructive interferences which result from considering both the leading and higher order cross section terms results in positively and negatively weighted events.
@@ -109,6 +86,7 @@ This scale factor considers the ratio of the total number of events to the effec
 \begin{equation}
 SF^{NLO} = \frac{N^{postive events} + N^{negative events}}{N^{postive events} - N^{negative events}} \times \frac{|event weight|}{event weight} \;
 \end{equation}
+For MEs generated at LO, MLM-merging scheme is used to match ME-PS the FxFx-merging scheme for 
 
 \item \textbf{POWHEG V2} (The Positive Weight Hardest Emission Generator)~\cite{Alioli:2010xd} is a framework that interfaces NLO ME calculations with PS generators.
 As its name suggests, POWHEG produces the hardest emission first by using the exact NLO ME and only produces positively weighted events.
@@ -116,11 +94,15 @@ When it is interfaced with a generator that orders emissions by \pT or allows th
 Therefore, the double counting of low-\pT emissions is avoided and thus the need for negatively weighted events.
 As POWHEG V2 was not capable of simulating the single top tW-channel process at the time the simulated samples were produced, the tW-channel samples listed in Section~\ref{sec:samples} were created using POWHEG V1.
 
+%As discussed in Section~\ref{sec:samples}
+%at which the ME calculations are matched to the PS
+%
+%threshold = hdamp^2 / pt^2 + hdamp^2; hdamp = 1.58m_top
+
+
 \item \textbf{PYTHIA 8:}~\cite{Sjostrand:2014zea} is a general-purpose generator that is capable of generating all aspects of a process to form a complete event.
 It can also used to take the output of a ME event generator and perform the parton showering and hadronisation required to produce the full event. For all of the MC samples considered in Section~\ref{sec:samples} for the analysis presented, PYTHIA 8 is used to develop the samples from their ME event generator output into a full event.
 \end{itemize}
-
-
 
 \section{Object Reconstruction}\label{sec:reco}
 Using the output of all the CMS sub-detectors, a full reconstruction of the triggered physics event is undertaken.
