@@ -1,5 +1,5 @@
 \chapter{Conclusion}\label{chapter:conclusion}
-Following the restart of the LHC in 2015, its increased centre-of-mass collision energies and instantaneous luminosities have made it possible to make undertake measurements of rare processes involving top quark and electroweak interactions.
+%Following the restart of the LHC in 2015, its increased centre-of-mass collision energies and instantaneous luminosities have made it possible to make undertake measurements of rare processes involving top quark and electroweak interactions.
 
 In this thesis a search was presented for the production of a top quark in association with a Z boson using the dilepton final state using a shape based analysis.
 This analysis focussed on understanding the contributions from processes that produce non-prompt leptons and suppressing the Z+jets and \ttbar processes.
@@ -8,6 +8,7 @@ A cross section of $\sigma (\textrm{tZq}, Z \rightarrow l^{+} l^{-}) = 505.5^{14
 Using simulation, the expected significance was determined to be $0.705 \sigma$.
 
 This is both the first measurement and the first evidence that has been found for tZq that has been made using the dilepton final state.
+As the search for tZq is statistically limited, it is expected that discovery of this process using the dilepton final state should be achievable by extending the analysis to incorporate additional data collected by the CMS experiment.
 
 %For the combination of both final states, at 95\% CL, the observed signal strength for tZq production was determined to be $5.366_{-1.638}^{+1.565}$, corresponding to an expected significance of $3.547 \sigma$. %$4.74^{+1.69}_{-1.51$}
 
@@ -21,7 +22,6 @@ This is both the first measurement and the first evidence that has been found fo
 %Once unblinded, this will be the first limit that has been set on tZq production using the dilepton final state.
 
 %%%
-As the search for tZq is statistically limited, it is expected that discovery of this process should using the dilepton final state should be achievable by extending the analysis to incorporate additional data collected by the CMS experiment.
 Since
 
 This result is based on the February 2017 reprocessing of the 2016 data and September 2016 reprocessing of the corresponding simulation samples.
@@ -35,14 +35,17 @@ Alternative lepton selection and b-tagging algorithms have improved the event se
 Once an accurate measurement of the tZq cross section can be made, it should be possible to probe  the strength of the WZ and tZ couplings in this process and compare them to SM predictions.
 In addition, limits on FCNC
 
+%%%%%%
+%TMTT%
+%%%%%%
 In order to take full advantage of the high luminosity environment of the HL-LHC, it is planned replace the current CMS tracking detector with one which is capable of contributing information to the CMS Level-1 trigger.
-The \emph{TMTT} collaboration proposed a track finder system for the upgraded CMS tracker that identifies track candidates using time-multiplexed Hough Transforms in the \rphi plane, a Kalman Filter to filter these candidates and and precisely fit track parameters to them and a duplicate removal process.
+The \emph{TMTT} collaboration has proposed a track finder system for the upgraded CMS tracker that identifies track candidates using time-multiplexed Hough Transforms in the \rphi plane, a Kalman Filter to filter these candidates and and precisely fit track parameters to them and a duplicate removal process.
 During the development of a hardware demonstrator for a review of three developed track finding systems in 2016, a linearised $\chi^{2}$ track fitting algorithm was explored as an alternative to the \KF.
 The linearised $\chi^{2}$ track fitting algorithm was shown to be capable of both fitting precise helix parameters to the tracks found by the \HT and filtering out hits incorrectly assigned to tracks and incorrectly reconstructed tracks.
 Following the evaluation and comparison of both the $\chi^{2}$ track fit algorithm and the \KF, it was decided not to continue development of the former algorithm.
 This decision was made as it was determined that the \KF filtering and fitting performance was superior than that of the $\chi^{2}$ track fit, particularly in the forward regions.
 
-A number of issues will need to be addressed if the the linearised $\chi^{2}$ track fitting algorithm is to be considered a viable alternative to the other track fitters developed for the \emph{TMTT} project.
+If the the linearised $\chi^{2}$ track fitting algorithm is to be considered a viable alternative to the other track fitters developed for the \emph{TMTT} project.
 While only a small number of track derivatives are required for the calculations in the barrel region, it is uncertain whether there are sufficient resources to tabulate the endcap derivatives required on current hardware.
 If it can be demonstrated that current FPGAs can implement this algorithm, it will need to be demonstrated that the $\chi^{2}$ track fitter's performance is competitive with the \KF and \LR.
 While it may not be possible to make the $\chi^{2}$ track fitter filter track as effectively as the \KF or \LR , other improvements, such including the fitting of the transverse impact parameter, may improve its competitiveness.

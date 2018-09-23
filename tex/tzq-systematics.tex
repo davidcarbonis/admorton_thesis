@@ -398,38 +398,6 @@ $N_{data}^{OS non-prompt}$: & 69.47$\pm$12.95 & 114.01$\pm$7.61 \\
 \label{tab:fakeLeptonYields}
 \end{table}
 
-%\begin{table}[htbp]
-%\topcaption{The event yields following the full event selection ratio of same to opposite charge lepton events, the same sign background contributions not accounted for by simulation, ratio of same charge to opposite charge event yields and the estimated non-prompt lepton contribution following all selection cuts.
-%}
-%\centering
-%\begin{tabular}{l | ccccc}
-%\hline
-%Source &  $ee$ & $\mu\mu$ & $e\mu$ \\ 
-%\hline
-%$(N_{\ttbar}^{SS}$: & 30.971 & 71.539 & 365.992  \\
-%$(N_{\tt})^{SS}$: & 6.729 & 10.479 & 48.204  \\ 
-%$(N_{single top}^{SS}$: & 1.764 & 2.624 & 20.054  \\
-%$(N_{W+jets}^{SS}$: & 0.0 & 0.0 & 6.515  \\
-%$(N_{Z+jets}^{SS}$: & 44.400 & 0.0 & 1.349  \\
-%$(VV)^{SS}$: & 2.148 & 0.348 & 1.289 \\
-%$(VVV)^{SS}$: & -0.024 & 0.098 & 0.683 \\
-%\hline
-%$(N_{MC}^{SS}$ background: & 85.988 & 85.088 & 444.086 \\ 
-%$(N_{data}^{SS}$: & 126.0 & 125.0 & 643.0  \\ 
-%\hline
-%$(N_{data}^{SS} - (N_{MC}^{SS}$: & 40.012 & 39.912 & 198.914\\
-%\hline
-%$N_{MC}^{SS non-prompt}$: & 1.681 & 2.613 & 7.375\\
-%$N_{MC}^{OS non-prompt}$: & 1.579 & 2.337 & 11.161\\
-%$\frac{N_{MC}^{OS non-prompt}}{N_{MC}^{SS non-prompt}}$: & 0.939 & 0.894 & 1.513 \\
-%\hline
-%$N_{data}^{OS non-prompt}$: & 37.571$\pm$11.271 & 35.681$\pm$10.704 & 300.957$\pm$90.287\\
-%\hline
-%\end{tabular}
-%\label{tab:fakeLeptonYields}
-%\end{table}
-
-
 \subsection{Z+jets Background}\label{subsec:zPlusJetsEstimation}
 In Section~\ref{subsec:zPlusJetsCR} two Z+jets enriched control regions were defined to produce orthogonal regions that were topologically similar to the signal region to validate the modelling of the simulated Z+jets samples.
 These control regions differed from the signal region by either requiring zero b-tagged jets in the event (0-bjet) or an inverted W boson mass threshold and less than 50\GeV of \MET is present in an event ($m_{W}^{inv}$).
@@ -439,7 +407,7 @@ Given that the final state of the signal process contains multiple jets, it woul
 Both of these samples are listed in table~\ref{tab:mcList}.
 
 The final event yields for the 0-bjet region are given in table~\ref{tab:zPlusControlYieldsOld} and the corresponding yields for the $m_{W}^{inv}$ region are given in table~\ref{tab:zPlusControlYieldsNew}.
-It was observed that 94\% of the simulated events in the 0-bjet region were produced by Z+jets processes compared to 82\% in the $m_{W}^{inv}$ region. 
+It was observed that 94\% of the simulated events in the 0-bjet region were produced by Z+jets processes compared to 82\% in the $m_{W}^{inv}$ region.
 Consequently, it was decided to use the 0-bjet region to validate the modelling of the Z+jets processes.
 
 \begin{table}[htbp]
@@ -520,13 +488,13 @@ Data: & 2940.0$\pm$64.2 & 5718.0$\pm$87.2 & 8658.0$\pm$108.28    \\
 \end{tabular}
 \end{table}
 
-Based on the yields in both tables~\ref{tab:zPlusControlYieldsOld}-\ref{tab:zPlusControlYieldsNew}, it was also observed that the NLO Z+jets sample does not correctly describe the normalisation of the Z+jets process.
+Based on the yields in both tables~\ref{tab:zPlusControlYieldsOld}-\ref{tab:zPlusControlYieldsNew}, it was also observed that the NLO Z+jets sample did not correctly describe the normalisation of the Z+jets process.
 Further studies into the NLO Z+jets sample were done using a simple SF based on the final event yields to correctly normalise this Z+jets sample.
 During these studies, it was observed that the NLO Z+jets sample poorly described events with low jet multiplicities, as shown in Figure~\ref{fig:zPlusCR_nJets}
 
 In contrast however, the LO Z+jets sample not only correctly describes the normalisation of the LO sample, but also the jet multiplicities throughout the application of the selection criteria and simulation corrections.
 Consequently, despite the NLO sample providing a better description of the \pT of the higher order jets (shown in Figure~\ref{fig:zPlusCR_jetPt}), it was decided to use the LO Z+jets sample to model this process.
-Before the NLO Z+jets sample can be considered in future, the reasons why it does not correctly normalise and poorly describes events with low jet multiplicities will need to be understood.
+The reasons why the NLO Z+jets sample does not correctly normalise and poorly describes events with low jet multiplicities will need to be understood before it can be considered in the future.
 
 \begin{figure}[tbp]
 \centering
@@ -749,9 +717,9 @@ The values of $\alpha$, expressing the strength of correlation between the lepto
    \hline
    \textbf{Channel} & \textbf{$\alpha$}   \\
    \hline   
-   $ee$ & 0.99890 $\pm$ \\
-   $\mu\mu$ & 1.00151 $\pm$  \\
-   $e \mu$ & 0.98883 $\pm$ \\
+   $ee$ & 0.99890 $\pm$ 0.01379\\
+   $\mu\mu$ & 1.00151 $\pm$ 0.01291\\
+   $e \mu$ & 0.98883 $\pm$ 0.09415\\
    \hline
  \end{tabular}%}
 \end{table}
@@ -810,7 +778,7 @@ The impact of varying $\mu_{F}$ and $\mu_{R}$ for the PS level however, was eval
 These centrally produced samples are listed in Table~\ref{tab:theorySampleList} as the ``scale up'' and ``scale down'' samples. 
 
 In the case of \ttbar however, these scale variations for initial-state radiation and final-state radiation are considered separately.
-The dedicated samples for these variations are listed in able~\ref{tab:theorySampleList} as the ``isr/fsr up'' and ``isr/fsr down'' samples for \ttbar production.
+The dedicated samples for these variations are listed in table~\ref{tab:theorySampleList} as the ``isr/fsr up'' and ``isr/fsr down'' samples for \ttbar production.
 
 As mentioned above in Section~\ref{subsec:pdfSysts}, it was not possible for the single top tW-channel MC samples to be produced with per-event weights to account for the matrix element factorisation and renormalisation scales.
 To account for this, the ``scale up'' and ``scale down'' samples listed in Table~\ref{tab:theorySampleList} for tW production also include the impact of varying $\mu_{F}$ and $\mu_{R}$ for both the ME and PS levels.
@@ -826,8 +794,8 @@ This source of uncertainty is evaluated for the \ttbar and single top t-channel 
 The impact of the each of the systematics on the event yield (in percentage) of the simulated processes in the signal region following the application of the signal region selection criteria is shown in Table~\ref{tab:systImpact}.
 These rates, whilst giving an overview of which systematics are the most important, do not show how the shape of the fitted variable, the BDT discriminant, is influenced by each uncertainty.
 
-Prior performing the binned maximum likelihood fit described in Chapter~\ref{chapter:results}, the theoretical sources of uncertainty are observed to have the greatest impact on the observed yields of the simulated samples.
-The single largest theoretical source of uncertainty is 
+Prior to performing the likelihood fit described in Chapter~\ref{chapter:results}, the theoretical sources of uncertainty are observed to have the greatest impact on the observed yields of the simulated samples.
+The uncertainty associated with the cross section 
 The experimental uncertainties that have the greatest impact on the observed yields are those associated with the PDFs and JES.
 In the case of the simulated tZq and Z+jets samples, the PDF and JES uncertainties, respectively, were found to have a greater impact on the observed yields than any of the theoretical uncertainties.
 
@@ -913,7 +881,7 @@ These included the evaluation of:
 
 It was determined that the \emph{eXtreme Gradient Boosting} (XGBoost) implementation of the Gradiant Boost algorithm for a single BDT trained on all the MC simulation samples gave the optimal performance for this search~\cite{xgboost}.
 
-\subsection{BDT Optimisation and Evaluation}
+\subsection{BDT Optimisation and Evaluation}\label{subsec:bdtOpt}
 The methods used for determining the optimal input variables and model hyperparameters for this BDT are described in the following subsection.
 Both the input variables and model hyperparameters were chosen separately for $ee$ and $\mu\mu$ channels and all the simulated MC samples were considered.
 
@@ -950,7 +918,7 @@ Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of a
     zMass & Reconstructed Z boson mass & $1.202 \times 10^{-1}$  & $1.372 \times 10^{-1}$  \\
     jetMass & Total mass of every jet in an event & $1.079 \times 10^{-1}$  & $9.304 \times 10^{-2}$  \\
     met & Missing transverse energy & $9.100 \times 10^{-2}$  & $9.382 \times 10^{-2}$  \\
-    bTagDisc & Leading b-tagged jet b-tag output discriminant & $6.773 \times 10^{-2}$  & $6.372 \times 10^{-2}$ \\ 
+    bTagDisc & Leading b-tagged jet CSVv2 discriminant & $6.773 \times 10^{-2}$  & $6.372 \times 10^{-2}$ \\ 
     leadJetPt & Leading jet \pt & $6.093 \times 10^{-2}$ & $4.926 \times 10^{-2}$  \\ 
     jjDelR & $\Delta R$ between the leading jets & $5.300 \times 10^{-2}$  & $3.987 \times 10^{-2}$  \\ 
     wPairMass & Reconstructed W boson mass & $5.093 \times 10^{-2}$ & $4.808 \times 10^{-2}$  \\
@@ -989,16 +957,67 @@ The correlations between the input variables chosen for use with the BDT for the
 \label{fig:corr_mumu}
 \end{figure}
 
-Figure~\ref{fig:inputFeaturesDataSimAgreement} shows that good agreement was observed between simulation and data for the selected input variables.
-Given the number of input variables used, when an input variable is used by both the $ee$ and $\mu\mu$ channels, only the distributions for the one of the channels are given in this chapter.
+Figures~\ref{fig:inputFeaturesDataSimAgreement1},~\ref{fig:inputFeaturesDataSimAgreement2},~\ref{fig:inputFeaturesDataSimAgreement3},~\ref{fig:inputFeaturesDataSimAgreement4} and~\ref{fig:inputFeaturesDataSimAgreement5} show that good agreement was observed between simulation and data for the selected input variables.
+Given the number of input variables used, when an input variable is used by both the $ee$ and $\mu\mu$ channels, only the distributions for the one of the two channels are given in this chapter.
 The complete set of distributions for both channels is given in Appendix~\ref{app:bdt}.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \centering
-\includegraphics[width=0.97\textwidth]{CMS-bw-logo.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/topMass_NPL_ee_wMass_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/zPairMass_NPL_ee_wMass_ee.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/totalJetMass_NPL_ee_wMass_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/met_NPL_ee_wMass_ee.pdf}
 \caption{
-Distributions comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
-\label{fig:inputFeaturesDataSimAgreement}
+Reconstructed top mass, Z boson mass, total jet mass, and \MET distributions for the $ee$ channel comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
+\label{fig:inputFeaturesDataSimAgreement1}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/bTagDisc_NPL_mumu_wMass_mumu.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/leadingJetPt_NPL_mumu_wMass_mumu.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/jjDelR_NPL_mumu_wMass_mumu.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/wPairMass_NPL_mumu_wMass_mumu.pdf}
+\caption{
+Leading b-tagged jet CSVv2 discriminant, leading jet \pT, $\Delta R$ between the leading jets, and reconstructed W boson mass distributions for the $\mu\mu$ channel comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
+\label{fig:inputFeaturesDataSimAgreement2}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/lepHt_NPL_ee_wMass_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/totHtOverPt_NPL_ee_wMass_ee.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/leadingJetEta_NPL_ee_wMass_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/thirdJetPt_NPL_ee_wMass_ee.pdf}
+\caption{
+Lepton ${\ensuremath{H_{\mathrm{T}}}}$, total ${\ensuremath{H_{\mathrm{T}}}}$ divided by total \pt, leading jet $\eta$ and third jet \pT distributions for the $ee$ channel comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
+\label{fig:inputFeaturesDataSimAgreement3}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/secondJetPt_NPL_ee_wMass_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/zLep1Quark2DelR_NPL_ee_wMass_ee.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/zLep2BjetDelR_NPL_ee_wMass_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/fourthJetPt_NPL_ee_wMass_ee.pdf}
+\caption{
+Second jet \pt, $\Delta R$ between subleading lepton and leading b-tagged jet, $\Delta R$ between subleading lepton and leading b-tagged jet and fourth jet \pT distributions for the $ee$ channel comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
+\label{fig:inputFeaturesDataSimAgreement4}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/zLep1BjetDelR_NPL_mumu_wMass_mumu.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/zPairEta_NPL_mumu_wMass_mumu.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/jetHt_NPL_mumu_wMass_mumu.pdf}
+\caption{
+$\Delta R$ between leading lepton and leading b-tagged jet, reconstructed Z boson $\eta$, and jet ${\ensuremath{H_{\mathrm{T}}}}$ distributions for the $\mu\mu$ channel comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
+\label{fig:inputFeaturesDataSimAgreement5}
 \end{figure}
 
 %% HYPERPARAMETERS
