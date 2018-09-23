@@ -17,7 +17,7 @@ Due to the prescaling of all of the electron triggers considered during the star
 The MC samples used to model both the model signal and background processes considered here are listed in table~\ref{tab:mcList}.
 For each of the processes considered, the table which includes information on the number of events generated, the cross section used in their generation and the order in perturbative accuracy in QCD to which the generators calculated the processes.
 For all the MC samples considered, the hadronisation performed was undertaken using PYTHIA 8 which used the CUETP8M2T4 underlying event tune for the \ttbar MC samples and the CUETP8M1 underlying event tune for all other MC samples.
-The NNPDF3.0 family of PDF sets~\cite{Ball:2012cx} was used in the sample generation, where the exact set chosen depended on whether the sample was produced at LO or NLO and used either the four or five flavour scheme.
+The NNPDF3.0 family of PDF sets~\cite{Ball:2012cx} was used in the generation of all of the samples considered.
 
 \begin{table}[htbp]
 \topcaption {
@@ -771,34 +771,29 @@ The uncertainty associated with the cross sections of the simulated samples was 
 While the CMS Collaboration's search for tZq production using the trilepton channel at $\sqrt{s} = 13\TeV$ assumed a value of 30\% for this source of systematic uncertainty~\cite{Sirunyan:2017nbr}, it is now CMS policy to assume an uncertainty of 10\%.
 
 \subsubsection{Factorisation and renormalisation scales}
-In order to consider the impact of the uncertainty associated with the choice of factorisation ($\mu_{F}$) and renormalisation scales ($\mu_{R}$) used in the generation of the simulation samples, they are simultaneously varied up and down by from their nominal value of the Z boson mass by factors of 2 and 0.5, respectively.
+The impact of the uncertainty associated with the choice of factorisation ($\mu_{F}$) and renormalisation scales ($\mu_{R}$) used is evaluated by varying each scale up and down by a factor or 2 from their nominal value.
 
-Events weights are produced for the variation of $\mu_{F}$ and $\mu_{R}$ at the ME level, where both scales are varied simultaneously in order to evaluate the impact of the uncertainties for these scales.
+Events weights are produced for the variation of $\mu_{F}$ and $\mu_{R}$ at the ME level, where both scales are varied individually and simultaneously in order to evaluate the impact of the uncertainties for these scales.
 The impact of varying $\mu_{F}$ and $\mu_{R}$ for the PS level however, was evaluated through the use of dedicated samples for certain processes.
 These centrally produced samples are listed in Table~\ref{tab:theorySampleList} as the ``scale up'' and ``scale down'' samples. 
 
-In the case of \ttbar however, these scale variations for initial-state radiation and final-state radiation are considered separately.
+In the case of \ttbar production samples however, the scale variations for initial-state radiation and final-state radiation are considered separately.
 The dedicated samples for these variations are listed in table~\ref{tab:theorySampleList} as the ``isr/fsr up'' and ``isr/fsr down'' samples for \ttbar production.
 
-As mentioned above in Section~\ref{subsec:pdfSysts}, it was not possible for the single top tW-channel MC samples to be produced with per-event weights to account for the matrix element factorisation and renormalisation scales.
+As mentioned above in Section~\ref{subsec:pdfSysts}, it was not possible for the single top tW production simulation samples to be produced with per-event weights to account for the matrix element factorisation and renormalisation scales.
 To account for this, the ``scale up'' and ``scale down'' samples listed in Table~\ref{tab:theorySampleList} for tW production also include the impact of varying $\mu_{F}$ and $\mu_{R}$ for both the ME and PS levels.
 
 \subsubsection{Matrix Element - Parton Shower Matching Thresholds}
-The uncertainty associated with the matching threshold used by POWHEG was evaluated using dedicated samples.
-
-
- where the matching threshold energy is varied up and down by one standard deviation~\cite{CMS:2016kle}.
-This source of uncertainty is evaluated for the \ttbar and single top t-channel backgrounds generated with POWHEG using dedicated simulation samples, which are listed in table~\ref{tab:theorySampleList} as ``matching''.
+The POWHEG V2 matching threshold energy is defined as $\frac{h_{damp}^{2}}{h_{damp}^{2}+p_{T}^{2}}$, where $h_{damp}$ has been tuned to be $1.58 \times m_{top}$.
+The uncertainty associated with this matching threshold was evaluated using dedicated samples for the \ttbar and single top t-channel processes where $h_{damp}$ is varied up and down by one standard deviation~\cite{CMS:2016kle}.
+These dedicated simulated samples are listed in table~\ref{tab:theorySampleList} as ``matching up '' and ``matching down'' for the respective variations of $h_{damp}$.
 
 \subsection{Pre-Fit Impact of the Systematic Uncertainties}\label{sec:uncertainitiesPreFitImpact}
 The impact of the each of the systematics on the event yield (in percentage) of the simulated processes in the signal region following the application of the signal region selection criteria is shown in Table~\ref{tab:systImpact}.
 These rates, whilst giving an overview of which systematics are the most important, do not show how the shape of the fitted variable, the BDT discriminant, is influenced by each uncertainty.
 
 Prior to performing the likelihood fit described in Chapter~\ref{chapter:results}, the theoretical sources of uncertainty are observed to have the greatest impact on the observed yields of the simulated samples.
-
-The uncertainty associated with the cross section 
-The experimental uncertainties that have the greatest impact on the observed yields are those associated with the PDFs and JES.
-In the case of the simulated tZq and Z+jets samples, the PDF and JES uncertainties, respectively, were found to have a greater impact on the observed yields than any of the theoretical uncertainties.
+While most of the experimental uncertainties have a smaller impact on the event yields compared to the theoretical uncertainties, the JER and PDF uncertainties are observed to have a greater impact on the Z+jets and tZq processes, respectively, than any of the theoretical uncertainties.
 
 \begin{sidewaystable}[htbp]
 \topcaption{Rate impact of systematics on MC templates}\label{tab:systImpact}
