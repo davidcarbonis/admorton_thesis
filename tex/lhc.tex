@@ -30,7 +30,7 @@ In the PS, the protons are accelerated to 26\GeV and are injected into the Super
 %% No necessary - no considering HI collision
 %When operating with lead ions, Linear accelerator 3 (Linac3) is used to initially accelerate the ions before injecting them into the Proton Synchrotron Booster, before the ions use the same accelerators as the protons do to prepare them for use in the LHC~\cite{Bruning:782076}. 
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \begin{center}
 \includegraphics[width=0.97\textwidth]{figs/lhc/Cern-Accelerator-Complex.jpg}
 \caption{CERN complex, including the various linear accelerators, synchrotrons, LHC, LHC detectors and other aspects of the complex~\cite{Marcastel:1621583}.}
@@ -50,9 +50,9 @@ Extensions of the SM, such as SUSY theories, additional dimensions or new fundam
 %Access to physics beyond the \TeV level is not excluded	however, as some signals would be ``unmissable'', but the majority of physics would be limited by statistics.
 As shown in Figure~\ref{fig:crossSections}, the production cross section of the Higgs boson and hypothesised SUSY particles, if they have \TeV masses (and exist), are predicted to be many orders of magnitude smaller than both their associated backgrounds and the total inelastic cross section.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \begin{center}
-\includegraphics[width=0.97\textwidth]{figs/cms/crossSections.pdf}
+\includegraphics[width=0.70\textwidth]{figs/cms/crossSections.pdf}
 \caption{The inclusive proton-proton cross sections at $\sqrt{s} = 14\TeV$ and the production frequency for various physics processes, as a function of jet \ET or mass, expected at the LHC at a luminosity of $10^{34}\percms$~\cite{Dasu:2000ge}.}
 \label{fig:crossSections}
 \end{center}
@@ -77,7 +77,7 @@ A superconducting solenoid encompasses, moving from the interaction point at the
 Beyond the solenoid there is an outer hadronic calorimeter (HO) and interspaced between the iron return yoke are three different types of Muon Detectors.
 There is also a pair of very-forward calorimeters (HF) to further extend the hadronic calorimetry coverage to ensure good dijet mass and \MET resolutions.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \begin{center}
 \includegraphics[width=\textwidth]{figs/cms/cms_160312_02.pdf}
 \caption{Cutaway diagram of CMS’s layers, illustrating its onion-like nature and the location of the detecting technologies within~\cite{Sakuma:2013jqa}.}
@@ -99,18 +99,18 @@ This due to $\eta$, defined as $y \equiv \frac{1}{2} ln(E+p_{z}/E-p_{Z})$, conve
 The tracker, measuring 5.8m with a 2.5m radius over a pseudorapidity range of $|\eta| < 2.5$, surrounds the interaction point.
 The tracker is designed to provide efficient precision trajectory measurements of charged particles emerging from collisions and precise reconstruction of vertices, whilst operating in a harsh radiation environment (maximum flux $\approx 10^{7}/s$) and minimising the number charged particles interacting with the tracker.
 
-Silicon fulfils these requirements and is used in both the inner pixel and microstrip detectors.
-Figure~\ref{fig:tracker} illustrates how the various parts of the silicon microstrip detector surround the inner pixel detector.
-The high particle multiplicity expected closest to the interaction point requires high granularity pixels provide in order to ensure a low channel occupancy ($< 1\%$)
-The particle flux for radii above 20\cm however, is sufficiently low enough that microstrips can be used without compromising track reconstruction efficiency.
-
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \begin{center}
 \includegraphics[width=0.97\textwidth]{figs/cms/fig_cmstracker.png}
 \caption{Schematic of the CMS tracking detector, displaying the interaction point in the centre and the location of the sub-detectors and, through the arrangement of the lines, their modules. The double lines present in the microstrip tracker denote modules with double-sided sensors~\cite{Sprenger:2010ss}.}
 \label{fig:tracker}
 \end{center}
 \end{figure}
+
+Silicon fulfils these requirements and is used in both the inner pixel and microstrip detectors.
+Figure~\ref{fig:tracker} illustrates how the various parts of the silicon microstrip detector surround the inner pixel detector.
+The high particle multiplicity expected closest to the interaction point requires high granularity pixels provide in order to ensure a low channel occupancy ($< 1\%$)
+The particle flux for radii above 20\cm however, is sufficiently low enough that microstrips can be used without compromising track reconstruction efficiency.
 
 The tracker system is capable of reconstructing tracks for charged particles of with transverse momenta greater than at an efficiency greater than 99\% and an impact parameter, $d_{0}$, resolution of approximately $10\mum$ for charged particles with transverse momenta of $100\GeV$ and momentum resolutions between $1.5\%$ and $3.0\%$ for charged particles with $1 < \pT < 100\GeV$~\cite{Khachatryan:2010pw,Chatrchyan:2014fea}.
 
@@ -159,17 +159,17 @@ These signals are digitised on-detector and buffered until a Level-1 Trigger dec
 
 The layout of the ECAL system is displayed in Figure~\ref{fig:ecal}, illustrating the layout of both the barrel (EB) and endcap (EE) cystal systems, the gap between the EB and EE, and the Preshower (ES)~\cite{Loos:539819} device located in front of the ECAL endcaps.
 
-The ES aids the EE system in discriminating between neutral pions and photons within the fidicial region $1.653 < |\eta| < 2.6$.
-For each ES, two lead radiators initiate the electromagnetic showers and two silicon strip sensors, orthogonal to one another to provide fine resolution, are placed after the radiators.
-The thickness of the radiators was chosen to be two and one radiation lengths for the first and second lead radiators, respectively, in order to ensure that ~95\% of incident photons shower before reaching the second silicon strip sensor.
-
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \begin{center}
-\includegraphics[width=0.97\textwidth]{figs/cms/ECAL_Transverse_section.pdf}
+\includegraphics[width=0.9\textwidth]{figs/cms/ECAL_Transverse_section.pdf}
 \caption{Layout of one quadrant of the ECAL system, illustrating the locations of the barrel ECAL (EB), endcap ECAL (EE) and ECAL Preshower (ES) device~\cite{Bayatian:2006nff}.}
 \label{fig:ecal}
 \end{center}
 \end{figure}
+
+The ES aids the EE system in discriminating between neutral pions and photons within the fidicial region $1.653 < |\eta| < 2.6$.
+For each ES, two lead radiators initiate the electromagnetic showers and two silicon strip sensors, orthogonal to one another to provide fine resolution, are placed after the radiators.
+The thickness of the radiators was chosen to be two and one radiation lengths for the first and second lead radiators, respectively, in order to ensure that ~95\% of incident photons shower before reaching the second silicon strip sensor.
 
 ECAL test beam measurements~\cite{Adzic:2007mi} have determined the energy resolution, $\sigma_{E}$, to be,
 
@@ -224,10 +224,10 @@ While the solenoid was designed to operate at 4~T, the CMS Collaboration chose t
 
 As shown in Figure~\ref{fig:magneticField}, the solenoid provides a strong homogenous magnetic field within its volume.
 This large bending power not only provides excellent momentum resolution for charged particles within the tracking detector, but it also prevents low transverse momentum charged particles from reaching the calorimetry and negatively impacting on energy resolution and isolation efficiency.
-Outside the solenoid, an iron return yoke guides and contains the return magnetic field as illustrated in Figure~\ref{fig:magneticField}.
+Outside the solenoid, an iron return yoke guides and contains the return magnetic field.
 The return magnetic field is approximately 1.7~T in the barrel and outermost endcap disks which is sufficiently strong to enable accurate momentum resolution for tracking and charge identification of high momentum, \ie $\geq 1\TeV$, muons.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \begin{center}
 \includegraphics[width=0.97\textwidth]{figs/cms/cms_magnetic_field.png}
 \caption{Longitudinal section of the CMS detector, illustrating the predicted magnetic field strength (left) and field lines (right) for the operational central magnetic flux density of 3.8~T~\cite{Chatrchyan:2009si}.}
@@ -256,36 +256,35 @@ Drift Tubes (DTs) operate in the barrel region covering $|\eta| < 1.2$, where th
 Each tube is a $4.2\cm \times 1.3\cm$ cell that contains an anode wire surrounded by a mixture of Ar (85\%) and CO$_{2}$ (15\%).
 As a muon passes through the chamber it ionises the gas within, with the resultant free electrons drifting towards the positively charged wire and inducing an electrical signal that is read out.
 
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{figs/cms/DTchamber.png}
+\caption{A schemeatic layout of a DT chamber, illustrating the half DT width offset between the adjacent layers and the $r-\phi$ plane orientation of the outer SLs and the \r-z plane orientation of the inner layer~\cite{Chatrchyan:2009hg}.}
+\label{fig:dtSuperLayers}
+\end{center}
+\end{figure}
+
 As shown in Figure~\ref{fig:dtSuperLayers}, the DT chambers are comprised of twelve layers of DTs that are grouped into three \emph{superlayers} (SLs) of DTs.
 Each SL is comprised of four layers of DTs, with each layer being offset from the other by half the width of half a DT in order to improve angular resolution.
 The outer SLs are orientated to measure coordinates in the $r-\phi$ plane and the innermost SL is orientated to measure coordinates in the \r-z plane (which the outermost station lacks).
 A honeycomb spacing structure separates SL3 from the other SLs to increase the lever arm length for measuring the track direction in the bending plane.
 This arrangement allows for a high muon track identification efficiency and provides resolutions of about $200\mum$ and a $\phi$ angular resolution of approximately $1$ mrad.
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.97\textwidth]{figs/cms/DTchamber.png}
-\caption{A schemeatic layout of a DT chamber, illustrating the half DT width offset between the adjacent layers and the $r-\phi$ plane orientation of the outer SLs and the \r-z plane orientation of the inner layer~\cite{Chatrchyan:2009hg}.}
-\label{fig:dtSuperLayers}
-\end{center}
-\end{figure}
-
 Cathode Strip Chambers (CSCs) are employed across four endcap disks which cover the region $0.9 < \eta < 2.4$.
 SCS are used in the endcaps as they are more suited to the higher muon rate and non-uniform magnetic field environment of the forward regions.
 While only the innermost ring of the outermost (fourth) disk was originally installed, an outer ring for the outermost disk was installed during LS1 during 2013-2015~\cite{Battilana:2017mrm}.
 
-Each CSC, as shown in Figure~\ref{fig:csc}, is composed of seven trapezoidal panels. 
-The six gaps between the panels are filled with planes of anode wires that run almost perpendicular to a planes of cathode strips which are surrounded by a gas mixture of Ar, CO$_{2}$ and CF$_{4}$~\cite{Anderson:2004ep}.
-This provides six position measurements per chamber with a resolution in the $r-\phi$ plane of 75\mum for the two innermost rings of the first disk and 150\mum for the other disks~\cite{CMS:1997iti}.
-
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \begin{center}
-\includegraphics[width=0.55\textwidth]{figs/cms/csc_trapezoid_v1.pdf}
+\includegraphics[width=0.45\textwidth]{figs/cms/csc_trapezoid_v1.pdf}
 \caption{A schemeatic overview of a CSC, illustrating a plane of anode wires between two of the trapezoidal panels and the plane of cathode strips which run almost perpendicular to them~\cite{Bayatian:2006nff}.}
 \label{fig:csc}
 \end{center}
 \end{figure}
 
+Each CSC, as shown in Figure~\ref{fig:csc}, is composed of seven trapezoidal panels. 
+The six gaps between the panels are filled with planes of anode wires that run almost perpendicular to a planes of cathode strips which are surrounded by a gas mixture of Ar, CO$_{2}$ and CF$_{4}$~\cite{Anderson:2004ep}.
+This provides six position measurements per chamber with a resolution in the $r-\phi$ plane of 75\mum for the two innermost rings of the first disk and 150\mum for the other disks~\cite{CMS:1997iti}.
 
 Resistive Plate Chambers (RPCs) provide complimentary coverage in the range $|\eta| < 1.8$~\cite{Battilana:2017mrm}.
 The barrel contains six layers of RPCs, with a layer either side of the first two DT layers and one in each of the outer stations, and the endcaps have 4 RPC disks each, one for each CSC disk.
