@@ -1,5 +1,5 @@
-\chapter{BDT Input Features}\label{app:bdt}
-%\section{BDT Input Features}\label{appsec:bdtFeatures}
+\chapter{BDT Input Variables}\label{app:bdt}
+\section{List of all potential Input Features}\label{appsec:bdtFeatures}
 Following the application of the event selection criteria, as described in Chapter~\ref{chapter:tzq-search}, a large number of input variables which were considered for use in the boosted decision trees used were constructed from the selected reconstructed physics objects.
 
 The complete list of variables and their descriptions are listed in table~\ref{tab:allBdtVariables}.
@@ -151,3 +151,101 @@ The complete list of variables and their descriptions are listed in table~\ref{t
  \end{tabular}}
 \end{table}
 
+\section{List of all potential Input Features}\label{appsec:bdtInputComparisons}
+The following section contains the full set of comparison plots between data and simulation for the chosen BDT input variables listed in table~\ref{selectedBdtVariables} in Section~\ref{subsec:bdtOpt}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/topMass_NPL_ee_wMass_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/zPairMass_NPL_ee_wMass_ee.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/totalJetMass_NPL_ee_wMass_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/met_NPL_ee_wMass_ee.pdf}
+\caption{
+Reconstructed top mass, Z boson mass, total jet mass, and \MET distributions for the $ee$ channel comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
+\label{fig:appInputFeaturesDataSimAgreement0}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/bTagDisc_NPL_ee_wMass_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/leadingJetPt_NPL_ee_wMass_ee.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/jjDelR_NPL_ee_wMass_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/wPairMass_NPL_ee_wMass_ee.pdf}
+\caption{
+Leading b-tagged jet CSVv2 discriminant, leading jet \pT, $\Delta R$ between the leading jets, and reconstructed W boson mass distributions for the $ee$ channel comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
+\label{fig:inputFeaturesDataSimAgreement1}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/lepHt_NPL_ee_wMass_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/totHtOverPt_NPL_ee_wMass_ee.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/leadingJetEta_NPL_ee_wMass_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/thirdJetPt_NPL_ee_wMass_ee.pdf}
+\caption{
+Lepton ${\ensuremath{H_{\mathrm{T}}}}$, total ${\ensuremath{H_{\mathrm{T}}}}$ divided by total \pt, leading jet $\eta$ and third jet \pT distributions for the $ee$ channel comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
+\label{fig:appInputFeaturesDataSimAgreement2}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/secondJetPt_NPL_ee_wMass_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/zLep1Quark2DelR_NPL_ee_wMass_ee.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/zLep2BjetDelR_NPL_ee_wMass_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/fourthJetPt_NPL_ee_wMass_ee.pdf}
+\caption{
+Second jet \pt, $\Delta R$ between subleading lepton and leading b-tagged jet, $\Delta R$ between subleading lepton and leading b-tagged jet and fourth jet \pT distributions for the $ee$ channel comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
+\label{fig:inputFeaturesDataSimAgreement3}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/topMass_NPL_mumu_wMass_mumu.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/zPairMass_NPL_mumu_wMass_mumu.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/totalJetMass_NPL_mumu_wMass_mumu.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/met_NPL_mumu_wMass_mumu.pdf}
+\caption{
+Reconstructed top mass, Z boson mass, total jet mass, and \MET distributions for the $\mu\mu$ channel comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
+\label{fig:appInputFeaturesDataSimAgreement10}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/bTagDisc_NPL_mumu_wMass_mumu.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/leadingJetPt_NPL_mumu_wMass_mumu.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/jjDelR_NPL_mumu_wMass_mumu.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/wPairMass_NPL_mumu_wMass_mumu.pdf}
+\caption{
+Leading b-tagged jet CSVv2 discriminant, leading jet \pT, $\Delta R$ between the leading jets, and reconstructed W boson mass distributions for the $\mu\mu$ channel comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
+\label{fig:inputFeaturesDataSimAgreement11}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/lepHt_NPL_mumu_wMass_mumu.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/totHtOverPt_NPL_mumu_wMass_mumu.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/leadingJetEta_NPL_mumu_wMass_mumu.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/jetHt_NPL_mumu_wMass_mumu.pdf}
+\caption{
+Lepton ${\ensuremath{H_{\mathrm{T}}}}$, total ${\ensuremath{H_{\mathrm{T}}}}$ divided by total \pt, leading jet $\eta$ and jet ${\ensuremath{H_{\mathrm{T}}}}$ distributions for the $\mu\mu$ channel comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
+\label{fig:appInputFeaturesDataSimAgreement12}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/secondJetPt_NPL_mumu_wMass_mumu.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/thirdJetPt_NPL_mumu_wMass_mumu.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/zLep1BjetDelR_NPL_mumu_wMass_mumu.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/zPairEta_NPL_mumu_wMass_mumu.pdf}
+\caption{
+Second jet \pt, third jet \pT, $\Delta R$ between leading lepton and leading b-tagged jet and reconstructed Z boson $\eta$ distributions for the $\mu\mu$ channel comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
+\label{fig:inputFeaturesDataSimAgreement13}
+\end{figure}

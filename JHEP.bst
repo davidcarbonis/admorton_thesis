@@ -948,6 +948,7 @@ FUNCTION {misc}
   if$
   howpublished output
   format.date output
+  format.url output
   new.block
   % note output
   doi output
