@@ -1,26 +1,3 @@
-Double_t x_fun(Double_t t)
-{
-   using namespace TMath;
-   double mTop = 173.21;
-   double mW = 80.3585;
-   double sigmaTop = 30.;
-   double sigmaW = 8.;
-   double wChi2Term = (t-mW)/(sigmaW);
-   return ( sigmaTop * Sqrt( 5 - wChi2Term*wChi2Term )  + mTop );
-}
-
-Double_t y_fun(Double_t t)
-{
-   using namespace TMath;
-   double mTop = 173.21;
-   double mW = 80.3585;
-   double sigmaTop = 30.;
-   double sigmaW = 8.;
-   double topChi2Term = (t-mTop)/(sigmaTop);
-   return ( sigmaW * Sqrt( 5 - topChi2Term*topChi2Term )  + mW );
-}
-
-
 void all_topVsWmass()
 {
 //=========Macro generated from canvas: Canvas_1/Canvas_1
@@ -12159,21 +12136,40 @@ void all_topVsWmass()
    All_topVsWmassHisto->Draw("colz");
    
 
-   const Double_t tMin = 0., tMax = 300;
-   const Int_t nPoints = 2000;
-   const Double_t step = (tMax - tMin) / (nPoints - 1);
-   std::vector<Double_t> xArr(nPoints), yArr(nPoints);
+   double mTop = 173.21;
+   double mW = 80.3585;
+   double sigmaTop = 30.;
+   double sigmaW = 8.;
 
-   for(Int_t i = 0; i < nPoints; ++i)
-   {
-      xArr[i] = x_fun(tMin + i * step);
-      yArr[i] = y_fun(tMin + i * step);
+   uint k = 0;
+   TPolyMarker *pmSR = new TPolyMarker(5250000);
+   for (uint i = 0; i!=1500; i++) {
+     for (uint j = 0; j!=3500; j++) {
+       double wChi2Term = (double(i)/10-mW)/(sigmaW);
+       double topChi2Term = (double(j)/10-mTop)/(sigmaTop);
+       if ( (wChi2Term*wChi2Term + topChi2Term*topChi2Term) < 5.1 && (wChi2Term*wChi2Term + topChi2Term*topChi2Term) > 4.9 ) {
+         pmSR->SetPoint(k,double(i)/10,double(j)/10);
+         k++;
+       }
+     }
    }
 
-   TGraph *graph = new TGraph(nPoints, &xArr[0], &yArr[0]);
-   graph->SetLineColor(kBlack);
-   graph->SetLineWidth(5);
-//   graph->Draw("L");
+   pmSR->Draw("same");
+
+   uint a = 0;
+   TPolyMarker *pmSB = new TPolyMarker(525000000);
+   for (uint b = 0; b!=15000; b++) {
+     for (uint c = 0; c!=35000; c++) {
+       double wChi2Term = (double(b)/100-mW)/(sigmaW);
+       double topChi2Term = (double(c)/100-mTop)/(sigmaTop);
+       if ( (wChi2Term*wChi2Term + topChi2Term*topChi2Term) < 30.1 && (wChi2Term*wChi2Term + topChi2Term*topChi2Term) > 29.9 ) {
+         pmSB->SetPoint(a,double(b)/100,double(c)/100);
+         a++;
+       }
+     }
+   }
+
+   pmSB->Draw("same");
 
    TPaveText *pt = new TPaveText(0.3025,0.9354826,0.6975,0.995,"blNDC");
    pt->SetName("title");
