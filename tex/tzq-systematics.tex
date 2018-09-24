@@ -12,11 +12,12 @@
 Out of the 37.8\fbinv of  proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by the CMS experiment during 2016, 35.9\fbinv was certified by the collaboration as being of sufficient quality to be used for physics analysis.
 The difference between the certified value and the total data recorded is the result of various factors such as the unavailability of a detector due to power failures.
 Events are considered from the dataset certified to be good for physics if they pass one of the triggers in accordance with the trigger strategy described in Section~\ref{sec:triggerStrategy}.
-Due to the prescaling of all of the electron triggers considered during the start of the most luminous runs (as discussed in Section~\ref{sec:triggerStrategy}) the $ee$ channel uses a reduced dataset corresponding to 35.8\fbinv where none of the triggers considered were prescaled.
+Due to the prescaling of all of the electron triggers considered during the start of the most luminous runs (as discussed in Section~\ref{sec:triggerStrategy}) the $ee$ channel uses a reduced dataset corresponding to 35.6\fbinv where none of the triggers considered were prescaled.
 
 The MC samples used to model both the model signal and background processes considered here are listed in table~\ref{tab:mcList}.
 For each of the processes considered, the table which includes information on the number of events generated, the cross section used in their generation and the order in perturbative accuracy in QCD to which the generators calculated the processes.
-For all the MC samples considered, the hadronisation performed was undertaken using PYTHIA 8 which used the CUETP8M2T4 underlying event tune for the \ttbar MC samples and the CUETP8M1 underlying event tune for all other MC samples.
+The PS and hadronisation stages for all of the samples was performed using PYTHIA 8.
+The CUETP8M2T4 underlying event tune was used by PYTHIA 8 for the \ttbar process simulation samples and the CUETP8M1 underlying event tune for all other simulation samples.
 The NNPDF3.0 family of PDF sets~\cite{Ball:2012cx} was used in the generation of all of the samples considered.
 
 \begin{table}[htbp]
@@ -253,10 +254,23 @@ The \PU SF is determined as a function of the number of primary vertices, $n_{PV
 A scale factor is used to reweight all simulated \ttbar events to account for the differences in the top quark \pt distribution observed between data and both the LO and NLO MC simulation~\cite{Khachatryan:2015oqa}.
 
 \section{Signal Region Background Estimation}\label{sec:simBackgrounds}
-The final event yields for the signal region, including non-prompt lepton contributions(see Section~\ref{sec:NPLs}), for data and simulation are shown in table~\ref{tab:signalYields}.
 
 
 between simulation and data for the event yields at each stage of applying selection criteria and simulation corrections, as shown in Figure~\ref{fig:cutFlow}, and also
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/cutFlow_log.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/cutFlow_log.pdf}
+\caption{
+The overall event yield for data and simulation at each stage of applying the signal region selection criteria and simulation corrections for the $ee$ channel (left) and the $\mu\mu$ channel (right).
+}
+\label{fig:SR_cutFlow}
+\end{figure}
+
+The final event yields for the signal region, including non-prompt lepton contributions(see Section~\ref{sec:NPLs}), for data and simulation are shown in table~\ref{tab:signalYields}.
+
+
 
 
 While jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process, the signal region is  dominated by background processes involving a real Z boson decay or two leptons from W boson decays.
@@ -301,8 +315,6 @@ Data & 5274.0$\pm$72.62 & 9750.0$\pm$98.74 & 15024.0$\pm$122.57    \\
 \hline
 \end{tabular}
 \end{table}
-
-
 
 Good agreement is also observed for the distributions of the reconstructed variables.
 Examples of such good agreement include the distributions of the reconstructed Z boson mass following the lepton and jet selection cuts in Figure~\ref{fig:SR_zBoson}; the reconstructed W boson following application of the b-tagging criteria in Figure~\ref{fig:SR_zBoson}; and the invariant \pT of all the jets in an event following the jet selection criteria in Figure~\ref{fig:SR_totJetPt}.
@@ -530,6 +542,15 @@ The distributions of the leading four jets \pt in the 0-bjet region following th
 \subsection{\ttbar Background}\label{subsec:ttbarEstimation}
 In Section~\ref{subsec:ttbarCR} a \ttbar enriched control regions was defined to produce an orthogonal region that was topologically similar to the signal region to validate the modelling of the simulated \ttbar sample used.
 This control region differed from the signal region by requiring that the event contained an electron and muon, rather than a pair of electrons or muons.
+
+%\begin{figure}[tbp]
+%\centering
+%\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbarControl/cutFlow_log.pdf}
+%\caption{
+%The overall event yield for data and simulation at each stage of applying the \ttbar control region selection criteria and simulation corrections.
+%}
+%\label{fig:ttbar_cutFlow}
+%\end{figure}
 
 \begin{table}[htbp]
 \topcaption {
