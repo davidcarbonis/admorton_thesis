@@ -1,6 +1,5 @@
 \chapter{Conclusion}\label{chapter:conclusion}
-%Following the restart of the LHC in 2015, its increased centre-of-mass collision energies and instantaneous luminosities have made it possible to make undertake measurements of rare processes involving top quark and electroweak interactions.
-
+Following the restart of the LHC in 2015, the LHC's increased centre-of-mass collision energies and instantaneous luminosities have made it possible to undertake measurements of rare processes involving top quark and electroweak interactions.
 In this thesis a search was presented for the production of a top quark in association with a Z boson using the dilepton final state using a shape based analysis.
 This analysis focussed on understanding the contributions from processes that produce non-prompt leptons and suppressing the Z+jets and \ttbar processes.
 A Boosted Decision Tree was used to further enhance the separation between the signal from tZq production and background, using a set of variables that were identified as having the greatest discriminating power.
@@ -8,8 +7,9 @@ A cross section of $\sigma (\textrm{tZq}, Z \rightarrow l^{+} l^{-}) = 505.5^{14
 Using simulation, the expected significance was determined to be $0.705 \sigma$.
 
 This is both the first measurement and the first evidence for tZq that has been made using the dilepton final state.
-As the search for tZq is statistically limited, it is expected that discovery of this process using the dilepton final state should be achievable by extending the analysis to incorporate additional data collected by the CMS experiment.
 
+As the search for tZq is statistically limited, it is expected that discovery of this process using the dilepton final state should be achievable by extending the analysis to incorporate additional data collected by the CMS experiment.
+The sensitivity of this combined measurement 
 
 This result is based on the February 2017 reprocessing of the 2016 data and September 2016 reprocessing of the corresponding simulation samples.
 These datasets have subsequently been reprocessed to incorporate updated jet energy corrections and improved alignments and calibrations of the CMS detector.
@@ -54,9 +54,8 @@ While it may not be possible to make the $\chi^{2}$ track fitter filter tracks a
 
 The flexibility for the upgraded tracker to be able to reconstruct tracks down to a lower \pT threshold of 2\GeV is potentially desirable and was initially studied as part of the 2016 demonstrator review.
 The ability of the proposed track finding system to reconstruct such low transverse momenta tracks ($2\GeV < \pT < 3\GeV$) was shown to be considerably improved by accounting for the effects of \MS. 
-In the case of the \HT, this involved using decreased precision \HT cells to mitigate against scattering causing stubs to be found in adjacent cells.
-The \KF's covariance matrix was modified to incorporate the uncertainty in the hit position cased by the effects of \MS.
-This involved including a term that described the average scattering angle as a function of \pT, which was as effective as an alternative term that also depended on the layer a hit was found in.
+For the \HT, this involved using decreased precision \HT cells to mitigate against scattering causing stubs to be found in adjacent cells.
+The \KF's covariance matrix was modified to incorporate the uncertainty in the hit position cased by the effects of \MS by including a term that described the average scattering angle as a function of \pT.
 
 Despite these improvements, there are still a number of key areas that require investigating in order to understand the current limitations of the work done so far and how it may be improved upon.
 Currently it is not understood why the duplicate rate increases near the boundary between normal and reduced precision \HT cells.
@@ -65,9 +64,11 @@ The \KF's performance is likely to be further improved by using a scattering con
 Implementing separate \KF $\chi^{2}$ cuts for the \rphi and \rz planes is another potential improvement given that the dominant uncertainty contribution for the former varies depending on $\pT$.
 
 During the 2016 review of the proposed track finding systems, the \emph{TMTT} collaboration demonstrated that a complete track finding system that met all the system requirements could be built using currently available technology.
-
+As such, 
+Until the design of the track finding system is finalised at the end of 2019, 
 Load balancing (improved resource usage), 
 
+%Oct 2019 design finalised/August 2020 prototypes validated, Nov 2014 system ready for use
 
 %Given the limited experimental evidence of BSM physics, a large number of BSM physics models, driven by theoretical and ascetic arguments, have been proposed to account for the shortcomings of the SM.
 %While the analysis presented in this thesis concerns the search for a SM process, the tZq cross section is sensitive to modifications of the tZ coupling posited by a number of BSM theories.
