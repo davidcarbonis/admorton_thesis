@@ -1078,3 +1078,20 @@ Distributions of the input variables chosen for use with the BDT for the signal 
 Distributions of the input variables chosen for use with the BDT for the signal (red) and background (blue) samples for the $\mu\mu$ channel.}
 \label{fig:inputFeaturesDistributions_mumu}
 \end{figure}
+
+\subsubsection*{BDT Evaluation}
+Following the optimisation of the BDT input variables and hyperparameters, the BDT is trained.
+The resultant output discriminant distributions are shown in Figure~\ref{fig:prefitBDT} 
+
+The BDT produces the output discriminant for each of the data and simulation samples considered.
+These output discriminant distributions are used to extract the signal strength and its statistical significance, as described in Chapter~\ref{chapter:results}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.97\textwidth]{figs/results/prefit_ee.pdf}
+\\
+\includegraphics[width=0.97\textwidth]{figs/results/prefit_mumu.pdf}
+\caption{
+Pre-fit distributions of the BDT discriminant for the $ee$ channel (left) and $\mu\mu$ channel.}
+\label{fig:prefitBDT}
+\end{figure}
