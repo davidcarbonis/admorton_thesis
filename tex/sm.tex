@@ -342,14 +342,25 @@ The self-coupling nature of gluons results in the phenomenon known as \emph{asym
 This occurs as, like the QED vacuum of a sea of virtual $e^{+}e^{-}$ pairs, QCD considers the vacuum to be occupied by a virtual \emph{sea} of gluons and $q\overline{q}$ pairs.
 In contrast to photons in QED however, as gluons self-couple, the virtual gluons have an attractive effect greater than the screening effect of virtual $q\overline{q}$ pairs.
 Therefore, while $\alpha_{s}$ is sufficiently small inside a hadron for partons to behave as free particles, increasingly large amounts of energy are required to pull a hadron apart.
-This results in the \emph{colour confinement} of quarks, as when $\alpha_{s}$ is sufficiently large, it becomes more energetically favourable to create new $q\overline{q}$ pairs than to separate the partons further~\cite{ElectroweakStrong,Griffiths,devenish2004deep}.
-When partons are liberated from hadrons, such as in the high energy hadron collisions of the LHC, the resultant shower of partons form new hadrons in a process known as hadronisation~\cite{Andersson:1983ia}.
+This results in the \emph{colour confinement}~\cite{ElectroweakStrong,Griffiths,devenish2004deep}.
+This behaviour of $\alpha_{s}$ means that when partons are liberated from hadrons, such as in the high energy hadron collisions of the LHC, the resultant shower of partons form new hadrons in a process known as hadronisation~\cite{Andersson:1983ia}.
 
-In QED, higher order processes are increasingly less important to the calculation of the Matrix Element due to the electromagnetic coupling constant being considerably smaller than one.
-In contrast however, higher order contributions in QCD become increasingly important as $\alpha_{s}$ increases, making higher order QCD calculations increasingly difficult to perform.
+In QED, the contribution to the calculation of the Matrix Element for a process decreases with increasing order of the diagram considered due to the electromagnetic coupling constant being considerably smaller than one.
+In contrast however, higher order contributions in QCD become increasingly important as $\alpha_{s}$ increases, making higher order QCD calculations more and more difficult to perform.
 It has been demonstrated that QCD calculations can be temporally split (factorised) into components that describe the long and short distance behaviours.
-This allows for the short distance components to be described using perturbation theory, such as the hard scattering of hardons, while the long distance components are described using non-perturbative models, such as Parton Distribution Functions (PDFs).
-PDFs describe the number density of a hadron's partons carrying a momentum fraction $x$ at a given energy scale and are constrained by experimental measurements made by various experiments~\cite{Ball:2014uwa,devenish2004deep,}.
+This allows the short distance components to be described using perturbation theory, such as the hard scattering of hadrons, while the long distance components are described using non-perturbative phenomenological models, such as Parton Distribution Functions (PDFs).
+For a given hadron, PDFs describe the number density of each parton flavour as a function of the fraction of the hadron's momentum ($x$) at a given energy scale.
+PDFs are constrained by fits made to measurements made by a variety of different experiments~\cite{Ball:2014uwa,devenish2004deep}.
+Figure~\ref{fig:pdf} shows the results of one the fit known as NNPDF3.0 which was used for the generation of the simulation samples considered in this thesis~\cite{Ball:2014uwa}.
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.97\textwidth]{figs/sm/pdf.png}
+\caption{The proton parton distribution functions $xf(x)$ as a function of the momentum fraction determined by the NNPDF3.0 fit for factorisation scales of $\mu_{F} = 10\GeV^{2}$ (left) and $\mu_{F} = 10^{4}\GeV^{2}$~\cite{Ball:2014uwa}.
+}
+\label{fig:pdf}
+\end{center}
+\end{figure}
 
 \section{Top Physics}\label{sec:top-physics}
 The existence of a third generation of quarks was first hypothesised in 1973 by Makoto Kobayashi and Toshihide Maskawa as the CP violation observed in kaon decays was not possible with only two generations of quarks~\cite{Kobayashi:1973fv}.
@@ -499,7 +510,7 @@ The first search for tZq however, was unable to observe the process, making a me
 Both ATLAS and CMS have since been able to observe the trilepton final state for tZq at $\sqrt{s} = 13\TeV$ as a result of the Z and $\overline{\text{t}}$Z cross sections increasing with the centre-of-mass energy at a similar rate to \ttZ and the large integrated luminosity delivered by the LHC at $\sqrt{s} = 13\TeV$~\cite{Aaboud:2017ylb,Sirunyan:2017nbr}.
 Such an increase in statistics has also made it possible to search for the other tZq final states, including the dilepton final state, allowing for complimentary measurements of this process to be made.
 
-Both the expected and observed results presented in this work and the previous CMS searches for tZq using the trilepton final state at $\sqrt{s} = 13\TeV$ use the reference next-to-leading order production cross section for tZq where the Z boson decays leptonically~\cite{Sirunyan:2017nbr}:
+Both the expected and observed results presented in this work and the previous CMS searches for tZq using the trilepton final state at $\sqrt{s} = 13\TeV$ use the reference next-to-leading order production cross section for tZq where the Z boson decays leptonically and $m_{ll} > 30 \GeV$~\cite{Sirunyan:2017nbr}:
 
 \begin{equation}
 \sigma ( \textrm{tZq}, Z \rightarrow l^{+} l^{-}) = \textrm{94.2 fb} \;

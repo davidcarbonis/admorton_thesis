@@ -4,13 +4,13 @@ Following the application of the event selection criteria, as described in Chapt
 
 The complete list of variables and their descriptions are listed in table~\ref{tab:allBdtVariables}.
 
-\begin{table}[htbp]
+\begin{table}[htb]
 \topcaption {The list of the names and descriptions of all of variables considered by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
 }
 \label{tab:allBdtVariables}
   \centering
 % This increases column spacing.
-\resizebox{\textwidth}{!}{
+%\resizebox{\textwidth}{!}{
 % This right-aligns numbers in column, but centers them under column title.
 \begin{tabular}{cc}
    \hline
@@ -39,11 +39,15 @@ The complete list of variables and their descriptions are listed in table~\ref{t
     secJetPhi & Subleading jet $\phi$  \\
     secJetEta & Subleading jet $\eta$ \\
     secJetbTag & Subleading jet b-tag output discriminant  \\
+    thirdJetPt & Third jet \pt \\
+    thirdJetPhi & Third jet $\phi$  \\
+    thirdJetEta & Third jet $\eta$ \\
+    thirdJetbTag & Third jet b-tag output discriminant  \\
    \hline
- \end{tabular}}
+ \end{tabular}%}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[htb]
 \label{tab:allBdtVariables2}
   \centering
 % This increases column spacing.
@@ -53,10 +57,6 @@ The complete list of variables and their descriptions are listed in table~\ref{t
    \hline
    \textbf{Variable} & \textbf{Description} \\
    \hline
-    thirdJetPt & Third jet \pt \\
-    thirdJetPhi & Third jet $\phi$  \\
-    thirdJetEta & Third jet $\eta$ \\
-    thirdJetbTag & Third jet b-tag output discriminant  \\
     fourthJetPt & Fourth jet \pt \\
     fourthJetPhi & Fourth jet $\phi$  \\
     fourthJetEta & Fourth jet $\eta$ \\
@@ -97,13 +97,11 @@ The complete list of variables and their descriptions are listed in table~\ref{t
     zlb1DelPhi & $\Delta \phi$ between the leading lepton and leading b-tagged jet \\
     zlb2DelR & $\Delta R$ between the subleading lepton and leading b-tagged jet\\
     zlb2DelPhi & $\Delta \phi$ between the subleading lepton and leading b-tagged jet \\
-    lepHt & ${\ensuremath{H_{\mathrm{T}}}}$ of the Z boson candidate's leptons \\
-    wQuarkHt & ${\ensuremath{H_{\mathrm{T}}}}$ of the W boson candidate's jets \\
    \hline
  \end{tabular}}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[htb]
 \label{tab:allBdtVariables3}
   \centering
 % This increases column spacing.
@@ -113,6 +111,8 @@ The complete list of variables and their descriptions are listed in table~\ref{t
    \hline
    \textbf{Variable} & \textbf{Description} \\
    \hline
+    lepHt & ${\ensuremath{H_{\mathrm{T}}}}$ of the Z boson candidate's leptons \\
+    wQuarkHt & ${\ensuremath{H_{\mathrm{T}}}}$ of the W boson candidate's jets \\
     totPtVec & \pt of the system \\
     totEta & $\eta$ of the system \\
     totPhi & $\phi$ of the system \\
@@ -152,7 +152,7 @@ The complete list of variables and their descriptions are listed in table~\ref{t
 \end{table}
 
 \section{List of all potential Input Features}\label{appsec:bdtInputComparisons}
-The following section contains the full set of comparison plots between data and simulation for the chosen BDT input variables listed in table~\ref{selectedBdtVariables} in Section~\ref{subsec:bdtOpt}.
+The following section contains the full set of comparison plots between data and simulation for the chosen BDT input variables listed in table~\ref{tab:selectedBdtVariables} in Section~\ref{subsec:bdtOpt}.
 
 \begin{figure}[htb]
 \centering

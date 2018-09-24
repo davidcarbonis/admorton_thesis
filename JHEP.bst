@@ -949,6 +949,8 @@ FUNCTION {misc}
   howpublished output
   format.date output
   format.url output
+  format.note output
+  format.urldate output
   new.block
   % note output
   doi output

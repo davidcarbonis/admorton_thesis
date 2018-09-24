@@ -12,7 +12,7 @@
 Out of the 37.8\fbinv of  proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by the CMS experiment during 2016, 35.9\fbinv was certified by the collaboration as being of sufficient quality to be used for physics analysis.
 The difference between the certified value and the total data recorded is the result of various factors such as the unavailability of a detector due to power failures.
 Events are considered from the dataset certified to be good for physics if they pass one of the triggers in accordance with the trigger strategy described in Section~\ref{sec:triggerStrategy}.
-Due to the prescaling of all of the electron triggers considered during the start of the most luminous runs (as discussed in Section~\ref{sec:triggerStrategy}) the $ee$ channel uses a reduced dataset corresponding to 35.6\fbinv where none of the triggers considered were prescaled.
+Due to the prescaling of all of the electron triggers considered during the start of the most luminous runs (as discussed in Section~\ref{sec:triggerStrategy}) the $ee$ channel uses a reduced dataset corresponding to 35.8\fbinv where none of the triggers considered were prescaled.
 
 The MC samples used to model both the model signal and background processes considered here are listed in table~\ref{tab:mcList}.
 For each of the processes considered, the table which includes information on the number of events generated, the cross section used in their generation and the order in perturbative accuracy in QCD to which the generators calculated the processes.
@@ -171,14 +171,17 @@ From a high-purity sub-sample of these events, where the dilepton invariant mass
 For each type and lepton flavour, the efficiency is the fraction of events where the probe leptons passed the selection criteria under study.
 The corrective scale factors determined from these efficiencies are used to reweight events as functions of their leptons' \pt, $\eta$, and flavour.
 
-The triggers efficiencies for the analysis were determined by the author by using events that pass other trigger combinations that are weakly correlated with those used in the analysis, known as \emph{cross triggers} (X triggers).
+The triggers efficiencies for the analysis were determined using the \emph{cross-trigger} methodology used in~\cite{Khachatryan:2016kzg}.
+
+
+The cross-trigger methodology determines the trigger efficiencies by using events that pass other trigger combinations that are weakly correlated with those used in the analysis, known as \emph{cross-triggers} (X triggers).
 The trigger efficiency is estimated as follows:
 
 \begin{equation}
 \epsilon_{trigger} = \frac{N_{X triggers + lepton triggers}}{N_{X triggers}} \;
 \end{equation}
 
-where $N_{X trigger}$ is the number of events that have passed the analysis' lepton selection criteria and the cross triggers, and $N_{X triggers + lepton triggers}$ is $N_{X trigger}$ and the number of events that additionally passed at least one of the lepton triggers for the relevant lepton flavour.
+where $N_{X trigger}$ is the number of events that have passed the analysis' lepton selection criteria and the cross-triggers, and $N_{X triggers + lepton triggers}$ is $N_{X trigger}$ and the number of events that additionally passed at least one of the lepton triggers for the relevant lepton flavour.
 
 As the trigger requirements are applied to both simulated and data events, a scale factor of the ratio of the trigger efficiency in data and in simulation is calculations and used to weight the simulation.
 For both the $ee$ and $\mu\mu$ channels in the signal region and the $e \mu$ channel for the \ttbar control region, a constant scale factor was found to be sufficient to account for the differences between data and simulation.
@@ -249,22 +252,19 @@ The \PU SF is determined as a function of the number of primary vertices, $n_{PV
 \subsection{Top quark \pt}
 A scale factor is used to reweight all simulated \ttbar events to account for the differences in the top quark \pt distribution observed between data and both the LO and NLO MC simulation~\cite{Khachatryan:2015oqa}.
 
-%\section{Signal Region Simulated Backgrounds}\label{sec:simBackgrounds}
-A comparison between data and simulation, after all corrections have been applied, in the signal region 
-
-While the jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions and reduced contributions from the W+jets process to negligible levels, the signal region is still dominated by a number of background processes.
-The two most dominant background processes are Z+jets and \ttbar production, with contributions of a similar size to that from the tZq process from the tW, \ttbarZ, WZ and ZZ processes.
-The remaining single top (tHq, tWZ, s-channel, t-channel), \ttbarW, \ttbarH, WW and triboson backgrounds produce contributions smaller than the signal process.
-
 \section{Signal Region Background Estimation}\label{sec:simBackgrounds}
 The final event yields for the signal region, including non-prompt lepton contributions(see Section~\ref{sec:NPLs}), for data and simulation are shown in table~\ref{tab:signalYields}.
+
+
+between simulation and data for the event yields at each stage of applying selection criteria and simulation corrections, as shown in Figure~\ref{fig:cutFlow}, and also
+
 
 While jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process, the signal region is  dominated by background processes involving a real Z boson decay or two leptons from W boson decays.
 The two dominant background processes are Z+jets and \ttbar, with the single top tW-channel, \ttbarZ, WZ and ZZ processes contributing a similar order of events as tZq processes.
 The remaining single top (tHq, tWZ, s-channel, t-channel), \ttbarW, \ttbarH, WW and triboson backgrounds produce contributions smaller than the signal process.
 
 \begin{table}[htbp]
-\topcaption{The number of observed events in data, expected events in simulation and , the data-driven estimate of the non-prompt leptons in the signal region following the full event selection for each of the separate channels and with both channels combined. The statistical uncertainties for each process is given and the Madgraph sample is used for the Z+jets contribution.
+\topcaption{The number of observed events in data, expected events in simulation and data, the data-driven estimate of the non-prompt leptons in the signal region following the full event selection for each of the separate channels and with both channels combined. The statistical uncertainties for each process is given and the Madgraph sample is used for the Z+jets contribution.
 }\label{tab:signalYields}
 \centering
 \begin{tabular}{lccc}
@@ -302,8 +302,9 @@ Data & 5274.0$\pm$72.62 & 9750.0$\pm$98.74 & 15024.0$\pm$122.57    \\
 \end{tabular}
 \end{table}
 
-Not only is good agreement observed between simulation and data for the event yields at each stage of applying selection criteria and simulation corrections, but also in the distributions of the reconstructed variables.
 
+
+Good agreement is also observed for the distributions of the reconstructed variables.
 Examples of such good agreement include the distributions of the reconstructed Z boson mass following the lepton and jet selection cuts in Figure~\ref{fig:SR_zBoson}; the reconstructed W boson following application of the b-tagging criteria in Figure~\ref{fig:SR_zBoson}; and the invariant \pT of all the jets in an event following the jet selection criteria in Figure~\ref{fig:SR_totJetPt}.
 
 \begin{figure}[tbp]
