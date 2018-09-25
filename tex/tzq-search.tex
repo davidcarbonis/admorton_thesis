@@ -75,7 +75,7 @@ Given the size of the \ttbar production cross section, these events were found t
 The selection criteria for the \ttbar control region differs from the signal region definition defined in Section~\ref{sec:signalRegion}, by requiring that:
 \begin{itemize}
 \item the two oppositely-charged leptons to have different flavours (\ie one is an electron and the other a muon).
-\item \pt cuts of 35\GeV and 26\GeV are used for the electron and muon respectively are required to have a , as the leading lepton \pt thresholds of the HLT paths considered for the e$\mu$ final state differ from those for the same flavour final states, as described in Section~\ref{sec:triggerStrategy}. 
+\item \pt cuts of 25\GeV and 25\GeV are used for the electron and muon respectively are required as the leading lepton \pt thresholds of the HLT paths considered for the e$\mu$ final state differ from those for the same flavour final states, as described in Section~\ref{sec:triggerStrategy}. 
 \end{itemize} 
 
 As the branching ratio for a W boson (produced in top and anti-top quark decays) to decay into either an electron or muon is, within uncertainty, equal~\cite{Tanabashi:2018oca}, this produces a \ttbar-enriched background control region which is topologically similar to the \ttbar contributions in the signal region. 
@@ -121,30 +121,34 @@ The choice of value used for $\chi^{2}_{SR}$ and $\chi^{2}_{SB}$ had to balance 
 \end{itemize}
 
 For $\sigma_{\mathrm{t}} = 8\GeV$ and $\sigma_{\mathrm{W}}) = 30\GeV$, the optimised values of $\chi^{2}_{SR}$ and $\chi^{2}_{SB}$ were determined to be 5 and 30, respectively.
-%Figure~\ref{fig:blindingChi2} illustrates the reconstructed top quark mass and w boson mass distributions for the tZq simulation sample (left) and all simulation samples (right) considered (see Section~\ref{sec:samples}) and the side-band region bounded between the two contour lines.
-%
-%\begin{figure}[tbp]
-%\centering
-%\includegraphics[width=0.47\textwidth]{CMS-bw-logo.pdf}
-%\includegraphics[width=0.47\textwidth]{CMS-bw-logo.pdf}
-%\caption{
-%The reconstructed top quark mass and w boson mass distributions for the tZq simulation sample (left) and all simulation samples (right) following the application of the signal region criteria described in Section~\ref{sec:signalRegion}, where region bounded between the two contour lines is the side-band region.
-%}
-%\label{fig:blindingChi2}
-%\end{figure}
+Figure~\ref{fig:blindingChi2} shows the side-band region bounded between the two contour lines in 
+
+ the reconstructed top quark mass and w boson mass distributions for the tZq simulation sample (left) and all the simulation samples that were considered (right) (see Section~\ref{sec:samples}) and the .
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/blinding/tZq_topVsWmass.pdf}
+\includegraphics[width=0.47\textwidth]{figs/blinding/all_topVsWmass.pdf}
+\caption{
+The reconstructed top quark mass and w boson mass distributions for the tZq simulation sample (left) and all simulation samples (right) for both the $ee$ and $\mu\mu$ channels following the application of the signal region criteria described in Section~\ref{sec:signalRegion}.
+The signal region is defined as the area within the inner contour line and the side-band region is defined as the are bounded between the two contour lines.
+}
+\label{fig:blindingChi2}
+\end{figure}
 
 \section{Trigger Strategy}\label{sec:triggerStrategy}
-As the search for the tZq dilepton final state relies on the identification of the two leptons from the Z boson decay, the trigger strategy consists of selecting events from datasets identified by the presence of electrons or muons.
-
+As the search for the tZq dilepton final state relies on the identification of the two leptons from the Z boson decay, the trigger strategy consists of selecting events from datasets identified by the triggering of an electron or muon trigger.
 Given that the signal process being searched for is dominated by background processes and will likely be limited by statistics, it is essential to reconstruct and select as many signal events as possible.
-To this end, events are required to have triggered the single lepton and/or the double lepton triggers for the relevant final state.
-The use of either or both the single and double lepton triggers ensures maximum efficiency as it does not discard events from any dataset.
-To avoid double counting, the triggers used to select events for the other channel are required to have not fired.
-The logic for this set of conditions is illustrated in table~\ref{tab:triggerCombo}, where \emph{EM} refers to the muon plus electron triggers, \emph{EE} to the double electron triggers, \emph{E} to the single electron triggers, \emph{MM} to the double muon triggers and \emph{M} to the single muon triggers.
+To this end, in order to obtain the maximum event selection efficiency, events are required to have triggered a single lepton or a double lepton trigger for the $ee$ and $\mu\mu$ final states.
+
+In simulation an event is required to pass either the single or double lepton triggers for the relevant channel.
+In data however, there is the potential to double count events which are present in both the single lepton and double lepton datasets.
+In order to avoid double counting events, events that have been found in a double lepton dataset are not considered for the single lepton dataset.
+The logic for this for each of the channels is illustrated in table~\ref{tab:triggerCombo}.
 
 \begin{table}[htbp]
 \topcaption {
-The trigger logic used for each of the datasets considered.
+The trigger logic used for each of the CMS datasets considered, where \emph{EM} refers to the muon and electron triggers, \emph{EE} to the double electron triggers, \emph{E} to the single electron triggers, \emph{MM} to the double muon triggers and \emph{M} to the single muon triggers.
 }
 \label{tab:triggerCombo}
   \centering
@@ -153,7 +157,7 @@ The trigger logic used for each of the datasets considered.
    \hline
    \textbf{Dataset} & \textbf{Trigger logic}  \\
    \hline
-   Muon plus Electron & EM \\
+   Muon and Electron & EM and !EE and !MM \\
    \hline
    Double Muon & MM and !EM and !EE\\
    Single Muon & M and !EE and !MM and !EM \\
@@ -168,7 +172,7 @@ Ideally the, single and double lepton triggers with the lowest possible transver
 The high instantaneous luminosity at the start of the most luminous data taking periods, however, required a number of the L1 triggers to be prescaled to prevent the trigger bandwidth constraints being exceeded.
 As only the triggers considered for the $ee$ channel were impacted by this; these triggers were chosen on the basis of the amount of luminosity they were not prescaled for with the lowest possible transverse momenta thresholds.
 
-Table~\ref{tab:triggersDatasets} lists the triggers applied to data and MC events for each channel, including the e$mu$ final state which is considered for a \ttbar enriched control region discussed in Section~\ref{subsec:ttbarCR}.
+Table~\ref{tab:triggersDatasets} lists the triggers used to select data and simulation events for each channel, including the e$mu$ final state which is considered for a \ttbar enriched control region(see Section~\ref{subsec:ttbarCR}).
 In these trigger path names, \emph{Ele} and \emph{Mu}, refer to a reconstructed electron and muon, respectively.
 The number following the lepton flavour denotes the minimum \pT a lepton must have to fire the trigger.
 In order to avoid raising \pT thresholds to maintain the trigger data rate, additional criteria are used by the triggers.
@@ -196,8 +200,8 @@ Triggers and datasets used for each decay channel.
    $e \mu$ & MuonEG &  HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL(\_DZ)   \\  
 %          &        &  HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL(\_DZ)  \\
           &        &  HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL(\_DZ) \\
-    & SingleElectron &  HLT\_Ele32\_eta2p1\_WPTight\_Gsf   \\
-    & SingleMuon &  HLT\_Iso(Tk)Mu24  \\  
+%    & SingleElectron &  HLT\_Ele32\_eta2p1\_WPTight\_Gsf   \\
+%    & SingleMuon &  HLT\_Iso(Tk)Mu24  \\  
    \hline
  \end{tabular}}
 \end{table}
@@ -222,7 +226,7 @@ The following section describes the selection criteria used in this analysis and
 
 \subsection{Lepton Selection}
 All PF electrons and muons identified by the PF algorithm must pass a set of kinematic requirements and a set of quality criteria defined by CMS.
-The kinematic requirements are applied to ensure that the leptons lie fully within the detector's acceptance and that their transverse momenta lies in the region where the behaviour of the trigger is well described in simulation.
+The kinematic requirements are applied to ensure that the leptons lie fully within the detector's acceptance and that their transverse momenta lies in the region where the trigger is both fully efficient and well described in simulation.
 The identification criteria have been designed to be efficient at selecting isolated leptons produced from W and Z boson decays and rejecting leptons that have been from decays from within jets or taus or from incorrectly reconstructed tracks.
 
 Different ``working points'' (WPs) are determined for the set of variables used by each of identification criteria supported by the CMS Physics Object Groups.

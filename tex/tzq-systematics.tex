@@ -255,8 +255,8 @@ A scale factor is used to reweight all simulated \ttbar events to account for th
 
 \section{Signal Region Background Estimation}\label{sec:simBackgrounds}
 
-
-between simulation and data for the event yields at each stage of applying selection criteria and simulation corrections, as shown in Figure~\ref{fig:cutFlow}, and also
+Good agreement between simulation and data is observed in the signal region at each stage of applying selection criteria and simulation corrections, as shown in Figure~\ref{fig:cutFlow}.
+The final event yields for each process considered for the $ee$ and $\mu\mu$ channels and their combination is given in table~\ref{tab:signalYields}.
 
 \begin{figure}[tbp]
 \centering
@@ -268,17 +268,8 @@ The overall event yield for data and simulation at each stage of applying the si
 \label{fig:SR_cutFlow}
 \end{figure}
 
-The final event yields for the signal region, including non-prompt lepton contributions(see Section~\ref{sec:NPLs}), for data and simulation are shown in table~\ref{tab:signalYields}.
-
-
-
-
-While jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process, the signal region is  dominated by background processes involving a real Z boson decay or two leptons from W boson decays.
-The two dominant background processes are Z+jets and \ttbar, with the single top tW-channel, \ttbarZ, WZ and ZZ processes contributing a similar order of events as tZq processes.
-The remaining single top (tHq, tWZ, s-channel, t-channel), \ttbarW, \ttbarH, WW and triboson backgrounds produce contributions smaller than the signal process.
-
 \begin{table}[htbp]
-\topcaption{The number of observed events in data, expected events in simulation and data, the data-driven estimate of the non-prompt leptons in the signal region following the full event selection for each of the separate channels and with both channels combined. The statistical uncertainties for each process is given and the Madgraph sample is used for the Z+jets contribution.
+\topcaption{The number of observed events in data, expected events in simulation and data and the data-driven estimate of the non-prompt leptons in the signal region following the full event selection. The number of observed events is given for each of the separate channels and their  combination. The statistical uncertainties for each process is given and the LO Z+jets sample is used for the Z+jets contribution.
 }\label{tab:signalYields}
 \centering
 \begin{tabular}{lccc}
@@ -316,7 +307,12 @@ Data & 5274.0$\pm$72.62 & 9750.0$\pm$98.74 & 15024.0$\pm$122.57    \\
 \end{tabular}
 \end{table}
 
-Good agreement is also observed for the distributions of the reconstructed variables.
+In Figure~\ref{fig:cutFlow} it can be seen that the jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process.
+The remaining backgrounds in the signal region consist of processes that involve the decay of a  real Z boson into two leptons or the leptonic decay of two W bosons where the resultant two leptons are consistent with a Z boson decay.
+The two dominant background processes are Z+jets and \ttbar, with the single top tW-channel, \ttbarZ, WZ and ZZ processes contributing a similar order of events as tZq processes.
+The remaining single top (tHq, tWZ, s-channel, t-channel), \ttbarW, \ttbarH, WW and triboson backgrounds produce contributions smaller than the signal process.
+
+Good agreement between simulation and data is also observed for the reconstructed variables.
 Examples of such good agreement include the distributions of the reconstructed Z boson mass following the lepton and jet selection cuts in Figure~\ref{fig:SR_zBoson}; the reconstructed W boson following application of the b-tagging criteria in Figure~\ref{fig:SR_zBoson}; and the invariant \pT of all the jets in an event following the jet selection criteria in Figure~\ref{fig:SR_totJetPt}.
 
 \begin{figure}[tbp]
@@ -504,10 +500,7 @@ Data: & 2940.0$\pm$64.2 & 5718.0$\pm$87.2 & 8658.0$\pm$108.28    \\
 Based on the yields in both tables~\ref{tab:zPlusControlYieldsOld}-\ref{tab:zPlusControlYieldsNew}, it was also observed that the NLO Z+jets sample did not correctly describe the normalisation of the Z+jets process.
 Further studies into the NLO Z+jets sample were done using a simple SF based on the final event yields to correctly normalise this Z+jets sample.
 During these studies, it was observed that the NLO Z+jets sample poorly described events with low jet multiplicities, as shown in Figure~\ref{fig:zPlusCR_nJets}
-
-In contrast however, the LO Z+jets sample not only correctly describes the normalisation of the LO sample, but also the jet multiplicities throughout the application of the selection criteria and simulation corrections.
-Consequently, despite the NLO sample providing a better description of the \pT of the higher order jets (shown in Figure~\ref{fig:zPlusCR_jetPt}), it was decided to use the LO Z+jets sample to model this process.
-The reasons why the NLO Z+jets sample does not correctly normalise and poorly describes events with low jet multiplicities will need to be understood before it can be considered in the future.
+In contrast however, the LO Z+jets sample not only correctly describes the normalisation of the Z+jets process, but also the jet multiplicities throughout the application of the selection criteria and simulation corrections.
 
 \begin{figure}[tbp]
 \centering
@@ -518,6 +511,10 @@ The distributions of the number of jets in the 0-bjet region following the lepto
 }
 \label{fig:zPlusCR_nJets}
 \end{figure}
+
+Consequently, despite the NLO sample providing a better description of the \pT of the higher order jets (shown in Figure~\ref{fig:zPlusCR_jetPt}), it was decided to use the LO Z+jets sample to model this process.
+The reasons why the NLO Z+jets sample does not correctly normalise and poorly describes events with low jet multiplicities will need to be understood before it can be considered in the future.
+
 
 \begin{figure}[tbp]
 \centering
@@ -543,18 +540,23 @@ The distributions of the leading four jets \pt in the 0-bjet region following th
 In Section~\ref{subsec:ttbarCR} a \ttbar enriched control regions was defined to produce an orthogonal region that was topologically similar to the signal region to validate the modelling of the simulated \ttbar sample used.
 This control region differed from the signal region by requiring that the event contained an electron and muon, rather than a pair of electrons or muons.
 
-%\begin{figure}[tbp]
-%\centering
-%\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbarControl/cutFlow_log.pdf}
-%\caption{
-%The overall event yield for data and simulation at each stage of applying the \ttbar control region selection criteria and simulation corrections.
-%}
-%\label{fig:ttbar_cutFlow}
-%\end{figure}
+Good agreement is observed between the normalisation of simulation and data at every stage of applying the simulation corrections and control region selection criteria, as illustrated in Figure~\ref{fig:ttbar_cutFlow}.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbarControl/cutFlow_log.pdf}
+\caption{
+The overall event yield for data and simulation at each stage of applying the \ttbar control region selection criteria and simulation corrections.
+}
+\label{fig:ttbar_cutFlow}
+\end{figure}
+
+From table~\ref{tab:ttbarCR}, it can be seen that the full application of the control region's criteria selection produces an enriched region where 97.5\% of the expected events are from \ttbar production.
+Of the remaining events, 70\% are expected to be from tW single top production.
 
 \begin{table}[htbp]
 \topcaption {
-The event yields, and the statistical uncertainties associated with them, following the full event selection and simulation corrections for the \ttbar control region. The non-prompt lepton contribution is estimated using the methodology described in Section~\ref{sec:NPLs}.
+The event yields, and the statistical uncertainties associated with them, following the full event selection and simulation corrections for the \ttbar control region.
 }
 \label{tab:ttbarCR}
   \centering
@@ -580,8 +582,8 @@ The event yields, and the statistical uncertainties associated with them, follow
 	WWZ\@: & 0.09$\pm$0.05     \\
 	WZZ\@: & 0.0$\pm$0.0     \\
 	ZZZ\@: & 0.0$\pm$0.0     \\
-	W + jets\@: & 0.0$\pm$0.0     \\
-	Z + jets\@: & 0.0$\pm$0.0     \\
+	W+jets\@: & 0.0$\pm$0.0     \\
+	Z+jets\@: & 0.0$\pm$0.0     \\
 	\hline
 	Total MC\@: & 3366.84$\pm$31.93     \\
 	\hline
@@ -590,14 +592,9 @@ The event yields, and the statistical uncertainties associated with them, follow
  \end{tabular}
 \end{table}
 
-The final event yields for the \ttbar control region are given in table~\ref{tab:ttbarCR}.
-The selection criteria produce an enriched region where 97.5\% of the expected events are from \ttbar production.
-Of the remaining events, 70\% are expected to be from tW single top production.
-Good agreement is observed not only between the overall normalisation of simulation and data for each stage of applying selection criteria and simulation corrections, but also for the distributions of individual variables.
+Good agreement is also observed for the reconstructed variables, as illustrated by the distributions of the number of jets and b-jets in Figure~\ref{fig:ttbarCR_nJets}; the \pT of the four leading jets in Figure~\ref{fig:ttbarCR_jetPt}; and the invariant mass and \pT of the two leptons in Figure~\ref{fig:ttbarCR_leptons}.
 
-Examples of this observed good agreement for the final event selection are illustrated by the distributions of the number of jets and b-jets in Figure~\ref{fig:ttbarCR_nJets}; the \pT of the four leading jets in Figure~\ref{fig:ttbarCR_jetPt}; and the invariant mass and \pT of the two leptons in Figure~\ref{fig:ttbarCR_leptons}
-
-Given the good agreement observed between data and simulation for both the overall normalisation and the distributions of individual variables, it was determined that the \ttbar MC sample accurately modelled data.
+Given the good agreement observed between data and simulation, it was determined that the \ttbar MC sample accurately modelled data.
 Consequently, a data-driven estimate of the \ttbar contribution was deemed unnecessary.
 
 \begin{figure}[tbp]
