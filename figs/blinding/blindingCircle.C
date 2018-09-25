@@ -3,14 +3,16 @@
    double sigmaTop = 30.;
    double sigmaW = 8.;
 
+   uint n = 10;
+
    uint k = 0;
-   TPolyMarker *pmSR = new TPolyMarker(5250000);
-   for (uint i = 0; i!=1500; i++) {
-     for (uint j = 0; j!=3500; j++) {
-       double wChi2Term = (double(i)/10-mW)/(sigmaW);
-       double topChi2Term = (double(j)/10-mTop)/(sigmaTop);
+   TPolyMarker *pmSR = new TPolyMarker(52500*n*n);
+   for (uint i = 0; i!=150*n; i++) {
+     for (uint j = 0; j!=350*n; j++) {
+       double wChi2Term = (double(i)/n-mW)/(sigmaW);
+       double topChi2Term = (double(j)/n-mTop)/(sigmaTop);
        if ( (wChi2Term*wChi2Term + topChi2Term*topChi2Term) < 4.1 && (wChi2Term*wChi2Term + topChi2Term*topChi2Term) > 3.9 ) {
-         pmSR->SetPoint(k,double(i)/10,double(j)/10);
+         pmSR->SetPoint(k,double(i)/n,double(j)/n);
          k++;
        }
      }
@@ -19,13 +21,13 @@
    pmSR->Draw("same");
 
    uint a = 0;
-   TPolyMarker *pmSB = new TPolyMarker(525000000);
-   for (uint b = 0; b!=15000; b++) {
-     for (uint c = 0; c!=35000; c++) {
-       double wChi2Term = (double(b)/100-mW)/(sigmaW);
-       double topChi2Term = (double(c)/100-mTop)/(sigmaTop);
+   TPolyMarker *pmSB = new TPolyMarker(52500*n*n);
+   for (uint b = 0; b!=150*n; b++) {
+     for (uint c = 0; c!=350*n; c++) {
+       double wChi2Term = (double(b)/n-mW)/(sigmaW);
+       double topChi2Term = (double(c)/n-mTop)/(sigmaTop);
        if ( (wChi2Term*wChi2Term + topChi2Term*topChi2Term) < 30.1 && (wChi2Term*wChi2Term + topChi2Term*topChi2Term) > 29.9 ) {
-         pmSB->SetPoint(a,double(b)/100,double(c)/100);
+         pmSB->SetPoint(a,double(b)/n,double(c)/n);
          a++;
        }
      }
