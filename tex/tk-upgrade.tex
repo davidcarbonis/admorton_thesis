@@ -602,11 +602,10 @@ In addition, the \KF state $\chi^2$ cuts for tracks with $\pt < 2.7\GeVc$ were o
 The optimisation of the \KF state $\chi^2$ cut was done to reduce the number of duplicate and fake tracks as far as possible without negatively impacting on the \HT track reconstruction efficiency.
 Figure~\ref{fig:2GeVFlatEff} shows how the tracking efficiency improves following the use of the variable precision \HT with and without optimised \KF state cuts after both the \HT and the full demonstrator chain. 
 
-\begin{figure}[tbp]
+\begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/htTrackingEffVsInvPtFlatGeometry_5000.pdf}
-\\
-\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/htTrackingEffVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
 \caption{The post-\HT (top) and post-\KF (bottom) tracking efficiency distributions for tracks with $\pt > 2\GeVc$ for \ttbar events with a $<\textrm{PU}>$ of 200 events. The default configuration where only the number of \qpt columns are increased are shown in red and the configuration with the increased number of columns, HT cell merging and \KF state cuts optimisation shown in blue).
 }
 \label{fig:2GeVFlatEff}	
@@ -649,7 +648,7 @@ If all uncertainties were accounted for, the ideal distribution of $\frac{\chi^{
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfChi2NdfVsInvPtFlatGeometry_5000.pdf}
+\includegraphics[width=0.60\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfChi2NdfVsInvPtFlatGeometry_5000.pdf}
 \caption{Plot of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ for genuine tracks produced by the \KF.}
 \label{fig:2GeVFlatChi2Ndf}
 \end{figure}
@@ -713,20 +712,19 @@ While an increase in the duplicate rate is observed for \pT ($\frac{1}{\pT}$) be
 The increased \pT threshold for the \HT cell merging had the additional benefit of recovering a further 0.2\% of the tracks that were previously lost to \MS.
 Consequently, this change was adopted by the project and all the results presented below for the two \MS coefficient forms were produced using this increased threshold. 
 
-\begin{figure}[tbp]
+\begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/htFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
-\\
-\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/htFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
 \caption{The fraction of genuine tracks with duplicates as a function of $\frac{1}{\pT}$ following reconstruction by the \HT (top) and fitting and filtering by the \KF and \DR (bottom) for where the \HT cell merging \pT threshold is set to 2.7\GeV (red) and 3.5\GeV (blue). 
 The constant coefficient for the \MS contribution was used for these \KF results.
 }
 \label{fig:2GeVfracDups}
 \end{figure}
 
-\begin{figure}[tbp]
+\begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.60\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtTiltedGeometry_5000.pdf}
 %\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
 \caption{Plots showing tracking efficiency as a function of $\frac{1}{\pT}$ for \ttbar events with a $<\textrm{PU}>$ of 200 events after the full chain has been run, where the \KF has not been modified to take \MS into account (red), a constant coefficient for \MS is used (black) and a layer dependent coefficient for \MS is used (blue).
 }
@@ -768,9 +766,9 @@ As expected, lower transverse momentum tracks experience the greatest improvemen
 This improvement is further illustrated by the distribution of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ in Figure~\ref{fig:2GeVTiltChi2Ndf}.
 In contrast to the \KF that was not modified to take \MS into account, the distributions of the \KF's performance for both \MS coefficients implies that \MS was the dominant source of uncertainty in the track measurements and that it has been well accounted for.
 
-\begin{figure}[tbp]
+\begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfChi2NdfVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.6\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfChi2NdfVsInvPtTiltedGeometry_5000.pdf}
 \caption{The $\frac{\chi^{2}}{ndf}$ distribution as a function of $\frac{1}{\pT}$ for \ttbar events with a $<\textrm{PU}>$ of 200 events after the full chain has been run. The distribution for when the \KF has not been modified to take \MS into account is given in red, for a constant \MS coefficient in black and a layer-dependent \MS coefficient in blue.
 }
 \label{fig:2GeVTiltChi2Ndf}	

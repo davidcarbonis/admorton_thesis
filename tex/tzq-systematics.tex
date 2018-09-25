@@ -251,11 +251,11 @@ To achieve this, MC events are reweighted as a function of the number of primary
 The \PU SF is determined as a function of the number of primary vertices, $n_{PV}$, by comparing the $n_{PV}$ distribution in minimum bias data over the running period considered to the corresponding $n_{PV}$ distribution in simulated events.
 
 \subsection{Top quark \pt}
-A scale factor is used to reweight all simulated \ttbar events to account for the differences in the top quark \pt distribution observed between data and both the LO and NLO MC simulation~\cite{Khachatryan:2015oqa}.
+A scale factor is used to reweight all simulated \ttbar events to account for the differences in the top quark \pt distribution observed between data and both LO and NLO simulation~\cite{Khachatryan:2015oqa}.
 
 \section{Signal Region Background Estimation}\label{sec:simBackgrounds}
 
-Good agreement between simulation and data is observed in the signal region at each stage of applying selection criteria and simulation corrections, as shown in Figure~\ref{fig:cutFlow}.
+Good agreement between simulation and data is observed in the signal region at each stage of applying selection criteria and simulation corrections, as shown in Figure~\ref{fig:SR_cutFlow}.
 The final event yields for each process considered for the $ee$ and $\mu\mu$ channels and their combination is given in table~\ref{tab:signalYields}.
 
 \begin{figure}[htbp]
@@ -307,7 +307,7 @@ Data & 5274.0$\pm$72.62 & 9750.0$\pm$98.74 & 15024.0$\pm$122.57    \\
 \end{tabular}
 \end{table}
 
-In Figure~\ref{fig:cutFlow} it can be seen that the jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process.
+In Figure~\ref{fig:SR_cutFlow} it can be seen that the jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process.
 The remaining backgrounds in the signal region consist of processes that involve the decay of a  real Z boson into two leptons or the leptonic decay of two W bosons where the resultant two leptons are consistent with a Z boson decay.
 The two dominant background processes are Z+jets and \ttbar, with the single top tW-channel, \ttbarZ, WZ and ZZ processes contributing a similar order of events as tZq processes.
 The remaining single top (tHq, tWZ, s-channel, t-channel), \ttbarW, \ttbarH, WW and triboson backgrounds produce contributions smaller than the signal process.
@@ -680,10 +680,10 @@ The uncertainty associated with the \PU reweighting (see Section~\ref{subsec:puS
 As PDFs are derived from data measured by different experiments, the uncertainties associated with each measurement must be propagated to the momentum fractions and energies that have been assigned to partons of the incoming protons.
 
 The impact of the PDF uncertainties are evaluated according to PDF4LHC recommendations~\cite{Butterworth:2015oua}, namely as the standard deviation of the weights of the nominal and the variations of the PDF set.
-For almost all of the MC samples considered, this is achieved by considering the nonimal event weight and one hundred alternative PDF weights.
+For almost all of the MC samples considered, this is achieved by considering the nominal event weight and one hundred alternative PDF weights.
 
 The single top tW-channel samples are the exception to this as at the time of their generation it was not possible to generate the required per-event weights.
-In this case, the LHAPDF (Les Houches Accord Parton Distribution Function) library is used to access both the nominal PDF weight and the 100 eigenvalues from the NNPDF3.0 set needed to provide the required 200 alternative event weights.
+In this case, the LHAPDF (Les Houches Accord Parton Distribution Function) library was used to access 100 eigenvalues from the NNPDF3.0 PDF set~\cite{Ball:2014uwa} in order to produce 200 alternative weights for each event.
 
 \subsubsection*{b-tagging Uncertainties}
 The uncertainties associated with the b-tagging scale factors described in Section~\ref{subsec:btagEff} are obtained by varying their value by $\pm 1\sigma$.
@@ -931,7 +931,7 @@ From this process, the highest ranked input variables are identified for use in 
 
 The input variables chosen by this method for the $ee$ and $\mu\mu$ channels are given in table~\ref{tab:selectedBdtVariables}.
 As can be seen in Figures~\ref{fig:corr_ee}-\ref{fig:corr_mumu}, the majority of these variables are weakly correlated, as indicated by pale squares, signifying that they provide unique and useful information to the BDT.
-Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of all the input variables that were considered.
+Table~\ref{tab:allBdtVariables} in Appendix~\ref{app:bdt} provides a list of all the input variables that were considered.
 
 \begin{table}[htbp]
 \topcaption {The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
@@ -969,7 +969,7 @@ Table~\ref{tab:allBdtVariables}, in Appendix~\ref{app:bdt}, provides a list of a
  \end{tabular}}
 \end{table}
 
-\begin{figure}[htbp]
+\begin{figure}[!Htb]
 \centering
 \includegraphics[width=0.7\textwidth]{figs/background-estimation/plots/corr_sig_ee.pdf}
 \\
@@ -979,7 +979,7 @@ The correlations between the input variables chosen for use with the BDT for the
 \label{fig:corr_ee}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[!Htb]
 \centering
 \includegraphics[width=0.7\textwidth]{figs/background-estimation/plots/corr_sig_mumu.pdf}
 \\
@@ -993,7 +993,7 @@ Figures~\ref{fig:inputFeaturesDataSimAgreement1},~\ref{fig:inputFeaturesDataSimA
 Given the number of input variables used, when an input variable is used by both the $ee$ and $\mu\mu$ channels, only the distributions for the one of the two channels are given in this chapter.
 The complete set of distributions for both channels is given in Appendix~\ref{app:bdt}.
 
-\begin{figure}[htb]
+\begin{figure}[!Htb]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/topMass_NPL_ee_wMass_ee.pdf}
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/zPairMass_NPL_ee_wMass_ee.pdf}
@@ -1005,7 +1005,7 @@ Reconstructed top mass, Z boson mass, total jet mass, and \MET distributions for
 \label{fig:inputFeaturesDataSimAgreement1}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[!Htb]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/bTagDisc_NPL_mumu_wMass_mumu.pdf}
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/leadingJetPt_NPL_mumu_wMass_mumu.pdf}
@@ -1017,7 +1017,7 @@ Leading b-tagged jet CSVv2 discriminant, leading jet \pT, $\Delta R$ between the
 \label{fig:inputFeaturesDataSimAgreement2}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[!Htb]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/lepHt_NPL_ee_wMass_ee.pdf}
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/totHtOverPt_NPL_ee_wMass_ee.pdf}
@@ -1029,7 +1029,7 @@ Lepton ${\ensuremath{H_{\mathrm{T}}}}$, total ${\ensuremath{H_{\mathrm{T}}}}$ di
 \label{fig:inputFeaturesDataSimAgreement3}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[!Htb]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/secondJetPt_NPL_ee_wMass_ee.pdf}
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/zLep1Quark2DelR_NPL_ee_wMass_ee.pdf}
@@ -1041,7 +1041,7 @@ Second jet \pt, $\Delta R$ between subleading lepton and leading b-tagged jet, $
 \label{fig:inputFeaturesDataSimAgreement4}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[!Htb]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/zLep1BjetDelR_NPL_mumu_wMass_mumu.pdf}
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/zPairEta_NPL_mumu_wMass_mumu.pdf}
@@ -1087,7 +1087,7 @@ Further descriptions of all of the hyperparameters available are given in~\cite{
 Figure~\ref{fig:bdtResponse} shows the BDT responses for the $ee$ and $\mu\mu$ channels for both the training and testing samples.
 As the response of the BDT classifier for both the training and testing samples are consistent with each other, this implies that negligible overtraining has occurred. 
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.97\textwidth]{figs/background-estimation/plots/response_ee.pdf}
 \\
@@ -1099,7 +1099,7 @@ Distributions of the input variables chosen for use with the BDT for the signal 
 
 Figures~\ref{fig:inputFeaturesDistributions_ee} and~\ref{fig:inputFeaturesDistributions_mumu} shows the distributions of the selected input variables in the signal and background samples for the $ee$ and $\mu\mu$ channels, respectively.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \centering
 \vspace*{-3.25cm}\hspace*{-2.3cm}\includegraphics[width=1.27\textwidth]{figs/background-estimation/plots/vars_ee.pdf}
 \vspace*{-1cm}\caption{
@@ -1107,7 +1107,7 @@ Distributions of the input variables chosen for use with the BDT for the signal 
 \label{fig:inputFeaturesDistributions_ee}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \centering
 \vspace*{-3.25cm}\hspace*{-2.3cm}\includegraphics[width=1.27\textwidth]{figs/background-estimation/plots/vars_mumu.pdf}
 \vspace*{-1cm}\caption{
