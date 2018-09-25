@@ -110,7 +110,7 @@ At their request, no combined result has been presented in this thesis.
 
 The observed signal strengths, cross sections, and expected and observed significances for the $ee$ and $\mu\mu$ channels are shown in Table~\ref{tab:shapetxs}.
 
-\begin{table}[h]
+\begin{table}[!h]
    \centering
    \caption{The expected signal strengths and corresponding cross sections for
    the $ee$ and $\mu\mu$ channels at the 95\% CL.}
@@ -144,13 +144,13 @@ The observed signal strengths, cross sections, and expected and observed signifi
 
 
 \subsection{Post-fit BDT Discriminant Distributions}
-BDT discriminant distributions following the MLF for data and simulation are shown in Figure~\ref{fig:postfitBDT}.
+The BDT discriminant distributions following the MLF for data and simulation are shown in Figure~\ref{fig:postfitBDT}.
+When compared to the pre-fit distributions in Figure~\ref{fig:postfitBDT}, it can be seen that the MLF not only constrains the impact of the systematic uncertainties, but also enhances 
 
-When compared to the pre-fit distributions in Figure~\ref{fig:postfitBDT}, it can be seen that the 
 
 Note good agreement
 
-\begin{figure}[htb]
+\begin{figure}[!Htb]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/results/postfit_ee.pdf}
 \includegraphics[width=0.47\textwidth]{figs/results/postfit_mumu.pdf}
@@ -160,11 +160,18 @@ Post-fit distributions of the BDT discriminant for the $ee$ channel (left) and $
 \end{figure}
 
 \subsection{Post-fit Impact of the Systematic Uncertainties}\label{sec:uncertainitiesImpact}
-The impact of each of the sources of systematic uncertainty on the signal strength modifier $\mu$ is shown shown in Figure~\ref{fig:systematicsPull}, where the left hand side of the plot illustrates the nuisance parameter residuals and the right hand side the impact of varying a nuisance parameter to its $\pm \sigma$ post-fit values has on the $\mu$.
+Figure~\ref{fig:systematicsPull} illustrates the impact of each of the sources of systematic uncertainty on the signal strength modifier $\mu$.
+The pulls of the nuisance parameters, defined as the difference between the pre-fit and post-fit values of a nuisance parameter divided by its pre-fit uncertainty, are shown on the left-hand side of Figure~\ref{fig:systematicsPull}.
+The impact of varying a nuisance parameter to its $\pm \sigma$ post-fit values on the $\mu$ is shown on the right hand side of Figure~\ref{fig:systematicsPull}.
+
+
+It can be seen that the post-fit uncertainty on the X systematics has decreased with respect to their initial values
+If the error bars of the pull of a nuisance parameter is smaller than one, the parameter has been constrained in the MLF.
+
 
 In Figure~\ref{fig:systematicsPull} it can be seen that the fit ... that the cross section and NPL normalisation  
 
-Given the relative size of the backgrounds compared to the signal process, it is not too surprising that the uncertainty on the Z+jets and \ttbar processes' cross sections have the largest impact on $\mu$.
+%Given the relative size of the backgrounds compared to the signal process, it is not too surprising that the uncertainty on the Z+jets and \ttbar processes' cross sections have the largest impact on $\mu$.
 
 %Given the background dominated nature of this search, it is not too surprising that the uncertainty on the luminosity %has the single largest impact on $\mu$.
 %As Figure~\ref{fig:systematicsPull} shows, while the maximum likelihood fit does constrain the impact of this uncertainty on the 
@@ -191,11 +198,12 @@ Given the relative size of the backgrounds compared to the signal process, it is
 %
 %given their relatively small contribution compared to other background processes and the effectiveness of the BDT in separating , the impact 
 
-\begin{figure}[htbp]
+\begin{figure}[Htbp]
 \begin{center}
-\includegraphics[width=0.97\textwidth]{figs/results/systematicsImpact.pdf}
-\caption{The central values and uncertainties of the nuisance parameters (left-hand side) and the impact of each systematic uncertainty (when varied by $\pm 1 \sigma$) on the signal strength parameter $\mu$ following the fit
-}
+\includegraphics[width=0.97\textwidth]{figs/results/systematicsImpact_ee.pdf}
+\\
+\includegraphics[width=0.97\textwidth]{figs/results/systematicsImpact_mumu.pdf}
+\caption{The central values and uncertainties of the nuisance parameters (left hand side) and the impact of each systematic uncertainty (when varied by $\pm 1 \sigma$) on the signal strength parameter $\mu$ for the $ee$ channel (top) and $\mu\mu$ channel (bottom) following the fit.}
 \label{fig:systematicsPull}
 \end{center}
 \end{figure}
