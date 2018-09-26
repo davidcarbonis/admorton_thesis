@@ -313,19 +313,26 @@ The two dominant background processes are Z+jets and \ttbar, with the single top
 The remaining single top (tHq, tWZ, s-channel, t-channel), \ttbarW, \ttbarH, WW and triboson backgrounds produce contributions smaller than the signal process.
 
 Good agreement between simulation and data is also observed for the reconstructed variables.
-Examples of such good agreement include the distributions of the reconstructed Z boson mass following the lepton and jet selection cuts in Figure~\ref{fig:SR_zBoson}; the reconstructed W boson following application of the b-tagging criteria in Figure~\ref{fig:SR_zBoson}; and the invariant \pT of all the jets in an event following the jet selection criteria in Figure~\ref{fig:SR_totJetPt}.
+Examples of such good agreement include the distributions of the reconstructed Z boson mass following the lepton selection cuts in Figure~\ref{fig:SR_zBoson}; the invariant \pT of all the jets in an event following the jet selection criteria in Figure~\ref{fig:SR_totJetPt}; and the reconstructed W boson following application of the b-tagging criteria in Figure~\ref{fig:SR_zBoson}.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/zPairMass_NPL_ee_lepSel_ee.pdf}
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/zPairMass_NPL_mumu_lepSel_mumu.pdf}
-\\
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/zPairMass_NPL_ee_jetSel_ee.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/zPairMass_NPL_mumu_jetSel_mumu.pdf}
 \caption{
-The distributions of the reconstructed Z boson mass for the $ee$ and $\mu\mu$ channels, left and right respectively, following the application of only the lepton selection criteria and corrections (top) and lepton, Z boson mass and jet selection criteria and corrections (bottom).
+The distributions of the reconstructed Z boson mass for the $ee$ and $\mu\mu$ channels, left and right respectively, following the application of only the lepton selection criteria and corrections.
 }
 \label{fig:SR_zBoson}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/totalJetPt_NPL_ee_jetSel_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/totalJetPt_NPL_mumu_jetSel_mumu.pdf}
+\caption{
+The distributions of the invariant \pT of all the jets in an event for the $ee$ and $\mu\mu$ channels, left and right respectively, following the application of the jet selection criteria and corrections.
+}
+\label{fig:SR_totJetPt}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -336,16 +343,6 @@ The distributions of the reconstructed Z boson mass for the $ee$ and $\mu\mu$ ch
 The distributions of the reconstructed W boson mass for the $ee$ and $\mu\mu$ channels, left and right respectively, following the application of all the event selection criteria and selections except the W boson mass cut.
 }
 \label{fig:SR_wBoson}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/totalJetPt_NPL_ee_jetSel_ee.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/totalJetPt_NPL_mumu_jetSel_mumu.pdf}
-\caption{
-The distributions of the invariant \pT of all the jets in an event for the $ee$ and $\mu\mu$ channels, left and right respectively, following the application of the jet selection criteria and selections.
-}
-\label{fig:SR_totJetPt}
 \end{figure}
 
 %A larger selection of data and simulation comparison plots for both the $ee$ and $\mu\mu$ channels is provided in Appendix~\ref{app:plots}.
@@ -389,8 +386,8 @@ $N_{\ttbar V}^{SS}$ & 4.81 $\pm$ 0.11 & 11.81 $\pm$0.10  \\
 $N_{single top}^{SS}$ & 0.90$\pm$0.18 & 0.97 $\pm$0.11    \\
 $N_{W+jets}^{SS}$ & 0.0$\pm$0.0 & 0.0 $\pm$ 0.0  \\
 $N_{Z+jets}^{SS}$ & 37.53$\pm$6.85 & 0.0 $\pm$ 0.0  \\
-$VV^{SS}$ & 1.89$\pm$0.22 & 0.35$\pm$0.13 \\
-$VVV^{SS}$ & 0.00$\pm$ & 0.23$\pm$0.09 \\
+$N_{VV}^{SS}$ & 1.89$\pm$0.22 & 0.35$\pm$0.13 \\
+$N_{VVV}^{SS}$ & 0.00$\pm$ & 0.23$\pm$0.09 \\
 \hline
 $N_{MC}^{SS}$ background & 50.98$\pm$6.98 & 22.29 $\pm$ 2.21 \\ 
 $N_{data}^{SS}$ & 126.0 $\pm$ 11.22 & 125.0 $\pm$ 1.18\\ 
@@ -725,7 +722,7 @@ The uncertainties given only include the statistical uncertainty associated with
    & Z+jets & 0.98849 $\pm$ 0.00106 \\
    \multirow{2}{*}{$\mu\mu$} & \ttbar & 0.99192 $\pm$ 0.00074 \\
    & Z+jets & 0.99258 $\pm$ 0.00083 \\
-   \multirow{2}{*}{$e \mu$} \ttbar & 0.99148 $\pm$ 0.00722 \\
+   \multirow{2}{*}{$e \mu$} & \ttbar & 0.99148 $\pm$ 0.00722 \\
    & Z+jets & 0.98838 $\pm$ 0.01183 \\
    \hline
  \end{tabular}%}
