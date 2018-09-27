@@ -12,10 +12,10 @@ void kfTrackingEffVsInvPtFlatGeometry_5000()
    Canvas_1_n3->SetGridy();
    Canvas_1_n3->SetTickx(1);
    Canvas_1_n3->SetTicky(1);
-   Canvas_1_n3->SetLeftMargin(0.10);
+   Canvas_1_n3->SetLeftMargin(0.15);
    Canvas_1_n3->SetRightMargin(0.05);
    Canvas_1_n3->SetTopMargin(0.05);
-   Canvas_1_n3->SetBottomMargin(0.10);
+   Canvas_1_n3->SetBottomMargin(0.15);
    Canvas_1_n3->SetFrameBorderMode(0);
    
    Double_t AlgEffFitVsInvPt_KF4ParamsComb_fx3001[16] = {
@@ -126,7 +126,7 @@ void kfTrackingEffVsInvPtFlatGeometry_5000()
    grae->SetLineColor(2);
    grae->SetMarkerColor(2);
    grae->SetMarkerStyle(4);
-   grae->SetMarkerSize(1.2);
+   grae->SetMarkerSize(2);
    
    TH1F *Graph_AlgEffFitVsInvPt_KF4ParamsComb3001 = new TH1F("Graph_AlgEffFitVsInvPt_KF4ParamsComb3001","",100,0,0.55);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->SetMinimum(0.53);
@@ -137,11 +137,15 @@ void kfTrackingEffVsInvPtFlatGeometry_5000()
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->SetLineColor(4);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetXaxis()->SetTitle(" Simulated track 1/Pt [GeV^{-1}]");
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetXaxis()->SetLabelFont(42);
-   Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetXaxis()->SetTitleOffset(1.2);
+   Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetXaxis()->SetTitleOffset(1.3);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetXaxis()->SetTitleFont(42);
+   Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetXaxis()->SetLabelSize(0.05);
+   Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetXaxis()->SetTitleSize(0.05);
+   Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetYaxis()->SetLabelSize(0.05);
+   Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetYaxis()->SetTitleSize(0.05);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetYaxis()->SetTitle(" Efficiency");
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetYaxis()->SetLabelFont(42);
-   Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetYaxis()->SetTitleOffset(1.2);
+   Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetYaxis()->SetTitleOffset(1.3);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetYaxis()->SetTitleFont(42);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetZaxis()->SetLabelFont(42);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetZaxis()->SetLabelSize(0.035);
@@ -260,7 +264,7 @@ void kfTrackingEffVsInvPtFlatGeometry_5000()
    grae->SetLineStyle(7);
    grae->SetMarkerColor(4);
    grae->SetMarkerStyle(4);
-   grae->SetMarkerSize(1.2);
+   grae->SetMarkerSize(2);
    
    TH1F *Graph_AlgEffFitVsInvPt_KF4ParamsComb3002 = new TH1F("Graph_AlgEffFitVsInvPt_KF4ParamsComb3002","",100,0,0.55);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->SetMinimum(0.6113701);
@@ -270,13 +274,13 @@ void kfTrackingEffVsInvPtFlatGeometry_5000()
 
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetXaxis()->SetTitle(" Simulated track 1/Pt [GeV^{-1}]");
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetXaxis()->SetLabelFont(42);
-   Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetXaxis()->SetLabelSize(0.035);
-   Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetXaxis()->SetTitleSize(0.035);
+   Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetXaxis()->SetLabelSize(0.05);
+   Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetXaxis()->SetTitleSize(0.05);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetXaxis()->SetTitleFont(42);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetYaxis()->SetTitle(" Efficiency");
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetYaxis()->SetLabelFont(42);
-   Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetYaxis()->SetLabelSize(0.035);
-   Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetYaxis()->SetTitleSize(0.035);
+   Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetYaxis()->SetLabelSize(0.05);
+   Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetYaxis()->SetTitleSize(0.05);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetYaxis()->SetTitleOffset(0);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetYaxis()->SetTitleFont(42);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetZaxis()->SetLabelFont(42);
@@ -289,7 +293,7 @@ void kfTrackingEffVsInvPtFlatGeometry_5000()
    
    TLegend *leg = new TLegend(0.2,0.27,0.33,0.48,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextSize(0.035);
+   leg->SetTextSize(0.04);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);
@@ -301,7 +305,7 @@ void kfTrackingEffVsInvPtFlatGeometry_5000()
    entry->SetLineWidth(1);
    entry->SetMarkerColor(2);
    entry->SetMarkerStyle(4);
-   entry->SetMarkerSize(1.2);
+   entry->SetMarkerSize(2);
    entry->SetTextFont(42);
    entry=leg->AddEntry("AlgEffFitVsInvPt_KF4ParamsComb_2","Low p_{T} cell merging","PEL");
    entry->SetLineColor(4);
@@ -309,7 +313,7 @@ void kfTrackingEffVsInvPtFlatGeometry_5000()
    entry->SetLineWidth(1);
    entry->SetMarkerColor(4);
    entry->SetMarkerStyle(4);
-   entry->SetMarkerSize(1.2);
+   entry->SetMarkerSize(2);
    entry->SetTextFont(42);
    leg->Draw();
    Canvas_1_n3->Modified();

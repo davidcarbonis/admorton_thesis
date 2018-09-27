@@ -11,10 +11,10 @@ void htFracDuplicatesVsInvPtTiltedGeometry_5000()
    Canvas_1_n2->SetGridy();
    Canvas_1_n2->SetTickx(1);
    Canvas_1_n2->SetTicky(1);
-   Canvas_1_n2->SetLeftMargin(0.10);
+   Canvas_1_n2->SetLeftMargin(0.15);
    Canvas_1_n2->SetRightMargin(0.05);
    Canvas_1_n2->SetTopMargin(0.05);
-   Canvas_1_n2->SetBottomMargin(0.10);
+   Canvas_1_n2->SetBottomMargin(0.15);
    Canvas_1_n2->SetFrameBorderMode(0);
    
    TProfile *DupTracksVsInvPt_HT__1 = new TProfile("DupTracksVsInvPt_HT_1","",16,0,0.5,"");
@@ -76,15 +76,19 @@ void htFracDuplicatesVsInvPtTiltedGeometry_5000()
    DupTracksVsInvPt_HT__1->SetLineColor(2);
    DupTracksVsInvPt_HT__1->SetMarkerColor(2);
    DupTracksVsInvPt_HT__1->SetMarkerStyle(4);
-   DupTracksVsInvPt_HT__1->SetMarkerSize(1.2);
+   DupTracksVsInvPt_HT__1->SetMarkerSize(2);
    DupTracksVsInvPt_HT__1->GetXaxis()->SetTitle("Simulated track 1/p_{T} [GeV^{-1}]");
    DupTracksVsInvPt_HT__1->GetXaxis()->SetLabelFont(42);
-   DupTracksVsInvPt_HT__1->GetXaxis()->SetTitleOffset(1.2);
+   DupTracksVsInvPt_HT__1->GetXaxis()->SetTitleOffset(1.3);
    DupTracksVsInvPt_HT__1->GetXaxis()->SetTitleFont(42);
+   DupTracksVsInvPt_HT__1->GetXaxis()->SetLabelSize(0.05);
+   DupTracksVsInvPt_HT__1->GetXaxis()->SetTitleSize(0.05);
    DupTracksVsInvPt_HT__1->GetYaxis()->SetTitle(" Fraction of duplicate tracks");
    DupTracksVsInvPt_HT__1->GetYaxis()->SetLabelFont(42);
-   DupTracksVsInvPt_HT__1->GetYaxis()->SetTitleOffset(1.2);
+   DupTracksVsInvPt_HT__1->GetYaxis()->SetTitleOffset(1.3);
    DupTracksVsInvPt_HT__1->GetYaxis()->SetTitleFont(42);
+   DupTracksVsInvPt_HT__1->GetYaxis()->SetLabelSize(0.05);
+   DupTracksVsInvPt_HT__1->GetYaxis()->SetTitleSize(0.05);
    DupTracksVsInvPt_HT__1->GetZaxis()->SetLabelFont(42);
    DupTracksVsInvPt_HT__1->GetZaxis()->SetLabelSize(0.035);
    DupTracksVsInvPt_HT__1->GetZaxis()->SetTitleSize(0.035);
@@ -149,16 +153,16 @@ void htFracDuplicatesVsInvPtTiltedGeometry_5000()
    DupTracksVsInvPt_HT__2->SetLineStyle(7);
    DupTracksVsInvPt_HT__2->SetMarkerColor(4);
    DupTracksVsInvPt_HT__2->SetMarkerStyle(4);
-   DupTracksVsInvPt_HT__2->SetMarkerSize(1.2);
+   DupTracksVsInvPt_HT__2->SetMarkerSize(2);
    DupTracksVsInvPt_HT__2->GetXaxis()->SetTitle(" 1/Pt");
    DupTracksVsInvPt_HT__2->GetXaxis()->SetLabelFont(42);
-   DupTracksVsInvPt_HT__2->GetXaxis()->SetLabelSize(0.035);
-   DupTracksVsInvPt_HT__2->GetXaxis()->SetTitleSize(0.035);
+   DupTracksVsInvPt_HT__2->GetXaxis()->SetLabelSize(0.05);
+   DupTracksVsInvPt_HT__2->GetXaxis()->SetTitleSize(0.05);
    DupTracksVsInvPt_HT__2->GetXaxis()->SetTitleFont(42);
    DupTracksVsInvPt_HT__2->GetYaxis()->SetTitle(" Fraction of duplicate tracks");
    DupTracksVsInvPt_HT__2->GetYaxis()->SetLabelFont(42);
-   DupTracksVsInvPt_HT__2->GetYaxis()->SetLabelSize(0.035);
-   DupTracksVsInvPt_HT__2->GetYaxis()->SetTitleSize(0.035);
+   DupTracksVsInvPt_HT__2->GetYaxis()->SetLabelSize(0.05);
+   DupTracksVsInvPt_HT__2->GetYaxis()->SetTitleSize(0.05);
    DupTracksVsInvPt_HT__2->GetYaxis()->SetTitleOffset(0);
    DupTracksVsInvPt_HT__2->GetYaxis()->SetTitleFont(42);
    DupTracksVsInvPt_HT__2->GetZaxis()->SetLabelFont(42);
@@ -169,7 +173,7 @@ void htFracDuplicatesVsInvPtTiltedGeometry_5000()
    
    TLegend *leg = new TLegend(0.2,0.27,0.37,0.48,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextSize(0.035);
+   leg->SetTextSize(0.04);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);
@@ -181,7 +185,7 @@ void htFracDuplicatesVsInvPtTiltedGeometry_5000()
    entry->SetLineWidth(1);
    entry->SetMarkerColor(2);
    entry->SetMarkerStyle(4);
-   entry->SetMarkerSize(1.2);
+   entry->SetMarkerSize(2);
    entry->SetTextFont(42);
    entry=leg->AddEntry("DupTracksVsInvPt_HT_2","Cell merge p_{T} < 3.5 GeV","PEL");
    entry->SetLineColor(4);
@@ -189,7 +193,7 @@ void htFracDuplicatesVsInvPtTiltedGeometry_5000()
    entry->SetLineWidth(1);
    entry->SetMarkerColor(4);
    entry->SetMarkerStyle(4);
-   entry->SetMarkerSize(1.2);
+   entry->SetMarkerSize(2);
    entry->SetTextFont(42);
    leg->Draw();
    Canvas_1_n2->Modified();

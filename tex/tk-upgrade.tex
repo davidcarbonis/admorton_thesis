@@ -219,7 +219,7 @@ Therefore, Equations~(\ref{eq:R}) and~(\ref{eq:stub_R}) can be combined to descr
 \end{equation}
 
 If a particle produces multiple stubs, such as those represented by the six dots in the left-hand side of Figure~\ref{fig:HT}, they can be used to identify a track candidate through their intersection point, which is also shown in the figure (right-hand side).
-The coordinates of the intersection point in Hough-space also provides an initial estimate of the track's $p_{T}$ and $\phi$ helix parameters, as defined in Section~\ref{subsec:helixParameter}.
+The coordinates of the intersection point in Hough-space also provides an initial estimate of the track's $p_{T}$ and $\phi$ helix parameters, as defined in Section~\ref{subsec:definitions}.
 
 \begin{figure}[!h]
 \centering
@@ -704,14 +704,6 @@ The initial layer-dependent coefficients were obtained through experimentally de
 Both these initial-layer dependent coefficients and the initial constant coefficient of a milliradian were subsequently further optimised in order to recover as much tracking efficiency as  possible.
 Similarly, the \KF state $\chi^{2}$ cuts for both approaches were also tuned in order to reject the optimal number of fake and duplicate tracks without compromising on tracking efficiency.
 
-During the comparative studies of these two approaches (as shown in Figure~\ref{fig:2GeVfracDups}) it was observed that following the \DR stage,the fraction of duplicates present increased when $\pT > 3\GeV (\frac{1}{\pT} < 0.33 1/\GeV)$ in contrast to the observed trend in the fraction of duplicates as a function \pT.
-As this feature is also present following the \HT stage, this implies that the \HT produces more duplicates at low \pT in the full precision cells.
-As the fraction of duplicate tracks produced where decreased precision \HT cells are used is well controlled, the \pT ($\frac{1}{\pT}$) threshold for the $2 \times 2$ merging of \HT cells was increased from $2.7\GeV$ ($0.37/\GeV$) to $3.5\GeV$ ($0.29/\GeV$).
-While an increase in the duplicate rate is observed for \pT ($\frac{1}{\pT}$) between $3.2\GeV$ ($0.31 1/\GeV$) and $5\GeV$ ($0.20/\GeV$) in Figure~\ref{fig:2GeVfracDups}, a decreased number of duplicates were produced below the \pt ($\frac{1}{\pT}$) threshold of $3.5\GeV$ ($0.29/\GeV$), which led to an overall reduction in the number of duplicates produced of about 2.8\%.
-
-The increased \pT threshold for the \HT cell merging had the additional benefit of recovering a further 0.2\% of the tracks that were previously lost to \MS.
-Consequently, this change was adopted by the project and all the results presented below for the two \MS coefficient forms were produced using this increased threshold. 
-
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/htFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
@@ -722,6 +714,15 @@ The constant coefficient for the \MS contribution was used for these \KF results
 \label{fig:2GeVfracDups}
 \end{figure}
 
+
+During the comparative studies of these two approaches (as shown in Figure~\ref{fig:2GeVfracDups}) it was observed that following the \DR stage,the fraction of duplicates present increased when $\pT > 3\GeV (\frac{1}{\pT} < 0.33 1/\GeV)$ in contrast to the observed trend in the fraction of duplicates as a function \pT.
+As this feature is also present following the \HT stage, this implies that the \HT produces more duplicates at low \pT in the full precision cells.
+As the fraction of duplicate tracks produced where decreased precision \HT cells are used is well controlled, the \pT ($\frac{1}{\pT}$) threshold for the $2 \times 2$ merging of \HT cells was increased from $2.7\GeV$ ($0.37/\GeV$) to $3.5\GeV$ ($0.29/\GeV$).
+While an increase in the duplicate rate is observed for \pT ($\frac{1}{\pT}$) between $3.2\GeV$ ($0.31 1/\GeV$) and $5\GeV$ ($0.20/\GeV$) in Figure~\ref{fig:2GeVfracDups}, a decreased number of duplicates were produced below the \pt ($\frac{1}{\pT}$) threshold of $3.5\GeV$ ($0.29/\GeV$), which led to an overall reduction in the number of duplicates produced of about 2.8\%.
+
+The increased \pT threshold for the \HT cell merging had the additional benefit of recovering a further 0.2\% of the tracks that were previously lost to \MS.
+Consequently, this change was adopted by the project and all the results presented below for the two \MS coefficient forms were produced using this increased threshold. 
+
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.60\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtTiltedGeometry_5000.pdf}
@@ -730,13 +731,6 @@ The constant coefficient for the \MS contribution was used for these \KF results
 }
 \label{fig:2GeVTiltEff}	
 \end{figure}
-
-Figure~\ref{fig:2GeVTiltEff} and table~\ref{tab:trackFindingPerformance2GeVKF} demonstrate how the tracking efficiency for the whole chain improves when \MS is accounted for in the \KF.
-Table~\ref{tab:trackFindingPerformance2GeVKF} also shows that compared to just the \HT optimisations alone, for both \MS coefficients, the \KF is more capable of rejecting incorrectly reconstructed tracks by up to an additional 3-4\%.
-In contrast, the fraction of duplicates increases for both coefficients by 3-5\% for the full chain.
-As illustrated in Figure~\ref{fig:2GeVfracDups}, this increase occurs between $3.2\GeV$ and $5\GeV$ - near the $\pT = 3.5\GeV (\frac{1}{\pT} = 0.29 1/\GeV)$ threshold for merging adjacent \HT cells.
-Currently it is not understood how incorporating \MS into the \KF causes this, but it is suspected to be related to the use of the reduced precision of \HT cells.
-%Tracks with \pt approaching the \pt threshold at which reduced precision of \HT cells are used are have the potential to be built out of both stubs from both the full and reduced precision \HT cells.
 
 \begin{table}[htbp]
 \topcaption {Track finding performance on simulated \ttbar events with a $<\textrm{PU}>$ of 200 events, after the full demonstrator chain for the three differing \KF configurations where \MS is not considered ($k = 0$), a constant \MS coefficient (const $k$) is used and a layer dependent \MS coefficient ($k(layer)$)is used. 
@@ -760,6 +754,25 @@ The track finding efficiencies, $\epsilon$, following each stage are given along
 \end{tabular}}
 \end{table}
 
+Figure~\ref{fig:2GeVTiltEff} and table~\ref{tab:trackFindingPerformance2GeVKF} demonstrate how the tracking efficiency for the whole chain improves when \MS is accounted for in the \KF.
+Table~\ref{tab:trackFindingPerformance2GeVKF} also shows that compared to just the \HT optimisations alone, for both \MS coefficients, the \KF is more capable of rejecting incorrectly reconstructed tracks by up to an additional 3-4\%.
+In contrast, the fraction of duplicates increases for both coefficients by 3-5\% for the full chain.
+As illustrated in Figure~\ref{fig:2GeVfracDups}, this increase occurs between $3.2\GeV$ and $5\GeV$ - near the $\pT = 3.5\GeV (\frac{1}{\pT} = 0.29 1/\GeV)$ threshold for merging adjacent \HT cells.
+Currently it is not understood how incorporating \MS into the \KF causes this, but it is suspected to be related to the use of the reduced precision of \HT cells.
+%Tracks with \pt approaching the \pt threshold at which reduced precision of \HT cells are used are have the potential to be built out of both stubs from both the full and reduced precision \HT cells.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/qOverPtResVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/phi0ResVsInvPtTiltedGeometry_5000.pdf}
+\\
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/cotThetaResVsInvPtTiltedGeometry_5000.pdf}
+\caption{Distributions of \pt resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolution determined for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events. The distribution for when the \KF has not been modified to take \MS into account is given in red, for a constant \MS coefficient in black and a layer-dependent \MS coefficient in blue.
+}
+\label{fig:kfHelixParametersResVsInvPt}
+\end{figure}
+
 Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of track $\frac{1}{\pT}$ in simulation for both of these \MS coefficients and for when \MS is not accounted for at all.
 The resolutions of both \MS coefficients are superior across all \pt compared to when \MS is not considered at all, with the constant \MS coefficient typically providing more slightly more precise measurements than the layer-dependent coefficient.  
 As expected, lower transverse momentum tracks experience the greatest improvements given that this is the regime in which \MS dominates.
@@ -779,18 +792,6 @@ This observation is still being investigated, but is suspected, like the increas
 
 As shown in figures~\ref{fig:kfHelixParametersResVsInvPt} and~\ref{fig:2GeVTiltEff} and table~\ref{tab:trackFindingPerformance2GeVKF}, there are only small differences in the performance of the two \MS coefficients.
 This is due the amount of material traversed by a track not being constant for a single layer given that the amount of material contributions in the Inner and Outer Trackers, between the Inner and Outer Trackers and services varies as a function of $\eta$~\cite{P2TrackerTDR}.
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/qOverPtResVsInvPtTiltedGeometry_5000.pdf}
-\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/phi0ResVsInvPtTiltedGeometry_5000.pdf}
-\\
-\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtTiltedGeometry_5000.pdf}
-\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/cotThetaResVsInvPtTiltedGeometry_5000.pdf}
-\caption{Distributions of \pt resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolution determined for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events. The distribution for when the \KF has not been modified to take \MS into account is given in red, for a constant \MS coefficient in black and a layer-dependent \MS coefficient in blue.
-}
-\label{fig:kfHelixParametersResVsInvPt}
-\end{figure}
 
 Following the improved performance considering the impact of \MS on the \HT and \KF discussed in these studies, these optimisations have been incorporated into the firmware for both TFP components.
 The constant \MS term was chosen for inclusion into the \KF as it demonstrated the best performance and required the least resources to implement.

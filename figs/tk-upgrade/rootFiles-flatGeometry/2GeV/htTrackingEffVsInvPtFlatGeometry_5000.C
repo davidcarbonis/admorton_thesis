@@ -12,10 +12,10 @@ void htTrackingEffVsInvPtFlatGeometry_5000()
    Canvas_1_n2->SetGridy();
    Canvas_1_n2->SetTickx(1);
    Canvas_1_n2->SetTicky(1);
-   Canvas_1_n2->SetLeftMargin(0.10);
+   Canvas_1_n2->SetLeftMargin(0.15);
    Canvas_1_n2->SetRightMargin(0.05);
    Canvas_1_n2->SetTopMargin(0.05);
-   Canvas_1_n2->SetBottomMargin(0.10);
+   Canvas_1_n2->SetBottomMargin(0.15);
    Canvas_1_n2->SetFrameBorderMode(0);
    
    Double_t AlgEffVsInvPt_fx3001[16] = {
@@ -126,7 +126,7 @@ void htTrackingEffVsInvPtFlatGeometry_5000()
    grae->SetLineColor(2);
    grae->SetMarkerColor(2);
    grae->SetMarkerStyle(4);
-   grae->SetMarkerSize(1.2);
+   grae->SetMarkerSize(2);
    
    TH1F *Graph_AlgEffVsInvPt3001 = new TH1F("Graph_AlgEffVsInvPt3001","",100,0,0.55);
    Graph_AlgEffVsInvPt3001->SetMinimum(0.53);
@@ -137,15 +137,15 @@ void htTrackingEffVsInvPtFlatGeometry_5000()
    Graph_AlgEffVsInvPt3001->SetLineColor(4);
    Graph_AlgEffVsInvPt3001->GetXaxis()->SetTitle(" Simulated track 1/Pt [GeV^{-1}]");
    Graph_AlgEffVsInvPt3001->GetXaxis()->SetLabelFont(42);
-   Graph_AlgEffVsInvPt3001->GetXaxis()->SetLabelSize(0.04);
-   Graph_AlgEffVsInvPt3001->GetXaxis()->SetTitleSize(0.04);
-   Graph_AlgEffVsInvPt3001->GetXaxis()->SetTitleOffset(1.2);
+   Graph_AlgEffVsInvPt3001->GetXaxis()->SetLabelSize(0.05);
+   Graph_AlgEffVsInvPt3001->GetXaxis()->SetTitleSize(0.05);
+   Graph_AlgEffVsInvPt3001->GetXaxis()->SetTitleOffset(1.3);
    Graph_AlgEffVsInvPt3001->GetXaxis()->SetTitleFont(42);
    Graph_AlgEffVsInvPt3001->GetYaxis()->SetTitle(" Efficiency");
    Graph_AlgEffVsInvPt3001->GetYaxis()->SetLabelFont(42);
-   Graph_AlgEffVsInvPt3001->GetYaxis()->SetLabelSize(0.04);
-   Graph_AlgEffVsInvPt3001->GetYaxis()->SetTitleSize(0.04);
-   Graph_AlgEffVsInvPt3001->GetYaxis()->SetTitleOffset(1.2);
+   Graph_AlgEffVsInvPt3001->GetYaxis()->SetLabelSize(0.05);
+   Graph_AlgEffVsInvPt3001->GetYaxis()->SetTitleSize(0.05);
+   Graph_AlgEffVsInvPt3001->GetYaxis()->SetTitleOffset(1.3);
    Graph_AlgEffVsInvPt3001->GetYaxis()->SetTitleFont(42);
    Graph_AlgEffVsInvPt3001->GetZaxis()->SetLabelFont(42);
    Graph_AlgEffVsInvPt3001->GetZaxis()->SetLabelSize(0.035);
@@ -264,7 +264,7 @@ void htTrackingEffVsInvPtFlatGeometry_5000()
    grae->SetLineStyle(7);
    grae->SetMarkerColor(4);
    grae->SetMarkerStyle(4);
-   grae->SetMarkerSize(1.2);
+   grae->SetMarkerSize(2);
    
    TH1F *Graph_AlgEffVsInvPt3002 = new TH1F("Graph_AlgEffVsInvPt3002","",100,0,0.55);
    Graph_AlgEffVsInvPt3002->SetMinimum(0.7407523);
@@ -294,27 +294,29 @@ void htTrackingEffVsInvPtFlatGeometry_5000()
    
    TLegend *leg = new TLegend(0.2,0.27,0.33,0.48,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextSize(0.035);
+   leg->SetTextSize(0.04);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);
    leg->SetFillColor(0);
    leg->SetFillStyle(1001);
    TLegendEntry *entry=leg->AddEntry("AlgEffVsInvPt_1","Default Configuration","PEL");
+   entry->SetFillStyle(1001);
    entry->SetLineColor(2);
    entry->SetLineStyle(1);
    entry->SetLineWidth(1);
    entry->SetMarkerColor(2);
    entry->SetMarkerStyle(4);
-   entry->SetMarkerSize(1.2);
+   entry->SetMarkerSize(2);
    entry->SetTextFont(42);
    entry=leg->AddEntry("AlgEffVsInvPt_2","Low p_{T} cell merging","PEL");
+   entry->SetFillStyle(1001);
    entry->SetLineColor(4);
    entry->SetLineStyle(7);
    entry->SetLineWidth(1);
    entry->SetMarkerColor(4);
    entry->SetMarkerStyle(4);
-   entry->SetMarkerSize(1.2);
+   entry->SetMarkerSize(2);
    entry->SetTextFont(42);
    leg->Draw();
    Canvas_1_n2->Modified();
