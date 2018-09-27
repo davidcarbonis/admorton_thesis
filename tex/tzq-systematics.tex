@@ -865,6 +865,9 @@ Luminosity             &  $_{-2.5\%}^{+2.5\%}$ /  $_{-2.5\%}^{+2.5\%}$    & $_{-
 \end{center}
 \end{sidewaystable}
 
+\clearpage
+\newpage
+
 \section{Multivariate Analysis Techniques}\label{sec:mvas}
 Multivariate Analysis (MVA) techniques are used to enhance the separation between signal and background processes which are difficult to discriminate between by applying individual selection criteria.
 
@@ -876,9 +879,9 @@ As illustrated in Figure~\ref{fig:decisionTree}, a decision tree is a series of 
 At each node in the decision tree, a single input variable is compared against a threshold to determine which of the next two nodes it will be sent to.
 When the last node is reached, the object is classified as either signal (S) or background (B).
 
-\begin{figure}[htb]
+\begin{figure}[h]
 \centering
-\includegraphics[width=0.97\textwidth]{figs/background-estimation/decisionTree.pdf}
+\includegraphics[width=0.75\textwidth]{figs/background-estimation/decisionTree.pdf}
 \caption{A simple decision tree where repeated cuts a member of the set of variables $\textbf{x}$ are perfomed until a leaf node is reached and the object is classified as either signal (S) or background (B)~\cite{Hocker:2007ht}.
 }
 \label{fig:decisionTree}
@@ -937,7 +940,7 @@ The input variables chosen by this method for the $ee$ and $\mu\mu$ channels are
 As can be seen in Figures~\ref{fig:corr_ee}-\ref{fig:corr_mumu}, the majority of these variables are weakly correlated, as indicated by pale squares, signifying that they provide unique and useful information to the BDT.
 Table~\ref{tab:allBdtVariables} in Appendix~\ref{app:bdt} provides a list of all the input variables that were considered.
 
-\begin{table}[htbp]
+\begin{table}[htb]
 \topcaption {The name and descriptions of the variables chosen by recursive feature elimination to be used as input to the BDT to discriminate between potential tZq signal events and the dominant backgrounds.
 }
 \label{tab:selectedBdtVariables}
@@ -973,7 +976,7 @@ Table~\ref{tab:allBdtVariables} in Appendix~\ref{app:bdt} provides a list of all
  \end{tabular}}
 \end{table}
 
-\begin{figure}[!Htb]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{figs/background-estimation/plots/corr_sig_ee.pdf}
 \\
@@ -983,7 +986,7 @@ The correlations between the input variables chosen for use with the BDT for the
 \label{fig:corr_ee}
 \end{figure}
 
-\begin{figure}[!Htb]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{figs/background-estimation/plots/corr_sig_mumu.pdf}
 \\
@@ -997,7 +1000,7 @@ Figures~\ref{fig:inputFeaturesDataSimAgreement1},~\ref{fig:inputFeaturesDataSimA
 Given the number of input variables used, when an input variable is used by both the $ee$ and $\mu\mu$ channels, only the distributions for the one of the two channels are given in this chapter.
 The complete set of distributions for both channels is given in Appendix~\ref{app:bdt}.
 
-\begin{figure}[!Htb]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/topMass_NPL_ee_wMass_ee.pdf}
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/zPairMass_NPL_ee_wMass_ee.pdf}
@@ -1009,7 +1012,7 @@ Reconstructed top mass, Z boson mass, total jet mass, and \MET distributions for
 \label{fig:inputFeaturesDataSimAgreement1}
 \end{figure}
 
-\begin{figure}[!Htb]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/bTagDisc_NPL_mumu_wMass_mumu.pdf}
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/leadingJetPt_NPL_mumu_wMass_mumu.pdf}
@@ -1021,7 +1024,7 @@ Leading b-tagged jet CSVv2 discriminant, leading jet \pT, $\Delta R$ between the
 \label{fig:inputFeaturesDataSimAgreement2}
 \end{figure}
 
-\begin{figure}[!Htb]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/lepHt_NPL_ee_wMass_ee.pdf}
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/totHtOverPt_NPL_ee_wMass_ee.pdf}
@@ -1033,7 +1036,7 @@ Lepton ${\ensuremath{H_{\mathrm{T}}}}$, total ${\ensuremath{H_{\mathrm{T}}}}$ di
 \label{fig:inputFeaturesDataSimAgreement3}
 \end{figure}
 
-\begin{figure}[!Htb]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/secondJetPt_NPL_ee_wMass_ee.pdf}
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/zLep1Quark2DelR_NPL_ee_wMass_ee.pdf}
@@ -1045,7 +1048,7 @@ Second jet \pt, $\Delta R$ between subleading lepton and leading b-tagged jet, $
 \label{fig:inputFeaturesDataSimAgreement4}
 \end{figure}
 
-\begin{figure}[!Htb]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/zLep1BjetDelR_NPL_mumu_wMass_mumu.pdf}
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_mumu_ttbarInc/zPairEta_NPL_mumu_wMass_mumu.pdf}
