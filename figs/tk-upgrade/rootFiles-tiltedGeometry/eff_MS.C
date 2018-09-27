@@ -91,7 +91,7 @@ void eff_MS()
    AlgEffFitVsInvPt_KF4ParamsComb1->SetFillColor(2);
    AlgEffFitVsInvPt_KF4ParamsComb1->SetMarkerColor(2);
    AlgEffFitVsInvPt_KF4ParamsComb1->SetMarkerStyle(4);
-   AlgEffFitVsInvPt_KF4ParamsComb1->SetMarkerSize(1.2);
+   AlgEffFitVsInvPt_KF4ParamsComb1->SetMarkerSize(2);
    AlgEffFitVsInvPt_KF4ParamsComb1->Draw("AP");
 
    Canvas_1->Update();
@@ -100,6 +100,12 @@ void eff_MS()
    auto graph = AlgEffFitVsInvPt_KF4ParamsComb1->GetPaintedGraph();
    graph->SetMinimum(0.80);
    graph->SetMaximum(1.0);
+   graph->GetXaxis()->SetTitleOffset(1.3);
+   graph->GetXaxis()->SetTitleSize(0.05);
+   graph->GetXaxis()->SetLabelSize(0.05);
+   graph->GetYaxis()->SetTitleOffset(1.3);
+   graph->GetYaxis()->SetTitleSize(0.05);
+   graph->GetYaxis()->SetLabelSize(0.05);
 
    TEfficiency * AlgEffFitVsInvPt_KF4ParamsComb2=new TEfficiency("constantMS","",24,0,0.75);
 
@@ -168,7 +174,7 @@ void eff_MS()
    AlgEffFitVsInvPt_KF4ParamsComb2->SetFillColor(1);
    AlgEffFitVsInvPt_KF4ParamsComb2->SetMarkerColor(1);
    AlgEffFitVsInvPt_KF4ParamsComb2->SetMarkerStyle(4);
-   AlgEffFitVsInvPt_KF4ParamsComb2->SetMarkerSize(1.2);
+   AlgEffFitVsInvPt_KF4ParamsComb2->SetMarkerSize(2);
 
    AlgEffFitVsInvPt_KF4ParamsComb2->Draw("p,same");
    Canvas_1->Update();
@@ -240,7 +246,7 @@ void eff_MS()
    AlgEffFitVsInvPt_KF4ParamsComb2->SetFillColor(1);
    AlgEffFitVsInvPt_KF4ParamsComb2->SetMarkerColor(1);
    AlgEffFitVsInvPt_KF4ParamsComb2->SetMarkerStyle(4);
-   AlgEffFitVsInvPt_KF4ParamsComb2->SetMarkerSize(1.2);
+   AlgEffFitVsInvPt_KF4ParamsComb2->SetMarkerSize(2);
 
    AlgEffFitVsInvPt_KF4ParamsComb2->Draw("p,same");
    Canvas_1->Update();
@@ -250,7 +256,7 @@ void eff_MS()
    AlgEffFitVsInvPt_KF4ParamsComb3->SetFillColor(4);
    AlgEffFitVsInvPt_KF4ParamsComb3->SetMarkerColor(4);
    AlgEffFitVsInvPt_KF4ParamsComb3->SetMarkerStyle(4);
-   AlgEffFitVsInvPt_KF4ParamsComb3->SetMarkerSize(1.2);
+   AlgEffFitVsInvPt_KF4ParamsComb3->SetMarkerSize(2);
 
    AlgEffFitVsInvPt_KF4ParamsComb3->Draw("p,same");
    Canvas_1->Update();
