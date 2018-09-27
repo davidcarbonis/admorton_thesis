@@ -421,7 +421,62 @@ The final event yields for the 0-bjet region are given in table~\ref{tab:zPlusCo
 It was observed that 94\% of the simulated events in the 0-bjet region were produced by Z+jets processes compared to 82\% in the $m_{W}^{inv}$ region.
 Consequently, it was decided to use the 0-bjet region to validate the modelling of the Z+jets processes.
 
-\begin{table}[h]
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/cutFlow_log.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_ttbarInc/cutFlow_log.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/cutFlow_log.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_DYamcatnlo/cutFlow_log.pdf}
+\caption{
+The overall event yield for data and simulation at each stage of applying the 0-bjet region selection criteria and simulation corrections for when the LO (top) and NLO (bottom) simulation samples are used to model the Z+jets processes.
+The event yields for the $ee$ channel and the $\mu\mu$ channel are shown on the left and right, respectively.
+}
+\label{fig:zPlus_cutFlow}
+\end{figure}
+
+Based on the final event yields in both control regions, as given in tables~\ref{tab:zPlusControlYieldsOld}-\ref{tab:zPlusControlYieldsNew}, it was observed that the NLO Z+jets sample did not correctly describe the normalisation of the Z+jets process.
+Further studies into the NLO Z+jets sample were done using a simple scale factor based on the final event yields to correctly normalise this Z+jets sample.
+
+During these studies it was found that the NLO Z+jets normalisation scale factor only resolves the incorrect normalisation of this process following the application of the jet selection criteria, as shown in Figure~\ref{fig:zPlus_cutFlow}.
+In contrast consistently good agreement is observed at all stages of applying the 0-bjet region selection criteria when the LO Z+jets sample is used.
+
+As illustrated in Figure~\ref{fig:zPlusCR_nJets}, the disagreement that is observed between simulation and data when using the NLO Z+jets sample is the result of the NLO sample incorrectly describing low jet multiplicities.
+The LO Z+jets sample however, correctly describes jet multiplicities throughout the application of the 0-bjet region selection criteria selection criteria.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_ttbarInc/numbJets_SingleTop_lepSel_mumu.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_DYamcatnlo/numbJets_SingleTop_lepSel_mumu.pdf}
+\caption{
+The distributions of the number of jets in the 0-bjet region following the lepton selection criteria and associated simulation corrections for the LO (left) and NLO (right) Z+jets samples in the $\mu\mu$ channel.
+}
+\label{fig:zPlusCR_nJets}
+\end{figure}
+
+\begin{figure}[!hp]
+\centering
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/leadingJetPt_SingleTop_jetSel_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/leadingJetPt_SingleTop_jetSel_ee.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/secondJetPt_SingleTop_jetSel_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/secondJetPt_SingleTop_jetSel_ee.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/thirdJetPt_SingleTop_jetSel_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/thirdJetPt_SingleTop_jetSel_ee.pdf}
+\\
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/fourthJetPt_SingleTop_jetSel_ee.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/fourthJetPt_SingleTop_jetSel_ee.pdf}
+\caption{
+The distributions of the leading four jets \pt in the 0-bjet region following the application of the jet selection criteria and simulation corrections for the LO (left) and NLO (right) Z+jets samples in the $ee$ channel.
+}
+\label{fig:zPlusCR_jetPt}
+\end{figure}
+
+Consequently, it was decided to use the LO Z+jets sample to model Z+jets processes despite the NLO sample providing a better description of the \pT of the higher order jets (as shown in Figure~\ref{fig:zPlusCR_jetPt}).
+The reasons why the NLO Z+jets sample does not correctly normalise and poorly describes events with low jet multiplicities will need to be understood before it can be considered in the future.
+
+\begin{table}[p]
 \topcaption{The number of observed events in data and the number of expected events from simulation for the 0-bjet Z+jets control region following the application of the full event selection and simulation corrections.
 These event yields are shown for each of the individual channels, as well as their combination.
 }\label{tab:zPlusControlYieldsOld}
@@ -460,7 +515,7 @@ Data & 27598.0$\pm$166.13 & 50814.0$\pm$255.42 & 78412.0$\pm$304.69    \\
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[p]
 \topcaption{The number of observed events in data and the number of expected events from simulation for the $m_{W}^{inv}$ Z+jets control region following the application of the full event selection and simulation corrections.
 These event yields are shown for each of the individual channels, as well as their combination.
 }\label{tab:zPlusControlYieldsNew}
@@ -499,63 +554,7 @@ Data: & 2940.0$\pm$64.2 & 5718.0$\pm$87.2 & 8658.0$\pm$108.28    \\
 \end{tabular}
 \end{table}
 
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/cutFlow_log.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_ttbarInc/cutFlow_log.pdf}
-\\
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/cutFlow_log.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_DYamcatnlo/cutFlow_log.pdf}
-\caption{
-The overall event yield for data and simulation at each stage of applying the 0-bjet region selection criteria and simulation corrections for when the LO (top) and NLO (bottom) simulation samples are used to model the Z+jets processes.
-The event yields for the $ee$ channel and the $\mu\mu$ channel are shown on the left and right, respectively.
-}
-\label{fig:zPlus_cutFlow}
-\end{figure}
-
-
-Based on the final event yields in both control regions, as given in tables~\ref{tab:zPlusControlYieldsOld}-\ref{tab:zPlusControlYieldsNew}, it was observed that the NLO Z+jets sample did not correctly describe the normalisation of the Z+jets process.
-Further studies into the NLO Z+jets sample were done using a simple scale factor based on the final event yields to correctly normalise this Z+jets sample.
-
-During these studies it was found that the NLO Z+jets normalisation scale factor only resolves the incorrect normalisation of this process following the application of the jet selection criteria, as shown in Figure~\ref{fig:zPlus_cutFlow}.
-In contrast consistently good agreement is observed at all stages of applying the 0-bjet region selection criteria when the LO Z+jets sample is used.
-
-As illustrated in Figure~\ref{fig:zPlusCR_nJets}, the disagreement that is observed between simulation and data when using the NLO Z+jets sample is the result of the NLO sample incorrectly describing low jet multiplicities.
-The LO Z+jets sample however, correctly describes jet multiplicities throughout the application of the 0-bjet region selection criteria selection criteria.
-
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_ttbarInc/numbJets_SingleTop_lepSel_mumu.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_DYamcatnlo/numbJets_SingleTop_lepSel_mumu.pdf}
-\caption{
-The distributions of the number of jets in the 0-bjet region following the lepton selection criteria and associated simulation corrections for the LO (left) and NLO (right) Z+jets samples in the $\mu\mu$ channel.
-}
-\label{fig:zPlusCR_nJets}
-\end{figure}
-
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/leadingJetPt_SingleTop_jetSel_ee.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/leadingJetPt_SingleTop_jetSel_ee.pdf}
-\\
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/secondJetPt_SingleTop_jetSel_ee.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/secondJetPt_SingleTop_jetSel_ee.pdf}
-\\
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/thirdJetPt_SingleTop_jetSel_ee.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/thirdJetPt_SingleTop_jetSel_ee.pdf}
-\\
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/fourthJetPt_SingleTop_jetSel_ee.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/fourthJetPt_SingleTop_jetSel_ee.pdf}
-\caption{
-The distributions of the leading four jets \pt in the 0-bjet region following the application of the jet selection criteria and simulation corrections for the LO (left) and NLO (right) Z+jets samples in the $ee$ channel.
-}
-\label{fig:zPlusCR_jetPt}
-\end{figure}
-
-Consequently, it was decided to use the LO Z+jets sample to model Z+jets processes despite the NLO sample providing a better description of the \pT of the higher order jets (as shown in Figure~\ref{fig:zPlusCR_jetPt}).
-The reasons why the NLO Z+jets sample does not correctly normalise and poorly describes events with low jet multiplicities will need to be understood before it can be considered in the future.
-
-
+\newpage
 \subsection{\ttbar Background}\label{subsec:ttbarEstimation}
 In Section~\ref{subsec:ttbarCR} a \ttbar enriched control regions was defined to produce an orthogonal region that was topologically similar to the signal region to validate the modelling of the simulated \ttbar sample used.
 This control region differed from the signal region by requiring that the event contained an electron and muon, rather than a pair of electrons or muons.
@@ -564,7 +563,7 @@ Good agreement is observed between the normalisation of simulation and data at e
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/cutFlow_log.pdf}
+\includegraphics[width=0.6\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/cutFlow_log.pdf}
 \caption{
 The overall event yield for data and simulation at each stage of applying the \ttbar control region selection criteria and simulation corrections.
 }
@@ -642,8 +641,8 @@ The distribution of the \pt of the four leading jets for the \ttbar control regi
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/zPairMass_SingleTop_wMass_emu.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/zPairPt_SingleTop_wMass_emu.pdf}
+\includegraphics[width=0.49\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/zPairMass_SingleTop_wMass_emu.pdf}
+\includegraphics[width=0.49\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/zPairPt_SingleTop_wMass_emu.pdf}
 \caption{
 The distribution of the selected electron's and muon's combined invariant mass and \pt for the \ttbar control region following the application of the full control region selection criteria and simulation corrections.
 }
@@ -651,7 +650,8 @@ The distribution of the selected electron's and muon's combined invariant mass a
 \end{figure}
 
 %A larger selection of data and simulation comparison plots for this control region is provided in Appendix~\ref{app:plots}.
-
+\clearpage
+\newpage
 \section{Systematic Uncertainties}\label{sec:systematics}
 %%% Intro
 For any meaningful and robust measurement to be made in any physics analysis, it is vital that the sources of systematic uncertainties associated with it are both understood and controlled.
@@ -676,7 +676,7 @@ The impact of the uncertainties associated with both the JES and JER on the PF \
 As the unclustered energy remains uncorrected, the impact on the \MET uncertainty is evaluated by varying the contributions to the unclustered energy from each particle by their respective resolution.
 
 \subsubsection*{Pileup Reweighting}
-The uncertainty associated with the \PU reweighting (see Section~\ref{subsec:puSF}) is determined by varying the expected minimum bias cross section applied to the simulation simulation by $\pm X\%$.
+The uncertainty associated with the \PU reweighting (see Section~\ref{subsec:puSF}) is determined by varying the expected minimum bias cross section in simulation by $\pm 4.6\%$.
 
 \subsubsection*{Parton Density Functions}\label{subsec:pdfSysts}
 %%Discussion of what PDFs are, is given in an earlier chapter 
