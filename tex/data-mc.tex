@@ -1,13 +1,13 @@
 \chapter{Event Simulation and Object Reconstruction}\label{chapter:data-mc}
-After triggered events from the CMS experiment have been read out, the reconstruction of the reconstruction of the particles produced by the proton-proton collision is performed.
-As Monte Carlo (MC) simulation is used in physics analyses to optimise searches and in the statistical analysis of the measurements that are made.
+After triggered events from the CMS experiment have been read out, the reconstruction of the particles produced by the proton-proton collision is performed.
+Monte Carlo (MC) simulation is used in physics analyses to optimise searches and in the statistical analysis of the measurements that are made.
 It is therefore essential that MC provides a detailed, precise and realistic description of the expected physics processes.
  
 The event simulation and objection reconstruction algorithms which are relevant to the single top physics search presented in this thesis are discussed in this chapter.
 
 \section{Event Simulation}\label{sec:sim}
 As MC simulation is meant to provide a realistic description of physics processes, both accurate modelling of these processes and a detailed understanding of how physical processes interact with the CMS detector are required to produce events in the same format as raw proton-proton collision data prior to undergoing the same reconstruction process.
-
+The simulation of a process involves the generation, simulation, digitisation and reconstruction of an event.
 
 %
 %PDFs are an essential component of modelling hadron collisions
@@ -26,9 +26,8 @@ As MC simulation is meant to provide a realistic description of physics processe
 %
 %Figure~\ref{fig:generation} illustrates the various stages involved in the generation process.
 
-The simulation of a process involves the generation, simulation, digitisation and reconstruction of an event.
 
-The generation stage involves the use \emph{event generators} to simulate all aspects of a physics event from the initial protons to the hadronised remnants of the collision and the remnants of the initial colliding protons~\cite{Buckley:2011ms,Hoche:2014rga}.
+The generation stage involves the use of \emph{event generators} to simulate all aspects of a physics event from the initial protons to the hadronised remnants of the collision and the remnants of the initial colliding protons~\cite{Buckley:2011ms,Hoche:2014rga}.
 The initial stage models the hard interaction of the two incoming protons, where perturbative methods are used to calculate the Matrix Elements (ME) for the hard interaction, while the momentum fractions of the incoming partons are sampled from a PDF.
 The following \emph{Parton Shower} (PS) stage models the hadronisation of the liberated partons through an iterative process until the factorisation scale for the shower is reached.
 The PS stage also includes simulating the radiation of gluons or quarks from the initial state (ISR) and final state (FSR) partons.
@@ -136,7 +135,7 @@ Following this, the linked elements are used by the PF algorithm to sequentially
 As PF particles are identified, their associated tracks and clusters are removed from further consideration.
 
 Charged particle tracks are linked to clusters by extrapolating a track's last measured hit in the tracker to the calorimeter systems.
-If a track's expected position in the calorimeters are within a clusters' boundaries, these elements are linked together.
+If a track's expected position in the calorimeters are within a cluster's boundaries, these elements are linked together.
 Similarly, tangents to the inner tracker tracks are extrapolated to the ECAL in order to identify  and link tracks to Bremsstrahlung photons.
 Calorimeter cluster links are formed if a cluster from the higher granularity detector (ECAL/ES) lies within the acceptance boundaries of the lower granularity detector considered (HCAl/ECAL).
 

@@ -37,7 +37,7 @@ The Phase-II upgrade will see the entire silicon tracking detector being replace
 \item \textbf{increased sensor granularity} is required to ensure that the channel occupancy is kept at or below the per cent (per mille) level for the Outer (Inner) Tracker to ensure that a high track reconstruction efficiency and a low misidentification rate is maintained under the increased \PU conditions. This will also enable improved track separation in dense environments, such as high \pT jets, compared to the current pixel detector.
 \item \textbf{reduced material in the tracking volume} will significantly enhance the performance of the detector.
 %\item \textbf{robust pattern recognition} - enabling fast and efficient track finding, which is especially important for the HLT, in the high \PU environment.
-\item \textbf{level-1 trigger contributions} are require in order to maintain L-1 trigger performance. It has been shown that the performance of the L-1 trigger will deteriorate in the high luminosity environment from both the rate increase and the reduced efficiencies of the L-1 selection algorithms~\cite{CMSCollaboration:2015zni}.
+\item \textbf{level-1 trigger contributions} are required in order to maintain L-1 trigger performance. It has been shown that the performance of the L-1 trigger will deteriorate in the high luminosity environment from both the rate increase and the reduced efficiencies of the L-1 selection algorithms~\cite{CMSCollaboration:2015zni}.
 Raising the upgraded calorimeters' and muon chambers' trigger thresholds would have minimal impact on the rate, and would negatively impact sensitivity to BSM physics that predicts new low mass particles~\cite{CMSCollaboration:2015zni}.
 Therefore the L1 bandwidth and latency will be increased (from 100\kHz to 750\kHz and from $3.2\mus$ to $12.5\mus$ respectively) and tracking information will be included in the L-1 decision process to preserve and improve trigger performance.
 \item \textbf{an extended tracking acceptance} of  up to $|\eta| = 4$ in the forward region will greatly improve the overall physics capabilities of the CMS experiment as the density of jets associated with vector boson increases with pseudorapidity~\cite{CMS_Upgrade_TP}. By extension, measurements of missing transverse energy, total energy and jet b-tagging acceptance will also be improved.
@@ -57,7 +57,7 @@ As the bend angle of a charged particle in a magnetic field depends on its trans
 The \pT threshold is designed to be configurable as the separation between the clusters increases with a module's distance from the beam if the sensor spacing remain unchanged, as illustrated in Figure~\ref{fig:stubs}(b).
 The sensor spacing however, is increased for the endcap disks, where the $\pT$-modules are orientated perpendicular to the beam line, in order to maintain comparable discrimination due to projective effects, as shown in Figure~\ref{fig:stubs}(c).
 
-\begin{figure}[!t]
+\begin{figure}[!h]
 \centering
 \includegraphics[width=5in]{figs/tk-upgrade/pTsketches.png}
 % where an .eps filename suffix will be assumed under latex,
@@ -84,7 +84,7 @@ The geometries are so named as they were inspired by whether or not the modules 
 The advantages of the tilted geometry over the original flat barrel are that it not only improves stub-finding efficiency for tracks with large incident angles but also reduces the overall cost of the system~\cite{P2TrackerTDR}.
 Due to the maturity of the preparations for the review between the three competing proposed track finder systems, discussed later in Section~\ref{sec:TMTT}, at the time the tilted barrel geometry was adopted for the Phase-II Outer Tracker TDR it was decided to use the flat barrel geometry for results produced for the review.
 
-\begin{figure}[tbp]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.8\textwidth,trim={1.1truecm 0truecm 1truecm 12truecm},clip]{figs/tk-upgrade/tiltedbarrelmap.pdf}
 \includegraphics[width=0.8\textwidth,trim={0.7truecm 0truecm 1truecm 0truecm},clip]{figs/tk-upgrade/mersilayout.pdf}
@@ -97,7 +97,7 @@ Out of the total L-1 latency of 12.5\mus, about $1\mus$ is required for generati
 Approximately $4\mus$ is available for the reconstruction of tracks from data arriving at the DTC.
 The rest of the available latency is allocated for the correlation of tracks with trigger primitives from the calorimeters and muon systems ($3.5\mus$), the propagation of the L-1 decision to the FW buffers ($1\mus$) and an additional safety margin ($3\mus$)~\cite{TMTT_JINST}.
 
-\begin{figure}[tbp]
+\begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{figs/tk-upgrade/dataflow.pdf}
 % where an .eps filename suffix will be assumed under latex,
@@ -133,7 +133,7 @@ The detector octants are not uniform as the geometry of the tracker does not hav
 This baseline track finding system architecture, illustrated in Figure~\ref{fig:tmttarch}, uses two neighbouring DTC boards to time-multiplex and duplicate stub data across processing octant boundaries before each DTC transmits 50\% of its data to one TFP and 50\% to the neighbouring TFP.
 Based on current electronics and the high speed links available, the data requires 18 TFPs per processing octant (one for each time slice, resulting in a full system requiring 144 TFPs).
 
-\begin{figure}[t]
+\begin{figure}[h]
 \centering
 \includegraphics[width=1.00\textwidth]{figs/tk-upgrade/tmttarch.pdf}
 \caption{An illusratation of the baseline system architecture described in the text, demonstrating how two neighbouring DTCs time-multiplex and duplicate stub data across processing octants and how it transmits the processed data to two neighbouring TFPs~\cite{TMTT_JINST}}
@@ -154,7 +154,7 @@ The Track Finding Processor shown in Figure~\ref{fig:TFP} consists of four self-
 
 Each of these components is described in more detail below.
 
-\begin{figure}[!h]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.78\textwidth]{figs/tk-upgrade/demoslice1.pdf}
 % where an .eps filename suffix will be assumed under latex,
@@ -276,7 +276,7 @@ This is illustrated in Figure~\ref{fig:KF} by the size of the shaded area around
 \end{figure}
 
 The filtering of state following each update makes use number of configurable criteria, including \pT, $\chi^2$, and the minimum number of stubs from PS modules.
-It can also be configured to take into account and skip missing missing layers when the expected stub is either missing or deemed to be incorrectly associated with the track.
+It can also be configured to take into account and skip missing layers when the expected stub is either missing or deemed to be incorrectly associated with the track.
 
 In the event multiple stubs are found on the same layer, each can be propagated with up to the four best states being kept and presented to a final state selector.
 Preference is given to states with the fewest missing layers and the smallest $\chi^2$.

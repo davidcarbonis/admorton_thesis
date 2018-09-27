@@ -63,9 +63,9 @@ Such a high instantaneous luminosity was achieved by delivering protons in 2808 
 The instantaneous luminosity is further increased by squeezing the proton bunches to enhance the number of simultaneous inelastic proton-proton interactions during each bunch crossing.
 These multiple simultaneous collisions are named pile-up (\PU) interactions and usually consist of soft QCD interactions~\cite{Bruning:782076,Ball:2007zza}.
 \PU can occur both within and adjacent to an event's bunch crossing, known as \emph{in-time} and \emph{out-of-time} \PU respectively.
-An average \PU of 
+%An average \PU of 
 
-This high event rate presents the experiments the data acquisition and readout challenges, whilst retaining excellent signal-to-background resolution and sufficient radiation hardness in order to withstand the expected fluence.
+This high event rate presents the experiments' data acquisition and readout challenges, whilst retaining excellent signal-to-background resolution and sufficient radiation hardness in order to withstand the expected fluence.
 %% No need to mention HI mode
 %The primary motivation behind operating the LHC in a heavy-ion mode is to search for evidence of the plasma of quarks and gluons, which is made possible through the resultant production of QCD matter under extreme temperature, density and low momentum fractions of partons~\cite{Baur:687318}.
 
@@ -120,7 +120,7 @@ The pixel sensors consist of n$^{+}$-type implants on n-type silicon which are c
 Each of the 66 million pixels measures $100 \times 150\mum^{2}$, covering a total surface area of 1.06 m$^{2}$, resolutions of 10\mum in $r-\phi$ and 20\mum in $z$, providing the granularity required to have a high track reconstruction efficiency and to be able to precisely calculate the track impact parameters and vertex position.
 
 The original pixel detector was designed to operate under a nominal instantaneous luminosity of $1 \times 10^{34}\percms$.
-With the LHC planning to deliver higher instantaneous luminosities with the same 25\ns bunch spacing following LS1, if no action was taken, the radiation damange from the increased \PU environment would result in the pixel tracker experiencing an unacceptable degradation in track reconstruction efficiency.
+With the LHC planning to deliver higher instantaneous luminosities with the same 25\ns bunch spacing following LS1, if no action was taken, the radiation damage from the increased \PU environment would result in the pixel tracker experiencing an unacceptable degradation in track reconstruction efficiency.
 Therefore during the End of Year Technical Stop that took place between data taking in 2016 and 2017, the pixel detector was completely replaced.
 A detailed description of the Phase-I Pixel detector is given in~\cite{CMS:2012sda} as none of the results presented in this thesis involve data collected by the CMS experiment after 2016.
 %%Like the original pixel detector, the Phase-I detector's 124 million pixels also measure $100 \times 150\mum^{2}$ (covering a total surface area of 1.95 $m^{2}$) and the sensors are also n+-type implants on n-type silicon.
@@ -236,7 +236,7 @@ The return magnetic field is approximately 1.7\,T in the barrel and outermost en
 \end{figure}
 
 \subsection{Muon Detectors}\label{subsec:muon chambers}
-As implied by the experiment’s name, the detection and measurement of muons is incredibly important for CMS, as many of the signatures of interesting events involve them.
+As implied by the experiment's name, the detection and measurement of muons is incredibly important for CMS, as many of the signatures of interesting events involve them.
 As muons are Minimum Ionising Particles (MIPs), they pass through the inner detectors and the solenoid with minimal interaction.
 Consequently, the muon chambers~\cite{CMS:1997iti} are placed outside the solenoid and are interspaced between the iron return yoke rings and disks.
 
@@ -309,7 +309,7 @@ Since initial operations of the CMS experiment, the original event storage rate 
 \subsubsection{Level-1 Trigger}\label{paragraph:L1}
 The Level-1 trigger reduces the input $40\MHz$ rate to about $100\kHz$ and consists of FPGAs (Field Programmable Gate Arrays) and ASICs (Application Specific Integrated Circuits), which have to be highly efficiency at identifying interesting physics signals.
 As the trigger decision cannot be made before the subsequent BX, the L-1 Trigger uses a pipelined approach that is capable of buffering the detector for about 3.8\mus (limited by the tracker and ES buffers) before a decision has to be made on whether to read-out an event or discard it. 
-This latency prevents precludes both the reading out of events in full and of the use of iterative reconstruction algorithms.
+This latency precludes both the reading out of events in full and of the use of iterative reconstruction algorithms.
 Tracking information is not used in the L-1 Trigger as it was not possible to read  and consequently, it has not been designed to be read out for every event.
 
 The current L-1 trigger, the \emph{Phase-I Trigger}, was developed to ensure that the 100\kHz L1 trigger limit would be maintained following the increase in the instantaneous luminosity and centre-of-mass energy of the LHC following LS1~\cite{Tapper:2013yva}.
