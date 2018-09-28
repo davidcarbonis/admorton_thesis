@@ -1,4 +1,4 @@
-void postfit_ee_new()
+void postfit_ee()
 {
 //=========Macro generated from canvas: c1/c1
 //=========  (Thu Sep 27 23:13:46 2018) by ROOT version 6.14/04
@@ -32,7 +32,7 @@ void postfit_ee_new()
    
    TH1F *axis0__1__10 = new TH1F("axis0__1__10","",22, xAxis);
    axis0__1__10->SetMinimum(0);
-   axis0__1__10->SetMaximum(1840.896);
+   axis0__1__10->SetMaximum(2000.);
    axis0__1__10->SetDirectory(0);
    axis0__1__10->SetStats(0);
 
@@ -50,7 +50,7 @@ void postfit_ee_new()
    axis0__1__10->GetYaxis()->SetLabelFont(42);
    axis0__1__10->GetYaxis()->SetLabelSize(0.05);
    axis0__1__10->GetYaxis()->SetTitleSize(0.065);
-   axis0__1__10->GetYaxis()->SetTitleOffset(0.7);
+   axis0__1__10->GetYaxis()->SetTitleOffset(0.75);
    axis0__1__10->GetYaxis()->SetTitleFont(42);
    axis0__1__10->GetZaxis()->SetLabelFont(42);
    axis0__1__10->GetZaxis()->SetLabelSize(0.035);
@@ -664,8 +664,8 @@ void postfit_ee_new()
    WW_stack_9_stack_9_stack_9->SetBinError(22,4.270574e-10);
    WW_stack_9_stack_9_stack_9->SetEntries(22);
    WW_stack_9_stack_9_stack_9->SetDirectory(0);
-   WW_stack_9_stack_9_stack_9->SetFillColor(kOrange+7);
-   WW_stack_9_stack_9_stack_9->SetLineColor(kOrange+7);
+   WW_stack_9_stack_9_stack_9->SetFillColor(kOrange+1);
+   WW_stack_9_stack_9_stack_9->SetLineColor(kOrange+1);
    WW_stack_9_stack_9_stack_9->SetLineWidth(0);
    WW_stack_9_stack_9_stack_9->SetMarkerSize(0);
    WW_stack_9_stack_9_stack_9->GetXaxis()->SetLabelFont(42);
@@ -730,8 +730,8 @@ void postfit_ee_new()
    WZ_stack_17_stack_17_stack_17->SetBinError(22,0.5259266);
    WZ_stack_17_stack_17_stack_17->SetEntries(22);
    WZ_stack_17_stack_17_stack_17->SetDirectory(0);
-   WZ_stack_17_stack_17_stack_17->SetFillColor(kOrange+7);
-   WZ_stack_17_stack_17_stack_17->SetLineColor(kOrange+7);
+   WZ_stack_17_stack_17_stack_17->SetFillColor(kOrange+1);
+   WZ_stack_17_stack_17_stack_17->SetLineColor(kOrange+1);
    WZ_stack_17_stack_17_stack_17->SetLineWidth(0);
    WZ_stack_17_stack_17_stack_17->SetMarkerSize(0);
    WZ_stack_17_stack_17_stack_17->GetXaxis()->SetLabelFont(42);
@@ -796,8 +796,8 @@ void postfit_ee_new()
    ZZ_stack_15_stack_15_stack_15->SetBinError(22,0.3507366);
    ZZ_stack_15_stack_15_stack_15->SetEntries(22);
    ZZ_stack_15_stack_15_stack_15->SetDirectory(0);
-   ZZ_stack_15_stack_15_stack_15->SetFillColor(kOrange+7);
-   ZZ_stack_15_stack_15_stack_15->SetLineColor(kOrange+7);
+   ZZ_stack_15_stack_15_stack_15->SetFillColor(kOrange+1);
+   ZZ_stack_15_stack_15_stack_15->SetLineColor(kOrange+1);
    ZZ_stack_15_stack_15_stack_15->SetLineWidth(0);
    ZZ_stack_15_stack_15_stack_15->SetMarkerSize(0);
    ZZ_stack_15_stack_15_stack_15->GetXaxis()->SetLabelFont(42);
@@ -1584,98 +1584,96 @@ void postfit_ee_new()
    leg->SetFillColor(0);
    leg->SetFillStyle(1001);
 
-   TLegendEntry *entry=leg->AddEntry("DYToLL_M50_stack_20_stack_20_stack_20","Z+jets","f");
+   TLegendEntry *entry=leg->AddEntry("FakeEG_stack_18_stack_18_stack_18","NPL","f");
+   entry->SetFillColor(kMagenta+3);
+   entry->SetFillStyle(1001);
+   entry->SetLineColor(kMagenta+3);
+   entry->SetLineStyle(1);
+   entry->SetMarkerColor(kMagenta+3);
+   entry->SetMarkerStyle(21);
+   entry->SetMarkerSize(1);
+   entry->SetTextFont(42);
+
+   entry=leg->AddEntry("DYToLL_M50_stack_20_stack_20_stack_20","Z+jets","f");
    entry->SetFillColor(kBlue);
    entry->SetFillStyle(1001);
-
    entry->SetLineColor(kRed);
    entry->SetLineStyle(1);
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
    entry->SetTextFont(42);
+
    entry=leg->AddEntry("TT_stack_19_stack_19_stack_19","t#bar{t}","f");
    entry->SetFillColor(kRed);
    entry->SetFillStyle(1001);
-
    entry->SetLineColor(ci);
    entry->SetLineStyle(1);
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("FakeEG_stack_18_stack_18_stack_18","NPL","f");
-   entry->SetFillColor(kMagenta+3);
-   entry->SetFillStyle(1001);
 
-   entry->SetLineColor(kMagenta);
-   entry->SetLineStyle(1);
-   entry->SetMarkerColor(kMagenta);
-   entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
-   entry->SetTextFont(42);
    entry=leg->AddEntry("SingleTop","Single top","f");
    entry->SetFillColor(kMagenta);
    entry->SetFillStyle(1001);
-
-
    entry->SetLineStyle(1);
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("VV","VV","f");
-   entry->SetFillColor(kOrange+7);
-   entry->SetFillStyle(1001);
 
+   entry=leg->AddEntry("VV","VV","f");
+   entry->SetFillColor(kOrange+1);
+   entry->SetFillStyle(1001);
+   entry->SetLineColor(kOrange+1);
+   entry->SetLineStyle(1);
+   entry->SetMarkerColor(kOrange+1);
+   entry->SetMarkerStyle(21);
+   entry->SetMarkerSize(1);
+   entry->SetTextFont(42);
+
+   entry=leg->AddEntry("VVV","VVV","f");
+   entry->SetFillColor(kCyan);
+   entry->SetFillStyle(1001);
    entry->SetLineColor(kCyan);
    entry->SetLineStyle(1);
    entry->SetMarkerColor(kCyan);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("VVV","VVV","f");
-   entry->SetFillColor(kCyan);
-   entry->SetFillStyle(1001);
 
+   entry=leg->AddEntry("TTV","t#bar{t}V","f");
+   entry->SetFillColor(kGreen);
+   entry->SetFillStyle(1001);
    entry->SetLineColor(kGreen);
    entry->SetLineStyle(1);
    entry->SetMarkerColor(kGreen);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("TTV","t#bar{t}W","f");
-   entry->SetFillColor(kGreen);
-   entry->SetFillStyle(1001);
 
-   ci = TColor::GetColor("#000099");
-   entry->SetLineColor(ci);
-   entry->SetLineStyle(1);
-   entry->SetMarkerColor(1);
-   entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
-   entry->SetTextFont(42);
    entry=leg->AddEntry("tZq_stack_1_stack_1_stack_1","tZq","f");
-   entry->SetFillColor(2);
+   entry->SetFillColor(kYellow);
    entry->SetFillStyle(1001);
-
-   ci = TColor::GetColor("#000099");
-   entry->SetLineColor(ci);
+   entry->SetLineColor(kYellow);
    entry->SetLineStyle(1);
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
    entry->SetTextFont(42);
+
    entry=leg->AddEntry("NULL","Syst.","f");
    entry->SetFillColor(12);
    entry->SetFillStyle(3144);
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
-   entry->SetLineWidth(1);
+   entry->SetLineWidth(0);
    entry->SetMarkerColor(1);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
    entry->SetTextFont(42);
+
    entry=leg->AddEntry("NULL","Observation","le");
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
