@@ -1573,7 +1573,7 @@ void prefit_ee()
    entry->SetMarkerSize(1);
    entry->SetTextFont(42);
 
-   entry=leg->AddEntry("DYToLL_M50_stack_20","DYToLL_M50","f");
+   entry=leg->AddEntry("DYToLL_M50_stack_20","Z+jets","f");
    entry->SetFillColor(kBlue);
    entry->SetFillStyle(1001);
    entry->SetLineColor(kBlue);
