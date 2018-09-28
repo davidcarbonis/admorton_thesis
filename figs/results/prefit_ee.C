@@ -1581,7 +1581,7 @@ void prefit_ee()
    entry->SetMarkerSize(1);
    entry->SetTextFont(42);
 
-   entry=leg->AddEntry("TT_stack_19","TT","f");
+   entry=leg->AddEntry("TT_stack_19","t#bar{t}","f");
    entry->SetFillColor(kRed);
    entry->SetFillStyle(1001);
    entry->SetLineColor(kRed);
