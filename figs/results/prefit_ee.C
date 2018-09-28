@@ -1557,7 +1557,7 @@ void prefit_ee()
    leg->SetBorderSize(1);
    leg->SetNColumns(1);
    leg->SetTextSize(0.035);
-   leg->SetLineColor(kBlue);
+   leg->SetLineColor(kWhite);
    leg->SetLineStyle(0);
    leg->SetLineWidth(0);
    leg->SetFillColor(0);
