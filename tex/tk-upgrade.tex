@@ -467,7 +467,7 @@ The performance of differing numbers of fitting iterations are compared against 
 
 \label{tab:chi2-exactVsApprox}
  \centering
- \resizebox{\textwidth}{!}{
+% \resizebox{\textwidth}{!}{
 % This right-aligns numbers in column, but centers them under column title.
  \begin{tabular}{cccccc}
    \hline
@@ -484,7 +484,7 @@ The performance of differing numbers of fitting iterations are compared against 
 %   KF+DR & 94.1 & 94.1 & 82.1 & 21.1 & 4.5 \\
    \hline
    
- \end{tabular}}
+ \end{tabular}%}
 \end{table}
 
 Table~\ref{tab:chi2-exactVsApprox} shows how the tracking performance between the floating point maths and ``approximated'' maths implementations of the algorithm compare against each other and from the raw track finding output from the \HT.
@@ -529,7 +529,7 @@ Further fitting iterations are not shown as further improvement was observed.
 \label{tab:chi2_iterations}
   \centering
 % This increases column spacing.
-  \resizebox{\textwidth}{!}{
+%  \resizebox{\textwidth}{!}{
 % This right-aligns numbers in column, but centers them under column title.
  \begin{tabular}{ccccccc}
    \hline
@@ -543,7 +543,7 @@ Further fitting iterations are not shown as further improvement was observed.
    KF+DR & - & 94.1 & 94.1 & 82.1 & 21.1 & 4.5 \\
    \hline
    
- \end{tabular}}
+ \end{tabular}%}
 \end{table}
 
 Table~\ref{tab:chi2_iterations} illustrates how the tracking performance of the linearised $\chi^{2}$ fitter improves with just one additional fitting iteration (removal of a stub), with the fake rate being halved and the purity of the matched tracks noticeably increasing.
@@ -624,7 +624,7 @@ The duplicate removal algorithm however, remains effective at removing almost al
 \label{tab:trackFindingPerformance2GeVHT}
   \centering
 % This increases column spacing.
-  \resizebox{\textwidth}{!}{
+%  \resizebox{\textwidth}{!}{
 % This right-aligns numbers in column, but centers them under column title.
 \begin{tabular}{cccccc}
    \hline
@@ -640,7 +640,7 @@ The duplicate removal algorithm however, remains effective at removing almost al
     & \bf{Full chain}     & 90.0 & 210.4 & 26.3 & 3.8 \\      
    \hline
    
- \end{tabular}}
+ \end{tabular}%}
 \end{table}
 
 The impact of \MS on the \KF is further illustrated by Figure~\ref{fig:2GeVFlatChi2Ndf}, which shows the distributions of $\chi^{2}$ per number of degree of freedom ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ for genuine tracks produced by the \KF.
@@ -738,7 +738,7 @@ The track finding efficiencies, $\epsilon$, following each stage are given along
 }
 \label{tab:trackFindingPerformance2GeVKF}
 \centering
- \resizebox{\textwidth}{!}{
+% \resizebox{\textwidth}{!}{
 \begin{tabular}{ccccc}
    \hline
    \bf{Scattering coefficient} & \bf{$\bm{\epsilon}$ [\%]} & $\bm{<N_{tracks}>}$ & \bf{Fakes [\%]} & \bf{Duplicates [\%]}  \\
@@ -751,7 +751,7 @@ The track finding efficiencies, $\epsilon$, following each stage are given along
     $k(layer)$ & 94.2 & 222.1 & 10.8 & 12.3 \\  
    \hline
    
-\end{tabular}}
+\end{tabular}%}
 \end{table}
 
 Figure~\ref{fig:2GeVTiltEff} and table~\ref{tab:trackFindingPerformance2GeVKF} demonstrate how the tracking efficiency for the whole chain improves when \MS is accounted for in the \KF.
