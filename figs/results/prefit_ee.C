@@ -1645,11 +1645,11 @@ void prefit_ee()
    ci = TColor::GetColor("#4c4c4c");
    entry->SetFillColor(ci);
    entry->SetFillStyle(3244);
-   entry->SetLineStyle(1);
+   entry->SetLineStyle(0);
    entry->SetLineWidth(0);
-   entry->SetMarkerColor(1);
-   entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerColor(0);
+   entry->SetMarkerStyle(0);
+   entry->SetMarkerSize(0);
    entry->SetTextFont(42);
    entry=leg->AddEntry("data_obs","Observation","le");
    entry->SetLineColor(1);
