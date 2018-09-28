@@ -1057,6 +1057,8 @@ $\Delta R$ between leading lepton and leading b-tagged jet, reconstructed Z boso
 \label{fig:inputFeaturesDataSimAgreement5}
 \end{figure}
 
+\clearpage
+\newpage
 %% HYPERPARAMETERS
 \subsubsection*{BDT Hyperparameter Optimisation}
 Instead of tuning the of choice hyperparameters for optimal classification performance either by hand or using a time and computationally expensive grid search, a regression model was constructed and evaluated using the \emph{Scikit-Optimize} library~\cite{scikit-optimise}.
@@ -1120,17 +1122,20 @@ Distributions of the input variables chosen for use with the BDT for the signal 
 \label{fig:inputFeaturesDistributions_mumu}
 \end{figure}
 
+\clearpage
+\newpage
 \subsubsection*{BDT Evaluation}
 Following the optimisation of the BDT input variables and hyperparameters, the BDT is trained.
 The resultant output discriminant distributions shown in Figure~\ref{fig:prefitBDT}.
 These distributions illustrates that there is both good agreement between simulation and data and that the BDT is effective at separating the majority of the backgrounds from the signal.
 These output discriminant distributions are used to extract the signal strength and its statistical significance in the following chapter.
 
-\begin{figure}[htb]
+\begin{figure}[h]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/results/prefit_ee.pdf}
-\includegraphics[width=0.47\textwidth]{figs/results/prefit_mumu.pdf}
+\includegraphics[width=0.78\textwidth]{figs/results/prefit_ee.pdf}
+\\
+\includegraphics[width=0.78\textwidth]{figs/results/prefit_mumu.pdf}
 \caption{
-Pre-fit distributions of the BDT discriminant for the $ee$ channel (left) and $\mu\mu$ channel.}
+Pre-fit distributions of the BDT discriminant for the $ee$ channel (top) and $\mu\mu$ channel (bottom).}
 \label{fig:prefitBDT}
 \end{figure}
