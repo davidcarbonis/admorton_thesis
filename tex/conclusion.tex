@@ -1,4 +1,5 @@
 \chapter{Conclusion}\label{chapter:conclusion}
+\section{Summary of the tZq analysis}
 Following the restart of the LHC in 2015, the LHC's increased centre-of-mass collision energies and instantaneous luminosities have made it possible to undertake measurements of rare processes involving top quark and electroweak interactions.
 In this thesis a search was presented for the production of a top quark in association with a Z boson using the dilepton final state using a shape based analysis.
 This analysis focussed on understanding and constraining processes that involve the production of two promptly produced leptons that are consistent with a Z boson decay and those that involve at least one non-promptly produced lepton.
@@ -10,15 +11,15 @@ Using simulation, the expected significances for the $ee$ and $\mu\mu$ channels 
 These results constitute the first measurement of tZq that has been made using the dilepton final state.
 Given that the results presented in this thesis have not been fully reviewed by the CMS collaboration, further work is required in order to understand the larger than expected significance of this measurement and to achieve the standard required for journal publication on behalf of the CMS collaboration.
 
-
-Given that the observation of tZq is limited by statistics, it is intended to incorporate additional data collected by the CMS experiment in order to improve the sensitivity of the analysis.
-Including the 41.5\fbinv of proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by the CMS experiment during 2017 is expected to improve the expected significance of the result to approximately $1.2\sigma$.
+\section{Future measurements}
+Given that the observation of tZq is limited by statistics, the single greatest improvement to the sensitivity of this analysis would be the incorporation of additional data collected by the CMS experiment.
+It is anticipated that including the 41.5\fbinv of proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by the CMS experiment during 2017 is expected to improve the expected significance of the result to approximately $1.2\sigma$.
 %It is anticipated that an additional X\fbinv of proton-proton collision data at $\sqrt{s} = 13\TeV$ would be required to  improve the expected significance of the result to $3\sigma$.
 
 The result presented was based on the February 2017 reprocessing of the 2016 data and September 2016 reprocessing of the corresponding simulation samples.
-These datasets have subsequently been reprocessed to incorporate updated jet energy corrections and improved alignments and calibrations of the CMS detector, leading to improved uncertainties on the jet energy scales and resolution.
+These datasets have subsequently been reprocessed to incorporate updated jet energy corrections and improved alignments and calibrations of the CMS detector, leading to improved jet energy scale and resolution corrections.
 
-In addition to including reprocessed and additional datasets, it may be possible to increase the sensitivity of this search through using alternative physics object selection algorithms have been developed.
+In addition to including additional and reprocessed datasets, it may be possible to increase the sensitivity of this analysis through using alternative physics object selection algorithms that have been developed.	
 b-tagging algorithms that use deep neural networks to produce a discriminator value have been demonstrated to have a higher b-tagging efficiency and lower misidentification rate than the CSVv2 algorithm used in the analysis presented.
 As such, is expected to both increase the signal yield and reduce the uncertainties associated 
 Similarly, a lepton identification algorithm that uses a MVA to produce a discriminator value has been 
@@ -26,14 +27,15 @@ Similarly, a lepton identification algorithm that uses a MVA to produce a discri
 As the uncertainty associated with the normalisation of the Z+jets and \ttbar processes
 regions to constrain 
 
-The 
 The inclusion of variables computed using the Matrix element method ~\cite{Sirunyan:2017nbr,Abazov:2004cs} - improves expected sig by 20\%
 
+SUMMARY
 Once an accurate measurement of the tZq cross section can be made, it should be possible to probe the strength of the WWZ coupling, for which tZq is expected to be as sensitive to as WZ production~\cite{Campbell:2013yla}.
 
 %%%%%%
 %TMTT%
 %%%%%%
+\section{Summary of the future track finding processor studies}
 The \emph{TMTT} collaboration has proposed a track finder system for the CMS tracker at the HL-LHC that is capable of contributing information to the CMS Level-1 trigger.
 The \emph{TMTT} track finding system identifies track candidates using time-multiplexed Hough Transforms in the \rphi plane, a Kalman Filter to filter these candidates and and precisely fit track parameters to them and a duplicate removal process.
 In this thesis a number of studies were presented that were undertaken as part of the development of the this track finding system.
@@ -43,22 +45,23 @@ The linearised $\chi^{2}$ track fitting algorithm was shown to be capable of bot
 Following the evaluation and comparison of both the $\chi^{2}$ track fit algorithm and the \KF, it was decided not to continue development of the former algorithm.
 This decision was made as it was determined that the \KF filtering and fitting performance was superior than that of the $\chi^{2}$ track fit, particularly in the forward regions.
 
-If the the linearised $\chi^{2}$ track fitting algorithm is to be considered a viable alternative to the other track fitters developed for the \emph{TMTT} project.
-While only a small number of track derivatives are required for the calculations in the barrel region, it is uncertain whether there are sufficient resources to tabulate the endcap derivatives required on current hardware.
-If it can be demonstrated that current FPGAs can implement this algorithm, it will need to be demonstrated that the $\chi^{2}$ track fitter's performance is competitive with the \KF and \LR.
-While it may not be possible to make the $\chi^{2}$ track fitter filter tracks as effectively as the \KF or \LR , other improvements, such including the fitting of the transverse impact parameter, may improve its competitiveness.
-
-
 The flexibility for the upgraded tracker to be able to reconstruct tracks down to a lower \pT threshold of 2\GeV is potentially desirable and was initially studied as part of the 2016 demonstrator review.
 The ability of the proposed track finding system to reconstruct such low transverse momenta tracks ($2\GeV < \pT < 3\GeV$) was shown to be considerably improved by accounting for the effects of \MS. 
 For the \HT, this involved using decreased precision \HT cells to mitigate against scattering causing stubs to be found in adjacent cells.
 The \KF's covariance matrix was modified to incorporate the uncertainty in the hit position cased by the effects of \MS by including a term that described the average scattering angle as a function of \pT.
 
-Despite these improvements, there are still a number of key areas that require investigating in order to understand the current limitations of the work done so far and how it may be improved upon.
+\section{Future system development}
+If the the linearised $\chi^{2}$ track fitting algorithm is to be considered a viable alternative to the other track fitters developed for the \emph{TMTT} project.
+While only a small number of track derivatives are required for the calculations in the barrel region, it is uncertain whether there are sufficient resources to tabulate the endcap derivatives required on current hardware.
+If it can be demonstrated that current FPGAs can implement this algorithm, it will need to be demonstrated that the $\chi^{2}$ track fitter's performance is competitive with the \KF and \LR.
+While it may not be possible to make the $\chi^{2}$ track fitter filter tracks as effectively as the \KF or \LR , other improvements, such including the fitting of the transverse impact parameter, may improve its competitiveness.
+
+Despite the improving the proposed system's ability to reconstruct tracks with low \pT, there are still a number of key areas that require investigating in order to understand the current limitations of the work done so far and how it may be improved upon.
 Currently it is not understood why the duplicate rate increases near the boundary between normal and reduced precision \HT cells.
 This effect needs to be understood before an optimal value for the cell merging threshold can be determined.
 The \KF's performance is likely to be further improved by using a scattering constant term that accurately takes the volume of material a track has passed through into account.
 Implementing separate \KF $\chi^{2}$ cuts for the \rphi and \rz planes is another potential improvement given that the dominant uncertainty contribution for the former varies depending on $\pT$.
+
 
 The \emph{TMTT} collaboration demonstrated in the 2016 review that a complete track finding system for the upgraded CMS tracker that met the baseline system requirements could be built using currently available technology.
 Since 2016 the development and optimisation of \emph{TMTT} track finding system has continued using the so-called tilted barrel geometry for anticipated hardware for the final track finding system.
