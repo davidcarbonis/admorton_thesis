@@ -132,10 +132,8 @@ void prefit_ee()
    tZq_stack_1->SetBinError(22,2.771969);
    tZq_stack_1->SetEntries(22);
    tZq_stack_1->SetDirectory(0);
-   tZq_stack_1->SetFillColor(2);
-
-   ci = TColor::GetColor("#000099");
-   tZq_stack_1->SetLineColor(ci);
+   tZq_stack_1->SetFillColor(kYellow);
+   tZq_stack_1->SetLineColor(kYellow);
    tZq_stack_1->SetLineWidth(0);
    tZq_stack_1->SetMarkerSize(0);
    tZq_stack_1->GetXaxis()->SetLabelFont(42);
@@ -1638,7 +1636,7 @@ void prefit_ee()
    entry->SetFillStyle(1001);
    entry->SetLineColor(kYellow);
    entry->SetLineStyle(1);
-   entry->SetMarkerColor(1);
+   entry->SetMarkerColor(kYellow);
    entry->SetMarkerStyle(21);
    entry->SetMarkerSize(1);
    entry->SetTextFont(42);
