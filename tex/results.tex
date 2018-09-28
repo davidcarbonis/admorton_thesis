@@ -95,6 +95,9 @@ This method, known as the \emph{asymptotic} CL$_{s}$ method, is used when the nu
 The Asimov dataset is defined as being constructed such that all observable quantities are equal to their expectation values.
 A full description of the asymptotic approximation to the CL$_{s}$ method is given in~\cite{AsymptoticFormulae}.
 
+\clearpage
+\newpage
+
 \section{Statistical Analysis Results}\label{sec:results}
 At 95\% CL, the observed signal strength for tZq production was determined to be $6.213_{-2.695}^{+2.339}$ and $4.725_{-2.015}^{+1.916}$ for the $ee$ and $\mu\mu$ channels, respectively, corresponding to a significances of $2.722 \sigma$ and $2.501\sigma$, respectively. %$4.74^{+1.69}_{-1.51$}
 Using the reference NLO cross section of $\sigma (tZq, Z \rightarrow l^{+} l^{-}$) = 94.2~fb~\cite{Campbell:2013yla}, these signal strengths corresponds to cross section of $194.8_{-84.7}^{+73.4}$~fb and $148.5_{-63.4}^{+60.3}$~fb for the $ee$ and $\mu\mu$ final states, respectively. %$94.2^{+95.3}_{-98.4475}$.
@@ -147,12 +150,13 @@ The BDT discriminant distributions following the MLF for data and simulation are
 When compared to the pre-fit distributions in Figure~\ref{fig:postfitBDT}, it can be seen that the MLF has constrained the impact of the systematic uncertainties and increased the tZq yield to obtain the best possible answer.
 While the tZq contribution is more evident in the BDT discriminant distributions following the MLF, it is clear from the $\mu$ that the tZq yield is still consistent with the SM predictions.
 
-\begin{figure}[!Htb]
+\begin{figure}[!H]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/results/postfit_ee.pdf}
-\includegraphics[width=0.47\textwidth]{figs/results/postfit_mumu.pdf}
+\includegraphics[width=0.78\textwidth]{figs/results/postfit_ee.pdf}
+\\
+\includegraphics[width=0.78\textwidth]{figs/results/postfit_mumu.pdf}
 \caption{
-Post-fit distributions of the BDT discriminant for the $ee$ channel (left) and $\mu\mu$ channel.}
+Post-fit distributions of the BDT discriminant for the $ee$ channel (top) and $\mu\mu$ channel (bottom).}
 \label{fig:postfitBDT}
 \end{figure}
 
@@ -161,37 +165,10 @@ Figure~\ref{fig:systematicsPull} illustrates the impact of each of the sources o
 The left-hand side of this plot shows best fit value of the nuisance parameters where the asymmetric error bars are the pre-fit uncertainty divided by the post-fit uncertainty.
 The right-hand side illustrates the impact of varying a nuisance parameter to its $\pm \sigma$ post-fit values on the $\mu$.
 
-It can be seen that the majority of the experimental uncertainties have been constrained by the fit and have a much smaller impact on the $\mu$ than the theoretical uncertainties.
-While the uncertainties associated with the PDFs have been constrained by the MLF, they 
-
-Size of 
-
-%Given the relative size of the backgrounds compared to the signal process, it is not too surprising that the uncertainty on the Z+jets and \ttbar processes' cross sections have the largest impact on $\mu$.
-
-%Given the background dominated nature of this search, it is not too surprising that the uncertainty on the luminosity %has the single largest impact on $\mu$.
-%As Figure~\ref{fig:systematicsPull} shows, while the maximum likelihood fit does constrain the impact of this uncertainty on the 
-%
-
-%Requiring variables constructed from the multiple jets in the final state, such as $m_{top}$, increases the sensitivity of these parameters to the resolution of the HCAL.
-%
-%The impact of the other experimental uncertainties are either smaller than or of the same scale as the least impactful theoretical uncertainties.
-%The uncertainties in the matching of the ME and PS 
-
-%The theoretical uncertainties, while being well constrained during the 
-%While the impact of the theoretical uncertainties were further constrained during the MLF, each source has a an impact on the measured signal strength equal to or greater than each of the experimental uncertainties do individually (except that of the luminosity measurement).
-%
-%As the  .... ISR+FSR+PS
-%
-%
-%The uncertainties associated with the Jet Energy Resolutions and Parton Distribution 
-%JER + PDF biggest experimental  
-% 
-%MET = small 
-% 
-%Despite the large conservative rate uncertainty ascribed to the non-prompt lepton fake shapes, 
-%their
-%
-%given their relatively small contribution compared to other background processes and the effectiveness of the BDT in separating , the impact 
+It can be seen in Figure~\ref{fig:systematicsPull} that despite being constrained in the fit like the majority of the experimental uncertainties, the impact of the PDFs uncertainties on the $\mu$ is similar to those from the constrained theoretical scale uncertainties.
+While normalisation of the contributions from the non-prompt lepton and minor background processes are not further constrained in the MLF, they have the smallest impact on the $\mu$.
+The nuisance parameters for both the normalisation of the \ttbar and Z+jets background processes are constrained, but are offset from their pre-fit values to varying degrees in both channels.
+This implies that ...
 
 \begin{figure}[Htbp]
 \begin{center}
@@ -209,15 +186,16 @@ The top and bottom plots refer to the $ee$ and $\mu\mu$ channels, respectively.}
 The search for the decay of a single top quark produced in association with a Z boson presented in this thesis is the first one that has been made using the dilepton final state at the LHC.
 
 Previously the production of a single top quark in association with a Z boson has been searched for using the trilepton final state at the LHC using proton-proton collision data at $\sqrt{s} = 8 \TeV$ and $\sqrt{s} = 13 \TeV$.
-The first search for tZq production was done using the trilepton final state at $\sqrt{s} = 8 \TeV$ by the CMS Collaboration~\cite{Sirunyan:2017kkr}, which made a measurement with an observed significance of $2.9 \sigma$.
+tZq production was initially searched for using the trilepton final state at $\sqrt{s} = 8 \TeV$ by the CMS Collaboration~\cite{Sirunyan:2017kkr}, which made a measurement with an observed significance of $2.9 \sigma$.
+The first observation of tZq using the trilepton final state was made by the ATLAS and CMS collaborations at $\sqrt{s} = 13 \TeV$, with observed(expected) significances of 4.2(5.4) and 3.7(3.1) standard deviations, respectively~\cite{Aaboud:2017ylb,Sirunyan:2017nbr}.
+In contrast, the expected significance of measuring tZq using the dilepton final state at $\sqrt{s} = 13 \TeV$ was significantly smaller at $0.70\sigma$.
 
-Following this, the first observation of tZq using the trilepton final state was made by the ATLAS and CMS collaborations at $\sqrt{s} = 13 \TeV$, with observed significances of 4.2 and 3.7 standard deviations, respectively~\cite{Aaboud:2017ylb,Sirunyan:2017nbr}.
-The significance of measuring tZq using the dilepton final state however, is expected/observed to be significantly smaller/similar at $X \sigma$.
-Similarly the uncertainty on the expected signal strength for the dilepton final state is XXX compared to the uncertainties for the trilepton final state measurement.
-
-The reason for the difference observed in the sensitivity of the two different final states is the relative sizes of their differing background contributions.
+The difference between the sensitivity of measuring tZq using the trilepton and dilepton final states is due to the relative sizes of their background contributions.
+The presence of a third lepton in the trilepton final state suppresses the 
+In contrast, the requirement for two well-defined promptly produced leptons for the dilepton final state suppresses 
+ 
 While contributions from WZ processes and those involving NPLs form the largest backgrounds for the searches using the trilepton final state, as the 
 
+Both ATLAS+CMS uses CRs to constrain NPLs
 
-Therefore, given that the lack of sufficient statistics is the main factor limiting the significance of the result presented.
-It is essential to extend this search to include additional data collected by the CMS experiment if tZq is to be observed using the dilepton final state.
+Therefore, given that the lack of sufficient statistics is the main factor limiting the significance of the result presented, it is essential to extend this search to include additional data collected by the CMS experiment if tZq is to be observed using the dilepton final state.
