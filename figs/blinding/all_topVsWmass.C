@@ -2,17 +2,23 @@ void all_topVsWmass()
 {
 //=========Macro generated from canvas: Canvas_1/Canvas_1
 //=========  (Tue Sep 25 03:29:30 2018) by ROOT version 6.14/04
-   TCanvas *Canvas_1 = new TCanvas("Canvas_1", "Canvas_1",0,0,1280,1024);
+   TCanvas *Canvas_1 = new TCanvas("Canvas_1", "Canvas_1",0,0,1280,925);
    gStyle->SetOptStat(0);
    Canvas_1->Range(-18.75,-43.75,168.75,393.75);
    Canvas_1->SetFillColor(0);
    Canvas_1->SetBorderMode(0);
    Canvas_1->SetBorderSize(2);
    Canvas_1->SetLogz();
+   Canvas_1->SetLeftMargin(0.125);
+   Canvas_1->SetRightMargin(0.125);
+   Canvas_1->SetTopMargin(0.05);
+   Canvas_1->SetBottomMargin(0.125);
    Canvas_1->SetFrameBorderMode(0);
+   Canvas_1->SetTickx(1);
+   Canvas_1->SetTicky(1);
    Canvas_1->SetFrameBorderMode(0);
    
-   TH2D *All_topVsWmassHisto = new TH2D("All_topVsWmassHisto","Reconstructed top quark mass vs recontrcuted W boson mass",150,0,150,350,0,350);
+   TH2D *All_topVsWmassHisto = new TH2D("All_topVsWmassHisto","",150,0,150,350,0,350);
    All_topVsWmassHisto->SetBinContent(5342,0.0007295347);
    All_topVsWmassHisto->SetBinContent(6252,1.591842);
    All_topVsWmassHisto->SetBinContent(7025,0.0006198549);
@@ -31038,19 +31044,21 @@ void all_topVsWmass()
 
    ci = TColor::GetColor("#000099");
    All_topVsWmassHisto->SetLineColor(ci);
-   All_topVsWmassHisto->GetXaxis()->SetTitle(" m_{W}");
+   All_topVsWmassHisto->GetXaxis()->SetTitle(" m_{W} (GeV)");
    All_topVsWmassHisto->GetXaxis()->SetLabelFont(42);
-   All_topVsWmassHisto->GetXaxis()->SetLabelSize(0.035);
-   All_topVsWmassHisto->GetXaxis()->SetTitleSize(0.035);
+   All_topVsWmassHisto->GetXaxis()->SetLabelSize(0.05);
+   All_topVsWmassHisto->GetXaxis()->SetTitleSize(0.05);
    All_topVsWmassHisto->GetXaxis()->SetTitleFont(42);
+   All_topVsWmassHisto->GetXaxis()->SetTitleOffset(1.1);
    All_topVsWmassHisto->GetYaxis()->SetTitle(" m_{top} (GeV)");
    All_topVsWmassHisto->GetYaxis()->SetLabelFont(42);
-   All_topVsWmassHisto->GetYaxis()->SetLabelSize(0.035);
-   All_topVsWmassHisto->GetYaxis()->SetTitleSize(0.035);
+   All_topVsWmassHisto->GetYaxis()->SetLabelSize(0.05);
+   All_topVsWmassHisto->GetYaxis()->SetTitleSize(0.05);
    All_topVsWmassHisto->GetYaxis()->SetTitleFont(42);
+   All_topVsWmassHisto->GetYaxis()->SetTitleOffset(1.1);
    All_topVsWmassHisto->GetZaxis()->SetLabelFont(42);
-   All_topVsWmassHisto->GetZaxis()->SetLabelSize(0.035);
-   All_topVsWmassHisto->GetZaxis()->SetTitleSize(0.035);
+   All_topVsWmassHisto->GetZaxis()->SetLabelSize(0.05);
+   All_topVsWmassHisto->GetZaxis()->SetTitleSize(0.05);
    All_topVsWmassHisto->GetZaxis()->SetTitleFont(42);
    All_topVsWmassHisto->Draw("colz");
 
@@ -31097,7 +31105,7 @@ void all_topVsWmass()
    pt->SetFillColor(0);
    pt->SetFillStyle(0);
    pt->SetTextFont(42);
-   TText *pt_LaTex = pt->AddText("Reconstructed top quark mass vs recontrcuted W boson mass");
+   TText *pt_LaTex = pt->AddText("");
    pt->Draw();
    Canvas_1->Modified();
    Canvas_1->cd();
