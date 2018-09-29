@@ -1464,7 +1464,7 @@ void postfit_ee()
    TotalProcs__2__11->SetEntries(22);
    TotalProcs__2__11->SetDirectory(0);
    TotalProcs__2__11->SetFillColor(12);
-   TotalProcs__2__11->SetFillStyle(3244);
+   TotalProcs__2__11->SetFillStyle(3444);
    TotalProcs__2__11->SetLineColor(0);
    TotalProcs__2__11->SetMarkerStyle(0);
    TotalProcs__2__11->SetMarkerSize(0);
@@ -1665,7 +1665,7 @@ void postfit_ee()
 
    entry=leg->AddEntry("NULL","Syst.","f");
    entry->SetFillColor(12);
-   entry->SetFillStyle(3244);
+   entry->SetFillStyle(3444);
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
    entry->SetLineWidth(0);
@@ -1813,7 +1813,7 @@ tex->SetNDC();
    TotalProcs__7__16->SetEntries(1434.255);
    TotalProcs__7__16->SetDirectory(0);
    TotalProcs__7__16->SetFillColor(12);
-   TotalProcs__7__16->SetFillStyle(3244);
+   TotalProcs__7__16->SetFillStyle(3444);
    TotalProcs__7__16->SetLineColor(0);
    TotalProcs__7__16->SetMarkerStyle(0);
    TotalProcs__7__16->SetMarkerSize(0);

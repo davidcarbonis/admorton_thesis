@@ -2174,7 +2174,7 @@ void postfit_mumu()
 
    ci = TColor::GetColor("#4c4c4c");
    TotalProcs__2->SetFillColor(ci);
-   TotalProcs__2->SetFillStyle(3244);
+   TotalProcs__2->SetFillStyle(3444);
    TotalProcs__2->SetLineColor(0);
    TotalProcs__2->SetMarkerStyle(0);
    TotalProcs__2->SetMarkerSize(0);
@@ -2403,7 +2403,7 @@ void postfit_mumu()
    entry=leg->AddEntry("TotalProcs","Syst.","f");
    ci = TColor::GetColor("#4c4c4c");
    entry->SetFillColor(ci);
-   entry->SetFillStyle(3244);
+   entry->SetFillStyle(3444);
    entry->SetLineStyle(1);
    entry->SetLineWidth(0);
    entry->SetMarkerColor(1);
@@ -2580,7 +2580,7 @@ tex->SetNDC();
 
    ci = TColor::GetColor("#4c4c4c");
    TotalProcs__7->SetFillColor(ci);
-   TotalProcs__7->SetFillStyle(3244);
+   TotalProcs__7->SetFillStyle(3444);
    TotalProcs__7->SetLineColor(0);
    TotalProcs__7->SetMarkerStyle(0);
    TotalProcs__7->SetMarkerSize(0);
