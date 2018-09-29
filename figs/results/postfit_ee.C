@@ -1463,8 +1463,10 @@ void postfit_ee()
    TotalProcs__2__11->SetBinError(22,15.95477);
    TotalProcs__2__11->SetEntries(22);
    TotalProcs__2__11->SetDirectory(0);
-   TotalProcs__2__11->SetFillColor(12);
-   TotalProcs__2__11->SetFillStyle(3444);
+
+   ci = TColor::GetColor("#4c4c4c");
+   TotalProcs__2__11->SetFillColor(ci);
+   TotalProcs__2__11->SetFillStyle(3335);
    TotalProcs__2__11->SetLineColor(0);
    TotalProcs__2__11->SetMarkerStyle(0);
    TotalProcs__2__11->SetMarkerSize(0);
@@ -1532,7 +1534,9 @@ void postfit_ee()
    data_obs_copy__3__12->SetDirectory(0);
 
    data_obs_copy__3__12->SetLineColor(kBlack);
-   data_obs_copy__3__12->SetLineWidth(2);
+   data_obs_copy__3__12->SetLineWidth(1);
+   data_obs_copy__3__12->SetMarkerStyle(20);
+   data_obs_copy__3__12->SetMarkerSize(1.2);
    data_obs_copy__3__12->GetXaxis()->SetLabelFont(42);
    data_obs_copy__3__12->GetXaxis()->SetLabelSize(0.035);
    data_obs_copy__3__12->GetXaxis()->SetTitleSize(0.035);
@@ -1665,22 +1669,22 @@ void postfit_ee()
 
    entry=leg->AddEntry("NULL","Syst.","f");
    entry->SetFillColor(12);
-   entry->SetFillStyle(3444);
-   entry->SetLineColor(1);
-   entry->SetLineStyle(1);
+   entry->SetFillStyle(3235);
+   entry->SetLineColor(0);
+   entry->SetLineStyle(0);
    entry->SetLineWidth(0);
-   entry->SetMarkerColor(1);
-   entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerColor(0);
+   entry->SetMarkerStyle(0);
+   entry->SetMarkerSize(0);
    entry->SetTextFont(42);
 
-   entry=leg->AddEntry("NULL","Observation","le");
+   entry=leg->AddEntry("NULL","Observation","ple");
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
-   entry->SetLineWidth(2);
+   entry->SetLineWidth(1);
    entry->SetMarkerColor(1);
-   entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerStyle(20);
+   entry->SetMarkerSize(1.2);
    entry->SetTextFont(42);
    leg->Draw();
    TLatex *   tex = new TLatex(0.935,0.955,"35.9 fb^{-1} (13 TeV)");
@@ -1812,8 +1816,10 @@ tex->SetNDC();
    TotalProcs__7__16->SetBinError(22,0.05909981);
    TotalProcs__7__16->SetEntries(1434.255);
    TotalProcs__7__16->SetDirectory(0);
-   TotalProcs__7__16->SetFillColor(12);
-   TotalProcs__7__16->SetFillStyle(3444);
+
+   ci = TColor::GetColor("#4c4c4c");
+   TotalProcs__7__16->SetFillColor(ci);
+   TotalProcs__7__16->SetFillStyle(3335);
    TotalProcs__7__16->SetLineColor(0);
    TotalProcs__7__16->SetMarkerStyle(0);
    TotalProcs__7__16->SetMarkerSize(0);
@@ -1880,6 +1886,8 @@ tex->SetNDC();
    data_obs_copy__8__17->SetEntries(4039.378);
    data_obs_copy__8__17->SetDirectory(0);
 
+   data_obs_copy__8__17->SetMarkerStyle(20);
+   data_obs_copy__8__17->SetMarkerSize(1.2);
    data_obs_copy__8__17->SetLineColor(kBlack);
    data_obs_copy__8__17->SetLineWidth(2);
    data_obs_copy__8__17->GetXaxis()->SetLabelFont(42);

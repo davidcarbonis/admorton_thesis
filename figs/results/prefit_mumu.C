@@ -2171,7 +2171,7 @@ void prefit_mumu()
 
    ci = TColor::GetColor("#4c4c4c");
    TotalProcs__2->SetFillColor(ci);
-   TotalProcs__2->SetFillStyle(3444);
+   TotalProcs__2->SetFillStyle(3335);
    TotalProcs__2->SetLineColor(0);
    TotalProcs__2->SetMarkerStyle(0);
    TotalProcs__2->SetMarkerSize(0);
@@ -2267,8 +2267,10 @@ void prefit_mumu()
    data_obs_copy__3->SetEntries(37);
    data_obs_copy__3->SetDirectory(0);
 
+   data_obs_copy__3->SetMarkerStyle(20);
+   data_obs_copy__3->SetMarkerSize(1.2);
    data_obs_copy__3->SetLineColor(kBlack);
-   data_obs_copy__3->SetLineWidth(2);
+   data_obs_copy__3->SetLineWidth(1);
    data_obs_copy__3->GetXaxis()->SetLabelFont(42);
    data_obs_copy__3->GetXaxis()->SetLabelSize(0.035);
    data_obs_copy__3->GetXaxis()->SetTitleSize(0.035);
@@ -2309,7 +2311,7 @@ void prefit_mumu()
    axis0__4->Draw("axissame");
    
 
-   TLegend *leg = new TLegend(0.69,0.47,0.89,0.89,NULL,"NBNDC");
+   TLegend *leg = new TLegend(0.77,0.32,0.96,0.9,NULL,"NBNDC");
    leg->SetBorderSize(1);
    leg->SetNColumns(1);
    leg->SetTextSize(0.035);
@@ -2401,7 +2403,7 @@ void prefit_mumu()
    entry=leg->AddEntry("TotalProcs","Syst.","f");
    ci = TColor::GetColor("#4c4c4c");
    entry->SetFillColor(ci);
-   entry->SetFillStyle(3444);
+   entry->SetFillStyle(3235);
    entry->SetLineStyle(1);
    entry->SetLineWidth(0);
    entry->SetMarkerColor(1);
@@ -2409,13 +2411,13 @@ void prefit_mumu()
    entry->SetMarkerSize(1);
    entry->SetTextFont(42);
 
-   entry=leg->AddEntry("data_obs","Observation","le");
+   entry=leg->AddEntry("data_obs","Observation","ple");
    entry->SetLineColor(kBlack);
    entry->SetLineStyle(1);
-   entry->SetLineWidth(2);
+   entry->SetLineWidth(1);
    entry->SetMarkerColor(1);
-   entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
+   entry->SetMarkerStyle(20);
+   entry->SetMarkerSize(1.2);
    entry->SetTextFont(42);
    leg->Draw();
    TLatex *   tex = new TLatex(0.935,0.955,"35.9 fb^{-1} (13 TeV)");
@@ -2579,7 +2581,7 @@ tex->SetNDC();
 
    ci = TColor::GetColor("#4c4c4c");
    TotalProcs__7->SetFillColor(ci);
-   TotalProcs__7->SetFillStyle(3444);
+   TotalProcs__7->SetFillStyle(3335);
    TotalProcs__7->SetLineColor(0);
    TotalProcs__7->SetMarkerStyle(0);
    TotalProcs__7->SetMarkerSize(0);
@@ -2675,8 +2677,10 @@ tex->SetNDC();
    data_obs_copy__8->SetEntries(7750.273);
    data_obs_copy__8->SetDirectory(0);
 
+   data_obs_copy__8->SetMarkerStyle(20);
+   data_obs_copy__8->SetMarkerSize(1.2);
    data_obs_copy__8->SetLineColor(kBlack);
-   data_obs_copy__8->SetLineWidth(2);
+   data_obs_copy__8->SetLineWidth(1);
    data_obs_copy__8->GetXaxis()->SetLabelFont(42);
    data_obs_copy__8->GetXaxis()->SetLabelSize(0.035);
    data_obs_copy__8->GetXaxis()->SetTitleSize(0.035);

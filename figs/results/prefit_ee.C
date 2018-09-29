@@ -1444,7 +1444,7 @@ void prefit_ee()
 
    ci = TColor::GetColor("#4c4c4c");
    TotalProcs__2->SetFillColor(ci);
-   TotalProcs__2->SetFillStyle(3444);
+   TotalProcs__2->SetFillStyle(3335);
    TotalProcs__2->SetLineColor(0);
    TotalProcs__2->SetMarkerStyle(0);
    TotalProcs__2->SetMarkerSize(0);
@@ -1510,8 +1510,10 @@ void prefit_ee()
    data_obs_copy__3->SetEntries(22);
    data_obs_copy__3->SetDirectory(0);
 
+   data_obs_copy__3->SetMarkerStyle(20);
+   data_obs_copy__3->SetMarkerSize(1.2);
    data_obs_copy__3->SetLineColor(kBlack);
-   data_obs_copy__3->SetLineWidth(2);
+   data_obs_copy__3->SetLineWidth(1);
    data_obs_copy__3->GetXaxis()->SetLabelFont(42);
    data_obs_copy__3->GetXaxis()->SetLabelSize(0.035);
    data_obs_copy__3->GetXaxis()->SetTitleSize(0.035);
@@ -1644,22 +1646,24 @@ void prefit_ee()
    entry=leg->AddEntry("TotalProcs","Syst.","f");
    ci = TColor::GetColor("#4c4c4c");
    entry->SetFillColor(ci);
-   entry->SetFillStyle(3444);
+   entry->SetFillStyle(3235);
    entry->SetLineStyle(0);
    entry->SetLineWidth(0);
    entry->SetMarkerColor(0);
    entry->SetMarkerStyle(0);
    entry->SetMarkerSize(0);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("data_obs","Observation","le");
+
+   entry=leg->AddEntry("data_obs","Observation","ple");
+   entry->SetMarkerColor(1);
+   entry->SetMarkerStyle(20);
+   entry->SetMarkerSize(1.2);
    entry->SetLineColor(1);
    entry->SetLineStyle(1);
-   entry->SetLineWidth(2);
-   entry->SetMarkerColor(1);
-   entry->SetMarkerStyle(21);
-   entry->SetMarkerSize(1);
+   entry->SetLineWidth(1);
    entry->SetTextFont(42);
    leg->Draw();
+
    TLatex *   tex = new TLatex(0.935,0.955,"35.9 fb^{-1} (13 TeV)");
 tex->SetNDC();
    tex->SetTextAlign(31);
@@ -1791,7 +1795,7 @@ tex->SetNDC();
 
    ci = TColor::GetColor("#4c4c4c");
    TotalProcs__7->SetFillColor(ci);
-   TotalProcs__7->SetFillStyle(3444);
+   TotalProcs__7->SetFillStyle(3335);
    TotalProcs__7->SetLineColor(0);
    TotalProcs__7->SetMarkerStyle(0);
    TotalProcs__7->SetMarkerSize(0);
@@ -1857,8 +1861,10 @@ tex->SetNDC();
    data_obs_copy__8->SetEntries(4022.328);
    data_obs_copy__8->SetDirectory(0);
 
+   data_obs_copy__8->SetMarkerStyle(20);
+   data_obs_copy__8->SetMarkerSize(1.2);
    data_obs_copy__8->SetLineColor(kBlack);
-   data_obs_copy__8->SetLineWidth(2);
+   data_obs_copy__8->SetLineWidth(1);
    data_obs_copy__8->GetXaxis()->SetLabelFont(42);
    data_obs_copy__8->GetXaxis()->SetLabelSize(0.035);
    data_obs_copy__8->GetXaxis()->SetTitleSize(0.035);
