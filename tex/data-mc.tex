@@ -67,7 +67,7 @@ This scale factor considers the ratio of the total number of events to the effec
 \begin{equation}
 SF^{NLO} = \frac{N^{postive events} + N^{negative events}}{N^{postive events} - N^{negative events}} \times \frac{|event weight|}{event weight} \;
 \end{equation}
-For MEs generated at LO, MLM-merging scheme is used to match ME-PS the FxFx-merging scheme for 
+%For MEs generated at LO, MLM-merging scheme is used to match ME-PS the FxFx-merging scheme for 
 
 \item \textbf{POWHEG V2} (The Positive Weight Hardest Emission Generator)~\cite{Alioli:2010xd} is a framework that interfaces NLO ME calculations with PS generators.
 As its name suggests, POWHEG produces the hardest emission first by using the exact NLO ME and only produces positively weighted events.
@@ -237,7 +237,7 @@ Making use of PF jets allows a more accurate reconstruction to be undertaken tha
 Each of these effects is considered as a separate correction level; they are applied sequentially through the use of a scale factor applied to a jet's four-momentum in the following order:
 
 \begin{itemize}
-\item \textbf{L1 Pileup.} Removes additional energy originating from \PU interactions from the jet energy and is applied to both data and simulated events. 
+\item \textbf{L1 Pile-up.} Removes additional energy originating from \PU interactions from the jet energy and is applied to both data and simulated events. 
 \item \textbf{L2 Relative and L3 Absolute} Applied to data and simulation to account for the non-uniform detector response in $\eta$ and \pT, respectively. The scale factor is derived by comparing generator level and reconstructed jets in the simulation.
 \item \textbf{L2L3 Residual} Applied to data only to account for any remaining small differences in the jet response between data and simulation, such as the absolute Jet Energy Scale (JES) following application of the previous corrections..
 \end{itemize}
