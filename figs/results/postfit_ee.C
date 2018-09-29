@@ -1889,7 +1889,7 @@ tex->SetNDC();
    data_obs_copy__8__17->SetMarkerStyle(20);
    data_obs_copy__8__17->SetMarkerSize(1.2);
    data_obs_copy__8__17->SetLineColor(kBlack);
-   data_obs_copy__8__17->SetLineWidth(2);
+   data_obs_copy__8__17->SetLineWidth(1);
    data_obs_copy__8__17->GetXaxis()->SetLabelFont(42);
    data_obs_copy__8__17->GetXaxis()->SetLabelSize(0.035);
    data_obs_copy__8__17->GetXaxis()->SetTitleSize(0.035);
