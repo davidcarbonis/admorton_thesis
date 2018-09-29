@@ -1,5 +1,5 @@
 \chapter{Analysis Strategy and Event Selection}\label{chapter:tzq-search}
-The following three chapters of this thesis describe the search for the production of a single top quark in association with a Z boson using the dilepton final state with 35.8\fbinv of proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by the CMS experiment during 2016.
+The following three chapters of this thesis describe the search for the production of a single top quark in association with a Z boson using the dilepton final state with 35.9\fbinv of proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by the CMS experiment during 2016.
 
 While the dilepton final state allows for the full reconstruction of all the particles involved, including the top quark, the presence of two leptons and multiple jets is identical to the final states of a large number of background processes.
 Consequently, as each of these backgrounds have cross sections many orders of magnitude larger than that for tZq, the signal region will inevitably be background dominated.
@@ -124,12 +124,12 @@ For $\sigma_{\mathrm{t}} = 8\GeV$ and $\sigma_{\mathrm{W}}) = 30\GeV$, the optim
 
 Figure~\ref{fig:blindingChi2} shows the side-band region bounded between the two contour lines in  the reconstructed top quark mass and w boson mass distributions for the tZq simulation sample (left) and all the simulation samples that were considered (right) (see Section~\ref{sec:samples}).
 
-\begin{figure}[h]
+\begin{figure}[!h]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/blinding/tZq_topVsWmass.png}
-\includegraphics[width=0.47\textwidth]{figs/blinding/all_topVsWmass.png}
+\includegraphics[width=0.49\textwidth]{figs/blinding/tZq_topVsWmass.png}
+\includegraphics[width=0.49\textwidth]{figs/blinding/all_topVsWmass.png}
 \caption{
-The reconstructed top quark mass and w boson mass distributions for the tZq simulation sample (left) and all simulation samples (right) for both the $ee$ and $\mu\mu$ channels following the application of the signal region criteria described in Section~\ref{sec:signalRegion}.
+The reconstructed top quark mass and w boson mass distributions for the tZq simulation sample (top) and all simulation samples (bottom) for both the $ee$ and $\mu\mu$ channels following the application of the signal region criteria described in Section~\ref{sec:signalRegion}.
 The signal region is defined as the area within the inner contour line and the side-band region is defined as the are bounded between the two contour lines.
 }
 \label{fig:blindingChi2}
@@ -171,15 +171,13 @@ Ideally the, single and double lepton triggers with the lowest possible transver
 The high instantaneous luminosity at the start of the most luminous data taking periods, however, required a number of the L1 triggers to be prescaled to prevent the trigger bandwidth constraints being exceeded.
 As only the triggers considered for the $ee$ channel were impacted by this; these triggers were chosen on the basis of the amount of luminosity they were not prescaled for with the lowest possible transverse momenta thresholds.
 
-Table~\ref{tab:triggersDatasets} lists the triggers used to select data and simulation events for each channel, including the e$mu$ final state which is considered for a \ttbar enriched control region(see Section~\ref{subsec:ttbarCR}).
+Table~\ref{tab:triggersDatasets} lists the triggers used to select data and simulation events for each channel, including the e$\mu$ final state which is considered for a \ttbar enriched control region(see Section~\ref{subsec:ttbarCR}).
 In these trigger path names, \emph{Ele} and \emph{Mu}, refer to a reconstructed electron and muon, respectively.
 The number following the lepton flavour denotes the minimum \pT a lepton must have to fire the trigger.
 In order to avoid raising \pT thresholds to maintain the trigger data rate, additional criteria are used by the triggers.
-These include simple identification (\emph{Id}) and isolation (\emph{Iso}) criteria, which are extracted from the calorimeter (\emph{Calo}) and tracker (\emph{Trk}) systems, that have 
+These include simple identification (\emph{Id}) and isolation (\emph{Iso}) criteria, which are extracted from the calorimeter (\emph{Calo}) and tracker (\emph{Trk}) systems, and filters to reject candidates that have not originated from the interaction point (\emph{DZ}).
 
-%Whilst the Z boson can decay into a tau anti-tau pair, despite these leptons being simulated and reconstructed in the MC, they are not considered in the event selection for this analysis due to the difficulty simulating them due to their high mass.
-
-\begin{table}[htbp]
+\begin{table}[h]
 \topcaption {
 Triggers and datasets used for each decay channel.
 }
@@ -204,6 +202,7 @@ Triggers and datasets used for each decay channel.
    \hline
  \end{tabular}}
 \end{table}
+
 
 \section{Event Cleaning}\label{sec:metFilters}
 After selecting an event that meets the trigger requirements described in Section~\ref{sec:triggerStrategy}, a number of filters are applied to remove events with beam or detector from further consideration in the analysis:
