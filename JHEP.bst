@@ -718,7 +718,6 @@ FUNCTION {article}
     }
   if$
   new.sentence
-  formatfull.doi output
   note output
   fin.entry
 }
