@@ -845,7 +845,7 @@ FUNCTION {incollection}
   format.eprint output
   new.block
   % note output
-  formatfull.doi output
+  format.doi output
   fin.entry
 }
 
@@ -947,8 +947,8 @@ FUNCTION {misc}
   howpublished output
   format.date output
   format.url output
-  format.note output
   format.urldate output
+  format.note output
   new.block
   % note output
   doi output
