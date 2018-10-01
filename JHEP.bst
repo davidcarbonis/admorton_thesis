@@ -584,7 +584,7 @@ FUNCTION {empty.misc.check}
 
 FUNCTION {format.tr.number}
 { type empty$
-    { "Tech. Rep." }
+    { "" }
     'type
   if$
   number empty$
@@ -718,8 +718,8 @@ FUNCTION {article}
     }
   if$
   new.sentence
-  % format.doi output
-  % note output
+  format.doi output
+  note output
   fin.entry
 }
 
