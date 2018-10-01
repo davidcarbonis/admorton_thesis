@@ -870,10 +870,8 @@ FUNCTION {inproceedings}
     }
   if$
   format.eprint output
-  doi empty$
-    { format.url output }
-    { formatfull.doi output }
-  if$
+  formatfull.doi output
+  format.url output
   fin.entry
 }
 
@@ -1009,6 +1007,7 @@ FUNCTION {techreport}
   new.block
   % note output
   doi output
+  url output
   fin.entry
 }
 
