@@ -252,7 +252,7 @@ b-jet identification is particularly pertinent for top physics searches due to t
 This process is known as \emph{b-tagging} and exploits the fact that because b-hadrons have a relatively long lifetime of approximately 1.5 ps~\cite{Beringer:1900zz}, they can travel a measurable distance away from the primary vertex before decaying. 
 The resulting secondary vertices are exploited in b-tagging, which is performed in CMS by a number of algorithms supported by the CMS B-Tag and Vertexing (BTV) Physics Object Group.
 The analysis presented uses the \emph{Combined Secondary Vertex} version 2 (CSVv2) algorithm~\cite{Sirunyan:2017ezt}.
-The CSVv2 algorithm uses information about displaced track and secondary vertices as input into a multilayer perceptron (a class of neural network) to produce a discriminator value which characterises the likelihood that the likelihood a jet originated from a b-quark.
+The CSVv2 algorithm uses information about displaced track and secondary vertices as input into a multilayer perceptron (MLP) (a class of neural network) to produce a discriminator value which characterises the likelihood that the likelihood a jet originated from a b-quark.
 
 Three different \emph{working points} (loose, medium and tight) are defined by the BTV POG for b-tagging algorithms, such that the probability for incorrectly tagging light flavoured jets is 10\%, 1\% and 0.1\% respectively.
 Figure~\ref{fig:bTagEffVsMisId} illustrates the negative impact that minimising the light jet misidentification probability has on the efficiency at selecting genuine b-jets for the b-tagging algorithms supported within CMS~\cite{Sirunyan:2017ezt}.

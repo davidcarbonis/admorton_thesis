@@ -692,7 +692,7 @@ FUNCTION {article}
   { journal missing$
     { format.eprint output }
     { journal empty$ { format.eprint output } {
-      format.doi * "{" * journal emphasize before.all 'output.state := "journal" output.check
+      formatfull.doi * "{" * journal emphasize before.all 'output.state := "journal" output.check
       % added \href{doi} and { before journal
       % Slv
       blank.sep
@@ -718,7 +718,7 @@ FUNCTION {article}
     }
   if$
   new.sentence
-  format.doi output
+  formatfull.doi output
   note output
   fin.entry
 }
@@ -752,7 +752,7 @@ FUNCTION {book}
   format.date "year" output.check
   doi empty$
     {}
-    { format.doi "{" * doi * "}" * "DOI" output.check }
+    { formatfull.doi "{" * doi * "}" * "DOI" output.check }
   if$
   fin.entry
 }
@@ -845,7 +845,7 @@ FUNCTION {incollection}
   format.eprint output
   new.block
   % note output
-  format.doi output
+  formatfull.doi output
   fin.entry
 }
 
