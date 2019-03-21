@@ -3,7 +3,7 @@ After triggered events from the CMS experiment have been read out, the reconstru
 Monte Carlo (MC) simulation is used in physics analyses to optimise searches and in the statistical analysis of the measurements that are made.
 It is therefore essential that MC provides a detailed, precise and realistic description of the expected physics processes.
  
-The event simulation and objection reconstruction algorithms which are relevant to the single top physics search presented in this thesis are discussed in this chapter.
+The event simulation and object reconstruction algorithms which are relevant to the single top physics search presented in this thesis are discussed in this chapter.
 
 \section{Event Simulation}\label{sec:sim}
 As MC simulation is meant to provide a realistic description of physics processes, both accurate modelling of these processes and a detailed understanding of how physical processes interact with the CMS detector are required to produce events in the same format as raw proton-proton collision data prior to undergoing the same reconstruction process.
@@ -137,7 +137,7 @@ As PF particles are identified, their associated tracks and clusters are removed
 Charged particle tracks are linked to clusters by extrapolating a track's last measured hit in the tracker to the calorimeter systems.
 If a track's expected position in the calorimeters are within a cluster's boundaries, these elements are linked together.
 Similarly, tangents to the inner tracker tracks are extrapolated to the ECAL in order to identify  and link tracks to Bremsstrahlung photons.
-Calorimeter cluster links are formed if a cluster from the higher granularity detector (ECAL/ES) lies within the acceptance boundaries of the lower granularity detector considered (HCAl/ECAL).
+Calorimeter cluster links are formed if a cluster from the higher granularity detector (ECAL/ES) lies within the acceptance boundaries of the lower granularity detector considered (HCAL/ECAL).
 
 The different particle types are then reconstructed in the following order: 
 \begin{itemize}

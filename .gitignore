@@ -8,3 +8,5 @@ admorton_thesis.lot
 admorton_thesis.toc
 admorton_thesis.pdf
 admorton_thesis.out
+*.tmp
+*.docx

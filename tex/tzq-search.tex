@@ -22,7 +22,7 @@ Thus, the leptons must have the same flavour and opposite charge and an invarian
 This mass window was found to sufficiently account for detector resolution effects.
 
 As additional jets may be produced by gluon splitting from by initial or final state radiation the maximum number of jets considered is limited to six.
-Thus four to six jets are required to be present, each of which must satisfy $\pT > 30\GeVc$ and $|\eta| < 4.7$ and as as passing the loose jet identification criteria to ensure a high selection efficiency while rejecting the majority of fake jets.
+Thus four to six jets are required to be present, each of which must satisfy $\pT > 30\GeVc$ and $|\eta| < 4.7$ and as passing the loose jet identification criteria to ensure a high selection efficiency while rejecting the majority of fake jets.
 
 Given the top quark has a near 100\% probability of decaying into a b-quark and a W boson, the event selection requires at least one of the selected jets to be b-tagged and satisfy $|\eta| < 2.7$.
 The b-tagging algorithm and selection criteria are described in Section~\ref{subsubsec:bTag}
@@ -36,7 +36,7 @@ As additional b-jets will be softer than the one produced from the top quark dec
 To summarise the complete event selection for the signal region was chosen to be:
 
 \begin{itemize}
-\item Exactly two same flavour and opposite sign electrons or muons which pass the tight identification and isolation cuts. The leading and sub-leading electrons must have a $\pT > 35\GeVc (26\GeVc)$ and be within $|\eta| < 2.50$. The leading and sub-leading muons $\pT > 15\GeVc (20\GeVc)$ respectively and be within $|\eta| < 2.0$.
+\item Exactly two same flavour and opposite sign electrons or muons which pass the tight identification and isolation cuts. The leading and sub-leading electrons must have a $\pT > 35\GeVc (15\GeVc)$ and be within $|\eta| < 2.50$. The leading and sub-leading muons $\pT > 26\GeVc (20\GeVc)$ respectively and be within $|\eta| < 2.4$.
 \item  No additional electrons or muons that pass the same kinematic cuts and the veto or loose identification and isolation cuts respectively. 
 \item The invariant mass of the two selected leptons must be within $20\GeVcc$ of the known Z boson mass.
 \item Four to six jets that pass the loose jet ID requirements and have a $\pt > 30\GeVc$ and are within $|\eta| < 4.7$.
@@ -120,7 +120,7 @@ The choice of value used for $\chi^{2}_{SR}$ and $\chi^{2}_{SB}$ had to balance 
 \item the \emph{side band} region to contain sufficient statistics to make the analysis possible.
 \end{itemize}
 
-For $\sigma_{\mathrm{t}} = 8\GeV$ and $\sigma_{\mathrm{W}}) = 30\GeV$, the optimised values of $\chi^{2}_{SR}$ and $\chi^{2}_{SB}$ were determined to be 5 and 30, respectively.
+For $\sigma_{\mathrm{t}} = 8\GeV$ and $\sigma_{\mathrm{W}} = 30\GeV$, the optimised values of $\chi^{2}_{SR}$ and $\chi^{2}_{SB}$ were determined to be 5 and 30, respectively.
 
 Figure~\ref{fig:blindingChi2} shows the side-band region bounded between the two contour lines in  the reconstructed top quark mass and w boson mass distributions for the tZq simulation sample (left) and all the simulation samples that were considered (right) (see Section~\ref{sec:samples}).
 
@@ -129,7 +129,7 @@ Figure~\ref{fig:blindingChi2} shows the side-band region bounded between the two
 \includegraphics[width=0.49\textwidth]{figs/blinding/tZq_topVsWmass.png}
 \includegraphics[width=0.49\textwidth]{figs/blinding/all_topVsWmass.png}
 \caption{
-The reconstructed top quark mass and w boson mass distributions for the tZq simulation sample (top) and all simulation samples (bottom) for both the $ee$ and $\mu\mu$ channels following the application of the signal region criteria described in Section~\ref{sec:signalRegion}.
+The reconstructed top quark mass and w boson mass distributions for the tZq simulation sample (left) and all simulation samples (right) for both the $ee$ and $\mu\mu$ channels following the application of the signal region criteria described in Section~\ref{sec:signalRegion}.
 The signal region is defined as the area within the inner contour line and the side-band region is defined as the are bounded between the two contour lines.
 }
 \label{fig:blindingChi2}
@@ -159,10 +159,10 @@ The trigger logic used for each of the CMS datasets considered, where \emph{EM} 
    Muon and Electron & EM and !EE and !MM \\
    \hline
    Double Muon & MM and !EM and !EE\\
-   Single Muon & M and !EE and !MM and !EM \\
+   Single Muon & M and !E and !EE and !MM and !EM \\
    \hline  
    Double Electron & EE and !EM and !MM \\
-   Single Electron & E and !EE and !MM and !EM \\
+   Single Electron & E and !M and !EE and !MM and !EM \\
    \hline
  \end{tabular}%}
 \end{table}
@@ -393,7 +393,7 @@ This next section discusses the background processes considered which can have t
 
 The additional contributions from processes not considered here, where events that involve at least one jet that has been incorrectly reconstructed as a lepton or a lepton from the decay of a heavy quark, are discussed in Section~\ref{sec:NPLs}.
 
-\subsection{Z+Jets and W+jets backgrounds}
+\subsection{Vector Boson in association with multijet backgrounds}
 QCD multijet events in association with a vector boson have the largest cross sections of any process which produces prompt leptons at the LHC, as illustrated in Figure~\ref{fig:crossSections}.
 As only one promptly produced lepton from the W boson decay is expected for W+jets, the presence of any additional leptons would have to be the result of a real heavy quark decay or fake reconstructed jet. 
 Requiring any selected lepton to be sufficiently isolated from hadronic activity in the event will suppress the contribution from these events.
