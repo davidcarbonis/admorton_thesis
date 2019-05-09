@@ -363,7 +363,7 @@ Where appropriate, the results for both definitions are given.
 
 
 \subsection{Linearised $\chi^{2}$ Track Fitting Studies}\label{subsec:chi2}
-Three different track fitting algorithms were explored for the track fitter component of the TFP used in the 2016 hardware demonstrator review: a Kalman Filter, a Linear Regression (LR) algorithm and a linearised $\chi^{2}$ track fit.
+Three different track fitting algorithms were explored for the track fitter component of the TFP used in the 2016 hardware demonstrator review: a Kalman Filter, a Linear Regression (LR) algorithm and a Linearised $\chi^{2}$ Fit algorithm.
 
 The development of a Kalman Filter was motivated by its ability to filter incorrectly assigned stubs from tracks and the remove fake track candidates at the same time as precisely fitting track parameters.
 As the \KF provided the best perfect track reconstruction efficiency and fake track candidate rejection rate out of the three fitting algorithms explored, it was selected as the baseline fitter for the TFP in the 2016 review.
@@ -390,8 +390,8 @@ Following this, a discussion of the development and outcomes for the $\chi^{2}$ 
 For the general form of a $\chi^{2}$ fit for a track, $f$, described by its helix parameters, $\overrightarrow{h}$, and the position of its hits (\ie stubs), $s_{i}$, we initially linearly expand the expected trajectory of the track, $f_{i}$, around the estimate of the helix parameters $\overline{h}$:
 
 \begin{equation}
-f_{i}(\overrightarrow{h} ) = f_{i}(\overrightarrow{h}) + \delta \overrightarrow{h}) \;
-                           = f_{i}(\overline{h} + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} + \mathcal{O}(\delta \overrightarrow{h}^{2}) \;
+f_{i}(\overrightarrow{h} ) = f_{i}(\overrightarrow{h} + \delta \overrightarrow{h}) \;
+                           = f_{i}(\overline{h}) + \delta \overrightarrow{h} \frac{\partial f_{i}}{\partial \overrightarrow{h}} + \mathcal{O}(\delta \overrightarrow{h}^{2}) \;
 \label{eq:chi1}
 \end{equation}
 
