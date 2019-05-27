@@ -246,7 +246,7 @@ A detailed description of the firmware implementation of the \HT for the demonst
 \subsubsection{Kalman Filter}\label{subsubsec:KF}
 While the \HT is highly efficient at finding genuine tracks, it was found in simulation that over half of the genuine tracks found contain at least one incorrectly associated stub.
 If ignored, the presence of such incorrectly associated stubs would degrade the resolution of the helix parameters fitted to reconstructed tracks that are associated with a particle.
-In addition, simulation studies indicated that approximately half of the track candidates created by the Hough Transform did not have stubs associated to the same particle in at least four tracker layers (\ie were fake).
+In addition, simulation studies indicated that approximately half of the track candidates created by the Hough Transform did not have stubs associated to the same particle in at least four tracker layers/disks (\ie were fake).
 Therefore, a \KF was developed to precisely fit the track parameters given its ability to simultaneously remove these incorrectly associated stubs and ``fake'' tracks while obtaining the best possible estimate of the reconstructed track’s helix parameters.
 
 While the \KF is the optimal filter for linear systems and, the optimal linear filter for non-linear systems, it also has several aspects that make it suitable for FPGA implementation compared to global track fitting methods~\cite{Fruhwirth:1987fm}, namely:
@@ -317,7 +317,7 @@ A more detailed description of the firmware implementation of the \DR for the de
 
 \section{Simulation Studies}\label{sec:TmttSimStudies}
 This section presents a number of simulation studies that were undertaken as part of the development of the \emph{TMTT} finder demonstrator system both before and following the 2016 review.
-All of the results discussed were obtained using simulated \ttbar events with a $<\textrm{PU}>$ of 200 events and use digitised output from the \HT.
+All of the results discussed were obtained using simulated \ttbar events with an average PU ($<\textrm{PU}>$) of 200 interactions and use digitised output from the \HT.
 The set of metrics used to evaluate the performance of the proposed track finder systems in the 2016 review are used for the results presented.
 These are defined below in Section~\ref{subsec:definitions}.
 
@@ -327,7 +327,7 @@ As such, unless stated otherwise, the results discussed below use the flat barre
 The results presented in Section~\ref{subsec:chi2} for the linearised $\chi^{2}$ track fitting algorithm involve the use of a \emph{Seed Filter} (SF) stage that was run after the \HT stage.
 The SF removes stubs in a \HT cell that are inconsistent with a straight line in the \emph{$r-z$} plane.
 This process filters out incorrectly reconstructed tracks and stubs that were incorrectly assigned to tracks.
-It was found that running the SF before the \KF did not improve its performance due to the efficiency of the \KF's filtering.
+It was found that using a SF stage before the \KF stage did not improve the overall performance of the system due to the effectiveness of the \KF's filtering.
 
 \subsection{Definitions}\label{subsec:definitions}
 A common set of parameters and metrics are used throughout the next sections of this chapter to describe tracks and how well the track fitters have reconstructed them.
@@ -351,8 +351,8 @@ As the \HT and track fitting algorithms discussed all assume that all tracks ori
 The common definitions of track reconstruction efficiency~\cite{TMTT_JINST} used for the three proposed L-1 Track Finder systems are used for the results presented in this chapter:
 
 \begin{itemize}
-\item The reconstruction efficiency ($\epsilon$) is measured relative to all generated charged particles from the primary interaction that produce stubs in at least four layers of the tracker which satisfies the following conditions: $\pT > 3\GeV$, $|\eta| < 2.4$, $|z_{0}| < 30\cm$ and $d_{xy} < 1\cm$, where $d_{xy}$ is the distance in the $x-y$ plane from the point of closest approach to the interaction point.
-\item A track is a defined as being correctly reconstructed or \emph{matched} if the reconstructed track has stubs associated to the particle in at least four tracker layers. Tracks which fail this matching criteria are known either as \emph{unmatched} or \emph{fake} tracks.
+\item The reconstruction efficiency ($\epsilon$) is measured relative to all generated charged particles from the primary interaction that produce a track that satisfies the following definition: produces stubs in at least four layers/disks of the tracker, $\pT > 3\GeV$, $|\eta| < 2.4$, $|z_{0}| < 30\cm$ and $d_{xy} < 1\cm$, where $d_{xy}$ is the distance in the $x-y$ plane from the point of closest approach to the interaction point.
+\item A track is defined as being correctly reconstructed or \emph{matched} if the reconstructed track has stubs associated to the particle in at least four tracker layers/disks. Tracks which fail this matching criteria are known either as \emph{unmatched} or \emph{fake} tracks.
 \item If the reconstruction of a charged particle produces more than one track, these additional tracks are considered to be \emph{duplicates}.
 \item If all a reconstructed track's stubs originated from the same particle, the track is defined as being \emph{perfectly} reconstructed ($\epsilon_{P}$). 
 \end{itemize}
