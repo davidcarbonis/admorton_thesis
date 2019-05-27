@@ -11,7 +11,7 @@ In order to fully exploit the physics discovery potential of the LHC, it is plan
 The High-Luminosity Large Hadron Collider (HL-HLC) upgrade is intended to increase the instantaneous luminosity of the LHC up  to $7.5 \times {10}^{34}$\percms.
 This corresponds to an average number of proton-proton interactions (\PU) per 40\MHz bunch crossing of between 140 and 200 and a total integrated luminosity of up to of 3000\fbinv being provided to both the ATLAS and CMS experiments during the 10 year planned lifetime of the HL-LHC.
 
-The installation of the HL-HLC upgrade is planned to take occur during Long Shutdown 3, which is currently expected to start during 2024~\cite{ApollinariG.:2017ojx}. 
+The installation of the HL-HLC upgrade is planned to take occur during Long Shutdown 3 (LS3), which is currently expected to start during 2024~\cite{ApollinariG.:2017ojx}. 
 The timing of LS3 is motivated in part by the need to replace the inner triplet quadrupole magnets that focus the beams at the ATLAS and CMS collision regions are expected to be near life-expired due to radiation exposure~\cite{hl-lhc-prelim-design-report,CMSCollaboration:2015zni}.
 
 The instantaneous luminosity, $L$, of an accelerator and its beam parameters are related by~\cite{ApollinariG.:2017ojx}: 
@@ -21,7 +21,7 @@ L \propto \frac{n_{b}N^{2}_{p}}{\beta^{*}} R  \;
 \label{eq:machineLumi}
 \end{equation}
 
-where $n_{b}$ is the number of bunches, $N^{2}_{p}$ is the number of protons per bunch, $\beta^{*}$ is the focal length (beam $\beta$ value) at the collision point, and $R$ is a crossing-angle-dependent luminosity geometrical reduction factor, .
+where $n_{b}$ is the number of bunches, $N^{2}_{p}$ is the number of protons per bunch, $\beta^{*}$ is the focal length (beam $\beta$ value) at the collision point, and $R$ is a crossing-angle-dependent luminosity geometrical reduction factor.
 
 As it is not practical to increase the number of proton bunches due to the resultant heat loads induced by electron clouds, the increase in the machine's luminosity will be achieved by increasing the number of protons per bunch and by reducing $\beta^{*}$~\cite{ApollinariG.:2017ojx}.
 Replacing Linac2 with the new Linear accelerator 4 (Linac4)~\cite{linac4} during the Long Shutdown 2 (2019-2020) will allow for the number of protons per bunch to be increased by a factor of two compared to the nominal LHC design (and to increase the injection energy by a factor of three).
@@ -46,7 +46,7 @@ Therefore the L1 bandwidth and latency will be increased (from 100\kHz to 750\kH
 Therefore, the Inner Tracker is designed to cover the range up to $|\eta| = 4$ using $100-150\mum$ thick planar silicon pixel sensors, measuring either $25\times100\mum^{2}$ or $50\times50\mum^{2}$.
 These sensors provide the low (per mille) occupancy and track separation with the negligible inefficiencies required.
 
-As with to the previous pixel detectors, the Inner Tracker is also designed for easy installation and removal to facilitate repairs and replacement of degraded parts.
+As with the previous pixel detectors, the Inner Tracker is also designed for easy installation and removal to facilitate repairs and replacement of degraded parts.
 Further discussion of the Inner Tracker can be found in the Phase-II Technical Design Report~\cite{P2TrackerTDR}.
 
 As tracking information is required to make L-1 decisions at the HL-LHC, the design of the Outer Tracker has been driven by the need to provide tracking information to the L-1 trigger.
@@ -92,10 +92,10 @@ Due to the maturity of the preparations for the review between the three competi
 \label{fig:trackerlayout}
 \end{figure}
 
-Figure~\ref{fig:dataFlow} illustrates the data flow and latency requirements from the \pt-modules to the off-detector electrons for the upgraded tracker.
+Figure~\ref{fig:dataFlow} illustrates the data flow and latency requirements from the \pt-modules to the off-detector electronics for the upgraded tracker.
 Out of the total L-1 latency of 12.5\mus, about $1\mus$ is required for generation, packaging and transmission of stubs from the tracker front-end (FE) electronics to the Data, Trigger and Control (DTC) system. 
 Approximately $4\mus$ is available for the reconstruction of tracks from data arriving at the DTC.
-The rest of the available latency is allocated for the correlation of tracks with trigger primitives from the calorimeters and muon systems ($3.5\mus$), the propagation of the L-1 decision to the FW buffers ($1\mus$) and an additional safety margin ($3\mus$)~\cite{TMTT_JINST}.
+The rest of the available latency is allocated for the correlation of tracks with trigger primitives from the calorimeters and muon systems ($3.5\mus$), the propagation of the L-1 decision to the hardware/firmware  buffers ($1\mus$) and an additional safety margin ($3\mus$)~\cite{TMTT_JINST}.
 
 \begin{figure}[h]
 \centering
@@ -245,11 +245,11 @@ A detailed description of the firmware implementation of the \HT for the demonst
 
 \subsubsection{Kalman Filter}\label{subsubsec:KF}
 While the \HT is highly efficient at finding genuine tracks, it was found in simulation that over half of the genuine tracks found contain at least one incorrectly associated stub.
-If ignored, the presence of these stubs would negatively impact the accuracy of the track parameters fitted to the genuine tracks.
-In addition, over half of the tracks candidates that were found by the \HT in simulation did not correspond to a genuine track (\ie were fake).
-Therefore, a \KF was developed to precisely fit the track parameters given its ability to simultaneously filter out these incompatible stubs and perform the track fit.
+If ignored, the presence of such incorrectly associated stubs would degrade the resolution of the helix parameters fitted to reconstructed tracks that are associated with a particle.
+In addition, simulation studies indicated that approximately half of the track candidates created by the Hough Transform did not have stubs associated to the same particle in at least four tracker layers (\ie were fake).
+Therefore, a \KF was developed to precisely fit the track parameters given its ability to simultaneously remove these incorrectly associated stubs and ``fake'' tracks while obtaining the best possible estimate of the reconstructed track’s helix parameters.
 
-While the \KF is the optimal linear filter and, in certain circumstances, the optimal non-linear filter, it also has several aspects that make it suitable for FPGA implementation compared to global track fitting methods~\cite{Fruhwirth:1987fm}, namely:
+While the \KF is the optimal filter for linear systems and, the optimal linear filter for non-linear systems, it also has several aspects that make it suitable for FPGA implementation compared to global track fitting methods~\cite{Fruhwirth:1987fm}, namely:
 
 \begin{itemize}
 \item {The matrices involved are small and their size is independent of the number of measurements, minimising the logic required to implement them;}
@@ -289,7 +289,7 @@ The track associated to stub 2b however, is rejected after stub 4 has been added
 %Consequently there is no truncation in the traditional sense given that all tracks candidates are read out.
 %Therefore, while events which a large number of track candidates, such as dense jets, may only be partially filtered, they will always be read out.
 %
-Details of the mathematics involved in the Kalman formalism is given in~\cite{Fruhwirth:1987fm} and the details of the \emph{TMTT} project's implementation of the Kalman Filter using FPGAs for online track reconstruction is given in~\cite{TMTT_JINST,SSummers}.
+A full description of the Kalman formalism is given in~\cite{Fruhwirth:1987fm} and the details of the \emph{TMTT} project's implementation of the Kalman Filter using FPGAs for online track reconstruction is given in~\cite{TMTT_JINST,SSummers}.
 
 \subsubsection{Duplicate Removal}
 Over half of the track candidates at input to the DR are duplicate tracks created by the HT.
@@ -309,7 +309,7 @@ By comparing a track's fitted parameters with the \HT cell in which they were in
 \label{fig:DR}
 \end{figure}
 
-There is however, a small subtlety, as the DR algorithm loses a few percent of efficiency due to resolution effects, the algorithm performs second pass through the rejected tracks.
+There is however, a small subtlety, as the DR algorithm rejects a small number of non-duplicated tracks due to resolution effects resulting from the discretised implementation of Hough Transform arrays, , the algorithm performs second pass through the rejected tracks.
 This second pass looks for tracks which have fitted parameters that do not correspond to the HT cell of a track from the first pass.
 As such tracks are probably not duplicates, they are recovered.
 
