@@ -71,7 +71,7 @@ The MLM- and FxFx-merging schemes are used by MADGRAPH5\_aMC@NLO to match the ME
 
 \item \textbf{POWHEG V2} (The Positive Weight Hardest Emission Generator)~\cite{Alioli:2010xd} is a framework that interfaces NLO ME calculations with PS generators.
 As its name suggests, POWHEG produces the hardest emission first by using the exact NLO ME and only produces positively weighted events.
-When it is interfaced with a generator that orders emissions by \pT or allows the use of a \pT-veto, all emissions following the hardest emission are rejected.
+When it is interfaced with a specialist generator that orders emissions by \pT or allows the use of a \pT-veto, all emissions following the hardest emission are rejected.
 Therefore, the double counting of low-\pT emissions is avoided and thus the need for negatively weighted events.
 As POWHEG V2 was not capable of simulating the single top tW-channel process at the time the simulated samples were produced, the tW-channel samples listed in Section~\ref{sec:samples} were created using POWHEG V1.
 
@@ -181,7 +181,7 @@ Track parameters from both filters, such as the quality ($\chi^{2}$) and how wel
 
 The seeds collections produced by both algorithms are merged into a single set of seeds.
 From this combined set of seeds, electron tracks are iteratively built using as combinatorial \KF in which a series of cuts are applied in order to accommodate trajectory changes due to Bremsstrahlung and to maintain a high reconstruction efficiency.
-These electron tracks undergo a final fitting by the the GSF to precisely determine the electron track parameters.
+These electron tracks undergo a final fitting by the GSF to precisely determine the electron track parameters.
 
 \subsection{Muons}\label{subsec:objReco-muons}
 Muon tracks are independently reconstructed in both the inner tracker, as described in Section~\ref{subsec:tracks}, and the muon chambers.
@@ -192,7 +192,7 @@ These two types of muon tracks are reconstructed using two methods~\cite{Chatrch
 \item \textbf{Global Muons} are reconstructed using an ``\emph{outside-in}'' approach, where tracks in the muon chambers are extrapolated inwards towards the inner tracker where candidate tracks are then searched for.
 If a corresponding track is found, the hits from the best candidate in the inner tracker and the muon system are fitted using a Kalman Filter to form a Global Muon.
 \item \textbf{Tracker Muons} are conversely reconstructed with an ``\emph{inside-out}'' approach, where inner tracker tracks with $\pT > 0.5\GeV$ and $|p| > 2.5\GeV$ are extrapolated out to the muon system using a Kalman Filter that takes into account energy losses and multiple scattering.
-If at least one one muon segment in the muon chambers is consistent with the extrapolated muon track, the track is classified as a Tracker Muon.
+If at least one muon segment in the muon chambers is consistent with the extrapolated muon track, the track is classified as a Tracker Muon.
 \end{itemize}
 
 Given the high track reconstruction efficiencies of both the inner tracker and the muon chambers, approximately $99\%$ of muons produced from the proton-proton collisions (prompt muons) are reconstructed as either a global or tracker muon, if not both.
@@ -225,12 +225,12 @@ d_{iB} = \frac{1}{p^{2k}_{Ti}} \;
 \label{eq:jetAlgo2}
 \end{equation}
 
-where $\Delta R^{2}_{ij} = (y_{i} - y_{j})^{2} + (\phi_{i} - \phi_{j})^{2}$; k = ${-1, 0, 1}$ and R is the jet size parameter, which is typically set to 0.4 in CMS analyses to provide consistency with ATLAS and as it has been found to contain hadronic showers without being sensitive to \PU.
+where $\Delta R^{2}_{ij} = (y_{i} - y_{j})^{2} + (\phi_{i} - \phi_{j})^{2}$; $k$  is a parameter that governs the relative power of the energy scale against the geometric scale and R is the jet size parameter, which is typically set to 0.4 in CMS analyses to provide consistency with ATLAS and as it has been found to contain hadronic showers without being sensitive to \PU.
 The \emph{anti-\kt} algorithm~\cite{Cacciari:2008gp}, where k = -1, which produces cone-shaped jets, is commonly used in CMS.
-The other values of k, where k = $0,1$, correspond to the Cambridge/Aachen and \kt algorithms respectively.
+The other values used for k, where k = $0,1$, correspond to the Cambridge/Aachen and \kt algorithms respectively.
 
 PF jets are produced using the \emph{anti-\kt} algorithm with R = 0.4 in conjunction with PF particles based on all the sub-detectors.
-Making use of PF jets allows a more accurate reconstruction to be undertaken than if only energy clusters from the calorimeters are used, given that jets are typically composed of 65\% charged hadrons, 25\% photons and 10\% neutral hadrons, due to the precise charged hadron measurements from the tracker and ECAL, which are able to constrain the small neutral hadron contribution that relies on the relatively poor resolution of the HCAL.
+Making use of PF jets allows a more accurate reconstruction to be undertaken than if only energy clusters from the calorimeters are used, given that jets are typically composed of 65\% charged hadrons, 25\% photons and 10\% neutral hadrons, due to the precise charged hadron measurements from the tracker and ECAL, which are able to constrain the small neutral hadron contribution that relies on the relatively poor resolution of the HCAL.	
 
 \subsubsection{Jet Energy Corrections}\label{subsubsec:JECs}
 \emph{Jet Energy Corrections} (JECs) are used to take into account the effects of \PU and the non-uniform response in \pT and $\eta$ of the detector and any residual differences between simulation and data.
@@ -242,7 +242,7 @@ Each of these effects is considered as a separate correction level; they are app
 \item \textbf{L2L3 Residual} Applied to data only to account for any remaining small differences in the jet response between data and simulation, such as the absolute Jet Energy Scale (JES) following application of the previous corrections..
 \end{itemize}
 
-The uncertainties associated with these JECS are treated as systematic uncertainties, which are discussed in Chapter~\ref{sec:systematics}.
+The uncertainties associated with these JECs are treated as systematic uncertainties, which are discussed in Chapter~\ref{sec:systematics}.
 Further details regarding the JECs can be found in~\cite{Khachatryan:2016kdb}.
 
 \subsection{b-tagging}\label{subsec:objReco-bJets}
@@ -250,7 +250,7 @@ Correctly determining whether or not a jet was the product of a b-quark hadronis
 b-jet identification is particularly pertinent for top physics searches due to the fact that the dominant decay mode for a top quark is to a W boson and a b-quark~\cite{Tanabashi:2018oca}.
 
 This process is known as \emph{b-tagging} and exploits the fact that because b-hadrons have a relatively long lifetime of approximately 1.5 ps~\cite{Beringer:1900zz}, they can travel a measurable distance away from the primary vertex before decaying. 
-The resulting secondary vertices are exploited in b-tagging, which is performed in CMS by a number of algorithms supported by the CMS B-Tag and Vertexing (BTV) Physics Object Group.
+The resulting secondary vertices are exploited in b-tagging, which is performed in CMS by a number of algorithms supported by the CMS B-Tag and Vertexing (BTV) Physics Object Group (POG).
 The analysis presented uses the \emph{Combined Secondary Vertex} version 2 (CSVv2) algorithm~\cite{Sirunyan:2017ezt}.
 The CSVv2 algorithm uses information about displaced track and secondary vertices as input into a multilayer perceptron (MLP) (a class of neural network) to produce a discriminator value which characterises the likelihood that the likelihood a jet originated from a b-quark.
 
