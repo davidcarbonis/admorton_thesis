@@ -137,13 +137,13 @@ The signal region is defined as the area within the inner contour line and the s
 
 \section{Trigger Strategy}\label{sec:triggerStrategy}
 As the search for the tZq dilepton final state relies on the identification of the two leptons from the Z boson decay, the trigger strategy consists of selecting events from datasets identified by the triggering of an electron or muon trigger.
-Given that the signal process being searched for is dominated by background processes and will likely be limited by statistics, it is essential to reconstruct and select as many signal events as possible.
+Given that the signal process being searched for is dominated by background processes and will likely be limited by event yield, it is essential to reconstruct and select as many signal events as possible.
 To this end, in order to obtain the maximum event selection efficiency, events are required to have triggered a single lepton or a double lepton trigger for the $ee$ and $\mu\mu$ final states.
 
 In simulation an event is required to pass either the single or double lepton triggers for the relevant channel.
 In data however, there is the potential to double count events which are present in both the single lepton and double lepton datasets.
 In order to avoid double counting events, events that have been found in a double lepton dataset are not considered for the single lepton dataset.
-The logic for this for each of the channels is illustrated in table~\ref{tab:triggerCombo}.
+The trigger logic for each of the final states is illustrated in Table~\ref{tab:triggerCombo}.
 
 \begin{table}[htbp]
 \topcaption {
@@ -167,11 +167,11 @@ The trigger logic used for each of the CMS datasets considered, where \emph{EM} 
  \end{tabular}%}
 \end{table}
 
-Ideally the, single and double lepton triggers with the lowest possible transverse momentum thresholds would be considered to ensure that the maximum possible statistics can be obtained over the largest possible phase space.
+Ideally the, single and double lepton triggers with the lowest possible transverse momentum thresholds would be considered to ensure that the maximum possible event yield can be obtained over the largest possible phase space.
 The high instantaneous luminosity at the start of the most luminous data taking periods, however, required a number of the L1 triggers to be prescaled to prevent the trigger bandwidth constraints being exceeded.
 As only the triggers considered for the $ee$ channel were impacted by this; these triggers were chosen on the basis of the amount of luminosity they were not prescaled for with the lowest possible transverse momenta thresholds.
 
-Table~\ref{tab:triggersDatasets} lists the triggers used to select data and simulation events for each channel, including the e$\mu$ final state which is considered for a \ttbar enriched control region(see Section~\ref{subsec:ttbarCR}).
+Table~\ref{tab:triggersDatasets} lists the triggers used to select data and simulation events for each channel, including the e$\mu$ final state which is considered for a \ttbar enriched control region (see Section~\ref{subsec:ttbarCR}).
 In these trigger path names, \emph{Ele} and \emph{Mu}, refer to a reconstructed electron and muon, respectively.
 The number following the lepton flavour denotes the minimum \pT a lepton must have to fire the trigger.
 In order to avoid raising \pT thresholds to maintain the trigger data rate, additional criteria are used by the triggers.
@@ -224,7 +224,7 @@ The following section describes the selection criteria used in this analysis and
 
 \subsection{Lepton Selection}
 All PF electrons and muons identified by the PF algorithm must pass a set of kinematic requirements and a set of quality criteria defined by CMS.
-The kinematic requirements are applied to ensure that the leptons lie fully within the detector's acceptance and that their transverse momenta lies in the region where the trigger is both fully efficient and well described in simulation.
+The kinematic requirements are applied to ensure that the leptons lie fully within the detector's acceptance and that their transverse momentum lies in the region where the trigger is both fully efficient and well described in simulation.
 The identification criteria have been designed to be efficient at selecting isolated leptons produced from W and Z boson decays and rejecting leptons that have been from decays from within jets or taus or from incorrectly reconstructed tracks.
 
 Different ``working points'' (WPs) are determined for the set of variables used by each of identification criteria supported by the CMS Physics Object Groups.
@@ -262,7 +262,7 @@ The MVA tuned variables include:
 \item \textbf{$1/E - 1/p$:} The difference between the inverse energy of the ECAL supercluster and the inverse of the track momentum, which is used to describe the energy loss of the electron due to material effects.
 \end{itemize}
 
-The selection requirements that define the tight and veto WPs for these variables are given in table~\ref{tab:electronCuts}.
+The selection requirements that define the tight and veto WPs for these variables are given in Table~\ref{tab:electronCuts}.
 
 \begin{table}[htbp]
 \topcaption {
@@ -385,8 +385,8 @@ For jets with $\eta > 3.0$ the loose working point criteria are:
 \subsubsection{b-tagging Requirements}\label{subsubsec:bTag}
 The CSVv2 tagging algorithm described in Section~\ref{subsec:objReco-bJets} is used to select jets that are deemed to have been initiated by a b-quark.
 If the value of a jet's discriminator exceeds that of the Medium WP threshold and has $|\eta| < 2.40$, the jet is considered to be a b-jet.
-Out of the \emph{Loose}, \emph{Medium} and \emph{Tight} WPs thresholds~\cite{Sirunyan:2017ezt} defined in table~\ref{tab:bTagWPs} in Section~\ref{subsec:objReco-bJets}, the medium WP was selected.
-This was because it provided the optimum performance in terms of providing as large statistics as possible for the signal process without too great a compromise on the purity of the selection.
+Out of the \emph{Loose}, \emph{Medium} and \emph{Tight} WPs thresholds~\cite{Sirunyan:2017ezt} defined in Table~\ref{tab:bTagWPs} in Section~\ref{subsec:objReco-bJets}, the medium WP was selected.
+This was because it provided the optimum performance in terms of providing as large a sample as possible for the signal process without too great a compromise on the purity of the selection.
 
 \section{Background Processes}\label{sec:backgroundProcesses}
 This next section discusses the background processes considered which can have the same final state as the signal process, their anticipated contributions to the background, and how they have been constrained.
@@ -394,7 +394,7 @@ This next section discusses the background processes considered which can have t
 The additional contributions from processes not considered here, where events that involve at least one jet that has been incorrectly reconstructed as a lepton or a lepton from the decay of a heavy quark, are discussed in Section~\ref{sec:NPLs}.
 
 \subsection{Vector Boson in association with multijet backgrounds}
-QCD multijet events in association with a vector boson have the largest cross sections of any process which produces prompt leptons at the LHC, as illustrated in Figure~\ref{fig:crossSections}.
+Multijet events in association with a vector boson have the largest cross sections of any process which produces prompt leptons at the LHC, as illustrated in Figure~\ref{fig:crossSections}.
 As only one promptly produced lepton from the W boson decay is expected for W+jets, the presence of any additional leptons would have to be the result of a real heavy quark decay or fake reconstructed jet. 
 Requiring any selected lepton to be sufficiently isolated from hadronic activity in the event will suppress the contribution from these events.
 
