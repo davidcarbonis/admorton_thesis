@@ -17,12 +17,12 @@
 Out of the 37.8\fbinv of  proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by the CMS experiment during 2016, 35.9\fbinv was certified by the collaboration as being of sufficient quality to be used for physics analysis.
 The difference between the certified value and the total data recorded is the result of various factors such as the unavailability of a detector due to power failures.
 Events are considered from the dataset certified to be good for physics if they pass one of the triggers in accordance with the trigger strategy described in Section~\ref{sec:triggerStrategy}.
-Due to the prescaling of all of the electron triggers considered during the start of the most luminous runs (as discussed in Section~\ref{sec:triggerStrategy}) the $ee$ channel uses a reduced dataset corresponding to 35.6\fbinv where none of the triggers considered were prescaled.
+Due to the prescaling of all of the electron triggers considered during the start of the most luminous data taking runs (as discussed in Section~\ref{sec:triggerStrategy}) the $ee$ channel uses a reduced dataset corresponding to 35.6\fbinv where none of the triggers considered were prescaled.
 
 The MC samples used to model both the model signal and background processes considered here are listed in table~\ref{tab:mcList}.
 For each of the processes considered, the table which includes information on the number of events generated, the cross section used in their generation and the order in perturbative accuracy in QCD to which the generators calculated the processes.
 The PS and hadronisation stages for all of the samples was performed using PYTHIA 8.
-The CUETP8M2T4 underlying event tune was used by PYTHIA 8 for the \ttbar process simulation samples and the CUETP8M1 underlying event tune for all other simulation samples.
+The CUETP8M2T4 underlying event tune was used by PYTHIA 8 for the \ttbar process simulation samples and the CUETP8M1 underlying event tune for all other simulation samples~\cite{Sirunyan:2019dfx}.
 The NNPDF3.0 family of PDF sets~\cite{Ball:2012cx} was used in the generation of all of the samples considered.
 
 \begin{table}[htbp]
@@ -94,7 +94,7 @@ The MC processes and their associated sample sizes, cross sections and generator
 \end{table}
 
 To determine the impact of a variety of different theoretical uncertainties for several of the processes defined in table~\ref{tab:mcList}, dedicated MC samples were used, which are listed in table~\ref{tab:theorySampleList}.
-The entries labelled ``scale'', ``matching'', ``isr'' and ``fsr'' correspond to the variations of the theoretical uncertainties considered in this analysis.
+The entries labelled ``scale'', ``matching'', ``ISR'' and ``FSR'' correspond to the variations of the theoretical uncertainties considered in this analysis.
 These theoretical uncertainties are discussed further in Section~\ref{sec:theorySysts}.
 
 \begin{table}[htbp]
@@ -274,7 +274,7 @@ The overall event yield for data and simulation at each stage of applying the si
 \end{figure}
 
 \begin{table}[hp]
-\topcaption{The number of observed events in data, expected events in simulation and data and the data-driven estimate of the non-prompt leptons in the signal region following the full event selection. The number of observed events is given for each of the separate channels and their  combination. The statistical uncertainties for each process is given and the LO Z+jets sample is used for the Z+jets contribution.
+\topcaption{The number of observed events in data, expected events in simulation and data and the data-driven estimate of the non-prompt leptons (NPLs) in the signal region following the full event selection. The number of observed events is given for each of the separate channels and their  combination. The statistical uncertainties for each process is given and the LO Z+jets sample is used for the Z+jets contribution.
 }\label{tab:signalYields}
 \centering
 \begin{tabular}{lccc}
@@ -307,7 +307,8 @@ NPLs: & 69.47$\pm$0.76 & 114.01$\pm$1.25 & 183.48$\pm$2.01   \\
 Total MC & 5236.69$\pm$67.07 & 9695.71$\pm$94.33 & 14932.40$\pm$115.74    \\
 Total MC + NPLs & 5306.16$\pm$67.07 & 9754.23$\pm$94.34 & 15060.39$\pm$115.75    \\
 \hline
-Data & 5274.0$\pm$72.62 & 9750.0$\pm$98.74 & 15024.0$\pm$122.57    \\
+%%Data & 5274.0$\pm$72.62 & 9750.0$\pm$98.74 & 15024.0$\pm$122.57    \\
+Data & 5274.0 & 9750.0 & 15024.0    \\
 \hline
 \end{tabular}
 \end{table}
@@ -358,13 +359,13 @@ Leptons that are produced from events where at least one jet is incorrectly reco
 The majority of these events are produced by semi-leptonic \ttbar decays, and W+jets production, with smaller contributions from QCD and single top production.
 As it is difficult to accurately model QCD processes the NPL contribution is estimated with data.
 
-This data-driven estimate is based on the methodology used in top quark pair production~\cite{CMS:2016syx} and same charge SUSY searches~\cite{CMS:2015vqc}.
-This approach takes advantage of the fact that the vast majority of events containing same charge lepton pairs result from non-prompt and charge misidentified leptons, with some contributions from prompt leptons (such as \ttV).
-As these backgrounds are independent of the charge of the lepton pairs, it is expected that the nominal opposite charge event selection would have a contribution with a similar magnitude.
+This data-driven estimate is based on the methodology used in top quark pair production~\cite{CMS:2016syx} and same sign SUSY searches~\cite{CMS:2015vqc}.
+This approach takes advantage of the fact that the vast majority of events containing same sign lepton pairs result from non-prompt and charge misidentified leptons, with some contributions from prompt leptons (such as \ttV).
+As these backgrounds are independent of the charge of the lepton pairs, it is expected that the nominal opposite sign event selection would have a contribution with a similar magnitude.
 
-Thus, by inverting the signal region's opposite charge lepton pair requirement (\ie by requiring the leptons to have the same, not opposite, charge), a same sign control region can be defined that is dominated by NPL events while containing a small admixture of from prompt lepton events, charge misidentification and real same charge lepton pairs.
+Thus, by inverting the signal region's opposite sign lepton pair requirement (\ie by requiring the leptons to have the same, not opposite, sign), a same sign control region can be defined that is dominated by NPL events while containing a small admixture of from prompt lepton events, charge misidentification and real same sign lepton pairs.
 
-Using this control region, a data-driven estimate of the contribution of opposite charge NPLs can be derived as follows:
+Using this control region, a data-driven estimate of the contribution of opposite sign NPLs can be derived as follows:
 
 \begin{equation}\label{eq:NPL}
 N_{data}^{OS non-prompt} = (N_{data}^{SS} - N^{SS}_{real + mis-ID}) \cdot \frac{N_{MC}^{OS non-prompt}}{N_{MC}^{SS non-prompt}}
@@ -375,10 +376,10 @@ where $N_{data}^{SS}$ is the total number of same sign events observed in data a
 The ratio of opposite sign and same sign NPLs in simulation, $N_{MC}^{OS non-prompt}$ and $N_{MC}^{SS non-prompt}$, respectively, is used to appropriately normalise this estimate and uses the generator level information in simulation to correctly identify how the leptons were produced.
 The W+jets, \ttZ, \ttW, and single top simulated samples that have sufficient statistics in the same sign control region are used to calculate this ratio as these simulation indicates that these processes are the predominant source of non-prompt leptons for this analysis.
 
-The event yields of the simulated samples and data following the full event selection in the same lepton sign control region, the same sign background contributions not accounted for by simulation, ratio of same charge to opposite charge event yields and the data-driven NPL contribution estimate are given in table~\ref{tab:fakeLeptonYields}.
+The event yields of the simulated samples and data following the full event selection in the same lepton sign control region, the same sign background contributions not accounted for by simulation, ratio of same sign to opposite sign event yields and the data-driven NPL contribution estimate are given in table~\ref{tab:fakeLeptonYields}.
 
 \begin{table}[h]
-\topcaption{The event yields following the full event selection ratio of same to opposite charge lepton events, the same sign background contributions not accounted for by simulation, ratio of same charge to opposite charge event yields and the estimated non-prompt lepton contribution following all selection cuts.
+\topcaption{The event yields following the full event selection ratio of same to opposite sign lepton events, the same sign background contributions not accounted for by simulation, ratio of same sign to opposite sign event yields and the estimated non-prompt lepton contribution following all selection cuts.
 }
 \centering
 \begin{tabular}{l | cccc}
@@ -396,6 +397,7 @@ $N_{VVV}^{SS}$ & 0.00$\pm$ & 0.23$\pm$0.09 \\
 $N_{MC}^{SS}$ background & 50.98$\pm$6.98 & 22.29 $\pm$ 2.21 \\ 
 $N_{data}^{SS}$ & 126.0 $\pm$ 11.22 & 125.0 $\pm$ 1.18\\ 
 \hline
+%%$N_{data}^{SS} - N_{MC}^{SS}$: & 30.64$\pm$13.21 & 102.71 $\pm$ 6.27\\
 $N_{data}^{SS} - N_{MC}^{SS}$: & 30.64$\pm$13.21 & 102.71 $\pm$ 6.27\\
 \hline
 $N_{MC}^{OS non-prompt}$: & 1.58$\pm$0.03 & 2.38$\pm$0.04 \\
@@ -510,7 +512,8 @@ Z+jets (NLO): & 66092.6$\pm$331.5 & 125392.2$\pm$464.4 & 191484.8$\pm$570.58    
 Total MC (LO): & 26768.8$\pm$180.8 & 51274.6$\pm$254.6 & 78043.4$\pm$312.27   \\
 Total MC (NLO): & 67759.3$\pm$331.9 & 128518.6$\pm$464.9 & 196277.9$\pm$571.2    \\
 \hline
-Data & 27598.0$\pm$166.13 & 50814.0$\pm$255.42 & 78412.0$\pm$304.69    \\
+%%Data & 27598.0$\pm$166.13 & 50814.0$\pm$255.42 & 78412.0$\pm$304.69    \\
+Data & 27598.0 & 50814.0 & 78412.0    \\
 \hline
 \end{tabular}
 \end{table}
@@ -549,7 +552,8 @@ Z+jets (NLO): & 6922.4$\pm$107.9 & 13147.4$\pm$151.8 & 20069.8$\pm$186.24    \\
 Total MC (LO): & 2773.3$\pm$55.78 & 5394.7$\pm$79.15 & 8168.0$\pm$96.83    \\
 Total MC (NLO): & 7436.2$\pm$108.55 & 14178.4$\pm$152.80 & 21614.6$\pm$187.43    \\
 \hline
-Data: & 2940.0$\pm$64.2 & 5718.0$\pm$87.2 & 8658.0$\pm$108.28    \\
+%%Data: & 2940.0$\pm$64.2 & 5718.0$\pm$87.2 & 8658.0$\pm$108.28    \\
+Data: & 2940.0 & 5718.0 & 8658.0    \\
 \hline
 \end{tabular}
 \end{table}

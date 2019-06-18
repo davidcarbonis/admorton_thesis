@@ -83,7 +83,7 @@ As the branching ratio for a W boson (produced in top and anti-top quark decays)
 The performance of this control region is discussed in Section~\ref{subsec:ttbarEstimation}.
 
 \section{Experimental Blinding}\label{sec:blinding}
-Despite even the best intentions, there is the for potential experimental procedure to be inadvertently biased by previous observations~\cite{Roodman:2003rw}.
+Despite even the best intentions, there is the potential for experimental procedure to be inadvertently biased by previous observations~\cite{Roodman:2003rw}.
 In order to prevent this from happening, experiments are ``blinded'' so that the result is not known until the analysis has been optimised using simulation and/or data outside of the signal region.
 
 Before unblinding, a $\chi^{2}$-like variable was used to define a side-band region outside the expected signal region where data and simulation distributions could be compared prior to the training and testing of the BDT (see Section~\ref{sec:mvas}).
@@ -255,7 +255,7 @@ The predetermined variables are:
 
 The MVA tuned variables include:
 \begin{itemize}
-\item \textbf{Full $5 \times 5 \sigma_{i\eta i\eta}$:} Describes the shape of the shower in $\eta$.
+\item \textbf{Full $5 \times 5 \sigma_{i\eta i\eta}$:} Describes the lateral extension of the shower along the $\eta$ direction, \ie the RMS alongside the $\eta$ direction inside the 5$\times$5 i$\eta$ tower.
 \item \textbf{$\Delta \eta_{seed}$ and $\Delta \phi_{seed}$:} The distances in $\eta$ and $\phi$ between the ECAL supercluster and where the track has been extrapolated to from the primary vertex, respectively.
 \item \textbf{$\frac{h}{E}$:} The ratio of hadronic to electromagnetic energy deposited in the supercluster around the crystal with the largest energy deposit.
 \item \textbf{$I^{rel}_{EA}$:} The relative isolation of the electron with effective area pileup alleviation for a cone size of 0.3, which is described further in Section~\ref{subsubsec:relIso}.
@@ -295,7 +295,7 @@ PF muons are also required to meet an equivalent set of kinematic requirements a
 PF muons candidates are required to meet the following kinematic requirements:
 \begin{itemize}
 \item the \pt of the leading and subleading electrons considered must be greater than 26\GeVc and 20\GeVc, respectively;
-\item muons must have $|\eta| \leq 2.50$ to ensure that a muon is fully within the acceptance of the muon systems.
+\item muons must have $|\eta| \leq 2.40$ to ensure that a muon is fully within the acceptance of the muon systems.
 \end{itemize}
 
 The \emph{tight} and \emph{loose} identification and isolation criteria~\cite{Chatrchyan:2012xi} are used to select muons and veto any additional muons.
@@ -358,25 +358,25 @@ In addition, selected leptons (electron or muon) that lie within a cone of $\Del
 The loose jet working point was designed to reject the majority of fake tracks produced within the detector and/or electronics noise. 
 This working point maintains a high selection efficiency for real jets by requiring all jets to have part of their energy deposited in both the ECAL and HCAL and be composed of more than one particle.
 
-For jets with $\eta \leq 2.70$, the loose working point criteria are:
+For jets with $|\eta| \leq 2.70$, the loose working point criteria are:
 \begin{itemize}
 \item the fraction of the jet energy from both neutral electromagnetic particles in the ECAL and neutral hadronic particles in the HCAL is less than $0.99$.
 \item the jet must consist of at least two particles.
 \end{itemize}
 
-The following criteria are additionally applied for jets for $\eta \leq 2.40$:
+The following criteria are additionally applied for jets for $|\eta| \leq 2.40$:
 \begin{itemize}
 \item the fraction of the jet energy from charged electromagnetic particles in the ECAL is less than $0.99$ and greater than 0.0 for charged hadronic particles in the HCAL.
-\item at least one charged particle is present within the jet..
+\item at least one charged particle is present within the jet.
 \end{itemize}
 
-For jets with $ 2.70 \leq \eta \leq 3.0$ the loose working point criteria are:
+For jets with $ 2.70 \leq |\eta| \leq 3.0$ the loose working point criteria are:
 \begin{itemize}
 \item the fraction of the jet energy from neutral electromagnetic particles in the ECAL is greater than than $0.01$ and less than $0.98$ for neutral hadronic particles in the HCAL.
 \item at least three neutral particles are present within the jet.
 \end{itemize}
 
-For jets with $\eta > 3.0$ the loose working point criteria are:
+For jets with $|\eta| > 3.0$ the loose working point criteria are:
 \begin{itemize}
 \item the fraction of the jet energy in the ECAL that is from neutral electromagnetic particles is less than $0.90$.
 \item at least eleven neutral particles are present within the jet.
