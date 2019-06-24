@@ -111,7 +111,7 @@ Figure~\ref{fig:tracker} illustrates how the various parts of the silicon micros
 The high particle multiplicity expected closest to the interaction point requires high granularity pixels provide in order to ensure a low channel occupancy ($< 1\%$).
 The particle flux for radii above 20\cm however, is sufficiently low enough that microstrips can be used without compromising track reconstruction efficiency.
 
-The tracker system is capable of reconstructing tracks at an efficiency greater than 99\% and an impact parameter, $d_{0}$, resolution of approximately $10\mum$ for charged particles with transverse momenta of $100\GeV$ and momentum resolutions between $1.5\%$ and $3.0\%$ for charged particles with $1 < \pT < 100\GeV$~\cite{Khachatryan:2010pw,Chatrchyan:2014fea}.
+The tracker system is capable of reconstructing tracks for charged particles with $\pT > 1 \GeV$ at an efficiency greater than 99\%, an impact parameter resolution of approximately $10\mum$ for charged particles with $\pT = 100\GeV$ and momentum resolutions between $1.5\%$ and $3.0\%$ for charged particles with $1 < \pT < 100\GeV$~\cite{Khachatryan:2010pw,Chatrchyan:2014fea}.
 
 \subsubsection{Silicon Pixel Tracker}
 The original silicon pixel detector for the CMS experiment was comprised of three 53.3$\cm$-long barrel layers at mean radii of 4.4\cm, 7.3\cm and 10.2\cm respectively, and two endcap disks either side of the barrel at $|z| = 34.5$ and 46.5\cm respectively, that extend from $r = 6.0$ to 15\cm.
@@ -309,7 +309,9 @@ Since initial operations of the CMS experiment, the original event storage rate 
 The Level-1 trigger reduces the input $40\MHz$ rate to about $100\kHz$ and consists of FPGAs (Field Programmable Gate Arrays) and ASICs (Application Specific Integrated Circuits), which have to be highly efficiency at identifying interesting physics signals.
 As the trigger decision cannot be made before the subsequent BX, the L-1 Trigger uses a pipelined approach that is capable of buffering the detector for about 3.8\mus (limited by the tracker and ES buffers) before a decision has to be made on whether to read-out an event or discard it. 
 This latency precludes both the reading out of events in full and of the use of iterative reconstruction algorithms.
-Tracking information is not used in the L-1 Trigger as it was not possible to read  and consequently, it has not been designed to be read out for every event.
+%
+Tracking information is not used in the L-1 Trigger decision as it was not possible to read out every event  and consequently, it has not been designed to be read out for every event.
+%
 
 The current L-1 trigger, the \emph{Phase-I Trigger}, was developed to ensure that the 100\kHz L1 trigger limit would be maintained following the increase in the instantaneous luminosity and centre-of-mass energy of the LHC following LS1~\cite{phase1L1TDR}.
 The Phase-I Calorimeter Trigger is based on a \emph{time-multiplexed} architecture which uses large FPGAs on a small number of general-purpose boards with fast optical links that allow for full granularity data to be used.
