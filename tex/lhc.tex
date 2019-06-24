@@ -92,11 +92,7 @@ These detectors were designed to investigate the wide range of physics phenomena
 The coordinate system adopted by the CMS experiment has its origin at the nominal interaction point at the centre of the detector. 
 The z-axis is parallel to the anti-clockwise proton beam, the x-axis points towards the centre of the LHC, and the y-axis points vertically upwards.
 The azimuthal angle, $\phi$, is the angle measured from the x-axis in the x-y plane and the polar angle, $\theta$, is the angle measured clockwise relative to the positive z-axis.
-
-Pseudorapidity, defined as $\eta \equiv -ln\tan(\theta/2)$, is usually used in lieu of $\theta$ as $\eta$ is Lorentz invariant along the z-axis 
-
-
-%and converges towards rapidity, defined as $y \equiv \frac{1}{2} ln(E+p_{z}/E-p_{Z})$, for highly relativistic particles 
+Pseudorapidity, defined as $\eta \equiv -ln\tan(\theta/2)$, is usually used in lieu of $\theta$, as $\eta$ is Lorentz invariant along the z-axis and is approximately equivalent to rapidity, $y \equiv \frac{1}{2} ln(E+p_{z}/E-p_{Z})$, for highly relativistic particles. 
 
 \subsection{Tracker}\label{subsec:tracker}
 The tracker, measuring 5.8m with a 2.5m radius over a pseudorapidity range of $|\eta| < 2.5$, surrounds the interaction point.
@@ -115,7 +111,7 @@ Figure~\ref{fig:tracker} illustrates how the various parts of the silicon micros
 The high particle multiplicity expected closest to the interaction point requires high granularity pixels provide in order to ensure a low channel occupancy ($< 1\%$).
 The particle flux for radii above 20\cm however, is sufficiently low enough that microstrips can be used without compromising track reconstruction efficiency.
 
-The tracker system is capable of reconstructing tracks for charged particles of with transverse momenta greater than at an efficiency greater than 99\% and an impact parameter, $d_{0}$, resolution of approximately $10\mum$ for charged particles with transverse momenta of $100\GeV$ and momentum resolutions between $1.5\%$ and $3.0\%$ for charged particles with $1 < \pT < 100\GeV$~\cite{Khachatryan:2010pw,Chatrchyan:2014fea}.
+The tracker system is capable of reconstructing tracks at an efficiency greater than 99\% and an impact parameter, $d_{0}$, resolution of approximately $10\mum$ for charged particles with transverse momenta of $100\GeV$ and momentum resolutions between $1.5\%$ and $3.0\%$ for charged particles with $1 < \pT < 100\GeV$~\cite{Khachatryan:2010pw,Chatrchyan:2014fea}.
 
 \subsubsection{Silicon Pixel Tracker}
 The original silicon pixel detector for the CMS experiment was comprised of three 53.3$\cm$-long barrel layers at mean radii of 4.4\cm, 7.3\cm and 10.2\cm respectively, and two endcap disks either side of the barrel at $|z| = 34.5$ and 46.5\cm respectively, that extend from $r = 6.0$ to 15\cm.
@@ -150,13 +146,13 @@ A number of ``stereo'' modules consisting of two back-to-back sensors are used i
 These sensors are aligned at an angle of 100 mrad to each other, allowing measurements of both the $r-\phi$ and \rz coordinates, to a resolution of 23-34\mum in $r-\phi$ and 23\mum in z and 35–52\mum in $r-\phi$ and 52\mum in z in the TIB and TOB, respectively.
 
 \subsection{Electromagnetic Calorimeter}\label{subsec:ECAL}
-Beyond the tracker, the ECAL~\cite{CMS:1997ysd,CMS:2002xia}, a homogeneous calorimeter, measures the energies of electrons and photons using lead tungstate scintillating crystals.
+Beyond the tracker, the ECAL~\cite{CMS:1997ysd,CMS:2002xia}, a homogeneous calorimeter, measures the energies of electrons and photons using lead tungstate (PbWO$_{4}$) scintillating crystals.
 The choice of detector technology was motivated by the need for the ECAL to be sufficiently compact to fit inside the solenoid along with the HCAL, while containing the EM showers' energy within the ECAL.
 Therefore, lead tungstate crystals were chosen due to their short radiation length (0.89\cm) and small Molier\'{e} radius (2.2\cm).
 The crystals also have a high radiation tolerance and have a short scintillation delay time, with 80\% of the scintillated light being emitted within one 25\ns bunch crossing.
 
 The ECAL barrel and each of the ECAL endcaps contain 61,200 and 7,324 crystals, respectively, with each crystal having a granularity of 0.0174 in the $\eta - \phi$ plane.
-These crystals however, only emit a small amount of scintillation light when the electromagnetic shower de-excites and require photodetectors to amplify this light.
+As the PbWO$_{4}$) crystals emit a relatively low light yield, photodetectors are required to amplify this light.
 Avalanche photodiodes are used in the barrel and the more radiation hard vacuum phototriodes in the endcap disks, respectively, to amplify the light and convert it into an electrical current that is directly proportional to the energy of the induced electromagnetic showers.
 These signals are digitised on-detector and buffered until a Level-1 Trigger decision has been made.
 
@@ -174,7 +170,7 @@ The ES aids the EE system in discriminating between neutral pions and photons wi
 For each ES, two lead radiators initiate the electromagnetic showers and two silicon strip sensors, orthogonal to one another to provide fine resolution, are placed after the radiators.
 The thickness of the radiators was chosen to be two and one radiation lengths for the first and second lead radiators, respectively, in order to ensure that ~95\% of incident photons shower before reaching the second silicon strip sensor.
 
-ECAL test beam measurements~\cite{Adzic:2007mi} have determined the energy resolution, $\sigma_{E}$, to be,
+ECAL test beam measurements~\cite{Adzic:2007mi} of the PbWO$_{4}$ crystals in the absence of a magnetic field have determined the energy resolution, $\sigma_{E}$, to be,
 
 \begin{equation}
 (\frac{\sigma_{E}}{E})^{2} = (\frac{2.8\%}{\sqrt{E}})^{2} + (\frac{12\%}{E})^{2} + (0.3\%)^{2} \;.
