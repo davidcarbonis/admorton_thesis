@@ -311,9 +311,7 @@ Since initial operations of the CMS experiment, the original event storage rate 
 The Level-1 trigger reduces the input $40\MHz$ rate to about $100\kHz$ and consists of FPGAs (Field Programmable Gate Arrays) and ASICs (Application Specific Integrated Circuits), which have to be highly efficiency at identifying interesting physics signals.
 As the trigger decision cannot be made before the subsequent BX, the L-1 Trigger uses a pipelined approach that is capable of buffering the detector for about 3.8\mus (limited by the tracker and ES buffers) before a decision has to be made on whether to read-out an event or discard it. 
 This latency precludes both the reading out of events in full and of the use of iterative reconstruction algorithms.
-%
-Tracking information is not used in the L-1 Trigger decision as it was not possible to read out every event  and consequently, it has not been designed to be read out for every event.
-%
+While the calorimeters and muon detectors contribute to the L-1 Trigger decision, tracking information does not as as when CMS was designed it was not possible to read out every event from the tracker.
 
 The current L-1 trigger, the \emph{Phase-I Trigger}, was developed to ensure that the 100\kHz L1 trigger limit would be maintained following the increase in the instantaneous luminosity and centre-of-mass energy of the LHC following LS1~\cite{phase1L1TDR}.
 The Phase-I Calorimeter Trigger is based on a \emph{time-multiplexed} architecture which uses large FPGAs on a small number of general-purpose boards with fast optical links that allow for full granularity data to be used.
