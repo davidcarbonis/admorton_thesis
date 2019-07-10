@@ -61,8 +61,12 @@ The MC event generators used to model the background and signal processes for th
 \begin{itemize}
 \item \textbf{MADGRAPH5\_aMC@NLO 2.2.2}~\cite{Alwall:2014hca} is the new version of MadGraph$5$ and the aMC@NLO generators.
 It is capable of evaluating tree-level and one-loop Feynman diagrams for a given phase space point for all the Feynman diagrams produced to produce matrix elements at NLO.
+As constructive and destructive interference occurs when considering both the leading and higher order cross section terms, 
+
 Considering the constructive and destructive interferences which result from considering both the leading and higher order cross section terms results in positively and negatively weighted events.
-These negatively weighted events are not simply discarded as they are required to correctly simulate the NLO cross section by applying a scale factor, $SF^{NLO}$.
+
+In order to correctly normalise the resultant cross section, scale factor, $SF^{NLO}$.
+
 This scale factor considers the ratio of the total number of events to the effective number of events (\ie the difference in positively and negatively weighted events) in the sample and the sign of an individual event's weighting:
 \begin{equation}
 SF^{NLO} = \frac{N^{postive events} + N^{negative events}}{N^{postive events} - N^{negative events}} \times \frac{|event weight|}{event weight} \;
@@ -154,8 +158,8 @@ This avoids the appearance of an apparently large amount of missing transverse e
 Electrons lose, on average, between 33\% (minimal intervening material) and 86\% (maximum intervening material) of their energy before reaching the ECAL through the production of Bremsstrahlung photons in the tracker layers~\cite{Khachatryan:2015hwa}, which often undergo electron pair production, potentially producing further Bremsstrahlung photons.	
 It is essential that this radiated energy is collected in order to correctly determine the electron's initial energy.
 
-As the magnetic field bends electrons trajectories in the $\phi$ direction, their is energy across $\phi$, the ECAL crystals are clustered into strips in $\phi$ known as \emph{superclusters} (SCs).
-Two clustering algorithms are used to form SCs of $5 \times 1$ and $5 \times 5$ arrays of ECAL crystals in the EB and EE respectively due to their different geometrical arrangements~\cite{Khachatryan:2015hwa}.
+As the magnetic field bends electrons trajectories in the $\phi$ direction, the ECAL crystals are clustered into strips in $\phi$ known as \emph{superclusters} (SCs).
+Two clustering algorithms are used to form SCs of $5 \times 1$ and $5 \times 5$ ECAL crystals in $\eta$-$\phi$ for the EB and EE respectively due to their different geometrical arrangements~\cite{Khachatryan:2015hwa}.
 In the EB, the so-called \emph{hybrid} algorithm builds SCs.
 The algorithm initially identifies a seed crystal which contains at least $E_{T} > 1\GeV$ and contains the largest energy deposit for a given region.
 Arrays of $5 \times 1$ crystals in $\eta \times \phi$, which contain at least $E_{T} > 0.1\GeV$ and are within $\Delta \phi < 0.3$ of the seed crystal, are clustered together to form the SC.
@@ -180,7 +184,7 @@ Track parameters from both filters, such as the quality ($\chi^{2}$) and how wel
 \end{itemize}
 
 The seeds collections produced by both algorithms are merged into a single set of seeds.
-From this combined set of seeds, electron tracks are iteratively built using as combinatorial \KF in which a series of cuts are applied in order to accommodate trajectory changes due to Bremsstrahlung and to maintain a high reconstruction efficiency.
+From this combined set of seeds, electron tracks are iteratively built using a combinatorial \KF in which a series of cuts are applied in order to accommodate trajectory changes due to Bremsstrahlung and to maintain a high reconstruction efficiency.
 These electron tracks undergo a final fitting by the GSF to precisely determine the electron track parameters.
 
 \subsection{Muons}\label{subsec:objReco-muons}
