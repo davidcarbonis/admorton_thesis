@@ -289,13 +289,14 @@ The track associated to stub 2b however, is rejected after stub 4 has been added
 %Consequently there is no truncation in the traditional sense given that all tracks candidates are read out.
 %Therefore, while events which a large number of track candidates, such as dense jets, may only be partially filtered, they will always be read out.
 %
-A full description of the Kalman formalism is given in~\cite{Fruhwirth:1987fm} and the details of the \emph{TMTT} project's implementation of the Kalman Filter using FPGAs for online track reconstruction is given in~\cite{TMTT_JINST,SSummers}.
+A full description of the Kalman formalism is given in~\cite{Fruhwirth:1987fm}.
+The details of the \emph{TMTT} project's implementation of the Kalman Filter using FPGAs for online track reconstruction is given in~\cite{TMTT_JINST,SSummers}.
 
 \subsubsection{Duplicate Removal}
 Over half of the track candidates at input to the DR are duplicate tracks created by the HT.
 Instead of comparing pairs of tracks to see if they are the same, a more elegant and subtle DR algorithm is used which takes into account how the \HT produces these duplicate tracks.
 This approach is illustrated in Figure~\ref{fig:DR}.
-In this example, the \HT has produced candidates in the green and two yellow HT cells from the five stubs, which correspond to the blue lines in Hough Space, that have been produced by a single particle.
+In this example, the \HT has produced candidates in the yellow and two green HT cells from the five stubs, which correspond to the blue lines in Hough Space, that have been produced by a single particle.
 As all three candidates however, contain the same stubs, they will be fitted by the \KF with identical helix parameters in the same (yellow) cell regardless of the original HT cell.
 By comparing a track's fitted parameters with the \HT cell in which they were initially found, any track whose fitted parameters does not correspond to the same HT cell in which the \HT found the track in is rejected.
 
@@ -387,7 +388,7 @@ Following this, a discussion of the development and outcomes for the $\chi^{2}$ 
 %The calculation of the track derivatives for the barrel layer hits and endcap disk hits used by the algorithm, included a correction factor for $\phi$ in the outer disks to account for the fact that these modules do not point directly towards the interaction point, which is described in Appendix~\ref{app:chi2}.
 
 \subsubsection{General Form of a $\chi^{2}$ Fit}\label{subsubsec:chi2maths}
-For the general form of a $\chi^{2}$ fit for a track, $f$, described by its helix parameters, $\overrightarrow{h}$, and the position of its hits (\ie stubs), $s_{i}$, we initially linearly expand the expected trajectory of the track, $f_{i}$, around the estimate of the helix parameters $\overline{h}$:
+For the general form of a $\chi^{2}$ fit for a track, $f$, described by its helix parameters, $\overrightarrow{h}$, and the position of its hits (\ie stubs), $s_{i}$, the expected trajectory of the track, $f_{i}$, is initially linearly expanded around the estimate of the helix parameters $\overline{h}$:
 
 \begin{equation}
 f_{i}(\overrightarrow{h} ) = f_{i}(\overrightarrow{h} + \delta \overrightarrow{h}) \;
