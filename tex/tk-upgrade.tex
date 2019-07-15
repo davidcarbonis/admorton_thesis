@@ -388,7 +388,7 @@ Following this, a discussion of the development and outcomes for the $\chi^{2}$ 
 %The calculation of the track derivatives for the barrel layer hits and endcap disk hits used by the algorithm, included a correction factor for $\phi$ in the outer disks to account for the fact that these modules do not point directly towards the interaction point, which is described in Appendix~\ref{app:chi2}.
 
 \subsubsection{General Form of a $\chi^{2}$ Fit}\label{subsubsec:chi2maths}
-For the general form of a $\chi^{2}$ fit for a track, $f$, described by its helix parameters, $\overrightarrow{h}$, and the position of its hits (\ie stubs), $s_{i}$, the expected trajectory of the track, $f_{i}$, is initially linearly expanded around the estimate of the helix parameters $\overline{h}$:
+For the general form of a $\chi^{2}$ fit for a track, $f$, described by its helix parameters, $\overrightarrow{h}$, and the position of its hits (\ie stubs), $s_{i}$, where $i$ labels the different measurements, the expected trajectory of the track, $f_{i}$, is initially linearly expanded around the estimate of the helix parameters $\overline{h}$:
 
 \begin{equation}
 f_{i}(\overrightarrow{h} ) = f_{i}(\overrightarrow{h} + \delta \overrightarrow{h}) \;
@@ -580,11 +580,11 @@ There were also concerns over the potential feasibility of tabulating all (or th
 \subsection{Tracking at low transverse momenta studies}\label{subsec:Tmtt2GeV}
 The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV is potentially desirable and so the impact of this potential requirement on the performance of the proposed track-finder system was studied.
 
-These studies were initially undertaken as part of the the robustness studies required for the 2016 demonstrator review which focussed on recovering tracking efficiency below 3\GeV with the \HT.
+The studies were initially undertaken as part of the robustness studies required for the 2016 demonstrator review, which investigated the impact that lowering the track reconstruction \pT threshold had on the \HT.
 Therefore, the results for these studies were produced using the flat barrel geometry.
 
-Following the 2016 review, the initial studies into tracking with a pT threshold of 2\GeV were further developed by ... moidying ... to the \KF algorithm .
-The results for the \KF improvements were produced with the preferred tilted barrel geometry.
+Following the 2016 review, the studies into tracking at lower transverse momenta were further developed by optimising the \KF algorithm .
+These results were produced with the preferred tilted barrel geometry.
 
 As the number and width of \qpt \HT columns used varies from the standard fixed number and size of columns typically used, thus varying the \pT resolution available, results in the following subsections are expressed as a function of 1/\pT instead of \pT.
 
@@ -613,7 +613,7 @@ Figure~\ref{fig:2GeVFlatEff} shows how the tracking efficiency improves followin
 %%% Disucss table here
 Table~\ref{tab:trackFindingPerformance2GeVHT} shows the impact that the decreased precision \HT cells and optimised \KF state cuts have on tracking performance both following the \HT and after the full chain has been run.
 It is clear that whilst the merging of adjacent \HT cells recovers tracks that did not previously intersect within a single \HT cell, the tracking efficiency following the full chain is significantly less than that post-\HT.
-As can be seen in Figure~\ref{fig:2GeVFlatEff}, these losses occur for tracks where the particle's transverse momentum is less than 3\GeV, as the \KF does not take the effects of \MS into account.
+As can be seen in Figure~\ref{fig:2GeVFlatEff}, these losses occur for tracks where the particle's \pT ($\frac{1}{\pT}$) is less (greater) than 3\GeV ($0.33/\GeV$), as the \KF does not take the effects of \MS into account.
 This shortcoming of the \KF also accounts for it not being as efficient at removing fake tracks, with an observed increase of 5\% in the fraction of fakes reconstructed.
 The duplicate removal algorithm however, remains effective at removing almost all the duplicates.
 
@@ -717,7 +717,7 @@ The constant coefficient for the \MS contribution was used for these \KF results
 During the comparative studies of these two approaches (as shown in Figure~\ref{fig:2GeVfracDups}) it was observed that following the \DR stage,the fraction of duplicates present increased when $\pT > 3\GeV (\frac{1}{\pT} < 0.33 1/\GeV)$ in contrast to the observed trend in the fraction of duplicates as a function \pT.
 As this feature is also present following the \HT stage, this implies that the \HT produces more duplicates at low \pT in the full precision cells.
 As the fraction of duplicate tracks produced where decreased precision \HT cells are used is well controlled, the \pT ($\frac{1}{\pT}$) threshold for the $2 \times 2$ merging of \HT cells was increased from $2.7\GeV$ ($0.37/\GeV$) to $3.5\GeV$ ($0.29/\GeV$).
-While an increase in the duplicate rate is observed for \pT ($\frac{1}{\pT}$) between $3.2\GeV$ ($0.31 1/\GeV$) and $5\GeV$ ($0.20/\GeV$) in Figure~\ref{fig:2GeVfracDups}, a decreased number of duplicates were produced below the \pt ($\frac{1}{\pT}$) threshold of $3.5\GeV$ ($0.29/\GeV$), which led to an overall reduction in the number of duplicates produced of about 2.8\%.
+While an increase in the duplicate rate is observed for \pT ($\frac{1}{\pT}$) between $3.2\GeV$ ($0.31 /\GeV$) and $5\GeV$ ($0.20/\GeV$) in Figure~\ref{fig:2GeVfracDups}, a decreased number of duplicates were produced below the \pt ($\frac{1}{\pT}$) threshold of $3.5\GeV$ ($0.29/\GeV$), which led to an overall reduction in the number of duplicates produced of about 2.8\%.
 
 The increased \pT threshold for the \HT cell merging had the additional benefit of recovering a further 0.2\% of the tracks that were previously lost to \MS.
 Consequently, this change was adopted by the project and all the results presented below for the two \MS coefficient forms were produced using this increased threshold. 
