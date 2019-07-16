@@ -122,7 +122,7 @@ void htTrackingEffVsInvPtFlatGeometry_5000()
    0.005837835};
    TGraphAsymmErrors *grae = new TGraphAsymmErrors(16,AlgEffVsInvPt_fx3001,AlgEffVsInvPt_fy3001,AlgEffVsInvPt_felx3001,AlgEffVsInvPt_fehx3001,AlgEffVsInvPt_fely3001,AlgEffVsInvPt_fehy3001);
    grae->SetName("AlgEffVsInvPt_1");
-   grae->SetTitle("; Simulated track 1/Pt [GeV^{-1}]; Efficiency");
+   grae->SetTitle("; Simulated track 1/p_{T} [GeV^{-1}]; Efficiency");
    grae->SetLineColor(2);
    grae->SetMarkerColor(2);
    grae->SetMarkerStyle(4);
@@ -135,7 +135,7 @@ void htTrackingEffVsInvPtFlatGeometry_5000()
    Graph_AlgEffVsInvPt3001->SetStats(0);
 
    Graph_AlgEffVsInvPt3001->SetLineColor(4);
-   Graph_AlgEffVsInvPt3001->GetXaxis()->SetTitle(" Simulated track 1/Pt [GeV^{-1}]");
+   Graph_AlgEffVsInvPt3001->GetXaxis()->SetTitle(" Simulated track 1/p_{T} [GeV^{-1}]");
    Graph_AlgEffVsInvPt3001->GetXaxis()->SetLabelFont(42);
    Graph_AlgEffVsInvPt3001->GetXaxis()->SetLabelSize(0.05);
    Graph_AlgEffVsInvPt3001->GetXaxis()->SetTitleSize(0.05);
@@ -259,7 +259,7 @@ void htTrackingEffVsInvPtFlatGeometry_5000()
    0.005237978};
    grae = new TGraphAsymmErrors(16,AlgEffVsInvPt_fx3002,AlgEffVsInvPt_fy3002,AlgEffVsInvPt_felx3002,AlgEffVsInvPt_fehx3002,AlgEffVsInvPt_fely3002,AlgEffVsInvPt_fehy3002);
    grae->SetName("AlgEffVsInvPt_2");
-   grae->SetTitle("; 1/Pt; Efficiency");
+   grae->SetTitle("; 1/p_{T}; Efficiency");
    grae->SetLineColor(4);
    grae->SetLineStyle(7);
    grae->SetMarkerColor(4);
@@ -273,7 +273,7 @@ void htTrackingEffVsInvPtFlatGeometry_5000()
    Graph_AlgEffVsInvPt3002->SetStats(0);
 
    Graph_AlgEffVsInvPt3002->SetLineColor(4);
-   Graph_AlgEffVsInvPt3002->GetXaxis()->SetTitle(" 1/Pt");
+   Graph_AlgEffVsInvPt3002->GetXaxis()->SetTitle(" 1/p_{T}");
    Graph_AlgEffVsInvPt3002->GetXaxis()->SetLabelFont(42);
    Graph_AlgEffVsInvPt3002->GetXaxis()->SetLabelSize(0.035);
    Graph_AlgEffVsInvPt3002->GetXaxis()->SetTitleSize(0.035);

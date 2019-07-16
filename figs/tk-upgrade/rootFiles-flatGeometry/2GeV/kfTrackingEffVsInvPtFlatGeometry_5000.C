@@ -122,7 +122,7 @@ void kfTrackingEffVsInvPtFlatGeometry_5000()
    0.006174059};
    TGraphAsymmErrors *grae = new TGraphAsymmErrors(16,AlgEffFitVsInvPt_KF4ParamsComb_fx3001,AlgEffFitVsInvPt_KF4ParamsComb_fy3001,AlgEffFitVsInvPt_KF4ParamsComb_felx3001,AlgEffFitVsInvPt_KF4ParamsComb_fehx3001,AlgEffFitVsInvPt_KF4ParamsComb_fely3001,AlgEffFitVsInvPt_KF4ParamsComb_fehy3001);
    grae->SetName("AlgEffFitVsInvPt_KF4ParamsComb_1");
-   grae->SetTitle("; Simulated track 1/Pt [GeV^{-1}]; Efficiency");
+   grae->SetTitle("; Simulated track 1/p_{T} [GeV^{-1}]; Efficiency");
    grae->SetLineColor(2);
    grae->SetMarkerColor(2);
    grae->SetMarkerStyle(4);
@@ -135,7 +135,7 @@ void kfTrackingEffVsInvPtFlatGeometry_5000()
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->SetStats(0);
 
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->SetLineColor(4);
-   Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetXaxis()->SetTitle(" Simulated track 1/Pt [GeV^{-1}]");
+   Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetXaxis()->SetTitle(" Simulated track 1/p_{T} [GeV^{-1}]");
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetXaxis()->SetLabelFont(42);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetXaxis()->SetTitleOffset(1.3);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3001->GetXaxis()->SetTitleFont(42);
@@ -259,7 +259,7 @@ void kfTrackingEffVsInvPtFlatGeometry_5000()
    0.005940275};
    grae = new TGraphAsymmErrors(16,AlgEffFitVsInvPt_KF4ParamsComb_fx3002,AlgEffFitVsInvPt_KF4ParamsComb_fy3002,AlgEffFitVsInvPt_KF4ParamsComb_felx3002,AlgEffFitVsInvPt_KF4ParamsComb_fehx3002,AlgEffFitVsInvPt_KF4ParamsComb_fely3002,AlgEffFitVsInvPt_KF4ParamsComb_fehy3002);
    grae->SetName("AlgEffFitVsInvPt_KF4ParamsComb_2");
-   grae->SetTitle("; Simulated track 1/Pt [GeV^{-1}]; Efficiency");
+   grae->SetTitle("; Simulated track 1/p_{T} [GeV^{-1}]; Efficiency");
    grae->SetLineColor(4);
    grae->SetLineStyle(7);
    grae->SetMarkerColor(4);
@@ -272,7 +272,7 @@ void kfTrackingEffVsInvPtFlatGeometry_5000()
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->SetDirectory(0);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->SetStats(0);
 
-   Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetXaxis()->SetTitle(" Simulated track 1/Pt [GeV^{-1}]");
+   Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetXaxis()->SetTitle(" Simulated track 1/p_{T} [GeV^{-1}]");
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetXaxis()->SetLabelFont(42);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetXaxis()->SetLabelSize(0.05);
    Graph_AlgEffFitVsInvPt_KF4ParamsComb3002->GetXaxis()->SetTitleSize(0.05);
