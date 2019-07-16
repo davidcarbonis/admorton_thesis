@@ -510,7 +510,7 @@ Distributions of \pt relative resolution, $\phi$ resolution, $z_{0}$ resolution 
 %Running multiple iterations of the fitting algorithm had been previously been considered in the context of improving upon the resolution of a fitted track's helix parameters, but had been shown to produce only marginal improvements.
 
 Figure~\ref{fig:chi2HelixParametersResVsEtaApproxVsExact} shows that resolutions of the four track parameters as a function of $\eta$ from primary tracks in \ttbar events with a $<\textrm{PU}>$ of 200 events for both mathematical implementations of the algorithm.
-The resolutions compare well not just between the two implementations of the algorithm's mathematics, but also with those obtained for the barrel region by the offline track reconstruction which is able to use all information from the detector with more sophisticated reconstruction techniques~\cite{P2TrackerTDR}.
+The resolution of each of the helix parameters compares well not just between the two implementations of the algorithm's mathematics, but also with those obtained for the barrel region by the offline track reconstruction which is able to use all information from the detector with more sophisticated reconstruction techniques~\cite{P2TrackerTDR}.
 While this guarantees that the tracks found in the the barrel will be useful to the L-1 trigger, the significant presence of at least one stub being incorrectly associated with a matched track in the forward regions, as shown in Table~\ref{tab:chi2-exactVsApprox}, significantly degrades the resolution obtained.
 
 In order to filter out these incorrectly assigned stubs from matched tracks, and also remove fake tracks, the residuals calculated for each stub following the fit were considered.
@@ -715,9 +715,10 @@ The constant coefficient for the \MS contribution was used for these \KF results
 
 
 During the comparative studies of these two approaches (as shown in Figure~\ref{fig:2GeVfracDups}) it was observed that following the \DR stage,the fraction of duplicates present increased when $\pT > 3\GeV (\frac{1}{\pT} < 0.33 1/\GeV)$ in contrast to the observed trend in the fraction of duplicates as a function \pT.
-As this feature is also present following the \HT stage, this implies that the \HT produces more duplicates at low \pT in the full precision cells.
-As the fraction of duplicate tracks produced where decreased precision \HT cells are used is well controlled, the \pT ($\frac{1}{\pT}$) threshold for the $2 \times 2$ merging of \HT cells was increased from $2.7\GeV$ ($0.37/\GeV$) to $3.5\GeV$ ($0.29/\GeV$).
-While an increase in the duplicate rate is observed for \pT ($\frac{1}{\pT}$) between $3.2\GeV$ ($0.31 /\GeV$) and $5\GeV$ ($0.20/\GeV$) in Figure~\ref{fig:2GeVfracDups}, a decreased number of duplicates were produced below the \pt ($\frac{1}{\pT}$) threshold of $3.5\GeV$ ($0.29/\GeV$), which led to an overall reduction in the number of duplicates produced of about 2.8\%.
+As this feature was also present following the \HT stage, this implies that the \HT produces more duplicates at low \pT in the full precision cells.
+The fraction of duplicate tracks produced where decreased precision \HT cells are used was well controlled, the \pT ($\frac{1}{\pT}$) threshold for the $2 \times 2$ merging of \HT cells was increased from $2.7\GeV$ ($0.37/\GeV$) to $3.5\GeV$ ($0.29/\GeV$).
+An increase in the duplicate rate however, was observed for \pT ($\frac{1}{\pT}$) between $3.2\GeV$ ($0.31 /\GeV$) and $5\GeV$ ($0.20/\GeV$) in Figure~\ref{fig:2GeVfracDups} a decreased number of duplicates were produced below the \pt ($\frac{1}{\pT}$) threshold of $3.5\GeV$ ($0.29/\GeV$), which led to an overall reduction in the number of duplicates produced of about 2.8\%.
+The observed increases in the duplicate rate observed in Figure~\ref{fig:2GeVfracDups} are yet to be fully understood, but are suspected to have arisen from resolution effects at the boundaries between the differently sized \HT cells given their proximity to the \pT threshold for the merging of \HT cells.
 
 The increased \pT threshold for the \HT cell merging had the additional benefit of recovering a further 0.2\% of the tracks that were previously lost to \MS.
 Consequently, this change was adopted by the project and all the results presented below for the two \MS coefficient forms were produced using this increased threshold. 
@@ -795,7 +796,10 @@ This is due the amount of material traversed by a track not being constant for a
 Following the improved performance considering the impact of \MS on the \HT and \KF discussed in these studies, these optimisations have been incorporated into the firmware for both TFP components.
 The constant \MS term was chosen for inclusion into the \KF as it demonstrated the best performance and required the least resources to implement.
 
-%\subsubsection{Conclusions}\label{subsubsec:2GevConclusions}
+\subsection{Conclusions}\label{subsec:Tmtt2GeV}
+
+
+
 %After investigating modifications to the \HT and \KF algorithms to improve upon the default performance obtained for track finding and fitting of low \pT ($< 3\GeV$) tracks.
 %The decreased precision \HT cells enables the recovery of some of the tracks previously lost due to \MS, and the inclusion of a process noise term allows the \KF to take the impact of \MS into account, as shown in Figure~\ref{fig:2GeVTiltChi2Ndf} where the $\frac{\chi^{2}}{ndf}$ of the matched tracks fitted has not only decreased at high \pT where \MS dominates, but also the smaller effects experienced at higher \pT.
 %Both formulations of the \MS term provide considerable improvement in the track reconstruction efficiency and helix parameter resolutions obtained.
