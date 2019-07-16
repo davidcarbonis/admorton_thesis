@@ -592,7 +592,7 @@ As the number and width of \qpt \HT columns used varies from the standard fixed 
 Lowering the \pT threshold from 2\GeVc required modifying the GP and HT configuration parameters to ensure adequate duplication in $\phi$ and increasing the number of \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision.
 The increased number of \qpt columns increases the required FPGA resources by 50\% and the output data rate from the \HT by a factor of 2.2.
 
-Without applying further modifications, there is a considerable degradation in the track reconstruction efficiency in the range $2\GeVc < \pt < 2.7\GeVc$, due to these low momenta tracks being dominated by multiple scattering.
+Without applying further modifications, there is a considerable degradation in the track reconstruction efficiency in the range $2\GeVc < \pt < 2.7\GeVc$, due to these low momenta tracks being dominated by \MS.
 This results in a significant fraction of stubs not intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
 To mitigate against these efficiency losses, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2\GeVc < \pt < 2.7\GeVc$ was reduced by a factor of two (\ie $2 \times 2$ cells were merged)
 The concept of a variable precision \HT had been implemented in firmware as part of another series of studies.
@@ -642,8 +642,8 @@ The duplicate removal algorithm however, remains effective at removing almost al
  \end{tabular}%}
 \end{table}
 
-The impact of \MS on the \KF is further illustrated by Figure~\ref{fig:2GeVFlatChi2Ndf}, which shows the distributions of $\chi^{2}$ per number of degree of freedom ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ for genuine tracks produced by the \KF.
-If all uncertainties were accounted for, the ideal distribution of $\frac{\chi^{2}}{ndf}$ would be unity for all values of \pT, in contrast to the observed dramatic increase above approximately 3\GeV.
+The impact of the \KF not considering the impact of \MS increasing the uncertainty in a hit's position at lower lower transverse momenta is further illustrated by Figure~\ref{fig:2GeVFlatChi2Ndf}, which shows the distributions of $\chi^{2}$ per number of degree of freedom ($\frac{\chi^{2}}{ndf}$) as a function of $\frac{1}{\pT}$ for genuine tracks produced by the \KF.
+If all sources of uncertainties were accounted for, the ideal distribution of $\frac{\chi^{2}}{ndf}$ would be unity for all values of \pT ($\frac{1}{\pT}$), in contrast to the observed dramatic increase above approximately 3\GeV ($0.33/\GeV$).
 
 \begin{figure}[htb]
 \centering
@@ -653,7 +653,7 @@ If all uncertainties were accounted for, the ideal distribution of $\frac{\chi^{
 \end{figure}
 
 %% Discuss the resolution plots here
-Figure~\ref{fig:htHelixParametersResVsInvPt} shows that the resolutions of the track parameters fitted by the \KF are comparable for $\pT < 3\GeV$ both before and after the \HT and associated \KF optimisation for tracks originating from the primary interaction.
+Figure~\ref{fig:htHelixParametersResVsInvPt} shows that the resolutions of the track parameters fitted by the \KF are comparable for $\pT (frac{1}{\pT})  < 3\GeV (0.33/\GeV)$ both before and after the \HT and associated \KF optimisation for tracks originating from the primary interaction.
 The slight degradation in the $\phi_{0}$ resolution results from the decreased precision coordinates from the \HT and the small improvement observed in the $z_{0}$ resolution is due to the \KF being able to consider genuine stubs that were not previously found by the \HT.
 
 \begin{figure}[htb]
