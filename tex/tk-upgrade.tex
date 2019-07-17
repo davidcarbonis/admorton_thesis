@@ -452,7 +452,7 @@ From Equations~(\ref{eq:chi4}) and~(\ref{eq:chi5}) and the track derivatives der
 Initially the algorithm was implemented using floating point calculations in order to both debug and optimise its performance.
 This process involved confirming that the track derivatives and stub residuals were correctly calculated and the track finding efficiencies and parameter resolution of the $\chi^{2}$ were comparable to the \emph{tracklet} project's software implementation at the time.
 
-After this validation processes, the algorithm was simplified in order to reduce the resources required for any future tabulation of the matrix of track derivatives.
+After this validation process, the algorithm was simplified in order to reduce the resources required for any future tabulation of the matrix of track derivatives.
 This process involved developing approximated expressions of the track derivatives which reduced the number of variables they depended on but still gave performance comparable to when floating point precision is used.
 The performance of both of the versions of the algorithm is discussed below in terms of their track reconstruction efficiencies and the resolution of the fitted track parameters.
 
@@ -580,7 +580,7 @@ There were also concerns over the potential feasibility of tabulating all (or th
 \subsection{Tracking at low transverse momenta studies}\label{subsec:Tmtt2GeV}
 The flexibility to reconstruct tracks down to a lower \pT threshold of 2\GeV is potentially desirable and so the impact of this potential requirement on the performance of the proposed track-finder system was studied.
 
-The studies were initially undertaken as part of the robustness studies required for the 2016 demonstrator review, which investigated the impact that lowering the track reconstruction \pT threshold had on the \HT.
+These studies were initially undertaken as part of the robustness studies required for the 2016 demonstrator review, which investigated the impact that lowering the track reconstruction \pT threshold had on the \HT.
 Therefore, the results for these studies were produced using the flat barrel geometry.
 
 Following the 2016 review, the studies into tracking at lower transverse momenta were further developed by optimising the \KF algorithm .
@@ -714,7 +714,7 @@ The constant coefficient for the \MS contribution was used for these \KF results
 \end{figure}
 
 
-During the comparative studies of these two approaches (as shown in Figure~\ref{fig:2GeVfracDups}) it was observed that following the \DR stage,the fraction of duplicates present increased when $\pT > 3\GeV (\frac{1}{\pT} < 0.33 1/\GeV)$ in contrast to the observed trend in the fraction of duplicates as a function \pT.
+During the comparative studies of these two approaches (as shown in Figure~\ref{fig:2GeVfracDups}) it was observed that following the \DR stage, the fraction of duplicates present increased when $\pT > 3\GeV (\frac{1}{\pT} < 0.33 1/\GeV)$ in contrast to the observed trend in the fraction of duplicates as a function \pT.
 As this feature was also present following the \HT stage, this implies that the \HT produces more duplicates at low \pT in the full precision cells.
 The fraction of duplicate tracks produced where decreased precision \HT cells are used was well controlled, the \pT ($\frac{1}{\pT}$) threshold for the $2 \times 2$ merging of \HT cells was increased from $2.7\GeV$ ($0.37/\GeV$) to $3.5\GeV$ ($0.29/\GeV$).
 An increase in the duplicate rate however, was observed for \pT ($\frac{1}{\pT}$) between $3.2\GeV$ ($0.31 /\GeV$) and $5\GeV$ ($0.20/\GeV$) in Figure~\ref{fig:2GeVfracDups} a decreased number of duplicates were produced below the \pt ($\frac{1}{\pT}$) threshold of $3.5\GeV$ ($0.29/\GeV$), which led to an overall reduction in the number of duplicates produced of about 2.8\%.
