@@ -1,5 +1,5 @@
 \chapter{Development of a Level-1 Track Trigger for the CMS Phase 2 Upgrade}\label{chapter:tk-upgrade}
-As the statistical gains for an experiment that is operated at a constant luminosity increasingly diminish over time, it is planned to preserve and extend the LHC's physics discovery potential by operating the LHC with an increased instantaneous luminosity.
+%As the statistical gains for an experiment that is operated at a constant luminosity increasingly diminish over time, it is planned to preserve and extend the LHC's physics discovery potential by operating the LHC with an increased instantaneous luminosity.
 Before the start of these higher luminosity operations, the then life-expired CMS tracker will need replacing.
 The new tracker will not only need to have increased radiation hardness to withstand the increased \PU environment, but also the capability to provide limited tracking information to the L-1 trigger in order to keep the L-1 acceptance rate below 750\kHz.
 
@@ -453,7 +453,7 @@ Initially the algorithm was implemented using floating point calculations in ord
 This process involved confirming that the track derivatives and stub residuals were correctly calculated and the track finding efficiencies and parameter resolution of the $\chi^{2}$ were comparable to the \emph{tracklet} project's software implementation at the time.
 
 After this validation process, the algorithm was simplified in order to reduce the resources required for any future tabulation of the matrix of track derivatives.
-This process involved developing approximated expressions of the track derivatives which reduced the number of variables they depended on but still gave performance comparable to when floating point precision is used.
+This process involved developing approximated expressions of the track derivatives which reduced the number of variables they depended on, but still gave performance comparable to when floating point precision was used.
 The performance of both of the versions of the algorithm is discussed below in terms of their track reconstruction efficiencies and the resolution of the fitted track parameters.
 
 Following the development of the ``approximated'' mathematics version of the algorithm, an iterative filtering process based on the residuals of the stubs was explored.
@@ -510,15 +510,15 @@ Distributions of \pt relative resolution, $\phi$ resolution, $z_{0}$ resolution 
 %Running multiple iterations of the fitting algorithm had been previously been considered in the context of improving upon the resolution of a fitted track's helix parameters, but had been shown to produce only marginal improvements.
 
 Figure~\ref{fig:chi2HelixParametersResVsEtaApproxVsExact} shows that resolutions of the four track parameters as a function of $\eta$ from primary tracks in \ttbar events with a $<\textrm{PU}>$ of 200 events for both mathematical implementations of the algorithm.
-The resolution of each of the helix parameters compares well not just between the two implementations of the algorithm's mathematics, but also with those obtained for the barrel region by the offline track reconstruction which is able to use all information from the detector with more sophisticated reconstruction techniques~\cite{P2TrackerTDR}.
-While this guarantees that the tracks found in the the barrel will be useful to the L-1 trigger, the significant presence of at least one stub being incorrectly associated with a matched track in the forward regions, as shown in Table~\ref{tab:chi2-exactVsApprox}, significantly degrades the resolution obtained.
+The resolution of each of the helix parameters compares well not just between the two implementations of the algorithm's mathematics, but also with those obtained for the barrel region by the offline track reconstruction which is able to use all information from the detector with more sophisticated reconstruction techniques~\cite{P2TrackerTDR}, guaranteeing their usefulness to the L-1 trigger.
+The increasing degradation of the track parameters with increasing pseudorapidity results from combined effects of the reduced hit precision in the endcap disks, shorter effective level arm available and the increasing amount of material that particles pass through.
 
 In order to filter out these incorrectly assigned stubs from matched tracks, and also remove fake tracks, the residuals calculated for each stub following the fit were considered.
 These ``fake'' stubs are expected have large residuals compared to stubs correctly associated to genuine tracks or stubs belonging to a fake track.
 
-Therefore, in order to decrease the fake rate and increase the matched track purity the stub with the worst/largest residual is compared against a configurable threshold.
-If the residual fails to meet the threshold criteria, it is removed from the track and the track is refitted using only its remaining stubs.
-This process is repeated until the latency budget is exceeded/no further stubs are removed, with no further consideration of the remaining stubs' residuals following the final threshold.
+Therefore, in order to decrease the fake rate and increase the matched track purity the stub with the worst/largest residual was compared against a configurable threshold.
+If the residual failed to meet the threshold criteria, it would be removed from the track and the track would be refitted using only its remaining stubs.
+This process was repeated until the latency budget was exceeded/no further stubs are removed, with no further consideration of the remaining stubs' residuals following the final threshold.
 
 During the optimisation of this stub quality check it was found that a track could end up having fewer than the minimum of four stubs required to be considered track candidate - thus potentially discarding a matched track by mistake.
 To avoid this while still retaining the improved matched track purity and reduced fake rate, a looser residual threshold was applied for tracks only containing four stubs.
@@ -555,7 +555,7 @@ This suggests that if a more sophisticated method of removing bad quality stubs 
 
 Figure~\ref{fig:chi2HelixParametersResIterationsComparison} shows the variation of the helix parameter resolutions with the iterations of the $\chi^{2}$ number and how this compares with the \KF's performance.
 The additional fitting iterations allow for noticeable improvements for the track parameter resolutions obtained in the forward regions.
-While the \qpt and $\phi_{0}$ resolutions achieved after four fitting iterations is comparable to those achieved by the \KF, the $\chi^{2}$ fitter's resolution is considerably worse for both the $z_{0}$ and $cot(\theta)$ resolutions in the endcaps.
+While the \qpt and $\phi_{0}$ resolutions achieved after four fitting iterations was comparable to those achieved by the \KF, the $\chi^{2}$ fitter's resolution was considerably worse for both the $z_{0}$ and $cot(\theta)$ resolutions in the endcaps.
 
 \begin{figure}[htb]
 \centering
@@ -592,7 +592,7 @@ As the number and width of \qpt \HT columns used varies from the standard fixed 
 Lowering the \pT threshold from 2\GeVc required modifying the GP and HT configuration parameters to ensure adequate duplication in $\phi$ and increasing the number of \qpt columns by 50\% to take into account the increased \pt range whilst maintaining the same precision.
 The increased number of \qpt columns increases the required FPGA resources by 50\% and the output data rate from the \HT by a factor of 2.2.
 
-Without applying further modifications, there is a considerable degradation in the track reconstruction efficiency in the range $2\GeVc < \pt < 2.7\GeVc$, due to these low momenta tracks being dominated by \MS.
+Without applying further modifications, there was a considerable degradation in the track reconstruction efficiency in the range $2\GeVc < \pt < 2.7\GeVc$, due to these low momenta tracks being dominated by \MS.
 This results in a significant fraction of stubs not intersecting within a single \HT cell and thus failing to exceed the threshold criteria and generate track candidates.
 To mitigate against these efficiency losses, the precision of the \HT cells along \qpt and $\phi_{T}$ for the range $2\GeVc < \pt < 2.7\GeVc$ was reduced by a factor of two (\ie $2 \times 2$ cells were merged)
 The concept of a variable precision \HT had been implemented in firmware as part of another series of studies.
@@ -612,7 +612,7 @@ Figure~\ref{fig:2GeVFlatEff} shows how the tracking efficiency improves followin
 
 %%% Disucss table here
 Table~\ref{tab:trackFindingPerformance2GeVHT} shows the impact that the decreased precision \HT cells and optimised \KF state cuts have on tracking performance both following the \HT and after the full chain has been run.
-It is clear that whilst the merging of adjacent \HT cells recovers tracks that did not previously intersect within a single \HT cell, the tracking efficiency following the full chain is significantly less than that post-\HT.
+It was clear that whilst the merging of adjacent \HT cells recovers tracks that did not previously intersect within a single \HT cell, the tracking efficiency following running the full chain was significantly less than that post-\HT.
 As can be seen in Figure~\ref{fig:2GeVFlatEff}, these losses occur for tracks where the particle's \pT ($\frac{1}{\pT}$) is less (greater) than 3\GeV ($0.33/\GeV$), as the \KF does not take the effects of \MS into account.
 This shortcoming of the \KF also accounts for it not being as efficient at removing fake tracks, with an observed increase of 5\% in the fraction of fakes reconstructed.
 The duplicate removal algorithm however, remains effective at removing almost all the duplicates.
@@ -683,7 +683,7 @@ For small deflection angles and relativistic particles, the standard deviation o
 where the momentum, velocity, electrical charge of the incident particle and thickness of the scattering medium in radiation lengths are given by $p$, $\beta c$, $q$ and $\frac{x}{X_{0}}$, respectively.
 The result from this equation has been found to have an accuracy no greater than 11\%~\cite{Lynch:1990sq}.
 
-With the particles involved having relativistic velocities (\ie $\beta c \cong 1$) and scattering in the \r-z plane ignored as the impact of multiple scattering is considerably smaller hit position resolution in \r-z, the multiple scattering contribution in the \rphi plane can be expressed as:
+With the particles involved having relativistic velocities (\ie $\beta c \cong 1$) and scattering in the \r-z plane ignored as the impact of multiple scattering is considerably smaller hit position resolution in \rz, the multiple scattering contribution in the \rphi plane can be expressed as:
 
 \begin{equation}
 \sigma_{\theta} = \frac{k}{\pT}
@@ -705,23 +705,20 @@ Similarly, the \KF state $\chi^{2}$ cuts for both approaches were also tuned in 
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/htFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
-\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfFracDuplicatesVsInvPtTiltedGeometry_5000.pdf}
-\caption{The fraction of genuine tracks with duplicates as a function of $\frac{1}{\pT}$ following reconstruction by the \HT (left) and fitting and filtering by the \KF and \DR (right) for where the \HT cell merging \pT threshold is set to 2.7\GeV (red) and 3.5\GeV (blue). 
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/htAvgNumDuplicatesVsInvPtTiltedGeometry_5000.pdf}
+\includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfAvgNumDuplicatesVsInvPtTiltedGeometry_5000.pdf}
+\caption{The average number duplicate tracks per matched track as a function of $\frac{1}{\pT}$ following reconstruction by the \HT (left) and fitting and filtering by the \KF and \DR (right) for where the \HT cell merging \pT threshold is set to 2.7\GeV (red) and 3.5\GeV (blue). 
 The constant coefficient for the \MS contribution was used for these \KF results.
 }
 \label{fig:2GeVfracDups}
 \end{figure}
 
-
-During the comparative studies of these two approaches (as shown in Figure~\ref{fig:2GeVfracDups}) it was observed that following the \DR stage, the fraction of duplicates present increased when $\pT > 3\GeV (\frac{1}{\pT} < 0.33 1/\GeV)$ in contrast to the observed trend in the fraction of duplicates as a function \pT.
-As this feature was also present following the \HT stage, this implies that the \HT produces more duplicates at low \pT in the full precision cells.
-The fraction of duplicate tracks produced where decreased precision \HT cells are used was well controlled, the \pT ($\frac{1}{\pT}$) threshold for the $2 \times 2$ merging of \HT cells was increased from $2.7\GeV$ ($0.37/\GeV$) to $3.5\GeV$ ($0.29/\GeV$).
-An increase in the duplicate rate however, was observed for \pT ($\frac{1}{\pT}$) between $3.2\GeV$ ($0.31 /\GeV$) and $5\GeV$ ($0.20/\GeV$) in Figure~\ref{fig:2GeVfracDups} a decreased number of duplicates were produced below the \pt ($\frac{1}{\pT}$) threshold of $3.5\GeV$ ($0.29/\GeV$), which led to an overall reduction in the number of duplicates produced of about 2.8\%.
-The observed increases in the duplicate rate observed in Figure~\ref{fig:2GeVfracDups} are yet to be fully understood, but are suspected to have arisen from resolution effects at the boundaries between the differently sized \HT cells given their proximity to the \pT threshold for the merging of \HT cells.
-
-The increased \pT threshold for the \HT cell merging had the additional benefit of recovering a further 0.2\% of the tracks that were previously lost to \MS.
-Consequently, this change was adopted by the project and all the results presented below for the two \MS coefficient forms were produced using this increased threshold. 
+During the comparative studies of the two \MS coefficients, it was found that the average number of duplicate tracks per matched track did not remain constant as a function of the simulated track's $\pT ((\frac{1}{\pT} )$.
+As shown in Figure~\ref{fig:2GeVfracDups}, there was an increase in the number of duplicates produced near the $2 \times 2$ merging of \HT cells threshold of  $\pT = 3\GeV (\frac{1}{\pT} = 0.33 1/\GeV$ following both the \HT and \DR stages, implying that the \HT produces more duplicates at low \pT in the full precision cells.
+Given that the number of duplicate tracks produced in the decreased precision \HT cells were well controlled, the \pT ($\frac{1}{\pT}$) threshold for the $2 \times 2$ merging of \HT cells was increased from $2.7\GeV$ ($0.37/\GeV$) to $3.5\GeV$ ($0.29/\GeV$).
+Despite this change decreasing the number of duplicates below the \pt ($\frac{1}{\pT}$) threshold of $3.5\GeV$ ($0.29/\GeV$), an increase in the number of duplicates produced per matched track near the \HT cell merging threshold was still present.
+While these increases in the duplicate rate have yet to be fully understood, they are suspected to have arisen from resolution effects at the boundaries between the differently sized \HT cells given their proximity to the \pT threshold for merging \HT cells.
+As the \pT threshold of $3.5\GeV$ recovered a further 0.2\% of the tracks that were previously lost to \MS and reduced the overall duplicate rate by 2.8\%, this change was adopted by the project and all the results presented below use this increased threshold. 
 
 \begin{figure}[htb]
 \centering
@@ -754,8 +751,10 @@ The track finding efficiencies, $\epsilon$, following each stage are given along
 \end{tabular}%}
 \end{table}
 
-Figure~\ref{fig:2GeVTiltEff} and table~\ref{tab:trackFindingPerformance2GeVKF} demonstrate how the tracking efficiency for the whole chain improves when \MS is accounted for in the \KF.
-Table~\ref{tab:trackFindingPerformance2GeVKF} also shows that compared to just the \HT optimisations alone, for both \MS coefficients, the \KF is more capable of rejecting incorrectly reconstructed tracks by up to an additional 3-4\%.
+Figure~\ref{fig:2GeVTiltEff} and Table~\ref{tab:trackFindingPerformance2GeVKF} illustrates that tracking efficiency improves when the \KF's covariance matrix accounts for \MS.
+At high \pT (low $\frac{1}{\pT}$) however, the tracking efficiencies of both \KF configurations incorporating \MS were up to 1\% worse than the configuration where the effects of \MS are not considered.
+This degraded performance results from the process noise term not considering the impact of the density effect, which becomes more important at increasing energies, reducing the effect stopping power of the material being traversed.
+In addition, Table~\ref{tab:trackFindingPerformance2GeVKF} shows that compared to just the \HT optimisations alone, for both \MS coefficients, the \KF was more effective at rejecting incorrectly reconstructed tracks by up to an additional 3-4\%.
 In contrast, the fraction of duplicates increases for both coefficients by 3-5\% for the full chain.
 As illustrated in Figure~\ref{fig:2GeVfracDups}, this increase occurs between $3.2\GeV$ and $5\GeV$ - near the $\pT = 3.5\GeV (\frac{1}{\pT} = 0.29 1/\GeV)$ threshold for merging adjacent \HT cells.
 Currently it is not understood how incorporating \MS into the \KF causes this, but it is suspected to be related to the use of the reduced precision of \HT cells.
@@ -773,8 +772,8 @@ Currently it is not understood how incorporating \MS into the \KF causes this, b
 \label{fig:kfHelixParametersResVsInvPt}
 \end{figure}
 
-Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of track $\frac{1}{\pT}$ in simulation for both of these \MS coefficients and for when \MS is not accounted for at all.
-The resolutions of both \MS coefficients are superior across all \pt compared to when \MS is not considered at all, with the constant \MS coefficient typically providing more slightly more precise measurements than the layer-dependent coefficient.  
+Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of track $\frac{1}{\pT}$ in simulation for both of these \MS coefficients and for when \MS was not accounted for at all.
+The resolutions of both \MS coefficients are superior across all \pt compared to when \MS was not considered at all, with the constant \MS coefficient typically providing more slightly more precise measurements than the layer-dependent coefficient.  
 As expected, lower transverse momentum tracks experience the greatest improvements given that this is the regime in which \MS dominates.
 This improvement is further illustrated by the distribution of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ in Figure~\ref{fig:2GeVTiltChi2Ndf}.
 In contrast to the \KF that was not modified to take \MS into account, the distributions of the \KF's performance for both \MS coefficients implies that \MS was the dominant source of uncertainty in the track measurements and that it has been well accounted for.
@@ -787,7 +786,7 @@ In contrast to the \KF that was not modified to take \MS into account, the distr
 \label{fig:2GeVTiltChi2Ndf}	
 \end{figure}
 
-For both \MS coefficients, however, the \pt($\frac{1}{\pT}$) resolution in the range $3.8 \GeV < \pt < 5.5\GeVc$ ($0.18 1/\GeV < \pt < 0.26 1/\GeVc$) is worse than when \MS is not considered.
+For both \MS coefficients, however, the \pt($\frac{1}{\pT}$) resolution in the range $3.8 \GeV < \pt < 5.5\GeVc$ ($0.18 1/\GeV < \pt < 0.26 1/\GeVc$) was worse than when \MS was not considered.
 This observation is still being investigated, but is suspected, like the increased duplicate rate in the same \pT range, to be related to the reduced precision of \HT cells.
 
 As shown in figures~\ref{fig:2GeVTiltEff} and~\ref{fig:kfHelixParametersResVsInvPt} and table~\ref{tab:trackFindingPerformance2GeVKF}, there are only small differences in the performance of the two \MS coefficients.
