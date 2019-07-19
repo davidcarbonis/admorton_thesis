@@ -83,7 +83,7 @@ void htAvgNumDuplicatesVsInvPtTiltedGeometry_5000()
    DupTracksVsInvPt_HT__1->GetXaxis()->SetTitleFont(42);
    DupTracksVsInvPt_HT__1->GetXaxis()->SetLabelSize(0.05);
    DupTracksVsInvPt_HT__1->GetXaxis()->SetTitleSize(0.05);
-   DupTracksVsInvPt_HT__1->GetYaxis()->SetTitle(" <Duplicates> per simulated track");
+   DupTracksVsInvPt_HT__1->GetYaxis()->SetTitle(" <Duplicates> per matched track");
    DupTracksVsInvPt_HT__1->GetYaxis()->SetLabelFont(42);
    DupTracksVsInvPt_HT__1->GetYaxis()->SetTitleOffset(1.3);
    DupTracksVsInvPt_HT__1->GetYaxis()->SetTitleFont(42);
@@ -160,7 +160,7 @@ void htAvgNumDuplicatesVsInvPtTiltedGeometry_5000()
    DupTracksVsInvPt_HT__2->GetXaxis()->SetTitleFont(42);
    DupTracksVsInvPt_HT__2->GetXaxis()->SetLabelSize(0.05);
    DupTracksVsInvPt_HT__2->GetXaxis()->SetTitleSize(0.05);
-   DupTracksVsInvPt_HT__2->GetYaxis()->SetTitle(" <Duplicates> per simulated track");
+   DupTracksVsInvPt_HT__2->GetYaxis()->SetTitle(" <Duplicates> per matched track");
    DupTracksVsInvPt_HT__2->GetYaxis()->SetLabelFont(42);
    DupTracksVsInvPt_HT__2->GetYaxis()->SetTitleOffset(1.3);
    DupTracksVsInvPt_HT__2->GetYaxis()->SetTitleFont(42);

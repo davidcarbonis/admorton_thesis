@@ -85,7 +85,7 @@ void kfAvgNumDuplicatesVsInvPtTiltedGeometry_5000()
    DupFitTrksVsInvPt_KF4ParamsComb__1->GetXaxis()->SetTitleFont(42);
    DupFitTrksVsInvPt_KF4ParamsComb__1->GetXaxis()->SetLabelSize(0.05);
    DupFitTrksVsInvPt_KF4ParamsComb__1->GetXaxis()->SetTitleSize(0.05);
-   DupFitTrksVsInvPt_KF4ParamsComb__1->GetYaxis()->SetTitle(" <Duplicates> per simulated track");
+   DupFitTrksVsInvPt_KF4ParamsComb__1->GetYaxis()->SetTitle(" <Duplicates> per matched track");
    DupFitTrksVsInvPt_KF4ParamsComb__1->GetYaxis()->SetLabelFont(42);
    DupFitTrksVsInvPt_KF4ParamsComb__1->GetYaxis()->SetTitleOffset(1.3);
    DupFitTrksVsInvPt_KF4ParamsComb__1->GetYaxis()->SetTitleFont(42);
@@ -162,7 +162,7 @@ void kfAvgNumDuplicatesVsInvPtTiltedGeometry_5000()
    DupFitTrksVsInvPt_KF4ParamsComb__2->GetXaxis()->SetLabelSize(0.05);
    DupFitTrksVsInvPt_KF4ParamsComb__2->GetXaxis()->SetTitleSize(0.05);
    DupFitTrksVsInvPt_KF4ParamsComb__2->GetXaxis()->SetTitleFont(42);
-   DupFitTrksVsInvPt_KF4ParamsComb__2->GetYaxis()->SetTitle(" <Duplicates> per simulated track");
+   DupFitTrksVsInvPt_KF4ParamsComb__2->GetYaxis()->SetTitle(" <Duplicates> per matched track");
    DupFitTrksVsInvPt_KF4ParamsComb__2->GetYaxis()->SetLabelFont(42);
    DupFitTrksVsInvPt_KF4ParamsComb__2->GetYaxis()->SetLabelSize(0.05);
    DupFitTrksVsInvPt_KF4ParamsComb__2->GetYaxis()->SetTitleSize(0.05);
