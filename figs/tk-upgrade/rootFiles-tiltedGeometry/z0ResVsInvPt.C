@@ -198,7 +198,7 @@ void z0ResVsInvPt()
    Z0ResVsTrueInvPt_KF4ParamsComb__2->SetEntries(122644);
    Z0ResVsTrueInvPt_KF4ParamsComb__2->SetDirectory(0);
    Z0ResVsTrueInvPt_KF4ParamsComb__2->SetLineStyle(7);
-   Z0ResVsTrueInvPt_KF4ParamsComb__2->SetLineColor(7);
+   Z0ResVsTrueInvPt_KF4ParamsComb__2->SetLineColor(1);
    Z0ResVsTrueInvPt_KF4ParamsComb__2->SetMarkerStyle(4);
    Z0ResVsTrueInvPt_KF4ParamsComb__2->SetMarkerSize(2);
    Z0ResVsTrueInvPt_KF4ParamsComb__2->SetMarkerColor(1);

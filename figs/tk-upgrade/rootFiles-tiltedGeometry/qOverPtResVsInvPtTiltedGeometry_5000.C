@@ -107,7 +107,7 @@ void qOverPtResVsInvPtTiltedGeometry_5000()
    QoverPtResVsTrueInvPt_KF4ParamsComb__1->GetXaxis()->SetTitleSize(0.05);
    QoverPtResVsTrueInvPt_KF4ParamsComb__1->GetXaxis()->SetTitleOffset(1.3);
    QoverPtResVsTrueInvPt_KF4ParamsComb__1->GetXaxis()->SetTitleFont(42);
-   QoverPtResVsTrueInvPt_KF4ParamsComb__1->GetYaxis()->SetTitle(" #sigma(#delta 1/p_{T}) [GeV^{-1}]");
+   QoverPtResVsTrueInvPt_KF4ParamsComb__1->GetYaxis()->SetTitle(" #sigma(#delta q/p_{T}) [GeV^{-1}]");
    QoverPtResVsTrueInvPt_KF4ParamsComb__1->GetYaxis()->SetLabelFont(42);
    QoverPtResVsTrueInvPt_KF4ParamsComb__1->GetYaxis()->SetLabelSize(0.05);
    QoverPtResVsTrueInvPt_KF4ParamsComb__1->GetYaxis()->SetTitleSize(0.05);
@@ -207,7 +207,7 @@ void qOverPtResVsInvPtTiltedGeometry_5000()
    QoverPtResVsTrueInvPt_KF4ParamsComb__2->GetXaxis()->SetLabelSize(0.035);
    QoverPtResVsTrueInvPt_KF4ParamsComb__2->GetXaxis()->SetTitleSize(0.035);
    QoverPtResVsTrueInvPt_KF4ParamsComb__2->GetXaxis()->SetTitleFont(42);
-   QoverPtResVsTrueInvPt_KF4ParamsComb__2->GetYaxis()->SetTitle(" #sigma(#delta 1/p_{T}) [GeV^{-1}]");
+   QoverPtResVsTrueInvPt_KF4ParamsComb__2->GetYaxis()->SetTitle(" #sigma(#delta q/p_{T}) [GeV^{-1}]");
    QoverPtResVsTrueInvPt_KF4ParamsComb__2->GetYaxis()->SetLabelFont(42);
    QoverPtResVsTrueInvPt_KF4ParamsComb__2->GetYaxis()->SetLabelSize(0.035);
    QoverPtResVsTrueInvPt_KF4ParamsComb__2->GetYaxis()->SetTitleSize(0.035);
@@ -307,7 +307,7 @@ void qOverPtResVsInvPtTiltedGeometry_5000()
    QoverPtResVsTrueInvPt_KF4ParamsComb__3->GetXaxis()->SetLabelSize(0.035);
    QoverPtResVsTrueInvPt_KF4ParamsComb__3->GetXaxis()->SetTitleSize(0.035);
    QoverPtResVsTrueInvPt_KF4ParamsComb__3->GetXaxis()->SetTitleFont(42);
-   QoverPtResVsTrueInvPt_KF4ParamsComb__3->GetYaxis()->SetTitle(" #sigma(#delta 1/p_{T}) [GeV^{-1}]");
+   QoverPtResVsTrueInvPt_KF4ParamsComb__3->GetYaxis()->SetTitle(" #sigma(#delta q/p_{T}) [GeV^{-1}]");
    QoverPtResVsTrueInvPt_KF4ParamsComb__3->GetYaxis()->SetLabelFont(42);
    QoverPtResVsTrueInvPt_KF4ParamsComb__3->GetYaxis()->SetLabelSize(0.035);
    QoverPtResVsTrueInvPt_KF4ParamsComb__3->GetYaxis()->SetTitleSize(0.035);
