@@ -227,7 +227,7 @@ void phi0ResVsEta_It_1_ApproxVsExact()
    leg->SetLineWidth(1);
    leg->SetFillColor(0);
    leg->SetFillStyle(1001);
-   TLegendEntry *entry=leg->AddEntry("PhiResVsTrueEta_ChiSquared4ParamsTrackletStyle","Floating Point Mathematics","PEL");
+   TLegendEntry *entry=leg->AddEntry("PhiResVsTrueEta_ChiSquared4ParamsTrackletStyle","Floating Point Implementation","PEL");
    entry->SetFillStyle(1001);
    entry->SetLineColor(2);
    entry->SetLineStyle(1);
@@ -236,7 +236,7 @@ void phi0ResVsEta_It_1_ApproxVsExact()
    entry->SetMarkerStyle(4);
    entry->SetMarkerSize(2);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("PhiResVsTrueEta_ChiSquared4ParamsApprox","Approximated Mathematics","PEL");
+   entry=leg->AddEntry("PhiResVsTrueEta_ChiSquared4ParamsApprox","Approximated Implementation","PEL");
    entry->SetFillStyle(1001);
    entry->SetLineColor(4);
    entry->SetLineStyle(2);
