@@ -157,11 +157,11 @@ void ptRelResVsEta_It_1_ApproxVsExact()
    PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinContent(9,297.6231);
    PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinContent(10,280.1368);
    PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinContent(11,333.5857);
-   PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinContent(12,630.6166);
+   PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinContent(12,360.6166);
    PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinContent(13,354.5783);
    PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinContent(14,366.6293);
-   PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinContent(15,1410.792);
-   PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinContent(16,820.4058);
+   PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinContent(15,430.1796);
+   PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinContent(16,712.3833);
    PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinContent(17,698.5105);
    PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinContent(18,947.5677);
    PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinContent(19,1029.011);
@@ -182,11 +182,11 @@ void ptRelResVsEta_It_1_ApproxVsExact()
    PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinError(9,19.57042);
    PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinError(10,15.94019);
    PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinError(11,20.81055);
-   PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinError(12,319.6891);
+   PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinError(12,24.85833);
    PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinError(13,12.24468);
    PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinError(14,30.27025);
-   PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinError(15,931.5961);
-   PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinError(16,311.5359);
+   PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinError(15,28.19569);
+   PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinError(16,57.60507);
    PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinError(17,65.52197);
    PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinError(18,84.29331);
    PtRelResVsTrueEta_ChiSquared4ParamsApprox__2->SetBinError(19,75.29904);
@@ -227,7 +227,7 @@ void ptRelResVsEta_It_1_ApproxVsExact()
    leg->SetLineWidth(1);
    leg->SetFillColor(0);
    leg->SetFillStyle(1001);
-   TLegendEntry *entry=leg->AddEntry("PtRelResVsTrueEta_ChiSquared4ParamsTrackletStyle","Floating Point Mathematics","PEL");
+   TLegendEntry *entry=leg->AddEntry("PtRelResVsTrueEta_ChiSquared4ParamsTrackletStyle","Floating Point Implementation","PEL");
    entry->SetLineColor(2);
    entry->SetLineStyle(1);
    entry->SetLineWidth(1);
@@ -235,7 +235,7 @@ void ptRelResVsEta_It_1_ApproxVsExact()
    entry->SetMarkerStyle(4);
    entry->SetMarkerSize(2);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("PtRelResVsTrueEta_ChiSquared4ParamsApprox","Approximated Mathematics","PEL");
+   entry=leg->AddEntry("PtRelResVsTrueEta_ChiSquared4ParamsApprox","Approximated Implementation","PEL");
    entry->SetLineColor(4);
    entry->SetLineStyle(2);
    entry->SetLineWidth(1);
