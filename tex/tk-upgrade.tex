@@ -136,7 +136,7 @@ Based on current electronics and the high speed links available, the data requir
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.00\textwidth]{figs/tk-upgrade/tmttarch.pdf}
-\caption{An illusratation of the baseline system architecture described in the text, demonstrating how two neighbouring DTCs time-multiplex and duplicate stub data across processing octants and how it transmits the processed data to two neighbouring TFPs~\cite{TMTT_JINST}}
+\caption{An illustration of the baseline system architecture described in the text, demonstrating how two neighbouring DTCs time-multiplex and duplicate stub data across processing octants and how it transmits the processed data to two neighbouring TFPs~\cite{TMTT_JINST}}
 \label{fig:tmttarch}
 \end{figure}
 
@@ -362,6 +362,9 @@ This stricter definition of \emph{perfect} track reconstruction efficiency is ty
 Otherwise, the nominal definition of track reconstruction efficiency is used as the presence of stubs incorrectly associated with a track is to be expected if only part of the TFP chain has been run.
 Where appropriate, the results for both definitions are given.
 
+Similarly, the common definitions for the resolution of the track parameters used for both the three proposed L-1 Track Finder systems and in the Phase-2 Upgrade of the CMS tracker Technical Design Report~\cite{P2TrackerTDR} are used for the results discussed below.
+For all of the track parameters quoted, the resolution was defined as the difference between the reconstructed track's helix parameter and the matched simulated track's helix parameter.
+
 
 \subsection{Linearised $\chi^{2}$ Track Fitting Studies}\label{subsec:chi2}
 Three different track fitting algorithms were explored for the track fitter component of the TFP used in the 2016 hardware demonstrator review: a Kalman Filter, a Linear Regression (LR) algorithm and a Linearised $\chi^{2}$ Fit algorithm.
@@ -452,8 +455,8 @@ From Equations~(\ref{eq:chi4}) and~(\ref{eq:chi5}) and the track derivatives der
 Initially the algorithm was implemented using floating point calculations in order to both debug and optimise its performance.
 This process involved confirming that the track derivatives and stub residuals were correctly calculated and the track finding efficiencies and parameter resolution of the $\chi^{2}$ were comparable to the \emph{tracklet} project's software implementation at the time.
 
-After this validation process, the algorithm was simplified in order to reduce the resources required for any future tabulation of the matrix of track derivatives.
-This process involved developing approximated expressions of the track derivatives which reduced the number of variables they depended on, but still gave performance comparable to when floating point precision was used.
+Using the exact expressions for the track derivatives with floating point precision and calculating each derivative as required however, would not be feasible to implement in any future FPGA based firmware given the system's resources and constraints.
+Therefore, the lowest order approximations of the track derivatives (containing the fewest possible number of free parameters) were determined in order to develop a version of the algorithm that used tabulated track derivatives and digitised variables and calculations that gave performance comparable to the original derivatives with floating point precision
 The performance of both of the versions of the algorithm is discussed below in terms of their track reconstruction efficiencies and the resolution of the fitted track parameters.
 
 Following the development of the ``approximated'' mathematics version of the algorithm, an iterative filtering process based on the residuals of the stubs was explored.
@@ -463,7 +466,7 @@ The performance of differing numbers of fitting iterations are compared against 
 
 
 \begin{table}[htbp]
-\topcaption {Track finding performance on simulated \ttbar events with a $<\text{PU}>$ of 200 events, after the \HT and the full chain for  both the exact floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
+\topcaption {Track finding performance on simulated \ttbar events with a $<\text{PU}>$ of 200 events, after the \HT and the full chain for both the exact floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
 }
 
 \label{tab:chi2-exactVsApprox}
@@ -488,7 +491,7 @@ The performance of differing numbers of fitting iterations are compared against 
  \end{tabular}%}
 \end{table}
 
-Table~\ref{tab:chi2-exactVsApprox} shows how the tracking performance between the floating point maths and ``approximated'' maths implementations of the algorithm compare against each other and from the raw track finding output from the \HT.
+Table~\ref{tab:chi2-exactVsApprox} compares the tracking performance between the floating point maths and ``approximated'' maths implementations of the $\chi^{2}$ track fitting algorithm and the raw track finding output from the \HT.
 It can be seen that whilst the \HT finds tracks with high efficiency, over half have at least one incorrectly associated stub and a significant number of the tracks found are fake or duplicated tracks.
 Both floating point and approximated maths implementations give comparable results, indicating that the approximations made are acceptable.
 The $\chi^{2}$ track fit increases the purity of the reconstructed tracks by a factor of two and eliminates the majority of the fake tracks, while the \DR algorithm removes the majority of the duplicates.
@@ -502,7 +505,7 @@ The $\chi^{2}$ track fit increases the purity of the reconstructed tracks by a f
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_It_1_ApproxVsExact.pdf}
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/cotThetaResVsEta_It_1_ApproxVsExact.pdf}
 \caption{
-Distributions of \pt relative resolution, $\phi$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events for the floating point (red) and approximated maths (blue) implementations of the linearised $\chi^{2}$ fit algorithm for a single fitting iteration.
+Relative \pt resolution, $\phi$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events for the floating point maths (red) and approximated maths (blue) implementations of the linearised $\chi^{2}$ fit algorithm for a single fitting iteration.
 }
 \label{fig:chi2HelixParametersResVsEtaApproxVsExact}
 \end{figure}
@@ -547,15 +550,16 @@ Further fitting iterations are not shown as further improvement was observed.
  \end{tabular}%}
 \end{table}
 
-Table~\ref{tab:chi2_iterations} illustrates how the tracking performance of the linearised $\chi^{2}$ fitter improves with just one additional fitting iteration (removal of a stub), with the fake rate being halved and the purity of the matched tracks noticeably increasing.
-Further successive fitting iterations however, yield diminishing returns, with no further improvements seen following four iterations.
-This is logical given that the mean number of hits associated to a track is seven, meaning that the majority of tracks can only have up to a maximum of three stubs removed.
-By contrast, while a greater number of fake tracks survive the \KF, it achieves a similar tracking efficiency as the $\chi^{2}$ fitter after just two iterations while none of the matched tracks found contain any incorrect stubs. 
+Table~\ref{tab:chi2_iterations} illustrates how the tracking performance of the linearised $\chi^{2}$ fitting algorithm improves over successive fitting iterations and how it compares to the \KF.
+Performing one additional fitting iteration considerably improved the performance of the $\chi^{2}$ track fit, as the removal of incompatible stubs reduced the fraction of fake tracks by over a half and considerably increased the purity of the fitted matched tracks.
+Further successive fitting iterations however, yield diminishing returns, with no further improvements seen following four iterations of the $\chi^{2}$ fitting algorithm.
+This was not unexpected, as with the mean number of hits associated to a track being seven, only up to three stubs (across four fitting iterations) can be removed for the majority of tracks.
+In contrast, the \KF achieves a tracking efficiency comparable to the $\chi^{2}$ fitter after two fitting iterations but with none of the matched tracks containing any incorrect stubs. 
 This suggests that if a more sophisticated method of removing bad quality stubs were used in the linearised $\chi^{2}$ fitter, very few matched tracks would be discarded with improved purity.
 
-Figure~\ref{fig:chi2HelixParametersResIterationsComparison} shows the variation of the helix parameter resolutions with the iterations of the $\chi^{2}$ number and how this compares with the \KF's performance.
-The additional fitting iterations allow for noticeable improvements for the track parameter resolutions obtained in the forward regions.
-While the \qpt and $\phi_{0}$ resolutions achieved after four fitting iterations was comparable to those achieved by the \KF, the $\chi^{2}$ fitter's resolution was considerably worse for both the $z_{0}$ and $cot(\theta)$ resolutions in the endcaps.
+Figure~\ref{fig:chi2HelixParametersResIterationsComparison} compares the the helix parameter resolutions obtained by the $\chi^{2}$ track fit after one and four fitting iterations with those achieved by the \KF.
+It can be seen that the additional fitting iterations performed by the $\chi^{2}$ fitting algorithm considerably improve each of the track parameter's resolution obtained in the forward regions.
+While the  $\chi^{2}$ fitter's \pt relative and $\phi_{0}$ resolutions are comparable to those achieved by the \KF, its $z_{0}$ and $cot(\theta)$ resolutions at high pseudorapidity are considerably less precise than those obtained with the \KF.
 
 \begin{figure}[htb]
 \centering
@@ -565,14 +569,14 @@ While the \qpt and $\phi_{0}$ resolutions achieved after four fitting iterations
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_IterationComparison.pdf}
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/cotThetaResVsEta_IterationComparison.pdf}
 \caption{
-\pt relative resolution, $\phi$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events for the approximated maths implementation of the linearised $\chi^{2}$ fit algorithm for one (black) and four (blue) fitting iterations. The \KF (red) is also included for comparison.
+Relative \pt resolution, $\phi$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events for the approximated maths implementation of the linearised $\chi^{2}$ fit algorithm for one (black) and four (blue) fitting iterations. The \KF (red) is also included for comparison.
 }
 \label{fig:chi2HelixParametersResIterationsComparison}
 \end{figure}
 
-Following the parallel development of both the linearised $\chi^{2}$ track fit and the \KF however, it was decided that development of the former would be discontinued.
-This decision was made as the \KF was capable of achieving a higher track finding efficiency with 100.0\% purity for matched tracks and $z_{0}$ and $cot(\theta)$ resolutions in the forward regions that were comparable to the expected offline resolution.
-Considerable progress had also been made with an implementation in firmware.
+Following the parallel development of both the linearised $\chi^{2}$ track fit and the \KF algorithms, it was decided that development of the former would be discontinued.
+This decision was made as the \KF was capable of achieving both a higher track finding efficiency with 100.0\% purity for matched tracks and achieving $z_{0}$ and $cot(\theta)$ resolutions in the forward regions that were comparable to the expected offline resolution.
+In addition, considerable progress had been made with a firmware implementation of the \KF.
 
 In contrast, the linearised $\chi^{2}$ track was not competitive in terms of track resolution and reconstruction ability, especially with respect to the stricter tracking efficiency definition.
 There were also concerns over the potential feasibility of tabulating all (or the most frequently used) track derivatives in the endcap disks for FPGAs that were commercially available at the time.
@@ -605,7 +609,7 @@ Figure~\ref{fig:2GeVFlatEff} shows how the tracking efficiency improves followin
 \centering
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/htTrackingEffVsInvPtFlatGeometry_5000.pdf}
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
-\caption{The post-\HT (left) and post-\KF (right) tracking efficiency distributions for tracks with $\pt > 2\GeVc$ for \ttbar events with a $<\textrm{PU}>$ of 200 events. The default configuration where only the number of \qpt columns are increased are shown in red and the configuration with the increased number of columns, HT cell merging and \KF state cuts optimisation shown in blue).
+\caption{The post-\HT (left) and post-\KF (right) tracking efficiency for tracks with $\pt > 2\GeVc$ for \ttbar events with a $<\textrm{PU}>$ of 200 events. The default configuration where only the number of \qpt columns are increased are shown in red and the configuration with the increased number of columns, HT cell merging and \KF state cuts optimisation shown in blue).
 }
 \label{fig:2GeVFlatEff}	
 \end{figure}
@@ -648,7 +652,7 @@ If all sources of uncertainties were accounted for, the ideal distribution of $\
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.60\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfChi2NdfVsInvPtFlatGeometry_5000.pdf}
-\caption{Plot of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ for genuine tracks produced by the \KF.}
+\caption{$\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ for genuine tracks produced by the \KF.}
 \label{fig:2GeVFlatChi2Ndf}
 \end{figure}
 
@@ -664,7 +668,7 @@ The slight degradation in the $\phi_{0}$ resolution results from the decreased p
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtFlatGeometry_5000.pdf}
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/cotThetaResVsInvPtFlatGeometry_5000.pdf}
 \caption{
-Distributions of \pt resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolution measured for both the default configuration where only the number of \HT \qpt columns have been increased (red) and after the \HT and \KF optimisations have been applied (blue) for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events for tracks with $\pt > 2\GeVc$.
+$\frac{q}{\pT}$ resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolution measured for both the default configuration where only the number of \HT \qpt columns have been increased (red) and after the \HT and \KF optimisations have been applied (blue) for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events for tracks with $\pt > 2\GeVc$.
 }
 \label{fig:htHelixParametersResVsInvPt}
 \end{figure}
@@ -683,14 +687,14 @@ For small deflection angles and relativistic particles, the standard deviation o
 where the momentum, velocity, electrical charge of the incident particle and thickness of the scattering medium in radiation lengths are given by $p$, $\beta c$, $q$ and $\frac{x}{X_{0}}$, respectively.
 The result from this equation has been found to have an accuracy no greater than 11\%~\cite{Lynch:1990sq}.
 
-With the particles involved having relativistic velocities (\ie $\beta c \cong 1$) and scattering in the \r-z plane ignored as the impact of multiple scattering is considerably smaller hit position resolution in \rz, the multiple scattering contribution in the \rphi plane can be expressed as:
+With the particles involved having relativistic velocities (\ie $\beta c \cong 1$) and scattering in the \rz plane ignored as the impact of multiple scattering is considerably smaller hit position resolution in \rz, the multiple scattering contribution in the \rphi plane can be expressed as:
 
 \begin{equation}
 \sigma_{\theta} = \frac{k}{\pT}
 \label{eq:scatter2}
 \end{equation}
 
-where $k$ is the coefficient of proportionality that describes the constant terms of Equation~(\ref{eq:scatter2}) in the relativistic limit`.
+where $k$ is the coefficient of proportionality that describes the constant terms of Equation~(\ref{eq:scatter2}) in the relativistic limit.
 
 From the simplified form of Equation~(\ref{eq:scatter2}), two alternative forms of the coefficient $k$, which should require minimal resources and latency, were investigated:
 
@@ -724,7 +728,7 @@ As the \pT threshold of $3.5\GeV$ recovered a further 0.2\% of the tracks that w
 \centering
 \includegraphics[width=0.65\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtTiltedGeometry_5000.pdf}
 %\includegraphics[width=\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
-\caption{Plots showing tracking efficiency as a function of $\frac{1}{\pT}$ for \ttbar events with a $<\textrm{PU}>$ of 200 events after the full chain has been run, where the \KF has not been modified to take \MS into account (red), a constant coefficient for \MS is used (black) and a layer dependent coefficient for \MS is used (blue).
+\caption{Tracking efficiency as a function of $\frac{1}{\pT}$ for \ttbar events with a $<\textrm{PU}>$ of 200 events after the full chain has been run, where the \KF has not been modified to take \MS into account (red), a constant coefficient for \MS is used (black) and a layer dependent coefficient for \MS is used (blue).
 }
 \label{fig:2GeVTiltEff}	
 \end{figure}
@@ -767,30 +771,42 @@ Currently it is not understood how incorporating \MS into the \KF causes this, b
 \\
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtTiltedGeometry_5000.pdf}
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/cotThetaResVsInvPtTiltedGeometry_5000.pdf}
-\caption{Distributions of \pt resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolution determined for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events. The distribution for when the \KF has not been modified to take \MS into account is given in red, for a constant \MS coefficient in black and a layer-dependent \MS coefficient in blue.
+\caption{$\frac{q}{\pT}$ resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolution determined for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events. The distribution for when the \KF has not been modified to take \MS into account is given in red, for a constant \MS coefficient in black and a layer-dependent \MS coefficient in blue.
 }
 \label{fig:kfHelixParametersResVsInvPt}
 \end{figure}
 
-Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the track parameters as a function of track $\frac{1}{\pT}$ in simulation for both of these \MS coefficients and for when \MS was not accounted for at all.
+Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the helix parameters as a function of track $\frac{1}{\pT}$ in simulation for both of the \MS coefficients considered and for when \MS was not accounted for at all in the \KF covariance matrix.
+With the increased measurement error in the \rphi plane
+Given that the increase the lack of improvement in the $\frac{q}{\pT}$ resolution was not 
+
+improved by the inclusion of either of the \MS process noise terms considered 
+
+and is noticeably worse in the range $0.18 1/\GeV < \pt < 0.26 1/\GeVc$ than when \MS is not considered at all.
+While the cause of this degradation in the $\frac{q}{\pT}$ resolution is as yet to be determined, it is suspected, like the increased duplicate rate in the same \pT range, to be related to the reduced precision of \HT cells.
+
+%%
+In contrast, the resolutions of the other three helix parameters are typically 
+
+%
 The resolutions of both \MS coefficients are superior across all \pt compared to when \MS was not considered at all, with the constant \MS coefficient typically providing more slightly more precise measurements than the layer-dependent coefficient.  
 As expected, lower transverse momentum tracks experience the greatest improvements given that this is the regime in which \MS dominates.
-This improvement is further illustrated by the distribution of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ in Figure~\ref{fig:2GeVTiltChi2Ndf}.
-In contrast to the \KF that was not modified to take \MS into account, the distributions of the \KF's performance for both \MS coefficients implies that \MS was the dominant source of uncertainty in the track measurements and that it has been well accounted for.
+%
+%%
+
+These improvements are further illustrated by the distribution of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ in Figure~\ref{fig:2GeVTiltChi2Ndf}.
+In contrast to when the \KF lacks a noise term accounting for \MS, the distributions of the \KF's performance for both \MS coefficients considered implies that \MS was the dominant source of uncertainty in the track measurements and that it has been well accounted for.
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.6\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfChi2NdfVsInvPtTiltedGeometry_5000.pdf}
-\caption{The $\frac{\chi^{2}}{ndf}$ distribution as a function of $\frac{1}{\pT}$ for \ttbar events with a $<\textrm{PU}>$ of 200 events after the full chain has been run. The distribution for when the \KF has not been modified to take \MS into account is given in red, for a constant \MS coefficient in black and a layer-dependent \MS coefficient in blue.
+\caption{ $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ for \ttbar events with a $<\textrm{PU}>$ of 200 events after the full chain has been run. The distribution for when the \KF has not been modified to take \MS into account is given in red, for a constant \MS coefficient in black and a layer-dependent \MS coefficient in blue.
 }
 \label{fig:2GeVTiltChi2Ndf}	
 \end{figure}
 
-For both \MS coefficients, however, the \pt($\frac{1}{\pT}$) resolution in the range $3.8 \GeV < \pt < 5.5\GeVc$ ($0.18 1/\GeV < \pt < 0.26 1/\GeVc$) was worse than when \MS was not considered.
-This observation is still being investigated, but is suspected, like the increased duplicate rate in the same \pT range, to be related to the reduced precision of \HT cells.
-
 As shown in figures~\ref{fig:2GeVTiltEff} and~\ref{fig:kfHelixParametersResVsInvPt} and table~\ref{tab:trackFindingPerformance2GeVKF}, there are only small differences in the performance of the two \MS coefficients.
-This is due the amount of material traversed by a track not being constant for a single layer given that the amount of material contributions in the Inner and Outer Trackers, between the Inner and Outer Trackers and services varies as a function of $\eta$~\cite{P2TrackerTDR}.
+This is due the amount of material traversed by a track not being constant for a single layer given that the amount of material contributions in the Inner and Outer Trackers, between the Inner and Outer Trackers and services varies as a function of pseudorapidity~\cite{P2TrackerTDR}.
 
 Following the improved performance considering the impact of \MS on the \HT and \KF discussed in these studies, these optimisations have been incorporated into the firmware for both TFP components.
 The constant \MS term was chosen for inclusion into the \KF as it demonstrated the best performance and required the least resources to implement.
