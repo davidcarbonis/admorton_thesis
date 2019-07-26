@@ -103,7 +103,7 @@ The dedicated MC samples used to estimate some theoretical uncertainties. The ta
 }
 \label{tab:theorySampleList}
   \centering
-% \resizebox{\textwidth}{!}{
+ \resizebox{\textwidth}{!}{
  \begin{tabular}{cccc}
    \hline
    \textbf{MC process} & \textbf{Events} & \textbf{Cross section (pb)} & \textbf{Generator (Order)}   \\
@@ -132,7 +132,7 @@ The dedicated MC samples used to estimate some theoretical uncertainties. The ta
    \ttbar matching up & 58.9M & 831.76 & POWHEG V2 (NLO) \\
    \ttbar matching down & 58.2M & 831.76 & POWHEG V2 (NLO) \\
    \hline   
- \end{tabular}%}
+ \end{tabular}}
 \end{table}
 
 %%% Alt Z+jets 
@@ -162,14 +162,13 @@ Simulation is unable to fully recreate all the effects observed in data correcti
 
 These scale factors are used to correct the simulation for any discrepencies in the lepton identification, isolation and reconstruction efficiencies, lepton and jet energy scales and resolutions, b-tagging efficiencies, the poor modelling of pileup in simulation, and the detector resolutions observed in data.
 
-\subsection{Miscalibrated Tracker APV}\label{subsec:hipEffect}
-During the first half of data taking in 2016 the silicon strip detector suffered from an instantaneous-luminosity-dependent hit finding inefficiency, which particularly affected high occupancy regions, due to saturation in the pre-amplifier in the front-end electronics~\cite{Fiori:2016ebh}.
-This issue was resolved by changing the configuration of the electronics.
-The 55\% of the total dataset affected by this issue has since been reprocessed by CMS to mitigate the impact on the quality of the data taken.
+\subsection{Miscalibrated Tracker APV Chips}\label{subsec:hipEffect}
+During the first half of data taking in 2016 the silicon strip detector suffered from an instantaneous-luminosity-dependent hit finding inefficiency.
+This particularly affected high occupancy regions, due to saturation in the pre-amplifier in the front-end electronics~\cite{Fiori:2016ebh}, and was resolved by changing the configuration of the electronics.
+The 55\% of the total 2016 dataset that was affected by this issue has since been reprocessed by CMS in order to mitigate the impact on the quality of the data taken.
 
-Despite this however, there is still a negative impact on the reconstructing tracks efficiency for physics objects that rely upon tracking data.
-
-This reduced detector efficiency is accounted for by using the weighted average of the scale factors that have been derived separately for both the affected and unaffected portions of the dataset.
+Despite this mitigation however, there was still a negative impact on the reconstructing tracks efficiency for physics objects that rely upon tracking data.
+This reduced detector efficiency was accounted for by using the weighted average of the scale factors that have been derived separately for both the affected and unaffected portions of the dataset.
 
 \subsection{Lepton Efficiency}\label{subsec:leptonRecoSFs}
 The identification, isolation and reconstruction efficiency scale factors for leptons are produced centrally by CMS and are determined by using a large sample of of $Z \rightarrow l^{+} l ^{-}$ events and the so-called \emph{tag-and-probe} method~\cite{CMS:2008rxa}.
@@ -374,7 +373,7 @@ N_{data}^{OS non-prompt} = (N_{data}^{SS} - N^{SS}_{real + mis-ID}) \cdot \frac{
 where $N_{data}^{SS}$ is the total number of same sign events observed in data and $N^{SS}_{real + mis-ID}$ is the expected number of real same sign events and events with charge misidentification.
 
 The ratio of opposite sign and same sign NPLs in simulation, $N_{MC}^{OS non-prompt}$ and $N_{MC}^{SS non-prompt}$, respectively, is used to appropriately normalise this estimate and uses the generator level information in simulation to correctly identify how the leptons were produced.
-The W+jets, \ttZ, \ttW, and single top simulated samples that have sufficient statistics in the same sign control region are used to calculate this ratio as these simulation indicates that these processes are the predominant source of non-prompt leptons for this analysis.
+The \ttZ, \ttW, and single top simulated samples that have sufficient statistics in the same sign control region are used to calculate this ratio as these simulation indicates that these processes are the predominant source of non-prompt leptons for this analysis.
 
 The event yields of the simulated samples and data following the full event selection in the same lepton sign control region, the same sign background contributions not accounted for by simulation, ratio of same sign to opposite sign event yields and the data-driven NPL contribution estimate are given in table~\ref{tab:fakeLeptonYields}.
 
@@ -386,25 +385,24 @@ The event yields of the simulated samples and data following the full event sele
 \hline
 Source &  $ee$ & $\mu\mu$  \\ 
 \hline
-$N_{\ttbar}^{SS}$ & 5.85 $\pm$ 1.30 & 8.93$\pm$1.47    \\
-$N_{\ttbar V}^{SS}$ & 4.81 $\pm$ 0.11 & 11.81 $\pm$0.10  \\ 
+$N_{\ttbar}^{SS}$ & 5.85$\pm$ .30 & 8.93$\pm$1.47    \\
+$N_{\ttbar V}^{SS}$ & 4.81$\pm$0.11 & 11.81 $\pm$0.10  \\ 
 $N_{single top}^{SS}$ & 0.90$\pm$0.18 & 0.97 $\pm$0.11    \\
-$N_{W+jets}^{SS}$ & 0.0$\pm$0.0 & 0.0 $\pm$ 0.0  \\
 $N_{Z+jets}^{SS}$ & 37.53$\pm$6.85 & 0.0 $\pm$ 0.0  \\
 $N_{VV}^{SS}$ & 1.89$\pm$0.22 & 0.35$\pm$0.13 \\
-$N_{VVV}^{SS}$ & 0.00$\pm$ & 0.23$\pm$0.09 \\
+$N_{VVV}^{SS}$ & 0.00 $\pm$ 0.0 & 0.23$\pm$0.09 \\
 \hline
 $N_{MC}^{SS}$ background & 50.98$\pm$6.98 & 22.29 $\pm$ 2.21 \\ 
-$N_{data}^{SS}$ & 126.0 $\pm$ 11.22 & 125.0 $\pm$ 1.18\\ 
+$N_{data}^{SS}$ & 126.0$\pm$11.22 & 125.0$\pm$1.18\\ 
 \hline
-%%$N_{data}^{SS} - N_{MC}^{SS}$: & 30.64$\pm$13.21 & 102.71 $\pm$ 6.27\\
-$N_{data}^{SS} - N_{MC}^{SS}$: & 30.64$\pm$13.21 & 102.71 $\pm$ 6.27\\
+%%$N_{data}^{SS} - N_{MC}^{SS}$ & 30.64$\pm$13.21 & 102.71 $\pm$ 6.27\\
+$N_{data}^{SS} - N_{MC}^{SS}$ & 30.64$\pm$13.21 & 102.71$\pm$6.27\\
 \hline
-$N_{MC}^{OS non-prompt}$: & 1.58$\pm$0.03 & 2.38$\pm$0.04 \\
-$N_{MC}^{SS non-prompt}$: & 1.71$\pm$0.03 & 2.14$\pm$0.04 \\
-$N_{MC}^{OS non-prompt}/N_{MC}^{SS non-prompt}$: & 0.93 $\pm$ 0.02 & 1.11 $\pm$ 0.03 \\
+$N_{MC}^{OS non-prompt}$ & 1.58$\pm$0.03 & 2.38$\pm$0.04 \\
+$N_{MC}^{SS non-prompt}$ & 1.71$\pm$0.03 & 2.14$\pm$0.04 \\
+$N_{MC}^{OS non-prompt}/N_{MC}^{SS non-prompt}$ & 0.93$\pm$0.02 & 1.11$\pm$0.03 \\
 \hline
-$N_{data}^{OS non-prompt}$: & 69.47$\pm$12.95 & 114.01$\pm$7.61 \\
+$N_{data}^{OS non-prompt}$ & 69.47$\pm$12.95 & 114.01$\pm$7.61 \\
 \hline
 \end{tabular}
 \label{tab:fakeLeptonYields}
@@ -712,7 +710,7 @@ The uncertainties associated with the lepton identification, isolation and recon
 Several systematic studies were performed to estimate the systematic uncertainty associated with the trigger scale factors.
 These studies were the comparison of the trigger efficiencies \ttbar and Z+jets processes in simulation and the strength of the correlation of the \MET trigger selection to the lepton triggers used in the analysis.
 
-When comparing the trigger efficiencies in simulation between the for the \ttbar and Z+jets samples, it was found that the differences between the trigger efficiencies in each channel was covered by the statistical uncertainties.
+When comparing the trigger efficiencies in simulation between the \ttbar and Z+jets samples, it was found that the differences between the trigger efficiencies in each channel was covered by the statistical uncertainties.
 The trigger efficiencies determined for the \ttbar and Z+jets simulation samples in each channel are shown in table~\ref{tab:zPlusTriggerSFs}.
 
 \begin{table}[htbp]
@@ -745,7 +743,7 @@ If both sets triggers are independent, then the efficiency of fulfilling both tr
 \label{eq:triggerCorrelation}
 \end{equation}
 
-If the \MET and lepton trigger selection requirements are uncorrelated, then the ratio ($\alpha$) of the left and right hand sides of equation~\ref{eq:triggerCorrelation} will be 1.
+If the \MET and lepton trigger selection requirements are uncorrelated, then the ratio ($\alpha$) expressed in Equation~\ref{eq:triggerCorrelation} will be 1.
 Table~\ref{tab:triggerCorrelation} shows that for the all channels, $\alpha$ only exhibits small differences from unity, indicating negligible correlation between the triggers used.
 
 \begin{table}[htbp]
@@ -811,7 +809,8 @@ As such, it was determined that systematic uncertainties of 1.0\%, 1.0\% and 2.0
 \subsection{Theoretical Uncertainties}\label{sec:theorySysts}
 \subsubsection{Cross section normalisation}
 The uncertainty associated with the cross sections of the simulated samples was taken into account by associating a normalisation uncertainty with each of the simulated samples considered.
-While the CMS Collaboration's search for tZq production using the trilepton channel at $\sqrt{s} = 13\TeV$ assumed a value of 30\% for this source of systematic uncertainty~\cite{Sirunyan:2017nbr}, it is now CMS policy to assume an uncertainty of 10\%.
+The CMS Collaboration's search for tZq production using the trilepton channel at $\sqrt{s} = 13\TeV$ assumed a value of 30\% for this source of systematic uncertainty, which reflected the theoretical uncertainties in the corresponding cross sections and a scaling up of a factor of two or more to account for possible modelling limitations~\cite{Sirunyan:2017nbr}.
+Since the publication of the above search, it is now CMS policy to assume an uncertainty of 10\%.
 
 \subsubsection{Factorisation and renormalisation scales}
 The impact of the uncertainty associated with the choice of factorisation ($\mu_{F}$) and renormalisation scales ($\mu_{R}$) used in perturbative QCD is evaluated by varying each scale up and down by a factor or 2 from their nominal value.

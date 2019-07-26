@@ -33,6 +33,9 @@ The following \emph{Parton Shower} (PS) stage models the hadronisation of the li
 The PS stage also includes simulating the radiation of gluons or quarks from the initial state (ISR) and final state (FSR) partons.
 This stage also includes the \emph{matching} of the separated particles produced by the ME stage that are above an energy threshold to the lower \pT particles in the PS stage in order to provide a coherent description of the event.
 Following the PS stage, the remaining particles undergo hadronisation using a non-perturbative modelling process, which is typically described by either the Lund String Model~\cite{Andersson:1983ia} or the Cluster Model~\cite{Winter:2003tt}.
+As the hadronisation of the proton remnants that have not participated in the hard interaction, known as the underlying event (UE), cannot be derived from first principles, the parameters that control the modelling of the UE have to be experimentally determined~\cite{Khachatryan:2015pea}.
+A set of such parameters that have been simultaneously fitted in order to describe certain aspects of a dataset are known as a \emph{tune}.
+
 The various event generators used in the production of MC samples used in this thesis are discussed in Section~\ref{subsec:eventGenerators}.
 
 Following the generation stage, the simulation and digitisation stages involves passing the generation output through a complete simulation of the CMS detector that has been with the GEANT4 program~\cite{geant4,Lefebure:1999wja}.
