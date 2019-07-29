@@ -8,6 +8,7 @@ Therefore, the analysis was designed to ensure that the backgrounds are understo
 To further enhance the separation of the signal from the background processes, a multivariate analysis is performed and is described in Section~\ref{sec:mvas}.
 
 This chapter describes the event selection criteria used for the signal and control regions used in this search, the blinding method used, and the background processes that were considered.
+The selection criteria for the physics objects described in Sections~\ref{sec:signalRegion}-\ref{sec:controlRegions} are defined in detail in Section~\ref{sec:physicsObjects}.
 
 \section{Signal Region}\label{sec:signalRegion}
 At leading order, the final state produced by the signal process consists of a top quark, a recoil quark and a Z boson, as illustrated in Figure~\ref{fig:feyn_tZq}.
@@ -19,19 +20,19 @@ These criteria ensure that there is a low lepton misidentification acceptance ra
 
 The presence of a Z boson in the final state means that the two leptons selected must be consistent with being from a Z boson decay.
 Thus, the leptons must have the same flavour and opposite charge and an invariant mass that is within $20\GeV$ of the measured Z boson mass of 91.2\GeV~\cite{Tanabashi:2018oca}.
-This mass window was found to sufficiently account for detector resolution effects.
+This mass window was chosen as was sufficiently wide to account for detector resolution effects, leading to a high acceptance rate of leptons produced from Z boson decays.
 
 As additional jets may be produced by gluon splitting from by initial or final state radiation the maximum number of jets considered is limited to six.
-Thus four to six jets are required to be present, each of which must satisfy $\pT > 30\GeVc$ and $|\eta| < 4.7$ and as passing the loose jet identification criteria to ensure a high selection efficiency while rejecting the majority of fake jets.
+Thus four to six jets are required to be present, each of which must satisfy $\pT > 30\GeVc$ and $|\eta| < 4.7$ and pass a highly efficient jet identification criteria.
 
 Given the top quark has a near 100\% probability of decaying into a b-quark and a W boson, the event selection requires at least one of the selected jets to be b-tagged and satisfy $|\eta| < 2.7$.
 The b-tagging algorithm and selection criteria are described in Section~\ref{subsubsec:bTag}
 As the W boson and the recoil quark may also be b-quarks, up to two of the selected jets are allowed to be b-jets.
+This limit was chosen as it was found that there was minimal signal (< 1\%) for b-jet multiplicities greater than two which would have been difficult to separate from the large background contributions present.  
 
 With all the jets identified, the W boson candidate constructed from the two jets with the closest invariant mass to the known W boson mass of 80.4\GeVcc~\cite{Tanabashi:2018oca} is considered.
 To ensure the two selected jets are consistent with a W boson decay, their invariant mass is required to be within $\pm 20\GeVcc$ of the known W boson mass.
 The leading b-jet however, is not considered to have been produced by the W boson decay as the hardest b-jet was found to be predominantly that from the decay of the top quark.
-As additional b-jets will be softer than the one produced from the top quark decay, the leading b-jet is not considered to have been produced from the W boson decay.
 
 To summarise the complete event selection for the signal region was chosen to be:
 
@@ -39,7 +40,7 @@ To summarise the complete event selection for the signal region was chosen to be
 \item Exactly two same flavour and opposite sign electrons or muons which pass the tight identification and isolation cuts. The leading and sub-leading electrons must have a $\pT > 35\GeVc (15\GeVc)$ and be within $|\eta| < 2.50$. The leading and sub-leading muons $\pT > 26\GeVc (20\GeVc)$ respectively and be within $|\eta| < 2.4$.
 \item  No additional electrons or muons that pass the same kinematic cuts and the veto or loose identification and isolation cuts respectively. 
 \item The invariant mass of the two selected leptons must be within $20\GeVcc$ of the known Z boson mass.
-\item Four to six jets that pass the loose jet ID requirements and have a $\pt > 30\GeVc$ and are within $|\eta| < 4.7$.
+\item Four to six jets that pass the jet identification requirements and have a $\pt > 30\GeVc$ and are within $|\eta| < 4.7$.
 \item One or two of the selected jets are considered to be b-tagged and are within $|\eta| < 2.4$.
 \item The invariant mass of the two jets that are closest to the known W boson mass must be within $20\GeVcc$. The leading b-jet is not considered to have originated from the W boson decay.
 \end{itemize}
@@ -48,8 +49,10 @@ To summarise the complete event selection for the signal region was chosen to be
 In any high energy particle physics analysis, accurate modelling of the background processes is essential in order to extract the signal yield.
 As the main challenge in the search for the dilepton final state of the tZq process is the understanding and constraining of its irreducible backgrounds, it is especially important to ensure that the background processes are accurately modelled in simulation.
 
-Therefore background enriched control regions that are topologically similar and orthogonal to the signal region were devised and used to validate the simulation of the Z+jets and \ttbar production process, as these were anticipated to be the most important background processes.
-The same trigger, event cleaning, and baseline event selection of two oppositely charged leptons, number of jets required and W and Z boson mass selection criteria are applied to the control regions so that they occupy a topologically similar phase space to the signal region.
+Therefore background enriched control regions were devised and used to check the modelling of the Z+jets and \ttbar production process, as these were anticipated to be the most important background processes.
+
+The control regions for both of these processes had the same trigger, event cleaning, and baseline event selection of two oppositely charged leptons, jet multiplicities and W and Z boson mass selections as the signal region in order  kinematic distributions are similar to the signal region's 
+
 Where required, these control regions would be extrapolated to provide a data-driven estimation of the background in the signal region as discussed in Section~\ref{sec:dataDrivenBackground}.
 
 The following sections contain the definitions of the Z+jets and \ttbar control regions used.
@@ -86,8 +89,8 @@ The performance of this control region is discussed in Section~\ref{subsec:ttbar
 Despite even the best intentions, there is the potential for experimental procedure to be inadvertently biased by previous observations~\cite{Roodman:2003rw}.
 In order to prevent this from happening, experiments are ``blinded'' so that the result is not known until the analysis has been optimised using simulation and/or data outside of the signal region.
 
-Before unblinding, a $\chi^{2}$-like variable was used to define a side-band region outside the expected signal region where data and simulation distributions could be compared prior to the training and testing of the BDT (see Section~\ref{sec:mvas}).
-The BDT was blinded by all steps of the optimisation, training and testing using only simulation.
+Before unblinding, a $\chi^{2}$-like variable was used to define a side-band region outside the expected signal region where data and simulation distributions could be compared prior to the training and testing of the MVA described in Section~\ref{sec:mvas}.
+The MVA was blinded throughout its optimisation, training and testing as it only made use of simulated events.
 Prior to unblinding pseudo-data was used to evaluate the expected outcomes of the measurement, as described in Chapter~\ref{chapter:results}.
 
 Unblinding this analysis was achieved by completely removing the selection requirement applied to the $\chi^{2}$-like variable.
@@ -205,11 +208,12 @@ Triggers and datasets used for each decay channel.
 
 
 \section{Event Cleaning}\label{sec:metFilters}
-After selecting an event that meets the trigger requirements described in Section~\ref{sec:triggerStrategy}, a number of filters are applied to remove events with beam or detector from further consideration in the analysis:
+beam backgrounds/detector noises
+After selecting an event that meets the trigger requirements described in Section \~\ref{sec:triggerStrategy}, a number of filters are applied to remove events containing beam backgrounds or detector noise from further consideration:
 
 \begin{itemize}
 \item \textbf{Primary Vertex Filter:} Ensures that the primary vertex is well reconstructed by requiring it to be within $|z| \leq 24\cm$ of the interaction point and within $d_{0} < 2\cm$ of the beam line.
-\item \textbf{Beam Halo Filter:} Beam halos are machine-induced particles (\ie produced from the beam interacting with the pipe and residual gas in the pipes) that circulate with the beam at radii up to 5m. This filter removes events with calorimeter and muon chamber energy deposits consistent with those expected to be produced by either halo particles or particle showers.
+\item \textbf{Beam Halo Filter:} Beam halos are machine-induced particles (\ie produced from the beam interacting with the pipe and residual gas in the pipes) that circulate with the beam at radii of up to 5\cm. This filter removes events with calorimeter and muon chamber energy deposits consistent with those expected to be produced by either halo particles or particle showers.
 These effects are caused by beam halos interacting with the collimator blocks that are used to clean halos from the beam.
 \item \textbf{HBHE Noise and Isolation Filters:} Remove events where anomalous noise is observed in the HCAL's hybrid photodiodes or readout boxes, which registers as large isolated energy deposits which would infer the presence of large \MET, by considering the channel multiplicities, pulse shape of the readout and the neighbouring activity in the calorimeters and tracker.
 \item \textbf{ECAL Trigger Primitive Filter:} The L1 trigger primitive readout can be used to estimate the energy deposited in approximately 70\% of the channels that lack regular data links and which ignored in the offline reconstruction. As trigger primitives have a narrower energy acceptance range than the read-out, when the energy is near their saturation energy the measured energy is likely to be underestimated, resulting in high anomalous \MET. 
@@ -219,7 +223,7 @@ These effects are caused by beam halos interacting with the collimator blocks th
 \end{itemize}
 
 \section{Physics Objects}\label{sec:physicsObjects}
-In order to meet suppress the backgrounds in the for a signal enriched region and background enriched control regions described in Sections~\ref{sec:signalRegion}-\ref{sec:controlRegions}, a number of event selection criteria are applied to the physics objects that have been reconstructed using the particle flow algorithm described in Chapter~\ref{chapter:data-mc}.
+In order select events consistent with the objects expected to be in the final states of the signal enriched region and background enriched control regions described in Sections~\ref{sec:signalRegion}-\ref{sec:controlRegions}, a number of event selection criteria are applied to the physics objects that have been reconstructed using the particle flow algorithm described in Chapter~\ref{chapter:data-mc}.
 The following section describes the selection criteria used in this analysis and how the final state products are used to reconstruct their mother particles.
 
 \subsection{Lepton Selection}
@@ -313,11 +317,10 @@ These criteria are:
 \item the muon must have hits that are present in at least six tracker layers in order to achieve a good \pT measurement.
 \end{itemize}
 
-The tight isolation, defined in Section~\ref{subsubsec:relIso}, applied to the resultant collection of muons is 95\% efficient, and rejects muons that have a relative isolation greater than 0.15 for a cone size of 0.4.
-This pileup correction for the relative isolation is described further in Section~\ref{subsubsec:relIso}.
-
+The tight muon isolation criteria applied to the resultant tight collection of muons is 95\% efficient and rejects muons that have a relative isolation greater than 0.15 for a cone size of 0.4.
 By definition all PF muons considered pass the loose identification cut.
 The loose isolation cut is 98\% efficient and rejects muons with a relative isolation that is greater than 0.25.
+The $\Delta\beta$ pileup corrections used for relative isolation with muons is described below in Section~\ref{subsubsec:relIso}.
 
 \subsubsection{Lepton Isolation}\label{subsubsec:relIso}
 A relative isolation variable $I^{rel}$ is used in order to:
@@ -352,7 +355,7 @@ I^{rel}_{\Delta\beta} = \sum p_T(CH) + max (0.0, \sum E_{\rm T}(NH) + \sum E_{\r
 Jets belonging to the PF jet collection are considered, which are reconstructed using the \emph{anti-\kt} algorithm~\cite{Cacciari:2008gp} with R = 0.4 with charged hadrons originating from \PU vertices excluded from clustering.
 
 Jets are considered in this analysis if they have a $\pT > 30\GeVc$, are within $|\eta| < 4.7$ and meet the \emph{loose} working point jet identification criteria developed by CMS.
-The loose WP was chosen as the tight working point didn't increase the sensitivity of the search presented.
+The loose WP was chosen not only because it had a high selection efficiency and rejected the majority of the fake tracks, but also because the tight working point didn't increase the sensitivity of the search.
 In addition, selected leptons (electron or muon) that lie within a cone of $\Delta R = 0.4$ of a selected jet are not considered to be a prompt leptons but are instead considered to be part of the jet in question.
 
 The loose jet working point was designed to reject the majority of fake tracks produced within the detector and/or electronics noise. 
