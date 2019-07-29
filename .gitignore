@@ -11,3 +11,5 @@ admorton_thesis.out
 *.tmp
 *.docx
 *.pdf
+
+*.DS_Store
