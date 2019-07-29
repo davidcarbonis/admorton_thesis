@@ -46,16 +46,14 @@ To summarise the complete event selection for the signal region was chosen to be
 \end{itemize}
 
 \section{Control Regions}\label{sec:controlRegions}
-In any high energy particle physics analysis, accurate modelling of the background processes is essential in order to extract the signal yield.
+For any high energy particle physics analysis lacking a high signal to background ratio, the accurate modelling of its background processes is essential in order to extract the signal yield and make a precise measurement.
 As the main challenge in the search for the dilepton final state of the tZq process is the understanding and constraining of its irreducible backgrounds, it is especially important to ensure that the background processes are accurately modelled in simulation.
 
-Therefore background enriched control regions were devised and used to check the modelling of the Z+jets and \ttbar production process, as these were anticipated to be the most important background processes.
-
-The control regions for both of these processes had the same trigger, event cleaning, and baseline event selection of two oppositely charged leptons, jet multiplicities and W and Z boson mass selections as the signal region in order  kinematic distributions are similar to the signal region's 
-
+Therefore, background enriched control regions whose kinematic distributions are similar to the signal region's were constructed and used to check the modelling of the Z+jets and \ttbar production process, as these were anticipated to be the most important background processes.	
+Consequently, the control regions for both of these processes had the same trigger, event cleaning, and baseline event selection of two oppositely charged leptons, jet multiplicities and W and Z boson mass selections as the signal region.
 Where required, these control regions would be extrapolated to provide a data-driven estimation of the background in the signal region as discussed in Section~\ref{sec:dataDrivenBackground}.
 
-The following sections contain the definitions of the Z+jets and \ttbar control regions used.
+%The following sections contain the definitions of the Z+jets and \ttbar control regions used.
 
 \subsection{Z+jets Background Control Regions}\label{subsec:zPlusJetsCR}
 Despite the majority of the Z+jets contribution being rejected by the signal selection criteria, it still represents the largest background contribution due to this high cross section for this process.
@@ -64,7 +62,7 @@ Given the size of this background it is essential to ensure that both the normal
 Initially, a high statistics Z+jets-enriched control region was defined by requiring that none of the jets present are b-tagged, in contrast to the one to two required for the signal region.
 Given the large cross section and that the vast majority of the jets produced in the Z+jets process are light quark jets, and the decays of \ttbar processes produce lots of b-jets, this produces a high purity region with large statistics.
 
-Despite this, as the kinematics of b-jets differ from light quark jets, this control region's topology may not be sufficiently similar to the signal region.
+Despite this, as the kinematics of b-jets differ from light quark jets, this control region may not provide a sufficiently similar kinematic phase space to the signal region.
 Thus an alternative Z+jets enriched control region was defined.
 This alternative control region required the same b-jet selection (one to two b-jets) as the signal region, but with an inverted W boson mass threshold and that the \MET present in the event was less than 50\GeV.
 The inverted W boson mass threshold rejects events containing a hadronically decaying W boson (such as the signal process) and the \MET threshold suppresses \ttbar which contains significant quantities of \MET from the leptonically decaying W bosons.
@@ -248,13 +246,14 @@ For any PF electron candidate to be considered in the final analysis it must mee
 
 The impact parameter cuts are applied to ensure that the electron originates from within the interaction point of the detector.
 
-The \emph{tight} and \emph{veto} working points (WPs) of the CMS recommended electron identification criteria, which are approximately  70\% and 95\% efficient respectively, are used to select electrons and to veto any additional electrons.
+The \emph{tight} and \emph{veto} working points (WPs) of the CMS recommended electron identification criteria, which are approximately 70\% and 95\% efficient respectively, are used to select electrons and to veto any additional electrons.
 This set of identification criteria uses a mixture of predetermined variables and multivariate analysis (MVA) tuned variables for both the barrel and endcap disks.
+The values of the latter were set by the MVA determining the optimum values for a given selection efficiency, using simulated Z+jets and \ttbar+jets events as the signal and background processes respectively.
 
 The predetermined variables are:
 \begin{itemize}
 \item \textbf{$N^{missing}_{inner hits}$:} As photons that subsequently convert into $e^{+} e^{-}$ pairs do not leave hits in the innermost layers of the tracker, electrons are rejected if the expected number of missing hits is exceeded.
-\item \textbf{a conversion veto} - is applied for all working points, where any electron which fails the photon-electron conversion criteria is rejected.
+\item \textbf{a conversion veto} - is applied for all working points. The photon to electron conversion veto tests if a pair of electron tracks originate from a common displaced vertex. Any electron which fails this criteria is rejected.
 \end{itemize}
 
 The MVA tuned variables include:
