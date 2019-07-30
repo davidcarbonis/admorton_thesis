@@ -685,8 +685,8 @@ The uncertainty associated with the \PU reweighting (see Section~\ref{subsec:puS
 %%Discussion of what PDFs are, is given in an earlier chapter 
 As PDFs are derived from data measured by different experiments, the uncertainties associated with each measurement must be propagated to the momentum fractions and energies that have been assigned to partons of the incoming protons.
 
-The impact of the PDF uncertainties are evaluated according to PDF4LHC recommendations~\cite{Butterworth:2015oua}, namely as the standard deviation of the weights of the nominal and the variations of the PDF set.
-For almost all of the MC samples considered, this is achieved by considering the nominal event weight and one hundred alternative PDF weights.
+The impact of the PDF uncertainties, along with the uncertainty associated with the value used for $\alpha_{S}$, are evaluated according to PDF4LHC recommendations~\cite{Butterworth:2015oua}, namely as the standard deviation of the weights of the nominal and the variations of the PDF set .
+For almost all of the MC samples considered, this is achieved by considering the nominal event weight and one hundred alternative PDF weights and the $\pm \sigma$ variations of $\alpha_{S}$ .
 
 The single top tW-channel samples are the exception to this as at the time of their generation it was not possible to generate the required per-event weights.
 In this case, the LHAPDF (Les Houches Accord Parton Distribution Function) library was used to access 100 eigenvalues from the NNPDF3.0 PDF set~\cite{Ball:2014uwa} in order to produce 200 alternative weights for each event.
@@ -916,7 +916,7 @@ These included the evaluation of:
 \item a number of different boosting algorithms;
 \item which simulated background processes should be included in the training processes;
 \item whether or not multiple BDTs trained on separate backgrounds would be more effective than a single BDT;
-\item how to determine which input variables possessed the greater discriminating power;
+\item how to determine which input variables possessed the greatest discriminating power (\ie the fraction of times they were used to split the decision tree);
 \item and which \emph{hyperparameters}, the set of options used to control BDT behaviour, and associated values gave the optimal classification performance.
 \end{itemize}
 
@@ -938,7 +938,7 @@ In order to determine the optimal set of input variables, recursive feature elim
 This process iteratively removes the least important input variable and re-trains the BDT until every input variable has been ranked in order of their removal.
 From this process, the highest ranked input variables are identified for use in the BDT.
 
-The input variables chosen by this method for the $ee$ and $\mu\mu$ channels are given in table~\ref{tab:selectedBdtVariables}.
+The input variables chosen by this method for the $ee$ and $\mu\mu$ channels and their discriminating powers are given in table~\ref{tab:selectedBdtVariables}.
 As can be seen in Figures~\ref{fig:corr_ee}-\ref{fig:corr_mumu}, the majority of these variables are weakly correlated, as indicated by pale squares, signifying that they provide unique and useful information to the BDT.
 Table~\ref{tab:allBdtVariables} in Appendix~\ref{app:bdt} provides a list of all the input variables that were considered.
 
@@ -1100,21 +1100,25 @@ As the response of the BDT classifier for both the training and testing samples 
 
 \begin{figure}[htb]
 \centering
+%\subfloat[$ee$ channel] {
 \includegraphics[width=0.97\textwidth]{figs/background-estimation/plots/response_ee.pdf}
+%}
 \\
+%\subfloat[$\mu\mu$ channel]{
 \includegraphics[width=0.97\textwidth]{figs/background-estimation/plots/response_mumu.pdf}
+%}
 \caption{
-Distributions of the input variables chosen for use with the BDT for the signal and background samples.}
+The BDT classifier's response for both training and testing samples for the signal and background processes for the $ee$ (top) and $\mu\mu$ (bottom) channels .}
 \label{fig:bdtResponse}
 \end{figure}
 
-Figures~\ref{fig:inputFeaturesDistributions_ee} and~\ref{fig:inputFeaturesDistributions_mumu} shows the distributions of the selected input variables in the signal and background samples for the $ee$ and $\mu\mu$ channels, respectively.
+The distributions of the chosen input variables for the $ee$ and $\mu\mu$ channels, shown in Figures~\ref{fig:inputFeaturesDistributions_ee} and~\ref{fig:inputFeaturesDistributions_mumu} respectively, illustrate how the small differences present between signal and background distributions can lead to the larger separation between them by the BDT classifiers shown in Figure~\ref{fig:bdtResponse}).
 
 \begin{figure}[htb]
 \centering
 \vspace*{-3.25cm}\hspace*{-2.3cm}\includegraphics[width=1.27\textwidth]{figs/background-estimation/plots/vars_ee.pdf}
 \vspace*{-1cm}\caption{
-Distributions of the input variables chosen for use with the BDT for the signal (red) and background (blue) samples for the $ee$ channel.}
+Distributions of the chosen input variables for the signal (red) and background (blue) samples for the $ee$ channel.}
 \label{fig:inputFeaturesDistributions_ee}
 \end{figure}
 
@@ -1129,9 +1133,9 @@ Distributions of the input variables chosen for use with the BDT for the signal 
 \clearpage
 \newpage
 \subsubsection*{BDT Evaluation}
-Following the optimisation of the BDT input variables and hyperparameters, the BDT is trained.
-The resultant output discriminant distributions shown in Figure~\ref{fig:prefitBDT}.
-These distributions illustrates that there is both good agreement between simulation and data and that the BDT is effective at separating the majority of the backgrounds from the signal.
+Following the optimisation of the BDT input variables and hyperparameters, the BDT was trained.
+The resultant output discriminant distributions shown in Figure~\ref{fig:prefitBDT}, illustrate that there is both good agreement between simulation and data and that the BDT is effective at separating the majority of the backgrounds from the signal.
+The 
 These output discriminant distributions are used to extract the signal strength and its statistical significance in the following chapter.
 
 \begin{figure}[h]
@@ -1140,6 +1144,6 @@ These output discriminant distributions are used to extract the signal strength 
 \\
 \includegraphics[width=0.78\textwidth]{figs/results/prefit_mumu.pdf}
 \caption{
-Pre-fit distributions of the BDT discriminant for the $ee$ channel (top) and $\mu\mu$ channel (bottom).}
+Pre-fit distributions of the BDT discriminant for the $ee$ channel (top) and $\mu\mu$ channel (bottom). The }
 \label{fig:prefitBDT}
 \end{figure}

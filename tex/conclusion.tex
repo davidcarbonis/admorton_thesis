@@ -32,7 +32,7 @@ While the modelling of the NPL background is not a major limiting factor of the 
 Once an accurate measurement of the tZq cross section can be made, it should be possible to probe the strength of the tZ and WWZ couplings.
 Given that tZq production is expected to be as sensitive to the strength of the WWZ coupling as WZ production, this process will provide valuable complimentary measurements of this coupling~\cite{Campbell:2013yla}.
 
-\section{Summary of the TMTT track finding processor studies}
+\section{Summary of the TMTT track finding processor system studies}
 The \emph{TMTT} collaboration has proposed a track finder system for the CMS tracker at the HL-LHC that is capable of contributing information to the CMS Level-1 trigger.
 The \emph{TMTT} track finding system identifies track candidates using time-multiplexed Hough Transforms in the \rphi plane, a Kalman Filter to filter these candidates and precisely fit track parameters to them and a duplicate removal process.
 In this thesis a number of studies were presented that were undertaken as part of the development of the this track finding system.
@@ -47,7 +47,7 @@ The ability of the proposed track finding system to reconstruct such low transve
 For the \HT, this involved using decreased precision \HT cells to mitigate against scattering causing stubs to be found in adjacent cells.
 The \KF's covariance matrix was modified to incorporate the uncertainty in the hit position cased by the effects of \MS by including a term that described the average scattering angle as a function of \pT.
 
-\section{Future system development}
+\section{Future track finding processor system development}
 If the the linearised $\chi^{2}$ track fitting algorithm is to be considered a viable alternative to the other track fitters developed for the \emph{TMTT} project.
 While only a small number of track derivatives are required for the calculations in the barrel region, it is uncertain whether there are sufficient resources to tabulate the endcap derivatives required on current hardware.
 If it can be demonstrated that current FPGAs can implement this algorithm, it will need to be demonstrated that the $\chi^{2}$ track fitter's performance is competitive with the \KF and \LR.
