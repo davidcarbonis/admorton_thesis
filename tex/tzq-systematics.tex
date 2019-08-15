@@ -16,7 +16,7 @@
 \section{Data and Simulation Samples}\label{sec:samples}
 Out of the 37.8\fbinv of  proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by the CMS experiment during 2016, 35.9\fbinv was certified by the collaboration as being of sufficient quality to be used for physics analysis.
 The difference between the certified value and the total data recorded is the result of various factors such as the unavailability of a detector due to power failures.
-Events are considered from the dataset certified to be good for physics if they pass one of the triggers in accordance with the trigger strategy described in Section~\ref{sec:triggerStrategy}.
+Events were considered from the dataset certified to be good for physics if they pass one of the triggers in accordance with the trigger strategy described in Section~\ref{sec:triggerStrategy}.
 Due to the prescaling of all of the electron triggers considered during the start of the most luminous data taking runs (as discussed in Section~\ref{sec:triggerStrategy}) the $ee$ channel uses a reduced dataset corresponding to 35.6\fbinv where none of the triggers considered were prescaled.
 
 The MC samples used to model both the model signal and background processes considered here are listed in table~\ref{tab:mcList}.
@@ -27,7 +27,7 @@ The NNPDF3.0 family of PDF sets~\cite{Ball:2012cx} was used in the generation of
 
 \begin{table}[htbp]
 \topcaption {
-The MC processes and their associated sample sizes, cross sections and generators used. Two generators are considered for the simulation of the Z+jets process; both samples are included in the table.
+The MC processes and their associated sample sizes, cross sections and generators used. Two generators were considered for the simulation of the Z+jets process; both samples are included in the table.
 }
 \label{tab:mcList}
   \centering
@@ -158,9 +158,9 @@ The dedicated MC samples used to estimate some theoretical uncertainties. The ta
 %
 
 \section{Simulation Corrections}\label{sec:simCorrections}
-Simulation is unable to fully recreate all the effects observed in data corrective scale factors are used to reweight MC samples on a per event basis to account for possible discrepancies.
+Simulation is unable to fully recreate all the effects observed in data corrective scale factors were used to reweight MC samples on a per event basis to account for possible discrepancies.
 
-These scale factors are used to correct the simulation for any discrepencies in the lepton identification, isolation and reconstruction efficiencies, lepton and jet energy scales and resolutions, b-tagging efficiencies, the poor modelling of pileup in simulation, and the detector resolutions observed in data.
+These scale factors were used to correct the simulation for any discrepencies in the lepton identification, isolation and reconstruction efficiencies, lepton and jet energy scales and resolutions, b-tagging efficiencies, the poor modelling of pileup in simulation, and the detector resolutions observed in data.
 
 \subsection{Miscalibrated Tracker APV Chips}\label{subsec:hipEffect}
 During the first half of data taking in 2016 the silicon strip detector suffered from an instantaneous-luminosity-dependent hit finding inefficiency.
@@ -171,10 +171,10 @@ Despite this mitigation however, there was still a negative impact on the recons
 This reduced detector efficiency was accounted for by using the weighted average of the scale factors that have been derived separately for both the affected and unaffected portions of the dataset.
 
 \subsection{Lepton Efficiency}\label{subsec:leptonRecoSFs}
-The identification, isolation and reconstruction efficiency scale factors for leptons are produced centrally by CMS and are determined by using a large sample of of $Z \rightarrow l^{+} l ^{-}$ events and the so-called \emph{tag-and-probe} method~\cite{CMS:2008rxa}.
+The identification, isolation and reconstruction efficiency scale factors for leptons were produced centrally by CMS and were determined by using a large sample of of $Z \rightarrow l^{+} l ^{-}$ events and the so-called \emph{tag-and-probe} method~\cite{CMS:2008rxa}.
 From a high-purity sub-sample of these events, where the dilepton invariant mass lies within the window $60 < m_{ll} < 120 \GeV$, the lepton that passes a tight selection criteria is ``tagged'' and other lepton is ``probed'' against a loose selection criteria.
 For each type and lepton flavour, the efficiency is the fraction of events where the probe leptons passed the selection criteria under study.
-The corrective scale factors determined from these efficiencies are used to reweight events as functions of their leptons' \pt, $\eta$, and flavour.
+The corrective scale factors determined from these efficiencies were used to reweight events as functions of their leptons' \pt, $\eta$, and flavour.
 
 The efficiencies of the triggers used in the analysis were determined using the \emph{cross-trigger} method used in the measurement of the \ttbar production cross section using the $e\mu$ final state by the CMS collaboration~\cite{Khachatryan:2016kzg}.
 The implementation of this methodology was validated by reproducing the \ttbar analysis's trigger efficiencies and their statistical uncertainties.
@@ -188,7 +188,7 @@ The trigger efficiency is estimated as follows:
 
 where $N_{X trigger}$ is the number of events that have passed the analysis' lepton selection criteria and the cross-triggers, and $N_{X triggers + lepton triggers}$ is $N_{X trigger}$ and the number of events that additionally passed at least one of the lepton triggers for the relevant lepton flavour.
 
-As the trigger requirements are applied to both simulated and data events, a scale factor of the ratio of the trigger efficiency in data and in simulation is calculations and used to weight the simulation.
+As the trigger requirements were applied to both simulated and data events, a scale factor of the ratio of the trigger efficiency in data and in simulation was calculated and used to weight the simulation.
 For both the $ee$ and $\mu\mu$ channels in the signal region and the $e \mu$ channel for the \ttbar control region, a constant scale factor was found to be sufficient to account for the differences between data and simulation.
 
 The efficiencies were determined using data and simulated \ttbar events.
@@ -224,33 +224,33 @@ The associated systematic uncertainties are discussed in Section~\ref{sec:system
 
 \subsection{Lepton Energy Corrections}\label{subsec:leptonEnergyCorrections}
 \subsubsection{Electron Regression and Energy Scale and Smearing Corrections}
-Energy regression and energy scale and smearing corrections that have been produced by the CMS Electron Gamma (EGM) Physics Object Group are applied to the reconstructed electrons.
+Energy regression and energy scale and smearing corrections that have been produced by the CMS Electron Gamma (EGM) Physics Object Group were applied to the reconstructed electrons.
 The energy regression uses detector information to correct the electron energy recorded in order to obtain the best possible resolution of the reconstructed particle.
-The energy scale and smearing corrections are used to correct the energy scale and resolution in simulation.
+The energy scale and smearing corrections were used to correct the energy scale and resolution in simulation.
 
 \subsubsection{Rochester Corrections}
-The muon momentum scale and resolution correction methods developed by the University of Rochester~\cite{rochester}, known as \emph{Rochester Corrections}, are used to remove any muon momentum bias arising from any possible detector misalignment and any error in the measurement of the magnetic field for both MC and data.
-These corrections are derived using a sample of high \pt $> 20\GeVc$ muons from Z $ \rightarrow \mu^{+}\mu^{-}$ decays using a two-step method.
+The muon momentum scale and resolution correction methods developed by the University of Rochester~\cite{rochester}, known as \emph{Rochester Corrections}, were used to remove any muon momentum bias arising from any possible detector misalignment and any error in the measurement of the magnetic field for both MC and data.
+These corrections were derived using a sample of high \pt $> 20\GeVc$ muons from Z $ \rightarrow \mu^{+}\mu^{-}$ decays using a two-step method.
 The first of the two steps determines a correction factor that is defined as the difference in the mean inverse transverse momenta of the muons from a perfectly aligned simulation and reconstructed data or simulation.
-These corrections are tuned in the second step using the $M_{\mu}M_{\mu\prime}$ peak for a perfectly aligned detector to calibrate the corrections.
+These corrections were tuned in the second step using the $M_{\mu}M_{\mu\prime}$ peak for a perfectly aligned detector to calibrate the corrections.
 This removes any dependence on detector efficiency or physics modelling.
 
-The Rochester Corrections are applied to each muon as an event weight that is a function of the muon's charge, \pt, $\eta$ and $\phi$.
+The Rochester Corrections were applied to each muon as an event weight that is a function of the muon's charge, \pt, $\eta$ and $\phi$.
 
 \subsection{Jet Energy Corrections}\label{subsec:jesjer}
-As described in Section~\ref{subsubsec:JECs}, the Jet Energy Corrections are applied to account for the non-uniform response in \pT and $\eta$ of the detector by comparing the differences between the generator level and detector level responses in simulation and any residual differences between simulation and data.
+As described in Section~\ref{subsubsec:JECs}, the Jet Energy Corrections were applied to account for the non-uniform response in \pT and $\eta$ of the detector by comparing the differences between the generator level and detector level responses in simulation and any residual differences between simulation and data.
 
-In addition to these corrections, as the Jet Energy Resolution (JER) observed in data is approximately 10\% poorer than that observed in simulation, the 4-vectors of simulated jets are smeared as functions of generator level and reconstructed \pt and $\eta$ to account for this~\cite{Khachatryan:2016kdb}.
+In addition to these corrections, as the Jet Energy Resolution (JER) observed in data is approximately 10\% poorer than that observed in simulation, the 4-vectors of simulated jets were smeared as functions of generator level and reconstructed \pt and $\eta$ to account for this~\cite{Khachatryan:2016kdb}.
 
 \subsection{b-tagging Efficiency}\label{subsec:btagEff}
 The CMS B-Tag and Vertexing (BTV) Physics Object Group measures the b-tagging efficiency and misidentification rates for b- and light-flavoured jets in data and MC simulation considering both multijet and \ttbar processes for the algorithms that they support~\cite{Sirunyan:2017ezt}.
-From these measurements b-tagging efficiency scale factors are produced and provided for analysts to apply to simulated events to correct for differences observed between data and simulation.
-These scale factors, as functions of the jet flavour, \pT and $\eta$, are used to alter the weight of the MC events.
-This methodology was chosen as it involves only changing the weight of the selected MC events which, unlike other methods, avoids events migrating into different b-tag multiplicity bins and having events with potentially undefined variables such as the top mass.
+From these measurements b-tagging efficiency scale factors were produced and provided for analysts to apply to simulated events to correct for differences observed between data and simulation.
+These scale factors, as functions of the jet flavour, \pT and $\eta$, were used to alter the weight of the MC events.
+This methodology was chosen as it involves only changing the weight of the selected MC events which, unlike other methods, avoids events migrating into different b-tag multiplicity bins and having events with potentially undefined variables such as the top mass (\ie the top mass cannot be defined in an event with zero b-tagged jets).
 
 \subsection{\PU Modelling}\label{subsec:puSF}
 It is challenging to model variations in the number of \PU interactions that result from the changing LHC conditions.
-To achieve this, MC events are reweighted as a function of the number of primary vertices so that the simulated PU distributions resemble those observed in data.
+To achieve this, MC events were reweighted as a function of the number of primary vertices so that the simulated PU distributions resemble those observed in data.
 
 The \PU SF is determined as a function of the number of primary vertices, $n_{PV}$, by comparing the $n_{PV}$ distribution in minimum bias data over the running period considered to the corresponding $n_{PV}$ distribution in simulated events.
 
@@ -373,7 +373,7 @@ N_{data}^{OS non-prompt} = (N_{data}^{SS} - N^{SS}_{real + mis-ID}) \cdot \frac{
 where $N_{data}^{SS}$ is the total number of same sign events observed in data and $N^{SS}_{real + mis-ID}$ is the expected number of real same sign events and events with charge misidentification.
 
 The ratio of opposite sign and same sign NPLs in simulation, $N_{MC}^{OS non-prompt}$ and $N_{MC}^{SS non-prompt}$, respectively, is used to appropriately normalise this estimate and uses the generator level information in simulation to correctly identify how the leptons were produced.
-The \ttZ, \ttW, and single top simulated samples that have sufficient statistics in the same sign control region are used to calculate this ratio as these simulation indicates that these processes are the predominant source of non-prompt leptons for this analysis.
+The \ttZ, \ttW, and single top simulated samples that have sufficient statistics in the same sign control region were used to calculate this ratio as these simulation indicates that these processes are the predominant source of non-prompt leptons for this analysis.
 
 The event yields of the simulated samples and data following the full event selection in the same lepton sign control region, the same sign background contributions not accounted for by simulation, ratio of same sign to opposite sign event yields and the data-driven NPL contribution estimate are given in table~\ref{tab:fakeLeptonYields}.
 
@@ -661,9 +661,9 @@ For any meaningful and robust measurement to be made in any physics analysis, it
 This is particularly important for this analysis as the low signal process production cross section compared to those of the backgrounds result in the scale of the statistical uncertainties being comparable to that of the systematic uncertainties of the measurement.
 
 These sources of uncertainty originate from either experimental or theoretical uncertainties and influence the normalisation of the distributions considered and/or the shape of the distributions.
-The statistical uncertainties arising from the size of the simulated samples available are also considered.
+The statistical uncertainties arising from the size of the simulated samples available were also considered.
 
-These uncertainties are treated as nuisance parameters in the signal extraction, which is described, along with the impact of the uncertainties on the result, in Section~\ref{sec:statisticalModel}.
+These uncertainties were treated as nuisance parameters in the signal extraction, which is described, along with the impact of the uncertainties on the result, in Section~\ref{sec:statisticalModel}.
 
 \subsection{Experimental Uncertainties}
 \subsubsection*{Jet Energy Corrections}
@@ -675,7 +675,7 @@ The uncertainty associated with the JER smearing is accounted for by varying the
 \subsubsection*{Missing Transverse Energy Uncertainties}
 As missing transverse energy is calculated from the sum of the \pT of all PF objects in a given event along with the remaining unclustered energy deposits, the uncertainties associated with both have to be considered.
 
-The impact of the uncertainties associated with both the JES and JER on the PF \MET are accounted for by propagating the JEC uncertainties through to the \MET and evaluating the impact they have.
+The impact of the uncertainties associated with both the JES and JER on the PF \MET were accounted for by propagating the JEC uncertainties through to the \MET and evaluating the impact they have.
 As the unclustered energy remains uncorrected, the impact on the \MET uncertainty is evaluated by varying the contributions to the unclustered energy from each particle by their respective resolution.
 
 \subsubsection*{Pileup Reweighting}
@@ -685,14 +685,14 @@ The uncertainty associated with the \PU reweighting (see Section~\ref{subsec:puS
 %%Discussion of what PDFs are, is given in an earlier chapter 
 As PDFs are derived from data measured by different experiments, the uncertainties associated with each measurement must be propagated to the momentum fractions and energies that have been assigned to partons of the incoming protons.
 
-The impact of the PDF uncertainties, along with the uncertainty associated with the value used for $\alpha_{S}$, are evaluated according to PDF4LHC recommendations~\cite{Butterworth:2015oua}, namely as the standard deviation of the weights of the nominal and the variations of the PDF set .
+The impact of the PDF uncertainties, along with the uncertainty associated with the value used for $\alpha_{S}$, were evaluated according to PDF4LHC recommendations~\cite{Butterworth:2015oua}, namely as the standard deviation of the weights of the nominal and the variations of the PDF set .
 For almost all of the MC samples considered, this is achieved by considering the nominal event weight and one hundred alternative PDF weights and the $\pm \sigma$ variations of $\alpha_{S}$ .
 
-The single top tW-channel samples are the exception to this as at the time of their generation it was not possible to generate the required per-event weights.
+The single top tW-channel samples were the exception to this as at the time of their generation it was not possible to generate the required per-event weights.
 In this case, the LHAPDF (Les Houches Accord Parton Distribution Function) library was used to access 100 eigenvalues from the NNPDF3.0 PDF set~\cite{Ball:2014uwa} in order to produce 200 alternative weights for each event.
 
 \subsubsection*{b-tagging Uncertainties}
-The uncertainties associated with the b-tagging scale factors described in Section~\ref{subsec:btagEff} are obtained by varying their value by $\pm 1\sigma$.
+The uncertainties associated with the b-tagging scale factors described in Section~\ref{subsec:btagEff} were obtained by varying their value by $\pm 1\sigma$.
 
 \subsubsection*{Non-prompt Lepton Contributions}
 Based on the experience of other analyses which determine similar background contributions, CMS recommends a 30\% normalisation uncertainty to conservatively cover the uncertainties related to the variation of the ratio of opposite-sign over same-sign events as a function of the lepton flavour and the cut level. 
@@ -705,7 +705,7 @@ Based on the experience of other analyses which determine similar background con
 The overall uncertainty in the integrated luminosity collected by CMS in 2016 was estimated to be 2.5\%~\cite{CMS:2017_lumi}.
 
 \subsubsection*{Lepton Efficiencies}
-The uncertainties associated with the lepton identification, isolation and reconstruction efficiency scale factors discussed in Section~\ref{subsec:leptonRecoSFs} are varied by $\pm 1 \sigma$.
+The uncertainties associated with the lepton identification, isolation and reconstruction efficiency scale factors discussed in Section~\ref{subsec:leptonRecoSFs} were varied by $\pm 1 \sigma$.
 
 Several systematic studies were performed to estimate the systematic uncertainty associated with the trigger scale factors.
 These studies were the comparison of the trigger efficiencies \ttbar and Z+jets processes in simulation and the strength of the correlation of the \MET trigger selection to the lepton triggers used in the analysis.
@@ -815,11 +815,11 @@ Since the publication of the above search, it is now CMS policy to assume an unc
 \subsubsection{Factorisation and renormalisation scales}
 The impact of the uncertainty associated with the choice of factorisation ($\mu_{F}$) and renormalisation scales ($\mu_{R}$) used in perturbative QCD is evaluated by varying each scale up and down by a factor or 2 from their nominal value.
 
-Events weights are produced for the variation of $\mu_{F}$ and $\mu_{R}$ at the ME level, where both scales are varied individually and simultaneously in order to evaluate the impact of the uncertainties for these scales.
+Events weights were produced for the variation of $\mu_{F}$ and $\mu_{R}$ at the ME level, where both scales are varied individually and simultaneously in order to evaluate the impact of the uncertainties for these scales.
 The impact of varying $\mu_{F}$ and $\mu_{R}$ for the PS level however, was evaluated through the use of dedicated samples for certain processes.
 These centrally produced samples are listed in Table~\ref{tab:theorySampleList} as the ``scale up'' and ``scale down'' samples. 
 
-The scale variations for initial-state radiation and final-state radiation are considered separately for the \ttbar simulation samples.
+The scale variations for initial-state radiation and final-state radiation were considered separately for the \ttbar simulation samples.
 The dedicated \ttbar samples used to evaluation the impact of independently varying the scale for ISR and FSR are listed in table~\ref{tab:theorySampleList} as the ``isr/fsr up'' and ``isr/fsr down'' samples.
 
 As mentioned above in Section~\ref{subsec:pdfSysts}, it was not possible for the single top tW production simulation samples to be produced with per-event weights to account for the matrix element factorisation and renormalisation scales.
@@ -832,10 +832,10 @@ These dedicated simulated samples are listed in table~\ref{tab:theorySampleList}
 
 \subsection{Pre-Fit Impact of the Systematic Uncertainties}\label{sec:uncertainitiesPreFitImpact}
 The impact of the each of the systematics on the event yield (in percentage) of the simulated processes in the signal region following the application of the signal region selection criteria is shown in Table~\ref{tab:systImpact}.
-These rates, whilst giving an overview of which systematics are the most important, do not show how the shape of the fitted variable, the BDT discriminant, is influenced by each uncertainty.
+These rates, whilst giving an overview of which systematics were the most important, do not show how the shape of the fitted variable, the BDT discriminant, is influenced by each uncertainty.
 
-Prior to performing the likelihood fit described in Chapter~\ref{chapter:results}, the theoretical sources of uncertainty are observed to have the greatest impact on the observed yields of the simulated samples.
-While the majority of the experimental uncertainties have a smaller impact on the event yields than the theoretical uncertainties, the JER and PDF uncertainties are observed to have a greatest impact on the yields of the Z+jets and tZq processes, respectively.
+Prior to performing the likelihood fit described in Chapter~\ref{chapter:results}, the theoretical sources of uncertainty were observed to have the greatest impact on the observed yields of the simulated samples.
+While the majority of the experimental uncertainties have a smaller impact on the event yields than the theoretical uncertainties, the JER and PDF uncertainties were observed to have a greatest impact on the yields of the Z+jets and tZq processes, respectively.
 
 \begin{sidewaystable}[htbp]
 \topcaption{Rate impact of systematics on MC templates}\label{tab:systImpact}
@@ -884,7 +884,7 @@ When the last node is reached, the object is classified as either signal (S) or 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.75\textwidth]{figs/background-estimation/decisionTree.pdf}
-\caption{A simple decision tree where repeated cuts a member of the set of variables $\textbf{x}$ are perfomed until a leaf node is reached and the object is classified as either signal (S) or background (B)~\cite{Hocker:2007ht}.
+\caption{A simple decision tree where repeated cuts a member of the set of variables $\textbf{x}$ are performed until a leaf node is reached and the object is classified as either signal (S) or background (B)~\cite{Hocker:2007ht}.
 }
 \label{fig:decisionTree}
 \end{figure}
@@ -928,7 +928,7 @@ Both the input variables and model hyperparameters were chosen separately for $e
 
 Once the optimisation is complete, the BDT is trained.
 The BDT produces the output discriminant for each of the data and simulation samples considered.
-These output discriminant distributions are used to extract the signal strength and its statistical significance, as described in Chapter~\ref{chapter:results}.
+These output discriminant distributions were used to extract the signal strength and its statistical significance, as described in Chapter~\ref{chapter:results}.
 
 \subsubsection*{BDT Input Variable Optimisation}
 From the selected reconstructed physics objects, a large number of possible input variables were constructed and considered as inputs for the BDT.
@@ -939,7 +939,7 @@ This process iteratively removes the least important input variable and re-train
 From this process, the highest ranked input variables are identified for use in the BDT.
 
 The input variables chosen by this method for the $ee$ and $\mu\mu$ channels and their discriminating powers are given in table~\ref{tab:selectedBdtVariables}.
-As can be seen in Figures~\ref{fig:corr_ee}-\ref{fig:corr_mumu}, the majority of these variables are weakly correlated, as indicated by pale squares, signifying that they provide unique and useful information to the BDT.
+As can be seen in Figures~\ref{fig:corr_ee}-\ref{fig:corr_mumu}, the majority of these variables were weakly correlated, as indicated by pale squares, signifying that they provide unique and useful information to the BDT.
 Table~\ref{tab:allBdtVariables} in Appendix~\ref{app:bdt} provides a list of all the input variables that were considered.
 
 \begin{table}[htb]
@@ -967,7 +967,7 @@ Table~\ref{tab:allBdtVariables} in Appendix~\ref{app:bdt} provides a list of all
     totHtOverPt & Total ${\ensuremath{H_{\mathrm{T}}}}$ divided by total \pt & $4.487 \times 10^{-2}$  & $3.284 \times 10^{-2}$  \\
     leadJetEta & Leading jet $\eta$ & $4.467 \times 10^{-2}$ & $6.138 \times 10^{-2}$  \\
     jetHt & ${\ensuremath{H_{\mathrm{T}}}}$ of all the jets in an event & - & $5.629 \times 10^{-2}$ \\ 
-    secJetPt & Second jet \pt & $4.453 \times 10^{-2}$ & -  \\
+    secJetPt & Second jet \pT & $4.453 \times 10^{-2}$ & -  \\
     zlQuark2DelR & $\Delta R$ between the leading lepton and W boson's subleading jet & $4.093\times 10^{-2}$ & - \\
     thirdJetPt & Third jet \pt & $3.720 \times 10^{-2}$  & $3.753 \times 10^{-2}$  \\ 
     zlb1DelR & $\Delta R$ between the leading lepton and leading b-tagged jet & - & $3.245 \times 10^{-2}$ \\    
@@ -1046,7 +1046,7 @@ Lepton ${\ensuremath{H_{\mathrm{T}}}}$, total ${\ensuremath{H_{\mathrm{T}}}}$ di
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/zLep2BjetDelR_NPL_ee_wMass_ee.pdf}
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/prompt_ee_ttbarInc/fourthJetPt_NPL_ee_wMass_ee.pdf}
 \caption{
-Second jet \pt, $\Delta R$ between subleading lepton and leading b-tagged jet, $\Delta R$ between subleading lepton and leading b-tagged jet and fourth jet \pT distributions for the $ee$ channel comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
+Second jet \pT, $\Delta R$ between subleading lepton and leading b-tagged jet, $\Delta R$ between subleading lepton and leading b-tagged jet and fourth jet \pT distributions for the $ee$ channel comparing the agreement between data and simulation for the variables used as input variables in the BDT training.}
 \label{fig:inputFeaturesDataSimAgreement4}
 \end{figure}
 
@@ -1096,7 +1096,7 @@ Further descriptions of all of the hyperparameters available are given in~\cite{
 \end{table}
 
 Figure~\ref{fig:bdtResponse} shows the BDT responses for the $ee$ and $\mu\mu$ channels for both the training and testing samples.
-As the response of the BDT classifier for both the training and testing samples are consistent with each other, this implies that negligible overtraining has occurred. 
+As the response of the BDT classifier for both the training and testing samples were consistent with each other, this implies that negligible overtraining had occurred. 
 
 \begin{figure}[htb]
 \centering
@@ -1116,7 +1116,7 @@ The distributions of the chosen input variables for the $ee$ and $\mu\mu$ channe
 
 \begin{figure}[htb]
 \centering
-\vspace*{-3.25cm}\hspace*{-2.3cm}\includegraphics[width=1.27\textwidth]{figs/background-estimation/plots/vars_ee.pdf}
+\vspace*{-3.25cm}\hspace*{-2.3cm}\includegraphics[width=1.27\textwidth]{figs/background-estimation/plots/vars_ee_corrected.pdf}
 \vspace*{-1cm}\caption{
 Distributions of the chosen input variables for the signal (red) and background (blue) samples for the $ee$ channel.}
 \label{fig:inputFeaturesDistributions_ee}
@@ -1124,7 +1124,7 @@ Distributions of the chosen input variables for the signal (red) and background 
 
 \begin{figure}[htb]
 \centering
-\vspace*{-3.25cm}\hspace*{-2.3cm}\includegraphics[width=1.27\textwidth]{figs/background-estimation/plots/vars_mumu.pdf}
+\vspace*{-3.25cm}\hspace*{-2.3cm}\includegraphics[width=1.27\textwidth]{figs/background-estimation/plots/vars_mumu_corrected.pdf}
 \vspace*{-1cm}\caption{
 Distributions of the input variables chosen for use with the BDT for the signal (red) and background (blue) samples for the $\mu\mu$ channel.}
 \label{fig:inputFeaturesDistributions_mumu}
@@ -1135,8 +1135,51 @@ Distributions of the input variables chosen for use with the BDT for the signal 
 \subsubsection*{BDT Evaluation}
 Following the optimisation of the BDT input variables and hyperparameters, the BDT was trained.
 The resultant output discriminant distributions shown in Figure~\ref{fig:prefitBDT}, illustrate that there is both good agreement between simulation and data and that the BDT is effective at separating the majority of the backgrounds from the signal.
-The 
-These output discriminant distributions are used to extract the signal strength and its statistical significance in the following chapter.
+
+The output distributions were binned using a recursive binning strategy that ensured that each bin contained at least one background event and that the statistical error did not exceed 10\% for either signal or background~\cite{combineBinning}.
+These conditions were recommend by the developers of the statistical analysis framework used to extract the signal strength and its statistical significance to ensure bins contained sufficient statistics to avoid causing:
+\begin{itemize}
+\item statistical fluctuations that would result in an artificial enhancement or suppression of the sensitivity in a given bin;
+\item excessively large fluctuations in shape-based systematic uncertainties, with respect to the nominal, that would influence the measurement's sensitivity;
+\item ill-defined probability density functions, due to bins populated by zero background or signal events, resulting in zero trust of the significance of a data event as it is impossible to determine if the significance is the result of a negligible background or lack of statistics.
+\end{itemize}
+
+
+%EMAIL from Pietro:
+%>> - Fluctuations:
+%>>             * statistical fluctuations in the yields enhance or
+%>> suppress artificially your sensitivity in some bin.
+%>> This is tricky, because when you compute significance you will be
+%>> seeing only the increase in significance
+%>> due to the "favourable" fluctuations, whereas the "unfavourable" won't
+%>> count so much
+%>>             * huge fluctuations in shape-based systematic
+%>> uncertainties: this happens both when the alternative shape
+%>> is derived using a different MC sample (e.g. scale, PDF), and when it
+%>> is derived by changing some weight or parameter or cut (e.g. JES,
+%>> b-tagging); you could get bins that because of the limited statistics
+%>> of the alternative shape in that bin they have an excessively high or
+%>> excessively low variation with respect to the nominal, which would
+%>> influence your sensitivity.
+%>>
+%>> - Ill-defined PDFs:
+%>>             * Some of your bins could be populated by zero events in
+%>> the total background or in the signal or in the data, because of the
+%>> super-fine binning. This is somehow due to fluctuations, but what I
+%>> want to point out is that when this happens in the tails of the
+%>> distributions then these cases would typically result in a situation
+%>> in which you have a flat zero PDF for your background, perhaps some
+%>> non-zero signal contribution (at least in the typical
+%>> high-[mass|met|mt2] search), and eventually some sporadical data
+%>> event: here you would have a huge sensitivity, but you cannot trust
+%>> your result because you have no way of knowing if the zero background
+%>> PDF is due to lack of statistics or to the background being actually
+%>> negligible. One can usually argue that what happens is the former
+%>> (lack of statistics) but that anyways the latter is happening
+%>> (background is anyway negligible), but then you would be stuck with
+%>> not knowing how to estimate your systematic uncertainty on that null
+%>> background PDF (again, because you don't have statistics for
+%>> estimating it).
 
 \begin{figure}[h]
 \centering
