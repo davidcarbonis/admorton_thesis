@@ -312,7 +312,7 @@ Data & 5274.0 & 9750.0 & 15024.0    \\
 \end{tabular}
 \end{table}
 
-In Figure~\ref{fig:SR_cutFlow} it can be seen that the jet cleaning and tight isolation criteria for leptons has significantly reduced the non-prompt lepton contributions, completely removing the W+jets process.
+In Figure~\ref{fig:SR_cutFlow} it can be seen that the jet cleaning and tight isolation criteria for leptons has significantly reduced the contributions from processes lacking a leptonic Z boson decay, completely removing the W+jets process.
 The remaining backgrounds in the signal region consist of processes that involve the decay of a  real Z boson into two leptons or the leptonic decay of two W bosons where the resultant two leptons are consistent with a Z boson decay.
 The two dominant background processes are Z+jets and \ttbar, with the single top tW-channel, \ttbarZ, WZ and ZZ processes contributing a similar order of events as tZq processes.
 The remaining single top (tHq, tWZ, s-channel, t-channel), \ttbarW, \ttbarH, WW and triboson backgrounds produce contributions smaller than the signal process.
@@ -385,7 +385,7 @@ The event yields of the simulated samples and data following the full event sele
 \hline
 Source &  $ee$ & $\mu\mu$  \\ 
 \hline
-$N_{\ttbar}^{SS}$ & 5.85$\pm$ .30 & 8.93$\pm$1.47    \\
+$N_{\ttbar}^{SS}$ & 5.85$\pm$0.30 & 8.93$\pm$1.47    \\
 $N_{\ttbar V}^{SS}$ & 4.81$\pm$0.11 & 11.81 $\pm$0.10  \\ 
 $N_{single top}^{SS}$ & 0.90$\pm$0.18 & 0.97 $\pm$0.11    \\
 $N_{Z+jets}^{SS}$ & 37.53$\pm$6.85 & 0.0 $\pm$ 0.0  \\
@@ -422,11 +422,19 @@ Consequently, it was decided to use the 0-bjet region to validate the modelling 
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/cutFlow_log.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_ttbarInc/cutFlow_log.pdf}
+%% old submission plots
+%\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/cutFlow_log.pdf}
+%\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_ttbarInc/cutFlow_log.pdf}
+%% new corrections plots
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded_corrections/DY_control_old_prompt_ee_LO/cutFlow_log.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded_corrections/DY_control_old_prompt_mumu_LO/cutFlow_log.pdf}
 \\
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/cutFlow_log.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_DYamcatnlo/cutFlow_log.pdf}
+%% old submission plots
+%\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/cutFlow_log.pdf}
+%\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_DYamcatnlo/cutFlow_log.pdf}
+%% new corrections plots
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded_corrections/DY_control_old_prompt_ee_NLO/cutFlow_log.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded_corrections/DY_control_old_prompt_mumu_NLO/cutFlow_log.pdf}
 \caption{
 The overall event yield for data and simulation at each stage of applying the 0-bjet region selection criteria and simulation corrections for when the LO (top) and NLO (bottom) simulation samples are used to model the Z+jets processes.
 The event yields for the $ee$ channel and the $\mu\mu$ channel are shown on the left and right, respectively.
@@ -446,8 +454,12 @@ Data and simulation comparison plots for other distributions in the 0+bjet Z+jet
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_ttbarInc/numbJets_SingleTop_lepSel_mumu.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_DYamcatnlo/numbJets_SingleTop_lepSel_mumu.pdf}
+%% old submission plots
+%\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_ttbarInc/numbJets_SingleTop_lepSel_mumu.pdf}
+%\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_mumu_DYamcatnlo/numbJets_SingleTop_lepSel_mumu.pdf}
+%% new corrections plots
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded_corrections/DY_control_old_prompt_mumu_LO/numbJets_SingleTop_lepSel_mumu.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded_corrections/DY_control_old_prompt_mumu_NLO/numbJets_SingleTop_lepSel_mumu.pdf}
 \caption{
 The distributions of the number of jets in the 0-bjet region following the lepton selection criteria and associated simulation corrections for the LO (left) and NLO (right) Z+jets samples in the $\mu\mu$ channel.
 }
@@ -456,17 +468,33 @@ The distributions of the number of jets in the 0-bjet region following the lepto
 
 \begin{figure}[!hp]
 \centering
-\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/leadingJetPt_SingleTop_jetSel_ee.pdf}
-\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/leadingJetPt_SingleTop_jetSel_ee.pdf}
+%% old submission plots
+%\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/leadingJetPt_SingleTop_jetSel_ee.pdf}
+%\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/leadingJetPt_SingleTop_jetSel_ee.pdf}
+%% new corrections plots
+\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded_corrections/DY_control_old_prompt_ee_LO/leadingJetPt_SingleTop_jetSel_ee.pdf}
+\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded_corrections/DY_control_old_prompt_ee_NLO/leadingJetPt_SingleTop_jetSel_ee.pdf}
 \\
-\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/secondJetPt_SingleTop_jetSel_ee.pdf}
-\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/secondJetPt_SingleTop_jetSel_ee.pdf}
+%% old submission plots
+%\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/secondJetPt_SingleTop_jetSel_ee.pdf}
+%\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/secondJetPt_SingleTop_jetSel_ee.pdf}
+%% new corrections plots
+\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded_corrections/DY_control_old_prompt_ee_LO/secondJetPt_SingleTop_jetSel_ee.pdf}
+\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded_corrections/DY_control_old_prompt_ee_NLO/secondJetPt_SingleTop_jetSel_ee.pdf}
 \\
-\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/thirdJetPt_SingleTop_jetSel_ee.pdf}
-\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/thirdJetPt_SingleTop_jetSel_ee.pdf}
+%% old submission plots
+%\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/thirdJetPt_SingleTop_jetSel_ee.pdf}
+%\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/thirdJetPt_SingleTop_jetSel_ee.pdf}
+%% new corrections plots
+\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded_corrections/DY_control_old_prompt_ee_LO/thirdJetPt_SingleTop_jetSel_ee.pdf}
+\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded_corrections/DY_control_old_prompt_ee_NLO/thirdJetPt_SingleTop_jetSel_ee.pdf}
 \\
-\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/fourthJetPt_SingleTop_jetSel_ee.pdf}
-\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/fourthJetPt_SingleTop_jetSel_ee.pdf}
+%% old submission plots
+%\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_ttbarInc/fourthJetPt_SingleTop_jetSel_ee.pdf}
+%\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded/DY_control_old_prompt_ee_DYamcatnlo/fourthJetPt_SingleTop_jetSel_ee.pdf}
+%% new corrections plots
+\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded_corrections/DY_control_old_prompt_ee_LO/fourthJetPt_SingleTop_jetSel_ee.pdf}
+\includegraphics[width=0.45\textwidth]{figs/background-estimation/plots/unblinded_corrections/DY_control_old_prompt_ee_NLO/fourthJetPt_SingleTop_jetSel_ee.pdf}
 \caption{
 The distributions of the leading four jets \pt in the 0-bjet region following the application of the jet selection criteria and simulation corrections for the LO (left) and NLO (right) Z+jets samples in the $ee$ channel.
 }
