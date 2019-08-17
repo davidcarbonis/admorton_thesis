@@ -154,17 +154,19 @@ The trigger logic used for each of the CMS datasets considered, where \emph{EM} 
 \label{tab:triggerCombo}
   \centering
 %  \resizebox{\textwidth}{!}{
-   \begin{tabular}{cc}
+   \begin{tabular}{ccc}
    \hline
-   \textbf{Dataset} & \textbf{Trigger logic}  \\
+   \textbf{Final State} & \textbf{Dataset} & \textbf{Trigger logic}  \\
    \hline
-   Muon and Electron & EM and !EE and !MM \\
+   \multirow{3}{*}{$e\mu$} & Muon and Electron & EM and !EE and !MM \\
+   & Single Muon & M and !E and !EE and !MM and !EM \\
+   & Single Electron & E and !M and !EE and !MM and !EM \\
    \hline
-   Double Muon & MM and !EM and !EE\\
-   Single Muon & M and !E and !EE and !MM and !EM \\
+   \multirow{2}{*}{$\mu\mu$} & Double Muon & MM and !EM and !EE\\
+   & Single Muon & M and !E and !EE and !MM and !EM \\
    \hline  
-   Double Electron & EE and !EM and !MM \\
-   Single Electron & E and !M and !EE and !MM and !EM \\
+   \multirow{2}{*}{$ee$} & Double Electron & EE and !EM and !MM \\
+   & Single Electron & E and !M and !EE and !MM and !EM \\
    \hline
  \end{tabular}%}
 \end{table}

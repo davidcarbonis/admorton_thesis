@@ -779,27 +779,34 @@ Currently it is not understood how incorporating \MS into the \KF causes this, b
 \end{figure}
 
 Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the helix parameters as a function of track $\frac{1}{\pT}$ in simulation for both of the \MS coefficients considered and for when \MS was not accounted for at all in the \KF covariance matrix.
+As incorporating \MS increased the measurement error in the \rphi plane, impacting the  the negligible difference  
 
-As incorporating \MS increased measurement error in the \rphi plane
+
+Whilst incorporating \MS 
+there were negligible differences in the $z_{0}$ and cot$\theta$ resolutions for  
+Except No significant improvement in the resolutions of any of the helix parameters was observed ... 
+
 Given that the increase the lack of improvement in the $\frac{q}{\pT}$ resolution was not 
 
 improved by the inclusion of either of the \MS process noise terms considered 
 
 and is noticeably worse in the range $0.18 1/\GeV < \pt < 0.26 1/\GeVc$ than when \MS is not considered at all.
+
 While the cause of this degradation in the $\frac{q}{\pT}$ resolution is as yet to be determined, it is suspected, like the increased duplicate rate in the same \pT range, to be related to the reduced precision of \HT cells.
 
 %%
 % phi0 = no difference at high pT but MS better at low pT
+%% Greater weighting 
 % z0 = slightly better at high pT? k(const) is best at low pT
 % cot(theta) = k (layer) and k = 0 is roughly the same and k(const) is arguably better
 % So both constants better at low pT for phi0, but 
 
-In contrast, the accuracy of resolutions of the other three helix parameters are not degraded 
+In contrast, the resolutions of the other three helix parameters were not degraded by the inclusion of either of the \MS process noise terms.
+Whilst there is little improvement in 
 
-%
-The resolutions of both \MS coefficients are superior across all \pt compared to when \MS was not considered at all, with the constant \MS coefficient typically providing more slightly more precise measurements than the layer-dependent coefficient.  
-As expected, lower transverse momentum tracks experience the greatest improvements given that this is the regime in which \MS dominates.
-%
+%% OLD TEXT
+%The resolutions of both \MS coefficients are superior across all \pt compared to when \MS was not considered at all, with the constant \MS coefficient typically providing more slightly more precise measurements than the layer-dependent coefficient.  
+%As expected, lower transverse momentum tracks experience the greatest improvements given that this is the regime in which \MS dominates.
 %%
 
 These improvements are further illustrated by the distribution of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ in Figure~\ref{fig:2GeVTiltChi2Ndf}.
@@ -813,18 +820,29 @@ In contrast to when the \KF lacks a noise term accounting for \MS, the distribut
 \label{fig:2GeVTiltChi2Ndf}	
 \end{figure}
 
-As shown in figures~\ref{fig:2GeVTiltEff} and~\ref{fig:kfHelixParametersResVsInvPt} and table~\ref{tab:trackFindingPerformance2GeVKF}, there are only small differences in the performance of the two \MS coefficients.
+As shown in Figures~\ref{fig:2GeVTiltEff} and~\ref{fig:kfHelixParametersResVsInvPt} and Table~\ref{tab:trackFindingPerformance2GeVKF}, there were only small differences in the performance of the two \MS coefficients.
 This is due the amount of material traversed by a track not being constant for a single layer given that the amount of material contributions in the Inner and Outer Trackers, between the Inner and Outer Trackers and services varies as a function of pseudorapidity~\cite{P2TrackerTDR}.
 
 Following the improved performance considering the impact of \MS on the \HT and \KF discussed in these studies, these optimisations have been incorporated into the firmware for both TFP components.
 The constant \MS term was chosen for inclusion into the \KF as it demonstrated the best performance and required the least resources to implement.
 
 \subsection{Summary}\label{subsec:Tmtt2GeV}
-The development the \emph{TMTT} collaboration's proposed track finding system for the CMS Phase-II Outer Tracker included software studies into the  performance of several track fitting algorithms and the robustness of the system when reducing the minimum track \pT threshold from 3\GeV to 2\GeV.
+The development the \emph{TMTT} collaboration's proposed track finding system for the CMS Phase-II Outer Tracker included software studies into the performance of several track fitting algorithms and the robustness of the system when reducing the minimum track \pT threshold from 3\GeV to 2\GeV.
 
-A linearised $\chi^{2}$ track fitting algorithm was developed and shown to be capable of efficiently finding tracks
+A software implementation of a linearised $\chi^{2}$ track fitting algorithm was developed and shown to be capable of efficiently finding tracks and fitting precise helix parameters to the track candidates found by the \HT.
+Following the parallel development of both the linearised $\chi^{2}$ and the \KF track fitting algorithms however, 
 
-The robustness 
+
+Following the parallel development of both the linearised $\chi^{2}$ track fit and the \KF algorithms, it was decided that development of the former would be discontinued.
+This decision was made as the \KF was capable of achieving both a higher track finding efficiency with 100.0\% purity for matched tracks and achieving $z_{0}$ and $cot(\theta)$ resolutions in the forward regions that were comparable to the expected offline resolution.
+In addition, considerable progress had been made with a firmware implementation of the \KF.
+
+In contrast, the linearised $\chi^{2}$ track was not competitive in terms of track resolution and reconstruction ability, especially with respect to the stricter tracking efficiency definition.
+There were also concerns over the potential feasibility of tabulating all (or the most frequently used) track derivatives in the endcap disks for FPGAs that were commercially available at the time.
+
+%%%
+
+The flexibility   
 
 %After investigating modifications to the \HT and \KF algorithms to improve upon the default performance obtained for track finding and fitting of low \pT ($< 3\GeV$) tracks.
 %The decreased precision \HT cells enables the recovery of some of the tracks previously lost due to \MS, and the inclusion of a process noise term allows the \KF to take the impact of \MS into account, as shown in Figure~\ref{fig:2GeVTiltChi2Ndf} where the $\frac{\chi^{2}}{ndf}$ of the matched tracks fitted has not only decreased at high \pT where \MS dominates, but also the smaller effects experienced at higher \pT.
