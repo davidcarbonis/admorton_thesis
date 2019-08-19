@@ -989,8 +989,8 @@ FUNCTION {misc}
   if$
   howpublished output
   format.date output
-  format.url output
-  format.urldate output
+  url output
+  urldate output
   note output
   new.block
   % note output
