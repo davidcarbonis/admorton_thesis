@@ -727,6 +727,7 @@ FUNCTION {article}
       format.eprint.paren output
     }
   if$
+  doi output
   new.sentence
   note output
   fin.entry
