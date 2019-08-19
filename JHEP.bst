@@ -232,7 +232,6 @@ FUNCTION {emphasize}
 FUNCTION {format.doi}
 { doi empty$
   { ""  }
-%  { doiprefix doi * "\href{https://doi.org/" doi * "}" * }
   {"\href{https://doi.org/" doi * "}" * }
   if$
 }
@@ -240,8 +239,8 @@ FUNCTION {format.doi}
 FUNCTION {formatfull.doi}
 { doi empty$
   { ""  }
-  {"\href{https://doi.org/" doi *
-   "}{DOI}" * }
+  {"\href{https://doi.org/" doi * "}" *
+    "{{\ttfamily " * doiprefix * ":" * doi * "}}" *}
   if$
 }
 
@@ -727,7 +726,7 @@ FUNCTION {article}
       format.eprint.paren output
     }
   if$
-  doi output
+  formatfull.doi output
   new.sentence
   note output
   fin.entry
@@ -1018,7 +1017,6 @@ FUNCTION {techreport}
   new.block
   % note output
   doi output
-  url output
   fin.entry
 }
 
