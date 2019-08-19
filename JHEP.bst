@@ -291,18 +291,54 @@ FUNCTION {format.authors}
   if$
 }
 
+
+%%%
+FUNCTION {format.eprint.newarXivid}
+{ eprint #1 #6 substring$ "arXiv:" =
+    {"\href{https://arxiv.org/abs/" eprint #7 #10 substring$ * "}" *
+        "{{\ttfamily " * eprint #7 #10 substring$ * "}}" *}
+    {"\href{https://arxiv.org/abs/" eprint #1 #10 substring$  * "}" *
+        "{{\ttfamily arXiv:" * eprint #1 #10 substring$ * "}}" *}
+  if$
+}
+
+FUNCTION {format.eprint.oldarXivid}
+{ archive empty$
+    {"\href{https://arxiv.org/abs/" eprint * "}" *
+        "{{\ttfamily " * eprint * "}}" *}
+    {"\href{https://arxiv.org/abs/" archive *  "/" * eprint * "}" *
+        "{{\ttfamily " * archive * "/" * eprint * "}}" *}
+  if$
+}
+
+
 FUNCTION {format.eprint}
 { eprint empty$
-     { ""}
-     { archive empty$
-          {"\href{https://arxiv.org/abs/" eprint * "}" *
-             "{{\ttfamily " * eprint * "}}" *}
-          {"\href{https://arxiv.org/abs/" archive *  "/" * eprint * "}" *
-             "{{\ttfamily " * archive * "/" * eprint * "}}" *}
-       if$
-     }
-     if$
+    { ""}
+        { eprint #1 #6 substring$ "arXiv:" =
+          eprint #5 #1 substring$ "." =
+          or
+              { format.eprint.newarXivid }
+              { format.eprint.oldarXivid }
+        if$
+      }
+  if$
 }
+%%%
+
+
+%FUNCTION {format.eprint}
+%{ eprint empty$
+%     { ""}
+%     { archive empty$
+%          {"\href{https://arxiv.org/abs/" eprint * "}" *
+%             "{{\ttfamily " * eprint * "}}" *}
+%          {"\href{https://arxiv.org/abs/" archive *  "/" * eprint * "}" *
+%             "{{\ttfamily " * archive * "/" * eprint * "}}" *}
+%       if$
+%     }
+%     if$
+%}
 
 FUNCTION {format.eprint.paren}
 { eprint missing$ { "" } { eprint empty$ { "" }
@@ -815,7 +851,7 @@ FUNCTION {inbook}
   format.eprint output
   new.block
   % note output
-  doi output
+  formatfull.doi output
   fin.entry
 }
 
@@ -907,7 +943,7 @@ FUNCTION {manual}
   format.date output
   new.block
   % note output
-  doi output
+  formatfull.doi output
   fin.entry
 }
 
@@ -924,7 +960,7 @@ FUNCTION {mastersthesis}
   format.date "year" output.check
   new.block
   % note output
-  doi output
+  formatfull.doi output
   fin.entry
 }
 
@@ -950,7 +986,7 @@ FUNCTION {misc}
   format.note output
   new.block
   % note output
-  doi output
+  formatfull.doi output
   fin.entry
   empty.misc.check
 }
@@ -967,7 +1003,7 @@ FUNCTION {phdthesis}
   format.eprint output
   new.block
   % note output
-  doi output
+  formatfull.doi output
   fin.entry
 }
 
@@ -989,7 +1025,7 @@ FUNCTION {proceedings}
   format.date "year" output.check
   new.block
   % note output
-  doi output
+  formatfull.doi output
   fin.entry
 }
 
@@ -1005,7 +1041,7 @@ FUNCTION {techreport}
   format.date "year" output.check
   new.block
   % note output
-  doi output
+  formatfull.doi output
   url output
   fin.entry
 }
