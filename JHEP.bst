@@ -61,6 +61,8 @@ ENTRY
 INTEGERS { output.state before.all mid.sentence after.quote after.sentence
 		after.quoted.block after.block }
 
+STRINGS { doiprefix }
+
 FUNCTION {init.state.consts}
 { #0 'before.all :=
   #1 'mid.sentence :=
@@ -68,7 +70,11 @@ FUNCTION {init.state.consts}
   #3 'after.sentence :=
   #4 'after.quoted.block :=
   #5 'after.block :=
+
+  "doi:" 'doiprefix :=      % text prefix printed before DOI ref; typically "doi:"
+
 }
+
 
 STRINGS { s t ref }
 
@@ -225,6 +231,7 @@ FUNCTION {emphasize}
 FUNCTION {format.doi}
 { doi empty$
   { ""  }
+%  { doiprefix doi * "\href{https://doi.org/" doi * "}" * }
   {"\href{https://doi.org/" doi * "}" * }
   if$
 }
@@ -236,6 +243,7 @@ FUNCTION {formatfull.doi}
    "}{DOI}" * }
   if$
 }
+
 
 FUNCTION {format.url}
 {
@@ -447,7 +455,7 @@ FUNCTION {format.date.paren}
 FUNCTION {format.collaboration}
 { collaboration empty$
     { "" }
-    { "{\scshape " collaboration * "} " * "collaboration" * }
+    { "{\scshape " collaboration * "} " * "Collaboration" * }
   if$
 }
 
@@ -728,7 +736,7 @@ FUNCTION {article}
   { journal missing$
     { format.eprint output }
     { journal empty$ { format.eprint output } {
-      formatfull.doi * "{" * journal emphasize before.all 'output.state := "journal" output.check
+      format.doi * "{" * journal emphasize before.all 'output.state := "journal" output.check
       % added \href{doi} and { before journal
       % Slv
       blank.sep
@@ -787,7 +795,7 @@ FUNCTION {book}
   format.date "year" output.check
   doi empty$
     {}
-    { formatfull.doi "{" * doi * "}" * "DOI" output.check }
+    { format.doi "{" * doi * "}" * "DOI" output.check }
   if$
   fin.entry
 }
@@ -851,7 +859,7 @@ FUNCTION {inbook}
   format.eprint output
   new.block
   % note output
-  formatfull.doi output
+  doi output
   fin.entry
 }
 
@@ -880,7 +888,7 @@ FUNCTION {incollection}
   format.eprint output
   new.block
   % note output
-  formatfull.doi output
+  doi output
   fin.entry
 }
 
@@ -905,7 +913,7 @@ FUNCTION {inproceedings}
     }
   if$
   format.eprint output
-  formatfull.doi output
+  doi output
   format.url output
   fin.entry
 }
@@ -943,7 +951,7 @@ FUNCTION {manual}
   format.date output
   new.block
   % note output
-  formatfull.doi output
+  doi output
   fin.entry
 }
 
@@ -960,7 +968,7 @@ FUNCTION {mastersthesis}
   format.date "year" output.check
   new.block
   % note output
-  formatfull.doi output
+  doi output
   fin.entry
 }
 
@@ -983,10 +991,10 @@ FUNCTION {misc}
   format.date output
   format.url output
   format.urldate output
-  format.note output
+  note output
   new.block
   % note output
-  formatfull.doi output
+  doi output
   fin.entry
   empty.misc.check
 }
@@ -1003,7 +1011,7 @@ FUNCTION {phdthesis}
   format.eprint output
   new.block
   % note output
-  formatfull.doi output
+  doi output
   fin.entry
 }
 
@@ -1025,7 +1033,8 @@ FUNCTION {proceedings}
   format.date "year" output.check
   new.block
   % note output
-  formatfull.doi output
+  doi output
+  format.url output
   fin.entry
 }
 
@@ -1041,7 +1050,7 @@ FUNCTION {techreport}
   format.date "year" output.check
   new.block
   % note output
-  formatfull.doi output
+  doi output
   url output
   fin.entry
 }
@@ -1051,9 +1060,11 @@ FUNCTION {unpublished}
   format.collaboration output
   format.authors "author" output.check
   format.title.p "title" output.check
-  blank.sep
+%  blank.sep
   % note "note" output.check
   format.date output
+  format.tr.number output.nonnull
+  url output
   fin.entry
 }
 
