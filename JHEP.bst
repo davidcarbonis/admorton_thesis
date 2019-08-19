@@ -50,6 +50,7 @@ ENTRY
     volume
     year
     archive
+    archivePrefix
     eprint
     report
     collaboration
@@ -300,53 +301,18 @@ FUNCTION {format.authors}
 }
 
 
-%%%
-FUNCTION {format.eprint.newarXivid}
-{ eprint #1 #6 substring$ "arXiv:" =
-    {"\href{https://arxiv.org/abs/" eprint #7 #10 substring$ * "}" *
-        "{{\ttfamily " * eprint #7 #10 substring$ * "}}" *}
-    {"\href{https://arxiv.org/abs/" eprint #1 #10 substring$  * "}" *
-        "{{\ttfamily arXiv:" * eprint #1 #10 substring$ * "}}" *}
-  if$
-}
-
-FUNCTION {format.eprint.oldarXivid}
-{ archive empty$
-    {"\href{https://arxiv.org/abs/" eprint * "}" *
-        "{{\ttfamily " * eprint * "}}" *}
-    {"\href{https://arxiv.org/abs/" archive *  "/" * eprint * "}" *
-        "{{\ttfamily " * archive * "/" * eprint * "}}" *}
-  if$
-}
-
-
 FUNCTION {format.eprint}
 { eprint empty$
-    { ""}
-        { eprint #1 #6 substring$ "arXiv:" =
-          eprint #5 #1 substring$ "." =
-          or
-              { format.eprint.newarXivid }
-              { format.eprint.oldarXivid }
-        if$
-      }
-  if$
+     { ""}
+     { archivePrefix empty$
+          {"\href{https://arxiv.org/abs/" eprint * "}" *
+             "{{\ttfamily " * eprint * "}}" *}
+          {"\href{https://arxiv.org/abs/" eprint * "}" *
+             "{{\ttfamily " * archivePrefix * ":" * eprint * "}}" *}
+       if$
+     }
+     if$
 }
-%%%
-
-
-%FUNCTION {format.eprint}
-%{ eprint empty$
-%     { ""}
-%     { archive empty$
-%          {"\href{https://arxiv.org/abs/" eprint * "}" *
-%             "{{\ttfamily " * eprint * "}}" *}
-%          {"\href{https://arxiv.org/abs/" archive *  "/" * eprint * "}" *
-%             "{{\ttfamily " * archive * "/" * eprint * "}}" *}
-%       if$
-%     }
-%     if$
-%}
 
 FUNCTION {format.eprint.paren}
 { eprint missing$ { "" } { eprint empty$ { "" }
