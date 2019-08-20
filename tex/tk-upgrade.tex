@@ -12,7 +12,7 @@ The High-Luminosity Large Hadron Collider (HL-LHC) upgrade is intended to increa
 This corresponds to an average number of proton-proton interactions (\PU) per 40\MHz bunch crossing of between 140 and 200 and a total integrated luminosity of up to of 3000\fbinv being provided to both the ATLAS and CMS experiments during the 10 year planned lifetime of the HL-LHC.
 
 The installation of the HL-LHC upgrade is planned to take occur during Long Shutdown 3 (LS3), which is currently expected to start during 2024~\cite{ApollinariG.:2017ojx}. 
-The timing of LS3 is motivated in part by the need to replace the inner triplet quadrupole magnets that focus the beams at the ATLAS and CMS collision regions are expected to be near life-expired due to radiation exposure~\cite{hl-lhc-prelim-design-report,CMSCollaboration:2015zni}.
+The timing of LS3 is motivated in part by the need to replace the inner triplet quadrupole magnets that focus the beams at the ATLAS and CMS collision regions are expected to be near life-expired due to radiation exposure~\cite{hl-lhc-prelim-design-report,CMS_Upgrade_TP}.
 
 The instantaneous luminosity, $L$, of an accelerator and its beam parameters are related by~\cite{ApollinariG.:2017ojx}: 
 
@@ -29,7 +29,7 @@ The new, more radiation tolerant, quadrupole magnets to be installed during LS3 
 
 \section{The Phase-II Outer Tracker Upgrade}\label{sec:tk-upgrade}
 To meet the significant challenges of, and exploit, the increased instantaneous luminosity delivered by the HL-LHC, the CMS detector will be substantially upgraded.
-This upgrade will take place during LS3 and will not only deliver the improved radiation hardness to handle the increase in radiation from the increased \PU but also greater detector granularity to reduce occupancy and enhanced bandwidth and triggering capabilities to avoid compromising physics potential~\cite{P2TrackerTDR,CMSCollaboration:2015zni}.
+This upgrade will take place during LS3 and will not only deliver the improved radiation hardness to handle the increase in radiation from the increased \PU but also greater detector granularity to reduce occupancy and enhanced bandwidth and triggering capabilities to avoid compromising physics potential~\cite{P2TrackerTDR,CMS_Upgrade_TP}.
 
 The Phase-II upgrade will see the entire silicon tracking detector being replaced with one comprised of a pixel Inner Tracker and pixel and strip Outer Tracker that have the following properties:
 \begin{itemize}
@@ -37,8 +37,8 @@ The Phase-II upgrade will see the entire silicon tracking detector being replace
 \item \textbf{Increased sensor granularity} is required to ensure that the channel occupancy is kept at or below the per cent (per mille) level for the Outer (Inner) Tracker to ensure that a high track reconstruction efficiency and a low misidentification rate is maintained under the increased \PU conditions. This will also enable improved track separation in dense environments, such as high \pT jets, compared to the current pixel detector.
 \item \textbf{Reduced material in the tracking volume} will significantly enhance the performance of the detector.
 %\item \textbf{robust pattern recognition} - enabling fast and efficient track finding, which is especially important for the HLT, in the high \PU environment.
-\item \textbf{Level-1 trigger contributions} are required in order to maintain L-1 trigger performance. It has been shown that the performance of the L-1 trigger will deteriorate in the high luminosity environment from both the rate increase and the reduced efficiencies of the L-1 selection algorithms~\cite{CMSCollaboration:2015zni}.
-Raising the upgraded calorimeters' and muon chambers' trigger thresholds would have minimal impact on the rate, and would negatively impact sensitivity to BSM physics that predicts new low mass particles~\cite{CMSCollaboration:2015zni}.
+\item \textbf{Level-1 trigger contributions} are required in order to maintain L-1 trigger performance. It has been shown that the performance of the L-1 trigger will deteriorate in the high luminosity environment from both the rate increase and the reduced efficiencies of the L-1 selection algorithms~\cite{CMS_Upgrade_TP}.
+Raising the upgraded calorimeters' and muon chambers' trigger thresholds would have minimal impact on the rate, and would negatively impact sensitivity to BSM physics that predicts new low mass particles~\cite{CMS_Upgrade_TP}.
 Therefore the L1 bandwidth and latency will be increased (from 100\kHz to 750\kHz and from $3.2\mus$ to $12.5\mus$ respectively) and tracking information will be included in the L-1 decision process to preserve and improve trigger performance.
 \item \textbf{An extended tracking acceptance} of  up to $|\eta| = 4$ in the forward region will greatly improve the overall physics capabilities of the CMS experiment as the density of jets associated with vector boson increases with pseudorapidity~\cite{CMS_Upgrade_TP}. By extension, measurements of missing transverse energy, total energy and jet b-tagging acceptance will also be improved.
 \end{itemize}
@@ -779,8 +779,11 @@ Currently it is not understood how incorporating \MS into the \KF causes this, b
 \end{figure}
 
 Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the helix parameters as a function of track $\frac{1}{\pT}$ in simulation for both of the \MS coefficients considered and for when \MS was not accounted for at all in the \KF covariance matrix.
+The lack of 
 As incorporating \MS increased the measurement error in the \rphi plane, impacting the  the negligible difference  
 
+
+%% forecast of z0 depends on phi0, tanL depends only on tanL
 
 Whilst incorporating \MS 
 there were negligible differences in the $z_{0}$ and cot$\theta$ resolutions for  
