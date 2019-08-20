@@ -158,7 +158,9 @@ The dedicated MC samples used to estimate some theoretical uncertainties. The ta
 %
 
 \section{Simulation Corrections}\label{sec:simCorrections}
-Simulation is unable to fully recreate all the effects observed in data corrective scale factors were used to reweight MC samples on a per event basis to account for possible discrepancies.
+Simulation is unable to fully recreate all the effects observed in data, either because 	
+
+corrective scale factors are used to reweight MC samples on a per event basis to account for possible discrepancies.
 
 These scale factors were used to correct the simulation for any discrepencies in the lepton identification, isolation and reconstruction efficiencies, lepton and jet energy scales and resolutions, b-tagging efficiencies, the poor modelling of pileup in simulation, and the detector resolutions observed in data.
 
@@ -186,13 +188,13 @@ The trigger efficiency is estimated as follows:
 \epsilon_{trigger} = \frac{N_{X triggers + lepton triggers}}{N_{X triggers}} \;
 \end{equation}
 
-where $N_{X trigger}$ is the number of events that have passed the analysis' lepton selection criteria and the cross-triggers, and $N_{X triggers + lepton triggers}$ is $N_{X trigger}$ and the number of events that additionally passed at least one of the lepton triggers for the relevant lepton flavour.
+where $N_{X triggers}$ is the number of events that have passed the analysis' lepton selection criteria and the cross-triggers, and $N_{X triggers + lepton triggers}$ is $N_{X trigger}$ and the number of events that additionally passed at least one of the lepton triggers for the relevant lepton flavour.
 
 As the trigger requirements were applied to both simulated and data events, a scale factor of the ratio of the trigger efficiency in data and in simulation was calculated and used to weight the simulation.
 For both the $ee$ and $\mu\mu$ channels in the signal region and the $e \mu$ channel for the \ttbar control region, a constant scale factor was found to be sufficient to account for the differences between data and simulation.
 
 The efficiencies were determined using data and simulated \ttbar events.
-The resultant trigger efficiency scale factors applied to simulation are given in table~\ref{tab:triggerSFs} with their associated statistical uncertainties.
+The resultant trigger efficiency scale factors applied to simulation are given in Table~\ref{tab:triggerSFs} with their associated statistical uncertainties.
 The associated systematic uncertainties are discussed in Section~\ref{sec:systematics}.
 
 \begin{table}[htbp]
@@ -586,29 +588,29 @@ The event yields, and the statistical uncertainties associated with them, follow
    \hline
    \textbf{MC process} & \textbf{$e\mu$}  \\
    \hline
-	tZq\@: & 0.59$\pm$0.01  \\
-	tWZ\@: & 0.12	$\pm$0.03  \\
-	tHq\@: & 0.43$\pm$0.02  \\
-	ttW\@: & 13.34$\pm$0.17   \\
-	ttZ\@: & 12.87$\pm$0.15   \\
-	ttH\@: & 10.27$\pm$0.14  \\
-	\ttbar: & 3841.50$\pm$34.40   \\
-	tW\@: & 158.13$\pm$5.13   \\
+	tZq\@: & 0.42$\pm$0.01  \\
+	tWZ\@: & 0.14	$\pm$0.03  \\
+	tHq\@: & 0.32$\pm$0.01  \\
+	ttW\@: & 11.90$\pm$0.15   \\
+	ttZ\@: & 10.90$\pm$0.13   \\
+	ttH\@: & 8.71$\pm$0.13  \\
+	\ttbar: & 3288.4$\pm$31.40   \\
+	tW\@: & 112.59$\pm$5.76   \\
 	s-channel\@: &  0.0$\pm$0.0 \\
-	t-channel\@: & 1.22$\pm$0.29 \\
-	WW\@: & 3.65$\pm$0.86  \\
-	WZ\@: & 1.03$\pm$0.25 \\
-	ZZ\@: & 0.19$\pm$0.03 \\
-	WWW\@: & 0.29$\pm$0.09     \\
-	WWZ\@: & 0.14$\pm$0.06     \\
-	WZZ\@: & 0.01$\pm$0.01     \\
+	t-channel\@: & 0.70$\pm$0.27 \\
+	WW\@: & 1.77$\pm$0.56  \\
+	WZ\@: & 0.61$\pm$0.16 \\
+	ZZ\@: & 0.11$\pm$0.02 \\
+	WWW\@: & 0.18$\pm$0.06     \\
+	WWZ\@: & 0.09$\pm$0.05     \\
+	WZZ\@: & 0.0$\pm$0.00     \\
 	ZZZ\@: & 0.0$\pm$0.0     \\
 	W+jets\@: & 0.0$\pm$0.0     \\
 	Z+jets\@: & 0.0$\pm$0.0     \\
 	\hline
-	Total MC\@: & 4043.78$\pm$27.29     \\
+	Total MC\@: & 3366.84$\pm$31.93     \\
 	\hline
-	Data\@: & 4184.0$\pm$64.68     \\
+	Data\@: & 3396.0     \\
    \hline
  \end{tabular}
 \end{table}
@@ -622,9 +624,9 @@ Consequently, a data-driven estimate of the \ttbar contribution was deemed unnec
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/numbJets_SingleTop_wMass_emu.pdf}
-\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/numbJets_SingleTop_wMass_emu.pdf}
+\includegraphics[width=0.47\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/numbBJets_SingleTop_wMass_emu.pdf}
 \caption{
-The distributions of the number of jets and the number b-tagged jets for the \ttbar control region following the application of the full control region selection criteria and simulation corrections.
+The distributions of the number of jets (left) and the number b-tagged jets for the \ttbar control region following the application of the full control region selection criteria and simulation corrections.
 }
 \label{fig:ttbarCR_nJets}
 \end{figure}

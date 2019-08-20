@@ -72,7 +72,7 @@ FUNCTION {init.state.consts}
   #4 'after.quoted.block :=
   #5 'after.block :=
 
-  "doi:" 'doiprefix :=      % text prefix printed before DOI ref; typically "doi:"
+  "doi" 'doiprefix :=      % text prefix printed before DOI ref; typically "doi:"
 
 }
 
@@ -879,7 +879,7 @@ FUNCTION {inproceedings}
     }
   if$
   format.eprint output
-  doi output
+  formatfull.doi output
   format.url output
   fin.entry
 }
@@ -960,7 +960,7 @@ FUNCTION {misc}
   note output
   new.block
   % note output
-  doi output
+  formatfull.doi output
   fin.entry
   empty.misc.check
 }
@@ -977,7 +977,7 @@ FUNCTION {phdthesis}
   format.eprint output
   new.block
   % note output
-  doi output
+  formatfull.doi output
   fin.entry
 }
 
@@ -999,7 +999,7 @@ FUNCTION {proceedings}
   format.date "year" output.check
   new.block
   % note output
-  doi output
+  formatfull.doi output
   format.url output
   fin.entry
 }
@@ -1016,7 +1016,7 @@ FUNCTION {techreport}
   format.date "year" output.check
   new.block
   % note output
-  doi output
+  formatfull.doi output
   fin.entry
 }
 
