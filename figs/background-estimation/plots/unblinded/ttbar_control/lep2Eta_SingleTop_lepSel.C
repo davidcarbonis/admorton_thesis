@@ -45,7 +45,7 @@ void lep2Eta_SingleTop_lepSel()
    
    THStack *lep2Eta_SingleTop_lepSel_emu = new THStack();
    lep2Eta_SingleTop_lepSel_emu->SetName("lep2Eta_SingleTop_lepSel_emu");
-   lep2Eta_SingleTop_lepSel_emu->SetTitle("Muon #eta;Muon #eta;Events");
+   lep2Eta_SingleTop_lepSel_emu->SetTitle(";Muon #eta;Events");
    lep2Eta_SingleTop_lepSel_emu->SetMaximum(6473.5);
    
    TH1F *lep2Eta_SingleTop_lepSel_emu_stack_4 = new TH1F("lep2Eta_SingleTop_lepSel_emu_stack_4","Muon #eta",30,0,3);

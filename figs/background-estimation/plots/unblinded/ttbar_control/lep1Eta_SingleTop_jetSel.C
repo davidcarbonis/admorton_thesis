@@ -45,7 +45,7 @@ void lep1Eta_SingleTop_jetSel()
    
    THStack *lep1Eta_SingleTop_jetSel_emu = new THStack();
    lep1Eta_SingleTop_jetSel_emu->SetName("lep1Eta_SingleTop_jetSel_emu");
-   lep1Eta_SingleTop_jetSel_emu->SetTitle("Electron #eta;Electron #eta;Events");
+   lep1Eta_SingleTop_jetSel_emu->SetTitle(";Electron #eta;Events");
    lep1Eta_SingleTop_jetSel_emu->SetMaximum(546.7);
    
    TH1F *lep1Eta_SingleTop_jetSel_emu_stack_1 = new TH1F("lep1Eta_SingleTop_jetSel_emu_stack_1","Electron #eta",30,0,3);

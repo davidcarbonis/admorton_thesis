@@ -45,7 +45,7 @@ void lep1Eta_SingleTop_wMass()
    
    THStack *lep1Eta_SingleTop_wMass_emu = new THStack();
    lep1Eta_SingleTop_wMass_emu->SetName("lep1Eta_SingleTop_wMass_emu");
-   lep1Eta_SingleTop_wMass_emu->SetTitle("Electron #eta;Electron #eta;Events");
+   lep1Eta_SingleTop_wMass_emu->SetTitle(";Electron #eta;Events");
    lep1Eta_SingleTop_wMass_emu->SetMaximum(227.7);
    
    TH1F *lep1Eta_SingleTop_wMass_emu_stack_1 = new TH1F("lep1Eta_SingleTop_wMass_emu_stack_1","Electron #eta",30,0,3);

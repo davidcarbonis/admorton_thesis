@@ -45,7 +45,7 @@ void fourthJetPt_SingleTop_jetSel()
    
    THStack *fourthJetPt_SingleTop_jetSel_emu = new THStack();
    fourthJetPt_SingleTop_jetSel_emu->SetName("fourthJetPt_SingleTop_jetSel_emu");
-   fourthJetPt_SingleTop_jetSel_emu->SetTitle("Fourth Jet p_{T};Fourth p_{T} (GeV);Events");
+   fourthJetPt_SingleTop_jetSel_emu->SetTitle(";Fourth p_{T} (GeV);Events");
    fourthJetPt_SingleTop_jetSel_emu->SetMaximum(2473.9);
    
    TH1F *fourthJetPt_SingleTop_jetSel_emu_stack_1 = new TH1F("fourthJetPt_SingleTop_jetSel_emu_stack_1","Fourth Jet p_{T}",35,0,300);
@@ -664,14 +664,14 @@ tex->SetNDC();
    fourthJetPt_SingleTop_jetSel_emu__2->GetZaxis()->SetTitleFont(42);
    fourthJetPt_SingleTop_jetSel_emu__2->Draw("sameaxis");
    
-   TPaveText *pt = new TPaveText(0.42852,0.9203237,0.57148,0.995,"blNDC");
+/*   TPaveText *pt = new TPaveText(0.42852,0.9203237,0.57148,0.995,"blNDC");
    pt->SetName("title");
    pt->SetBorderSize(0);
    pt->SetFillColor(0);
    pt->SetFillStyle(0);
    pt->SetTextFont(42);
    TText *pt_LaTex = pt->AddText("Fourth Jet p_{T}");
-   pt->Draw();
+   pt->Draw();*/
    canvy_1->Modified();
    c1->cd();
   

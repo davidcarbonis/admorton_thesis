@@ -45,7 +45,7 @@ void lep2Pt_SingleTop_wMass()
    
    THStack *lep2Pt_SingleTop_wMass_emu = new THStack();
    lep2Pt_SingleTop_wMass_emu->SetName("lep2Pt_SingleTop_wMass_emu");
-   lep2Pt_SingleTop_wMass_emu->SetTitle("Muon p_{T};Muon p_{T} (GeV);Events");
+   lep2Pt_SingleTop_wMass_emu->SetTitle(";Muon p_{T} (GeV);Events");
    lep2Pt_SingleTop_wMass_emu->SetMaximum(797.5);
    
    TH1F *lep2Pt_SingleTop_wMass_emu_stack_1 = new TH1F("lep2Pt_SingleTop_wMass_emu_stack_1","Muon p_{T}",20,0,200);

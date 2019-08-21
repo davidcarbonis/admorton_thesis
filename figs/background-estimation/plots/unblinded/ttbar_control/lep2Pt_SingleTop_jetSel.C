@@ -45,7 +45,7 @@ void lep2Pt_SingleTop_jetSel()
    
    THStack *lep2Pt_SingleTop_jetSel_emu = new THStack();
    lep2Pt_SingleTop_jetSel_emu->SetName("lep2Pt_SingleTop_jetSel_emu");
-   lep2Pt_SingleTop_jetSel_emu->SetTitle("Muon p_{T};Muon p_{T} (GeV);Events");
+   lep2Pt_SingleTop_jetSel_emu->SetTitle(";Muon p_{T} (GeV);Events");
    lep2Pt_SingleTop_jetSel_emu->SetMaximum(1976.991);
    
    TH1F *lep2Pt_SingleTop_jetSel_emu_stack_3 = new TH1F("lep2Pt_SingleTop_jetSel_emu_stack_3","Muon p_{T}",20,0,200);

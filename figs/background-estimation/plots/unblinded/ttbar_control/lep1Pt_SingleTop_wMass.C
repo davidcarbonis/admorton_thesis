@@ -45,7 +45,7 @@ void lep1Pt_SingleTop_wMass()
    
    THStack *lep1Pt_SingleTop_wMass_emu = new THStack();
    lep1Pt_SingleTop_wMass_emu->SetName("lep1Pt_SingleTop_wMass_emu");
-   lep1Pt_SingleTop_wMass_emu->SetTitle("Electron p_{T};Electron p_{T} (GeV);Events");
+   lep1Pt_SingleTop_wMass_emu->SetTitle(";Electron p_{T} (GeV);Events");
    lep1Pt_SingleTop_wMass_emu->SetMaximum(771.1);
    
    TH1F *lep1Pt_SingleTop_wMass_emu_stack_2 = new TH1F("lep1Pt_SingleTop_wMass_emu_stack_2","Electron p_{T}",20,0,200);

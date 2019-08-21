@@ -44,7 +44,7 @@ void leadingJetPt_SingleTop_wMass()
    
    THStack *leadingJetPt_SingleTop_wMass_emu = new THStack();
    leadingJetPt_SingleTop_wMass_emu->SetName("leadingJetPt_SingleTop_wMass_emu");
-   leadingJetPt_SingleTop_wMass_emu->SetTitle("Leading Jet p_{T};Leading jet p_{T} (GeV);Events");
+   leadingJetPt_SingleTop_wMass_emu->SetTitle(";Leading jet p_{T} (GeV);Events");
    leadingJetPt_SingleTop_wMass_emu->SetMaximum(257.4);
    
    TH1F *leadingJetPt_SingleTop_wMass_emu_stack_2 = new TH1F("leadingJetPt_SingleTop_wMass_emu_stack_2","Leading Jet p_{T}",35,0,300);

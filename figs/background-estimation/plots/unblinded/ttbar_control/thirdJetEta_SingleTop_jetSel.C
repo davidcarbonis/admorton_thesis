@@ -45,7 +45,7 @@ void thirdJetEta_SingleTop_jetSel()
    
    THStack *thirdJetEta_SingleTop_jetSel_emu = new THStack();
    thirdJetEta_SingleTop_jetSel_emu->SetName("thirdJetEta_SingleTop_jetSel_emu");
-   thirdJetEta_SingleTop_jetSel_emu->SetTitle("Third Jet #eta;Third Jet #eta;Events");
+   thirdJetEta_SingleTop_jetSel_emu->SetTitle(";Third Jet #eta;Events");
    thirdJetEta_SingleTop_jetSel_emu->SetMaximum(331.1);
    
    TH1F *thirdJetEta_SingleTop_jetSel_emu_stack_4 = new TH1F("thirdJetEta_SingleTop_jetSel_emu_stack_4","Third Jet #eta",25,0,5);

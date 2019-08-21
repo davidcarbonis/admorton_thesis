@@ -45,7 +45,7 @@ void leadingJetPt_SingleTop_jetSel()
    
    THStack *leadingJetPt_SingleTop_jetSel_emu = new THStack();
    leadingJetPt_SingleTop_jetSel_emu->SetName("leadingJetPt_SingleTop_jetSel_emu");
-   leadingJetPt_SingleTop_jetSel_emu->SetTitle("Leading Jet p_{T};Leading jet p_{T} (GeV);Events");
+   leadingJetPt_SingleTop_jetSel_emu->SetTitle(";Leading jet p_{T} (GeV);Events");
    leadingJetPt_SingleTop_jetSel_emu->SetMaximum(569.8);
    
    TH1F *leadingJetPt_SingleTop_jetSel_emu_stack_2 = new TH1F("leadingJetPt_SingleTop_jetSel_emu_stack_2","Leading Jet p_{T}",35,0,300);
@@ -741,14 +741,14 @@ tex->SetNDC();
    leadingJetPt_SingleTop_jetSel_emu__5->GetZaxis()->SetTitleFont(42);
    leadingJetPt_SingleTop_jetSel_emu__5->Draw("sameaxis");
    
-   TPaveText *pt = new TPaveText(0.4217333,0.9203237,0.5782667,0.995,"blNDC");
+/*   TPaveText *pt = new TPaveText(0.4217333,0.9203237,0.5782667,0.995,"blNDC");
    pt->SetName("title");
    pt->SetBorderSize(0);
    pt->SetFillColor(0);
    pt->SetFillStyle(0);
    pt->SetTextFont(42);
    TText *pt_LaTex = pt->AddText("Leading Jet p_{T}");
-   pt->Draw();
+   pt->Draw();*/
    canvy_1->Modified();
    c1->cd();
   

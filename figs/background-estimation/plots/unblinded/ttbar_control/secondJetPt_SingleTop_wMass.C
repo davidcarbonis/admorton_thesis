@@ -45,7 +45,7 @@ void secondJetPt_SingleTop_wMass()
    
    THStack *secondJetPt_SingleTop_wMass_emu = new THStack();
    secondJetPt_SingleTop_wMass_emu->SetName("secondJetPt_SingleTop_wMass_emu");
-   secondJetPt_SingleTop_wMass_emu->SetTitle("Second Jet p_{T};Subleading jet p_{T} (GeV);Events");
+   secondJetPt_SingleTop_wMass_emu->SetTitle(";Subleading jet p_{T} (GeV);Events");
    secondJetPt_SingleTop_wMass_emu->SetMaximum(463.1);
    
    TH1F *secondJetPt_SingleTop_wMass_emu_stack_3 = new TH1F("secondJetPt_SingleTop_wMass_emu_stack_3","Second Jet p_{T}",35,0,300);

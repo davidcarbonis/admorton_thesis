@@ -45,7 +45,7 @@ void fourthJetEta_SingleTop_wMass()
    
    THStack *fourthJetEta_SingleTop_wMass_emu = new THStack();
    fourthJetEta_SingleTop_wMass_emu->SetName("fourthJetEta_SingleTop_wMass_emu");
-   fourthJetEta_SingleTop_wMass_emu->SetTitle("Fourth Jet #eta;Fourth jet #eta;Events");
+   fourthJetEta_SingleTop_wMass_emu->SetTitle(";Fourth jet #eta;Events");
    fourthJetEta_SingleTop_wMass_emu->SetMaximum(128.7);
    
    TH1F *fourthJetEta_SingleTop_wMass_emu_stack_1 = new TH1F("fourthJetEta_SingleTop_wMass_emu_stack_1","Fourth Jet #eta",25,0,5);
@@ -646,14 +646,14 @@ tex->SetNDC();
    fourthJetEta_SingleTop_wMass_emu__2->GetZaxis()->SetTitleFont(42);
    fourthJetEta_SingleTop_wMass_emu__2->Draw("sameaxis");
    
-   TPaveText *pt = new TPaveText(0.4325122,0.9371861,0.5674878,0.995,"blNDC");
+/*   TPaveText *pt = new TPaveText(0.4325122,0.9371861,0.5674878,0.995,"blNDC");
    pt->SetName("title");
    pt->SetBorderSize(0);
    pt->SetFillColor(0);
    pt->SetFillStyle(0);
    pt->SetTextFont(42);
    TText *pt_LaTex = pt->AddText("Fourth Jet #eta");
-   pt->Draw();
+   pt->Draw();*/
    canvy_1->Modified();
    c1->cd();
   
