@@ -1,4 +1,7 @@
 \chapter{Background Estimation}\label{chapter:bkg}
+%Using the analysis strategy described in Chapter~\ref{chapter:tzq-search}, the following chapter describes how Monte Carlo simulated samples were used to model the signal and background processes, the simluation corrections required
+%
+% that were considered, , sources of systematic uncertainties that were 
 %This chapter discusses how the simulation samples considered for the signal and background processes were used to model 
 %
 %
@@ -6,15 +9,9 @@
 
 %Monte Carlo simulated samples are used to model the signal and background processes expected to be observed in the proton-proton collision data used.
 %
-%
-%
-%all the effects observed in 
-%
-%Typically, most of the discrepancies observed can be accounted for by applying various corrective scale factors.
-%Where a particular process is poorly described and/or lacking sufficient statistics in the signal region, data-driven estimates of the background are used to model ...
 
 \section{Data and Simulation Samples}\label{sec:samples}
-Out of the 37.8\fbinv of  proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by the CMS experiment during 2016, 35.9\fbinv was certified by the collaboration as being of sufficient quality to be used for physics analysis.
+Out of the 37.8\fbinv of proton-proton collision data at $\sqrt{s} = 13\TeV$ collected by the CMS experiment during 2016, 35.9\fbinv was certified by the collaboration as being of sufficient quality to be used for physics analysis.
 The difference between the certified value and the total data recorded is the result of various factors such as the unavailability of a detector due to power failures.
 Events were considered from the dataset certified to be good for physics if they pass one of the triggers in accordance with the trigger strategy described in Section~\ref{sec:triggerStrategy}.
 Due to the prescaling of all of the electron triggers considered during the start of the most luminous data taking runs (as discussed in Section~\ref{sec:triggerStrategy}) the $ee$ channel uses a reduced dataset corresponding to 35.6\fbinv where none of the triggers considered were prescaled.
@@ -206,10 +203,27 @@ The associated systematic uncertainties are discussed in Section~\ref{sec:system
    \hline   
    $ee$ & 0.976 $\pm$ 0.001 & 0.988 $\pm$ 0.001 & 0.987 $\pm$ 0.001\\
    $\mu\mu$ & 0.985 $\pm$ 0.001 & 0.992 $\pm$ 0.001 & 0.993 $\pm$ 0.000  \\
-   $e \mu$ & 0.875 $\pm$ 0.014 & 0.882 $\pm$ 0.019 & 0.991 $\pm$ 0.007\\
+   $e \mu$ & 0.964 $\pm$ 0.011 & 0.977 $\pm$ 0.005 & 0.987 $\pm$ 0.007\\
    \hline
  \end{tabular}%}
 \end{table}
+
+
+%-----------------------------------------------------------
+%Double Electron data efficiency: 0.97709 +/- -0.00098/0.00103
+%Double Electron MC efficiency: 0.98823 +/- -0.00077/0.00086
+%Double Electron trigger SF: 0.98873 +/- 0.00027
+%-----------------------------------------------------------
+%Double Muon data efficiency: 0.98493 +/- -0.00047/0.00049
+%Double Muon MC efficiency: 0.99192 +/- -0.00061/0.00074
+%Double Muon trigger SF: 0.99295 +/- 0.00027
+%-----------------------------------------------------------
+%MuonEG data efficiency: 0.97689 +/- -0.00419/0.00508
+%MuonEG MC efficiency: 0.96421 +/- -0.00891 / 0.01111
+%MuonEG trigger SF: 1.01315 +/- 0.00742
+%-----------------------------------------------------------
+%alpha for DoubleEG/DoubleMuon/MuonEG Triggers: 0.99890+/-0.01379/1.00151+/-0.01291/0.98775+/-0.09182
+%-----------------------------------------------------------
 
 % part 1 mumu
 %% data eff 0.98069  +/- -0.00070/0.00073
@@ -280,8 +294,7 @@ The overall event yield for data and simulation at each stage of applying the si
 \hline
 Channel &  $ee$ & $\mu\mu$ & Combined \\
 \hline
-Signal (SM tZq) & 30.38$\pm$0.07 & 55.49 $\pm$ 0.10 & 85.87 $\pm$ 0.12 \\
-Backgrounds: & & & \\
+tZq & 30.38$\pm$0.07 & 55.49 $\pm$ 0.10 & 85.87 $\pm$ 0.12 \\
 tWZ\@: & 6.44$\pm$0.21 & 10.96$\pm$0.29 & 17.40$\pm$0.36    \\
 tHq: & 0.17$\pm$0.01 & 0.37$\pm$0.02 & 0.54$\pm$0.02    \\
 ttW\@: & 7.38$\pm$0.14 & 10.83$\pm$0.15 & 18.21$\pm$0.21    \\
@@ -606,7 +619,7 @@ The event yields, and the statistical uncertainties associated with them, follow
 	W+jets\@: & 0.0$\pm$0.0     \\ 
 	Z+jets\@: & 0.0$\pm$0.0     \\ 
 	\hline
-	Total MC\@: & 2536.39 $\pm$ 21.64     \\ 
+	Total MC\@: & 2536.39 $\pm$ 22.26     \\ 
 	\hline
 	Data\@: & 2668.0     \\ 
    \hline
@@ -759,10 +772,16 @@ The values of $\alpha$, expressing the strength of correlation between the lepto
    \hline   
    $ee$ & 0.99890 $\pm$ 0.01379\\
    $\mu\mu$ & 1.00151 $\pm$ 0.01291\\
-   $e \mu$ & 0.98883 $\pm$ 0.09415\\
+   $e \mu$ & 0.98775 $\pm$ 0.09182\\
    \hline
  \end{tabular}%}
 \end{table}
+
+%ttbar
+%-----------------------------------------------------------
+%alpha for DoubleEG/DoubleMuon/MuonEG Triggers: 0.99890+/-0.01379/1.00151+/-0.01291/0.98775+/-0.09182
+%-----------------------------------------------------------
+% DY
 
 Both the statistical uncertainties of the trigger efficiencies and the results of the above studies were consistent with those determined for other top physics analyses.
 As such, it was determined that systematic uncertainties of 1.0\%, 1.0\% and 2.0\% for the $ee$, $\mu\mu$, and $e\mu$ channels, respectively, would be sufficient to account for the residual differences in trigger efficiency between data and simulation.
@@ -809,7 +828,7 @@ As such, it was determined that systematic uncertainties of 1.0\%, 1.0\% and 2.0
 \subsection{Theoretical Uncertainties}\label{sec:theorySysts}
 \subsubsection{Cross section normalisation}
 The uncertainty associated with the cross sections of the simulated samples was taken into account by associating a normalisation uncertainty with each of the simulated samples considered.
-The CMS Collaboration's search for tZq production using the trilepton channel at $\sqrt{s} = 13\TeV$ assumed a value of 30\% for this source of systematic uncertainty, which reflected the theoretical uncertainties in the corresponding cross sections and a scaling up of a factor of two or more to account for possible modelling limitations~\cite{Sirunyan:2017nbr}.
+The CMS Collaboration's search for tZq production using the trilepton channel at $\sqrt{s} = 13\TeV$ had assumed a value of 30\% for this source of systematic uncertainty, which reflected the theoretical uncertainties in the corresponding cross sections and a scaling up of a factor of two or more to account for possible modelling limitations~\cite{Sirunyan:2017nbr}.
 Since the publication of the above search, it is now CMS policy to assume an uncertainty of 10\%.
 
 \subsubsection{Factorisation and renormalisation scales}
@@ -831,7 +850,7 @@ The uncertainty associated with this matching threshold was evaluated using dedi
 These dedicated simulated samples are listed in Table~\ref{tab:theorySampleList} as ``matching up '' and ``matching down'' for the respective variations of $h_{damp}$.
 
 \subsection{Pre-Fit Impact of the Systematic Uncertainties}\label{sec:uncertainitiesPreFitImpact}
-The impact of the each of the systematics on the event yield (in percentage) of the simulated processes in the signal region following the application of the signal region selection criteria is shown in Table~\ref{tab:systImpact}.
+The impact of the each of the systematics on the event yield (in percentage) of the simulated processes following the application of the signal region selection criteria is shown in Table~\ref{tab:systImpact}.
 These rates, whilst giving an overview of which systematics were the most important, do not show how the shape of the fitted variable, the BDT discriminant, is influenced by each uncertainty.
 
 Prior to performing the likelihood fit described in Chapter~\ref{chapter:results}, the theoretical sources of uncertainty were observed to have the greatest impact on the observed yields of the simulated samples.
@@ -840,7 +859,7 @@ While the majority of the experimental uncertainties have a smaller impact on th
 %% PDFs for tZq and ME/PS scales 
 
 \begin{sidewaystable}[htbp]
-\topcaption{Rate impact of systematics on MC templates}\label{tab:systImpact}
+\topcaption{Rate impact of systematics on MC}\label{tab:systImpact}
 \begin{center}
 \linespread{2}
 \resizebox{\textwidth}{!}{\begin{tabular}{lcccccc}
@@ -861,7 +880,7 @@ PS $\mu_{R}$ and $\mu_{F}$ scales             &  $_{-10.33\%}^{+6.74\%}$ /  $_{-
 ISR             &  $-$   & $-$  & $^{+4.35}_{-6.57}$/$_{-6.44}^{+3.16}$ & $-$  & $-$ & $-$  \\
 FSR             &  $-$   & $-$  & $_{+15.31}^{-3.87}$/$^{-5.78}_{+12.63}$ & $-$  & $-$ & $-$  \\ 
 ME-PS matching Scale             &  $-$   & $-$  & $^{-2.15}_{-9.01}$/$_{-5.89}^{+1.02}$ & $-$  & $-$ & $-$ \\
-Cross section normalisation             &  $_{-10.0\%}^{+10.0\%}$ /  $_{-10.0\%}^{+10.0\%}$    & $_{-10.0\%}^{+10.0\%}$  / $_{-10.0\%}^{+10.0\%}$   & $_{-10.0\%}^{+10.0\%}$  / $_{-10.0\%}^{+10.0\%}$   & $_{-10.0\%}^{+10.0\%}$  / $_{-10.0\%}^{+10.0\%}$  & $_{-10.0\%}^{+10.0\%}$  / $_{-10.0\%}^{+10.0\%}$ & $_{-10.0\%}^{+10.0\%}$  / $_{-10.0\%}^{+10.0\%}$ \\    
+Cross section normalisation             &  $_{-10.0\%}^{+10.0\%}$ /  $_{-10.0\%}^{+10.0\%}$  & $_{-10.0\%}^{+10.0\%}$  / $_{-10.0\%}^{+10.0\%}$  & $_{-10.0\%}^{+10.0\%}$  / $_{-10.0\%}^{+10.0\%}$  & $_{-8.34\%}^{+8.43\%}$  / $_{-7.82\%}^{+7.82\%}$  & $_{-6.74\%}^{+6.74\%}$  / $_{-6.71\%}^{+6.71\%}$ & $_{-6.03\%}^{+6.03\%}$  / $_{-6.10\%}^{+6.10\%}$ \\    
 Luminosity             &  $_{-2.5\%}^{+2.5\%}$ /  $_{-2.5\%}^{+2.5\%}$    & $_{-2.5\%}^{+2.5\%}$  / $_{-2.5\%}^{+2.5\%}$   & $_{-2.5\%}^{+2.5\%}$  / $_{-2.5\%}^{+2.5\%}$   & $_{-2.5\%}^{+2.5\%}$  / $_{-2.5\%}^{+2.5\%}$  & $_{-2.5\%}^{+2.5\%}$  / $_{-2.5\%}^{+2.5\%}$ & $_{-2.5\%}^{+2.5\%}$  / $_{-2.5\%}^{+2.5\%}$ \\    
 \hline
 \end{tabular}
