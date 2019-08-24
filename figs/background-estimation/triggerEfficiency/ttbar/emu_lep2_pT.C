@@ -2,17 +2,26 @@ void emu_lep2_pT()
 {
 //=========Macro generated from canvas: Canvas_1/Canvas_1
 //=========  (Sat Aug 24 21:08:35 2019) by ROOT version 6.18/00
-   TCanvas *Canvas_1 = new TCanvas("Canvas_1", "Canvas_1",260,94,1000,587);
+
+   TCanvas *Canvas_1_n2 = new TCanvas("Canvas_1_n2", "Canvas_1_n2",0,0,1280,925);
    gStyle->SetOptStat(0);
-   Canvas_1->Range(-37.5,0.7117801,337.5,1.157308);
-   Canvas_1->SetFillColor(0);
-   Canvas_1->SetBorderMode(0);
-   Canvas_1->SetBorderSize(2);
-   Canvas_1->SetFrameBorderMode(0);
-   Canvas_1->SetFrameBorderMode(0);
-   Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
-   
-   TProfile *muonElectron2_pT_MC = new TProfile("muonElectron2_pT_MC","",9, xAxis);
+//   Canvas_1_n2->Range(-0.4860759,-0.2025316,2.551899,1.063291); // tmtt plot range
+   Canvas_1_n2->Range(-37.5,0.7117801,337.5,1.157308);
+   Canvas_1_n2->SetFillColor(0);
+   Canvas_1_n2->SetBorderMode(0);
+   Canvas_1_n2->SetBorderSize(2);
+   Canvas_1_n2->SetLeftMargin(0.15);
+   Canvas_1_n2->SetRightMargin(0.05);
+   Canvas_1_n2->SetTopMargin(0.08);
+   Canvas_1_n2->SetBottomMargin(0.15);
+   Canvas_1_n2->SetGridy();
+   Canvas_1_n2->SetTickx(1);
+   Canvas_1_n2->SetTicky(1);
+   Canvas_1_n2->SetFrameBorderMode(0);
+
+   Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300};
+
+   TProfile *muonElectron2_pT_MC = new TProfile("muonElectron2_pT_MC","e#mu final state - muon",9, xAxis);
    muonElectron2_pT_MC->SetBinEntries(1,1579);
    muonElectron2_pT_MC->SetBinEntries(2,290);
    muonElectron2_pT_MC->SetBinEntries(3,241);
@@ -41,6 +50,15 @@ void emu_lep2_pT()
    muonElectron2_pT_MC->SetBinError(8,0.01721327);
    muonElectron2_pT_MC->SetBinError(9,0.04282685);
    muonElectron2_pT_MC->SetEntries(3376);
+
+   muonElectron2_pT_MC->SetMinimum(0.5);
+   muonElectron2_pT_MC->SetMaximum(1.1);
+   muonElectron2_pT_MC->SetLineColor(1);
+   muonElectron2_pT_MC->SetLineWidth(2);
+   muonElectron2_pT_MC->SetMarkerColor(1);
+   muonElectron2_pT_MC->SetMarkerStyle(20);
+   muonElectron2_pT_MC->SetMarkerSize(1);
+
    muonElectron2_pT_MC->GetXaxis()->SetTitle(" p_{T} (GeV)");
    muonElectron2_pT_MC->GetXaxis()->SetLabelFont(42);
    muonElectron2_pT_MC->GetXaxis()->SetLabelSize(0.035);
@@ -92,7 +110,13 @@ void emu_lep2_pT()
    muonElectron2_pT_data->SetBinError(9,0.02146468);
    muonElectron2_pT_data->SetBinError(10,6.164414);
    muonElectron2_pT_data->SetEntries(2235);
+
    muonElectron2_pT_data->SetLineColor(2);
+   muonElectron2_pT_data->SetLineWidth(2);
+   muonElectron2_pT_data->SetMarkerColor(2);
+   muonElectron2_pT_data->SetMarkerStyle(22);
+   muonElectron2_pT_data->SetMarkerSize(1.2);
+
    muonElectron2_pT_data->GetXaxis()->SetTitle(" p_{T} (GeV)");
    muonElectron2_pT_data->GetXaxis()->SetLabelFont(42);
    muonElectron2_pT_data->GetXaxis()->SetLabelSize(0.035);
@@ -132,7 +156,13 @@ void emu_lep2_pT()
    p_muonElectron2_pT_SF__12->SetBinError(8,0.09908503);
    p_muonElectron2_pT_SF__12->SetBinError(9,0.1745014);
    p_muonElectron2_pT_SF__12->SetEntries(750.7203);
+
    p_muonElectron2_pT_SF__12->SetLineColor(8);
+   p_muonElectron2_pT_SF__12->SetLineWidth(2);
+   p_muonElectron2_pT_SF__12->SetMarkerColor(8);
+   p_muonElectron2_pT_SF__12->SetMarkerStyle(33);
+   p_muonElectron2_pT_SF__12->SetMarkerSize(1.5);
+
    p_muonElectron2_pT_SF__12->GetXaxis()->SetTitle(" p_{T} (GeV)");
    p_muonElectron2_pT_SF__12->GetXaxis()->SetLabelFont(42);
    p_muonElectron2_pT_SF__12->GetXaxis()->SetLabelSize(0.035);
@@ -151,7 +181,22 @@ void emu_lep2_pT()
    p_muonElectron2_pT_SF__12->GetZaxis()->SetTitleOffset(1);
    p_muonElectron2_pT_SF__12->GetZaxis()->SetTitleFont(42);
    p_muonElectron2_pT_SF__12->Draw("same");
-   Canvas_1->Modified();
-   Canvas_1->cd();
-   Canvas_1->SetSelected(Canvas_1);
+
+   TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
+   leg->SetBorderSize(0);
+   leg->SetTextSize(0.04);
+   leg->SetLineColor(1);
+   leg->SetLineStyle(1);
+   leg->SetLineWidth(1);
+   leg->SetFillColor(0);
+   leg->SetFillStyle(1001);
+
+   TLegendEntry *entry=leg->AddEntry("muonElectron2_pT_data", "Data Efficiency", "PEL");
+   entry=leg->AddEntry("muonElectron2_pT_MC", "MC Efficiency", "PEL");
+   entry=leg->AddEntry("p_muonElectron2_pT_SF__12", "Data/MC SF", "PEL");
+   leg->Draw();
+
+   Canvas_1_n2->Modified();
+   Canvas_1_n2->cd();
+   Canvas_1_n2->SetSelected(Canvas_1_n2);
 }

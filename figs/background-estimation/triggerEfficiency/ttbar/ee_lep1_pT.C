@@ -2,17 +2,27 @@ void ee_lep1_pT()
 {
 //=========Macro generated from canvas: Canvas_1/Canvas_1
 //=========  (Sat Aug 24 20:29:06 2019) by ROOT version 6.18/00
-   TCanvas *Canvas_1 = new TCanvas("Canvas_1", "Canvas_1",260,94,1000,589);
+
+   TCanvas *Canvas_1_n2 = new TCanvas("Canvas_1_n2", "Canvas_1_n2",0,0,1280,925);
    gStyle->SetOptStat(0);
-   Canvas_1->Range(-37.5,-0.1375,337.5,1.2375);
-   Canvas_1->SetFillColor(0);
-   Canvas_1->SetBorderMode(0);
-   Canvas_1->SetBorderSize(2);
-   Canvas_1->SetFrameBorderMode(0);
-   Canvas_1->SetFrameBorderMode(0);
+
+//   Canvas_1_n2->Range(-0.4860759,-0.2025316,2.551899,1.063291); // tmtt plot range
+   Canvas_1_n2->Range(-37.5,-0.1375,337.5,1.2375);
+   Canvas_1_n2->SetFillColor(0);
+   Canvas_1_n2->SetBorderMode(0);
+   Canvas_1_n2->SetBorderSize(2);
+   Canvas_1_n2->SetLeftMargin(0.15);
+   Canvas_1_n2->SetRightMargin(0.05);
+   Canvas_1_n2->SetTopMargin(0.08);
+   Canvas_1_n2->SetBottomMargin(0.15);
+   Canvas_1_n2->SetGridy();
+   Canvas_1_n2->SetTickx(1);
+   Canvas_1_n2->SetTicky(1);
+   Canvas_1_n2->SetFrameBorderMode(0);
+
    Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TProfile *electron1_pT_MC = new TProfile("electron1_pT_MC","",9, xAxis);
+   TProfile *electron1_pT_MC = new TProfile("electron1_pT_MC","ee final state - leading electron",9, xAxis);
    electron1_pT_MC->SetBinEntries(1,75);
    electron1_pT_MC->SetBinEntries(2,272);
    electron1_pT_MC->SetBinEntries(3,566);
@@ -40,16 +50,23 @@ void ee_lep1_pT()
    electron1_pT_MC->SetBinError(7,0.001255041);
    electron1_pT_MC->SetBinError(8,0.0007839693);
    electron1_pT_MC->SetBinError(9,0.001839205);
-   electron1_pT_MC->SetMinimum(0);
+
+   electron1_pT_MC->SetMinimum(0.5);
    electron1_pT_MC->SetMaximum(1.1);
    electron1_pT_MC->SetEntries(43770);
+   electron1_pT_MC->SetLineColor(1);
+   electron1_pT_MC->SetLineWidth(2);
+   electron1_pT_MC->SetMarkerColor(1);
+   electron1_pT_MC->SetMarkerStyle(20);
+   electron1_pT_MC->SetMarkerSize(1);
+
    electron1_pT_MC->GetXaxis()->SetTitle(" p_{T} (GeV)");
    electron1_pT_MC->GetXaxis()->SetLabelFont(42);
    electron1_pT_MC->GetXaxis()->SetLabelSize(0.035);
    electron1_pT_MC->GetXaxis()->SetTitleSize(0.035);
    electron1_pT_MC->GetXaxis()->SetTitleOffset(1);
    electron1_pT_MC->GetXaxis()->SetTitleFont(42);
-   electron1_pT_MC->GetYaxis()->SetTitle(" Efficiency");
+   electron1_pT_MC->GetYaxis()->SetTitle(" Efficiency, SF");
    electron1_pT_MC->GetYaxis()->SetLabelFont(42);
    electron1_pT_MC->GetYaxis()->SetLabelSize(0.035);
    electron1_pT_MC->GetYaxis()->SetTitleSize(0.035);
@@ -60,7 +77,7 @@ void ee_lep1_pT()
    electron1_pT_MC->GetZaxis()->SetTitleSize(0.035);
    electron1_pT_MC->GetZaxis()->SetTitleOffset(1);
    electron1_pT_MC->GetZaxis()->SetTitleFont(42);
-   electron1_pT_MC->Draw("");
+   electron1_pT_MC->Draw("E1");
    
    TProfile *electron1_pT_data = new TProfile("electron1_pT_data","",9, xAxis);
    electron1_pT_data->SetBinEntries(1,24);
@@ -94,14 +111,20 @@ void ee_lep1_pT()
    electron1_pT_data->SetBinError(9,0.003725799);
    electron1_pT_data->SetBinError(10,21.67948);
    electron1_pT_data->SetEntries(18834);
+
    electron1_pT_data->SetLineColor(2);
+   electron1_pT_data->SetLineWidth(2);
+   electron1_pT_data->SetMarkerColor(2);
+   electron1_pT_data->SetMarkerStyle(22);
+   electron1_pT_data->SetMarkerSize(1.2);
+
    electron1_pT_data->GetXaxis()->SetTitle(" p_{T} (GeV)");
    electron1_pT_data->GetXaxis()->SetLabelFont(42);
    electron1_pT_data->GetXaxis()->SetLabelSize(0.035);
    electron1_pT_data->GetXaxis()->SetTitleSize(0.035);
    electron1_pT_data->GetXaxis()->SetTitleOffset(1);
    electron1_pT_data->GetXaxis()->SetTitleFont(42);
-   electron1_pT_data->GetYaxis()->SetTitle(" Efficiency");
+   electron1_pT_data->GetYaxis()->SetTitle(" Efficiency, SF");
    electron1_pT_data->GetYaxis()->SetLabelFont(42);
    electron1_pT_data->GetYaxis()->SetLabelSize(0.035);
    electron1_pT_data->GetYaxis()->SetTitleSize(0.035);
@@ -112,7 +135,7 @@ void ee_lep1_pT()
    electron1_pT_data->GetZaxis()->SetTitleSize(0.035);
    electron1_pT_data->GetZaxis()->SetTitleOffset(1);
    electron1_pT_data->GetZaxis()->SetTitleFont(42);
-   electron1_pT_data->Draw("same");
+   electron1_pT_data->Draw("E1 same");
    
    TH1D *p_electron1_pT_SF__1 = new TH1D("p_electron1_pT_SF__1","",9, xAxis);
    p_electron1_pT_SF__1->SetBinContent(1,0.9868421);
@@ -134,14 +157,20 @@ void ee_lep1_pT()
    p_electron1_pT_SF__1->SetBinError(8,0.01507454);
    p_electron1_pT_SF__1->SetBinError(9,0.03336359);
    p_electron1_pT_SF__1->SetEntries(701.8029);
+
    p_electron1_pT_SF__1->SetLineColor(8);
+   p_electron1_pT_SF__1->SetLineWidth(2);
+   p_electron1_pT_SF__1->SetMarkerColor(8);
+   p_electron1_pT_SF__1->SetMarkerStyle(33);
+   p_electron1_pT_SF__1->SetMarkerSize(1.5);
+
    p_electron1_pT_SF__1->GetXaxis()->SetTitle(" p_{T} (GeV)");
    p_electron1_pT_SF__1->GetXaxis()->SetLabelFont(42);
    p_electron1_pT_SF__1->GetXaxis()->SetLabelSize(0.035);
    p_electron1_pT_SF__1->GetXaxis()->SetTitleSize(0.035);
    p_electron1_pT_SF__1->GetXaxis()->SetTitleOffset(1);
    p_electron1_pT_SF__1->GetXaxis()->SetTitleFont(42);
-   p_electron1_pT_SF__1->GetYaxis()->SetTitle(" Efficiency");
+   p_electron1_pT_SF__1->GetYaxis()->SetTitle(" Efficiency, SF");
    p_electron1_pT_SF__1->GetYaxis()->SetLabelFont(42);
    p_electron1_pT_SF__1->GetYaxis()->SetLabelSize(0.035);
    p_electron1_pT_SF__1->GetYaxis()->SetTitleSize(0.035);
@@ -152,8 +181,23 @@ void ee_lep1_pT()
    p_electron1_pT_SF__1->GetZaxis()->SetTitleSize(0.035);
    p_electron1_pT_SF__1->GetZaxis()->SetTitleOffset(1);
    p_electron1_pT_SF__1->GetZaxis()->SetTitleFont(42);
-   p_electron1_pT_SF__1->Draw("same");
-   Canvas_1->Modified();
-   Canvas_1->cd();
-   Canvas_1->SetSelected(Canvas_1);
+   p_electron1_pT_SF__1->Draw("E1 same");
+
+   TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
+   leg->SetBorderSize(0);
+   leg->SetTextSize(0.04);
+   leg->SetLineColor(1);
+   leg->SetLineStyle(1);
+   leg->SetLineWidth(1);
+   leg->SetFillColor(0);
+   leg->SetFillStyle(1001);
+
+   TLegendEntry *entry=leg->AddEntry("electron1_pT_data", "Data Efficiency", "PEL");
+   entry=leg->AddEntry("electron1_pT_MC", "MC Efficiency", "PEL");
+   entry=leg->AddEntry("p_electron1_pT_SF__1", "Data/MC SF", "PEL");
+   leg->Draw();
+
+   Canvas_1_n2->Modified();
+   Canvas_1_n2->cd();
+   Canvas_1_n2->SetSelected(Canvas_1_n2);
 }

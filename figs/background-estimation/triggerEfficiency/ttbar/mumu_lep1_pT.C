@@ -2,17 +2,26 @@ void mumu_lep1_pT()
 {
 //=========Macro generated from canvas: Canvas_1/Canvas_1
 //=========  (Sat Aug 24 20:37:07 2019) by ROOT version 6.18/00
-   TCanvas *Canvas_1 = new TCanvas("Canvas_1", "Canvas_1",260,94,1000,589);
+
+   TCanvas *Canvas_1_n2 = new TCanvas("Canvas_1_n2", "Canvas_1_n2",0,0,1280,925);
    gStyle->SetOptStat(0);
-   Canvas_1->Range(-37.5,0.01181273,337.5,1.164821);
-   Canvas_1->SetFillColor(0);
-   Canvas_1->SetBorderMode(0);
-   Canvas_1->SetBorderSize(2);
-   Canvas_1->SetFrameBorderMode(0);
-   Canvas_1->SetFrameBorderMode(0);
-   Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
-   
-   TProfile *muon1_pT_MC = new TProfile("muon1_pT_MC","",9, xAxis);
+//   Canvas_1_n2->Range(-0.4860759,-0.2025316,2.551899,1.063291); // tmtt plot range
+   Canvas_1_n2->Range(-37.5,0.01181273,337.5,1.164821);
+   Canvas_1_n2->SetFillColor(0);
+   Canvas_1_n2->SetBorderMode(0);
+   Canvas_1_n2->SetBorderSize(2);
+   Canvas_1_n2->SetLeftMargin(0.15);
+   Canvas_1_n2->SetRightMargin(0.05);
+   Canvas_1_n2->SetTopMargin(0.08);
+   Canvas_1_n2->SetBottomMargin(0.15);
+   Canvas_1_n2->SetGridy();
+   Canvas_1_n2->SetTickx(1);
+   Canvas_1_n2->SetTicky(1);
+   Canvas_1_n2->SetFrameBorderMode(0);
+
+   Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300};
+
+   TProfile *muon1_pT_MC = new TProfile("muon1_pT_MC","#mu#mu final state - leading muon",9, xAxis);
    muon1_pT_MC->SetBinEntries(1,330);
    muon1_pT_MC->SetBinEntries(2,938);
    muon1_pT_MC->SetBinEntries(3,1572);
@@ -41,6 +50,15 @@ void mumu_lep1_pT()
    muon1_pT_MC->SetBinError(8,0.0009688384);
    muon1_pT_MC->SetBinError(9,0.002064594);
    muon1_pT_MC->SetEntries(54639);
+
+   muon1_pT_MC->SetMinimum(0.5);
+   muon1_pT_MC->SetMaximum(1.1);
+   muon1_pT_MC->SetLineColor(1);
+   muon1_pT_MC->SetLineWidth(2);
+   muon1_pT_MC->SetMarkerColor(1);
+   muon1_pT_MC->SetMarkerStyle(20);
+   muon1_pT_MC->SetMarkerSize(1);
+
    muon1_pT_MC->GetXaxis()->SetTitle(" p_{T} (GeV)");
    muon1_pT_MC->GetXaxis()->SetLabelFont(42);
    muon1_pT_MC->GetXaxis()->SetLabelSize(0.035);
@@ -92,7 +110,13 @@ void mumu_lep1_pT()
    muon1_pT_data->SetBinError(9,0.001004777);
    muon1_pT_data->SetBinError(10,77.31753);
    muon1_pT_data->SetEntries(59357);
+
    muon1_pT_data->SetLineColor(2);
+   muon1_pT_data->SetLineWidth(2);
+   muon1_pT_data->SetMarkerColor(2);
+   muon1_pT_data->SetMarkerStyle(22);
+   muon1_pT_data->SetMarkerSize(1.2);
+
    muon1_pT_data->GetXaxis()->SetTitle(" p_{T} (GeV)");
    muon1_pT_data->GetXaxis()->SetLabelFont(42);
    muon1_pT_data->GetXaxis()->SetLabelSize(0.035);
@@ -132,7 +156,14 @@ void mumu_lep1_pT()
    p_muon1_pT_SF__5->SetBinError(8,0.01131237);
    p_muon1_pT_SF__5->SetBinError(9,0.01990538);
    p_muon1_pT_SF__5->SetEntries(5757.777);
+
    p_muon1_pT_SF__5->SetLineColor(8);
+   p_muon1_pT_SF__5->SetLineColor(8);
+   p_muon1_pT_SF__5->SetLineWidth(2);
+   p_muon1_pT_SF__5->SetMarkerColor(8);
+   p_muon1_pT_SF__5->SetMarkerStyle(33);
+   p_muon1_pT_SF__5->SetMarkerSize(1.5);
+
    p_muon1_pT_SF__5->GetXaxis()->SetTitle(" p_{T} (GeV)");
    p_muon1_pT_SF__5->GetXaxis()->SetLabelFont(42);
    p_muon1_pT_SF__5->GetXaxis()->SetLabelSize(0.035);
@@ -151,7 +182,22 @@ void mumu_lep1_pT()
    p_muon1_pT_SF__5->GetZaxis()->SetTitleOffset(1);
    p_muon1_pT_SF__5->GetZaxis()->SetTitleFont(42);
    p_muon1_pT_SF__5->Draw("same");
-   Canvas_1->Modified();
-   Canvas_1->cd();
-   Canvas_1->SetSelected(Canvas_1);
+
+   TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
+   leg->SetBorderSize(0);
+   leg->SetTextSize(0.04);
+   leg->SetLineColor(1);
+   leg->SetLineStyle(1);
+   leg->SetLineWidth(1);
+   leg->SetFillColor(0);
+   leg->SetFillStyle(1001);
+
+   TLegendEntry *entry=leg->AddEntry("muon1_pT_data", "Data Efficiency", "PEL");
+   entry=leg->AddEntry("muon1_pT_MC", "MC Efficiency", "PEL");
+   entry=leg->AddEntry("p_muon1_pT_SF__5", "Data/MC SF", "PEL");
+   leg->Draw();
+
+   Canvas_1_n2->Modified();
+   Canvas_1_n2->cd();
+   Canvas_1_n2->SetSelected(Canvas_1_n2);
 }
