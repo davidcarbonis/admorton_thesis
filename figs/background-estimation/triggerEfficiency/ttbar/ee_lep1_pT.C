@@ -1,4 +1,4 @@
-void ee_lep1_pT()
+]void ee_lep1_pT()
 {
 //=========Macro generated from canvas: Canvas_1/Canvas_1
 //=========  (Sat Aug 24 20:29:06 2019) by ROOT version 6.18/00
@@ -66,7 +66,7 @@ void ee_lep1_pT()
    electron1_pT_MC->GetXaxis()->SetTitleSize(0.035);
    electron1_pT_MC->GetXaxis()->SetTitleOffset(1);
    electron1_pT_MC->GetXaxis()->SetTitleFont(42);
-   electron1_pT_MC->GetYaxis()->SetTitle(" Efficiency, SF");
+   electron1_pT_MC->GetYaxis()->SetTitle(" Efficiency");
    electron1_pT_MC->GetYaxis()->SetLabelFont(42);
    electron1_pT_MC->GetYaxis()->SetLabelSize(0.035);
    electron1_pT_MC->GetYaxis()->SetTitleSize(0.035);

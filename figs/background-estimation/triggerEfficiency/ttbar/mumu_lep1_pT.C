@@ -76,7 +76,7 @@ void mumu_lep1_pT()
    muon1_pT_MC->GetZaxis()->SetTitleSize(0.035);
    muon1_pT_MC->GetZaxis()->SetTitleOffset(1);
    muon1_pT_MC->GetZaxis()->SetTitleFont(42);
-   muon1_pT_MC->Draw("");
+   muon1_pT_MC->Draw("E1");
    
    TProfile *muon1_pT_data = new TProfile("muon1_pT_data","",9, xAxis);
    muon1_pT_data->SetBinEntries(1,176);
@@ -134,7 +134,7 @@ void mumu_lep1_pT()
    muon1_pT_data->GetZaxis()->SetTitleSize(0.035);
    muon1_pT_data->GetZaxis()->SetTitleOffset(1);
    muon1_pT_data->GetZaxis()->SetTitleFont(42);
-   muon1_pT_data->Draw("same");
+   muon1_pT_data->Draw("same E1");;
    
    TH1D *p_muon1_pT_SF__5 = new TH1D("p_muon1_pT_SF__5","",9, xAxis);
    p_muon1_pT_SF__5->SetBinContent(1,0.7944915);
@@ -181,7 +181,7 @@ void mumu_lep1_pT()
    p_muon1_pT_SF__5->GetZaxis()->SetTitleSize(0.035);
    p_muon1_pT_SF__5->GetZaxis()->SetTitleOffset(1);
    p_muon1_pT_SF__5->GetZaxis()->SetTitleFont(42);
-   p_muon1_pT_SF__5->Draw("same");
+   p_muon1_pT_SF__5->Draw("same E1");;
 
    TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
    leg->SetBorderSize(0);

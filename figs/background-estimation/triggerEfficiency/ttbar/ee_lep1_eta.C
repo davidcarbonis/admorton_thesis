@@ -2,16 +2,27 @@ void ee_lep1_eta()
 {
 //=========Macro generated from canvas: Canvas_1/Canvas_1
 //=========  (Sat Aug 24 23:27:17 2019) by ROOT version 6.18/00
-   TCanvas *Canvas_1 = new TCanvas("Canvas_1", "Canvas_1",260,94,1001,586);
-   Canvas_1->Range(-3.125,0.875,3.125,1.125);
-   Canvas_1->SetFillColor(0);
-   Canvas_1->SetBorderMode(0);
-   Canvas_1->SetBorderSize(2);
-   Canvas_1->SetFrameBorderMode(0);
-   Canvas_1->SetFrameBorderMode(0);
+
+   TCanvas *Canvas_1_n2 = new TCanvas("Canvas_1_n2", "Canvas_1_n2",0,0,1280,925);
+   gStyle->SetOptStat(0);
+//   Canvas_1_n2->Range(-0.4860759,-0.2025316,2.551899,1.063291); // tmtt plot range
+   Canvas_1_n2->Range(-3.125,0.875,3.125,1.125);
+   Canvas_1_n2->SetFillColor(0);
+   Canvas_1_n2->SetBorderMode(0);
+   Canvas_1_n2->SetBorderSize(2);
+   Canvas_1_n2->SetLeftMargin(0.15);
+   Canvas_1_n2->SetRightMargin(0.05);
+   Canvas_1_n2->SetTopMargin(0.08);
+   Canvas_1_n2->SetBottomMargin(0.15);
+   Canvas_1_n2->SetGridy();
+   Canvas_1_n2->SetTickx(1);
+   Canvas_1_n2->SetTicky(1);
+   Canvas_1_n2->SetFrameBorderMode(0);
+
    Double_t xAxis[6] = {-2.5, -1.5, -0.8, 0.8, 1.5, 2.5}; 
    
-   TProfile *electron1_eta_MC = new TProfile("electron1_eta_MC","",5, xAxis   electron1_eta_MC->SetBinEntries(0,10);
+   TProfile *electron1_eta_MC = new TProfile("electron1_eta_MC","ee final state - leading electron",5, xAxis);
+   electron1_eta_MC->SetBinEntries(0,10);
    electron1_eta_MC->SetBinEntries(1,3140);
    electron1_eta_MC->SetBinEntries(2,6590);
    electron1_eta_MC->SetBinEntries(3,24018);
@@ -31,26 +42,16 @@ void ee_lep1_eta()
    electron1_eta_MC->SetBinError(5,0.003734712);
    electron1_eta_MC->SetMinimum(0.9);
    electron1_eta_MC->SetMaximum(1.1);
-   electron1_eta_MC->SetEntries(43770);
-   
-   TPaveStats *ptstats = new TPaveStats(0.78,0.695,0.98,0.935,"brNDC");
-   ptstats->SetName("stats");
-   ptstats->SetBorderSize(1);
-   ptstats->SetFillColor(0);
-   ptstats->SetTextAlign(12);
-   ptstats->SetTextFont(42);
-   TText *ptstats_LaTex = ptstats->AddText("electron1_eta_MC");
-   ptstats_LaTex->SetTextSize(0.0368);
-   ptstats_LaTex = ptstats->AddText("Entries = 43770  ");
-   ptstats_LaTex = ptstats->AddText("Mean  = 0.0112");
-   ptstats_LaTex = ptstats->AddText("Mean y = 0.9655");
-   ptstats_LaTex = ptstats->AddText("Std Dev   =  1.014");
-   ptstats_LaTex = ptstats->AddText("Std Dev y = 0.1825");
-   ptstats->SetOptStat(1111);
-   ptstats->SetOptFit(0);
-   ptstats->Draw();
-   electron1_eta_MC->GetListOfFunctions()->Add(ptstats);
-   ptstats->SetParent(electron1_eta_MC);
+   electron1_eta_MC->SetEntries(43770);   
+
+   electron1_eta_MC->SetMinimum(0.9);
+   electron1_eta_MC->SetMaximum(1.1);
+   electron1_eta_MC->SetLineColor(1);
+   electron1_eta_MC->SetLineWidth(2);
+   electron1_eta_MC->SetMarkerColor(1);
+   electron1_eta_MC->SetMarkerStyle(20);
+   electron1_eta_MC->SetMarkerSize(1);
+
    electron1_eta_MC->GetXaxis()->SetTitle(" #eta");
    electron1_eta_MC->GetXaxis()->SetLabelFont(42);
    electron1_eta_MC->GetXaxis()->SetLabelSize(0.035);
@@ -68,10 +69,10 @@ void ee_lep1_eta()
    electron1_eta_MC->GetZaxis()->SetTitleSize(0.035);
    electron1_eta_MC->GetZaxis()->SetTitleOffset(1);
    electron1_eta_MC->GetZaxis()->SetTitleFont(42);
-   electron1_eta_MC->Draw("");
-   Double_t xAxis[6] = {-2.5, -1.5, -0.8, 0.8, 1.5, 2.5}; 
+   electron1_eta_MC->Draw("E1");
    
-   TProfile *electron1_eta_data = new TProfile("electron1_eta_data","",5, xAxis   electron1_eta_data->SetBinEntries(0,2);
+   TProfile *electron1_eta_data = new TProfile("electron1_eta_data","",5, xAxis);
+   electron1_eta_data->SetBinEntries(0,2);
    electron1_eta_data->SetBinEntries(1,1178);
    electron1_eta_data->SetBinEntries(2,2662);
    electron1_eta_data->SetBinEntries(3,10104);
@@ -93,7 +94,13 @@ void ee_lep1_eta()
    electron1_eta_data->SetBinError(5,0.006050119);
    electron1_eta_data->SetBinError(6,1);
    electron1_eta_data->SetEntries(17686);
+
    electron1_eta_data->SetLineColor(2);
+   electron1_eta_data->SetLineWidth(2);
+   electron1_eta_data->SetMarkerColor(2);
+   electron1_eta_data->SetMarkerStyle(22);
+   electron1_eta_data->SetMarkerSize(1.2);
+
    electron1_eta_data->GetXaxis()->SetTitle(" #eta");
    electron1_eta_data->GetXaxis()->SetLabelFont(42);
    electron1_eta_data->GetXaxis()->SetLabelSize(0.035);
@@ -111,10 +118,9 @@ void ee_lep1_eta()
    electron1_eta_data->GetZaxis()->SetTitleSize(0.035);
    electron1_eta_data->GetZaxis()->SetTitleOffset(1);
    electron1_eta_data->GetZaxis()->SetTitleFont(42);
-   electron1_eta_data->Draw("same");
-   Double_t xAxis1[6] = {-2.5, -1.5, -0.8, 0.8, 1.5, 2.5}; 
+   electron1_eta_data->Draw("same E1");
    
-   TH1D *p_electron1_eta_SF__1 = new TH1D("p_electron1_eta_SF__1","",5, xAxis1);
+   TH1D *p_electron1_eta_SF__1 = new TH1D("p_electron1_eta_SF__1","",5, xAxis);
    p_electron1_eta_SF__1->SetBinContent(0,1.111111);
    p_electron1_eta_SF__1->SetBinContent(1,1.018567);
    p_electron1_eta_SF__1->SetBinContent(2,1.010672);
@@ -128,7 +134,13 @@ void ee_lep1_eta()
    p_electron1_eta_SF__1->SetBinError(4,0.0231962);
    p_electron1_eta_SF__1->SetBinError(5,0.03510494);
    p_electron1_eta_SF__1->SetEntries(6987.289);
+
    p_electron1_eta_SF__1->SetLineColor(8);
+   p_electron1_eta_SF__1->SetLineWidth(2);
+   p_electron1_eta_SF__1->SetMarkerColor(8);
+   p_electron1_eta_SF__1->SetMarkerStyle(33);
+   p_electron1_eta_SF__1->SetMarkerSize(1.5);
+
    p_electron1_eta_SF__1->GetXaxis()->SetTitle(" #eta");
    p_electron1_eta_SF__1->GetXaxis()->SetLabelFont(42);
    p_electron1_eta_SF__1->GetXaxis()->SetLabelSize(0.035);
@@ -146,8 +158,23 @@ void ee_lep1_eta()
    p_electron1_eta_SF__1->GetZaxis()->SetTitleSize(0.035);
    p_electron1_eta_SF__1->GetZaxis()->SetTitleOffset(1);
    p_electron1_eta_SF__1->GetZaxis()->SetTitleFont(42);
-   p_electron1_eta_SF__1->Draw("same");
-   Canvas_1->Modified();
-   Canvas_1->cd();
-   Canvas_1->SetSelected(Canvas_1);
+   p_electron1_eta_SF__1->Draw("same E1");
+
+   TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
+   leg->SetBorderSize(0);
+   leg->SetTextSize(0.04);
+   leg->SetLineColor(1);
+   leg->SetLineStyle(1);
+   leg->SetLineWidth(1);
+   leg->SetFillColor(0);
+   leg->SetFillStyle(1001);
+
+   TLegendEntry *entry=leg->AddEntry("electron1_eta_data", "Data Efficiency", "PEL");
+   entry=leg->AddEntry("electron1_eta_MC", "MC Efficiency", "PEL");
+   entry=leg->AddEntry("p_electron1_eta_SF__1", "Data/MC SF", "PEL");
+   leg->Draw();
+
+   Canvas_1_n2->Modified();
+   Canvas_1_n2->cd();
+   Canvas_1_n2->SetSelected(Canvas_1_n2);
 }

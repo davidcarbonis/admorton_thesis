@@ -77,7 +77,7 @@ void emu_lep1_pT()
    muonElectron1_pT_MC->GetZaxis()->SetTitleSize(0.035);
    muonElectron1_pT_MC->GetZaxis()->SetTitleOffset(1);
    muonElectron1_pT_MC->GetZaxis()->SetTitleFont(42);
-   muonElectron1_pT_MC->Draw("");
+   muonElectron1_pT_MC->Draw("E1");
    
    TProfile *muonElectron1_pT_data = new TProfile("muonElectron1_pT_data","",9, xAxis);
    muonElectron1_pT_data->SetBinEntries(1,129);
@@ -135,7 +135,7 @@ void emu_lep1_pT()
    muonElectron1_pT_data->GetZaxis()->SetTitleSize(0.035);
    muonElectron1_pT_data->GetZaxis()->SetTitleOffset(1);
    muonElectron1_pT_data->GetZaxis()->SetTitleFont(42);
-   muonElectron1_pT_data->Draw("same");
+   muonElectron1_pT_data->Draw("same E1");;
    
    TH1D *p_muonElectron1_pT_SF__10 = new TH1D("p_muonElectron1_pT_SF__10","",9, xAxis);
    p_muonElectron1_pT_SF__10->SetBinContent(1,0.9297158);
@@ -181,7 +181,7 @@ void emu_lep1_pT()
    p_muonElectron1_pT_SF__10->GetZaxis()->SetTitleSize(0.035);
    p_muonElectron1_pT_SF__10->GetZaxis()->SetTitleOffset(1);
    p_muonElectron1_pT_SF__10->GetZaxis()->SetTitleFont(42);
-   p_muonElectron1_pT_SF__10->Draw("same");
+   p_muonElectron1_pT_SF__10->Draw("same E1");;
 
    TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
    leg->SetBorderSize(0);

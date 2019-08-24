@@ -76,7 +76,7 @@ void ee_lep2_pT()
    electron2_pT_MC->GetZaxis()->SetTitleSize(0.035);
    electron2_pT_MC->GetZaxis()->SetTitleOffset(1);
    electron2_pT_MC->GetZaxis()->SetTitleFont(42);
-   electron2_pT_MC->Draw("");
+   electron2_pT_MC->Draw("E1");
    
    TProfile *electron2_pT_data = new TProfile("electron2_pT_data","",9, xAxis);
    electron2_pT_data->SetBinEntries(1,1351);
@@ -134,7 +134,7 @@ void ee_lep2_pT()
    electron2_pT_data->GetZaxis()->SetTitleSize(0.035);
    electron2_pT_data->GetZaxis()->SetTitleOffset(1);
    electron2_pT_data->GetZaxis()->SetTitleFont(42);
-   electron2_pT_data->Draw("same");
+   electron2_pT_data->Draw("same E1");
    
    TH1D *p_electron2_pT_SF__3 = new TH1D("p_electron2_pT_SF__3","",9, xAxis);
    p_electron2_pT_SF__3->SetBinContent(1,1.013345);
@@ -180,7 +180,7 @@ void ee_lep2_pT()
    p_electron2_pT_SF__3->GetZaxis()->SetTitleSize(0.035);
    p_electron2_pT_SF__3->GetZaxis()->SetTitleOffset(1);
    p_electron2_pT_SF__3->GetZaxis()->SetTitleFont(42);
-   p_electron2_pT_SF__3->Draw("same");
+   p_electron2_pT_SF__3->Draw("same E1");
 
    TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
    leg->SetBorderSize(0);

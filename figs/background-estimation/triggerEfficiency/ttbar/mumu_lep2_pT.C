@@ -21,7 +21,7 @@ void mumu_lep2_pT()
 
    Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300};
 
-   TProfile *muon2_pT_MC = new TProfile("muon2_pT_MC","e#mu final state - subleading muon",9, xAxis);
+   TProfile *muon2_pT_MC = new TProfile("muon2_pT_MC","#mu#mu final state - subleading muon",9, xAxis);
    muon2_pT_MC->SetBinEntries(1,9205);
    muon2_pT_MC->SetBinEntries(2,6758);
    muon2_pT_MC->SetBinEntries(3,6510);
@@ -51,13 +51,13 @@ void mumu_lep2_pT()
    muon2_pT_MC->SetBinError(9,0.01753065);
    muon2_pT_MC->SetEntries(54639);
 
-   muon1_pT_MC->SetMinimum(0.5);
-   muon1_pT_MC->SetMaximum(1.1);
-   muon1_pT_MC->SetLineColor(1);
-   muon1_pT_MC->SetLineWidth(2);
-   muon1_pT_MC->SetMarkerColor(1);
-   muon1_pT_MC->SetMarkerStyle(20);
-   muon1_pT_MC->SetMarkerSize(1);
+   muon2_pT_MC->SetMinimum(0.5);
+   muon2_pT_MC->SetMaximum(1.1);
+   muon2_pT_MC->SetLineColor(1);
+   muon2_pT_MC->SetLineWidth(2);
+   muon2_pT_MC->SetMarkerColor(1);
+   muon2_pT_MC->SetMarkerStyle(20);
+   muon2_pT_MC->SetMarkerSize(1);
 
    muon2_pT_MC->GetXaxis()->SetTitle(" p_{T} (GeV)");
    muon2_pT_MC->GetXaxis()->SetLabelFont(42);
@@ -76,7 +76,7 @@ void mumu_lep2_pT()
    muon2_pT_MC->GetZaxis()->SetTitleSize(0.035);
    muon2_pT_MC->GetZaxis()->SetTitleOffset(1);
    muon2_pT_MC->GetZaxis()->SetTitleFont(42);
-   muon2_pT_MC->Draw("");
+   muon2_pT_MC->Draw("E1");
    
    TProfile *muon2_pT_data = new TProfile("muon2_pT_data","",9, xAxis);
    muon2_pT_data->SetBinEntries(1,6463);
@@ -134,7 +134,7 @@ void mumu_lep2_pT()
    muon2_pT_data->GetZaxis()->SetTitleSize(0.035);
    muon2_pT_data->GetZaxis()->SetTitleOffset(1);
    muon2_pT_data->GetZaxis()->SetTitleFont(42);
-   muon2_pT_data->Draw("same");
+   muon2_pT_data->Draw("same E1");
    
    TH1D *p_muon2_pT_SF__7 = new TH1D("p_muon2_pT_SF__7","",9, xAxis);
    p_muon2_pT_SF__7->SetBinContent(1,0.9717052);
@@ -180,7 +180,7 @@ void mumu_lep2_pT()
    p_muon2_pT_SF__7->GetZaxis()->SetTitleSize(0.035);
    p_muon2_pT_SF__7->GetZaxis()->SetTitleOffset(1);
    p_muon2_pT_SF__7->GetZaxis()->SetTitleFont(42);
-   p_muon2_pT_SF__7->Draw("same");
+   p_muon2_pT_SF__7->Draw("same E1");
 
    TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
    leg->SetBorderSize(0);
