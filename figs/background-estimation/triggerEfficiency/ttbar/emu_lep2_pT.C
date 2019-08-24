@@ -12,7 +12,8 @@ void emu_lep2_pT()
    Canvas_1->SetFrameBorderMode(0);
    Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TProfile *muonElectron2_pT_MC = new TProfile("muonElectron2_pT_MC","",9, xAxis   muonElectron2_pT_MC->SetBinEntries(1,1579);
+   TProfile *muonElectron2_pT_MC = new TProfile("muonElectron2_pT_MC","",9, xAxis);
+   muonElectron2_pT_MC->SetBinEntries(1,1579);
    muonElectron2_pT_MC->SetBinEntries(2,290);
    muonElectron2_pT_MC->SetBinEntries(3,241);
    muonElectron2_pT_MC->SetBinEntries(4,316);
@@ -58,9 +59,9 @@ void emu_lep2_pT()
    muonElectron2_pT_MC->GetZaxis()->SetTitleOffset(1);
    muonElectron2_pT_MC->GetZaxis()->SetTitleFont(42);
    muonElectron2_pT_MC->Draw("");
-   Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TProfile *muonElectron2_pT_data = new TProfile("muonElectron2_pT_data","",9, xAxis   muonElectron2_pT_data->SetBinEntries(1,735);
+   TProfile *muonElectron2_pT_data = new TProfile("muonElectron2_pT_data","",9, xAxis);
+   muonElectron2_pT_data->SetBinEntries(1,735);
    muonElectron2_pT_data->SetBinEntries(2,180);
    muonElectron2_pT_data->SetBinEntries(3,164);
    muonElectron2_pT_data->SetBinEntries(4,213);
@@ -110,9 +111,8 @@ void emu_lep2_pT()
    muonElectron2_pT_data->GetZaxis()->SetTitleOffset(1);
    muonElectron2_pT_data->GetZaxis()->SetTitleFont(42);
    muonElectron2_pT_data->Draw("same");
-   Double_t xAxis12[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TH1D *p_muonElectron2_pT_SF__12 = new TH1D("p_muonElectron2_pT_SF__12","",9, xAxis12);
+   TH1D *p_muonElectron2_pT_SF__12 = new TH1D("p_muonElectron2_pT_SF__12","",9, xAxis);
    p_muonElectron2_pT_SF__12->SetBinContent(1,0.9107266);
    p_muonElectron2_pT_SF__12->SetBinContent(2,0.9612512);
    p_muonElectron2_pT_SF__12->SetBinContent(3,1.008919);

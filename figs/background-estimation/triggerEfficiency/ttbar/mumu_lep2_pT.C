@@ -12,7 +12,8 @@ void mumu_lep2_pT()
    Canvas_1->SetFrameBorderMode(0);
    Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TProfile *muon2_pT_MC = new TProfile("muon2_pT_MC","",9, xAxis   muon2_pT_MC->SetBinEntries(1,9205);
+   TProfile *muon2_pT_MC = new TProfile("muon2_pT_MC","",9, xAxis);
+   muon2_pT_MC->SetBinEntries(1,9205);
    muon2_pT_MC->SetBinEntries(2,6758);
    muon2_pT_MC->SetBinEntries(3,6510);
    muon2_pT_MC->SetBinEntries(4,10493);
@@ -58,9 +59,9 @@ void mumu_lep2_pT()
    muon2_pT_MC->GetZaxis()->SetTitleOffset(1);
    muon2_pT_MC->GetZaxis()->SetTitleFont(42);
    muon2_pT_MC->Draw("");
-   Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TProfile *muon2_pT_data = new TProfile("muon2_pT_data","",9, xAxis   muon2_pT_data->SetBinEntries(1,6463);
+   TProfile *muon2_pT_data = new TProfile("muon2_pT_data","",9, xAxis);
+   muon2_pT_data->SetBinEntries(1,6463);
    muon2_pT_data->SetBinEntries(2,4658);
    muon2_pT_data->SetBinEntries(3,4415);
    muon2_pT_data->SetBinEntries(4,7696);
@@ -110,9 +111,8 @@ void mumu_lep2_pT()
    muon2_pT_data->GetZaxis()->SetTitleOffset(1);
    muon2_pT_data->GetZaxis()->SetTitleFont(42);
    muon2_pT_data->Draw("same");
-   Double_t xAxis7[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TH1D *p_muon2_pT_SF__7 = new TH1D("p_muon2_pT_SF__7","",9, xAxis7);
+   TH1D *p_muon2_pT_SF__7 = new TH1D("p_muon2_pT_SF__7","",9, xAxis);
    p_muon2_pT_SF__7->SetBinContent(1,0.9717052);
    p_muon2_pT_SF__7->SetBinContent(2,0.9653518);
    p_muon2_pT_SF__7->SetBinContent(3,0.9778093);

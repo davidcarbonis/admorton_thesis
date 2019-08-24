@@ -12,7 +12,8 @@ void ee_lep1_pT()
    Canvas_1->SetFrameBorderMode(0);
    Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TProfile *electron1_pT_MC = new TProfile("electron1_pT_MC","",9, xAxis   electron1_pT_MC->SetBinEntries(1,75);
+   TProfile *electron1_pT_MC = new TProfile("electron1_pT_MC","",9, xAxis);
+   electron1_pT_MC->SetBinEntries(1,75);
    electron1_pT_MC->SetBinEntries(2,272);
    electron1_pT_MC->SetBinEntries(3,566);
    electron1_pT_MC->SetBinEntries(4,2546);
@@ -60,9 +61,9 @@ void ee_lep1_pT()
    electron1_pT_MC->GetZaxis()->SetTitleOffset(1);
    electron1_pT_MC->GetZaxis()->SetTitleFont(42);
    electron1_pT_MC->Draw("");
-   Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TProfile *electron1_pT_data = new TProfile("electron1_pT_data","",9, xAxis   electron1_pT_data->SetBinEntries(1,24);
+   TProfile *electron1_pT_data = new TProfile("electron1_pT_data","",9, xAxis);
+   electron1_pT_data->SetBinEntries(1,24);
    electron1_pT_data->SetBinEntries(2,70);
    electron1_pT_data->SetBinEntries(3,171);
    electron1_pT_data->SetBinEntries(4,883);
@@ -112,9 +113,8 @@ void ee_lep1_pT()
    electron1_pT_data->GetZaxis()->SetTitleOffset(1);
    electron1_pT_data->GetZaxis()->SetTitleFont(42);
    electron1_pT_data->Draw("same");
-   Double_t xAxis1[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TH1D *p_electron1_pT_SF__1 = new TH1D("p_electron1_pT_SF__1","",9, xAxis1);
+   TH1D *p_electron1_pT_SF__1 = new TH1D("p_electron1_pT_SF__1","",9, xAxis);
    p_electron1_pT_SF__1->SetBinContent(1,0.9868421);
    p_electron1_pT_SF__1->SetBinContent(2,2.00553);
    p_electron1_pT_SF__1->SetBinContent(3,0.8450915);
