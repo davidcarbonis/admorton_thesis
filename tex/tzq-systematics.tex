@@ -186,9 +186,9 @@ The trigger efficiency is estimated as follows:
 where $N_{X triggers}$ is the number of events that have passed the analysis' lepton selection criteria and the cross-triggers, and $N_{X triggers + lepton triggers}$ is $N_{X trigger}$ and the number of events that additionally passed at least one of the lepton triggers for the relevant lepton flavour.
 
 As the trigger requirements were applied to both simulated and data events, a scale factor of the ratio of the trigger efficiency in data and in simulation was calculated and used to weight the simulation.
-A constant scale factor was found to be sufficient to account for the differences in the trigger efficiency between data and simulation for the $ee$, $\mu\mu$ and $e \mu$ final states considered for.
 
-The efficiencies were determined using data and simulated \ttbar events.
+The efficiencies were determined using data and simulated \ttbar events.]
+A constant scale factor was found to be sufficient to account for the differences in the trigger efficiency between data and simulation for the $ee$, $\mu\mu$ and $e \mu$ final states considered for.
 The resultant trigger efficiency scale factors applied to simulation are given in Table~\ref{tab:triggerSFs} with their associated statistical uncertainties.
 The associated systematic uncertainties are discussed in Section~\ref{sec:systematics}.
 
@@ -708,7 +708,7 @@ In this case, the LHAPDF (Les Houches Accord Parton Distribution Function) libra
 The uncertainties associated with the b-tagging scale factors described in Section~\ref{subsec:btagEff} were obtained by varying their value by $\pm 1\sigma$.
 
 \subsubsection*{Non-prompt Lepton Contributions}
-Based on the experience of other analyses which determine similar background contributions, CMS recommends a 30\% normalisation uncertainty to conservatively cover the uncertainties related to the variation of the ratio of opposite-sign over same-sign events as a function of the lepton flavour and the cut level. 
+Based on the experience of other analyses which determine similar background contributions, a 30\% normalisation uncertainty is applied to conservatively cover the uncertainties related to the variation of the ratio of opposite-sign over same-sign events as a function of the lepton flavour and the cut level~\cite{CMS:2016syx,CMS:2015vqc}.
 %\subsubsection*{Z+jets Background}
 %The uncertainty associated with the normalisation of the aMC@NLO Z+jets background sample is evaluated as part of the signal extraction process described in Section~\ref{sec:statisticalModel}.
 %This involves a simultaneous fit of the Z+jets background enriched control region and the signal region to measure the yields for both tZq and Z+jets processes.
@@ -782,6 +782,21 @@ The values of $\alpha$, expressing the strength of correlation between the lepto
 %alpha for DoubleEG/DoubleMuon/MuonEG Triggers: 0.99890+/-0.01379/1.00151+/-0.01291/0.98775+/-0.09182
 %-----------------------------------------------------------
 % DY
+%-----------------------------------------------------------
+%Double Electron data efficiency: 0.97729 +/- -0.00107/0.00113
+%Double Electron MC efficiency: 0.97684 +/- -0.00383/0.00486
+%Double Electron trigger SF: 1.00046 +/- 0.00390
+%-----------------------------------------------------------
+%Double Muon data efficiency: 0.98834 +/- -0.00043/0.00045
+%Double Muon MC efficiency: 0.99394 +/- -0.00074/0.00088
+%Double Muon trigger SF: 0.99437 +/- 0.00045
+%-----------------------------------------------------------
+%MuonEG data efficiency: 0.97689 +/- -0.00419/0.00508
+%MuonEG MC efficiency: 1.00000 +/- -0.00000 / 0.27522
+%MuonEG trigger SF: 0.97689 +/- 0.36518
+%-----------------------------------------------------------
+%alpha for DoubleEG/DoubleMuon/MuonEG Triggers: 1.00449+/-0.04360/1.00100+/-0.01621/0.95614+/-0.61048
+-----------------------------------------------------------
 
 Both the statistical uncertainties of the trigger efficiencies and the results of the above studies were consistent with those determined for other top physics analyses.
 As such, it was determined that systematic uncertainties of 1.0\%, 1.0\% and 2.0\% for the $ee$, $\mu\mu$, and $e\mu$ channels, respectively, would be sufficient to account for the residual differences in trigger efficiency between data and simulation.
@@ -829,7 +844,9 @@ As such, it was determined that systematic uncertainties of 1.0\%, 1.0\% and 2.0
 \subsubsection{Cross section normalisation}
 The uncertainty associated with the cross sections of the simulated samples was taken into account by associating a normalisation uncertainty with each of the simulated samples considered.
 The CMS Collaboration's search for tZq production using the trilepton channel at $\sqrt{s} = 13\TeV$ had assumed a value of 30\% for this source of systematic uncertainty, which reflected the theoretical uncertainties in the corresponding cross sections and a scaling up of a factor of two or more to account for possible modelling limitations~\cite{Sirunyan:2017nbr}.
-Since the publication of the above search, it is now CMS policy to assume an uncertainty of 10\%.
+Since the publication of the above search, it is now CMS policy to assume an uncertainty of 10\%~\cite{crossSectionSystematics}.
+This decision was deemed 
+% The background with the largest xc uncert was more than covered by an uncert of 10\%. This was further justified in that  
 
 \subsubsection{Factorisation and renormalisation scales}
 The impact of the uncertainty associated with the choice of factorisation ($\mu_{F}$) and renormalisation scales ($\mu_{R}$) used in perturbative QCD is evaluated by varying each scale up and down by a factor or 2 from their nominal value.
@@ -850,16 +867,20 @@ The uncertainty associated with this matching threshold was evaluated using dedi
 These dedicated simulated samples are listed in Table~\ref{tab:theorySampleList} as ``matching up '' and ``matching down'' for the respective variations of $h_{damp}$.
 
 \subsection{Pre-Fit Impact of the Systematic Uncertainties}\label{sec:uncertainitiesPreFitImpact}
-The impact of the each of the systematics on the event yield (in percentage) of the simulated processes following the application of the signal region selection criteria is shown in Table~\ref{tab:systImpact}.
-These rates, whilst giving an overview of which systematics were the most important, do not show how the shape of the fitted variable, the BDT discriminant, is influenced by each uncertainty.
+The impact of the each of the systematics on the event yield (in percentage) of the simulated processes following the application of the signal region selection criteria is shown in Table~\ref{tab:systImpact} for both of the final states considered.
+These rates, whilst giving an overview of which systematics were the most important, do not show how the shape of the fitted variable, the BDT discriminant, is influenced by each uncertainty when performing .
 
-Prior to performing the likelihood fit described in Chapter~\ref{chapter:results}, the theoretical sources of uncertainty were observed to have the greatest impact on the observed yields of the simulated samples.
+tZq - PDFs 
+
+Prior to performing the likelihood fit described in Chapter~\ref{chapter:results}, the theoretical sources of uncertainty were observed to have the greatest impact on the observed yields of all the simulated samples.
 While the majority of the experimental uncertainties have a smaller impact on the event yields than the theoretical uncertainties, the JER and PDF uncertainties were observed to have a greatest impact on the yields of the Z+jets and tZq processes, respectively.
 
 %% PDFs for tZq and ME/PS scales 
 
+How to improve the result
+
 \begin{sidewaystable}[htbp]
-\topcaption{Rate impact of systematics on MC}\label{tab:systImpact}
+\topcaption{Impact of systematic uncertainties on MC event yields following the application of the full event selection criteria.}\label{tab:systImpact}
 \begin{center}
 \linespread{2}
 \resizebox{\textwidth}{!}{\begin{tabular}{lcccccc}
