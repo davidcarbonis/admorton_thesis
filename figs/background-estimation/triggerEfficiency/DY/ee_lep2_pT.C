@@ -51,6 +51,8 @@ void ee_lep2_pT()
    electron2_pT_MC_DY->SetBinError(9,0.04461767);
    electron2_pT_MC_DY->SetEntries(3330);
 
+   electron2_pT_MC_DY->SetMinimum(0.0);
+   electron2_pT_MC_DY->SetMaximum(1.1);
    electron2_pT_MC_DY->SetLineColor(2);
    electron2_pT_MC_DY->SetLineWidth(2);
    electron2_pT_MC_DY->SetMarkerColor(2);
@@ -106,8 +108,6 @@ void ee_lep2_pT()
    electron2_pT_MC_ttbar->SetBinError(9,0.01439483);
    electron2_pT_MC_ttbar->SetEntries(43770);
 
-   electron2_pT_MC_ttbar->SetMinimum(0.5);
-   electron2_pT_MC_ttbar->SetMaximum(1.1);
    electron2_pT_MC_ttbar->SetLineColor(1);
    electron2_pT_MC_ttbar->SetLineWidth(2);
    electron2_pT_MC_ttbar->SetMarkerColor(1);
