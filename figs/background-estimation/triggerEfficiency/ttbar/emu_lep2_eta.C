@@ -40,8 +40,8 @@ void emu_lep2_eta()
    muonElectron2_eta_MC->SetBinError(5,0.02055208);
    muonElectron2_eta_MC->SetEntries(1227);
 
-   muonElectron2_eta_MC->SetMinimum(0.8);
-   muonElectron2_eta_MC->SetMaximum(1.2);
+   muonElectron2_eta_MC->SetMinimum(0.5);
+   muonElectron2_eta_MC->SetMaximum(1.1);
    muonElectron2_eta_MC->SetLineColor(1);
    muonElectron2_eta_MC->SetLineWidth(2);
    muonElectron2_eta_MC->SetMarkerColor(1);
@@ -165,4 +165,5 @@ void emu_lep2_eta()
    Canvas_1_n2->Modified();
    Canvas_1_n2->cd();
    Canvas_1_n2->SetSelected(Canvas_1_n2);
+//   Canvas_1_n2->SaveAs("muonElectron2_eta_SF.pdf");
 }

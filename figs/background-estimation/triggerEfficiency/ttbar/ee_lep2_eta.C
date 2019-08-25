@@ -23,27 +23,27 @@ void ee_lep2_eta()
    Double_t xAxis[6] = {-2.5, -1.5, -0.8, 0.8, 1.5, 2.5}; 
    
    TProfile *electron2_eta_MC = new TProfile("electron2_eta_MC","ee final state - subleading electron",5, xAxis);
-   electron2_eta_MC->SetBinEntries(0,11);
-   electron2_eta_MC->SetBinEntries(1,3960);
-   electron2_eta_MC->SetBinEntries(2,6666);
-   electron2_eta_MC->SetBinEntries(3,22101);
-   electron2_eta_MC->SetBinEntries(4,6858);
-   electron2_eta_MC->SetBinEntries(5,4174);
-   electron2_eta_MC->SetBinContent(0,10);
-   electron2_eta_MC->SetBinContent(1,3808);
-   electron2_eta_MC->SetBinContent(2,6438);
-   electron2_eta_MC->SetBinContent(3,21375);
-   electron2_eta_MC->SetBinContent(4,6614);
-   electron2_eta_MC->SetBinContent(5,4015);
-   electron2_eta_MC->SetBinError(0,3.162278);
-   electron2_eta_MC->SetBinError(1,0.00279452);
-   electron2_eta_MC->SetBinError(2,0.002007239);
-   electron2_eta_MC->SetBinError(3,0.001049128);
-   electron2_eta_MC->SetBinError(4,0.002012265);
-   electron2_eta_MC->SetBinError(5,0.002707082);
-   electron2_eta_MC->SetEntries(43770);
+   electron2_eta_MC->SetBinEntries(0,10);
+   electron2_eta_MC->SetBinEntries(1,3537);
+   electron2_eta_MC->SetBinEntries(2,6104);
+   electron2_eta_MC->SetBinEntries(3,20290);
+   electron2_eta_MC->SetBinEntries(4,6280);
+   electron2_eta_MC->SetBinEntries(5,3695);
+   electron2_eta_MC->SetBinContent(0,9);
+   electron2_eta_MC->SetBinContent(1,3445);
+   electron2_eta_MC->SetBinContent(2,5965);
+   electron2_eta_MC->SetBinContent(3,19841);
+   electron2_eta_MC->SetBinContent(4,6131);
+   electron2_eta_MC->SetBinContent(5,3595);
+   electron2_eta_MC->SetBinError(0,3);
+   electron2_eta_MC->SetBinError(1,0.002509107);
+   electron2_eta_MC->SetBinError(2,0.001755377);
+   electron2_eta_MC->SetBinError(3,0.000913363);
+   electron2_eta_MC->SetBinError(4,0.00176035);
+   electron2_eta_MC->SetBinError(5,0.002491849);
+   electron2_eta_MC->SetEntries(39916);
 
-   electron2_eta_MC->SetMinimum(0.9);
+   electron2_eta_MC->SetMinimum(0.5);
    electron2_eta_MC->SetMaximum(1.1);
    electron2_eta_MC->SetLineColor(1);
    electron2_eta_MC->SetLineWidth(2);
@@ -120,19 +120,19 @@ void ee_lep2_eta()
    electron2_eta_data->Draw("E1 same");
    
    TH1D *p_electron2_eta_SF__2 = new TH1D("p_electron2_eta_SF__2","",5, xAxis);
-   p_electron2_eta_SF__2->SetBinContent(0,1.1);
-   p_electron2_eta_SF__2->SetBinContent(1,1.015537);
-   p_electron2_eta_SF__2->SetBinContent(2,1.003562);
-   p_electron2_eta_SF__2->SetBinContent(3,1.00102);
-   p_electron2_eta_SF__2->SetBinContent(4,0.9979837);
-   p_electron2_eta_SF__2->SetBinContent(5,0.9949515);
-   p_electron2_eta_SF__2->SetBinError(0,0.1048809);
-   p_electron2_eta_SF__2->SetBinError(1,0.03084155);
-   p_electron2_eta_SF__2->SetBinError(2,0.02289924);
-   p_electron2_eta_SF__2->SetBinError(3,0.01240717);
-   p_electron2_eta_SF__2->SetBinError(4,0.02278049);
-   p_electron2_eta_SF__2->SetBinError(5,0.03075346);
-   p_electron2_eta_SF__2->SetEntries(8121.77);
+   p_electron2_eta_SF__2->SetBinContent(0,1.111111);
+   p_electron2_eta_SF__2->SetBinContent(1,1.002637);
+   p_electron2_eta_SF__2->SetBinContent(2,0.9918222);
+   p_electron2_eta_SF__2->SetBinContent(3,0.9900458);
+   p_electron2_eta_SF__2->SetBinContent(4,0.9858673);
+   p_electron2_eta_SF__2->SetBinContent(5,0.9836725);
+   p_electron2_eta_SF__2->SetBinError(0,0.1171214);
+   p_electron2_eta_SF__2->SetBinError(1,0.03094426);
+   p_electron2_eta_SF__2->SetBinError(2,0.02292959);
+   p_electron2_eta_SF__2->SetBinError(3,0.0124314);
+   p_electron2_eta_SF__2->SetBinError(4,0.02279188);
+   p_electron2_eta_SF__2->SetBinError(5,0.03089508);
+   p_electron2_eta_SF__2->SetEntries(7886.859);
 
    p_electron2_eta_SF__2->SetLineColor(8);
    p_electron2_eta_SF__2->SetLineWidth(2);
@@ -176,4 +176,5 @@ void ee_lep2_eta()
    Canvas_1_n2->Modified();
    Canvas_1_n2->cd();
    Canvas_1_n2->SetSelected(Canvas_1_n2);
+//   Canvas_1_n2->SaveAs("electron2_eta_SF.pdf");
 }

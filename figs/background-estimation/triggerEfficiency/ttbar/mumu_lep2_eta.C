@@ -23,24 +23,24 @@ void mumu_lep2_eta()
    Double_t xAxis[6] = {-2.4, -1.5, -0.8, 0.8, 1.5, 2.4}; 
    
    TProfile *muon2_eta_MC = new TProfile("muon2_eta_MC","#mu#mu final state - subleading muon",5, xAxis);
-   muon2_eta_MC->SetBinEntries(1,6837);
-   muon2_eta_MC->SetBinEntries(2,8407);
-   muon2_eta_MC->SetBinEntries(3,24120);
-   muon2_eta_MC->SetBinEntries(4,8503);
-   muon2_eta_MC->SetBinEntries(5,6772);
-   muon2_eta_MC->SetBinContent(1,6522);
-   muon2_eta_MC->SetBinContent(2,8185);
-   muon2_eta_MC->SetBinContent(3,23551);
-   muon2_eta_MC->SetBinContent(4,8287);
-   muon2_eta_MC->SetBinContent(5,6424);
-   muon2_eta_MC->SetBinError(1,0.002262374);
-   muon2_eta_MC->SetBinError(2,0.00157862);
-   muon2_eta_MC->SetBinError(3,0.0008595333);
-   muon2_eta_MC->SetBinError(4,0.001541868);
-   muon2_eta_MC->SetBinError(5,0.002387044);
-   muon2_eta_MC->SetEntries(54639);
+   muon2_eta_MC->SetBinEntries(1,4189);
+   muon2_eta_MC->SetBinEntries(2,6054);
+   muon2_eta_MC->SetBinEntries(3,18192);
+   muon2_eta_MC->SetBinEntries(4,6105);
+   muon2_eta_MC->SetBinEntries(5,4136);
+   muon2_eta_MC->SetBinContent(1,4134);
+   muon2_eta_MC->SetBinContent(2,6008);
+   muon2_eta_MC->SetBinContent(3,18061);
+   muon2_eta_MC->SetBinContent(4,6058);
+   muon2_eta_MC->SetBinContent(5,4083);
+   muon2_eta_MC->SetBinError(1,0.001701601);
+   muon2_eta_MC->SetBinError(2,0.001093898);
+   muon2_eta_MC->SetBinError(3,0.0005781885);
+   muon2_eta_MC->SetBinError(4,0.001094698);
+   muon2_eta_MC->SetBinError(5,0.001696361);
+   muon2_eta_MC->SetEntries(38676);
 
-   muon2_eta_MC->SetMinimum(0.9);
+   muon2_eta_MC->SetMinimum(0.5);
    muon2_eta_MC->SetMaximum(1.1);
    muon2_eta_MC->SetLineColor(1);
    muon2_eta_MC->SetLineWidth(2);
@@ -111,17 +111,17 @@ void mumu_lep2_eta()
    muon2_eta_data->Draw("same E1");
    
    TH1D *p_muon2_eta_SF__4 = new TH1D("p_muon2_eta_SF__4","",5, xAxis);
-   p_muon2_eta_SF__4->SetBinContent(1,1.021163);
-   p_muon2_eta_SF__4->SetBinContent(2,1.01403);
-   p_muon2_eta_SF__4->SetBinContent(3,1.013694);
-   p_muon2_eta_SF__4->SetBinContent(4,1.010312);
-   p_muon2_eta_SF__4->SetBinContent(5,1.026268);
-   p_muon2_eta_SF__4->SetBinError(1,0.01833408);
-   p_muon2_eta_SF__4->SetBinError(2,0.01591795);
-   p_muon2_eta_SF__4->SetBinError(3,0.0095275);
-   p_muon2_eta_SF__4->SetBinError(4,0.01586612);
-   p_muon2_eta_SF__4->SetBinError(5,0.01851036);
-   p_muon2_eta_SF__4->SetEntries(20289.31);
+   p_muon2_eta_SF__4->SetBinContent(1,0.9870751);
+   p_muon2_eta_SF__4->SetBinContent(2,0.9948119);
+   p_muon2_eta_SF__4->SetBinContent(3,0.9969597);
+   p_muon2_eta_SF__4->SetBinContent(4,0.9922864);
+   p_muon2_eta_SF__4->SetBinContent(5,0.986167);
+   p_muon2_eta_SF__4->SetBinError(1,0.02010359);
+   p_muon2_eta_SF__4->SetBinError(2,0.01701826);
+   p_muon2_eta_SF__4->SetBinError(3,0.01006125);
+   p_muon2_eta_SF__4->SetBinError(4,0.01697987);
+   p_muon2_eta_SF__4->SetBinError(5,0.02019671);
+   p_muon2_eta_SF__4->SetEntries(16479.6);
 
    p_muon2_eta_SF__4->SetLineColor(8);
    p_muon2_eta_SF__4->SetLineWidth(2);
@@ -165,4 +165,5 @@ void mumu_lep2_eta()
    Canvas_1_n2->Modified();
    Canvas_1_n2->cd();
    Canvas_1_n2->SetSelected(Canvas_1_n2);
+//   Canvas_1_n2->SaveAs("muon2_eta_SF.pdf");
 }
