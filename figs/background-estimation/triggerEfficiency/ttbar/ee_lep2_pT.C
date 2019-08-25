@@ -97,7 +97,7 @@ void ee_lep2_pT()
    electron2_pT_data->SetBinContent(6,2039);
    electron2_pT_data->SetBinContent(7,1093);
    electron2_pT_data->SetBinContent(8,1375);
-   electron2_pT_data->SetBinContent(9,104);
+   electron2_pT_data->SetBinContent(9,140);
    electron2_pT_data->SetBinContent(10,16);
    electron2_pT_data->SetBinError(1,0.00851827);
    electron2_pT_data->SetBinError(2,0.006264577);
@@ -145,7 +145,7 @@ void ee_lep2_pT()
    p_electron2_pT_SF__3->SetBinContent(6,0.9905158);
    p_electron2_pT_SF__3->SetBinContent(7,0.9874115);
    p_electron2_pT_SF__3->SetBinContent(8,0.982423);
-   p_electron2_pT_SF__3->SetBinContent(9,0.7222222);
+   p_electron2_pT_SF__3->SetBinContent(9,0.972222);
    p_electron2_pT_SF__3->SetBinError(1,0.03203939);
    p_electron2_pT_SF__3->SetBinError(2,0.02779807);
    p_electron2_pT_SF__3->SetBinError(3,0.02621523);
