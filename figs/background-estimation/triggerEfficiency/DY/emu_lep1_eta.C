@@ -68,7 +68,7 @@ void emu_lep1_eta()
    muonElectron1_eta_MC_ttbar->GetZaxis()->SetTitleFont(42);
    muonElectron1_eta_MC_ttbar->Draw("E1");
 
-   TProfile *muonElectron1_eta_MC_DY = new TProfile("muonElectron1_eta_MC_DY","",5, xAxis)
+   TProfile *muonElectron1_eta_MC_DY = new TProfile("muonElectron1_eta_MC_DY","",5, xAxis);
    muonElectron1_eta_MC_DY->SetBinEntries(1,5);
    muonElectron1_eta_MC_DY->SetBinEntries(2,5);
    muonElectron1_eta_MC_DY->SetBinEntries(3,7);

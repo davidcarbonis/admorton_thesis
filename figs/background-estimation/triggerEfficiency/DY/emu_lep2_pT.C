@@ -77,7 +77,8 @@ void emu_lep2_pT()
    muonElectron2_pT_MC_ttbar->GetZaxis()->SetTitleFont(42);
    muonElectron2_pT_MC_ttbar->Draw("E1");
 
-   TProfile *muonElectron2_pT_MC_DY = new TProfile("muonElectron2_pT_MC_DY","",9, xAxis   muonElectron2_pT_MC_DY->SetBinEntries(1,21);
+   TProfile *muonElectron2_pT_MC_DY = new TProfile("muonElectron2_pT_MC_DY","",9, xAxis);
+   muonElectron2_pT_MC_DY->SetBinEntries(1,21);
    muonElectron2_pT_MC_DY->SetBinEntries(2,3);
    muonElectron2_pT_MC_DY->SetBinEntries(3,1);
    muonElectron2_pT_MC_DY->SetBinEntries(4,2);

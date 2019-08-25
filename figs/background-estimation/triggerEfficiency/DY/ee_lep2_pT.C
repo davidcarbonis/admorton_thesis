@@ -78,7 +78,7 @@ void ee_lep2_pT()
    electron2_pT_MC_ttbar->GetZaxis()->SetTitleFont(42);
    electron2_pT_MC_ttbar->Draw("E1");
 
-   TProfile *electron2_pT_MC_DY = new TProfile("electron2_pT_MC_DY","",9, xAxis)
+   TProfile *electron2_pT_MC_DY = new TProfile("electron2_pT_MC_DY","",9, xAxis);
    electron2_pT_MC_DY->SetBinEntries(1,105);
    electron2_pT_MC_DY->SetBinEntries(2,132);
    electron2_pT_MC_DY->SetBinEntries(3,170);
@@ -148,5 +148,5 @@ void ee_lep2_pT()
    Canvas_1_n2->Modified();
    Canvas_1_n2->cd();
    Canvas_1_n2->SetSelected(Canvas_1_n2);
-   Canvas_1_n2->SaveAs("electron2_eta_eff.pdf");
+   Canvas_1_n2->SaveAs("electron2_pT_eff.pdf");
 }

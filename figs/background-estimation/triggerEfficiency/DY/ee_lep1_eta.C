@@ -21,7 +21,7 @@ void ee_lep1_eta()
 
    Double_t xAxis[6] = {-2.5, -1.5, -0.8, 0.8, 1.5, 2.5}; 
    
-   TProfile *electron1_eta_MC = new TProfile("electron1_eta_MC_ttbar","ee final state - leading electron",5, xAxis);
+   TProfile *electron1_eta_MC_ttbar = new TProfile("electron1_eta_MC_ttbar","ee final state - leading electron",5, xAxis);
    electron1_eta_MC_ttbar->SetBinEntries(0,10);
    electron1_eta_MC_ttbar->SetBinEntries(1,2773);
    electron1_eta_MC_ttbar->SetBinEntries(2,6071);
@@ -69,7 +69,7 @@ void ee_lep1_eta()
    electron1_eta_MC_ttbar->GetZaxis()->SetTitleFont(42);
    electron1_eta_MC_ttbar->Draw("E1");
 
-   TProfile *electron1_eta_MC_DY= new TProfile("electron1_eta_MC_DY","",5, xAxis)
+   TProfile *electron1_eta_MC_DY= new TProfile("electron1_eta_MC_DY","",5, xAxis);
    electron1_eta_MC_DY->SetBinEntries(1,132);
    electron1_eta_MC_DY->SetBinEntries(2,443);
    electron1_eta_MC_DY->SetBinEntries(3,2107);

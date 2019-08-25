@@ -69,7 +69,7 @@ void ee_lep2_eta()
    electron2_eta_MC_ttbar->GetZaxis()->SetTitleFont(42);
    electron2_eta_MC_ttbar->Draw("E1");
 
-   TProfile *electron2_eta_MC_DY = new TProfile("electron2_eta_MC_DY","",5, xAxis)
+   TProfile *electron2_eta_MC_DY = new TProfile("electron2_eta_MC_DY","",5, xAxis);
    electron2_eta_MC_DY->SetBinEntries(1,179);
    electron2_eta_MC_DY->SetBinEntries(2,415);
    electron2_eta_MC_DY->SetBinEntries(3,1922);
@@ -130,4 +130,4 @@ void ee_lep2_eta()
    Canvas_1_n2->SetSelected(Canvas_1_n2);
    Canvas_1_n2->SaveAs("electron2_eta_SF.pdf");
 }
-}
+

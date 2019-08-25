@@ -79,7 +79,7 @@ void ee_lep1_pT()
    electron1_pT_MC_ttbar->GetZaxis()->SetTitleFont(42);
    electron1_pT_MC_ttbar->Draw("E1");
 
-   TProfile *electron1_pT_MC_DY = new TProfile("electron1_pT_MC_DY","",9, xAxis)
+   TProfile *electron1_pT_MC_DY = new TProfile("electron1_pT_MC_DY","",9, xAxis);
    electron1_pT_MC_DY->SetBinEntries(2,2);
    electron1_pT_MC_DY->SetBinEntries(3,7);
    electron1_pT_MC_DY->SetBinEntries(4,27);
