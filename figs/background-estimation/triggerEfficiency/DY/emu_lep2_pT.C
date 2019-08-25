@@ -143,6 +143,7 @@ void emu_lep2_pT()
 
    TLegendEntry *entry=leg->AddEntry("muonElectron2_pT_MC_ttbar", "t#bar{t} Efficiency", "PEL");
    entry=leg->AddEntry("muonElectron2_pT_MC_DY", "DY Efficiency", "PEL");
+   leg->Draw();
 
    Canvas_1_n2->Modified();
    Canvas_1_n2->cd();
