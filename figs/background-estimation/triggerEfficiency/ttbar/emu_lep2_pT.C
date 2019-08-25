@@ -134,7 +134,7 @@ void emu_lep2_pT()
    muonElectron2_pT_data->GetZaxis()->SetTitleSize(0.035);
    muonElectron2_pT_data->GetZaxis()->SetTitleOffset(1);
    muonElectron2_pT_data->GetZaxis()->SetTitleFont(42);
-   muonElectron2_pT_data->Draw("same E1");;
+   muonElectron2_pT_data->Draw("same E1");
    
    TH1D *p_muonElectron2_pT_SF__12 = new TH1D("p_muonElectron2_pT_SF__12","",9, xAxis);
    p_muonElectron2_pT_SF__12->SetBinContent(1,0.9107266);
