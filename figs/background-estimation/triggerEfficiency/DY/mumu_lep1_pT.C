@@ -20,63 +20,6 @@ void mumu_lep1_pT()
 
    Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TProfile *muon1_pT_MC_ttbar = new TProfile("muon1_pT_MC_ttbar","#mu#mu final state - leading muon",9, xAxis);
-   muon1_pT_MC_ttbar->SetBinEntries(1,330);
-   muon1_pT_MC_ttbar->SetBinEntries(2,938);
-   muon1_pT_MC_ttbar->SetBinEntries(3,1572);
-   muon1_pT_MC_ttbar->SetBinEntries(4,4957);
-   muon1_pT_MC_ttbar->SetBinEntries(5,15808);
-   muon1_pT_MC_ttbar->SetBinEntries(6,9869);
-   muon1_pT_MC_ttbar->SetBinEntries(7,6494);
-   muon1_pT_MC_ttbar->SetBinEntries(8,11754);
-   muon1_pT_MC_ttbar->SetBinEntries(9,2917);
-   muon1_pT_MC_ttbar->SetBinContent(1,59);
-   muon1_pT_MC_ttbar->SetBinContent(2,586);
-   muon1_pT_MC_ttbar->SetBinContent(3,1411);
-   muon1_pT_MC_ttbar->SetBinContent(4,4811);
-   muon1_pT_MC_ttbar->SetBinContent(5,15506);
-   muon1_pT_MC_ttbar->SetBinContent(6,9732);
-   muon1_pT_MC_ttbar->SetBinContent(7,6387);
-   muon1_pT_MC_ttbar->SetBinContent(8,11597);
-   muon1_pT_MC_ttbar->SetBinContent(9,2880);
-   muon1_pT_MC_ttbar->SetBinError(1,0.01841018);
-   muon1_pT_MC_ttbar->SetBinError(2,0.01394319);
-   muon1_pT_MC_ttbar->SetBinError(3,0.006966787);
-   muon1_pT_MC_ttbar->SetBinError(4,0.002202527);
-   muon1_pT_MC_ttbar->SetBinError(5,0.0009734048);
-   muon1_pT_MC_ttbar->SetBinError(6,0.001083821);
-   muon1_pT_MC_ttbar->SetBinError(7,0.001470326);
-   muon1_pT_MC_ttbar->SetBinError(8,0.0009688384);
-   muon1_pT_MC_ttbar->SetBinError(9,0.002064594);
-   muon1_pT_MC_ttbar->SetEntries(54639);
-
-   muon1_pT_MC_ttbar->SetMinimum(0.5);
-   muon1_pT_MC_ttbar->SetMaximum(1.1);
-   muon1_pT_MC_ttbar->SetLineColor(1);
-   muon1_pT_MC_ttbar->SetLineWidth(2);
-   muon1_pT_MC_ttbar->SetMarkerColor(1);
-   muon1_pT_MC_ttbar->SetMarkerStyle(20);
-   muon1_pT_MC_ttbar->SetMarkerSize(1);
-
-   muon1_pT_MC_ttbar->GetXaxis()->SetTitle(" p_{T} (GeV)");
-   muon1_pT_MC_ttbar->GetXaxis()->SetLabelFont(42);
-   muon1_pT_MC_ttbar->GetXaxis()->SetLabelSize(0.035);
-   muon1_pT_MC_ttbar->GetXaxis()->SetTitleSize(0.035);
-   muon1_pT_MC_ttbar->GetXaxis()->SetTitleOffset(1);
-   muon1_pT_MC_ttbar->GetXaxis()->SetTitleFont(42);
-   muon1_pT_MC_ttbar->GetYaxis()->SetTitle(" Efficiency");
-   muon1_pT_MC_ttbar->GetYaxis()->SetLabelFont(42);
-   muon1_pT_MC_ttbar->GetYaxis()->SetLabelSize(0.035);
-   muon1_pT_MC_ttbar->GetYaxis()->SetTitleSize(0.035);
-   muon1_pT_MC_ttbar->GetYaxis()->SetTitleOffset(1);
-   muon1_pT_MC_ttbar->GetYaxis()->SetTitleFont(42);
-   muon1_pT_MC_ttbar->GetZaxis()->SetLabelFont(42);
-   muon1_pT_MC_ttbar->GetZaxis()->SetLabelSize(0.035);
-   muon1_pT_MC_ttbar->GetZaxis()->SetTitleSize(0.035);
-   muon1_pT_MC_ttbar->GetZaxis()->SetTitleOffset(1);
-   muon1_pT_MC_ttbar->GetZaxis()->SetTitleFont(42);
-   muon1_pT_MC_ttbar->Draw("E1");
-
    TProfile *muon1_pT_MC_DY = new TProfile("muon1_pT_MC_DY","",9, xAxis);
    muon1_pT_MC_DY->SetBinEntries(1,11);
    muon1_pT_MC_DY->SetBinEntries(2,25);
@@ -107,6 +50,8 @@ void mumu_lep1_pT()
    muon1_pT_MC_DY->SetBinError(9,0.0008496728);
    muon1_pT_MC_DY->SetEntries(25447);
 
+   muon1_pT_MC_DY->SetMinimum(0.);
+   muon1_pT_MC_DY->SetMaximum(1.1);
    muon1_pT_MC_DY->SetLineColor(2);
    muon1_pT_MC_DY->SetLineWidth(2);
    muon1_pT_MC_DY->SetMarkerColor(2);
@@ -130,7 +75,62 @@ void mumu_lep1_pT()
    muon1_pT_MC_DY->GetZaxis()->SetTitleSize(0.035);
    muon1_pT_MC_DY->GetZaxis()->SetTitleOffset(1);
    muon1_pT_MC_DY->GetZaxis()->SetTitleFont(42);
-   muon1_pT_MC_DY->Draw("E1 same");
+   muon1_pT_MC_DY->Draw("E1");
+
+   TProfile *muon1_pT_MC_ttbar = new TProfile("muon1_pT_MC_ttbar","#mu#mu final state - leading muon",9, xAxis);
+   muon1_pT_MC_ttbar->SetBinEntries(1,330);
+   muon1_pT_MC_ttbar->SetBinEntries(2,938);
+   muon1_pT_MC_ttbar->SetBinEntries(3,1572);
+   muon1_pT_MC_ttbar->SetBinEntries(4,4957);
+   muon1_pT_MC_ttbar->SetBinEntries(5,15808);
+   muon1_pT_MC_ttbar->SetBinEntries(6,9869);
+   muon1_pT_MC_ttbar->SetBinEntries(7,6494);
+   muon1_pT_MC_ttbar->SetBinEntries(8,11754);
+   muon1_pT_MC_ttbar->SetBinEntries(9,2917);
+   muon1_pT_MC_ttbar->SetBinContent(1,59);
+   muon1_pT_MC_ttbar->SetBinContent(2,586);
+   muon1_pT_MC_ttbar->SetBinContent(3,1411);
+   muon1_pT_MC_ttbar->SetBinContent(4,4811);
+   muon1_pT_MC_ttbar->SetBinContent(5,15506);
+   muon1_pT_MC_ttbar->SetBinContent(6,9732);
+   muon1_pT_MC_ttbar->SetBinContent(7,6387);
+   muon1_pT_MC_ttbar->SetBinContent(8,11597);
+   muon1_pT_MC_ttbar->SetBinContent(9,2880);
+   muon1_pT_MC_ttbar->SetBinError(1,0.01841018);
+   muon1_pT_MC_ttbar->SetBinError(2,0.01394319);
+   muon1_pT_MC_ttbar->SetBinError(3,0.006966787);
+   muon1_pT_MC_ttbar->SetBinError(4,0.002202527);
+   muon1_pT_MC_ttbar->SetBinError(5,0.0009734048);
+   muon1_pT_MC_ttbar->SetBinError(6,0.001083821);
+   muon1_pT_MC_ttbar->SetBinError(7,0.001470326);
+   muon1_pT_MC_ttbar->SetBinError(8,0.0009688384);
+   muon1_pT_MC_ttbar->SetBinError(9,0.002064594);
+   muon1_pT_MC_ttbar->SetEntries(54639);
+
+   muon1_pT_MC_ttbar->SetLineColor(1);
+   muon1_pT_MC_ttbar->SetLineWidth(2);
+   muon1_pT_MC_ttbar->SetMarkerColor(1);
+   muon1_pT_MC_ttbar->SetMarkerStyle(20);
+   muon1_pT_MC_ttbar->SetMarkerSize(1);
+
+   muon1_pT_MC_ttbar->GetXaxis()->SetTitle(" p_{T} (GeV)");
+   muon1_pT_MC_ttbar->GetXaxis()->SetLabelFont(42);
+   muon1_pT_MC_ttbar->GetXaxis()->SetLabelSize(0.035);
+   muon1_pT_MC_ttbar->GetXaxis()->SetTitleSize(0.035);
+   muon1_pT_MC_ttbar->GetXaxis()->SetTitleOffset(1);
+   muon1_pT_MC_ttbar->GetXaxis()->SetTitleFont(42);
+   muon1_pT_MC_ttbar->GetYaxis()->SetTitle(" Efficiency");
+   muon1_pT_MC_ttbar->GetYaxis()->SetLabelFont(42);
+   muon1_pT_MC_ttbar->GetYaxis()->SetLabelSize(0.035);
+   muon1_pT_MC_ttbar->GetYaxis()->SetTitleSize(0.035);
+   muon1_pT_MC_ttbar->GetYaxis()->SetTitleOffset(1);
+   muon1_pT_MC_ttbar->GetYaxis()->SetTitleFont(42);
+   muon1_pT_MC_ttbar->GetZaxis()->SetLabelFont(42);
+   muon1_pT_MC_ttbar->GetZaxis()->SetLabelSize(0.035);
+   muon1_pT_MC_ttbar->GetZaxis()->SetTitleSize(0.035);
+   muon1_pT_MC_ttbar->GetZaxis()->SetTitleOffset(1);
+   muon1_pT_MC_ttbar->GetZaxis()->SetTitleFont(42);
+   muon1_pT_MC_ttbar->Draw("E1 same");
 
    TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
    leg->SetBorderSize(0);
