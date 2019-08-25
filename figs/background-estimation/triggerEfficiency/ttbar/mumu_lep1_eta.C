@@ -40,7 +40,7 @@ void mumu_lep1_eta()
    muon1_eta_MC->SetBinError(5,0.002170752);
    muon1_eta_MC->SetEntries(51415);
 
-   muon1_eta_MC->SetMinimum(0.5);
+   muon1_eta_MC->SetMinimum(0.8);
    muon1_eta_MC->SetMaximum(1.1);
    muon1_eta_MC->SetLineColor(1);
    muon1_eta_MC->SetLineWidth(2);
