@@ -225,16 +225,6 @@ The associated systematic uncertainties are discussed in Section~\ref{sec:system
 %alpha for DoubleEG/DoubleMuon/MuonEG Triggers: 0.99890+/-0.01379/1.00151+/-0.01291/0.98775+/-0.09182
 %-----------------------------------------------------------
 
-% part 1 mumu
-%% data eff 0.98069  +/- -0.00070/0.00073
-%% SF 0.98868 +/- 0.00013
-%% part 2 mumu
-%% data eff 0.99061 +/- -0.00057/0.00061
-%% MC 0.99192 +/- -0.00061/0.00074
-%% SF 0.99868 +/- 0.00017
-
-%%  lumiRunsBCDEF_{19713.888}, // Lumi for hip era runs
-%  lumiRunsGH_{16146.178}, // Lumi for post-hip era runs
 
 \subsection{Lepton Energy Corrections}\label{subsec:leptonEnergyCorrections}
 \subsubsection{Electron Regression and Energy Scale and Smearing Corrections}
@@ -723,8 +713,12 @@ The uncertainties associated with the lepton identification, isolation and recon
 Several systematic studies were performed to estimate the systematic uncertainty associated with the trigger scale factors.
 These studies were the comparison of the trigger efficiencies \ttbar and Z+jets processes in simulation and the strength of the correlation of the \MET trigger selection to the lepton triggers used in the analysis.
 
+%These comparisons were undertaken as part of the systematics studies undertaken to estimate the systematic uncertainty on the trigger scale factors that were determined.
+%As shown in the distributions below in Section~\ref{appSec:triggerSystPlots}, the differences in the trigger efficiency measured across $\eta$ and for $\pT$ above the lepton trigger thresholds for the $ee$ and $\mu\mu$ final states are minimal and are covered by their respective statistical uncertainties.
+
 When comparing the trigger efficiencies in simulation between the \ttbar and Z+jets samples, it was found that the differences between the trigger efficiencies in each channel was covered by the statistical uncertainties.
-The trigger efficiencies determined for the \ttbar and Z+jets simulation samples in each channel are shown in Table~\ref{tab:zPlusTriggerSFs}.
+The trigger efficiencies determined for the \ttbar and Z+jets simulation samples the $ee$ and $\mu\mu$ final states are shown in Table~\ref{tab:zPlusTriggerSFs}.
+Distributions of the trigger efficiencies for the \ttbar and Z+jets simulation samples as functions of $\pT$ and $\eta$ are provided in Appendix~\ref{appSec:triggerSystPlots}.
 
 \begin{table}[htbp]
 \topcaption {
@@ -739,11 +733,11 @@ The uncertainties given only include the statistical uncertainty associated with
    \textbf{Channel} & \textbf{MC Sample} & \textbf{$\epsilon _{MC}$} \\
    \hline   
    \multirow{2}{*}{$ee$} & \ttbar & 0.98823 $\pm$ 0.00086 \\
-   & Z+jets & 0.98849 $\pm$ 0.00106 \\
+   & Z+jets & 0.98849 $\pm$ 0.00309 \\
    \multirow{2}{*}{$\mu\mu$} & \ttbar & 0.99192 $\pm$ 0.00074 \\
    & Z+jets & 0.99258 $\pm$ 0.00083 \\
-   \multirow{2}{*}{$e \mu$} & \ttbar & 0.99148 $\pm$ 0.00722 \\
-   & Z+jets & 0.98838 $\pm$ 0.01183 \\
+ %  \multirow{2}{*}{$e \mu$} & \ttbar & 0.99148 $\pm$ 0.00722 \\
+ %  & Z+jets & 0.98838 $\pm$ 0.01183 \\
    \hline
  \end{tabular}%}
 \end{table}
