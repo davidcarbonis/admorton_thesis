@@ -22,6 +22,56 @@ void ee_lep1_pT()
 
    Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
+   TProfile *electron1_pT_MC_DY = new TProfile("electron1_pT_MC_DY","",9, xAxis);
+   electron1_pT_MC_DY->SetBinEntries(2,2);
+   electron1_pT_MC_DY->SetBinEntries(3,7);
+   electron1_pT_MC_DY->SetBinEntries(4,27);
+   electron1_pT_MC_DY->SetBinEntries(5,127);
+   electron1_pT_MC_DY->SetBinEntries(6,179);
+   electron1_pT_MC_DY->SetBinEntries(7,250);
+   electron1_pT_MC_DY->SetBinEntries(8,1535);
+   electron1_pT_MC_DY->SetBinEntries(9,1203);
+   electron1_pT_MC_DY->SetBinContent(3,4);
+   electron1_pT_MC_DY->SetBinContent(4,23);
+   electron1_pT_MC_DY->SetBinContent(5,121);
+   electron1_pT_MC_DY->SetBinContent(6,175);
+   electron1_pT_MC_DY->SetBinContent(7,248);
+   electron1_pT_MC_DY->SetBinContent(8,1532);
+   electron1_pT_MC_DY->SetBinContent(9,1182);
+   electron1_pT_MC_DY->SetBinError(3,0.221335);
+   electron1_pT_MC_DY->SetBinError(4,0.08828624);
+   electron1_pT_MC_DY->SetBinError(5,0.02334927);
+   electron1_pT_MC_DY->SetBinError(6,0.01491585);
+   electron1_pT_MC_DY->SetBinError(7,0.009038229);
+   electron1_pT_MC_DY->SetBinError(8,0.001635523);
+   electron1_pT_MC_DY->SetBinError(9,0.006064209);
+   electron1_pT_MC_DY->SetEntries(3330);
+
+   electron1_pT_MC_DY->SetLineColor(2);
+   electron1_pT_MC_DY->SetLineWidth(2);
+   electron1_pT_MC_DY->SetMarkerColor(2);
+   electron1_pT_MC_DY->SetMarkerStyle(22);
+   electron1_pT_MC_DY->SetMarkerSize(1.2);
+
+   electron1_pT_MC_DY->GetXaxis()->SetTitle(" p_{T} (GeV)");
+   electron1_pT_MC_DY->GetXaxis()->SetLabelFont(42);
+   electron1_pT_MC_DY->GetXaxis()->SetLabelSize(0.035);
+   electron1_pT_MC_DY->GetXaxis()->SetTitleSize(0.035);
+   electron1_pT_MC_DY->GetXaxis()->SetTitleOffset(1);
+   electron1_pT_MC_DY->GetXaxis()->SetTitleFont(42);
+   electron1_pT_MC_DY->GetYaxis()->SetTitle(" Efficiency");
+   electron1_pT_MC_DY->GetYaxis()->SetLabelFont(42);
+   electron1_pT_MC_DY->GetYaxis()->SetLabelSize(0.035);
+   electron1_pT_MC_DY->GetYaxis()->SetTitleSize(0.035);
+   electron1_pT_MC_DY->GetYaxis()->SetTitleOffset(1);
+   electron1_pT_MC_DY->GetYaxis()->SetTitleFont(42);
+   electron1_pT_MC_DY->GetZaxis()->SetLabelFont(42);
+   electron1_pT_MC_DY->GetZaxis()->SetLabelSize(0.035);
+   electron1_pT_MC_DY->GetZaxis()->SetTitleSize(0.035);
+   electron1_pT_MC_DY->GetZaxis()->SetTitleOffset(1);
+   electron1_pT_MC_DY->GetZaxis()->SetTitleFont(42);
+   electron1_pT_MC_DY->Draw("E1");
+
    TProfile *electron1_pT_MC_ttbar = new TProfile("electron1_pT_MC_ttbar","ee final state - leading electron",9, xAxis);
    electron1_pT_MC_ttbar->SetBinEntries(1,75);
    electron1_pT_MC_ttbar->SetBinEntries(2,272);
@@ -77,57 +127,7 @@ void ee_lep1_pT()
    electron1_pT_MC_ttbar->GetZaxis()->SetTitleSize(0.035);
    electron1_pT_MC_ttbar->GetZaxis()->SetTitleOffset(1);
    electron1_pT_MC_ttbar->GetZaxis()->SetTitleFont(42);
-   electron1_pT_MC_ttbar->Draw("E1");
-
-   TProfile *electron1_pT_MC_DY = new TProfile("electron1_pT_MC_DY","",9, xAxis);
-   electron1_pT_MC_DY->SetBinEntries(2,2);
-   electron1_pT_MC_DY->SetBinEntries(3,7);
-   electron1_pT_MC_DY->SetBinEntries(4,27);
-   electron1_pT_MC_DY->SetBinEntries(5,127);
-   electron1_pT_MC_DY->SetBinEntries(6,179);
-   electron1_pT_MC_DY->SetBinEntries(7,250);
-   electron1_pT_MC_DY->SetBinEntries(8,1535);
-   electron1_pT_MC_DY->SetBinEntries(9,1203);
-   electron1_pT_MC_DY->SetBinContent(3,4);
-   electron1_pT_MC_DY->SetBinContent(4,23);
-   electron1_pT_MC_DY->SetBinContent(5,121);
-   electron1_pT_MC_DY->SetBinContent(6,175);
-   electron1_pT_MC_DY->SetBinContent(7,248);
-   electron1_pT_MC_DY->SetBinContent(8,1532);
-   electron1_pT_MC_DY->SetBinContent(9,1142);
-   electron1_pT_MC_DY->SetBinError(3,0.221335);
-   electron1_pT_MC_DY->SetBinError(4,0.08828624);
-   electron1_pT_MC_DY->SetBinError(5,0.02334927);
-   electron1_pT_MC_DY->SetBinError(6,0.01491585);
-   electron1_pT_MC_DY->SetBinError(7,0.009038229);
-   electron1_pT_MC_DY->SetBinError(8,0.001635523);
-   electron1_pT_MC_DY->SetBinError(9,0.006064209);
-   electron1_pT_MC_DY->SetEntries(3330);
-
-   electron1_pT_MC_DY->SetLineColor(2);
-   electron1_pT_MC_DY->SetLineWidth(2);
-   electron1_pT_MC_DY->SetMarkerColor(2);
-   electron1_pT_MC_DY->SetMarkerStyle(22);
-   electron1_pT_MC_DY->SetMarkerSize(1.2);
-
-   electron1_pT_MC_DY->GetXaxis()->SetTitle(" p_{T} (GeV)");
-   electron1_pT_MC_DY->GetXaxis()->SetLabelFont(42);
-   electron1_pT_MC_DY->GetXaxis()->SetLabelSize(0.035);
-   electron1_pT_MC_DY->GetXaxis()->SetTitleSize(0.035);
-   electron1_pT_MC_DY->GetXaxis()->SetTitleOffset(1);
-   electron1_pT_MC_DY->GetXaxis()->SetTitleFont(42);
-   electron1_pT_MC_DY->GetYaxis()->SetTitle(" Efficiency");
-   electron1_pT_MC_DY->GetYaxis()->SetLabelFont(42);
-   electron1_pT_MC_DY->GetYaxis()->SetLabelSize(0.035);
-   electron1_pT_MC_DY->GetYaxis()->SetTitleSize(0.035);
-   electron1_pT_MC_DY->GetYaxis()->SetTitleOffset(1);
-   electron1_pT_MC_DY->GetYaxis()->SetTitleFont(42);
-   electron1_pT_MC_DY->GetZaxis()->SetLabelFont(42);
-   electron1_pT_MC_DY->GetZaxis()->SetLabelSize(0.035);
-   electron1_pT_MC_DY->GetZaxis()->SetTitleSize(0.035);
-   electron1_pT_MC_DY->GetZaxis()->SetTitleOffset(1);
-   electron1_pT_MC_DY->GetZaxis()->SetTitleFont(42);
-   electron1_pT_MC_DY->Draw("E1 same");
+   electron1_pT_MC_ttbar->Draw("E1 same");
 
    TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
    leg->SetBorderSize(0);
