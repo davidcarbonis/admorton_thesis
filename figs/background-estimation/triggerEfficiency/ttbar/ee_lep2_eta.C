@@ -43,7 +43,7 @@ void ee_lep2_eta()
    electron2_eta_MC->SetBinError(5,0.002491849);
    electron2_eta_MC->SetEntries(39916);
 
-   electron2_eta_MC->SetMinimum(0.5);
+   electron2_eta_MC->SetMinimum(0.8);
    electron2_eta_MC->SetMaximum(1.1);
    electron2_eta_MC->SetLineColor(1);
    electron2_eta_MC->SetLineWidth(2);
