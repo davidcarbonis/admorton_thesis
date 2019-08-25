@@ -43,8 +43,8 @@ void emu_lep1_eta()
    muonElectron1_eta_MC->SetBinError(5,0.01315283);
    muonElectron1_eta_MC->SetEntries(2342);
 
-   muonElectron1_eta_MC->SetMinimum(0.5);
-   muonElectron1_eta_MC->SetMaximum(1.1);
+   muonElectron1_eta_MC->SetMinimum(0.8);
+   muonElectron1_eta_MC->SetMaximum(1.2);
    muonElectron1_eta_MC->SetLineColor(1);
    muonElectron1_eta_MC->SetLineWidth(2);
    muonElectron1_eta_MC->SetMarkerColor(1);
@@ -155,7 +155,7 @@ void emu_lep1_eta()
    p_muonElectron1_eta_SF__5->GetZaxis()->SetTitleFont(42);
    p_muonElectron1_eta_SF__5->Draw("same E1");
 
-   TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
+   TLegend *leg = new TLegend(0.45,0.22,0.52,0.43,NULL,"brNDC");
    leg->SetBorderSize(0);
    leg->SetTextSize(0.04);
    leg->SetLineColor(1);

@@ -52,7 +52,7 @@ void emu_lep2_pT()
    muonElectron2_pT_MC->SetEntries(3376);
 
    muonElectron2_pT_MC->SetMinimum(0.5);
-   muonElectron2_pT_MC->SetMaximum(1.1);
+   muonElectron2_pT_MC->SetMaximum(1.2);
    muonElectron2_pT_MC->SetLineColor(1);
    muonElectron2_pT_MC->SetLineWidth(2);
    muonElectron2_pT_MC->SetMarkerColor(1);
