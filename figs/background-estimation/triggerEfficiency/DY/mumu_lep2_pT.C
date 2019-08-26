@@ -20,7 +20,7 @@ void mumu_lep2_pT()
 
    Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TProfile *muon2_pT_MC_DY = new TProfile("muon2_pT_MC_DY","",9, xAxis);
+   TProfile *muon2_pT_MC_DY = new TProfile("muon2_pT_MC_DY","#mu#mu final state - subleading muon",9, xAxis);
    muon2_pT_MC_DY->SetBinEntries(1,1677);
    muon2_pT_MC_DY->SetBinEntries(2,1360);
    muon2_pT_MC_DY->SetBinEntries(3,1294);

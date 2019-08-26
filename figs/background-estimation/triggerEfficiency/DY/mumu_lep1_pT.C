@@ -20,7 +20,7 @@ void mumu_lep1_pT()
 
    Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TProfile *muon1_pT_MC_DY = new TProfile("muon1_pT_MC_DY","",9, xAxis);
+   TProfile *muon1_pT_MC_DY = new TProfile("muon1_pT_MC_DY","#mu#mu final state - leading muon",9, xAxis);
    muon1_pT_MC_DY->SetBinEntries(1,11);
    muon1_pT_MC_DY->SetBinEntries(2,25);
    muon1_pT_MC_DY->SetBinEntries(3,55);

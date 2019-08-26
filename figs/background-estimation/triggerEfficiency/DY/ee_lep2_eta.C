@@ -21,7 +21,7 @@ void ee_lep2_eta()
    
    Double_t xAxis[6] = {-2.5, -1.5, -0.8, 0.8, 1.5, 2.5}; 
 
-   TProfile *electron2_eta_MC_DY = new TProfile("electron2_eta_MC_DY","",5, xAxis);
+   TProfile *electron2_eta_MC_DY = new TProfile("electron2_eta_MC_DY","ee final state - subleading electron",5, xAxis);
    electron2_eta_MC_DY->SetBinEntries(1,179);
    electron2_eta_MC_DY->SetBinEntries(2,415);
    electron2_eta_MC_DY->SetBinEntries(3,1922);

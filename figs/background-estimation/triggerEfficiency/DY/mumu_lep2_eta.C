@@ -21,7 +21,7 @@ void mumu_lep2_eta()
 
    Double_t xAxis[6] = {-2.5, -1.5, -0.8, 0.8, 1.5, 2.5}; 
    
-   TProfile *muon2_eta_MC_DY = new TProfile("muon2_eta_MC_DY","",5, xAxis);
+   TProfile *muon2_eta_MC_DY = new TProfile("muon2_eta_MC_DY","#mu#mu final state - subleading muon",5, xAxis);
    muon2_eta_MC_DY->SetBinEntries(1,2923);
    muon2_eta_MC_DY->SetBinEntries(2,3669);
    muon2_eta_MC_DY->SetBinEntries(3,9388);
