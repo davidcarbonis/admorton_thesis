@@ -104,30 +104,28 @@ The $\chi^{2}$-like variable was inspired by the ones used by the CMS and ATLAS 
 %The $\chi^{2}$-like variable is not used however, when optimising the BDT discussed in Section~\ref{sec:mvas}, nor when determining the expected signal strength and its corresponding significance as described in Section~\ref{sec:statisticalModel}.
 %This is because the training and testing of the BDT does not require the use of data and because the calculation of the expected signal strength is done by comparing pseudo-data against simulation.
 
-The $\chi^{2}$-like variable is defined as follows:
+Tç is defined as follows:
 
 \begin{equation}\label{eq:blindingChi2}
    \chi^{2} = {\left(\frac{m_{\mathrm{jj+b}}-m_{\mathrm{t}}}{\sigma_{\mathrm{t}}}\right)}^{2} + {\left(\frac{m_{\rm jj}-m_{\rm W}}{\sigma_{\mathrm{W}}}\right)}^{2}
 \end{equation}
 
-where $m_{\rm jj}$ is the W boson mass reconstructed from the two candidate jets, $m_{\rm W}$ is the known W boson mass, $m_{\mathrm{jj+b}}$ is the top quark mass reconstructed from the leading b-jet thus the two two jets associated with the W boson decay, $m_{\mathrm{t}}$ is the known top mass, and $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}}$ represent the mass resolution for the top quark and W boson respectively.
+where $m_{\rm jj}$ is the W boson mass reconstructed from the two candidate jets, $\sigma_{\mathrm{W}}$ is the known W boson mass, $m_{\mathrm{jj+b}}$ is the top quark mass reconstructed from the leading b-jet thus the two two jets associated with the W boson decay, $m_{\mathrm{t}}$ is the known top mass, and $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}}$ represent the mass resolution for the top quark and W boson respectively.
 Both $\sigma_{\mathrm{t}}$ and $\sigma_{\mathrm{W}}$ were determined by taking the standard deviation of a Gaussian fitted to their corresponding reconstructed peaks and were determined to be $\sigma_{\mathrm{t}} = 30\GeV$ and $\sigma_{\mathrm{W}} = 8\GeV$, respectively.
 
 Using the simulated samples, a Signal Region (SR) and \emph{Side Band} (SB) were defined as the regions enclosed by $\chi^{2} < \chi^{2}_{SR}$ and $\chi^{2}_{SR} < \chi^{2} < \chi^{2}_{SB}$, respectively.
 
 The choice of value used for $\chi^{2}_{SR}$ and $\chi^{2}_{SB}$ had to balance the need for:
 \begin{itemize}
-\item the signal region to contain the majority of the signal process.
-\item the \emph{side band} region to contain sufficient statistics to make the analysis possible.
+\item the signal region to contain the majority of the signal process;
+\item the \emph{side band} region to contain sufficient statistics to make the analysis possible whilst rejecting .
 \end{itemize}
 
-For $\sigma_{\mathrm{t}} = 30\GeV$ and $\sigma_{\mathrm{W}} = 8\GeV$, $\chi^{2}_{SR}$ and $\chi^{2}_{SB}$ were defined as 5 and 30, respectively.
+Therefore, $\chi^{2}_{SB}$ was defined so that it contained all events where $m_{\rm jj}$ was within $5 \sigma_{\mathrm{W}}$ and $\chi^{2}_{SB}$ defined to contain 68\% of the  simulated signal events.
+Using these definitions, for $\sigma_{\mathrm{t}} = 30\GeV$ and $\sigma_{\mathrm{W}} = 8\GeV$, $\chi^{2}_{SB}$ and $\chi^{2}_{SR}$ were defined as 5 and 30, respectively.
 
-%% ATLAS CITE JUSTIFICATION
-%%This corresponds to the kinematic requirements illustrated by the inner region in Figure 1
-
-Figure~\ref{fig:blindingChi2} shows the side-band region bounded between the two contour lines in the reconstructed top quark mass and w boson mass distributions for the tZq simulation sample (left) and all the simulation samples that were considered (right) (see Section~\ref{sec:samples}).
-Given the cross-like structure present for $\chi^{2}$ visible in in the signal sample, 
+Figure~\ref{fig:blindingChi2} shows the side-band region bounded between the two contour lines in the reconstructed top quark mass and W boson mass distributions for the tZq simulation sample (left) and all the simulation samples that were considered (right) (see Section~\ref{sec:samples}).
+%Given that the shape parametrised by $\chi^{2}$ doesn't the describe the structure present in the $m_{\mathrm{jj+b}}$ and $m_{\rm jj}$ distributions for the signal sample, 
 
 \begin{figure}[!h]
 \centering
