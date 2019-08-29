@@ -232,8 +232,8 @@ tex->SetNDC();
    p_muonElectron1_pT_SF__10->SetBinError(9,0.1154406);
    p_muonElectron1_pT_SF__10->SetEntries(1042.868);
  
-   p_muonElectron1_pT_SF__10->SetMinimum(0.9);
-   p_muonElectron1_pT_SF__10->SetMaximum(1.1);
+   p_muonElectron1_pT_SF__10->SetMinimum(0.8);
+   p_muonElectron1_pT_SF__10->SetMaximum(1.2);
    p_muonElectron1_pT_SF__10->SetLineColor(8);
    p_muonElectron1_pT_SF__10->SetLineWidth(2);
    p_muonElectron1_pT_SF__10->SetMarkerColor(8);
