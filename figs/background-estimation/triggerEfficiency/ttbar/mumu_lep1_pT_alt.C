@@ -43,6 +43,7 @@ void mumu_lep1_pT_alt()
 
    canvy_1->SetFrameFillStyle(0);
    canvy_1->SetFrameBorderMode(0);
+   canvy_1->SetGridy();
 
    Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300};
 
@@ -246,6 +247,7 @@ tex->SetNDC();
    p_muon1_pT_SF__5->GetXaxis()->SetTitleOffset(1);
    p_muon1_pT_SF__5->GetXaxis()->SetTitleFont(42);
    p_muon1_pT_SF__5->GetYaxis()->SetTitle("Data/MC SF");
+   p_muon1_pT_SF__5->GetYaxis()->SetNdivisions(506);
    p_muon1_pT_SF__5->GetYaxis()->CenterTitle(true);
    p_muon1_pT_SF__5->GetYaxis()->SetLabelFont(42);
    p_muon1_pT_SF__5->GetYaxis()->SetLabelOffset(0.01);

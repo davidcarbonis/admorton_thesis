@@ -43,6 +43,7 @@ void emu_lep2_pT_alt()
 
    canvy_1->SetFrameFillStyle(0);
    canvy_1->SetFrameBorderMode(0);
+   canvy_1->SetGridy();
 
    Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300};
 
@@ -92,6 +93,7 @@ void emu_lep2_pT_alt()
    muonElectron2_pT_MC->GetXaxis()->SetTitleOffset(1);
    muonElectron2_pT_MC->GetXaxis()->SetTitleFont(42);
    muonElectron2_pT_MC->GetYaxis()->SetTitle(" Efficiency");
+//   muonElectron2_pT_MC->GetYaxis()->SetNdivisions(506);
    muonElectron2_pT_MC->GetYaxis()->SetLabelFont(42);
    muonElectron2_pT_MC->GetYaxis()->SetLabelFont(42);
    muonElectron2_pT_MC->GetYaxis()->SetLabelOffset(0.01);
@@ -154,6 +156,7 @@ void emu_lep2_pT_alt()
    muonElectron2_pT_data->GetXaxis()->SetTitleOffset(1);
    muonElectron2_pT_data->GetXaxis()->SetTitleFont(42);
    muonElectron2_pT_data->GetYaxis()->SetTitle(" Efficiency");
+//   muonElectron2_pT_data->GetYaxis()->SetNdivisions(506);
    muonElectron2_pT_data->GetYaxis()->SetLabelFont(42);
    muonElectron2_pT_data->GetYaxis()->SetLabelFont(42);
    muonElectron2_pT_data->GetYaxis()->SetLabelOffset(0.01);
@@ -245,6 +248,7 @@ tex->SetNDC();
    p_muonElectron2_pT_SF__12->GetXaxis()->SetTitleOffset(1);
    p_muonElectron2_pT_SF__12->GetXaxis()->SetTitleFont(42);
    p_muonElectron2_pT_SF__12->GetYaxis()->SetTitle("Data/MC SF");
+   p_muonElectron2_pT_SF__12->GetYaxis()->SetNdivisions(506);
    p_muonElectron2_pT_SF__12->GetYaxis()->CenterTitle(true);
    p_muonElectron2_pT_SF__12->GetYaxis()->SetLabelFont(42);
    p_muonElectron2_pT_SF__12->GetYaxis()->SetLabelOffset(0.01);
@@ -263,6 +267,5 @@ tex->SetNDC();
    c1->cd();
    c1->Modified();
    c1->cd();
-//   c1->SetSelected(zPairPt_SingleTop_wMass_emu);
    c1->SaveAs("muonElectron2_pT_SF_alt.pdf");
 }

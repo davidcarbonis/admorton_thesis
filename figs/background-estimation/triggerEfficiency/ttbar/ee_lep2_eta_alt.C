@@ -43,6 +43,7 @@ void ee_lep2_eta_alt()
 
    canvy_1->SetFrameFillStyle(0);
    canvy_1->SetFrameBorderMode(0);
+   canvy_1->SetGridy();
 
    Double_t xAxis[6] = {-2.5, -1.5, -0.8, 0.8, 1.5, 2.5}; 
    
@@ -221,6 +222,7 @@ tex->SetNDC();
    p_electron2_eta_SF__2->GetXaxis()->SetTitleOffset(1);
    p_electron2_eta_SF__2->GetXaxis()->SetTitleFont(42);
    p_electron2_eta_SF__2->GetYaxis()->SetTitle("Data/MC SF");
+   p_electron2_eta_SF__2->GetYaxis()->SetNdivisions(506);
    p_electron2_eta_SF__2->GetYaxis()->CenterTitle(true);
    p_electron2_eta_SF__2->GetYaxis()->SetLabelFont(42);
    p_electron2_eta_SF__2->GetYaxis()->SetLabelOffset(0.01);

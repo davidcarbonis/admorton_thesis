@@ -43,6 +43,7 @@ void emu_lep2_eta_alt()
 
    canvy_1->SetFrameFillStyle(0);
    canvy_1->SetFrameBorderMode(0);
+   canvy_1->SetGridy();
 
    Double_t xAxis[6] = {-2.4, -1.5, -0.8, 0.8, 1.5, 2.4}; 
    
@@ -210,6 +211,7 @@ tex->SetNDC();
    p_muonElectron2_eta_SF__6->GetXaxis()->SetTitleOffset(1);
    p_muonElectron2_eta_SF__6->GetXaxis()->SetTitleFont(42);
    p_muonElectron2_eta_SF__6->GetYaxis()->SetTitle("Data/MC SF");
+   p_muonElectron2_eta_SF__6->GetYaxis()->SetNdivisions(506);
    p_muonElectron2_eta_SF__6->GetYaxis()->CenterTitle(true);
    p_muonElectron2_eta_SF__6->GetYaxis()->SetLabelFont(42);
    p_muonElectron2_eta_SF__6->GetYaxis()->SetLabelOffset(0.01);
