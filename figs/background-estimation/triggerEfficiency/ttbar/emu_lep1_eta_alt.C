@@ -46,36 +46,36 @@ void emu_lep1_eta_alt()
 
    Double_t xAxis[6] = {-2.5, -1.5, -0.8, 0.8, 1.5, 2.5}; 
    
-   TProfile *muonmuonElectron1_eta_MC = new TProfile("muonmuonElectron1_eta_MC","e#mu final state - electron",5, xAxis);
-   muonmuonElectron1_eta_MC->SetBinEntries(0,1);
-   muonmuonElectron1_eta_MC->SetBinEntries(1,329);
-   muonmuonElectron1_eta_MC->SetBinEntries(2,362);
-   muonmuonElectron1_eta_MC->SetBinEntries(3,986);
-   muonmuonElectron1_eta_MC->SetBinEntries(4,324);
-   muonmuonElectron1_eta_MC->SetBinEntries(5,340);
-   muonmuonElectron1_eta_MC->SetBinContent(0,1);
-   muonmuonElectron1_eta_MC->SetBinContent(1,309);
-   muonmuonElectron1_eta_MC->SetBinContent(2,354);
-   muonmuonElectron1_eta_MC->SetBinContent(3,952);
-   muonmuonElectron1_eta_MC->SetBinContent(4,313);
-   muonmuonElectron1_eta_MC->SetBinContent(5,321);
-   muonmuonElectron1_eta_MC->SetBinError(0,1);
-   muonmuonElectron1_eta_MC->SetBinError(1,0.01382608);
-   muonmuonElectron1_eta_MC->SetBinError(2,0.009189442);
-   muonmuonElectron1_eta_MC->SetBinError(3,0.005819732);
-   muonmuonElectron1_eta_MC->SetBinError(4,0.0113897);
-   muonmuonElectron1_eta_MC->SetBinError(5,0.01315283);
-   muonmuonElectron1_eta_MC->SetEntries(2342);
+   TProfile *muonElectron1_eta_MC = new TProfile("muonElectron1_eta_MC","e#mu final state - electron",5, xAxis);
+   muonElectron1_eta_MC->SetBinEntries(0,1);
+   muonElectron1_eta_MC->SetBinEntries(1,329);
+   muonElectron1_eta_MC->SetBinEntries(2,362);
+   muonElectron1_eta_MC->SetBinEntries(3,986);
+   muonElectron1_eta_MC->SetBinEntries(4,324);
+   muonElectron1_eta_MC->SetBinEntries(5,340);
+   muonElectron1_eta_MC->SetBinContent(0,1);
+   muonElectron1_eta_MC->SetBinContent(1,309);
+   muonElectron1_eta_MC->SetBinContent(2,354);
+   muonElectron1_eta_MC->SetBinContent(3,952);
+   muonElectron1_eta_MC->SetBinContent(4,313);
+   muonElectron1_eta_MC->SetBinContent(5,321);
+   muonElectron1_eta_MC->SetBinError(0,1);
+   muonElectron1_eta_MC->SetBinError(1,0.01382608);
+   muonElectron1_eta_MC->SetBinError(2,0.009189442);
+   muonElectron1_eta_MC->SetBinError(3,0.005819732);
+   muonElectron1_eta_MC->SetBinError(4,0.0113897);
+   muonElectron1_eta_MC->SetBinError(5,0.01315283);
+   muonElectron1_eta_MC->SetEntries(2342);
 
-   muonmuonElectron1_eta_MC->SetMinimum(0.7);
-   muonmuonElectron1_eta_MC->SetMaximum(1.2);
-   muonmuonElectron1_eta_MC->SetLineColor(1);
-   muonmuonElectron1_eta_MC->SetLineWidth(2);
-   muonmuonElectron1_eta_MC->SetMarkerColor(1);
-   muonmuonElectron1_eta_MC->SetMarkerStyle(20);
-   muonmuonElectron1_eta_MC->SetMarkerSize(1);
+   muonElectron1_eta_MC->SetMinimum(0.7);
+   muonElectron1_eta_MC->SetMaximum(1.2);
+   muonElectron1_eta_MC->SetLineColor(1);
+   muonElectron1_eta_MC->SetLineWidth(2);
+   muonElectron1_eta_MC->SetMarkerColor(1);
+   muonElectron1_eta_MC->SetMarkerStyle(20);
+   muonElectron1_eta_MC->SetMarkerSize(1);
    
-   muonmuonElectron1_eta_MC->GetXaxis()->SetTitle(" #eta");
+   muonElectron1_eta_MC->GetXaxis()->SetTitle(" #eta");
    muonElectron1_eta_MC->GetXaxis()->SetLabelFont(42);
    muonElectron1_eta_MC->GetXaxis()->SetLabelOffset(999);
    muonElectron1_eta_MC->GetXaxis()->SetLabelSize(0.05);
@@ -96,7 +96,7 @@ void emu_lep1_eta_alt()
    muonElectron1_eta_MC->GetZaxis()->SetTitleSize(0.08);
    muonElectron1_eta_MC->GetZaxis()->SetTitleOffset(1);
    muonElectron1_eta_MC->GetZaxis()->SetTitleFont(42);
-   muonmuonElectron1_eta_MC->Draw("E1");
+   muonElectron1_eta_MC->Draw("E1");
    
    TProfile *muonElectron1_eta_data = new TProfile("muonElectron1_eta_data","",5, xAxis);
    muonElectron1_eta_data->SetBinEntries(0,2);
@@ -229,15 +229,6 @@ tex->SetNDC();
    p_muonElectron1_eta_SF__5->GetZaxis()->SetTitleOffset(1);
    p_muonElectron1_eta_SF__5->GetZaxis()->SetTitleFont(42);
    p_muonElectron1_eta_SF__5->Draw("E1");
-
-   TLegend *leg = new TLegend(0.45,0.22,0.52,0.43,NULL,"brNDC");
-   leg->SetBorderSize(0);
-   leg->SetTextSize(0.04);
-   leg->SetLineColor(1);
-   leg->SetLineStyle(1);
-   leg->SetLineWidth(1);
-   leg->SetFillColor(0);
-   leg->SetFillStyle(1001);
 
    canvy_2->Modified();
    c1->cd();

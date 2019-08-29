@@ -260,20 +260,6 @@ tex->SetNDC();
    p_muon1_pT_SF__5->GetZaxis()->SetTitleFont(42);
    p_muon1_pT_SF__5->Draw("E1");
 
-   TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
-   leg->SetBorderSize(0);
-   leg->SetTextSize(0.04);
-   leg->SetLineColor(1);
-   leg->SetLineStyle(1);
-   leg->SetLineWidth(1);
-   leg->SetFillColor(0);
-   leg->SetFillStyle(1001);
-
-   TLegendEntry *entry=leg->AddEntry("muon1_pT_data", "Data Efficiency", "PEL");
-   entry=leg->AddEntry("muon1_pT_MC", "MC Efficiency", "PEL");
-   entry=leg->AddEntry("p_muon1_pT_SF__5", "Data/MC SF", "PEL");
-   leg->Draw();
-
    canvy_2->Modified();
    c1->cd();
    c1->Modified();
