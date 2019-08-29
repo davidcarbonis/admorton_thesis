@@ -178,8 +178,8 @@ void ee_lep2_pT_alt()
    leg->SetFillColor(0);
    leg->SetFillStyle(1001);
 
-   TLegendEntry *entry=leg->AddEntry("electron1_eta_data", "Data Efficiency", "PEL");
-   entry=leg->AddEntry("electron1_eta_MC", "MC Efficiency", "PEL");
+   TLegendEntry *entry=leg->AddEntry("electron2_pT_data", "Data Efficiency", "PEL");
+   entry=leg->AddEntry("electron2_pT_MC", "MC Efficiency", "PEL");
    leg->Draw();
 
 /*   TLatex *   tex = new TLatex(0.968,0.9429101,"35.9 fb^{-1} (13 TeV)");
@@ -247,7 +247,6 @@ tex->SetNDC();
    p_electron2_pT_SF__3->GetXaxis()->SetTitleFont(42);
    p_electron2_pT_SF__3->GetYaxis()->SetTitle("Data/MC SF");
    p_electron2_pT_SF__3->GetYaxis()->CenterTitle(true);
-   p_electron2_pT_SF__3->GetYaxis()->SetNdivisions(506);
    p_electron2_pT_SF__3->GetYaxis()->SetLabelFont(42);
    p_electron2_pT_SF__3->GetYaxis()->SetLabelOffset(0.01);
    p_electron2_pT_SF__3->GetYaxis()->SetLabelSize(0.12);

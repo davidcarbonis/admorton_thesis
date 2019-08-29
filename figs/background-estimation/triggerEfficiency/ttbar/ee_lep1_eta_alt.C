@@ -96,7 +96,6 @@ void ee_lep1_eta_alt()
    electron1_eta_MC->GetZaxis()->SetTitleSize(0.08);
    electron1_eta_MC->GetZaxis()->SetTitleOffset(1);
    electron1_eta_MC->GetZaxis()->SetTitleFont(42);
-
    electron1_eta_MC->Draw("E1");
    
    TProfile *electron1_eta_data = new TProfile("electron1_eta_data","",5, xAxis);
@@ -223,7 +222,6 @@ tex->SetNDC();
    p_electron1_eta_SF__1->GetXaxis()->SetTitleFont(42);
    p_electron1_eta_SF__1->GetYaxis()->SetTitle("Data/MC SF");
    p_electron1_eta_SF__1->GetYaxis()->CenterTitle(true);
-   p_electron1_eta_SF__1->GetYaxis()->SetNdivisions(506);
    p_electron1_eta_SF__1->GetYaxis()->SetLabelFont(42);
    p_electron1_eta_SF__1->GetYaxis()->SetLabelOffset(0.01);
    p_electron1_eta_SF__1->GetYaxis()->SetLabelSize(0.12);
@@ -235,13 +233,11 @@ tex->SetNDC();
    p_electron1_eta_SF__1->GetZaxis()->SetTitleSize(0.035);
    p_electron1_eta_SF__1->GetZaxis()->SetTitleOffset(1);
    p_electron1_eta_SF__1->GetZaxis()->SetTitleFont(42);
-   p_electron1_eta_SF__1->Draw("e x0, SCAT");
-   p_electron1_eta_SF__1->Draw("same E1");
+   p_electron1_eta_SF__1->Draw("E1");
 
    canvy_2->Modified();
    c1->cd();
    c1->Modified();
    c1->cd();
-//   c1->SetSelected(zPairPt_SingleTop_wMass_emu);
    c1->SaveAs("electron1_eta_SF_alt.pdf");
 }

@@ -248,7 +248,6 @@ tex->SetNDC();
    p_electron1_pT_SF__1->GetXaxis()->SetTitleFont(42);
    p_electron1_pT_SF__1->GetYaxis()->SetTitle("Data/MC SF");
    p_electron1_pT_SF__1->GetYaxis()->CenterTitle(true);
-   p_electron1_pT_SF__1->GetYaxis()->SetNdivisions(506);
    p_electron1_pT_SF__1->GetYaxis()->SetLabelFont(42);
    p_electron1_pT_SF__1->GetYaxis()->SetLabelOffset(0.01);
    p_electron1_pT_SF__1->GetYaxis()->SetLabelSize(0.12);
