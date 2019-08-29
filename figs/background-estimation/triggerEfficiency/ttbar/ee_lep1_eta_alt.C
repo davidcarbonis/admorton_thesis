@@ -88,7 +88,7 @@ void ee_lep1_eta_alt()
    electron1_eta_MC->GetYaxis()->SetLabelOffset(0.01);
    electron1_eta_MC->GetYaxis()->SetLabelSize(0.062);
    electron1_eta_MC->GetYaxis()->SetTitleSize(0.08);
-   electron1_eta_MC->GetYaxis()->SetTitleOffset(0.6336);
+   electron1_eta_MC->GetYaxis()->SetTitleOffset(0.58);
    electron1_eta_MC->GetYaxis()->SetTitleFont(42);
    electron1_eta_MC->GetZaxis()->SetLabelFont(42);
    electron1_eta_MC->GetZaxis()->SetLabelOffset(0.007);
