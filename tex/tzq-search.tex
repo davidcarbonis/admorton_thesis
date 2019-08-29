@@ -173,7 +173,7 @@ The trigger logic used for each of the CMS datasets considered, where \emph{EM} 
 \end{table}
 
 Ideally the, single and double lepton triggers with the lowest possible transverse momentum thresholds would be considered to ensure that the maximum possible event yield can be obtained over the largest possible phase space.
-The high instantaneous luminosity at the start of the most luminous data taking periods, however, required a number of the L1 triggers to be prescaled to prevent the trigger bandwidth constraints being exceeded.
+The high instantaneous luminosity at the start of the most luminous data taking periods, however, required a number of the L-1 triggers to be prescaled to prevent the trigger bandwidth constraints being exceeded.
 As only the triggers considered for the $ee$ channel were impacted by this; these triggers were chosen on the basis of the amount of luminosity they were not prescaled for with the lowest possible transverse momenta thresholds.
 
 Table~\ref{tab:triggersDatasets} lists the triggers used to select data and simulation events for each channel, including the e$\mu$ final state which is considered for a \ttbar enriched control region (see Section~\ref{subsec:ttbarCR}).
@@ -218,7 +218,7 @@ After selecting an event that meets the trigger requirements described in Sectio
 \item \textbf{Beam Halo Filter:} Beam halos are machine-induced particles (\ie produced from the beam interacting with the pipe and residual gas in the pipes) that circulate with the beam at radii of up to 5\cm. This filter removes events with calorimeter and muon chamber energy deposits consistent with those expected to be produced by either halo particles or particle showers.
 These effects are caused by beam halos interacting with the collimator blocks that are used to clean halos from the beam.
 \item \textbf{HBHE Noise and Isolation Filters:} Remove events where anomalous noise is observed in the HCAL's hybrid photodiodes or readout boxes, which registers as large isolated energy deposits which would infer the presence of large \MET, by considering the channel multiplicities, pulse shape of the readout and the neighbouring activity in the calorimeters and tracker.
-\item \textbf{ECAL Trigger Primitive Filter:} The L1 trigger primitive readout can be used to estimate the energy deposited in approximately 70\% of the channels that lack regular data links and which ignored in the offline reconstruction. As trigger primitives have a narrower energy acceptance range than the read-out, when the energy is near their saturation energy the measured energy is likely to be underestimated, resulting in high anomalous \MET. 
+\item \textbf{ECAL Trigger Primitive Filter:} The L-1 trigger primitive readout can be used to estimate the energy deposited in approximately 70\% of the channels that lack regular data links and which ignored in the offline reconstruction. As trigger primitives have a narrower energy acceptance range than the read-out, when the energy is near their saturation energy the measured energy is likely to be underestimated, resulting in high anomalous \MET. 
 %\item \textbf{ECAL Endcap SC Filters} - NOT recommended for 2016
 \item \textbf{Bad Charged Hadron Filter:} Removes events where a muon is not defined as a PF muon due to its low quality, but instead makes its way into the PF MET calculation as a mis-identified charged hadron candidate.
 %\item \textbf{Bad Muon Filter} Removes events where a muon is defined as a PF muon, but still has too low a quality and large \pT to be considered.

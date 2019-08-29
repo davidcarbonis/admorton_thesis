@@ -39,7 +39,7 @@ The Phase-II upgrade will see the entire silicon tracking detector being replace
 %\item \textbf{robust pattern recognition} - enabling fast and efficient track finding, which is especially important for the HLT, in the high \PU environment.
 \item \textbf{Level-1 trigger contributions} are required in order to maintain L-1 trigger performance. It has been shown that the performance of the L-1 trigger will deteriorate in the high luminosity environment from both the rate increase and the reduced efficiencies of the L-1 selection algorithms~\cite{CMS_Upgrade_TP}.
 Raising the upgraded calorimeters' and muon chambers' trigger thresholds would have minimal impact on the rate, and would negatively impact sensitivity to BSM physics that predicts new low mass particles~\cite{CMS_Upgrade_TP}.
-Therefore the L1 bandwidth and latency will be increased (from 100\kHz to 750\kHz and from $3.2\mus$ to $12.5\mus$ respectively) and tracking information will be included in the L-1 decision process to preserve and improve trigger performance.
+Therefore the L-1 bandwidth and latency will be increased (from 100\kHz to 750\kHz and from $3.2\mus$ to $12.5\mus$ respectively) and tracking information will be included in the L-1 decision process to preserve and improve trigger performance.
 \item \textbf{An extended tracking acceptance} of  up to $|\eta| = 4$ in the forward region will greatly improve the overall physics capabilities of the CMS experiment as the density of jets associated with vector boson increases with pseudorapidity~\cite{CMS_Upgrade_TP}. By extension, measurements of missing transverse energy, total energy and jet b-tagging acceptance will also be improved.
 \end{itemize}
 
@@ -505,7 +505,7 @@ The $\chi^{2}$ track fit increases the purity of the reconstructed tracks by a f
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_It_1_ApproxVsExact.pdf}
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/cotThetaResVsEta_It_1_ApproxVsExact.pdf}
 \caption{
-Relative \pt resolution, $\phi$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events for the floating point maths (red) and approximated maths (blue) implementations of the linearised $\chi^{2}$ fit algorithm for a single fitting iteration.
+Relative \pt resolution, $\phi_{0}$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events for the floating point maths (red) and approximated maths (blue) implementations of the linearised $\chi^{2}$ fit algorithm for a single fitting iteration.
 }
 \label{fig:chi2HelixParametersResVsEtaApproxVsExact}
 \end{figure}
@@ -571,7 +571,7 @@ These additional terms were not considered in the``approximated'' maths implemen
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_IterationComparison.pdf}
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/cotThetaResVsEta_IterationComparison.pdf}
 \caption{
-Relative \pt resolution, $\phi$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events for the approximated maths implementation of the linearised $\chi^{2}$ fit algorithm for one (black) and four (blue) fitting iterations. The \KF (red) is also included for comparison.
+Relative \pt resolution, $\phi_{0}$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events for the approximated maths implementation of the linearised $\chi^{2}$ fit algorithm for one (black) and four (blue) fitting iterations. The \KF (red) is also included for comparison.
 }
 \label{fig:chi2HelixParametersResIterationsComparison}
 \end{figure}
@@ -670,7 +670,7 @@ The slight degradation in the $\phi_{0}$ resolution results from the decreased p
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtFlatGeometry_5000.pdf}
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/cotThetaResVsInvPtFlatGeometry_5000.pdf}
 \caption{
-$\frac{q}{\pT}$ resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolution measured for both the default configuration where only the number of \HT \qpt columns have been increased (red) and after the \HT and \KF optimisations have been applied (blue) for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events for tracks with $\pt > 2\GeVc$.
+$\frac{q}{\pT}$ resolution, $\phi_{0}$ resolution, $z_{0}$ resolution and cot$\theta$ resolution measured for both the default configuration where only the number of \HT \qpt columns have been increased (red) and after the \HT and \KF optimisations have been applied (blue) for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events for tracks with $\pt > 2\GeVc$.
 }
 \label{fig:htHelixParametersResVsInvPt}
 \end{figure}
@@ -773,49 +773,28 @@ Currently it is not understood how incorporating \MS into the \KF causes this, b
 \\
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/z0ResVsInvPtTiltedGeometry_5000.pdf}
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/cotThetaResVsInvPtTiltedGeometry_5000.pdf}
-\caption{$\frac{q}{\pT}$ resolution, $\phi$ resolution, $z_{0}$ resolution and cot$\theta$ resolution determined for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events. The distribution for when the \KF has not been modified to take \MS into account is given in red, for a constant \MS coefficient in black and a layer-dependent \MS coefficient in blue.
+\caption{$\frac{q}{\pT}$ resolution, $\phi_{0}$ resolution, $z_{0}$ resolution and cot$\theta$ resolution determined for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events. The distribution for when the \KF has not been modified to take \MS into account is given in red, for a constant \MS coefficient in black and a layer-dependent \MS coefficient in blue.
 }
 \label{fig:kfHelixParametersResVsInvPt}
 \end{figure}
 
-Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the helix parameters as a function of track $\frac{1}{\pT}$ in simulation for both of the \MS coefficients considered and for when \MS was not accounted for at all in the \KF covariance matrix.
+Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the helix parameters for primary reconstructed tracks as a function of track $\frac{1}{\pT}$ in simulation for both of the \MS coefficients considered and for when \MS was not accounted for at all in the \KF covariance matrix.
+As effects of \MS only dominate at low $\pT$, there was no
 
-%%%
-The negligible ...  the effects of \MS dominate at low \pT (high $\frac{1}{\pT}$)
-
-As incorporating \MS increased the measurement error in the \rphi plane, impacting the  the negligible difference  
-
-
-%% forecast of z0 depends on phi0, tanL depends only on tanL
-
-Whilst incorporating \MS 
-there were negligible differences in the $z_{0}$ and cot$\theta$ resolutions for  
-Except No significant improvement in the resolutions of any of the helix parameters was observed ... 
-
-Given that the increase the lack of improvement in the $\frac{q}{\pT}$ resolution was not 
-
-improved by the inclusion of either of the \MS process noise terms considered 
-
-and is noticeably worse in the range $0.18 1/\GeV < \pt < 0.26 1/\GeVc$ than when \MS is not considered at all.
-
+Only negligible differences in the resolutions of the helix parameters at higher \pT (low $\frac{1}{\pT}$) due to the negligible effect of \MS at higher energies.
+The $\frac{q}{\pT}$ resolution however, was noticeably worse in the range $0.18 1/\GeV < frac{1}{\pT}< 0.33 1/\GeVc$ for both of the \MS noise terms considered.
 While the cause of this degradation in the $\frac{q}{\pT}$ resolution is as yet to be determined, it is suspected, like the increased duplicate rate in the same \pT range, to be related to the reduced precision of \HT cells.
+Both of the $\phi_{0}$ and $z_{0}$ resolutions were observed ... cause
 
-%%
-% phi0 = no difference at high pT but MS better at low pT
-%% Greater weighting 
-% z0 = slightly better at high pT? k(const) is best at low pT
-% cot(theta) = k (layer) and k = 0 is roughly the same and k(const) is arguably better
-% So both constants better at low pT for phi0, but 
-
-In contrast, the resolutions of the other three helix parameters were not degraded by the inclusion of either of the \MS process noise terms.
-Whilst there is little improvement in 
+%% constant /MS coefficient gives best perofmance
+The inconsistent 
 
 %% OLD TEXT
 %The resolutions of both \MS coefficients are superior across all \pt compared to when \MS was not considered at all, with the constant \MS coefficient typically providing more slightly more precise measurements than the layer-dependent coefficient.  
 %As expected, lower transverse momentum tracks experience the greatest improvements given that this is the regime in which \MS dominates.
 %%
 
-These improvements are further illustrated by the distribution of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ in Figure~\ref{fig:2GeVTiltChi2Ndf}.
+The improved performance gained by considering \MS is further illustrated by the distribution of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ in Figure~\ref{fig:2GeVTiltChi2Ndf}.
 In contrast to when the \KF lacks a noise term accounting for \MS, the distributions of the \KF's performance for both \MS coefficients considered implies that \MS was the dominant source of uncertainty in the track measurements and that it has been well accounted for.
 
 \begin{figure}[htb]
@@ -833,10 +812,11 @@ Following the improved performance considering the impact of \MS on the \HT and 
 The constant \MS term was chosen for inclusion into the \KF as it demonstrated the best performance and required the least resources to implement.
 
 \subsection{Summary}\label{subsec:Tmtt2GeV}
-The development the \emph{TMTT} collaboration's proposed track finding system for the CMS Phase-II Outer Tracker included software studies into the performance of several track fitting algorithms and the robustness of the system when reducing the minimum track \pT threshold from 3\GeV to 2\GeV.
+The development of the \emph{TMTT} collaboration's proposed track finding system for the CMS Phase-II Outer Tracker involved software studies into the performance of three different track fitting algorithms and the robustness of the system when reducing the minimum \pT threshold for track reconstruction from 3\GeV to 2\GeV.
 
-A software implementation of a linearised $\chi^{2}$ track fitting algorithm was developed and shown to be capable of efficiently finding tracks and fitting precise helix parameters to the track candidates found by the \HT.
-Following the parallel development of both the linearised $\chi^{2}$ and the \KF track fitting algorithms however, 
+A linearised $\chi^{2}$ track fitting algorithm was developed and shown to be capable of fitting precise helix parameters to the track candidates found by the \HT and identifying and removing both hits that were incorrectly matched to genuine track candidates and unmatched track candidates.
+
+Following the parallel development of both the linearised $\chi^{2}$ and the \KF track fitting algorithms however, it was decided to 
 
 
 Following the parallel development of both the linearised $\chi^{2}$ track fit and the \KF algorithms, it was decided that development of the former would be discontinued.
@@ -848,7 +828,8 @@ There were also concerns over the potential feasibility of tabulating all (or th
 
 %%%
 
-The flexibility   
+As the ability to provide reconstructed tracks down to 2\GeV may be useful for the L
+The lowering of the minimum \pT threshold for reconstructing tracks was considered
 
 %After investigating modifications to the \HT and \KF algorithms to improve upon the default performance obtained for track finding and fitting of low \pT ($< 3\GeV$) tracks.
 %The decreased precision \HT cells enables the recovery of some of the tracks previously lost due to \MS, and the inclusion of a process noise term allows the \KF to take the impact of \MS into account, as shown in Figure~\ref{fig:2GeVTiltChi2Ndf} where the $\frac{\chi^{2}}{ndf}$ of the matched tracks fitted has not only decreased at high \pT where \MS dominates, but also the smaller effects experienced at higher \pT.

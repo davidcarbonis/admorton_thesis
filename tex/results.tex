@@ -17,7 +17,7 @@ For the signal and background processes considered in the search, the expected e
 
 where $s$ and $b$ are the expected number of signal and background events, respectively, the index $j$ runs over the number of background sources, $n_{bkgs}$, and $\mu$ is the signal strength modifier.
 The signal strength modifier is typically used instead of directly determining the expected (and observed) cross section of a process as it makes the comparison of different results (particularly from different experiments) more straightforward. 
-The relationship between $\mu$ and the observed and expected cross sections, $\sigma_{obs}$ and $\sigma_{s}$, is given by Equation(~\ref{eq:signalModifier}):
+The relationship between $\mu$ and the observed and expected cross sections, $\sigma_{obs}$ and $\sigma_{s}$, is given by Equation~(\ref{eq:signalModifier}):
 
 \begin{equation}
 \mu = \frac{\sigma_{obs}}{\sigma_{s}}  \;
@@ -50,7 +50,7 @@ Thus, the likelihood for the entire dataset can be expressed as the product of t
 \end{equation}
 
 \subsection{$CL_{S}$ method}\label{subsec:CLsMethod}
-The modified classical frequentist method, known as the $CL_{S}$ method, was used to evaluate the compatibility of data with the \emph{signal plus background} (s+b) and \emph{background only} (b-only) hypotheses in terms of the signifiance of, and the limits on, the measured signal strength ~\cite{Read:2002hq,AsymptoticFormulae}.
+The modified classical frequentist method, known as the $CL_{S}$ method, was used to evaluate the compatibility of data with the \emph{signal plus background} (s+b) and \emph{background only} (b-only) hypotheses in terms of the significance of, and the limits on, the measured signal strength ~\cite{Read:2002hq,AsymptoticFormulae}.
 
 To evaluate these hypotheses, the $CL_{S}$ method constructs a test statistic, $q_{\mu}$.
 The test statistic used by the ATLAS and CMS is defined as the loglikelihood ratio in equation~\ref{eq:testStatistic},
@@ -60,34 +60,39 @@ q_{\mu} =  -2 \ln \frac{ \mathcal{L}(data | \mu s , \hat{\theta}_{\mu})} { \math
 \label{eq:testStatistic}
 \end{equation}
 
-where $\hat{\theta_{\mu}}$ refers to the maximum likelihood estimators of $\theta$ for a given $\mu$, and 
+where $\hat{\theta}_{\mu}$ refers to the maximum likelihood estimators of $\theta$ for a given $\mu$, and 
 $\hat{\mu}$ and $\hat{\theta}$ correspond to the global maximum of the likelihood. 
 By definition $\hat{\mu}$ cannot take negative values as physics defines the signal rate as positive. 
 The constraint $\hat{\mu} < \mu$ is applied to ensure a one-sided confidence interval.
 
-As the analysis was initially conducted blind, \emph{pseudo-data} was generated for the \emph{expected} outcomes in order to construct probability distribution functions for the s+b and b-only hypotheses for a given signal strength.
-For the unblinding of the analysis, the \emph{observed} measurement was made by replacing the pseudo-data used for the s+b probability distribution functions with the actual data.
-From these probability distribution functions, the probability values for the s+b and b-only hypotheses can be defined as Equations~(\ref{eq:pmu})-(~\ref{eq:1-pb}):
+T
 
-\begin{equation}
-p_{\mu} = P ( q_{\mu} \geq  q_{\mu}^{obs} | \mu s + b ) = \int^{\infty}_{q_{\mu}^{obs}} f ( q_{\mu} | \mu , \theta_{\mu}^{obs} ) dq_{\mu} \;
-\label{eq:pmu}
-\end{equation}
+%% Limit setting text
+%As the analysis was initially conducted blind, \emph{pseudo-data} was generated for the \emph{expected} outcomes in order to construct probability distribution functions for the s+b and b-only hypotheses for a given signal strength.
+%For the unblinding of the analysis, the \emph{observed} measurement was made by replacing the pseudo-data used for the s+b probability distribution functions with the actual data.
+%From these probability distribution functions, the probability values for the s+b and b-only hypotheses can be defined as Equations~(\ref{eq:pmu})-~(\ref{eq:1-pb}):
+%
+%\begin{equation}
+%p_{\mu} = P ( q_{\mu} \geq  q_{\mu}^{obs} | \mu s + b ) = \int^{\infty}_{q_{\mu}^{obs}} f ( q_{\mu} | \mu , \theta_{\mu}^{obs} ) dq_{\mu} \;
+%\label{eq:pmu}
+%\end{equation}
+%
+%\begin{equation}
+%1 - p_{b} = P ( q_{\mu} \geq  q_{\mu}^{obs} | b ) = \int^{\infty}_{q_{0}^{obs}} f ( q_{\mu} | 0 , \theta_{0}^{obs} ) dq_{\mu} \;
+%\label{eq:1-pb}
+%\end{equation}
+%
+%The ratio of these probabilities is used to define $CL_{S} (\mu)$ in Equation~(\ref{eq:CLs}).
+%
+%\begin{equation}
+%CL_{S} (\mu) = \frac{ p_{\mu} }{ 1 - p_{b} }\;
+%\label{eq:CLs}
+%\end{equation}
+%
+%If, for a given $\mu$, $CL_{S} < \alpha$, then it is said that the signal process in question is excluded with a $(1 - \alpha)$ Confidence Level (CL).
+%Therefore, to obtain the 95\% CL upper limit,  $\mu$ would be altered until $CL_{S} = 0.05$.
 
-\begin{equation}
-1 - p_{b} = P ( q_{\mu} \geq  q_{\mu}^{obs} | b ) = \int^{\infty}_{q_{0}^{obs}} f ( q_{\mu} | 0 , \theta_{0}^{obs} ) dq_{\mu} \;
-\label{eq:1-pb}
-\end{equation}
-
-The ratio of these probabilities is used to define $CL_{S} (\mu)$ in Equation~(\ref{eq:CLs}).
-
-\begin{equation}
-CL_{S} (\mu) = \frac{ p_{\mu} }{ 1 - p_{b} }\;
-\label{eq:CLs}
-\end{equation}
-
-If, for a given $\mu$, $CL_{S} < \alpha$, then it is said that the signal process in question is excluded with a $(1 - \alpha)$ Confidence Level (CL).
-Therefore, as the 95\% CL upper limit is used in this search, the limit is determined by altering $\mu$  until $CL_{S} = 0.05$.
+To determine the 
 
 %\subsection{Asymptotic CL$_{s}$ method}\label{subsec:asymptoticCLS}
 %As generating pseudo-data using an ensemble of toy MC samples can be computationally intensive, 
@@ -101,23 +106,23 @@ A full description of the asymptotic approximation to the CL$_{s}$ method is giv
 \newpage
 
 \section{Statistical Analysis Results}\label{sec:results}
-At 95\% CL, the observed signal strength for tZq production was determined to be $6.213_{-2.695}^{+2.339}$ and $4.725_{-2.015}^{+1.916}$ for the $ee$ and $\mu\mu$ channels, respectively, corresponding to a significances of $2.722 \sigma$ and $2.501\sigma$, respectively. %$4.74^{+1.69}_{-1.51$}
+The observed signal strength for tZq production was determined to be $6.213_{-2.695}^{+2.339}$ and $4.725_{-2.015}^{+1.916}$ for the $ee$ and $\mu\mu$ channels, respectively, corresponding to a significances of $2.722 \sigma$ and $2.501\sigma$, respectively. %$4.74^{+1.69}_{-1.51$}
 Using the reference NLO cross section of $\sigma (tZq, Z \rightarrow l^{+} l^{-}$) = 94.2~fb~\cite{Campbell:2013yla}, these signal strengths corresponds to cross section of $194.8_{-84.7}^{+73.4}$~fb and $148.5_{-63.4}^{+60.3}$~fb for the $ee$ and $\mu\mu$ final states, respectively. %$94.2^{+95.3}_{-98.4475}$.
 These results are consistent within two $\sigma$ of the SM predictions and the measured combined signal strengths of $0.75 \pm 0.28$ and $1.45^{0.48}_{-0.42}$ made using the trilepton final state at $\sqrt{s} = 13 \TeV$ by the ATLAS and CMS collaborations, respectively~\cite{Aaboud:2017ylb,Sirunyan:2017nbr}.
 
 %%%$0.75 \pm 0.28$ ATLAS and $1.45^{0.48}_{-0.42}$ CMS
 
 The results presented here are the initial results obtained following the unblinding of the analysis for this thesis.
-Whilst CMS has given permission for the unblinding to go ahead, the results have not been fully reviewed by the collaboration and therefore these results should not be considered to have been endorsed by CMS.
+Whilst CMS has given permission for this unblinding, the results have not been fully reviewed by the collaboration and therefore these results should not be considered to have been endorsed by CMS.
 It is expected that further work will need to be done in order to achieve the required standard for journal publication on behalf of the CMS collaboration.
-At their request, no combined result has been presented in this thesis.
+At their request, no combined result for the two final states has been presented in this thesis.
 
 The observed signal strengths, cross sections, and expected and observed significances for the $ee$ and $\mu\mu$ channels are shown in Table~\ref{tab:shapetxs}.
 
 \begin{table}[!h]
    \centering
    \caption{The expected signal strengths and corresponding cross sections for
-   the $ee$ and $\mu\mu$ channels at the 95\% CL.}
+   the $ee$ and $\mu\mu$ channels.}
    \begin{tabular}{cccc}
        \hline
        Channel & $ee$ & $\mu\mu$ & Combined \\
@@ -133,7 +138,7 @@ The observed signal strengths, cross sections, and expected and observed signifi
 %\begin{table}[!h]
 %   \centering
 %   \caption{The expected signal strengths and corresponding cross sections for
-%   the individual channels and the channels combined at the 95\% CL.}
+%   the individual channels and the channels combined.}
 %   \begin{tabular}{cccc}
 %       \hline
 %       Channel & $ee$ & $\mu\mu$ & \textbf{Combined} \\
@@ -158,7 +163,7 @@ While the tZq contribution is more evident in the BDT discriminant distributions
 \\
 \includegraphics[width=0.78\textwidth]{figs/results/postfit_mumu.pdf}
 \caption{
-Post-fit distributions of the BDT discriminant for the $ee$ channel (top) and $\mu\mu$ channel (bottom).}
+Post-fit distributions of the BDT discriminant for the $ee$ channel (top) and $\mu\mu$ channel (bottom) for simulation describing the s+b hypothesis and data.}
 \label{fig:postfitBDT}
 \end{figure}
 
