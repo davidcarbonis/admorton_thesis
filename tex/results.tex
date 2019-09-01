@@ -5,6 +5,9 @@ The following chapter describes the statistical methodology used to analyse thes
 Following a discussion of the impact that the systematic uncertainties have on the fitted results, the result presented is compared with those from the already published searches for tZq production made using the trilepton final state.
 
 \section{Statistical Methodology}\label{sec:statisticalModel}
+%% Limit Setting text
+%%The Higgs Analysis Combined Limit (\combine) tool~\cite{Combine}, a framework based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}, was used to perform a binned Maximum Likelihood Fit (MLF) to analyse the measurement made using the $CL_{S}$ method~\cite{Read:2002hq,CMS-NOTE-2011-005,Khachatryan:2014jba,AsymptoticFormulae}.
+
 The Higgs Analysis Combined Limit (\combine) tool~\cite{Combine}, a framework based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}, was used to perform a binned Maximum Likelihood Fit (MLF) to analyse the measurement made using the $CL_{S}$ method~\cite{Read:2002hq,CMS-NOTE-2011-005,Khachatryan:2014jba,AsymptoticFormulae}.
 
 \subsection{Likelihood Model}\label{subsec:likelihoodModel}
@@ -49,7 +52,7 @@ Thus, the likelihood for the entire dataset can be expressed as the product of t
 \label{eq:poissonLikelihood}
 \end{equation}
 
-\subsection{$CL_{S}$ method}\label{subsec:CLsMethod}
+\subsection{Signal Strength Calculation and Significance}\label{subsec:CLsMethod}
 The modified classical frequentist method, known as the $CL_{S}$ method, was used to evaluate the compatibility of data with the \emph{signal plus background} (s+b) and \emph{background only} (b-only) hypotheses in terms of the significance of, and the limits on, the measured signal strength ~\cite{Read:2002hq,AsymptoticFormulae}.
 
 To evaluate these hypotheses, the $CL_{S}$ method constructs a test statistic, $q_{\mu}$.
@@ -65,7 +68,6 @@ $\hat{\mu}$ and $\hat{\theta}$ correspond to the global maximum of the likelihoo
 By definition $\hat{\mu}$ cannot take negative values as physics defines the signal rate as positive. 
 The constraint $\hat{\mu} < \mu$ is applied to ensure a one-sided confidence interval.
 
-T
 
 %% Limit setting text
 %As the analysis was initially conducted blind, \emph{pseudo-data} was generated for the \emph{expected} outcomes in order to construct probability distribution functions for the s+b and b-only hypotheses for a given signal strength.
@@ -91,8 +93,6 @@ T
 %
 %If, for a given $\mu$, $CL_{S} < \alpha$, then it is said that the signal process in question is excluded with a $(1 - \alpha)$ Confidence Level (CL).
 %Therefore, to obtain the 95\% CL upper limit,  $\mu$ would be altered until $CL_{S} = 0.05$.
-
-To determine the 
 
 %\subsection{Asymptotic CL$_{s}$ method}\label{subsec:asymptoticCLS}
 %As generating pseudo-data using an ensemble of toy MC samples can be computationally intensive, 

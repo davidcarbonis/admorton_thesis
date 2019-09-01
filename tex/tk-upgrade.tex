@@ -779,22 +779,16 @@ Currently it is not understood how incorporating \MS into the \KF causes this, b
 \end{figure}
 
 Figure~\ref{fig:kfHelixParametersResVsInvPt} shows the resolutions of the helix parameters for primary reconstructed tracks as a function of track $\frac{1}{\pT}$ in simulation for both of the \MS coefficients considered and for when \MS was not accounted for at all in the \KF covariance matrix.
-As effects of \MS only dominate at low $\pT$, there was no
-
-Only negligible differences in the resolutions of the helix parameters at higher \pT (low $\frac{1}{\pT}$) due to the negligible effect of \MS at higher energies.
+As effects of \MS only dominate at low $\pT$, there was no improvement observed in the resolutions of the helix parameters for high \pT tracks.
 The $\frac{q}{\pT}$ resolution however, was noticeably worse in the range $0.18 1/\GeV < frac{1}{\pT}< 0.33 1/\GeVc$ for both of the \MS noise terms considered.
-While the cause of this degradation in the $\frac{q}{\pT}$ resolution is as yet to be determined, it is suspected, like the increased duplicate rate in the same \pT range, to be related to the reduced precision of \HT cells.
-Both of the $\phi_{0}$ and $z_{0}$ resolutions were observed ... cause
+While the cause of this degradation in the $\frac{q}{\pT}$ resolution is as yet to be determined, it is suspected, like the increased duplicate rate in the same \pT range, to be 
+related to the reduced precision of \HT cells.
+The $\phi_{0}$ precision at low \pT was found to be improved as the increased uncertainty in the position each successive $\phi$ measurement resulted in the \KF giving greater weight to the innermost and more precise measurements. 
+Similarly, the $\frac{q}{\pT}$ resolution was more precise at low \pT for $frac{1}{\pT} > 0.4$. 
+Only minor differences were observed for the $z_{0}$ and cot$\theta$ resolutions as the \MS terms did not degrade the $z$ measurement error.
+%This was expected as in the \rz plane, $z_{0}$ and cot$\theta$ are defined as/This was expected as the \MS terms do not impact measurements made in the \rz plane.
 
-%% constant /MS coefficient gives best perofmance
-The inconsistent 
-
-%% OLD TEXT
-%The resolutions of both \MS coefficients are superior across all \pt compared to when \MS was not considered at all, with the constant \MS coefficient typically providing more slightly more precise measurements than the layer-dependent coefficient.  
-%As expected, lower transverse momentum tracks experience the greatest improvements given that this is the regime in which \MS dominates.
-%%
-
-The improved performance gained by considering \MS is further illustrated by the distribution of $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ in Figure~\ref{fig:2GeVTiltChi2Ndf}.
+Incorporating a noise term to account for the effects \MS is further justified by considering the reconstructed tracks' $\frac{\chi^{2}}{ndf}$ as a function of $\frac{1}{\pT}$ in Figure~\ref{fig:2GeVTiltChi2Ndf}.
 In contrast to when the \KF lacks a noise term accounting for \MS, the distributions of the \KF's performance for both \MS coefficients considered implies that \MS was the dominant source of uncertainty in the track measurements and that it has been well accounted for.
 
 \begin{figure}[htb]
