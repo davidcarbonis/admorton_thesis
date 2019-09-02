@@ -8,7 +8,7 @@ Following a discussion of the impact that the systematic uncertainties have on t
 %% Limit Setting text
 %%The Higgs Analysis Combined Limit (\combine) tool~\cite{Combine}, a framework based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}, was used to perform a binned Maximum Likelihood Fit (MLF) to analyse the measurement made using the $CL_{S}$ method~\cite{Read:2002hq,CMS-NOTE-2011-005,Khachatryan:2014jba,AsymptoticFormulae}.
 
-The Higgs Analysis Combined Limit (\combine) tool~\cite{Combine}, a framework based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}, was used to perform a binned Maximum Likelihood Fit (MLF) to analyse the measurement made using the $CL_{S}$ method~\cite{Read:2002hq,CMS-NOTE-2011-005,Khachatryan:2014jba,AsymptoticFormulae}.
+The Higgs Analysis Combined Limit (\combine) tool~\cite{Combine}, a framework based on the RooStats package~\cite{Moneta:2010pm,Schott:2012zb}, was used to perform a binned Maximum Likelihood Fit (MLF) to determine the cross section of the signal process using the profile likelihood method~\cite{AsymptoticFormulae}.
 
 \subsection{Likelihood Model}\label{subsec:likelihoodModel}
 For the signal and background processes considered in the search, the expected event yield $\lambda$ in bin $i$ of the distribution considered (\ie the BDT discriminator) is given by Equation~(\ref{eq:yields1}):
@@ -52,22 +52,35 @@ Thus, the likelihood for the entire dataset can be expressed as the product of t
 \label{eq:poissonLikelihood}
 \end{equation}
 
-\subsection{Signal Strength Calculation and Significance}\label{subsec:CLsMethod}
-The modified classical frequentist method, known as the $CL_{S}$ method, was used to evaluate the compatibility of data with the \emph{signal plus background} (s+b) and \emph{background only} (b-only) hypotheses in terms of the significance of, and the limits on, the measured signal strength ~\cite{Read:2002hq,AsymptoticFormulae}.
-
-To evaluate these hypotheses, the $CL_{S}$ method constructs a test statistic, $q_{\mu}$.
-The test statistic used by the ATLAS and CMS is defined as the loglikelihood ratio in equation~\ref{eq:testStatistic},
+A test statistic, $q_{\mu} $, can be constructed to evaluate the compatibility of data with the \emph{signal plus background} (s+b) and \emph{background only} (b-only) hypotheses or between the different hypotheses.
+The test statistic used by the ATLAS and CMS is defined as the log-likelihood ratio in equation~\ref{eq:testStatistic},
 
 \begin{equation}
-q_{\mu} =  -2 \ln \frac{ \mathcal{L}(data | \mu s , \hat{\theta}_{\mu})} { \mathcal{L}(data | \hat{\mu} s \hat{\theta}_{\mu})  } \textrm{ , where } 0 \leq \hat{\mu} \leq \mu \;
+q_{\mu} =  -2 \ln \frac{ \mathcal{L}(data | \mu , \hat{\theta}_{\mu})} { \mathcal{L}(data | \hat{\mu}, \hat{\theta})  } \textrm{ , where } 0 \leq \hat{\mu} \leq \mu \;
 \label{eq:testStatistic}
 \end{equation}
 
-where $\hat{\theta}_{\mu}$ refers to the maximum likelihood estimators of $\theta$ for a given $\mu$, and 
-$\hat{\mu}$ and $\hat{\theta}$ correspond to the global maximum of the likelihood. 
+where $\hat{\theta}_{\mu}$ refers to the maximum likelihood estimators of $\theta$ for a given $\mu$, $\hat{\mu}$ and $\hat{\theta}$ correspond to the global maximum of the likelihood and data can refer to either \emph{real observed data} or \emph{pseudodata}.
 By definition $\hat{\mu}$ cannot take negative values as physics defines the signal rate as positive. 
 The constraint $\hat{\mu} < \mu$ is applied to ensure a one-sided confidence interval.
 
+\subsection{Signal Strength Calculation and Significance}\label{subsec:CLsMethod}
+% Combine uses MultiDimFit
+% Best fit uncerts are at 68% CL (one sigma)
+
+The signal strength modifier for the signal process considered is 
+
+CL
+
+Significance
+
+As it is difficult to analytically solve equation~\ref{eq:testStatistic}, 
+
+As generating pseudo-data using an ensemble of toy simulation samples can be computationally intensive, one representative dataset, known as the \emph{Asimov dataset}, was used instead.
+The Asimov dataset is defined as being constructed such that all observable quantities are equal to their expectation values and 
+
+This method, known as the \emph{asymptotic} CL$_{s}$ method, is used when the number of expected events is sufficiently large as it typically reduces the amount of computing time required.
+A full description of the asymptotic approximation is given in~\cite{AsymptoticFormulae}.
 
 %% Limit setting text
 %As the analysis was initially conducted blind, \emph{pseudo-data} was generated for the \emph{expected} outcomes in order to construct probability distribution functions for the s+b and b-only hypotheses for a given signal strength.
@@ -93,14 +106,6 @@ The constraint $\hat{\mu} < \mu$ is applied to ensure a one-sided confidence int
 %
 %If, for a given $\mu$, $CL_{S} < \alpha$, then it is said that the signal process in question is excluded with a $(1 - \alpha)$ Confidence Level (CL).
 %Therefore, to obtain the 95\% CL upper limit,  $\mu$ would be altered until $CL_{S} = 0.05$.
-
-%\subsection{Asymptotic CL$_{s}$ method}\label{subsec:asymptoticCLS}
-%As generating pseudo-data using an ensemble of toy MC samples can be computationally intensive, 
-
-Instead of using an ensemble of toy MC samples to generate the pseudo-data, one representative dataset, known as the \emph{Asimov dataset}, was used.
-This method, known as the \emph{asymptotic} CL$_{s}$ method, is used when the number of expected events is sufficiently large as it typically reduces the amount of computing time required.
-The Asimov dataset is defined as being constructed such that all observable quantities are equal to their expectation values.
-A full description of the asymptotic approximation to the CL$_{s}$ method is given in~\cite{AsymptoticFormulae}.
 
 \clearpage
 \newpage
@@ -175,6 +180,9 @@ The right-hand side illustrates the impact of varying a nuisance parameter to it
 It can be seen in Figure~\ref{fig:systematicsPull} that despite being constrained in the fit like the majority of the experimental uncertainties, the impact of the PDFs uncertainties on the $\mu$ is similar to those from the constrained theoretical scale uncertainties.
 While normalisation of the contributions from the non-prompt lepton and minor background processes are not further constrained in the MLF, they have the smallest impact on the $\mu$.
 The nuisance parameters for both the normalisation of the \ttbar and Z+jets background processes are constrained, but are offset from their pre-fit values to varying degrees in both channels.
+
+%% LIMITATIONS
+%% HOW TO IMPROVE
 
 \begin{figure}[htbp]
 \begin{center}
