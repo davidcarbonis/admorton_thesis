@@ -37,7 +37,7 @@ Assuming that the number of observed events, $n_{i}$, in any given bin of the di
 \label{eq:poissonProb}
 \end{equation}
 
-A probability density function, $\rho ( \theta | \tilde{\theta} )$ is used to describe all the sources of uncertainty for the nuisance parameters, where $\tilde{\theta}$ is the set of nominal values for the the best estimate of the nuisances.
+A probability density function, $\rho ( \theta | \tilde{\theta} )$, is used to describe all the sources of uncertainty for the nuisance parameters, where $\tilde{\theta}$ is the set of nominal values for the the best estimate of the nuisances.
 For the search presented in this thesis, it is assumed that each source of systematic uncertainty is either 100\% correlated or uncorrelated.
 This allows each systematic uncertainty to be incorporated into the likelihood function in a clean factorised form.
 Shape uncertainties are modelled by vertically morphing the nominal shape template up and down by one $\sigma$.
@@ -52,34 +52,36 @@ Thus, the likelihood for the entire dataset can be expressed as the product of t
 \label{eq:poissonLikelihood}
 \end{equation}
 
-A test statistic, $q_{\mu} $, can be constructed to evaluate the compatibility of data with the \emph{signal plus background} (s+b) and \emph{background only} (b-only) hypotheses or between the different hypotheses.
-The test statistic used by the ATLAS and CMS is defined as the log-likelihood ratio in equation~\ref{eq:testStatistic},
+A test statistic, $q_{\mu} $, can be constructed to evaluate the compatibility of data with the \emph{signal plus background} (s+b) ($\mu = 1$) and \emph{background only} (b-only) ($\mu = 0$) hypotheses or between the different hypotheses.
+The test statistic used by the ATLAS and CMS is defined as the log-likelihood ratio in Equation~(\ref{eq:testStatistic}):
 
 \begin{equation}
-q_{\mu} =  -2 \ln \frac{ \mathcal{L}(data | \mu , \hat{\theta}_{\mu})} { \mathcal{L}(data | \hat{\mu}, \hat{\theta})  } \textrm{ , where } 0 \leq \hat{\mu} \leq \mu \;
+q_{\mu} =  -2 \ln \frac{ \mathcal{L}(data | \mu , \hat{\theta}_{\mu})} { \mathcal{L}(data | \hat{\mu} , \hat{\theta})  } \textrm{ , where } 0 \leq \hat{\mu} \leq \mu \;
 \label{eq:testStatistic}
 \end{equation}
 
-where $\hat{\theta}_{\mu}$ refers to the maximum likelihood estimators of $\theta$ for a given $\mu$, $\hat{\mu}$ and $\hat{\theta}$ correspond to the global maximum of the likelihood and data can refer to either \emph{real observed data} or \emph{pseudodata}.
+where $\hat{\theta}_{\mu}$ refers to the maximum likelihood estimators of $\theta$ for a given $\mu$, $\hat{\mu}$ and $\hat{\theta}$ correspond to the global maximum of the likelihood and can refer to either real observed data or \emph{pseudo-data}.
 By definition $\hat{\mu}$ cannot take negative values as physics defines the signal rate as positive. 
 The constraint $\hat{\mu} < \mu$ is applied to ensure a one-sided confidence interval.
 
-\subsection{Signal Strength Calculation and Significance}\label{subsec:CLsMethod}
+\subsection{Signal Strength Modifier Calculation and Significance}\label{subsec:CLsMethod}
 % Combine uses MultiDimFit
 % Best fit uncerts are at 68% CL (one sigma)
 
-The signal strength modifier for the signal process considered is 
+The signal strength modifier for the signal process was calculated using the profile likelihood method, which maximises the likelihood function in Equation~(\ref{eq:poissonLikelihood}) by allowing $\mu$ and $\theta$ to float.
+Using the global likelihood maximum values of $\mu$ and $\theta$, $\hat{\mu}$ and $\hat{\theta}$, the test statistic was used to determine the 68\% confidence limits for the measured signal strength modifier by allowing $\hat{\theta}_{\mu}$ to float in order to maximise the likelihood and varying $\mu$ until a value that represents 68\% agreement is obtained.
 
-CL
+%Significance
+Both the expected and observed significances for the signal strength modifier were calculated by evaluating the s+b hypothesis and data, respectively, against the b-only hypothesis using the the test statistic in Equation~(\ref{eq:testStatistic}).
+Therefore the significances are the fractions of the events for the b-only hypothesis likelihood function whose likelihood values exceed that of the observed value for data or the median value for the s+b hypothesis.
+% 68% CLs for significances? Not provided ...
 
-Significance
+%Asimov:
+%As it is difficult to analytically solve Equation~(\ref{eq:testStatistic}), pseudo-data is generated to obtain the values for s+b and b hypotheses' likelihood functions.  
+As producing pseudo-data using an ensemble of toy simulation samples to obtain the values for s+b and b hypotheses' likelihood functions can be computationally intensive, the \emph{asymptotic} method is used when the number of expected events is sufficiently large.
+The asymptotic method produces one representative dataset, known as the \emph{Asimov dataset}, that which is defined as being constructed such that all observable quantities are equal to their expectation values.
+This method was used for the analysis presented to remove the need to 
 
-As it is difficult to analytically solve equation~\ref{eq:testStatistic}, 
-
-As generating pseudo-data using an ensemble of toy simulation samples can be computationally intensive, one representative dataset, known as the \emph{Asimov dataset}, was used instead.
-The Asimov dataset is defined as being constructed such that all observable quantities are equal to their expectation values and 
-
-This method, known as the \emph{asymptotic} CL$_{s}$ method, is used when the number of expected events is sufficiently large as it typically reduces the amount of computing time required.
 A full description of the asymptotic approximation is given in~\cite{AsymptoticFormulae}.
 
 %% Limit setting text
@@ -176,6 +178,8 @@ Post-fit distributions of the BDT discriminant for the $ee$ channel (top) and $\
 Figure~\ref{fig:systematicsPull} illustrates the impact of each of the sources of systematic uncertainty on the signal strength modifier $\mu$ for the $ee$ and $\mu\mu$ channels.
 The left-hand side of this plot shows best fit value of the nuisance parameters where the asymmetric error bars are the pre-fit uncertainty divided by the post-fit uncertainty.
 The right-hand side illustrates the impact of varying a nuisance parameter to its $\pm \sigma$ post-fit values on the $\mu$.
+
+%While all of the experimental uncertainties have been constrained in the fit,
 
 It can be seen in Figure~\ref{fig:systematicsPull} that despite being constrained in the fit like the majority of the experimental uncertainties, the impact of the PDFs uncertainties on the $\mu$ is similar to those from the constrained theoretical scale uncertainties.
 While normalisation of the contributions from the non-prompt lepton and minor background processes are not further constrained in the MLF, they have the smallest impact on the $\mu$.
