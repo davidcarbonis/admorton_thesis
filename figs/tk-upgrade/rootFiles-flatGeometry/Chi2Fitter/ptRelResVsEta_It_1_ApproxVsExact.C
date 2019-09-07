@@ -235,7 +235,7 @@ void ptRelResVsEta_It_1_ApproxVsExact()
    entry->SetMarkerStyle(4);
    entry->SetMarkerSize(2);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("PtRelResVsTrueEta_ChiSquared4ParamsApprox","Approximated Implementation","PEL");
+   entry=leg->AddEntry("PtRelResVsTrueEta_ChiSquared4ParamsApprox","Discretised Implementation","PEL");
    entry->SetLineColor(4);
    entry->SetLineStyle(2);
    entry->SetLineWidth(1);

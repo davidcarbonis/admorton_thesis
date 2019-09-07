@@ -236,7 +236,7 @@ void phi0ResVsEta_It_1_ApproxVsExact()
    entry->SetMarkerStyle(4);
    entry->SetMarkerSize(2);
    entry->SetTextFont(42);
-   entry=leg->AddEntry("PhiResVsTrueEta_ChiSquared4ParamsApprox","Approximated Implementation","PEL");
+   entry=leg->AddEntry("PhiResVsTrueEta_ChiSquared4ParamsApprox","Discretised Implementation","PEL");
    entry->SetFillStyle(1001);
    entry->SetLineColor(4);
    entry->SetLineStyle(2);

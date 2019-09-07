@@ -237,7 +237,7 @@ void z0ResVsEta_It_1_ApproxVsExact()
    entry->SetMarkerStyle(24);
    entry->SetMarkerSize(2.0);
 //   entry->SetTextFont(42);
-   entry=leg->AddEntry("Z0ResVsTrueEta_ChiSquared4ParamsApprox","Approximated Implementation","PEL");
+   entry=leg->AddEntry("Z0ResVsTrueEta_ChiSquared4ParamsApprox","Discretised Implementation","PEL");
    entry->SetFillStyle(1001);
    entry->SetLineColor(4);
    entry->SetLineStyle(2);

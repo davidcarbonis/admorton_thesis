@@ -373,7 +373,7 @@ The development of a Kalman Filter was motivated by its ability to filter incorr
 As the \KF provided the best perfect track reconstruction efficiency and fake track candidate rejection rate out of the three fitting algorithms explored, it was selected as the baseline fitter for the TFP in the 2016 review.
 
 A Linear Regression (LR) track fitting algorithm was developed as an alternative to the KF~\cite{TMTT_FLP}.
-As high \pT tracks should form a straight line in the \emph{\rphi} and \emph{\rz} planes, the linear nature of the LR fit's maths makes it well suited to perform independent fits in each plane using minimal latency and resources.
+As high \pT tracks should form a straight line in the \emph{\rphi} and \emph{\rz} planes, the linear nature of the LR fit's mathematics makes it well suited to perform independent fits in each plane using minimal latency and resources.
 This algorithm also required the use of the SF in order for it to deliver optimal performance.
 
 A linearised $\chi^{2}$ track fit was the first fitting algorithm to be studied by the \emph{TMTT} project.
@@ -459,14 +459,14 @@ Using the exact expressions for the track derivatives with floating point precis
 Therefore, the lowest order approximations of the track derivatives (containing the fewest possible number of free parameters) were determined in order to develop a version of the algorithm that used tabulated track derivatives and digitised variables and calculations that gave performance comparable to the original derivatives with floating point precision
 The performance of both of the versions of the algorithm is discussed below in terms of their track reconstruction efficiencies and the resolution of the fitted track parameters.
 
-Following the development of the ``approximated'' mathematics version of the algorithm, an iterative filtering process based on the residuals of the stubs was explored.
+Following the development of the ``discretised'' mathematics version of the algorithm, an iterative filtering process based on the residuals of the stubs was explored.
 Stubs which are incorrectly associated with a track or which belong to an incorrectly reconstructed track are expected to have larger residuals than those which don't.
 Multiple iterations of the fitting algorithm are run, where stubs that have a residual above a threshold value being discarded after each iteration prior to the track being refit.
 The performance of differing numbers of fitting iterations are compared against each other and the \KF in terms of the purity of the matched tracks, the fraction of fake tracks found, and the impact on the track parameter resolutions.
 
 
 \begin{table}[htbp]
-\topcaption {Track finding performance on simulated \ttbar events with a $<\text{PU}>$ of 200 events, after the \HT and the full chain for both the exact floating point and approximated calculations of the track derivatives used by the $\chi^{2}$ track fit.
+\topcaption {Track finding performance on simulated \ttbar events with a $<\text{PU}>$ of 200 events, after the \HT and the full chain for both the exact floating point and discretised calculations of the track derivatives used by the $\chi^{2}$ track fit.
 }
 
 \label{tab:chi2-exactVsApprox}
@@ -483,7 +483,7 @@ The performance of differing numbers of fitting iterations are compared against 
    (floating point) & & & & & \\
    \hline
    $\chi^{2}$+DR & 94.9 & 85.6 & 87.4 & 15.5 & 10.9 \\  
-   (approximated) & & & & & \\   
+   (discretised) & & & & & \\   
 %   \hline
 %   KF+DR & 94.1 & 94.1 & 82.1 & 21.1 & 4.5 \\
    \hline
@@ -491,9 +491,9 @@ The performance of differing numbers of fitting iterations are compared against 
  \end{tabular}%}
 \end{table}
 
-Table~\ref{tab:chi2-exactVsApprox} compares the tracking performance between the floating point maths and ``approximated'' maths implementations of the $\chi^{2}$ track fitting algorithm and the raw track finding output from the \HT.
+Table~\ref{tab:chi2-exactVsApprox} compares the tracking performance between the floating point and ``discretised'' mathematics implementations of the $\chi^{2}$ track fitting algorithm and the raw track finding output from the \HT.
 It can be seen that whilst the \HT finds tracks with high efficiency, over half have at least one incorrectly associated stub and a significant number of the tracks found are fake or duplicated tracks.
-Both floating point and approximated maths implementations give comparable results, indicating that the approximations made are acceptable.
+Both floating point and discretised mathematics implementations give comparable results, indicating that the approximations made are acceptable.
 The $\chi^{2}$ track fit increases the purity of the reconstructed tracks by a factor of two and eliminates the majority of the fake tracks, while the \DR algorithm removes the majority of the duplicates.
 
 
@@ -505,7 +505,7 @@ The $\chi^{2}$ track fit increases the purity of the reconstructed tracks by a f
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_It_1_ApproxVsExact.pdf}
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/cotThetaResVsEta_It_1_ApproxVsExact.pdf}
 \caption{
-Relative \pt resolution, $\phi_{0}$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events for the floating point maths (red) and approximated maths (blue) implementations of the linearised $\chi^{2}$ fit algorithm for a single fitting iteration.
+Relative \pt resolution, $\phi_{0}$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events for the floating point (red) and discretisedd mathematics (blue) implementations of the linearised $\chi^{2}$ fit algorithm for a single fitting iteration.
 }
 \label{fig:chi2HelixParametersResVsEtaApproxVsExact}
 \end{figure}
@@ -561,7 +561,7 @@ Figure~\ref{fig:chi2HelixParametersResIterationsComparison} compares the the hel
 It can be seen that the additional fitting iterations performed by the $\chi^{2}$ fitting algorithm considerably improve each of the track parameter's resolution obtained in the forward regions.
 While the $\chi^{2}$ fitter's \pt relative and $\phi_{0}$ resolutions are comparable to those achieved by the \KF, its $z_{0}$ and $cot(\theta)$ resolutions at high pseudorapidity are considerably less precise than those obtained with the \KF.
 It was found that the \KF fitter's $z_{0}$ and $cot(\theta)$ resolutions in the forward regions were improved with the inclusion of higher order terms in the relevant track derivatives.
-These additional terms were not considered in the``approximated'' maths implementation of the $\chi^{2}$ track fitting algorithm as they introduced additional free parameters that would have resulted in their associated lookup tables being too large to implement on existed FPGAs.
+These additional terms were not considered in the``discretised'' mathematics implementation of the $\chi^{2}$ track fitting algorithm as they introduced additional free parameters that would have resulted in their associated lookup tables being too large to implement on existed FPGAs.
 
 \begin{figure}[htb]
 \centering
@@ -571,7 +571,7 @@ These additional terms were not considered in the``approximated'' maths implemen
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/z0ResVsEta_IterationComparison.pdf}
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-chi2fitter/cotThetaResVsEta_IterationComparison.pdf}
 \caption{
-Relative \pt resolution, $\phi_{0}$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events for the approximated maths implementation of the linearised $\chi^{2}$ fit algorithm for one (black) and four (blue) fitting iterations. The \KF (red) is also included for comparison.
+Relative \pt resolution, $\phi_{0}$ resolution, $z_{0}$ resolution and $cot(\theta)$ resolution measured for primary reconstructed tracks in simulated \ttbar events with a $<\textrm{PU}>$ of 200 events for the discretised mathematics implementation of the linearised $\chi^{2}$ fit algorithm for one (black) and four (blue) fitting iterations. The \KF (red) is also included for comparison.
 }
 \label{fig:chi2HelixParametersResIterationsComparison}
 \end{figure}
@@ -806,9 +806,16 @@ Following the improved performance considering the impact of \MS on the \HT and 
 The constant \MS term was chosen for inclusion into the \KF as it demonstrated the best performance and required the least resources to implement.
 
 \subsection{Summary}\label{subsec:Tmtt2GeV}
-The development of the \emph{TMTT} collaboration's proposed track finding system for the CMS Phase-II Outer Tracker involved software studies into the performance of three different track fitting algorithms and the robustness of the system when reducing the minimum \pT threshold for track reconstruction from 3\GeV to 2\GeV.
+Software studies were undertaken as part of the development of the \emph{TMTT} collaboration's proposed track finding system for the CMS Phase-II Outer Tracker in order to evaluate the performance of different aspects of the system.
+These studies included the development and evaluation of a linearised $\chi^{2}$ track fitting algorithm and determining the flexibility and robustness of the system if the minimum track reconstruction \pT threshold was reduced from 3\GeV to 2\GeV.
 
-A linearised $\chi^{2}$ track fitting algorithm was developed and shown to be capable of fitting precise helix parameters to the track candidates found by the \HT and identifying and removing both hits that were incorrectly matched to genuine track candidates and unmatched track candidates.
+%% Discuss how good approx version was/number of fitting iterations
+%% Discuss approx version comparible(?) performance in track reco/resolution wrt. kalman filter
+%% Limitations wrt purity and endcap matrix element's tabulation
+A linearised $\chi^{2}$ track fitting algorithm was developed ... us
+and shown to be 
+
+A linearised $\chi^{2}$ track fitting algorithm was the first track fitting algorithm developed and was shown to be capable of fitting precise helix parameters to the track candidates found by the \HT and identifying and removing both hits that were incorrectly matched to genuine track candidates and unmatched track candidates.
 
 Following the parallel development of both the linearised $\chi^{2}$ and the \KF track fitting algorithms however, it was decided to 
 
@@ -821,9 +828,11 @@ In contrast, the linearised $\chi^{2}$ track was not competitive in terms of tra
 There were also concerns over the potential feasibility of tabulating all (or the most frequently used) track derivatives in the endcap disks for FPGAs that were commercially available at the time.
 
 %%%
-
-As the ability to provide reconstructed tracks down to 2\GeV may be useful for the L
+The main issue ... the minimum track reconstruction \pT threshold   
+%% Main issue = MS
 The lowering of the minimum \pT threshold for reconstructing tracks was considered
+%% HT
+%% KF
 
 %After investigating modifications to the \HT and \KF algorithms to improve upon the default performance obtained for track finding and fitting of low \pT ($< 3\GeV$) tracks.
 %The decreased precision \HT cells enables the recovery of some of the tracks previously lost due to \MS, and the inclusion of a process noise term allows the \KF to take the impact of \MS into account, as shown in Figure~\ref{fig:2GeVTiltChi2Ndf} where the $\frac{\chi^{2}}{ndf}$ of the matched tracks fitted has not only decreased at high \pT where \MS dominates, but also the smaller effects experienced at higher \pT.
