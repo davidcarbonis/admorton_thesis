@@ -116,6 +116,25 @@ Up to six iterations of the CTF are performed, with all hits associated to a tra
 The initial four iterations use seeds exclusively from the pixel tracker and the last two iterations use seeds from the strip tracker.
 This iterative approach ensures that a high track reconstruction efficiency and a minimal fake rate is achieved, including for tracks originating from outside the pixel detector or those that did not leave any hits in the pixel tracker.
 
+The track reconstruction efficiencies for single isolated muons, charged pions and electrons are shown in Figure~\ref{fig:chargedParticleRecoEfficiency} as a function of \pT and $\eta$~\cite{Chatrchyan:2014fea}.
+Muon tracks are reconstructed at an efficiency greater than $99%$ for $1 < \pT  < 100\GeV$ across the entire volume of the tracking detector.
+Charged pions and electrons are not as efficiently reconstructed however, with both types of charged particles experiencing reconstruction inefficiencies of up to $20\%$.   
+These loses occur as while muons predominantly interact with the detector medium through ionisation and produce negligible bremsstrahlung, pions experience elastic and inelastic nuclear interactions and electrons lose a large fraction of their energy through bremsstrahlung radiation.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.49\textwidth]{figs/data-mc/chargedParticles/SingleParticles/mu/efficiencyVsEta.pdf}
+\includegraphics[width=0.49\textwidth]{figs/data-mc/chargedParticles/SingleParticles/mu/efficiencyVsPt.pdf}
+\\
+\includegraphics[width=0.49\textwidth]{figs/data-mc/chargedParticles/SingleParticles/pi/efficiencyVsEta.pdf}
+\includegraphics[width=0.49\textwidth]{figs/data-mc/chargedParticles/SingleParticles/pi/efficiencyVsPt.pdf}
+\\
+\includegraphics[width=0.49\textwidth]{figs/data-mc/chargedParticles/SingleParticles/el/efficiencyVsEta.pdf}
+\includegraphics[width=0.49\textwidth]{figs/data-mc/chargedParticles/SingleParticles/el/efficiencyVsPt.pdf}
+\caption{Track reconstruction efficiencies for single isolated muons (top), charged pions (middle) and electrons (bottom) as a function of \pT (left) and $\eta$ (right). The barrel, transition and endcap regions are defined by the $\eta$ intervals of $0-0.9$, $0.9-1.4$ and $1.4-2.5$, respectively. \emph{High-purity} quality requirements are applied for all tracks~\cite{Chatrchyan:2014fea}.}
+\label{fig:chargedParticleRecoEfficiency}
+\end{figure}
+
 \subsection{Primary Vertices}\label{subsec:vertices}
 The reconstructed tracks described above are used to reconstruct the positions where the proton-proton collisions occurred, known as \emph{primary vertices}~\cite{Chatrchyan:2014fea,Speer:2006mh}.
 Tracks are considered for primary vertex reconstruction if they are consistent with originating promptly from the interaction region, namely having a small $d_{0}$, a minimum number of hits in the pixel and strip trackers and a low $\frac{\chi^{2}}{ndf}$.
@@ -124,10 +143,18 @@ An adaptive vertex fitter is used to produce a 3D fit of the vertex track candid
 Out of the resulting track candidates, the one with the greatest scalar transverse momentum is considered as the \emph{primary vertex}, with the rest being assumed to represent \PU vertices.
 Displaced vertices, such as those from the decay of heavy hadrons, are identified later in the reconstruction process.
 
+Figure~\ref{fig:primaryVertexResolution} shows the $x$ and $z$ coordinate resolutions of the reconstructed primary vertices measured in $13\TeV$ proton-proton collisions in 2015 and 2016 and their dependence on the scalar sum of the track \pT, which corresponds to the number of tracks present~\cite{CMS-DP-2016-041}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.97\textwidth]{figs/data-mc/primaryVertexResolution.png}
+\caption{The $x$ (left) and $z$ (right) coordinate resolutions of the reconstructed primary vertices as a function of the scalar sum of the track \pT, measured in  $13\TeV$ proton-proton collisions in 2015 (blue) and 2016 (red)~\cite{CMS-DP-2016-041}.}
+\label{fig:primaryVertexResolution}
+\end{figure}
+
 %The resolutions of the x and z coordinates of the primary vertex were measured in collisions at ps = 13TeV and depend strongly on the number of tracks associated with the vertex, as figure 3.1 shows.
 
 %caption: Resolution of (a) the x coordinate and (b) the z coordinate of reconstructed primary vertices as a function of the scalar pT sum of the associated tracks, measured in 2015 (blue triangles) and 2016 (red squares). The resolution improves with higher scalar pT sum of the associated tracks, which corresponds to larger numbers of tracks
-%%CMS Collaboration, “Primary vertex resolution in 2016”, CMS Performance Note CMS-DP-2016-041 (2016). CMS-DP-2016-041
 
 \subsection{Calorimeter Energy Clusters}\label{subsec:clustering}
 The energy deposited by particles in the calorimeters is independently clustered in each sub-detector, except for the HF where each large cell gives rise at most to just one cluster, to determine the energy and direction of the particles~\cite{CMS:2009nxa}.
@@ -178,7 +205,7 @@ The presence of Bremsstrahlung photons also necessitates the use of a Gaussian S
 The computationally heavy nature of the GSF algorithm, however, limits its use to refitting \KF track seeds and for the final fitting of the electron track parameters.
 
 %%% Track seeding
-Electron track seeds, formed of the initial two or three hits in the tracker from which tracks are built,  are constructed using two complimentary algorithms~\cite{Khachatryan:2015hwa}:
+Electron track seeds, formed of the initial two or three hits in the tracker from which tracks are built, are constructed using two complimentary algorithms~\cite{Khachatryan:2015hwa}:
 \begin{itemize}
 \item \textbf{ECAL-based approach} An electron's SC's energy and position is used to extrapolate the expected electron trajectory towards the primary vertex to determine where associated tracker hits would be expected for both electrons and positrons.
 Reconstructing electrons in jets however, suffers from large inefficiencies. 
@@ -195,6 +222,19 @@ The seeds collections produced by both algorithms are merged into a single set o
 From this combined set of seeds, electron tracks are iteratively built using a combinatorial \KF in which a series of cuts are applied in order to accommodate trajectory changes due to Bremsstrahlung and to maintain a high reconstruction efficiency.
 These electron tracks undergo a final fitting by the GSF to precisely determine the electron track parameters.
 
+As shown in Figure~\ref{fig:electronRecoEff}, the resultant electron track collection ...
+%% GSF reco 
+%% Electron reconstruction efficiency in data (top) and data to MC efficiency ratios (bottom).
+%% The efficiency is measured with the tag and probe method and shown as a function of the SuperCluster η
+%% \cite{CMS-DP-2017-004}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.97\textwidth]{figs/data-mc/electronGsfRecoEff.pdf}
+\caption{The reconstruction efficiency for electrons with $25 \leq \pT \leq 500\GeV$ in $13\TeV$ proton-proton collisions in 2016 and simulation~\cite{CMS-DP-2017-004}. The differences observed between data and MC at high $\eta$ were due to a differing beam spot positions in data and MC}
+\label{fig:electronRecoEff}
+\end{figure}
+
 \subsection{Muons}\label{subsec:objReco-muons}
 Muon tracks are independently reconstructed in both the inner tracker, as described in Section~\ref{subsec:tracks}, and the muon chambers.
 Track reconstruction in the muon chambers is undertaken using a Kalman Filter to build tracks from the innermost track segments made up of clustered DT and CSC hits outwards using DT, CSC and RPC hits.
@@ -209,6 +249,14 @@ If at least one muon segment in the muon chambers is consistent with the extrapo
 
 Given the high track reconstruction efficiencies of both the inner tracker and the muon chambers, approximately $99\%$ of muons produced from the proton-proton collisions (prompt muons) are reconstructed as either a global or tracker muon, if not both.
 Global and tracker muons that share the same inner tracker track are merged into a single candidate muon to be considered by the PF algorithm.
+As shown in Figure~\ref{fig:muonRecoEff}, the reconstruction efficiency of PF muons with $\pT > 20/GeV$ exceeded 99\% for $13\TeV$ proton-proton collisions in 2015~\cite{Sirunyan:2018fpa}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.97\textwidth]{figs/data-mc/CMS-MUO-16-001_Figure_007.pdf}
+\caption{The muon reconstruction and \emph{loose} identification efficiency in $13\TeV$ proton-proton collisions in 2015 (circles), MC (squares), and the ratio (bottom inset) for loose (left) and tight (right)~\cite{Sirunyan:2018fpa}. The loose identification criteria for muons requires that the muon was reconstructed as a PF muon. The statistical uncertainties are smaller than the symbols used to display the measurements.}
+\label{fig:muonRecoEff}
+\end{figure}
 
 \subsection{Jets}\label{subsec:objReco-jets}
 Due to colour confinement, quarks and gluons produced in a proton-proton hard interaction rapidly hadronise, producing a collimated shower of hadrons that are clustered and reconstructed as \emph{jets}~\cite{Salam:2009jx}.
@@ -244,7 +292,16 @@ The other values used for k, where k = $0,1$, correspond to the Cambridge/Aachen
 PF jets are produced using the \emph{anti-\kt} algorithm with R = 0.4 in conjunction with PF particles based on all the sub-detectors.
 Making use of PF jets allows a more accurate reconstruction to be undertaken than if only energy clusters from the calorimeters are used, given that jets are typically composed of 65\% charged hadrons, 25\% photons and 10\% neutral hadrons, due to the precise charged hadron measurements from the tracker and ECAL, which are able to constrain the small neutral hadron contribution that relies on the relatively poor resolution of the HCAL.	
 
-%CMS-DP-2016-020
+The energy resolution of PF jets produced in $13\TeV$ proton-proton collisions in 2016 using the \emph{anti-\kt} algorithm with R = 0.4, including the removal of charged hadrons that don't originate from the primary vertex, for central and forward detector regions is shown in Figure~\ref{fig:JERs}.
+In both the central and forward regions of the detector, the jet energy resolution was determined to be better than 10\% for jets with $pT>100/GeV$ and stable against the number of \PU interactions.
+Further details regarding the jet energy scale and resolution and jet algorithm performance are discussed in~\cite{Khachatryan:2016kdb,CMS:2017wyc}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.97\textwidth]{figs/data-mc/JER.pdf}
+\caption{The energy resolution of PF jets with charged hadron subtraction (CHS) for central and forward regions for differing numbers of \PU interactions ($\mu$) in $13\TeV$ proton-proton collisions in 2016~\cite{CMS-DP-2016-020}.}
+\label{fig:JERs}
+\end{figure}
 
 \subsubsection{Jet Energy Corrections}\label{subsubsec:JECs}
 \emph{Jet Energy Corrections} (JECs) are used to take into account the effects of \PU and the non-uniform response in \pT and $\eta$ of the detector and any residual differences between simulation and data.
