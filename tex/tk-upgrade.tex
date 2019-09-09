@@ -383,7 +383,7 @@ A linearised $\chi^{2}$ fit determines improved helix parameters for the track c
 The general form of the $\chi^{2}$ fit and the derivation of the track derivatives used by the algorithm were provided in a private communication~\cite{CMS_DN-14-043} and were used to produce a \emph{TMTT} implementation of it.
 
 
-In Section~\ref{subsubsec:chi2maths}, the general form of the $\chi^{2}$ fit is described, detailing how these hit residuals are used to obtain a fit of a track's helix parameters.
+In Section~\ref{subsubsec:chi2maths}, the general form of the $\chi^{2}$ fit is described, detailing how these hit residuals were used to obtain a fit of a track's helix parameters.
 Following this, a discussion of the development and outcomes for the $\chi^{2}$ fit algorithm is given in Section~\ref{subsubsec:chi2software}.
 
 %The general form of the $\chi^{2}$ fit describing how these hit residuals are used to obtain a fit of a track's helix parameters is detailed in Section~\ref{subsubsec:chi2maths}.
@@ -460,9 +460,9 @@ Therefore, the lowest order approximations of the track derivatives (containing 
 The performance of both of the versions of the algorithm is discussed below in terms of their track reconstruction efficiencies and the resolution of the fitted track parameters.
 
 Following the development of the ``discretised'' mathematics version of the algorithm, an iterative filtering process based on the residuals of the stubs was explored.
-Stubs which are incorrectly associated with a track or which belong to an incorrectly reconstructed track are expected to have larger residuals than those which don't.
-Multiple iterations of the fitting algorithm are run, where stubs that have a residual above a threshold value being discarded after each iteration prior to the track being refit.
-The performance of differing numbers of fitting iterations are compared against each other and the \KF in terms of the purity of the matched tracks, the fraction of fake tracks found, and the impact on the track parameter resolutions.
+Stubs that were incorrectly associated with a track or were associated with an incorrectly reconstructed track were expected to have larger residuals than those which don't.
+Multiple iterations of the fitting algorithm were run, where stubs that have a residual above a threshold value being discarded after each iteration prior to the track being refit.
+The performance of differing numbers of fitting iterations were compared against each other and the \KF in terms of the purity of the matched tracks, the fraction of fake tracks found, and the impact on the track parameter resolutions.
 
 
 \begin{table}[htbp]
@@ -492,8 +492,8 @@ The performance of differing numbers of fitting iterations are compared against 
 \end{table}
 
 Table~\ref{tab:chi2-exactVsApprox} compares the tracking performance between the floating point and ``discretised'' mathematics implementations of the $\chi^{2}$ track fitting algorithm and the raw track finding output from the \HT.
-It can be seen that whilst the \HT finds tracks with high efficiency, over half have at least one incorrectly associated stub and a significant number of the tracks found are fake or duplicated tracks.
-Both floating point and discretised mathematics implementations give comparable results, indicating that the approximations made are acceptable.
+It can be seen that whilst the \HT finds tracks with high efficiency, over half have at least one incorrectly associated stub and a significant number of the tracks found were fake or duplicated tracks.
+Both floating point and discretised mathematics implementations give comparable results, indicating that the approximations made were acceptable.
 The $\chi^{2}$ track fit increases the purity of the reconstructed tracks by a factor of two and eliminates the majority of the fake tracks, while the \DR algorithm removes the majority of the duplicates.
 
 
@@ -514,14 +514,14 @@ Relative \pt resolution, $\phi_{0}$ resolution, $z_{0}$ resolution and $cot(\the
 
 Figure~\ref{fig:chi2HelixParametersResVsEtaApproxVsExact} shows that resolutions of the four track parameters as a function of $\eta$ from primary tracks in \ttbar events with a $<\textrm{PU}>$ of 200 events for both mathematical implementations of the algorithm.
 The resolution of each of the helix parameters compares well not just between the two implementations of the algorithm's mathematics, but also with those obtained for the barrel region by the offline track reconstruction which is able to use all information from the detector with more sophisticated reconstruction techniques~\cite{P2TrackerTDR}, guaranteeing their usefulness to the L-1 trigger.
-The increasing degradation of the track parameters with increasing pseudorapidity results from combined effects of the reduced hit precision in the endcap disks, shorter effective level arm available and the increasing amount of material that particles pass through.
+The increasing degradation of the track parameters with increasing pseudorapidity results from combined effects of the reduced hit precision in the endcap disks, shorter effective lever arm available and the increasing amount of material that particles pass through.
 
 In order to filter out these incorrectly assigned stubs from matched tracks, and also remove fake tracks, the residuals calculated for each stub following the fit were considered.
-These ``fake'' stubs are expected have large residuals compared to stubs correctly associated to genuine tracks or stubs belonging to a fake track.
+These ``fake'' stubs were expected have large residuals compared to stubs correctly associated to genuine tracks or stubs belonging to a fake track.
 
 Therefore, in order to decrease the fake rate and increase the matched track purity the stub with the worst/largest residual was compared against a configurable threshold.
 If the residual failed to meet the threshold criteria, it would be removed from the track and the track would be refitted using only its remaining stubs.
-This process was repeated until the latency budget was exceeded/no further stubs are removed, with no further consideration of the remaining stubs' residuals following the final threshold.
+This process was repeated until the latency budget was exceeded/no further stubs were removed, with no further consideration of the remaining stubs' residuals following the final threshold.
 
 During the optimisation of this stub quality check it was found that a track could end up having fewer than the minimum of four stubs required to be considered track candidate - thus potentially discarding a matched track by mistake.
 To avoid this while still retaining the improved matched track purity and reduced fake rate, a looser residual threshold was applied for tracks only containing four stubs.
@@ -558,8 +558,8 @@ In contrast, the \KF achieves a tracking efficiency comparable to the $\chi^{2}$
 This suggests that if a more sophisticated method of removing bad quality stubs were used in the linearised $\chi^{2}$ fitter, very few matched tracks would be discarded with improved purity.
 
 Figure~\ref{fig:chi2HelixParametersResIterationsComparison} compares the the helix parameter resolutions obtained by the $\chi^{2}$ track fit after one and four fitting iterations with those achieved by the \KF.
-It can be seen that the additional fitting iterations performed by the $\chi^{2}$ fitting algorithm considerably improve each of the track parameter's resolution obtained in the forward regions.
-While the $\chi^{2}$ fitter's \pt relative and $\phi_{0}$ resolutions are comparable to those achieved by the \KF, its $z_{0}$ and $cot(\theta)$ resolutions at high pseudorapidity are considerably less precise than those obtained with the \KF.
+It can be seen that the additional fitting iterations performed by the $\chi^{2}$ fitting algorithm considerably improved each of the track parameter's resolution obtained in the forward regions.
+While the $\chi^{2}$ fitter's \pt relative and $\phi_{0}$ resolutions were comparable to those achieved by the \KF, its $z_{0}$ and $cot(\theta)$ resolutions at high pseudorapidity were considerably less precise than those obtained with the \KF.
 It was found that the \KF fitter's $z_{0}$ and $cot(\theta)$ resolutions in the forward regions were improved with the inclusion of higher order terms in the relevant track derivatives.
 These additional terms were not considered in the``discretised'' mathematics implementation of the $\chi^{2}$ track fitting algorithm as they introduced additional free parameters that would have resulted in their associated lookup tables being too large to implement on existed FPGAs.
 
@@ -611,7 +611,7 @@ Figure~\ref{fig:2GeVFlatEff} shows how the tracking efficiency improves followin
 \centering
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/htTrackingEffVsInvPtFlatGeometry_5000.pdf}
 \includegraphics[width=0.495\textwidth]{figs/tk-upgrade/results-lowPtTracking/kfTrackingEffVsInvPtFlatGeometry_5000.pdf}
-\caption{The post-\HT (left) and post-\KF (right) tracking efficiency for tracks with $\pt > 2\GeVc$ for \ttbar events with a $<\textrm{PU}>$ of 200 events. The default configuration where only the number of \qpt columns are increased are shown in red and the configuration with the increased number of columns, HT cell merging and \KF state cuts optimisation shown in blue).
+\caption{The post-\HT (left) and post-\KF (right) tracking efficiency for tracks with $\pt > 2\GeVc$ for \ttbar events with a $<\textrm{PU}>$ of 200 events. The default configuration where only the number of \qpt columns were increased are shown in red and the configuration with the increased number of columns, HT cell merging and \KF state cuts optimisation shown in blue).
 }
 \label{fig:2GeVFlatEff}	
 \end{figure}
@@ -659,7 +659,7 @@ If all sources of uncertainties were accounted for, the ideal distribution of $\
 \end{figure}
 
 %% Discuss the resolution plots here
-Figure~\ref{fig:htHelixParametersResVsInvPt} shows that the resolutions of the track parameters fitted by the \KF are comparable for $\pT (frac{1}{\pT})  < 3\GeV (0.33/\GeV)$ both before and after the \HT and associated \KF optimisation for tracks originating from the primary interaction.
+Figure~\ref{fig:htHelixParametersResVsInvPt} shows that the resolutions of the track parameters fitted by the \KF were comparable for $\pT (frac{1}{\pT})  < 3\GeV (0.33/\GeV)$ both before and after the \HT and associated \KF optimisation for tracks originating from the primary interaction.
 The slight degradation in the $\phi_{0}$ resolution results from the decreased precision coordinates from the \HT and the small improvement observed in the $z_{0}$ resolution is due to the \KF being able to consider genuine stubs that were not previously found by the \HT.
 
 \begin{figure}[htb]
@@ -812,22 +812,18 @@ These studies included the development and evaluation of a linearised $\chi^{2}$
 %% Discuss how good approx version was/number of fitting iterations
 %% Discuss approx version comparible(?) performance in track reco/resolution wrt. kalman filter
 %% Limitations wrt purity and endcap matrix element's tabulation
-A linearised $\chi^{2}$ track fitting algorithm was developed ... us
-and shown to be 
+A linearised $\chi^{2}$ track fitting algorithm that used tabulated track derivatives and digitised variables and calculates was explored for the track fitting component of the TFP.
 
-A linearised $\chi^{2}$ track fitting algorithm was the first track fitting algorithm developed and was shown to be capable of fitting precise helix parameters to the track candidates found by the \HT and identifying and removing both hits that were incorrectly matched to genuine track candidates and unmatched track candidates.
+It was demonstrated that by performing multiple iterations of the algorithm was capable of fitting precise helix parameters to the track candidates found by the \HT, with those in the barrel being comparable to the expected offline resolution, and identifying and removing both hits that were incorrectly matched to genuine track candidates and unmatched track candidates.
 
-Following the parallel development of both the linearised $\chi^{2}$ and the \KF track fitting algorithms however, it was decided to 
-
-
-Following the parallel development of both the linearised $\chi^{2}$ track fit and the \KF algorithms, it was decided that development of the former would be discontinued.
-This decision was made as the \KF was capable of achieving both a higher track finding efficiency with 100.0\% purity for matched tracks and achieving $z_{0}$ and $cot(\theta)$ resolutions in the forward regions that were comparable to the expected offline resolution.
+Following the parallel development of both the linearised $\chi^{2}$ track fit and the \KF algorithms, it was decided that development of the former would be discontinued, as the \KF was capable of achieving both a higher track finding efficiency with 100.0\% purity for matched tracks and achieving $z_{0}$ and $cot(\theta)$ resolutions in the forward regions that were comparable to the expected offline resolution.
 In addition, considerable progress had been made with a firmware implementation of the \KF.
 
 In contrast, the linearised $\chi^{2}$ track was not competitive in terms of track resolution and reconstruction ability, especially with respect to the stricter tracking efficiency definition.
 There were also concerns over the potential feasibility of tabulating all (or the most frequently used) track derivatives in the endcap disks for FPGAs that were commercially available at the time.
 
 %%%
+Reducing the minimum track reconstruction \pT threshold to reconstruct 
 The main issue ... the minimum track reconstruction \pT threshold   
 %% Main issue = MS
 The lowering of the minimum \pT threshold for reconstructing tracks was considered

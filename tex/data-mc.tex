@@ -221,17 +221,15 @@ Track parameters from both filters, such as the quality ($\chi^{2}$) and how wel
 The seeds collections produced by both algorithms are merged into a single set of seeds.
 From this combined set of seeds, electron tracks are iteratively built using a combinatorial \KF in which a series of cuts are applied in order to accommodate trajectory changes due to Bremsstrahlung and to maintain a high reconstruction efficiency.
 These electron tracks undergo a final fitting by the GSF to precisely determine the electron track parameters.
-
-As shown in Figure~\ref{fig:electronRecoEff}, the resultant electron track collection ...
-%% GSF reco 
-%% Electron reconstruction efficiency in data (top) and data to MC efficiency ratios (bottom).
-%% The efficiency is measured with the tag and probe method and shown as a function of the SuperCluster η
-%% \cite{CMS-DP-2017-004}
+ 
+The electron reconstruction efficiency as a function of the SC $\eta$ for electrons with $25 \leq \pT \leq 500\GeV$ in $13\TeV$ proton-proton collisions in 2016 and simulation is shown in Figure~\ref{fig:electronRecoEff}.
+A reconstruction efficiency of at least 95\% is observed across $\eta$, except for the transition region between the EB and EE and at high $\eta$ due to the increased amount of material traversed and shorter effective lever arm available.
+The differences observed between data and MC at high $\eta$ were due to a differing beam spot positions in data and MC.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.97\textwidth]{figs/data-mc/electronGsfRecoEff.pdf}
-\caption{The reconstruction efficiency for electrons with $25 \leq \pT \leq 500\GeV$ in $13\TeV$ proton-proton collisions in 2016 and simulation~\cite{CMS-DP-2017-004}. The differences observed between data and MC at high $\eta$ were due to a differing beam spot positions in data and MC}
+\caption{The reconstruction efficiency for electrons with $25 \leq \pT \leq 500\GeV$ in $13\TeV$ proton-proton collisions in 2016 and simulation~\cite{CMS-DP-2017-004}.}
 \label{fig:electronRecoEff}
 \end{figure}
 
