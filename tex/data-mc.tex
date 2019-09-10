@@ -64,12 +64,8 @@ The MC event generators used to model the background and signal processes for th
 \begin{itemize}
 \item \textbf{MADGRAPH5\_aMC@NLO 2.2.2}~\cite{Alwall:2014hca} is the new version of MadGraph$5$ and the aMC@NLO generators.
 It is capable of evaluating tree-level and one-loop Feynman diagrams for a given phase space point for all the Feynman diagrams produced to produce matrix elements at NLO.
-As constructive and destructive interference occurs when considering both the leading and higher order cross section terms, 
-
-Considering the constructive and destructive interferences which result from considering both the leading and higher order cross section terms results in positively and negatively weighted events.
-
-In order to correctly normalise the resultant cross section, scale factor, $SF^{NLO}$.
-
+As the leading and higher order terms can destructively interfere, the generator assigns negative weights to events arising such interference so that the cross section is simulated correctly.
+A scale factor, $SF^{NLO}$, is applied to correctly normalise simulated samples produced by this generator.
 This scale factor considers the ratio of the total number of events to the effective number of events (\ie the difference in positively and negatively weighted events) in the sample and the sign of an individual event's weighting:
 \begin{equation}
 SF^{NLO} = \frac{N^{postive events} + N^{negative events}}{N^{postive events} - N^{negative events}} \times \frac{|event weight|}{event weight} \;
@@ -112,10 +108,6 @@ By performing these two passes any bias in the identification of incorrectly ass
 \item \textbf{Track Selection:} Quantities, such as $\chi^{2}$, the number of layers with hits and compatibility, are used to identify and reject tracks that have been incorrectly reconstructed.
 \end{itemize}
 
-Up to six iterations of the CTF are performed, with all hits associated to a track removed from consideration in subsequent iterations.
-The initial four iterations use seeds exclusively from the pixel tracker and the last two iterations use seeds from the strip tracker.
-This iterative approach ensures that a high track reconstruction efficiency and a minimal fake rate is achieved, including for tracks originating from outside the pixel detector or those that did not leave any hits in the pixel tracker.
-
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.49\textwidth]{figs/data-mc/chargedParticles/SingleParticles/mu/efficiencyVsEta.pdf}
@@ -130,31 +122,31 @@ This iterative approach ensures that a high track reconstruction efficiency and 
 \label{fig:chargedParticleRecoEfficiency}
 \end{figure}
 
+Up to six iterations of the CTF are performed, with all hits associated to a track removed from consideration in subsequent iterations.
+The initial four iterations use seeds exclusively from the pixel tracker and the last two iterations use seeds from the strip tracker.
+This iterative approach ensures that a high track reconstruction efficiency and a minimal fake rate is achieved, including for tracks originating from outside the pixel detector or those that did not leave any hits in the pixel tracker.
+
 The track reconstruction efficiencies for single isolated muons, charged pions and electrons are shown in Figure~\ref{fig:chargedParticleRecoEfficiency} as a function of \pT and $\eta$~\cite{Chatrchyan:2014fea}.
 Muon tracks are reconstructed at an efficiency greater than 99\% for $1 < \pT  < 100\GeV$ across the entire volume of the tracking detector.
 Charged pions and electrons are not as efficiently reconstructed however, with both types of charged particles experiencing reconstruction inefficiencies of up to 20\%.   
 These loses occur as while muons predominantly interact with the detector medium through ionisation and produce negligible bremsstrahlung, pions experience elastic and inelastic nuclear interactions and electrons lose a large fraction of their energy through bremsstrahlung radiation.
 
 \subsection{Primary Vertices}\label{subsec:vertices}
-The reconstructed tracks described above are used to reconstruct the positions where the proton-proton collisions occurred, known as \emph{primary vertices}~\cite{Chatrchyan:2014fea,Speer:2006mh}.
-Tracks are considered for primary vertex reconstruction if they are consistent with originating promptly from the interaction region, namely having a small $d_{0}$, a minimum number of hits in the pixel and strip trackers and a low $\frac{\chi^{2}}{ndf}$.
+The reconstructed tracks described above are used to reconstruct the positions where the proton-proton collisions occurred, known as \emph{primary vertices}~\cite{Chatrchyan:2014fea,Speer:2006mh}. Tracks are considered for primary vertex reconstruction if they are consistent with originating promptly from the interaction region, namely having a small $d_{0}$, a minimum number of hits in the pixel and strip trackers and a low $\frac{\chi^{2}}{ndf}$.
 Tracks meeting those requirements are then clustered along the z-axis at their point of closest approach to the beamspot using a deterministic annealing algorithm~\cite{Kenneth:1998i}.
-An adaptive vertex fitter is used to produce a 3D fit of the vertex track candidates and determine their uncertainties and variables such as the number of degrees of freedom to discriminate against fake vertices~\cite{Fruhwirth:2007hz}.
+An adaptive vertex fitter is used to produce a 3D fit of the vertex track candidates and determine their uncertainties and variables such as the number of degrees of freom to discriminate against fake vertices~\cite{Fruhwirth:2007hz}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.9\textwidth]{figs/data-mc/primaryVertexResolution.png}
+\caption{The $x$ (left) and $z$ (right) coordinate resolutions of the reconstructed primary vertices as a function of the scalar sum of the track \pT, measured in $13\TeV$ proton-proton collisions in 2015 (blue) and 2016 (red)~\cite{CMS-DP-2016-041}.}
+\label{fig:primaryVertexResolution}
+\end{figure}
+
 Out of the resulting track candidates, the one with the greatest scalar transverse momentum is considered as the \emph{primary vertex}, with the rest being assumed to represent \PU vertices.
 Displaced vertices, such as those from the decay of heavy hadrons, are identified later in the reconstruction process.
 
 Figure~\ref{fig:primaryVertexResolution} shows the $x$ and $z$ coordinate resolutions of the reconstructed primary vertices measured in $13\TeV$ proton-proton collisions in 2015 and 2016 and their dependence on the scalar sum of the track \pT, which corresponds to the number of tracks present~\cite{CMS-DP-2016-041}.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.97\textwidth]{figs/data-mc/primaryVertexResolution.png}
-\caption{The $x$ (left) and $z$ (right) coordinate resolutions of the reconstructed primary vertices as a function of the scalar sum of the track \pT, measured in  $13\TeV$ proton-proton collisions in 2015 (blue) and 2016 (red)~\cite{CMS-DP-2016-041}.}
-\label{fig:primaryVertexResolution}
-\end{figure}
-
-%The resolutions of the x and z coordinates of the primary vertex were measured in collisions at ps = 13TeV and depend strongly on the number of tracks associated with the vertex, as figure 3.1 shows.
-
-%caption: Resolution of (a) the x coordinate and (b) the z coordinate of reconstructed primary vertices as a function of the scalar pT sum of the associated tracks, measured in 2015 (blue triangles) and 2016 (red squares). The resolution improves with higher scalar pT sum of the associated tracks, which corresponds to larger numbers of tracks
 
 \subsection{Calorimeter Energy Clusters}\label{subsec:clustering}
 The energy deposited by particles in the calorimeters is independently clustered in each sub-detector, except for the HF where each large cell gives rise at most to just one cluster, to determine the energy and direction of the particles~\cite{CMS:2009nxa}.
