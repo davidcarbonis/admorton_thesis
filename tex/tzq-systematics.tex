@@ -173,21 +173,23 @@ From a high-purity sub-sample of these events, where the dilepton invariant mass
 For each type and lepton flavour, the efficiency is the fraction of events where the probe leptons passed the selection criteria under study.
 The corrective scale factors determined from these efficiencies were used to reweight events as functions of their leptons' \pt, $\eta$, and flavour.
 
+%The electron identification (including isolation criteria) Figure~\ref{fig:electronIdEff}
+%
 %\begin{figure}[ht]
 %\centering
 %\includegraphics[width=0.495\textwidth]{figs/background-estimation/simulationCorrections/electronLooseIdEff.pdf}
 %\includegraphics[width=0.495\textwidth]{figs/background-estimation/simulationCorrections/electronTightIdEff.pdf}
 %\caption{
-%Electron identification efficiency in data (top) and data to MC efficiency ratios (bottom) measured for the tight (left) and loose (right) cut-based identification criteria. The efficiency is measured with the tag and probe method and shown in five pseudorapidity ranges as a function of the electron transverse momentum~\cite{CMS-DP-2017-004}.
+%Electron identification efficiency in data (top) and data to MC efficiency ratios (bottom) measured for the tight (left) and loose (right) cut-based identification criteria. The efficiency measured is shown in five $\eta$ ranges as a function of \pT~\cite{CMS-DP-2017-004}.
 %}
 %\label{fig:electronIdEff}
 %\end{figure}
 %
 %\begin{figure}[ht]
 %\centering
-%\includegraphics[width=0.7\textwidth]{figs/background-estimation/simulationCorrections/tightMuonIdIsoEff.pdf}
+%\includegraphics[width=0.97\textwidth]{figs/background-estimation/simulationCorrections/tightMuonIdIsoEff.pdf}
 %\caption{
-%Electron identification efficiency in data (top) and data to MC efficiency ratios (bottom) measured for the tight (left) and loose (right) cut-based identification criteria. The efficiency is measured with the tag and probe method and shown in five pseudorapidity ranges as a function of the electron transverse momentum\cite{Sirunyan:2018fpa}.
+%Muon tight identification and isolation efficiency in data and MC (top) and data to MC efficiency ratios (bottom) measured for the tight identification and isolation criteria as a function of \pT (left) and $\eta$ (right)~\cite{Sirunyan:2018fpa}.
 %}
 %\label{fig:tightMuonIdEff}
 %\end{figure}
@@ -888,7 +890,7 @@ As such, it was determined that  systematic uncertainties of 1.0\%, 1.0\% and 2.
 \subsubsection{Cross section normalisation}
 The uncertainty associated with the cross sections of the simulated samples was taken into account by associating a normalisation uncertainty with each of the simulated samples considered.
 The CMS Collaboration's search for tZq production using the trilepton channel at $\sqrt{s} = 13\TeV$ had assumed a value of 30\% for this source of systematic uncertainty, which reflected the theoretical uncertainties in the corresponding cross sections and a scaling up of a factor of two or more to account for possible modelling limitations~\cite{Sirunyan:2017nbr}.
-%Since the publication of the above search, as the background with the largest cross section uncertainty was covered by an uncert of 10\%, it is now CMS policy to assume an uncertainty of 10\%~\cite{crossSectionSystematics}.
+Following the publication of the above search and discussions with CMS Top Physics colleagues, it was decided to assume a value of 10\% for the cross section normalisation uncertainties due to the improved precision of measurements made of the cross sections of the dominant backgrounds and increased confidence in the modelling of small cross section backgrounds~\cite{crossSectionSystematics,combineNick}.
 
 \subsubsection{Factorisation and renormalisation scales}
 The impact of the uncertainty associated with the choice of factorisation ($\mu_{F}$) and renormalisation scales ($\mu_{R}$) used in perturbative QCD is evaluated by varying each scale up and down by a factor or 2 from their nominal value.
@@ -1217,7 +1219,7 @@ Following the optimisation of the BDT input variables and hyperparameters, the B
 The resultant output discriminant distributions shown in Figure~\ref{fig:prefitBDT}, illustrate that there is both good agreement between simulation and data and that the BDT is effective at separating the majority of the backgrounds from the signal.
 
 The output distributions were binned using a recursive binning strategy that ensured that each bin contained at least one background event and that the statistical error did not exceed 10\% for either signal or background simulation.
-These conditions were applied to ensure that when performing the maximum likelihood fit described in the following chapter, each of the distributions' bins contained sufficient statistics to avoid causing~\cite{combineBinning}:
+These conditions were applied to ensure that when performing the maximum likelihood fit described in the following chapter, each of the distributions' bins contained sufficient statistics to avoid causing~\cite{combineNick,combinePietro}:
 \begin{itemize}
 \item statistical fluctuations that would result in an artificial enhancement or suppression of the sensitivity in a given bin;
 \item excessively large fluctuations in shape-based systematic uncertainties, with respect to the nominal, that would influence the measurement's sensitivity;
