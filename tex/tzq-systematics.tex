@@ -173,26 +173,27 @@ From a high-purity sub-sample of these events, where the dilepton invariant mass
 For each type and lepton flavour, the efficiency is the fraction of events where the probe leptons passed the selection criteria under study.
 The corrective scale factors determined from these efficiencies were used to reweight events as functions of their leptons' \pt, $\eta$, and flavour.
 
-%The electron identification (including isolation criteria) Figure~\ref{fig:electronIdEff}
-%
-%\begin{figure}[ht]
-%\centering
-%\includegraphics[width=0.495\textwidth]{figs/background-estimation/simulationCorrections/electronLooseIdEff.pdf}
-%\includegraphics[width=0.495\textwidth]{figs/background-estimation/simulationCorrections/electronTightIdEff.pdf}
-%\caption{
-%Electron identification efficiency in data (top) and data to MC efficiency ratios (bottom) measured for the tight (left) and loose (right) cut-based identification criteria. The efficiency measured is shown in five $\eta$ ranges as a function of \pT~\cite{CMS-DP-2017-004}.
-%}
-%\label{fig:electronIdEff}
-%\end{figure}
-%
-%\begin{figure}[ht]
-%\centering
-%\includegraphics[width=0.97\textwidth]{figs/background-estimation/simulationCorrections/tightMuonIdIsoEff.pdf}
-%\caption{
-%Muon tight identification and isolation efficiency in data and MC (top) and data to MC efficiency ratios (bottom) measured for the tight identification and isolation criteria as a function of \pT (left) and $\eta$ (right)~\cite{Sirunyan:2018fpa}.
-%}
-%\label{fig:tightMuonIdEff}
-%\end{figure}
+The electron tight identification and isolation criteria's efficiency  as function Figure~\ref{fig:electronIdEff}
+
+The muon tight identification and isolation criteria
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.97\textwidth]{figs/background-estimation/simulationCorrections/electronTightIdEff.pdf}
+\caption{
+Electron identification efficiency in data (top) and data to MC efficiency ratios (bottom) measured for the tight (left) and loose (right) cut-based identification criteria. The efficiency measured is shown in five $\eta$ ranges as a function of \pT~\cite{CMS-DP-2017-004}.
+}
+\label{fig:electronIdEff}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.97\textwidth]{figs/background-estimation/simulationCorrections/tightMuonIdIsoEff.pdf}
+\caption{
+Muon tight identification and isolation efficiency in data and MC (top) and data to MC efficiency ratios (bottom) measured for the tight identification and isolation criteria as a function of \pT (left) and $\eta$ (right)~\cite{Sirunyan:2018fpa}.
+}
+\label{fig:tightMuonIdEff}
+\end{figure}
 
 The efficiencies of the triggers used in the analysis were determined using the \emph{cross-trigger} method that were used in the measurement of the \ttbar production cross section using the $e\mu$ final state by the CMS collaboration~\cite{Khachatryan:2016kzg}.
 The implementation of this methodology was validated by reproducing the \ttbar analysis's trigger efficiencies, their statistical uncertainties and the correlation between the \MET and lepton trigger selection requirements. 
@@ -315,12 +316,14 @@ The overall event yield for data and simulation at each stage of applying the si
 \end{figure}
 
 \begin{table}[hp]
-\topcaption{The number of observed events in data, expected events in simulation and data and the data-driven estimate of the non-prompt leptons (NPLs) in the signal region following the full event selection. The number of observed events is given for each of the separate channels and their  combination. The statistical uncertainties for each process is given and the LO Z+jets sample is used for the Z+jets contribution.
+\topcaption{The number of observed events in data, expected events in simulation and data and the data-driven estimate of the non-prompt leptons (NPLs) in the signal region following the full event selection. The number of observed events is given for each of the separate channels and their combination. The statistical uncertainties for each simulated process is given and the LO Z+jets sample is used for the Z+jets contribution.
 }\label{tab:signalYields}
 \centering
-\begin{tabular}{lccc}
+%\begin{tabular}{lccc}
+\begin{tabular}{l S[table-align-uncertainty=true] S[table-align-uncertainty=true] S[table-align-uncertainty=true]}
 \hline
-Channel &  $ee$ & $\mu\mu$ & Combined \\
+%Channel &  $ee$ & $\mu\mu$ & Combined \\
+Channel &  {$ee$} & {$\mu\mu$} & {Combined} \\
 \hline
 tZq & 30.38 $\pm$ 0.07 & 55.49 $\pm$ 0.10 & 85.87 $\pm$ 0.12 \\
 tWZ & 6.44 $\pm$ 0.21 & 10.96 $\pm$ 0.29 & 17.40 $\pm$ 0.36    \\
@@ -562,8 +565,8 @@ Consequently, it was decided to use the LO Z+jets sample to model Z+jets process
 The reasons why the NLO Z+jets sample does not correctly normalise and poorly describes events with low jet multiplicities will need to be understood before it can be considered in the future.
 
 \begin{table}[p]
-\topcaption{The number of observed events in data and the number of expected events from simulation for the 0-bjet Z+jets control region following the application of the full event selection and simulation corrections.
-These event yields are shown for each of the individual channels, as well as their combination.
+\topcaption{The number of observed events in data and the number of expected events from simulation (and their statistical uncertainties) for the 0-bjet Z+jets control region following the application of the full event selection and simulation corrections.
+The number of observed events is given for each of the separate channels and their combination.
 }\label{tab:zPlusControlYieldsOld}
 \centering
 \begin{tabular}{lccccc}
@@ -602,8 +605,8 @@ Data & 27598.0 & 50814.0 & 78412.0    \\
 \end{table}
 
 \begin{table}[p]
-\topcaption{The number of observed events in data and the number of expected events from simulation for the $m_{W}^{inv}$ Z+jets control region following the application of the full event selection and simulation corrections.
-These event yields are shown for each of the individual channels, as well as their combination.
+\topcaption{The number of observed events in data and the number of expected events from simulation (and their statistical uncertainties) for the $m_{W}^{inv}$ Z+jets control region following the application of the full event selection and simulation corrections.
+The number of observed events is given for each of the separate channels and their combination.
 }\label{tab:zPlusControlYieldsNew}
 \centering
 \begin{tabular}{lccccc}
@@ -652,7 +655,7 @@ Good agreement is observed between the normalisation of simulation and data at e
 \centering
 \includegraphics[width=0.6\textwidth]{figs/background-estimation/plots/unblinded/ttbar_control/cutFlow_log.pdf}
 \caption{
-The overall event yield for data and simulation at each stage of applying the \ttbar control region selection criteria and simulation corrections.
+The overall event yield for data and simulation at each stage of applying the \ttbar control region selection criteria and simulation corrections. The statistical uncertainties for each simulated process is given and the LO Z+jets sample is used for the Z+jets contribution.
 }
 \label{fig:ttbar_cutFlow}
 \end{figure}
