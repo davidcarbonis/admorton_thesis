@@ -1,5 +1,5 @@
 \chapter{Background Estimation}\label{chapter:bkg}
-%Using the analysis strategy described in Chapter~\ref{chapter:tzq-search}, the following chapter describes how Monte Carlo simulated samples were used to model the signal and background processes, the simluation corrections required
+%Using the analysis strategy described in Chapter~\ref{chapter:tzq-search}, the following chapter describes how Monte Carlo simulated samples were used to model the \signal and background processes, the simluation corrections required
 %
 % that were considered, , sources of systematic uncertainties that were 
 %This chapter discusses how the simulation samples considered for the signal and background processes were used to model 
@@ -314,43 +314,83 @@ The overall event yield for data and simulation at each stage of applying the si
 \label{fig:SR_cutFlow}
 \end{figure}
 
+%\begin{table}[hp]
+%\topcaption{The number of observed events in data, expected events in simulation and data and the data-driven estimate of the non-prompt leptons (NPLs) in the signal region following the full event selection. The number of observed events is given for each of the separate channels and their combination. The statistical uncertainties for each simulated process is given and the LO Z+jets sample is used for the Z+jets contribution.
+%}\label{tab:signalYields}
+%\centering
+%\begin{tabular}{lccc}
+%%\begin{tabular}{l S[table-align-uncertainty=true] S[table-align-uncertainty=true] S[table-align-uncertainty=true]}
+%\hline
+%\textbf{Process} &  $\bm{ee}$ & $\bm{\mu\mu}$ & \textbf{Combined} \\
+%\hline
+%tZq & $30.38 \pm 0.07$ & $55.49 \pm 0.10$ & $85.87 \pm 0.12$ \\
+%tWZ & $6.44 \pm 0.21$ & $10.96 \pm 0.29$ & $17.40 \pm 0.36$    \\
+%tHq & $0.17 \pm 0.01$ & $0.37 \pm 0.02$ & $0.54 \pm 0.02$    \\
+%ttW & $7.38 \pm 0.14$ & $10.83 \pm 0.15$ & $18.21 \pm 0.21$    \\
+%ttZ & $62.23 \pm 0.21$ & $111.98 \pm 0.29$ & $174.21 \pm 0.36$    \\
+%ttH & $4.94 \pm 0.10$ & $9.73 \pm 0.14$ & $14.67 \pm 0.17$    \\
+%\ttbar & $1658.73 \pm 23.77$ & $3277.48 \pm 34.22$ & $4936.21 \pm 41.67$    \\
+%tW & $55.98 \pm 3.02$ & $109.59 \pm 4.33$ & $165.57 \pm 5.28$    \\
+%s-channel & $0.0 \pm 0.0$ & $0.19 \pm 0.19$ & $0.19 \pm 0.19$    \\
+%t-channel & $0.61 \pm 0.19$ & $1.12 \pm 0.25$ & $1.73 \pm 0.31$    \\
+%WW & $1.34 \pm 0.47$ & $2.29 \pm 0.69$ & $3.63 \pm 0.83$   \\
+%WZ & $72.88 \pm 0.67$ & $127.32 \pm 0.89$ & $200.20 \pm 1.11$    \\
+%ZZ & $51.80 \pm 0.50$ & $94.64 \pm 0.68$ & $146.44 \pm 0.84$    \\
+%WWW & $0.11 \pm 0.06$ & $0.27 \pm 0.10$ & $0.38 \pm 0.12$    \\
+%WWZ & $1.32 \pm 0.17$ & $2.20 \pm 0.22$ & $3.32 \pm 0.28$    \\
+%WZZ & $1.53 \pm 0.11$ & $2.62 \pm 0.14$ & $4.15 \pm 0.18$   \\
+%ZZZ & $0.65 \pm 0.04$ & $1.12 \pm 0.05$ & $1.77 \pm 0.06$    \\
+%W+jets & $0.0 \pm 0.0$ & $0.0 \pm 0.0$ & $0.0 \pm 0.0$   \\
+%Z+jets & $3280.20 \pm 62.63$ & $5877.51 \pm 87.79$ & $9157.7 1 \pm 107.84$    \\
+%\hline
+%NPLs & $69.47 \pm 0.76$ & $114.01 \pm 1.25$ & $183.48 \pm 2.01$   \\
+%\hline
+%Total MC & $5236.69 \pm 67.07$ & $9695.71 \pm 94.33$ & $14932.40 \pm 115.74$    \\
+%Total MC + NPLs & $5306.16 \pm 67.07$ & $9754.23 \pm 94.34$ & $15060.39 \pm 115.75$    \\
+%\hline
+%%%Data & $5274.0 \pm 72.62$ & $9750.0 \pm 98.74$ & $15024.0 \pm 122.57$    \\
+%Data & $5274.0$ & $9750.0$ & $15024.0$    \\
+%\hline
+%\end{tabular}
+%\end{table}
+
+%%%
+
 \begin{table}[hp]
 \topcaption{The number of observed events in data, expected events in simulation and data and the data-driven estimate of the non-prompt leptons (NPLs) in the signal region following the full event selection. The number of observed events is given for each of the separate channels and their combination. The statistical uncertainties for each simulated process is given and the LO Z+jets sample is used for the Z+jets contribution.
 }\label{tab:signalYields}
 \centering
-\begin{tabular}{lccc}
-%\begin{tabular}{l S[table-align-uncertainty=true] S[table-align-uncertainty=true] S[table-align-uncertainty=true]}
+\begin{tabular}{l S[table-format=5.3] @{${}\pm{}$} S[table-format=2.3] S[table-format=5.3] @{${}\pm{}$} S[table-format=2.3] S[table-format=5.3] @{${}\pm{}$} S[table-format=3.2]}
 \hline
-\textbf{Process} &  $\bm{ee}$ & $\bm{\mu\mu}$ & \textbf{Combined} \\
-%Channel &  {$ee$} & {$\mu\mu$} & {Combined} \\
+\textbf{Process} &  \multicolumn{2}{c}{$\bm{ee}$} & \multicolumn{2}{c}{$\bm{\mu\mu}$} & \multicolumn{2}{c}{\textbf{Combined}} \\
 \hline
-tZq & $30.38 \pm 0.07$ & $55.49 \pm 0.10$ & $85.87 \pm 0.12$ \\
-tWZ & $6.44 \pm 0.21$ & $10.96 \pm 0.29$ & $17.40 \pm 0.36$    \\
-tHq & $0.17 \pm 0.01$ & $0.37 \pm 0.02$ & $0.54 \pm 0.02$    \\
-ttW & $7.38 \pm 0.14$ & $10.83 \pm 0.15$ & $18.21 \pm 0.21$    \\
-ttZ & $62.23 \pm 0.21$ & $111.98 \pm 0.29$ & $174.21 \pm 0.36$    \\
-ttH & $4.94 \pm 0.10$ & $9.73 \pm 0.14$ & $14.67 \pm 0.17$    \\
-\ttbar & $1658.73 \pm 23.77$ & $3277.48 \pm 34.22$ & $4936.21 \pm 41.67$    \\
-tW & $55.98 \pm 3.02$ & $109.59 \pm 4.33$ & $165.57 \pm 5.28$    \\
-s-channel & $0.0 \pm 0.0$ & $0.19 \pm 0.19$ & $0.19 \pm 0.19$    \\
-t-channel & $0.61 \pm 0.19$ & $1.12 \pm 0.25$ & $1.73 \pm 0.31$    \\
-WW & $1.34 \pm 0.47$ & $2.29 \pm 0.69$ & $3.63 \pm 0.83$   \\
-WZ & $72.88 \pm 0.67$ & $127.32 \pm 0.89$ & $200.20 \pm 1.11$    \\
-ZZ & $51.80 \pm 0.50$ & $94.64 \pm 0.68$ & $146.44 \pm 0.84$    \\
-WWW & $0.11 \pm 0.06$ & $0.27 \pm 0.10$ & $0.38 \pm 0.12$    \\
-WWZ & $1.32 \pm 0.17$ & $2.20 \pm 0.22$ & $3.32 \pm 0.28$    \\
-WZZ & $1.53 \pm 0.11$ & $2.62 \pm 0.14$ & $4.15 \pm 0.18$   \\
-ZZZ & $0.65 \pm 0.04$ & $1.12 \pm 0.05$ & $1.77 \pm 0.06$    \\
-W+jets & $0.0 \pm 0.0$ & $0.0 \pm 0.0$ & $0.0 \pm 0.0$   \\
-Z+jets & $3280.20 \pm 62.63$ & $5877.51 \pm 87.79$ & $9157.7 1 \pm 107.84$    \\
+tZq & 30.38 & 0.07 & 55.49 & 0.10 & 85.87 & 0.12 \\
+tWZ & 6.44 & 0.21 & 10.96 & 0.29 & 17.40 & 0.36    \\
+tHq & 0.17 & 0.01 & 0.37 & 0.02 & 0.54 & 0.02    \\
+ttW & 7.38 & 0.14 & 10.83 & 0.15 & 18.21 & 0.21    \\
+ttZ & 62.23 & 0.21 & 111.98 & 0.29 & 174.21 & 0.36    \\
+ttH & 4.94 & 0.10 & 9.73 & 0.14 & 14.67 & 0.17    \\
+\ttbar & 1658.73 & 23.77 & 3277.48 & 34.22 & 4936.21 & 41.67    \\
+tW & 55.98 & 3.02 & 109.59 & 4.33 & 165.57 & 5.28    \\
+s-channel & 0.0 & 0.0 & 0.19 & 0.19 & 0.19 & 0.19    \\
+t-channel & 0.61 & 0.19 & 1.12 & 0.25 & 1.73 & 0.31    \\
+WW & 1.34 & 0.47 & 2.29 & 0.69 & 3.63 & 0.83   \\
+WZ & 72.88 & 0.67 & 127.32 & 0.89 & 200.20 & 1.11    \\
+ZZ & 51.80 & 0.50 & 94.64 & 0.68 & 146.44 & 0.84    \\
+WWW & 0.11 & 0.06 & 0.27 & 0.10 & 0.38 & 0.12    \\
+WWZ & 1.32 & 0.17 & 2.20 & 0.22 & 3.32 & 0.28    \\
+WZZ & 1.53 & 0.11 & 2.62 & 0.14 & 4.15 & 0.18   \\
+ZZZ & 0.65 & 0.04 & 1.12 & 0.05 & 1.77 & 0.06    \\
+W+jets & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0   \\
+Z+jets & 3280.20 & 62.63 & 5877.51 & 87.79 & 9157.7 1 & 107.84    \\
 \hline
-NPLs & $69.47 \pm 0.76$ & $114.01 \pm 1.25$ & $183.48 \pm 2.01$   \\
+NPLs & 69.47 & 0.76 & 114.01 & 1.25 & 183.48 & 2.01   \\
 \hline
-Total MC & $5236.69 \pm 67.07$ & $9695.71 \pm 94.33$ & $14932.40 \pm 115.74$    \\
-Total MC + NPLs & $5306.16 \pm 67.07$ & $9754.23 \pm 94.34$ & $15060.39 \pm 115.75$    \\
+Total MC & 5236.69 & 67.07 & 9695.71 & 94.33 & 14932.40 & 115.74    \\
+Total MC + NPLs & 5306.16 & 67.07 & 9754.23 & 94.34 & 15060.39 & 115.75    \\
 \hline
-%%Data & $5274.0 \pm 72.62$ & $9750.0 \pm 98.74$ & $15024.0 \pm 122.57$    \\
-Data & $5274.0$ & $9750.0$ & $15024.0$    \\
+%%Data & 5274.0 & 72.62 & 9750.0 & 98.74 & 15024.0 & 122.57    \\
+Data & \multicolumn{2}{c}{$5274.0$} & \multicolumn{2}{c}{$9750.0$} & \multicolumn{2}{c}{$15024.0$}    \\
 \hline
 \end{tabular}
 \end{table}
@@ -593,6 +633,8 @@ Data & $27598.0$ & $50814.0$ & $78412.0$    \\
 \end{tabular}
 \end{table}
 
+%%%
+
 \begin{table}[p]
 \topcaption{The number of observed events in data and the number of expected events from simulation (and their statistical uncertainties) for the $m_{W}^{inv}$ Z+jets control region following the application of the full event selection and simulation corrections.
 The number of observed events is given for each of the separate channels and their combination.
@@ -633,6 +675,8 @@ Data & $2940.0$ & $5718.0$ & $8658.0$    \\
 \end{tabular}
 \end{table}
 
+%%%
+
 \newpage
 \subsection{\ttbar Background}\label{subsec:ttbarEstimation}
 In Section~\ref{subsec:ttbarCR} a \ttbar enriched control regions was defined to produce an orthogonal region that was topologically similar to the signal region to validate the modelling of the simulated \ttbar sample used.
@@ -652,6 +696,46 @@ The overall event yield for data and simulation at each stage of applying the \t
 From Table~\ref{tab:ttbarCR}, it can be seen that the full application of the control region's criteria selection produces an enriched region where 97.5\% of the expected events are from \ttbar production.
 Of the remaining events, 70\% are expected to be from tW single top production.
 
+%\begin{table}[h]
+%\topcaption {
+%The event yields, and the statistical uncertainties associated with them, following the full event selection and simulation corrections for the \ttbar control region.
+%}
+%\label{tab:ttbarCR}
+%  \centering
+%% This right-aligns numbers in column, but centers them under column title.
+% \begin{tabular}{lc}
+%   \hline
+%   \textbf{Process} & $\bm{e\mu}$  \\
+%   \hline
+%	tZq & $0.34 \pm 0.01$  \\ 
+%	tWZ & $0.13 \pm 0.03$ \\ 
+%	tHq & $0.29 \pm 0.01$  \\ 
+%	ttW & $10.53 \pm 0.13$   \\
+%	ttZ & $9.64 \pm 0.11$   \\ 
+%	ttH & $7.71 \pm 0.11$  \\ 
+%	\ttbar & $2400.77 \pm 21.61$   \\ 
+%	tW & $103.67 \pm 5.31$   \\ 
+%	s-channel & $0.0 \pm 0.0$ \\  
+%	t-channel & $0.64 \pm 0.24$ \\ 
+%	WW & $1.76 \pm 0.55$  \\ 
+%	WZ & $0.60 \pm 0.16$ \\ 
+%	ZZ & $0.09 \pm 0.02$ \\ 
+%	WWW & $0.15 \pm 0.05$    \\ 
+%	WWZ & $0.07 \pm 0.04$     \\ 
+%	WZZ & $0.0 \pm 0.0$     \\ 
+%	ZZZ & $0.0 \pm 0.0$     \\ 
+%	W+jets & $0.0 \pm 0.0$     \\ 
+%	Z+jets & $0.0 \pm 0.0$     \\ 
+%	\hline
+%	Total MC & $2536.39 \pm 22.26$     \\ 
+%	\hline
+%	Data & 2668.0     \\ 
+%   \hline
+% \end{tabular}
+%\end{table}
+
+%%%
+
 \begin{table}[h]
 \topcaption {
 The event yields, and the statistical uncertainties associated with them, following the full event selection and simulation corrections for the \ttbar control region.
@@ -659,33 +743,33 @@ The event yields, and the statistical uncertainties associated with them, follow
 \label{tab:ttbarCR}
   \centering
 % This right-aligns numbers in column, but centers them under column title.
- \begin{tabular}{cc}
+ \begin{tabular}{l S @{${}\pm{}$} S[table-alignment=left]}
    \hline
-   \textbf{Process} & $\bm{e\mu}$  \\
+   \textbf{Process} & \multicolumn{2}{c}{$\bm{e\mu}$}  \\
    \hline
-	tZq & $0.34 \pm 0.01$  \\ 
-	tWZ & $0.13 \pm 0.03$ \\ 
-	tHq & $0.29 \pm 0.01$  \\ 
-	ttW & $10.53 \pm 0.13$   \\
-	ttZ & $9.64 \pm 0.11$   \\ 
-	ttH & $7.71 \pm 0.11$  \\ 
-	\ttbar & $2400.77 \pm 21.61$   \\ 
-	tW & $103.67 \pm 5.31$   \\ 
-	s-channel & $0.0 \pm 0.0$ \\  
-	t-channel & $0.64 \pm 0.24$ \\ 
-	WW & $1.76 \pm 0.55$  \\ 
-	WZ & $0.60 \pm 0.16$ \\ 
-	ZZ & $0.09 \pm 0.02$ \\ 
-	WWW & $0.15 \pm 0.05$    \\ 
-	WWZ & $0.07 \pm 0.04$     \\ 
-	WZZ & $0.0 \pm 0.0$     \\ 
-	ZZZ & $0.0 \pm 0.0$     \\ 
-	W+jets & $0.0 \pm 0.0$     \\ 
-	Z+jets & $0.0 \pm 0.0$     \\ 
+	tZq & 0.34 & 0.01  \\ 
+	tWZ & 0.13 & 0.03 \\ 
+	tHq & 0.29 & 0.01  \\ 
+	ttW & 10.53 & 0.13   \\
+	ttZ & 9.64 & 0.11   \\ 
+	ttH & 7.71 & 0.11  \\ 
+	\ttbar & 2400.77 & 21.61   \\ 
+	tW & 103.67 & 5.31   \\ 
+	s-channel & 0.0 & 0.0 \\  
+	t-channel & 0.64 & 0.24 \\ 
+	WW & 1.76 & 0.55  \\ 
+	WZ & 0.60 & 0.16 \\ 
+	ZZ & 0.09 & 0.02 \\ 
+	WWW & 0.15 & 0.05    \\ 
+	WWZ & 0.07 & 0.04     \\ 
+	WZZ & 0.0 & 0.0     \\ 
+	ZZZ & 0.0 & 0.0     \\ 
+	W+jets & 0.0 & 0.0     \\ 
+	Z+jets & 0.0 & 0.0     \\ 
 	\hline
-	Total MC & $2536.39 \pm 22.26$     \\ 
+	Total MC & 2536.39 & 22.26     \\ 
 	\hline
-	Data & 2668.0     \\ 
+	Data & \multicolumn{2}{c}{$2668.0$}     \\ 
    \hline
  \end{tabular}
 \end{table}
