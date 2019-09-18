@@ -702,7 +702,7 @@ From the simplified form of Equation~(\ref{eq:scatter2}), two alternative forms 
 
 \begin{itemize}
 \item \textbf{constant coefficient:} a constant coefficient of the order of the average anticipated scattering angle is used. The typical scattering angle for $2-3\GeV$ tracks is of the order of a milliradian.
-\item \textbf{layer-dependent coefficient:} the coefficient used depends on the layer ID (\ie the layer/disk in which the stub was found) in order to take into account the impact of repeated scattering from passing through multiple layers increasing the uncertainty associated with the hit position.
+\item \textbf{layer-dependent coefficient:} the coefficient used depends on the layer ID (\ie the layer/disk of the stub used to update the Kalman state) in order to take into account the impact of repeated scattering from passing through multiple layers increasing the uncertainty associated with the hit position.
 \end{itemize}
 
 The initial layer-dependent coefficients were obtained through experimentally determining, using simulation, the \MS contribution to the observed variance in $\phi$.
@@ -819,7 +819,7 @@ In addition, whilst substantial progress had been made with a firmware implement
 Reducing the minimum track reconstruction \pT threshold from 3\GeV to 2\GeV required modifying the TFP's configuration parameters to ensure adequate duplication in $\phi$ and increasing the number of \qpt columns by 50\% to maintain the same \HT cell precision over the larger \qpt range considered.
 As tracks with $\pT <  3\GeV$ are increasingly dominated by \MS, a significant fraction of stubs did not intersect within a single \HT cell which resulted in a reduced track reconstruction efficiency below $2.7\GeV$.
 These reconstruction efficiency losses were mitigated against by reducing the precision of the \HT cells along \qpt and $\phi_{T}$ by a factor of two for $2 < \pT \leq 2.7\GeV$.
-A process noise term was added to the \KF to describe the increased hit position uncertainty in the \rphi plane resulting from \MS.
-Two different \MS terms were evaluated, one solely as a function of the track's \pT and the other as a function of the track's \pT and the tracker layer/disk the current stub was found in.
-Both noise terms considered produced comparable results and were shown to not only improve the track reconstruction efficiency of the system, but also to account for the dominant source of uncertainty in the track measurements.
-This performance could be further improved by using a process noise term that better accounts for the amount of material traversed and by establishing the cause behind the increased production of duplicate tracks observed near the boundary between normal and reduced precision \HT cells.
+A process noise term was added to the \KF to describe the effect of \MS increasing the uncertainty in the hit position in the \rphi plane.
+Two noise terms were evaluated, one that described the effect as a function of the track's \pT and the other as a function of the track's \pT and the layer/disk of the stub added to the Kalman state.
+Both noise terms produced comparable results and were shown to not only improve the track reconstruction efficiency of the system, but also to account for the dominant source of uncertainty in the track measurements.
+This performance could be further improved by constructing a process noise term that better accounts for the amount of material traversed and by establishing the cause behind the increased production of duplicate tracks observed near the boundary between normal and reduced precision \HT cells.
