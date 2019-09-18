@@ -173,24 +173,25 @@ From a high-purity sub-sample of these events, where the dilepton invariant mass
 For each type and lepton flavour, the efficiency is the fraction of events where the probe leptons passed the selection criteria under study.
 The corrective scale factors determined from these efficiencies were used to reweight events as functions of their leptons' \pt, $\eta$, and flavour.
 
-%The electron tight identification and isolation criteria's efficiency in data and data to MC scale factors as a function of \pT for different $\eta$ ranges are shown in Figure~\ref{fig:electronIdEff}.
+%The electron tight identification and isolation working point's efficiency measured in 2016 data and the corresponding data/simulation scale factors as a function of \pT for different $\eta$ ranges are shown in Figure~\ref{fig:electronIdEff}. 
+
+%Despite the miscalibration of the tracker APV chips during 2016, high muon identification, isolation and reconstruction efficiencies are typically achieved for all working points and are well described by simulation.
+%As shown in Figure~\ref{fig:tightMuonIdEff}, the tight identification and isolation working points for muons with $\pT > 20\GeV $was measured to be greater than 95\% across all $\eta$ for 13\TeV proton-proton collisions in 2015 and the agreement between data and simulation was better than 0.5\%~\cite{Sirunyan:2018fpa}.
 %
-%The muon tight identification and isolation criteria's efficiency in data and MC and data to MC scale factors as a function of \pT and $\eta$ are shown in Figure~\ref{fig:tightMuonIdEff}.
-%
-%\begin{figure}[ht]
+%\begin{figure}[!ht]
 %\centering
-%\includegraphics[width=0.7\textwidth]{figs/background-estimation/simulationCorrections/electronTightIdEff.pdf}
+%\includegraphics[width=0.6\textwidth]{figs/background-estimation/simulationCorrections/electronTightIdEff.pdf}
 %\caption{
 %Electron identification efficiency in data (top) and data to MC efficiency ratios (bottom) measured for the tight (left) and loose (right) cut-based identification criteria. The efficiency measured is shown in five $\eta$ ranges as a function of \pT~\cite{CMS-DP-2017-004}.
 %}
 %\label{fig:electronIdEff}
 %\end{figure}
 %
-%\begin{figure}[ht]
+%\begin{figure}[!ht]
 %\centering
 %\includegraphics[width=0.97\textwidth]{figs/background-estimation/simulationCorrections/tightMuonIdIsoEff.pdf}
 %\caption{
-%Muon tight identification and isolation efficiency in data and MC (top) and data to MC efficiency ratios (bottom) measured for the tight identification and isolation criteria as a function of \pT (left) and $\eta$ (right)~\cite{Sirunyan:2018fpa}.
+%Muon tight identification and isolation efficiency in data and MC (top) and data to MC efficiency ratios (bottom) measured for the tight identification and isolation criteria as a function of \pT (left) and $\eta$ (right)~\cite{DP-2017-007}.
 %}
 %\label{fig:tightMuonIdEff}
 %\end{figure}
@@ -1098,7 +1099,12 @@ As such, it was determined that  systematic uncertainties of 1.0\%, 1.0\% and 2.
 \subsubsection{Cross section normalisation}
 The uncertainty associated with the cross sections of the simulated samples was taken into account by associating a normalisation uncertainty with each of the simulated samples considered.
 The CMS Collaboration's search for tZq production using the trilepton channel at $\sqrt{s} = 13\TeV$ had assumed a value of 30\% for this source of systematic uncertainty, which reflected the theoretical uncertainties in the corresponding cross sections and a scaling up of a factor of two or more to account for possible modelling limitations~\cite{Sirunyan:2017nbr}.
-Following the publication of the above search and discussions with CMS Top Physics colleagues, it was decided to assume a value of 10\% for the cross section normalisation uncertainties due to the improved precision of measurements made of the cross sections of the dominant backgrounds and increased confidence in the modelling of small cross section backgrounds~\cite{crossSectionSystematics,combineNick}.
+Following the publication of the above search and discussions with CMS Top Physics colleagues, it was decided to assume a value of 10\% for the cross section normalisation uncertainties.
+
+This smaller value was reached due to increased confidence in the theoretical modelling of the processes considered from the improved precision of measurements made of the cross sections of the dominant background processes~\cite{crossSectionSystematics,combineNick}.
+Consequently, given the uncertainties associated with the  theoretical 
+
+%% ttbar = 5%
 
 \subsubsection{Factorisation and renormalisation scales}
 The impact of the uncertainty associated with the choice of factorisation ($\mu_{F}$) and renormalisation scales ($\mu_{R}$) used in perturbative QCD is evaluated by varying each scale up and down by a factor or 2 from their nominal value.
