@@ -220,7 +220,7 @@ The differences observed between data and MC at high $\eta$ were due to a differ
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.6\textwidth]{figs/data-mc/electronGsfRecoEff.pdf}
+\includegraphics[width=0.69\textwidth]{figs/data-mc/electronGsfRecoEff.pdf}
 \caption{The reconstruction efficiency for electrons with $25 \leq \pT \leq 500\GeV$ in $13\TeV$ proton-proton collisions in 2016 and simulation~\cite{CMS-DP-2017-004}.}
 \label{fig:electronRecoEff}
 \end{figure}
@@ -239,14 +239,15 @@ If at least one muon segment in the muon chambers is consistent with the extrapo
 
 Given the high track reconstruction efficiencies of both the inner tracker and the muon chambers, approximately $99\%$ of muons produced from the proton-proton collisions (prompt muons) are reconstructed as either a global or tracker muon, if not both.
 Global and tracker muons that share the same inner tracker track are merged into a single candidate muon to be considered by the PF algorithm.
-As shown in Figure~\ref{fig:muonRecoEff}, the reconstruction efficiency of PF muons with $\pT > 20\GeV$ exceeded 99\% for $13\TeV$ proton-proton collisions in 2015~\cite{Sirunyan:2018fpa}.
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.7\textwidth]{figs/data-mc/CMS-MUO-16-001_Figure_007.pdf}
-\caption{The muon reconstruction and \emph{loose} identification efficiency for $13\TeV$ proton-proton collisions in 2016 (circles), MC (squares), and the ratio (bottom inset) between data and MC~\cite{CMS-DP-2017-007}. The loose identification criteria for muons requires that the particle was identified as a muon by the PF algorithm. The statistical uncertainties are smaller than the symbols used to display the measurements.}
-\label{fig:muonRecoEff}
-\end{figure}
+%As shown in Figure~\ref{fig:muonRecoEff}, the identification efficiency of PF muons which have Tracker Muon tracks with $\pT > 20\GeV$ exceeded 99\% for $13\TeV$ proton-proton collisions in 2016~\cite{CMS-DP-2017-007}.
+%
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=0.7\textwidth]{figs/data-mc/looseMuonIdEff_2016.pdf}
+%\caption{The muon \emph{loose} identification efficiency for $13\TeV$ proton-proton collisions in 2016 (circles), MC (squares), and the ratio (bottom inset) between data and MC~\cite{CMS-DP-2017-007}. The loose identification criteria for muons requires that the particle was identified as a muon by the PF algorithm. The statistical uncertainties are smaller than the symbols used to display the measurements.}
+%\label{fig:muonRecoEff}
+%\end{figure}
 
 \subsection{Jets}\label{subsec:objReco-jets}
 Due to colour confinement, quarks and gluons produced in a proton-proton hard interaction rapidly hadronise, producing a collimated shower of hadrons that are clustered and reconstructed as \emph{jets}~\cite{Salam:2009jx}.
@@ -306,6 +307,8 @@ Each of these effects is considered as a separate correction level; they are app
 The uncertainties associated with these JECs are treated as systematic uncertainties, which are discussed in Chapter~\ref{sec:systematics}.
 Further details regarding the JECs can be found in~\cite{Khachatryan:2016kdb}.
 
+\newpage
+
 \subsection{b-tagging}\label{subsec:objReco-bJets}
 Correctly determining whether or not a jet was the product of a b-quark hadronising is important for a variety of analyses, allowing them to better separate signal processes from topologically-similar background processes.
 b-jet identification is particularly pertinent for top physics searches due to the fact that the dominant decay mode for a top quark is to a W boson and a b-quark~\cite{Tanabashi:2018oca}.
@@ -315,15 +318,15 @@ The resulting secondary vertices are exploited in b-tagging, which is performed 
 The analysis presented uses the \emph{Combined Secondary Vertex} version 2 (CSVv2) algorithm~\cite{Sirunyan:2017ezt}.
 The CSVv2 algorithm uses information about displaced track and secondary vertices as input into a multilayer perceptron (MLP) (a class of neural network) to produce a discriminator value which characterises the likelihood that the likelihood a jet originated from a b-quark.
 
-Three different \emph{working points} (loose, medium and tight) are defined by the BTV POG for b-tagging algorithms, such that the probability for incorrectly tagging light flavoured jets is 10\%, 1\% and 0.1\% respectively.
-Figure~\ref{fig:bTagEffVsMisId} illustrates the negative impact that minimising the light jet misidentification probability has on the efficiency at selecting genuine b-jets for the b-tagging algorithms supported within CMS~\cite{Sirunyan:2017ezt}.
-
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{figs/data-mc/effVsMisTagcsvV2.pdf}
+\includegraphics [width=0.875\textwidth]{figs/data-mc/effVsMisTagcsvV2.pdf}
 \caption{The light flavoured jets misidentification probability as a function of the efficiency of tagging genuine b-jets for the b-tagging algorithms supported within CMS~\cite{Sirunyan:2017ezt}.}
 \label{fig:bTagEffVsMisId}
 \end{figure}
+
+Three different \emph{working points} (loose, medium and tight) are defined by the BTV POG for b-tagging algorithms, such that the probability for incorrectly tagging light flavoured jets is 10\%, 1\% and 0.1\% respectively.
+Figure~\ref{fig:bTagEffVsMisId} illustrates the negative impact that minimising the light jet misidentification probability has on the efficiency at selecting genuine b-jets for the b-tagging algorithms supported within CMS~\cite{Sirunyan:2017ezt}.
 
 The selection efficiencies for b-jets, c-jets and light jets for each of the working points for the CSVv2 algorithm are given in Table~\ref{tab:bTagWPs}.
 
