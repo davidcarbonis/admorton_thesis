@@ -81,7 +81,7 @@ Further details on the two \pT-modules can be found in~\cite{P2TrackerTDR,CMS_Up
 The current proposed layout of the Phase-II Outer Tracker, referred to as the \emph{tilted barrel} geometry, is depicted in the upper diagram in Figure~\ref{fig:trackerlayout}, and a previous proposal, referred to as the \emph{flat barrel} geometry, is shown in the lower diagram~\cite{CMS_Upgrade_TP}.
 Both plots illustrate the PS and 2S module positions in the six barrel layers and the five endcap disks on either side of the barrel, with only modules located at $|\eta| < 2.4$ being configured to send stub data off-detector.
 The geometries are so named as they were inspired by whether or not the modules in the three innermost barrel layers are tilted so that their normals point towards the interaction region.
-The advantages of the tilted geometry over the original flat barrel are that it not only improves stub-finding efficiency for tracks with large incident angles but also reduces the overall cost of the system~\cite{P2TrackerTDR}.
+The advantages of the tilted geometry over the original flat barrel are that it not only improves stub-finding efficiency for tracks with large incident angles but that it also reduces the overall cost of the system~\cite{P2TrackerTDR}.
 Due to the maturity of the preparations for the review between the three competing proposed track finder systems, discussed later in Section~\ref{sec:TMTT}, at the time the tilted barrel geometry was adopted for the Phase-II Outer Tracker TDR it was decided to use the flat barrel geometry for results produced for the review.
 
 \begin{figure}[h]
@@ -297,7 +297,7 @@ The details of the \emph{TMTT} project's implementation of the Kalman Filter usi
 Over half of the track candidates at input to the DR are duplicate tracks created by the HT.
 Instead of comparing pairs of tracks to see if they are the same, a more elegant and subtle DR algorithm is used which takes into account how the \HT produces these duplicate tracks.
 This approach is illustrated in Figure~\ref{fig:DR}.
-In this example, the \HT has produced candidates in the yellow and two green HT cells from the five stubs, which correspond to the blue lines in Hough Space, that have been produced by a single particle.
+In this example, the \HT has produced candidates in the yellow cell and two green HT cells from the five stubs, which correspond to the blue lines in Hough Space, that have been produced by a single particle.
 As all three candidates however, contain the same stubs, they will be fitted by the \KF with identical helix parameters in the same (yellow) cell regardless of the original HT cell.
 By comparing a track's fitted parameters with the \HT cell in which they were initially found, any track whose fitted parameters does not correspond to the same HT cell in which the \HT found the track in is rejected.
 
