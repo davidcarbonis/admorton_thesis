@@ -462,8 +462,8 @@ FUNCTION {format.number.series}
     { number empty$
 	{ series field.or.null }
 	{ output.state mid.sentence =
-	    { "no.~" }
-	    { "No.~" }
+	    { "" }
+	    { "" }
 	  if$
 	  number *
 	  series empty$
@@ -539,7 +539,7 @@ FUNCTION {format.volume}
 FUNCTION {format.number}
 { number empty$
     { "" }
-    { "no.~" number * }
+    { "" number * }
   if$
 }
 
