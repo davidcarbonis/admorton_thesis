@@ -21,7 +21,7 @@ void ee_lep2_eta()
    
    Double_t xAxis[6] = {-2.5, -1.5, -0.8, 0.8, 1.5, 2.5}; 
 
-   TProfile *electron2_eta_MC_DY = new TProfile("electron2_eta_MC_DY","ee final state - subleading electron",5, xAxis);
+   TProfile *electron2_eta_MC_DY = new TProfile("electron2_eta_MC_DY","",5, xAxis);
    electron2_eta_MC_DY->SetBinEntries(1,179);
    electron2_eta_MC_DY->SetBinEntries(2,415);
    electron2_eta_MC_DY->SetBinEntries(3,1922);
@@ -47,13 +47,13 @@ void ee_lep2_eta()
    electron2_eta_MC_DY->SetMinimum(0.8);
    electron2_eta_MC_DY->SetMaximum(1.1);
 
-   electron2_eta_MC_DY->GetXaxis()->SetTitle(" #eta");
+   electron2_eta_MC_DY->GetXaxis()->SetTitle(" Subleading electron #eta");
    electron2_eta_MC_DY->GetXaxis()->SetLabelFont(42);
    electron2_eta_MC_DY->GetXaxis()->SetLabelSize(0.035);
    electron2_eta_MC_DY->GetXaxis()->SetTitleSize(0.035);
    electron2_eta_MC_DY->GetXaxis()->SetTitleOffset(1);
    electron2_eta_MC_DY->GetXaxis()->SetTitleFont(42);
-   electron2_eta_MC_DY->GetYaxis()->SetTitle(" Efficiency");
+   electron2_eta_MC_DY->GetYaxis()->SetTitle(" Trigger Efficiency");
    electron2_eta_MC_DY->GetYaxis()->SetLabelFont(42);
    electron2_eta_MC_DY->GetYaxis()->SetLabelSize(0.035);
    electron2_eta_MC_DY->GetYaxis()->SetTitleSize(0.035);
@@ -114,7 +114,7 @@ void ee_lep2_eta()
 
    TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextSize(0.04);
+   leg->SetTextSize(0.045);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);

@@ -21,7 +21,7 @@ void ee_lep2_pT()
 
    Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TProfile *electron2_pT_MC_DY = new TProfile("electron2_pT_MC_DY","ee final state - subleading electron",9, xAxis);
+   TProfile *electron2_pT_MC_DY = new TProfile("electron2_pT_MC_DY","",9, xAxis);
    electron2_pT_MC_DY->SetBinEntries(1,105);
    electron2_pT_MC_DY->SetBinEntries(2,132);
    electron2_pT_MC_DY->SetBinEntries(3,170);
@@ -59,13 +59,13 @@ void ee_lep2_pT()
    electron2_pT_MC_DY->SetMarkerStyle(22);
    electron2_pT_MC_DY->SetMarkerSize(1.2);
 
-   electron2_pT_MC_DY->GetXaxis()->SetTitle(" p_{T} (GeV)");
+   electron2_pT_MC_DY->GetXaxis()->SetTitle(" Subleading electron p_{T} (GeV)");
    electron2_pT_MC_DY->GetXaxis()->SetLabelFont(42);
    electron2_pT_MC_DY->GetXaxis()->SetLabelSize(0.035);
    electron2_pT_MC_DY->GetXaxis()->SetTitleSize(0.035);
    electron2_pT_MC_DY->GetXaxis()->SetTitleOffset(1);
    electron2_pT_MC_DY->GetXaxis()->SetTitleFont(42);
-   electron2_pT_MC_DY->GetYaxis()->SetTitle(" Efficiency");
+   electron2_pT_MC_DY->GetYaxis()->SetTitle(" Trigger Efficiency");
    electron2_pT_MC_DY->GetYaxis()->SetLabelFont(42);
    electron2_pT_MC_DY->GetYaxis()->SetLabelSize(0.035);
    electron2_pT_MC_DY->GetYaxis()->SetTitleSize(0.035);
@@ -135,7 +135,7 @@ void ee_lep2_pT()
 
    TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextSize(0.04);
+   leg->SetTextSize(0.045);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);

@@ -21,7 +21,7 @@ void mumu_lep2_eta()
 
    Double_t xAxis[6] = {-2.5, -1.5, -0.8, 0.8, 1.5, 2.5}; 
    
-   TProfile *muon2_eta_MC_DY = new TProfile("muon2_eta_MC_DY","#mu#mu final state - subleading muon",5, xAxis);
+   TProfile *muon2_eta_MC_DY = new TProfile("muon2_eta_MC_DY","",5, xAxis);
    muon2_eta_MC_DY->SetBinEntries(1,2923);
    muon2_eta_MC_DY->SetBinEntries(2,3669);
    muon2_eta_MC_DY->SetBinEntries(3,9388);
@@ -47,13 +47,13 @@ void mumu_lep2_eta()
    muon2_eta_MC_DY->SetMarkerStyle(22);
    muon2_eta_MC_DY->SetMarkerSize(1.2);
 
-   muon2_eta_MC_DY->GetXaxis()->SetTitle(" #eta");
+   muon2_eta_MC_DY->GetXaxis()->SetTitle(" Subleading muon #eta");
    muon2_eta_MC_DY->GetXaxis()->SetLabelFont(42);
    muon2_eta_MC_DY->GetXaxis()->SetLabelSize(0.035);
    muon2_eta_MC_DY->GetXaxis()->SetTitleSize(0.035);
    muon2_eta_MC_DY->GetXaxis()->SetTitleOffset(1);
    muon2_eta_MC_DY->GetXaxis()->SetTitleFont(42);
-   muon2_eta_MC_DY->GetYaxis()->SetTitle(" Efficiency");
+   muon2_eta_MC_DY->GetYaxis()->SetTitle(" Trigger Efficiency");
    muon2_eta_MC_DY->GetYaxis()->SetLabelFont(42);
    muon2_eta_MC_DY->GetYaxis()->SetLabelSize(0.035);
    muon2_eta_MC_DY->GetYaxis()->SetTitleSize(0.035);
@@ -111,7 +111,7 @@ void mumu_lep2_eta()
 
    TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextSize(0.04);
+   leg->SetTextSize(0.045);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);

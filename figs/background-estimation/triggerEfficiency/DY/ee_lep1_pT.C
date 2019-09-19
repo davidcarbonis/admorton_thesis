@@ -22,7 +22,7 @@ void ee_lep1_pT()
 
    Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TProfile *electron1_pT_MC_DY = new TProfile("electron1_pT_MC_DY","ee final state - leading electron",9, xAxis);
+   TProfile *electron1_pT_MC_DY = new TProfile("electron1_pT_MC_DY","",9, xAxis);
    electron1_pT_MC_DY->SetBinEntries(2,2);
    electron1_pT_MC_DY->SetBinEntries(3,7);
    electron1_pT_MC_DY->SetBinEntries(4,27);
@@ -55,13 +55,13 @@ void ee_lep1_pT()
    electron1_pT_MC_DY->SetMarkerStyle(22);
    electron1_pT_MC_DY->SetMarkerSize(1.2);
 
-   electron1_pT_MC_DY->GetXaxis()->SetTitle(" p_{T} (GeV)");
+   electron1_pT_MC_DY->GetXaxis()->SetTitle(" Leading electron p_{T} (GeV)");
    electron1_pT_MC_DY->GetXaxis()->SetLabelFont(42);
    electron1_pT_MC_DY->GetXaxis()->SetLabelSize(0.035);
    electron1_pT_MC_DY->GetXaxis()->SetTitleSize(0.035);
    electron1_pT_MC_DY->GetXaxis()->SetTitleOffset(1);
    electron1_pT_MC_DY->GetXaxis()->SetTitleFont(42);
-   electron1_pT_MC_DY->GetYaxis()->SetTitle(" Efficiency");
+   electron1_pT_MC_DY->GetYaxis()->SetTitle(" Trigger Efficiency");
    electron1_pT_MC_DY->GetYaxis()->SetLabelFont(42);
    electron1_pT_MC_DY->GetYaxis()->SetLabelSize(0.035);
    electron1_pT_MC_DY->GetYaxis()->SetTitleSize(0.035);
@@ -131,7 +131,7 @@ void ee_lep1_pT()
 
    TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextSize(0.04);
+   leg->SetTextSize(0.045);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);

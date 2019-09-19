@@ -20,7 +20,7 @@ void mumu_lep1_pT()
 
    Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TProfile *muon1_pT_MC_DY = new TProfile("muon1_pT_MC_DY","#mu#mu final state - leading muon",9, xAxis);
+   TProfile *muon1_pT_MC_DY = new TProfile("muon1_pT_MC_DY","",9, xAxis);
    muon1_pT_MC_DY->SetBinEntries(1,11);
    muon1_pT_MC_DY->SetBinEntries(2,25);
    muon1_pT_MC_DY->SetBinEntries(3,55);
@@ -58,13 +58,13 @@ void mumu_lep1_pT()
    muon1_pT_MC_DY->SetMarkerStyle(22);
    muon1_pT_MC_DY->SetMarkerSize(1.2);
 
-   muon1_pT_MC_DY->GetXaxis()->SetTitle(" p_{T} (GeV)");
+   muon1_pT_MC_DY->GetXaxis()->SetTitle(" Leading muon p_{T} (GeV)");
    muon1_pT_MC_DY->GetXaxis()->SetLabelFont(42);
    muon1_pT_MC_DY->GetXaxis()->SetLabelSize(0.035);
    muon1_pT_MC_DY->GetXaxis()->SetTitleSize(0.035);
    muon1_pT_MC_DY->GetXaxis()->SetTitleOffset(1);
    muon1_pT_MC_DY->GetXaxis()->SetTitleFont(42);
-   muon1_pT_MC_DY->GetYaxis()->SetTitle(" Efficiency");
+   muon1_pT_MC_DY->GetYaxis()->SetTitle(" Trigger Efficiency");
    muon1_pT_MC_DY->GetYaxis()->SetLabelFont(42);
    muon1_pT_MC_DY->GetYaxis()->SetLabelSize(0.035);
    muon1_pT_MC_DY->GetYaxis()->SetTitleSize(0.035);
@@ -134,7 +134,7 @@ void mumu_lep1_pT()
 
    TLegend *leg = new TLegend(0.45,0.27,0.52,0.48,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextSize(0.04);
+   leg->SetTextSize(0.045);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);
