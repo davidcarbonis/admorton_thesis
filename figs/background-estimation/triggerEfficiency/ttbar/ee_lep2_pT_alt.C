@@ -47,7 +47,7 @@ void ee_lep2_pT_alt()
 
    Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300}; 
    
-   TProfile *electron2_pT_MC = new TProfile("electron2_pT_MC","ee final state - subleading lepton",9, xAxis);
+   TProfile *electron2_pT_MC = new TProfile("electron2_pT_MC","ee final state - subleading electron",9, xAxis);
    electron2_pT_MC->SetBinEntries(1,3854);
    electron2_pT_MC->SetBinEntries(2,4690);
    electron2_pT_MC->SetBinEntries(3,5249);
