@@ -208,9 +208,9 @@ tex->SetNDC();
 
    p_electron1_eta_SF__1->SetMinimum(0.9);
    p_electron1_eta_SF__1->SetMaximum(1.1);
-   p_electron1_eta_SF__1->SetLineColor(8);
+   p_electron1_eta_SF__1->SetLineColor(4);
    p_electron1_eta_SF__1->SetLineWidth(2);
-   p_electron1_eta_SF__1->SetMarkerColor(8);
+   p_electron1_eta_SF__1->SetMarkerColor(4);
    p_electron1_eta_SF__1->SetMarkerStyle(33);
    p_electron1_eta_SF__1->SetMarkerSize(1.5);
 

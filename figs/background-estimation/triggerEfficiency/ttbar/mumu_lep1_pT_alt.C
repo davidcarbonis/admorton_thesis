@@ -232,10 +232,9 @@ tex->SetNDC();
 
    p_muon1_pT_SF__5->SetMinimum(0.9);
    p_muon1_pT_SF__5->SetMaximum(1.1);
-   p_muon1_pT_SF__5->SetLineColor(8);
-   p_muon1_pT_SF__5->SetLineColor(8);
+   p_muon1_pT_SF__5->SetLineColor(4);
    p_muon1_pT_SF__5->SetLineWidth(2);
-   p_muon1_pT_SF__5->SetMarkerColor(8);
+   p_muon1_pT_SF__5->SetMarkerColor(4);
    p_muon1_pT_SF__5->SetMarkerStyle(33);
    p_muon1_pT_SF__5->SetMarkerSize(1.5);
 

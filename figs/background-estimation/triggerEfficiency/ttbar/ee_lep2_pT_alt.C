@@ -233,9 +233,9 @@ tex->SetNDC();
 
    p_electron2_pT_SF__3->SetMinimum(0.9);
    p_electron2_pT_SF__3->SetMaximum(1.1);
-   p_electron2_pT_SF__3->SetLineColor(8);
+   p_electron2_pT_SF__3->SetLineColor(4);
    p_electron2_pT_SF__3->SetLineWidth(2);
-   p_electron2_pT_SF__3->SetMarkerColor(8);
+   p_electron2_pT_SF__3->SetMarkerColor(4);
    p_electron2_pT_SF__3->SetMarkerStyle(33);
    p_electron2_pT_SF__3->SetMarkerSize(1.5);
 

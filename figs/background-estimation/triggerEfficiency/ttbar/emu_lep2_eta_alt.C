@@ -197,9 +197,9 @@ tex->SetNDC();
 
    p_muonElectron2_eta_SF__6->SetMinimum(0.8);
    p_muonElectron2_eta_SF__6->SetMaximum(1.2);
-   p_muonElectron2_eta_SF__6->SetLineColor(8);
+   p_muonElectron2_eta_SF__6->SetLineColor(4);
    p_muonElectron2_eta_SF__6->SetLineWidth(2);
-   p_muonElectron2_eta_SF__6->SetMarkerColor(8);
+   p_muonElectron2_eta_SF__6->SetMarkerColor(4);
    p_muonElectron2_eta_SF__6->SetMarkerStyle(33);
    p_muonElectron2_eta_SF__6->SetMarkerSize(1.5);
 
