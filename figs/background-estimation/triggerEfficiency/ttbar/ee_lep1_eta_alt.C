@@ -47,7 +47,7 @@ void ee_lep1_eta_alt()
 
    Double_t xAxis[6] = {-2.5, -1.5, -0.8, 0.8, 1.5, 2.5}; 
    
-   TProfile *electron1_eta_MC = new TProfile("electron1_eta_MC","ee final state - leading electron",5, xAxis);
+   TProfile *electron1_eta_MC = new TProfile("electron1_eta_MC","",5, xAxis);
    electron1_eta_MC->SetBinEntries(0,10);
    electron1_eta_MC->SetBinEntries(1,2773);
    electron1_eta_MC->SetBinEntries(2,6071);
@@ -76,20 +76,20 @@ void ee_lep1_eta_alt()
    electron1_eta_MC->SetMarkerStyle(20);
    electron1_eta_MC->SetMarkerSize(1);
 
-   electron1_eta_MC->GetXaxis()->SetTitle(" #eta");
+   electron1_eta_MC->GetXaxis()->SetTitle(" Leading electron #eta");
    electron1_eta_MC->GetXaxis()->SetLabelFont(42);
    electron1_eta_MC->GetXaxis()->SetLabelOffset(999);
    electron1_eta_MC->GetXaxis()->SetLabelSize(0.05);
-   electron1_eta_MC->GetXaxis()->SetTitleSize(0.08);
+   electron1_eta_MC->GetXaxis()->SetTitleSize(0.08); 
    electron1_eta_MC->GetXaxis()->SetTitleOffset(1);
    electron1_eta_MC->GetXaxis()->SetTitleFont(42);
-   electron1_eta_MC->GetYaxis()->SetTitle(" Efficiency");
+   electron1_eta_MC->GetYaxis()->SetTitle(" Trigger Efficiency");
    electron1_eta_MC->GetYaxis()->SetLabelFont(42);
    electron1_eta_MC->GetYaxis()->SetLabelFont(42);
-   electron1_eta_MC->GetYaxis()->SetLabelOffset(0.01);
-   electron1_eta_MC->GetYaxis()->SetLabelSize(0.05);
-   electron1_eta_MC->GetYaxis()->SetTitleSize(0.06);
-   electron1_eta_MC->GetYaxis()->SetTitleOffset(0.8);
+   electron1_eta_MC->GetYaxis()->SetLabelOffset(0.01); //0.01
+   electron1_eta_MC->GetYaxis()->SetLabelSize(0.056); // 0.05
+   electron1_eta_MC->GetYaxis()->SetTitleSize(0.0645); //0.06
+   electron1_eta_MC->GetYaxis()->SetTitleOffset(0.785); //0.8
    electron1_eta_MC->GetYaxis()->SetTitleFont(42);
    electron1_eta_MC->GetZaxis()->SetLabelFont(42);
    electron1_eta_MC->GetZaxis()->SetLabelOffset(0.007);
@@ -154,7 +154,7 @@ void ee_lep1_eta_alt()
    
    TLegend *leg = new TLegend(0.45,0.22,0.52,0.43,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextSize(0.04);
+   leg->SetTextSize(0.055);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);
@@ -214,21 +214,21 @@ tex->SetNDC();
    p_electron1_eta_SF__1->SetMarkerStyle(33);
    p_electron1_eta_SF__1->SetMarkerSize(1.5);
 
-   p_electron1_eta_SF__1->GetXaxis()->SetTitle(" #eta");
+   p_electron1_eta_SF__1->GetXaxis()->SetTitle("Leading Electron #eta");
    p_electron1_eta_SF__1->GetXaxis()->SetLabelFont(42);
-   p_electron1_eta_SF__1->GetXaxis()->SetLabelOffset(0.013);
-   p_electron1_eta_SF__1->GetXaxis()->SetLabelSize(0.10);
-   p_electron1_eta_SF__1->GetXaxis()->SetTitleSize(0.13);
-   p_electron1_eta_SF__1->GetXaxis()->SetTitleOffset(1);
+   p_electron1_eta_SF__1->GetXaxis()->SetLabelOffset(0.013); // 0.013
+   p_electron1_eta_SF__1->GetXaxis()->SetLabelSize(0.12); // 0.10
+   p_electron1_eta_SF__1->GetXaxis()->SetTitleSize(0.135); // 0.13
+   p_electron1_eta_SF__1->GetXaxis()->SetTitleOffset(1); 
    p_electron1_eta_SF__1->GetXaxis()->SetTitleFont(42);
    p_electron1_eta_SF__1->GetYaxis()->SetTitle("Data/MC SF");
    p_electron1_eta_SF__1->GetYaxis()->SetNdivisions(506);
    p_electron1_eta_SF__1->GetYaxis()->CenterTitle(true);
    p_electron1_eta_SF__1->GetYaxis()->SetLabelFont(42);
-   p_electron1_eta_SF__1->GetYaxis()->SetLabelOffset(0.01);
-   p_electron1_eta_SF__1->GetYaxis()->SetLabelSize(0.10);
-   p_electron1_eta_SF__1->GetYaxis()->SetTitleSize(0.12);
-   p_electron1_eta_SF__1->GetYaxis()->SetTitleOffset(0.4);
+   p_electron1_eta_SF__1->GetYaxis()->SetLabelOffset(0.01); // 0.01
+   p_electron1_eta_SF__1->GetYaxis()->SetLabelSize(0.12); // 0.10
+   p_electron1_eta_SF__1->GetYaxis()->SetTitleSize(0.135); // 0.12
+   p_electron1_eta_SF__1->GetYaxis()->SetTitleOffset(0.39); // 0.4
    p_electron1_eta_SF__1->GetYaxis()->SetTitleFont(42);
    p_electron1_eta_SF__1->GetZaxis()->SetLabelFont(42);
    p_electron1_eta_SF__1->GetZaxis()->SetLabelSize(0.035);
