@@ -60,15 +60,16 @@ void mumu_lep1_pT()
 
    muon1_pT_MC_DY->GetXaxis()->SetTitle(" Leading muon p_{T} (GeV)");
    muon1_pT_MC_DY->GetXaxis()->SetLabelFont(42);
-   muon1_pT_MC_DY->GetXaxis()->SetLabelSize(0.035);
-   muon1_pT_MC_DY->GetXaxis()->SetTitleSize(0.035);
-   muon1_pT_MC_DY->GetXaxis()->SetTitleOffset(1);
+   muon1_pT_MC_DY->GetXaxis()->SetLabelSize(0.045);
+   muon1_pT_MC_DY->GetXaxis()->SetTitleSize(0.045);
+   muon1_pT_MC_DY->GetXaxis()->SetTitleOffset(1.2);
    muon1_pT_MC_DY->GetXaxis()->SetTitleFont(42);
    muon1_pT_MC_DY->GetYaxis()->SetTitle(" Trigger Efficiency");
    muon1_pT_MC_DY->GetYaxis()->SetLabelFont(42);
-   muon1_pT_MC_DY->GetYaxis()->SetLabelSize(0.035);
-   muon1_pT_MC_DY->GetYaxis()->SetTitleSize(0.035);
-   muon1_pT_MC_DY->GetYaxis()->SetTitleOffset(1);
+   muon1_pT_MC_DY->GetYaxis()->SetLabelSize(0.045);
+   muon1_pT_MC_DY->GetYaxis()->SetLabelOffset(0.01);
+   muon1_pT_MC_DY->GetYaxis()->SetTitleSize(0.045);
+   muon1_pT_MC_DY->GetYaxis()->SetTitleOffset(1.2);
    muon1_pT_MC_DY->GetYaxis()->SetTitleFont(42);
    muon1_pT_MC_DY->GetZaxis()->SetLabelFont(42);
    muon1_pT_MC_DY->GetZaxis()->SetLabelSize(0.035);

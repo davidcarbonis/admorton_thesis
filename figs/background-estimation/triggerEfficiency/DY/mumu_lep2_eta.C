@@ -49,15 +49,17 @@ void mumu_lep2_eta()
 
    muon2_eta_MC_DY->GetXaxis()->SetTitle(" Subleading muon #eta");
    muon2_eta_MC_DY->GetXaxis()->SetLabelFont(42);
-   muon2_eta_MC_DY->GetXaxis()->SetLabelSize(0.035);
-   muon2_eta_MC_DY->GetXaxis()->SetTitleSize(0.035);
-   muon2_eta_MC_DY->GetXaxis()->SetTitleOffset(1);
+   muon2_eta_MC_DY->GetXaxis()->SetLabelSize(0.045);
+   muon2_eta_MC_DY->GetXaxis()->SetLabelOffset(0.01);
+   muon2_eta_MC_DY->GetXaxis()->SetTitleSize(0.045);
+   muon2_eta_MC_DY->GetXaxis()->SetTitleOffset(1.2);
    muon2_eta_MC_DY->GetXaxis()->SetTitleFont(42);
    muon2_eta_MC_DY->GetYaxis()->SetTitle(" Trigger Efficiency");
    muon2_eta_MC_DY->GetYaxis()->SetLabelFont(42);
-   muon2_eta_MC_DY->GetYaxis()->SetLabelSize(0.035);
-   muon2_eta_MC_DY->GetYaxis()->SetTitleSize(0.035);
-   muon2_eta_MC_DY->GetYaxis()->SetTitleOffset(1);
+   muon2_eta_MC_DY->GetYaxis()->SetLabelSize(0.045);
+   muon2_eta_MC_DY->GetYaxis()->SetLabelOffset(0.01);
+   muon2_eta_MC_DY->GetYaxis()->SetTitleSize(0.045);
+   muon2_eta_MC_DY->GetYaxis()->SetTitleOffset(1.2);
    muon2_eta_MC_DY->GetYaxis()->SetTitleFont(42);
    muon2_eta_MC_DY->GetZaxis()->SetLabelFont(42);
    muon2_eta_MC_DY->GetZaxis()->SetLabelSize(0.035);

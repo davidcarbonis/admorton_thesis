@@ -61,15 +61,17 @@ void ee_lep2_pT()
 
    electron2_pT_MC_DY->GetXaxis()->SetTitle(" Subleading electron p_{T} (GeV)");
    electron2_pT_MC_DY->GetXaxis()->SetLabelFont(42);
-   electron2_pT_MC_DY->GetXaxis()->SetLabelSize(0.035);
-   electron2_pT_MC_DY->GetXaxis()->SetTitleSize(0.035);
-   electron2_pT_MC_DY->GetXaxis()->SetTitleOffset(1);
+   electron2_pT_MC_DY->GetXaxis()->SetLabelSize(0.045);
+   electron2_pT_MC_DY->GetXaxis()->SetLabelOffset(0.01);
+   electron2_pT_MC_DY->GetXaxis()->SetTitleSize(0.045);
+   electron2_pT_MC_DY->GetXaxis()->SetTitleOffset(1.2);
    electron2_pT_MC_DY->GetXaxis()->SetTitleFont(42);
    electron2_pT_MC_DY->GetYaxis()->SetTitle(" Trigger Efficiency");
    electron2_pT_MC_DY->GetYaxis()->SetLabelFont(42);
-   electron2_pT_MC_DY->GetYaxis()->SetLabelSize(0.035);
-   electron2_pT_MC_DY->GetYaxis()->SetTitleSize(0.035);
-   electron2_pT_MC_DY->GetYaxis()->SetTitleOffset(1);
+   electron2_pT_MC_DY->GetYaxis()->SetLabelSize(0.045);
+   electron2_pT_MC_DY->GetYaxis()->SetLabelOffset(0.01);
+   electron2_pT_MC_DY->GetYaxis()->SetTitleSize(0.045);
+   electron2_pT_MC_DY->GetYaxis()->SetTitleOffset(1.2);
    electron2_pT_MC_DY->GetYaxis()->SetTitleFont(42);
    electron2_pT_MC_DY->GetZaxis()->SetLabelFont(42);
    electron2_pT_MC_DY->GetZaxis()->SetLabelSize(0.035);
