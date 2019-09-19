@@ -47,7 +47,7 @@ void mumu_lep1_eta_alt()
 
    Double_t xAxis[6] = {-2.4, -1.5, -0.8, 0.8, 1.5, 2.4}; 
    
-   TProfile *muon1_eta_MC = new TProfile("muon1_eta_MC","#mu#mu final state - leading muon",5, xAxis);
+   TProfile *muon1_eta_MC = new TProfile("muon1_eta_MC","",5, xAxis);
    muon1_eta_MC->SetBinEntries(1,4733);
    muon1_eta_MC->SetBinEntries(2,8088);
    muon1_eta_MC->SetBinEntries(3,25663);
@@ -73,20 +73,20 @@ void mumu_lep1_eta_alt()
    muon1_eta_MC->SetMarkerStyle(20);
    muon1_eta_MC->SetMarkerSize(1);
    
-   muon1_eta_MC->GetXaxis()->SetTitle(" #eta");
+   muon1_eta_MC->GetXaxis()->SetTitle(" Leading muon #eta");
    muon1_eta_MC->GetXaxis()->SetLabelFont(42);
    muon1_eta_MC->GetXaxis()->SetLabelOffset(999);
    muon1_eta_MC->GetXaxis()->SetLabelSize(0.05);
    muon1_eta_MC->GetXaxis()->SetTitleSize(0.08);
    muon1_eta_MC->GetXaxis()->SetTitleOffset(1);
    muon1_eta_MC->GetXaxis()->SetTitleFont(42);
-   muon1_eta_MC->GetYaxis()->SetTitle(" Efficiency");
+   muon1_eta_MC->GetYaxis()->SetTitle(" Trigger Efficiency");
    muon1_eta_MC->GetYaxis()->SetLabelFont(42);
    muon1_eta_MC->GetYaxis()->SetLabelFont(42);
    muon1_eta_MC->GetYaxis()->SetLabelOffset(0.01);
-   muon1_eta_MC->GetYaxis()->SetLabelSize(0.05);
-   muon1_eta_MC->GetYaxis()->SetTitleSize(0.06);
-   muon1_eta_MC->GetYaxis()->SetTitleOffset(0.8);
+   muon1_eta_MC->GetYaxis()->SetLabelSize(0.056);
+   muon1_eta_MC->GetYaxis()->SetTitleSize(0.0645);
+   muon1_eta_MC->GetYaxis()->SetTitleOffset(0.785);
    muon1_eta_MC->GetYaxis()->SetTitleFont(42);
    muon1_eta_MC->GetZaxis()->SetLabelFont(42);
    muon1_eta_MC->GetZaxis()->SetLabelOffset(0.007);
@@ -145,7 +145,7 @@ void mumu_lep1_eta_alt()
    
    TLegend *leg = new TLegend(0.45,0.22,0.52,0.43,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextSize(0.04);
+   leg->SetTextSize(0.055);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);

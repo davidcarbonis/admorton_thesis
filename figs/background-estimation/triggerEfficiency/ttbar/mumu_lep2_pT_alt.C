@@ -47,7 +47,7 @@ void mumu_lep2_pT_alt()
 
    Double_t xAxis[10] = {0, 15, 20, 25, 35, 60, 80, 100, 200, 300};
 
-   TProfile *muon2_pT_MC = new TProfile("muon2_pT_MC","#mu#mu final state - subleading muon",9, xAxis);
+   TProfile *muon2_pT_MC = new TProfile("muon2_pT_MC","",9, xAxis);
    muon2_pT_MC->SetBinEntries(1,9205);
    muon2_pT_MC->SetBinEntries(2,6758);
    muon2_pT_MC->SetBinEntries(3,6510);
@@ -85,20 +85,20 @@ void mumu_lep2_pT_alt()
    muon2_pT_MC->SetMarkerStyle(20);
    muon2_pT_MC->SetMarkerSize(1);
 
-   muon2_pT_MC->GetXaxis()->SetTitle(" p_{T} (GeV)");
+   muon2_pT_MC->GetXaxis()->SetTitle(" Subleading muon p_{T} (GeV)");
    muon2_pT_MC->GetXaxis()->SetLabelFont(42);
    muon2_pT_MC->GetXaxis()->SetLabelOffset(999);
    muon2_pT_MC->GetXaxis()->SetLabelSize(0.05);
    muon2_pT_MC->GetXaxis()->SetTitleSize(0.08);
    muon2_pT_MC->GetXaxis()->SetTitleOffset(1);
    muon2_pT_MC->GetXaxis()->SetTitleFont(42);
-   muon2_pT_MC->GetYaxis()->SetTitle(" Efficiency");
+   muon2_pT_MC->GetYaxis()->SetTitle(" Trigger Efficiency");
    muon2_pT_MC->GetYaxis()->SetLabelFont(42);
    muon2_pT_MC->GetYaxis()->SetLabelFont(42);
    muon2_pT_MC->GetYaxis()->SetLabelOffset(0.01);
-   muon2_pT_MC->GetYaxis()->SetLabelSize(0.05);
-   muon2_pT_MC->GetYaxis()->SetTitleSize(0.06);
-   muon2_pT_MC->GetYaxis()->SetTitleOffset(0.8);
+   muon2_pT_MC->GetYaxis()->SetLabelSize(0.056);
+   muon2_pT_MC->GetYaxis()->SetTitleSize(0.0645);
+   muon2_pT_MC->GetYaxis()->SetTitleOffset(0.785);
    muon2_pT_MC->GetYaxis()->SetTitleFont(42);
    muon2_pT_MC->GetZaxis()->SetLabelFont(42);
    muon2_pT_MC->GetZaxis()->SetLabelOffset(0.007);
@@ -172,7 +172,7 @@ void mumu_lep2_pT_alt()
    
    TLegend *leg = new TLegend(0.45,0.22,0.52,0.43,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextSize(0.04);
+   leg->SetTextSize(0.055);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);

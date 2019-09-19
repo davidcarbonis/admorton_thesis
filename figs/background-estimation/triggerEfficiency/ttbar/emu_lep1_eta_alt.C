@@ -47,7 +47,7 @@ void emu_lep1_eta_alt()
 
    Double_t xAxis[6] = {-2.5, -1.5, -0.8, 0.8, 1.5, 2.5}; 
    
-   TProfile *muonElectron1_eta_MC = new TProfile("muonElectron1_eta_MC","e#mu final state - electron",5, xAxis);
+   TProfile *muonElectron1_eta_MC = new TProfile("muonElectron1_eta_MC","",5, xAxis);
    muonElectron1_eta_MC->SetBinEntries(0,1);
    muonElectron1_eta_MC->SetBinEntries(1,329);
    muonElectron1_eta_MC->SetBinEntries(2,362);
@@ -76,20 +76,20 @@ void emu_lep1_eta_alt()
    muonElectron1_eta_MC->SetMarkerStyle(20);
    muonElectron1_eta_MC->SetMarkerSize(1);
    
-   muonElectron1_eta_MC->GetXaxis()->SetTitle(" #eta");
+   muonElectron1_eta_MC->GetXaxis()->SetTitle(" Electron #eta");
    muonElectron1_eta_MC->GetXaxis()->SetLabelFont(42);
    muonElectron1_eta_MC->GetXaxis()->SetLabelOffset(999);
    muonElectron1_eta_MC->GetXaxis()->SetLabelSize(0.05);
    muonElectron1_eta_MC->GetXaxis()->SetTitleSize(0.08);
    muonElectron1_eta_MC->GetXaxis()->SetTitleOffset(1);
    muonElectron1_eta_MC->GetXaxis()->SetTitleFont(42);
-   muonElectron1_eta_MC->GetYaxis()->SetTitle(" Efficiency");
+   muonElectron1_eta_MC->GetYaxis()->SetTitle(" Trigger Efficiency");
    muonElectron1_eta_MC->GetYaxis()->SetLabelFont(42);
    muonElectron1_eta_MC->GetYaxis()->SetLabelFont(42);
    muonElectron1_eta_MC->GetYaxis()->SetLabelOffset(0.01);
-   muonElectron1_eta_MC->GetYaxis()->SetLabelSize(0.05);
-   muonElectron1_eta_MC->GetYaxis()->SetTitleSize(0.06);
-   muonElectron1_eta_MC->GetYaxis()->SetTitleOffset(0.8);
+   muonElectron1_eta_MC->GetYaxis()->SetLabelSize(0.056);
+   muonElectron1_eta_MC->GetYaxis()->SetTitleSize(0.0645);
+   muonElectron1_eta_MC->GetYaxis()->SetTitleOffset(0.785);
    muonElectron1_eta_MC->GetYaxis()->SetTitleFont(42);
    muonElectron1_eta_MC->GetZaxis()->SetLabelFont(42);
    muonElectron1_eta_MC->GetZaxis()->SetLabelOffset(0.007);
@@ -150,7 +150,7 @@ void emu_lep1_eta_alt()
    
    TLegend *leg = new TLegend(0.45,0.22,0.52,0.43,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextSize(0.04);
+   leg->SetTextSize(0.055);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);

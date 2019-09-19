@@ -47,7 +47,7 @@ void ee_lep2_eta_alt()
 
    Double_t xAxis[6] = {-2.5, -1.5, -0.8, 0.8, 1.5, 2.5}; 
    
-   TProfile *electron2_eta_MC = new TProfile("electron2_eta_MC","ee final state - subleading electron",5, xAxis);
+   TProfile *electron2_eta_MC = new TProfile("electron2_eta_MC","",5, xAxis);
    electron2_eta_MC->SetBinEntries(0,10);
    electron2_eta_MC->SetBinEntries(1,3537);
    electron2_eta_MC->SetBinEntries(2,6104);
@@ -76,20 +76,20 @@ void ee_lep2_eta_alt()
    electron2_eta_MC->SetMarkerStyle(20);
    electron2_eta_MC->SetMarkerSize(1);
 
-   electron2_eta_MC->GetXaxis()->SetTitle(" #eta");
+   electron2_eta_MC->GetXaxis()->SetTitle(" Subleading electron #eta");
    electron2_eta_MC->GetXaxis()->SetLabelFont(42);
    electron2_eta_MC->GetXaxis()->SetLabelOffset(999);
    electron2_eta_MC->GetXaxis()->SetLabelSize(0.05);
    electron2_eta_MC->GetXaxis()->SetTitleSize(0.08);
    electron2_eta_MC->GetXaxis()->SetTitleOffset(1);
    electron2_eta_MC->GetXaxis()->SetTitleFont(42);
-   electron2_eta_MC->GetYaxis()->SetTitle(" Efficiency");
+   electron2_eta_MC->GetYaxis()->SetTitle(" Trigger Efficiency");
    electron2_eta_MC->GetYaxis()->SetLabelFont(42);
    electron2_eta_MC->GetYaxis()->SetLabelFont(42);
    electron2_eta_MC->GetYaxis()->SetLabelOffset(0.01);
-   electron2_eta_MC->GetYaxis()->SetLabelSize(0.05);
-   electron2_eta_MC->GetYaxis()->SetTitleSize(0.06);
-   electron2_eta_MC->GetYaxis()->SetTitleOffset(0.8);
+   electron2_eta_MC->GetYaxis()->SetLabelSize(0.056);
+   electron2_eta_MC->GetYaxis()->SetTitleSize(0.0645);
+   electron2_eta_MC->GetYaxis()->SetTitleOffset(0.785);
    electron2_eta_MC->GetYaxis()->SetTitleFont(42);
    electron2_eta_MC->GetZaxis()->SetLabelFont(42);
    electron2_eta_MC->GetZaxis()->SetLabelOffset(0.007);
@@ -154,7 +154,7 @@ void ee_lep2_eta_alt()
    
    TLegend *leg = new TLegend(0.45,0.22,0.52,0.43,NULL,"brNDC");
    leg->SetBorderSize(0);
-   leg->SetTextSize(0.04);
+   leg->SetTextSize(0.055);
    leg->SetLineColor(1);
    leg->SetLineStyle(1);
    leg->SetLineWidth(1);
